@@ -8,7 +8,7 @@ package MUEBLES;
  *
  * @author HP i5
  */
-public class Mue {
+public class main {
     public static void main(String[] args) {
         
     }
