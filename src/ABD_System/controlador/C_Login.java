@@ -9,5 +9,6 @@ package ABD_System.controlador;
  * @author LENOVO
  */
 public class C_Login {
-    
+    System.out.println("Hola Mundo");
+           
 }
