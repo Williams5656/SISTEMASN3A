@@ -5,6 +5,11 @@
  */
 package Papeleria_Bella.vista;
 
+import javax.swing.JDesktopPane;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
 /**
  *
  * @author hp
@@ -14,6 +19,63 @@ public class Vprincipal extends javax.swing.JFrame {
     /**
      * Creates new form Cprincipal
      */
+    public Vprincipal(JMenuItem itempersona, JMenuItem itemusuario, JDesktopPane jDesktopPane1, JMenu jMenu1, JMenu jMenu2, JMenuBar jMenuBar1) {
+        this.itempersona = itempersona;
+        this.itemusuario = itemusuario;
+        this.jDesktopPane1 = jDesktopPane1;
+        this.jMenu1 = jMenu1;
+        this.jMenu2 = jMenu2;
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    public JMenuItem getItempersona() {
+        return itempersona;
+    }
+
+    public void setItempersona(JMenuItem itempersona) {
+        this.itempersona = itempersona;
+    }
+
+    public JMenuItem getItemusuario() {
+        return itemusuario;
+    }
+
+    public void setItemusuario(JMenuItem itemusuario) {
+        this.itemusuario = itemusuario;
+    }
+
+    public JDesktopPane getjDesktopPane1() {
+        return jDesktopPane1;
+    }
+
+    public void setjDesktopPane1(JDesktopPane jDesktopPane1) {
+        this.jDesktopPane1 = jDesktopPane1;
+    }
+
+    public JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public void setjMenu1(JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    public JMenu getjMenu2() {
+        return jMenu2;
+    }
+
+    public void setjMenu2(JMenu jMenu2) {
+        this.jMenu2 = jMenu2;
+    }
+
+    public JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public void setjMenuBar1(JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
     public Vprincipal() {
         initComponents();
     }
@@ -30,6 +92,8 @@ public class Vprincipal extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        itempersona = new javax.swing.JMenuItem();
+        itemusuario = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,10 +109,20 @@ public class Vprincipal extends javax.swing.JFrame {
             .addGap(0, 367, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jMenu1.setText("Nuevo");
 
-        jMenu2.setText("Edit");
+        itempersona.setText("Persona");
+        itempersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itempersonaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itempersona);
+
+        itemusuario.setText("Usuario");
+        jMenu1.add(itemusuario);
+
+        jMenuBar1.add(jMenu1);
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -67,43 +141,18 @@ public class Vprincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void itempersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itempersonaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itempersonaActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Vprincipal().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itempersona;
+    private javax.swing.JMenuItem itemusuario;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
