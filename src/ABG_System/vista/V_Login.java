@@ -196,11 +196,6 @@ public class V_Login extends javax.swing.JFrame {
         Fondo.add(labelMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 80, 70));
 
         labelOcultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ABG_System/controlador/esconder.png"))); // NOI18N
-        labelOcultar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                labelOcultarMouseEntered(evt);
-            }
-        });
         Fondo.add(labelOcultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 70, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -216,10 +211,6 @@ public class V_Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void labelOcultarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelOcultarMouseEntered
-      
-    }//GEN-LAST:event_labelOcultarMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

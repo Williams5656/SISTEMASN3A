@@ -29,6 +29,7 @@ public class C_Login {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtUsuarioFocusGained(evt);
             }
+
             @Override
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtUsuarioFocusLost(evt);
@@ -39,17 +40,18 @@ public class C_Login {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JpassUserFocusGained(evt);
             }
+
             @Override
             public void focusLost(java.awt.event.FocusEvent evt) {
                 JpassUserFocusLost(evt);
             }
         });
         vista.getLabelOcultar().addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                labelOcultarMouseEntered(evt);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelOcultarMouseClicked(evt);
             }
         });
+
     }
 
     private void txtUsuarioFocusGained(java.awt.event.FocusEvent evt) {
@@ -83,10 +85,9 @@ public class C_Login {
         }
 
     }
-     private void labelOcultarMouseEntered(java.awt.event.MouseEvent evt) {                                          
-       if (mostrar) {
+    private void labelOcultarMouseClicked(java.awt.event.MouseEvent evt) {                                          
+        if (mostrar) {
             vista.getLabelMostrar().setVisible(true);
-            vista.getLabelOcultar().setVisible(false);
             vista.getTxtPassUser().setVisible(false);
             vista.getJpassUser().setVisible(true);
             this.vista.getJpassUser().setForeground(Color.BLACK);
@@ -94,11 +95,11 @@ public class C_Login {
             mostrar = false;
         } else {
             vista.getLabelMostrar().setVisible(false);
-            vista.getLabelOcultar().setVisible(true);
             vista.getTxtPassUser().setVisible(true);
             vista.getJpassUser().setVisible(false);
             vista.getTxtPassUser().setText(vista.getJpassUser().getText());
             mostrar = true;
         }
-    }
+    }  
+
 }
