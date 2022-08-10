@@ -10,5 +10,8 @@ package V93;
  * @author Usuario
  */
 public class Main {
+    public static void main(String[] args) {
+        System.out.println("abrir");
+    }
     
 }
