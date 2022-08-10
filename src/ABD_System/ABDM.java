@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistemasn3a;
+package ABD_System;
 
 /**
  *
- * @author willi
+ * @author USUARIO
  */
-public class practica {
+public class ABDM {
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        System.out.println("hola");
-        System.out.println("vasde");
-        System.out.println("Oscar");
-        System.out.println("Andres");
+        // TODO code application logic here
     }
+    
 }
