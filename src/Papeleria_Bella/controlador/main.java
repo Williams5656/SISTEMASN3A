@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Hertz.controlador;
+package Papeleria_Bella.controlador;
 
 /**
  *
- * @author ESTEBAN
+ * @author hp
  */
-public class Cprincipal {
+public class main {
     
 }
