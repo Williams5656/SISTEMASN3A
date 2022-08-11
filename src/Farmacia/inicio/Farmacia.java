@@ -5,14 +5,15 @@
  */
 package Farmacia.inicio;
 
+import Farmacia.vista.Vinicio;
+
 /**
  *
  * @author VICO5
  */
 public class Farmacia {
-    private String nom_medicamento;
-    private String direccion; 
-    private String codigo;
-    
-    
+    public static void main(String[] args) {
+        Vinicio vista =new Vinicio();
+//        Con_inicio inicio = new Con_inicio(vista);
+    }
 }

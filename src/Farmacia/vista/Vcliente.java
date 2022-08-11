@@ -15,12 +15,12 @@ import javax.swing.JTextField;
  *
  * @author A
  */
-public class Cliente extends javax.swing.JInternalFrame {
+public class Vcliente extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Cliente
      */
-    public Cliente() {
+    public Vcliente() {
         initComponents();
     }
 
