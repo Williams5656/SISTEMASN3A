@@ -12,13 +12,13 @@ public class C_principal {
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
         vista.setExtendedState(Frame.MAXIMIZED_BOTH);
-        vista.getBtnpersona().addActionListener(x -> persona());
+        /*vista.getBtnpersona().addActionListener(x -> persona());
         vista.getBtncliente().addActionListener(x -> cliente());
         vista.getBtnrol().addActionListener(x -> rol());
-        vista.getBtnusuario().addActionListener(x -> usuario());
+        vista.getBtnusuario().addActionListener(x -> usuario());*/
     }
 
-    public void persona() {
+    /*public void persona() {
         Vpersona vp = new Vpersona();
         Cpersona cp = new Cpersona(vp);
 
@@ -38,5 +38,5 @@ public class C_principal {
 
     public void usuario() {
 
-    }
+    }*/
 }
