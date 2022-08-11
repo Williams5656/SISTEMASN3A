@@ -5,132 +5,197 @@
  */
 package Farmacia.vista;
 
-import java.text.ParseException;
-import Farmacia.modelo.UsuarioMD;
+import com.toedter.calendar.JCalendar;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import static javafx.beans.binding.Bindings.select;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
  * @author A
  */
 public class Usuario extends javax.swing.JInternalFrame {
-    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-    private DefaultTableModel modelo;
-    public static ArrayList<UsuarioMD> listausuario = new ArrayList();
+ SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
     /**
-     * Creates new form Usuario
+     * Creates new form Vusuario
      */
     public Usuario() {
         initComponents();
-       
-        modelo = new DefaultTableModel() {
-            //CARGAR LOS CAMPOS
-            public boolean iscelleditable(int fila, int columnas) {
-                if (columnas == 7) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        };
-        modelo.addColumn("Cedula");
-        modelo.addColumn("Nombre");
-        modelo.addColumn("Fecha_nacimiento");
-        modelo.addColumn("Rol");
-        modelo.addColumn("Nombre Usuario");
-        modelo.addColumn("Clave");
-        modelo.addColumn("Estado");
         
-         //CREAR FILAS
-
-        for (UsuarioMD listap : listausuario) {
-            Object[] fila = new Object[7];
-            fila[0] = listap.getCedula();
-            fila[1] = listap.getNombres();
-            fila[2] = listap.getFechaNacimiento();
-            fila[3] = listap.getRol();
-            fila[4] = listap.getNombreU();
-            fila[5] = listap.getClave();
-            fila[6] = listap.getEstado();
-            modelo.addRow(fila);
-        }
-        
-        tablaUsuario.setModel(modelo);
-        nuevo();
         
     }
 
-    public void limpiarTabla() {
-        modelo.setRowCount(0); //LIMPIAR TABLA
-        txtcedula1.setText("");
-        txtnombre1.setText("");
-        txtclave_u.setText("");
-        txtnombre_u.setText("");      
-        fecha_nacimiento.setDate(null);
+    public SimpleDateFormat getFormato() {
+        return formato;
     }
 
-    public void actualizarTabla() {
-
-        for (UsuarioMD listap : listausuario) {
-            Object[] fila = new Object[7];
-            fila[0] = listap.getCedula();
-            fila[1] = listap.getNombres();
-            fila[2] = listap.getFechaNacimiento();
-            fila[3] = listap.getRol();
-            fila[4] = listap.getNombreU();
-            String c = listap.getClave();
-            String a = "";
-            for (int i = 0; i < c.length(); i++) {
-                a = a + "*";
-            }
-            fila[5] = a;
-            fila[6] = listap.getEstado();
-            modelo.addRow(fila);
-        }
-        tablaUsuario.setModel(modelo);
+    public void setFormato(SimpleDateFormat formato) {
+        this.formato = formato;
     }
 
-    public void nuevo() {
-        btn_modificar.setEnabled(false);
-        btn_eliminar.setEnabled(false);
-        btn_guardar.setEnabled(false);
-        txtcedula1.setEditable(false);
-        txtnombre1.setEditable(false);
-        fecha_nacimiento.setVisible(true);
-        fecha_nacimiento.setEnabled(false);
-        fecha_nacimiento.setDate(null);
-        txtnombre_u.setEditable(false);
-        txtclave_u.setEditable(false);       
-        txtcedula1.setText("");
-        txtnombre1.setText("");
-        txtnombre_u.setText("");
-        txtclave_u.setText("");
+    public JButton getBtn_modificar() {
+        return btn_modificar;
     }
 
-    public void activarCampos() {
-        txtcedula1.setText("");
-        txtnombre1.setText("");
-        txtclave_u.setText("");
-        txtnombre_u.setText("");
-        fecha_nacimiento.setDate(null);
-        btn_guardar.setEnabled(true);
-        txtcedula1.setEditable(true);
-        txtnombre1.setEditable(true);
-        fecha_nacimiento.setEnabled(true);
-        txtnombre_u.setEditable(true);
-        txtclave_u.setEditable(true);        
-        combo_rol.setEnabled(true);
-      
+    public void setBtn_modificar(JButton btn_modificar) {
+        this.btn_modificar = btn_modificar;
     }
-        
-    
+
+    public JButton getBtn_nuevo() {
+        return btn_nuevo;
+    }
+
+    public void setBtn_nuevo(JButton btn_nuevo) {
+        this.btn_nuevo = btn_nuevo;
+    }
+
+    public JButton getBtneliminar() {
+        return btneliminar;
+    }
+
+    public void setBtneliminar(JButton btneliminar) {
+        this.btneliminar = btneliminar;
+    }
+
+    public JButton getBtnmodificar() {
+        return btnmodificar;
+    }
+
+    public void setBtnmodificar(JButton btnmodificar) {
+        this.btnmodificar = btnmodificar;
+    }
+
+    public JComboBox<String> getCombo_estado() {
+        return combo_estado;
+    }
+
+    public void setCombo_estado(JComboBox<String> combo_estado) {
+        this.combo_estado = combo_estado;
+    }
+
+    public JComboBox<String> getCombo_rol() {
+        return combo_rol;
+    }
+
+    public void setCombo_rol(JComboBox<String> combo_rol) {
+        this.combo_rol = combo_rol;
+    }
+
+    public JCalendar getFecha_nacimiento() {
+        return fecha_nacimiento;
+    }
+
+    public void setFecha_nacimiento(JCalendar fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getTablaUsuario() {
+        return tablaUsuario;
+    }
+
+    public void setTablaUsuario(JTable tablaUsuario) {
+        this.tablaUsuario = tablaUsuario;
+    }
+
+    public JTextField getTxtcedula1() {
+        return txtcedula1;
+    }
+
+    public void setTxtcedula1(JTextField txtcedula1) {
+        this.txtcedula1 = txtcedula1;
+    }
+
+    public JTextField getTxtclave_u() {
+        return txtclave_u;
+    }
+
+    public void setTxtclave_u(JTextField txtclave_u) {
+        this.txtclave_u = txtclave_u;
+    }
+
+    public JTextField getTxtnombre1() {
+        return txtnombre1;
+    }
+
+    public void setTxtnombre1(JTextField txtnombre1) {
+        this.txtnombre1 = txtnombre1;
+    }
+
+    public JTextField getTxtnombre_u() {
+        return txtnombre_u;
+    }
+
+    public void setTxtnombre_u(JTextField txtnombre_u) {
+        this.txtnombre_u = txtnombre_u;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -152,15 +217,15 @@ public class Usuario extends javax.swing.JInternalFrame {
         txtnombre_u = new javax.swing.JTextField();
         txtclave_u = new javax.swing.JTextField();
         combo_rol = new javax.swing.JComboBox<>();
-        fecha_nacimiento = new com.toedter.calendar.JCalendar();
+        btn_nuevo = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        btn_modificar = new javax.swing.JButton();
-        btn_guardar = new javax.swing.JButton();
-        btn_eliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaUsuario = new javax.swing.JTable();
-        btn_nuevo = new javax.swing.JButton();
         combo_estado = new javax.swing.JComboBox<>();
+        btnmodificar = new javax.swing.JButton();
+        btn_modificar = new javax.swing.JButton();
+        btneliminar = new javax.swing.JButton();
+        fecha_nacimiento = new com.toedter.calendar.JCalendar();
 
         setClosable(true);
         setIconifiable(true);
@@ -179,153 +244,64 @@ public class Usuario extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         jLabel4.setText("Rol:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, -1, -1));
 
         jLabel5.setText("Nombre Usuario:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
 
         jLabel6.setText("Clave:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, -1, -1));
         getContentPane().add(txtcedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 130, -1));
         getContentPane().add(txtnombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 130, -1));
-        getContentPane().add(txtnombre_u, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 120, -1));
-        getContentPane().add(txtclave_u, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 120, -1));
+        getContentPane().add(txtnombre_u, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 120, -1));
+        getContentPane().add(txtclave_u, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 120, -1));
 
         combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "Cliente", "Farmaceutico", "Proveedor" }));
-        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 130, -1));
-        getContentPane().add(fecha_nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, 30));
+        getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 120, -1));
+
+        btn_nuevo.setText("NUEVO");
+        getContentPane().add(btn_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, -1, -1));
 
         jLabel7.setText("Estado:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
-
-        btn_modificar.setText("MODIFICAR");
-        btn_modificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_modificarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
-
-        btn_guardar.setText("GUARDAR");
-        btn_guardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_guardarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
-
-        btn_eliminar.setText("ELIMINAR");
-        btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_eliminarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, -1, -1));
 
         tablaUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(tablaUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 600, 230));
-
-        btn_nuevo.setText("NUEVO");
-        btn_nuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_nuevoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 600, 230));
 
         combo_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
-        getContentPane().add(combo_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 80, -1));
+        getContentPane().add(combo_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 100, -1));
+
+        btnmodificar.setText("MODIFICAR");
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
+
+        btn_modificar.setText("MODIFICAR");
+        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, -1));
+
+        btneliminar.setText("ELIMINAR");
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
+        getContentPane().add(fecha_nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 380, 230));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
-         int a = JOptionPane.showConfirmDialog(null, "ESTA SEGURO QUE DESEA MODIFICAR", "CCONFIRMACION DE MODIFACION", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (a == 0) {
-            String fechan = formato.format(fecha_nacimiento.getDate());           
-            int select = 0;
-            listausuario.get(select).setNombres(txtnombre1.getText());       
-            listausuario.get(select).setNombreU(txtnombre_u.getText());
-            listausuario.get(select).setClave(txtclave_u.getText());
-            listausuario.get(select).setFechaNacimiento(fechan);
-            limpiarTabla();
-            actualizarTabla();
-            nuevo();
-        } else {
-
-        }
-    }//GEN-LAST:event_btn_modificarActionPerformed
-
-    private void btn_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoActionPerformed
-        activarCampos();
-    }//GEN-LAST:event_btn_nuevoActionPerformed
-
-    private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
-//        String fechan = formato.format(fechanacimiento.getDate());
-//        //String rol =(String) comboRol.getSelectedItem();
-//        if (txt_cedula.getText().equals("")) {
-//            JOptionPane.showMessageDialog(null, "INGRESE LA CEDULA");
-//        } else if (txt_cedula.getText().length() <= 9) {
-//            JOptionPane.showMessageDialog(null, "CEDULA INCORRECTA");
-//        } else if (txt_nombres.getText().equals("")) {
-//            JOptionPane.showMessageDialog(null, "INGRESE EL NOMBRE");
-//        } else if (fechanacimiento.getDate() == null) {
-//            JOptionPane.showMessageDialog(null, "INGRESE LA FECHA DE NACIMIENTO");
-//        } else if (Radio().equals("0")) {
-//            JOptionPane.showMessageDialog(null, "SELECCIONE EL ESTADO");
-//        } else if (comboRol.getSelectedItem().toString().equals("Seleccione")) {
-//            JOptionPane.showMessageDialog(null, "SELECCIONE EL ROL");
-//        } else if (txt_nombreUsuario.getText().equals("")) {
-//            JOptionPane.showMessageDialog(null, "INGRESE EL NOMBRE DE USUARIO");
-//        } else if (txt_clave.getText().equals("")) {
-//            JOptionPane.showMessageDialog(null, "INGRESE LA CLAVE");
-//        } else {
-//            boolean a = false;
-//            for (int i = 0; i < listausuario.size(); i++) {
-//                if (listausuario.get(i).getCedula().equals(txt_cedula.getText())) {
-//                    JOptionPane.showMessageDialog(null, "ESTA CEDULA YA EXISTE");
-//                    txt_cedula.setText("");
-//                    a = true;
-//                    break;
-//                }
-//            }
-//            if (a == false) {
-//                int rol = (int) comboRol.getSelectedIndex();
-//                Usuario usu = new Usuario(txt_cedula.getText(), txt_nombres.getText(), fechan, rol, txt_nombreUsuario.getText(), txt_clave.getText(), Radio());
-//                listausuario.add(usu);
-//                limpiarTabla();
-//                actualizarTabla();
-//                nuevo();
-//            }
-//        }
-    }//GEN-LAST:event_btn_guardarActionPerformed
-
-    private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
-//         int select = tablaUsuario.getSelectedRow();
-//        listausuario.get(select).setEstado("INACTIVO");
-//        limpiarTabla();
-//        actualizarTabla();
-//        nuevo();
-    }//GEN-LAST:event_btn_eliminarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_eliminar;
-    private javax.swing.JButton btn_guardar;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_nuevo;
+    private javax.swing.JButton btneliminar;
+    private javax.swing.JButton btnmodificar;
     private javax.swing.JComboBox<String> combo_estado;
     private javax.swing.JComboBox<String> combo_rol;
     private com.toedter.calendar.JCalendar fecha_nacimiento;

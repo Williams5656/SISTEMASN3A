@@ -13,7 +13,7 @@ public class UsuarioMD {
     private String cedula;
     private String nombres;
     private String fechaNacimiento;
-    private int rol;
+    private String rol;
     private String nombreU;
     private String clave;
     private String estado;
@@ -21,7 +21,7 @@ public class UsuarioMD {
     public UsuarioMD() {
     }
 
-    public UsuarioMD(String cedula, String nombres, String fechaNacimiento, int rol, String nombreU, String clave, String estado) {
+    public UsuarioMD(String cedula, String nombres, String fechaNacimiento, String rol, String nombreU, String clave, String estado) {
         this.cedula = cedula;
         this.nombres = nombres;
         this.fechaNacimiento = fechaNacimiento;
@@ -55,11 +55,11 @@ public class UsuarioMD {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getRol() {
+    public String getRol() {
         return rol;
     }
 
-    public void setRol(int rol) {
+    public void setRol(String rol) {
         this.rol = rol;
     }
 
@@ -86,6 +86,7 @@ public class UsuarioMD {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
     
     
 }

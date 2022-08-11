@@ -5,7 +5,7 @@
  */
 package Farmacia.vista;
 
-import static Farmacia.vista.Usuario.listausuario;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -71,31 +71,31 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
           int a = 0, b=0;
-        
-        for (int i = 0; i < listausuario.size(); i++) {
-            a=0;
-            if (listausuario.get(i).getNombreU().equals(txtusuario.getText()) && listausuario.get(i).getClave().equals(txtclave.getText())) {
-                if (listausuario.get(i).getEstado().equals("ACTIVO")) {
-                    Menu menu = new Menu();
-                    menu.setVisible(true);
-                    this.setVisible(false);
-                } else {
-                    b=1;
-                    break;
-                }
-            } else {
-                a = 1;
-            }
-        }
-        if (b==1) {
-            JOptionPane.showMessageDialog(null, "ESTE USUARIO ESTA INACTIVO");
-            txtusuario.setText("");
-            txtclave.setText("");
-        }else if (a==1) {
-            JOptionPane.showMessageDialog(null, "ESTE USUARIO NO EXISTE");
-            txtusuario.setText("");
-            txtclave.setText("");
-        }
+//        
+//        for (int i = 0; i < listausuario.size(); i++) {
+//            a=0;
+//            if (listausuario.get(i).getNombreU().equals(txtusuario.getText()) && listausuario.get(i).getClave().equals(txtclave.getText())) {
+//                if (listausuario.get(i).getEstado().equals("ACTIVO")) {
+//                    Menu menu = new Menu();
+//                    menu.setVisible(true);
+//                    this.setVisible(false);
+//                } else {
+//                    b=1;
+//                    break;
+//                }
+//            } else {
+//                a = 1;
+//            }
+//        }
+//        if (b==1) {
+//            JOptionPane.showMessageDialog(null, "ESTE USUARIO ESTA INACTIVO");
+//            txtusuario.setText("");
+//            txtclave.setText("");
+//        }else if (a==1) {
+//            JOptionPane.showMessageDialog(null, "ESTE USUARIO NO EXISTE");
+//            txtusuario.setText("");
+//            txtclave.setText("");
+//        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

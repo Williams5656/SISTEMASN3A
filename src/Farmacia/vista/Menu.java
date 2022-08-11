@@ -34,8 +34,6 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -86,18 +84,15 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Administrador");
-
-        jCheckBoxMenuItem2.setSelected(true);
-        jCheckBoxMenuItem2.setText("Administrador");
-        jMenu2.add(jCheckBoxMenuItem2);
-
-        jMenuBar1.add(jMenu2);
-
         jMenu3.setText("Cliente");
 
         jCheckBoxMenuItem3.setSelected(true);
         jCheckBoxMenuItem3.setText("Cliente");
+        jCheckBoxMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jCheckBoxMenuItem3);
 
         jMenuBar1.add(jMenu3);
@@ -164,11 +159,18 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
-        // TODO add your handling code here:
+       Usuario es = new Usuario();
+       jDesktopPane1.add(es);
+       Dimension desktopSize = jDesktopPane1.getSize();
+       Dimension FrameSize = es.getSize();
+       es.setLocation((desktopSize.width - FrameSize.width)/2,
+               (desktopSize.height- FrameSize.height)/2);
+       es.show();
+       es.setVisible(true);
     }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
 
     private void jCheckBoxMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem8ActionPerformed
-         Proveedor es = new Proveedor();
+       Proveedor es = new Proveedor();
        jDesktopPane1.add(es);
        Dimension desktopSize = jDesktopPane1.getSize();
        Dimension FrameSize = es.getSize();
@@ -177,6 +179,17 @@ public class Menu extends javax.swing.JFrame {
        es.show();
        es.setVisible(true);
     }//GEN-LAST:event_jCheckBoxMenuItem8ActionPerformed
+
+    private void jCheckBoxMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem3ActionPerformed
+       Cliente es = new Cliente();
+       jDesktopPane1.add(es);
+       Dimension desktopSize = jDesktopPane1.getSize();
+       Dimension FrameSize = es.getSize();
+       es.setLocation((desktopSize.width - FrameSize.width)/2,
+               (desktopSize.height- FrameSize.height)/2);
+       es.show();
+       es.setVisible(true);
+    }//GEN-LAST:event_jCheckBoxMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,7 +228,6 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem4;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem5;
@@ -224,7 +236,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem8;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
