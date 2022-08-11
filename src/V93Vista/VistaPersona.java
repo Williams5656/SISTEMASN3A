@@ -185,19 +185,15 @@ public class VistaPersona extends javax.swing.JFrame {
         jScrollPane1.setViewportView(TablePersona);
 
         btnGuardarPersona.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnGuardarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/V93/imagen/GuardarTodo.png"))); // NOI18N
         btnGuardarPersona.setText("GUARDAR");
 
         btnModificarPersona.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnModificarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/V93/imagen/Actualizar (2).png"))); // NOI18N
         btnModificarPersona.setText("MODIFICAR");
 
         btnEliminarPersona.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnEliminarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/V93/imagen/eliminar.png"))); // NOI18N
         btnEliminarPersona.setText("ELIMINAR");
 
         btnNuevoPersona.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnNuevoPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/V93/imagen/nuevo.png"))); // NOI18N
         btnNuevoPersona.setText("NUEVO");
 
         JLabelFotoPersona.setText("FOTO");
@@ -230,19 +226,20 @@ public class VistaPersona extends javax.swing.JFrame {
                 .addComponent(JLabelFotoPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(layout.createSequentialGroup()
-                .addGap(306, 306, 306)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(btnGuardarPersona)
-                .addGap(43, 43, 43)
-                .addComponent(btnModificarPersona)
-                .addGap(43, 43, 43)
-                .addComponent(btnEliminarPersona)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(btnNuevoPersona)
-                .addGap(34, 34, 34))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(306, 306, 306)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(btnGuardarPersona)
+                        .addGap(60, 60, 60)
+                        .addComponent(btnModificarPersona)
+                        .addGap(54, 54, 54)
+                        .addComponent(btnEliminarPersona)
+                        .addGap(67, 67, 67)
+                        .addComponent(btnNuevoPersona)))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,7 +278,7 @@ public class VistaPersona extends javax.swing.JFrame {
                     .addComponent(txtCelularPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarPersona)
                     .addComponent(btnModificarPersona)

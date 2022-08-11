@@ -24,6 +24,14 @@ public class VistaUsuario extends javax.swing.JFrame {
         
     }
 
+    public JTextField getTxtCorreoUsuario() {
+        return txtCorreoUsuario;
+    }
+
+    public void setTxtCorreoUsuario(JTextField txtCorreoUsuario) {
+        this.txtCorreoUsuario = txtCorreoUsuario;
+    }
+
     public JTable getTableUsuario() {
         return TableUsuario;
     }
@@ -130,6 +138,8 @@ public class VistaUsuario extends javax.swing.JFrame {
         btnModificarUsuario = new javax.swing.JButton();
         btnEliminarUsuario = new javax.swing.JButton();
         btnNuevoUsuario = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        txtCorreoUsuario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -156,7 +166,7 @@ public class VistaUsuario extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CEDULA", "NOMBRE", "PASSWORD", "ROL", "ESTADO"
+                "CEDULA", "NOMBRE", "PASSWORD", "ROL", "ESTADO", "CORREO"
             }
         ));
         jScrollPane1.setViewportView(TableUsuario);
@@ -164,47 +174,30 @@ public class VistaUsuario extends javax.swing.JFrame {
         jComboBoxRolUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVO", "INACTIVO" }));
 
         btnGuardarUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnGuardarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/V93/imagen/GuardarTodo.png"))); // NOI18N
         btnGuardarUsuario.setText("GUARDAR");
 
         btnModificarUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnModificarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/V93/imagen/Actualizar (2).png"))); // NOI18N
         btnModificarUsuario.setText("MODIFICAR");
 
         btnEliminarUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnEliminarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/V93/imagen/eliminar.png"))); // NOI18N
         btnEliminarUsuario.setText("ELIMINAR");
 
         btnNuevoUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnNuevoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/V93/imagen/nuevo.png"))); // NOI18N
         btnNuevoUsuario.setText("NUEVO");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setText("CORREO:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(btnGuardarUsuario)
-                        .addGap(28, 28, 28)
-                        .addComponent(btnModificarUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                        .addComponent(btnEliminarUsuario)
-                        .addGap(41, 41, 41)
-                        .addComponent(btnNuevoUsuario)))
-                .addGap(46, 46, 46))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jComboBoxEstadoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxRolUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPasswordUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(52, 52, 52)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,15 +205,35 @@ public class VistaUsuario extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel4)
                                 .addComponent(jLabel5)
-                                .addComponent(jLabel6)))
+                                .addComponent(jLabel6)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtCorreoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(221, 221, 221)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtCedulaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(jLabel1)
-                                    .addGap(123, 123, 123))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGap(123, 123, 123)))))
+                    .addComponent(jComboBoxEstadoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(189, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnGuardarUsuario)
+                        .addGap(60, 60, 60)
+                        .addComponent(btnModificarUsuario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEliminarUsuario)
+                        .addGap(75, 75, 75)
+                        .addComponent(btnNuevoUsuario)
+                        .addGap(46, 46, 46))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,8 +262,12 @@ public class VistaUsuario extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jComboBoxEstadoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtCorreoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarUsuario)
                     .addComponent(btnModificarUsuario)
@@ -311,8 +328,10 @@ public class VistaUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtCedulaUsuario;
+    private javax.swing.JTextField txtCorreoUsuario;
     private javax.swing.JTextField txtNombreUsuario;
     private javax.swing.JTextField txtPasswordUsuario;
     // End of variables declaration//GEN-END:variables
