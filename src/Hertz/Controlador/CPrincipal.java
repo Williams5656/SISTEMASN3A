@@ -3,7 +3,7 @@ package Hertz.Controlador;
 
 import java.awt.Dimension;
 import java.awt.Frame;
-import Vista.*;
+import Hertz.Vista.*;
 
 public class CPrincipal {
     

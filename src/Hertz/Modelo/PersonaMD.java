@@ -72,6 +72,4 @@ public class PersonaMD {
         this.fechaNac = fechaNac;
     }
     
-    
-    
 }

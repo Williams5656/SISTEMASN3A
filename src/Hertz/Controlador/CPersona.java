@@ -9,7 +9,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Hertz.Vista.*;
-import Hertz.modelo.*;
+import Hertz.Modelo.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

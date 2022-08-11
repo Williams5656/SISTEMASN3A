@@ -4,15 +4,15 @@
  */
 package Hertz.Controlador;
 
-import Modelo.UsuarioBD;
-import Vista.VUsuario;
+import Hertz.Modelo.UsuarioBD;
+import Hertz.Vista.VUsuario;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import Vista.*;
-import Modelo.*;
+import Hertz.Vista.*;
+import Hertz.Modelo.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
