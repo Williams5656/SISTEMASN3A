@@ -1,4 +1,4 @@
-package ABG_System.controlador;
+package controlador;
 
 import ABG_System.vista.V_Principal;
 import java.awt.Frame;

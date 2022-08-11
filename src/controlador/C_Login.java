@@ -1,4 +1,4 @@
-package ABG_System.controlador;
+package controlador;
 
 import ABG_System.modelo.UsuarioBD;
 import ABG_System.modelo.PersonaBD;
