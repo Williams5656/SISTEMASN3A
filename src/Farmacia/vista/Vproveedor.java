@@ -9,12 +9,12 @@ package Farmacia.vista;
  *
  * @author A
  */
-public class Proveedor extends javax.swing.JInternalFrame {
+public class Vproveedor extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Proveedor
      */
-    public Proveedor() {
+    public Vproveedor() {
         initComponents();
     }
 

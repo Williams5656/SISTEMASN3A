@@ -13,20 +13,21 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-
+import Farmacia.*;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 /**
  *
  * @author A
  */
-public class Usuario extends javax.swing.JInternalFrame {
+public class Vusuario extends javax.swing.JInternalFrame {
  SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
     /**
      * Creates new form Vusuario
      */
-    public Usuario() {
-        initComponents();
-        
-        
+    public Vusuario() {
+        initComponents();      
     }
 
     public SimpleDateFormat getFormato() {
@@ -149,6 +150,14 @@ public class Usuario extends javax.swing.JInternalFrame {
         this.jLabel7 = jLabel7;
     }
 
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
@@ -197,6 +206,10 @@ public class Usuario extends javax.swing.JInternalFrame {
         this.txtnombre_u = txtnombre_u;
     }
 
+//    public Image getIconImage() {
+//        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Farmacia.inicio.imagenes/7457f4f8d72fde5.jpg"));
+//        return retValue;
+//    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -226,6 +239,7 @@ public class Usuario extends javax.swing.JInternalFrame {
         btn_modificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
         fecha_nacimiento = new com.toedter.calendar.JCalendar();
+        jLabel8 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -234,25 +248,37 @@ public class Usuario extends javax.swing.JInternalFrame {
         setTitle("--Usuario--");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Cedula:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 24, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Fecha_nacimiento:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Rol:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Nombre Usuario:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Clave:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, -1, -1));
-        getContentPane().add(txtcedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 130, -1));
-        getContentPane().add(txtnombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 130, -1));
+        getContentPane().add(txtcedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 130, -1));
+        getContentPane().add(txtnombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 130, -1));
         getContentPane().add(txtnombre_u, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 120, -1));
         getContentPane().add(txtclave_u, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 120, -1));
 
@@ -260,8 +286,10 @@ public class Usuario extends javax.swing.JInternalFrame {
         getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 120, -1));
 
         btn_nuevo.setText("NUEVO");
-        getContentPane().add(btn_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, -1, -1));
+        getContentPane().add(btn_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 380, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Estado:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, -1, -1));
 
@@ -284,14 +312,17 @@ public class Usuario extends javax.swing.JInternalFrame {
         getContentPane().add(combo_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 100, -1));
 
         btnmodificar.setText("MODIFICAR");
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
 
         btn_modificar.setText("MODIFICAR");
-        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, -1));
+        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, -1, -1));
 
         btneliminar.setText("ELIMINAR");
-        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, -1, -1));
         getContentPane().add(fecha_nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 380, 230));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia/inicio/imagenes/7457f4f8d72fde5.jpg"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -312,6 +343,7 @@ public class Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaUsuario;
     private javax.swing.JTextField txtcedula1;
