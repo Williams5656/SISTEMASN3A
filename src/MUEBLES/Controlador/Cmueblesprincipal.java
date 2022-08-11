@@ -13,8 +13,7 @@ public class Cmueblesprincipal {
         
         vistaprin.setVisible(true);
         vistaprin.setLocationRelativeTo(null);
-        //vistap.setExtendedState(MAXIMIZED_BOTH);
-        
+        vistaprin.setExtendedState(MAXIMIZED_BOTH);       
         vistaprin.getItmPersona().addActionListener(e -> persona());
     }
     

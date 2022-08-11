@@ -98,7 +98,16 @@ public class Vista_muebles_principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Desk_escritorio_muebles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        javax.swing.GroupLayout Desk_escritorio_mueblesLayout = new javax.swing.GroupLayout(Desk_escritorio_muebles);
+        Desk_escritorio_muebles.setLayout(Desk_escritorio_mueblesLayout);
+        Desk_escritorio_mueblesLayout.setHorizontalGroup(
+            Desk_escritorio_mueblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 518, Short.MAX_VALUE)
+        );
+        Desk_escritorio_mueblesLayout.setVerticalGroup(
+            Desk_escritorio_mueblesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 320, Short.MAX_VALUE)
+        );
 
         jMenu1.setText("ROLES");
 
