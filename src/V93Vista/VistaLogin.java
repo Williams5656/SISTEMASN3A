@@ -5,6 +5,10 @@
  */
 package V93Vista;
 
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Usuario
@@ -17,6 +21,32 @@ public class VistaLogin extends javax.swing.JFrame {
     public VistaLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        
+    }
+
+    public JPasswordField getPasswordLogin() {
+        return PasswordLogin;
+    }
+
+    public void setPasswordLogin(JPasswordField PasswordLogin) {
+        this.PasswordLogin = PasswordLogin;
+    }
+
+    public JButton getBtnIniciarLogin() {
+        return btnIniciarLogin;
+    }
+
+    public void setBtnIniciarLogin(JButton btnIniciarLogin) {
+        this.btnIniciarLogin = btnIniciarLogin;
+    }
+
+    public JTextField getTxtCedulaLogin() {
+        return txtCedulaLogin;
+    }
+
+    public void setTxtCedulaLogin(JTextField txtCedulaLogin) {
+        this.txtCedulaLogin = txtCedulaLogin;
     }
 
     /**
@@ -32,7 +62,7 @@ public class VistaLogin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtCorreoLogin = new javax.swing.JTextField();
+        txtCedulaLogin = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         PasswordLogin = new javax.swing.JPasswordField();
         btnIniciarLogin = new javax.swing.JButton();
@@ -47,7 +77,7 @@ public class VistaLogin extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/V93/imagen/iniciar.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("CORREO ELECTRONICO");
+        jLabel3.setText("CEDULA");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("PASSWORD");
@@ -70,7 +100,7 @@ public class VistaLogin extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel4)
-                            .addComponent(txtCorreoLogin)
+                            .addComponent(txtCedulaLogin)
                             .addComponent(PasswordLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(122, 122, 122)
@@ -89,7 +119,7 @@ public class VistaLogin extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(txtCorreoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCedulaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addGap(28, 28, 28)
@@ -164,6 +194,6 @@ public class VistaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtCorreoLogin;
+    private javax.swing.JTextField txtCedulaLogin;
     // End of variables declaration//GEN-END:variables
 }
