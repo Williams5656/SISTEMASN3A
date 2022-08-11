@@ -81,4 +81,8 @@ public class Conectar {
     public void setCon(Connection con) {
         this.con = con;
     }
+
+    Connection getConnection() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
