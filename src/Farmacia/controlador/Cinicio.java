@@ -19,14 +19,14 @@ import java.util.logging.Logger;
  * @author A
  */
 public class Cinicio {
-     private static Vinicio vista;
+     private static Vinicio vista1;
 
-    public Cinicio(Vinicio vista) {
-        this.vista = vista;
-        vista.setVisible(true);
-        vista.setLocationRelativeTo(null);
-        vista.setResizable(false);
-        vista.getBtningresar().addActionListener(e -> ingresar());
+    public Cinicio(Vinicio vista1) {
+        this.vista1 = vista1;
+        vista1.setVisible(true);
+        vista1.setLocationRelativeTo(null);
+        vista1.setResizable(false);
+        vista1.getBtningresar().addActionListener(e -> ingresar());
     }
     
 //    private void salir() {

@@ -7,6 +7,7 @@ package Farmacia.inicio;
 
 import Farmacia.controlador.Cinicio;
 import Farmacia.vista.Vinicio;
+import Farmacia.modelo.*;
 
 /**
  *
@@ -14,7 +15,7 @@ import Farmacia.vista.Vinicio;
  */
 public class main {
     public static void main(String[] args) {
-        Vinicio vista =new Vinicio();
-        Cinicio main = new Cinicio(vista);
+        Vinicio vista1 =new Vinicio();
+        Cinicio main = new Cinicio(vista1);
     }
 }
