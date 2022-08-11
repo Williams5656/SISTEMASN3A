@@ -1,4 +1,4 @@
-package ABG_System.modelo;
+package modelo;
 
 public class PersonaBD {
 

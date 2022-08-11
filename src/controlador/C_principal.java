@@ -1,6 +1,6 @@
 package controlador;
 
-import ABG_System.vista.V_Principal;
+import vista.V_Principal;
 import java.awt.Frame;
 
 public class C_principal {

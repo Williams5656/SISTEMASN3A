@@ -1,4 +1,4 @@
-package ABG_System.modelo;
+package modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

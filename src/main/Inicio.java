@@ -1,8 +1,8 @@
 
-package ABG_System.main;
+package main;
 
 import controlador.C_Login;
-import ABG_System.vista.V_Login;
+import vista.V_Login;
 
 public class Inicio {
 

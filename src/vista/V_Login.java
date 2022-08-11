@@ -1,4 +1,4 @@
-package ABG_System.vista;
+package vista;
 
 import java.awt.*;
 import javax.swing.*;

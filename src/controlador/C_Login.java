@@ -1,9 +1,9 @@
 package controlador;
 
-import ABG_System.modelo.UsuarioBD;
-import ABG_System.modelo.PersonaBD;
-import ABG_System.vista.V_Login;
-import ABG_System.vista.V_Principal;
+import modelo.UsuarioBD;
+import modelo.PersonaBD;
+import vista.V_Login;
+import vista.V_Principal;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.SQLException;
