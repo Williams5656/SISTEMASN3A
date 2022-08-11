@@ -1,14 +1,21 @@
 package ABG_System.controlador;
 
+import ABG_System.modelo.UsuarioBD;
+import ABG_System.modelo.PersonaBD;
 import ABG_System.vista.V_Login;
+import ABG_System.vista.V_Principal;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class C_Login {
 
     public static V_Login vista;
+    UsuarioBD lg = new UsuarioBD();
+    PersonaBD us = new PersonaBD();
     int xMouse, yMouse;
     int bloqueo = 3;
     boolean mostrar;
@@ -49,6 +56,7 @@ public class C_Login {
             }
         });
         vista.getLabelOcultar().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelOcultarMouseClicked(evt);
             }
@@ -63,6 +71,16 @@ public class C_Login {
             @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 BarraMoviMousePressed(evt);
+            }
+        });
+        vista.getBtnIngresar().addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    BtnIngresarActionPerformed(evt);
+                } catch (SQLException ex) {
+                    Logger.getLogger(C_Login.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
 
@@ -127,23 +145,28 @@ public class C_Login {
         int y = evt.getYOnScreen();
         vista.setLocation(x - xMouse, y - yMouse);
     }
+
+    private void BtnIngresarActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {
+        validar();
+    }
+
     public void validar() throws SQLException {
         String usuario = vista.getTxtUsuario().getText();
-        String clave = vista.getjPass().getText();
-        if (vista.getTxtUsuario().getText().equals("") || String.valueOf(vista.getjPass().getPassword()).equals("")) {
+        String clave = vista.getJpassUser().getText();
+        if (vista.getTxtUsuario().getText().equals("") || String.valueOf(vista.getJpassUser().getPassword()).equals("")) {
             JOptionPane.showMessageDialog(null, "LLene todos los campos", null, JOptionPane.ERROR_MESSAGE);
         } else {
             us = lg.validar(usuario, clave);
             if (us.getUsuario() != null && us.getClave() != null) {
-                Vista_Bodega vistab = new Vista_Bodega();
-                C_Bodega Inicio = new C_Bodega(vistab);
+                V_Principal vistab = new V_Principal();
+                C_principal Inicio = new C_principal(vistab);
                 vista.setVisible(false);
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos", null, JOptionPane.ERROR_MESSAGE);
                 JOptionPane.showMessageDialog(null, "Intentos Permitidos: " + bloqueo, null, JOptionPane.WARNING_MESSAGE);
                 vista.getTxtUsuario().requestFocus();
                 vista.getTxtUsuario().setText("");
-                vista.getjPass().setText("");
+                vista.getJpassUser().setText("");
                 bloqueo = bloqueo - 1;
             }
         }

@@ -13,9 +13,9 @@ public class Conectar {
     Connection con;
     Statement st;
     ResultSet rs;
-    String cadConexion = "jdbc:postgresql://ec2-44-206-197-71.compute-1.amazonaws.com:5432/dbd9hual32u4o0";
-    String pgUser = "fsygculwvndeqe";
-    String pgContra = "09c645210e86376b5043e05aa7d8288084eefa7cce4e745f0c4c7e7ccc4ac6c1";
+    String cadConexion = "jdbc:postgresql://ec2-34-235-198-25.compute-1.amazonaws.com:5432/dc54uui101smm";
+    String pgUser = "nuliedwzhsxqbv";
+    String pgContra = "9490d836e5c6e5e42616b256fdd5f216a1aede3bbefc2086182bcce1f6aef08f";
 
     public Conectar() {
 
