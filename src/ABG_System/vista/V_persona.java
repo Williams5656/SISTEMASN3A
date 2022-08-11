@@ -239,7 +239,7 @@ public class V_persona extends javax.swing.JInternalFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/grupo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ABG_System/controlador/grupo.png"))); // NOI18N
         jLabel1.setText("PERSONA");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 200, 70));
 
@@ -277,19 +277,19 @@ public class V_persona extends javax.swing.JInternalFrame {
         cbrol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(cbrol, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 580, 220, 50));
 
-        btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/nuevapersona.png"))); // NOI18N
+        btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ABG_System/controlador/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
         getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 640, 150, 60));
 
-        btnguardarp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/guardar-archivo.png"))); // NOI18N
+        btnguardarp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ABG_System/controlador/guardar-archivo.png"))); // NOI18N
         btnguardarp.setText("GUARDAR");
         getContentPane().add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 640, 180, 60));
 
-        btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/lapiz.png"))); // NOI18N
+        btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ABG_System/controlador/lapiz.png"))); // NOI18N
         btnmodificar.setText("MODIFICAR");
         getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 640, 200, 60));
 
-        btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/eliminarusuario.png"))); // NOI18N
+        btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ABG_System/controlador/eliminarusuario.png"))); // NOI18N
         btneliminar.setText("ELIMINAR");
         getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 640, 200, 60));
 
@@ -316,7 +316,7 @@ public class V_persona extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 750, 870, 190));
 
-        labelFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/usuario.png"))); // NOI18N
+        labelFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ABG_System/controlador/usuario.png"))); // NOI18N
         getContentPane().add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 120, 130, 160));
 
         Btn_CargarFoto.setText("Cargar Foto");

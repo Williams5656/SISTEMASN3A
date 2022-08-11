@@ -40,7 +40,7 @@
           <Font name="Tahoma" size="24" style="3"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Vista/grupo.png"/>
+          <Image iconType="3" name="/ABG_System/controlador/grupo.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="PERSONA"/>
       </Properties>
@@ -202,7 +202,7 @@
     <Component class="javax.swing.JButton" name="btnnuevo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Vista/nuevapersona.png"/>
+          <Image iconType="3" name="/ABG_System/controlador/nuevapersona.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="NUEVO"/>
       </Properties>
@@ -215,7 +215,7 @@
     <Component class="javax.swing.JButton" name="btnguardarp">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Vista/guardar-archivo.png"/>
+          <Image iconType="3" name="/ABG_System/controlador/guardar-archivo.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="GUARDAR"/>
       </Properties>
@@ -228,7 +228,7 @@
     <Component class="javax.swing.JButton" name="btnmodificar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Vista/lapiz.png"/>
+          <Image iconType="3" name="/ABG_System/controlador/lapiz.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="MODIFICAR"/>
       </Properties>
@@ -241,7 +241,7 @@
     <Component class="javax.swing.JButton" name="btneliminar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Vista/eliminarusuario.png"/>
+          <Image iconType="3" name="/ABG_System/controlador/eliminarusuario.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="ELIMINAR"/>
       </Properties>
@@ -331,7 +331,7 @@
     <Component class="javax.swing.JLabel" name="labelFoto">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Vista/usuario.png"/>
+          <Image iconType="3" name="/ABG_System/controlador/usuario.png"/>
         </Property>
       </Properties>
       <Constraints>
