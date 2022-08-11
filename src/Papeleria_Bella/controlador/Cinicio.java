@@ -1,5 +1,6 @@
 
 package Papeleria_Bella.controlador;
+import MUEBLES.Vista.Minicio;
 import Papeleria_Bella.controlador.*;
 import Papeleria_Bella.vista.*;
 import Papeleria_Bella.modelo.*;
@@ -15,6 +16,10 @@ public class Cinicio {
         
         vista.getButtoningresar().addActionListener(e-> principal ());
 
+    }
+
+    public Cinicio(Minicio vis) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     private void principal() {
         Vprincipal p= new Vprincipal();
