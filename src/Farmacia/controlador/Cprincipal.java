@@ -28,9 +28,9 @@ public class Cprincipal {
 //        vista.getBtn_cliente().addActionListener(e -> cliente());
 //        vista.getBtn_factura().addActionListener(e -> factura());
 //        vista.getBtn_farmaceutico().addActionListener(e -> farmaceutico());
-        vista.getBtn_medicamento().addActionListener(e -> medicamento());
-//        vista.getBtn_pedido().addActionListener(e -> salir());
-        vista.getBtn_proveedor().addActionListener(e -> proveedor());
+//        vista.getBtn_medicamento().addActionListener(e -> medicamento());
+////        vista.getBtn_pedido().addActionListener(e -> salir());
+//        vista.getBtn_proveedor().addActionListener(e -> proveedor());
     }
 
 
@@ -44,24 +44,24 @@ public class Cprincipal {
 //        Cusuario us = new Cusuario(user);
     }
     
-      private void medicamento() {
-        Vmedicamento pro = new Vmedicamento();
-        vista.getjDesktopPane1().add(pro);
-        Dimension desktopSize = vista.getjDesktopPane1().getSize();
-        Dimension FrameSize = pro.getSize();
-        pro.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-//        Cproducto prod = new Cproducto(pro);
-    }
-
-
-    private void proveedor() {
-        Vproveedor pro = new Vproveedor();
-        vista.getjDesktopPane1().add(pro);
-        Dimension desktopSize = vista.getjDesktopPane1().getSize();
-        Dimension FrameSize = pro.getSize();
-        pro.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-//        Con_Producto prod = new Con_Producto(pro);
-    }
+//      private void medicamento() {
+//        Vmedicamento pro = new Vmedicamento();
+//        vista.getjDesktopPane1().add(pro);
+//        Dimension desktopSize = vista.getjDesktopPane1().getSize();
+//        Dimension FrameSize = pro.getSize();
+//        pro.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+////        Cproducto prod = new Cproducto(pro);
+//    }
+//
+//
+//    private void proveedor() {
+//        Vproveedor pro = new Vproveedor();
+//        vista.getjDesktopPane1().add(pro);
+//        Dimension desktopSize = vista.getjDesktopPane1().getSize();
+//        Dimension FrameSize = pro.getSize();
+//        pro.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+////        Con_Producto prod = new Con_Producto(pro);
+//    }
 
 }
 

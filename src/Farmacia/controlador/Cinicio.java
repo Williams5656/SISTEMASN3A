@@ -19,38 +19,55 @@ import java.util.logging.Logger;
  * @author A
  */
 public class Cinicio {
-     private final Vinicio vista;
+     private static Vinicio vista;
 
     public Cinicio(Vinicio vista) {
-//        vista.getLbldatos().setVisible(false);
         this.vista = vista;
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
-        vista.getLbldatos().setVisible(false);
-        vista.getBtningresar().addActionListener(e -> {
-            try {
-                ingresar();
-            } catch (SQLException ex) {
-                Logger.getLogger(Cinicio.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
+        vista.setResizable(false);
+        vista.getBtningresar().addActionListener(e -> ingresar());
     }
-
-    public void ingresar() throws SQLException {
-        UsuarioBD dbp = new UsuarioBD();
-        List<UsuarioMD> lista = dbp.mostrardatos();
-        for (int i = 0; i < lista.size(); i++) {
-            if (vista.getTxtusuario().getText().equals(lista.get(i).getNombreU()) && vista.getTxtclave().getText().equals(lista.get(i).getClave()) && lista.get(i).getEstado().equals("Activo")) {
-                Vmenu vistamenu = new Vmenu();
-                Cprincipal menu = new Cprincipal(vistamenu);
-                vista.setVisible(false);
-                vista.getLbldatos().setVisible(false);
-                vistamenu.setVisible(true);
-            } else {
-                vista.getLbldatos().setVisible(true);
-            }
-        }
-
+    
+//    private void salir() {
+//        System.exit(0);
+//    }
+    
+    private void ingresar(){
+        Vmenu vista = new Vmenu();
+        Cprincipal cp = new Cprincipal(vista);
     }
-
 }
+
+ 
+//        this.vista = vista;
+//        vista.setVisible(true);
+//        vista.setLocationRelativeTo(null);
+//        vista.getLbldatos().setVisible(false);
+//        vista.getBtningresar().addActionListener(e -> {
+//            try {
+//                ingresar();
+//            } catch (SQLException ex) {
+//                Logger.getLogger(Cinicio.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        });
+//    }
+//
+//    public void ingresar() throws SQLException {
+//        UsuarioBD dbp = new UsuarioBD();
+//        List<UsuarioMD> lista = dbp.mostrardatos();
+//        for (int i = 0; i < lista.size(); i++) {
+//            if (vista.getTxtusuario().getText().equals(lista.get(i).getNombreU()) && vista.getTxtclave().getText().equals(lista.get(i).getClave()) && lista.get(i).getEstado().equals("Activo")) {
+//                Vmenu vistamenu = new Vmenu();
+//                Cprincipal menu = new Cprincipal(vistamenu);
+//                vista.setVisible(false);
+//                vista.getLbldatos().setVisible(false);
+//                vistamenu.setVisible(true);
+//            } else {
+//                vista.getLbldatos().setVisible(true);
+//            }
+//        }
+//
+//    }
+//
+//}

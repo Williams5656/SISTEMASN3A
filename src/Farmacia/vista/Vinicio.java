@@ -15,6 +15,16 @@ import javax.swing.JTextField;
  */
 public class Vinicio extends javax.swing.JFrame {
 
+    public Vinicio(JButton btningresar, JLabel jLabel3, JLabel jLabel4, JLabel jLabel5, JLabel jLabel6, JLabel lbldatos, JTextField txtclave) {
+        this.btningresar = btningresar;
+        this.jLabel3 = jLabel3;
+        this.jLabel4 = jLabel4;
+        this.jLabel5 = jLabel5;
+        this.jLabel6 = jLabel6;
+        this.lbldatos = lbldatos;
+        this.txtclave = txtclave;
+    }
+
     /**
      * Creates new form Inicio2
      */
@@ -87,11 +97,6 @@ public class Vinicio extends javax.swing.JFrame {
     }
 
    
-
-   
-    
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -133,7 +138,7 @@ public class Vinicio extends javax.swing.JFrame {
                 btningresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
+        getContentPane().add(btningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
@@ -141,14 +146,15 @@ public class Vinicio extends javax.swing.JFrame {
         jLabel3.setText("--WELCOME--");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 220, -1));
 
+        lbldatos.setForeground(new java.awt.Color(255, 255, 255));
         lbldatos.setText("**Datos erroneos**");
         getContentPane().add(lbldatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia/inicio/imagenes/unnamed.jpg"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 270));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia_imagenes/unnamed.jpg"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-21, 0, 270, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

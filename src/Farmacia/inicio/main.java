@@ -12,9 +12,9 @@ import Farmacia.vista.Vinicio;
  *
  * @author VICO5
  */
-public class Farmacia {
+public class main {
     public static void main(String[] args) {
         Vinicio vista =new Vinicio();
-        Cinicio inicio = new Cinicio(vista);
+        Cinicio main = new Cinicio(vista);
     }
 }
