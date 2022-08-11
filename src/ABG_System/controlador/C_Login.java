@@ -3,6 +3,8 @@ package ABG_System.controlador;
 import ABG_System.vista.V_Login;
 import java.awt.Color;
 import java.awt.Font;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class C_Login {
 
@@ -51,6 +53,18 @@ public class C_Login {
                 labelOcultarMouseClicked(evt);
             }
         });
+        vista.getBarraMovi().addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                BarraMoviMouseDragged(evt);
+            }
+        });
+        vista.getBarraMovi().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BarraMoviMousePressed(evt);
+            }
+        });
 
     }
 
@@ -85,7 +99,8 @@ public class C_Login {
         }
 
     }
-    private void labelOcultarMouseClicked(java.awt.event.MouseEvent evt) {                                          
+
+    private void labelOcultarMouseClicked(java.awt.event.MouseEvent evt) {
         if (mostrar) {
             vista.getLabelMostrar().setVisible(true);
             vista.getTxtPassUser().setVisible(false);
@@ -100,6 +115,42 @@ public class C_Login {
             vista.getTxtPassUser().setText(vista.getJpassUser().getText());
             mostrar = true;
         }
-    }  
+    }
+
+    private void BarraMoviMousePressed(java.awt.event.MouseEvent evt) {
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }
+
+    private void BarraMoviMouseDragged(java.awt.event.MouseEvent evt) {
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        vista.setLocation(x - xMouse, y - yMouse);
+    }
+    public void validar() throws SQLException {
+        String usuario = vista.getTxtUsuario().getText();
+        String clave = vista.getjPass().getText();
+        if (vista.getTxtUsuario().getText().equals("") || String.valueOf(vista.getjPass().getPassword()).equals("")) {
+            JOptionPane.showMessageDialog(null, "LLene todos los campos", null, JOptionPane.ERROR_MESSAGE);
+        } else {
+            us = lg.validar(usuario, clave);
+            if (us.getUsuario() != null && us.getClave() != null) {
+                Vista_Bodega vistab = new Vista_Bodega();
+                C_Bodega Inicio = new C_Bodega(vistab);
+                vista.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos", null, JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Intentos Permitidos: " + bloqueo, null, JOptionPane.WARNING_MESSAGE);
+                vista.getTxtUsuario().requestFocus();
+                vista.getTxtUsuario().setText("");
+                vista.getjPass().setText("");
+                bloqueo = bloqueo - 1;
+            }
+        }
+        if (bloqueo == -1) {
+            JOptionPane.showMessageDialog(null, "Usted a agotado sus intentos", "Seguridad del Sistema", JOptionPane.OK_OPTION);
+            System.exit(0);
+        }
+    }
 
 }

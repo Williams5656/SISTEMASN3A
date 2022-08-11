@@ -163,6 +163,12 @@ public class V_Login extends javax.swing.JFrame {
         txtUsuario.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(153, 153, 153));
         Fondo.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 250, 60));
+
+        JpassUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JpassUserActionPerformed(evt);
+            }
+        });
         Fondo.add(JpassUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 260, 60));
 
         txtPassUser.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
@@ -211,6 +217,10 @@ public class V_Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JpassUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JpassUserActionPerformed
+       
+    }//GEN-LAST:event_JpassUserActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
