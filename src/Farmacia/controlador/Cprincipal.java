@@ -8,7 +8,7 @@ package Farmacia.controlador;
 import Farmacia.vista.Vmedicamento;
 import Farmacia.vista.Vmenu;
 import Farmacia.vista.Vproveedor;
-import Papeleria_Bella.vista.Vusuario;
+import Farmacia.vista.Vusuario;
 import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 
