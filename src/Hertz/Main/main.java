@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Hertz.Main;
 
-/**
- *
- * @author damia
- */
+import Hertz.Vista.*;
+import Hertz.Controlador.*;
+
 public class main {
+    public static void main(String[] args) {
+        
+        VPrincipal vista = new VPrincipal();
+        CPrincipal inicio = new CPrincipal(vista);
+    }
     
 }
