@@ -5,6 +5,7 @@
  */
 package Farmacia.inicio;
 
+import Farmacia.controlador.Cinicio;
 import Farmacia.vista.Vinicio;
 
 /**
@@ -14,6 +15,6 @@ import Farmacia.vista.Vinicio;
 public class Farmacia {
     public static void main(String[] args) {
         Vinicio vista =new Vinicio();
-//        Con_inicio inicio = new Con_inicio(vista);
+        Cinicio inicio = new Cinicio(vista);
     }
 }

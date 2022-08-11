@@ -6,6 +6,11 @@
 package Farmacia.vista;
 
 import java.awt.Dimension;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JDesktopPane;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
 
 /**
  *
@@ -20,6 +25,143 @@ public class Vmenu extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JCheckBoxMenuItem getBtn_cliente() {
+        return btn_cliente;
+    }
+
+    public void setBtn_cliente(JCheckBoxMenuItem btn_cliente) {
+        this.btn_cliente = btn_cliente;
+    }
+
+    public JCheckBoxMenuItem getBtn_factura() {
+        return btn_factura;
+    }
+
+    public void setBtn_factura(JCheckBoxMenuItem btn_factura) {
+        this.btn_factura = btn_factura;
+    }
+
+    public JCheckBoxMenuItem getBtn_farmaceutico() {
+        return btn_farmaceutico;
+    }
+
+    public void setBtn_farmaceutico(JCheckBoxMenuItem btn_farmaceutico) {
+        this.btn_farmaceutico = btn_farmaceutico;
+    }
+
+    public JCheckBoxMenuItem getBtn_medicamento() {
+        return btn_medicamento;
+    }
+
+    public void setBtn_medicamento(JCheckBoxMenuItem btn_medicamento) {
+        this.btn_medicamento = btn_medicamento;
+    }
+
+    public JCheckBoxMenuItem getBtn_pedido() {
+        return btn_pedido;
+    }
+
+    public void setBtn_pedido(JCheckBoxMenuItem btn_pedido) {
+        this.btn_pedido = btn_pedido;
+    }
+
+    public JCheckBoxMenuItem getBtn_proveedor() {
+        return btn_proveedor;
+    }
+
+    public void setBtn_proveedor(JCheckBoxMenuItem btn_proveedor) {
+        this.btn_proveedor = btn_proveedor;
+    }
+
+    public JCheckBoxMenuItem getBtn_usuario() {
+        return btn_usuario;
+    }
+
+    public void setBtn_usuario(JCheckBoxMenuItem btn_usuario) {
+        this.btn_usuario = btn_usuario;
+    }
+
+    public JDesktopPane getjDesktopPane1() {
+        return jDesktopPane1;
+    }
+
+    public void setjDesktopPane1(JDesktopPane jDesktopPane1) {
+        this.jDesktopPane1 = jDesktopPane1;
+    }
+
+    public JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public void setjMenu1(JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    public JMenu getjMenu3() {
+        return jMenu3;
+    }
+
+    public void setjMenu3(JMenu jMenu3) {
+        this.jMenu3 = jMenu3;
+    }
+
+    public JMenu getjMenu4() {
+        return jMenu4;
+    }
+
+    public void setjMenu4(JMenu jMenu4) {
+        this.jMenu4 = jMenu4;
+    }
+
+    public JMenu getjMenu5() {
+        return jMenu5;
+    }
+
+    public void setjMenu5(JMenu jMenu5) {
+        this.jMenu5 = jMenu5;
+    }
+
+    public JMenu getjMenu6() {
+        return jMenu6;
+    }
+
+    public void setjMenu6(JMenu jMenu6) {
+        this.jMenu6 = jMenu6;
+    }
+
+    public JMenu getjMenu7() {
+        return jMenu7;
+    }
+
+    public void setjMenu7(JMenu jMenu7) {
+        this.jMenu7 = jMenu7;
+    }
+
+    public JMenu getjMenu8() {
+        return jMenu8;
+    }
+
+    public void setjMenu8(JMenu jMenu8) {
+        this.jMenu8 = jMenu8;
+    }
+
+    public JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public void setjMenuBar1(JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,19 +175,19 @@ public class Vmenu extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        btn_usuario = new javax.swing.JCheckBoxMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
+        btn_cliente = new javax.swing.JCheckBoxMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jCheckBoxMenuItem4 = new javax.swing.JCheckBoxMenuItem();
+        btn_factura = new javax.swing.JCheckBoxMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jCheckBoxMenuItem5 = new javax.swing.JCheckBoxMenuItem();
+        btn_farmaceutico = new javax.swing.JCheckBoxMenuItem();
         jMenu6 = new javax.swing.JMenu();
-        jCheckBoxMenuItem6 = new javax.swing.JCheckBoxMenuItem();
+        btn_medicamento = new javax.swing.JCheckBoxMenuItem();
         jMenu7 = new javax.swing.JMenu();
-        jCheckBoxMenuItem7 = new javax.swing.JCheckBoxMenuItem();
+        btn_pedido = new javax.swing.JCheckBoxMenuItem();
         jMenu8 = new javax.swing.JMenu();
-        jCheckBoxMenuItem8 = new javax.swing.JCheckBoxMenuItem();
+        btn_proveedor = new javax.swing.JCheckBoxMenuItem();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -73,72 +215,77 @@ public class Vmenu extends javax.swing.JFrame {
 
         jMenu1.setText("Usuario");
 
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("Usuario");
-        jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        btn_usuario.setSelected(true);
+        btn_usuario.setText("Usuario");
+        btn_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxMenuItem1ActionPerformed(evt);
+                btn_usuarioActionPerformed(evt);
             }
         });
-        jMenu1.add(jCheckBoxMenuItem1);
+        jMenu1.add(btn_usuario);
 
         jMenuBar1.add(jMenu1);
 
         jMenu3.setText("Cliente");
 
-        jCheckBoxMenuItem3.setSelected(true);
-        jCheckBoxMenuItem3.setText("Cliente");
-        jCheckBoxMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        btn_cliente.setSelected(true);
+        btn_cliente.setText("Cliente");
+        btn_cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxMenuItem3ActionPerformed(evt);
+                btn_clienteActionPerformed(evt);
             }
         });
-        jMenu3.add(jCheckBoxMenuItem3);
+        jMenu3.add(btn_cliente);
 
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Factura");
 
-        jCheckBoxMenuItem4.setSelected(true);
-        jCheckBoxMenuItem4.setText("Factura");
-        jMenu4.add(jCheckBoxMenuItem4);
+        btn_factura.setSelected(true);
+        btn_factura.setText("Factura");
+        btn_factura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_facturaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(btn_factura);
 
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Farmaceutico");
 
-        jCheckBoxMenuItem5.setSelected(true);
-        jCheckBoxMenuItem5.setText("Farmaceutico");
-        jMenu5.add(jCheckBoxMenuItem5);
+        btn_farmaceutico.setSelected(true);
+        btn_farmaceutico.setText("Farmaceutico");
+        jMenu5.add(btn_farmaceutico);
 
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("Medicamento");
 
-        jCheckBoxMenuItem6.setSelected(true);
-        jCheckBoxMenuItem6.setText("Medicamento");
-        jMenu6.add(jCheckBoxMenuItem6);
+        btn_medicamento.setSelected(true);
+        btn_medicamento.setText("Medicamento");
+        jMenu6.add(btn_medicamento);
 
         jMenuBar1.add(jMenu6);
 
         jMenu7.setText("Pedido");
 
-        jCheckBoxMenuItem7.setSelected(true);
-        jCheckBoxMenuItem7.setText("Pedido");
-        jMenu7.add(jCheckBoxMenuItem7);
+        btn_pedido.setSelected(true);
+        btn_pedido.setText("Pedido");
+        jMenu7.add(btn_pedido);
 
         jMenuBar1.add(jMenu7);
 
         jMenu8.setText("Proveedor");
 
-        jCheckBoxMenuItem8.setSelected(true);
-        jCheckBoxMenuItem8.setText("Proveedor");
-        jCheckBoxMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+        btn_proveedor.setSelected(true);
+        btn_proveedor.setText("Proveedor");
+        btn_proveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxMenuItem8ActionPerformed(evt);
+                btn_proveedorActionPerformed(evt);
             }
         });
-        jMenu8.add(jCheckBoxMenuItem8);
+        jMenu8.add(btn_proveedor);
 
         jMenuBar1.add(jMenu8);
 
@@ -158,7 +305,7 @@ public class Vmenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
+    private void btn_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usuarioActionPerformed
        Vusuario es = new Vusuario();
        jDesktopPane1.add(es);
        Dimension desktopSize = jDesktopPane1.getSize();
@@ -167,9 +314,9 @@ public class Vmenu extends javax.swing.JFrame {
                (desktopSize.height- FrameSize.height)/2);
        es.show();
        es.setVisible(true);
-    }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
+    }//GEN-LAST:event_btn_usuarioActionPerformed
 
-    private void jCheckBoxMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem8ActionPerformed
+    private void btn_proveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proveedorActionPerformed
        Vproveedor es = new Vproveedor();
        jDesktopPane1.add(es);
        Dimension desktopSize = jDesktopPane1.getSize();
@@ -178,9 +325,9 @@ public class Vmenu extends javax.swing.JFrame {
                (desktopSize.height- FrameSize.height)/2);
        es.show();
        es.setVisible(true);
-    }//GEN-LAST:event_jCheckBoxMenuItem8ActionPerformed
+    }//GEN-LAST:event_btn_proveedorActionPerformed
 
-    private void jCheckBoxMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem3ActionPerformed
+    private void btn_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clienteActionPerformed
        Vcliente es = new Vcliente();
        jDesktopPane1.add(es);
        Dimension desktopSize = jDesktopPane1.getSize();
@@ -189,7 +336,18 @@ public class Vmenu extends javax.swing.JFrame {
                (desktopSize.height- FrameSize.height)/2);
        es.show();
        es.setVisible(true);
-    }//GEN-LAST:event_jCheckBoxMenuItem3ActionPerformed
+    }//GEN-LAST:event_btn_clienteActionPerformed
+
+    private void btn_facturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_facturaActionPerformed
+       Vfactura es = new Vfactura();
+       jDesktopPane1.add(es);
+       Dimension desktopSize = jDesktopPane1.getSize();
+       Dimension FrameSize = es.getSize();
+       es.setLocation((desktopSize.width - FrameSize.width)/2,
+               (desktopSize.height- FrameSize.height)/2);
+       es.show();
+       es.setVisible(true);
+    }//GEN-LAST:event_btn_facturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,13 +386,13 @@ public class Vmenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem4;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem5;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem6;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem7;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem8;
+    private javax.swing.JCheckBoxMenuItem btn_cliente;
+    private javax.swing.JCheckBoxMenuItem btn_factura;
+    private javax.swing.JCheckBoxMenuItem btn_farmaceutico;
+    private javax.swing.JCheckBoxMenuItem btn_medicamento;
+    private javax.swing.JCheckBoxMenuItem btn_pedido;
+    private javax.swing.JCheckBoxMenuItem btn_proveedor;
+    private javax.swing.JCheckBoxMenuItem btn_usuario;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
