@@ -27,9 +27,9 @@ public class PersonaBD extends PersonaMb {
                 PersonaMb u = new PersonaMb();
                 u.setCedula(rs.getString("cedula"));
                 u.setNombre(rs.getString("nombre"));
-                u.setCelular(rs.getString("direccion"));
-                u.setCelular(rs.getString("fecha_nacimiento"));
-                u.setCelular(rs.getString("ciudad"));
+                u.setDireccion(rs.getString("direccion"));
+                u.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
+                u.setCiudad(rs.getString("ciudad"));
                 u.setCelular(rs.getString("celular"));
 
                 listausuario.add(u);
@@ -43,7 +43,7 @@ public class PersonaBD extends PersonaMb {
     }
 
     public boolean insertar() {
-        String sql = "INSERT INTO persona (cedula,nombre,direccion,fecha_nacimiento,ciudad,celular)" + "VALUES ('" + getCedula() + "','" + getNombre() + "','"  + getDireccion() + "','" + getFecha_nacimiento() + "','" + getCiudad()+"','" + getCelular() + "')";
+        String sql = "INSERT INTO persona (cedula,nombre,direccion,fecha_nacimiento,ciudad,celular)  VALUES ('" + getCedula() + "','" + getNombre() + "','"  + getDireccion() + "','" + getFecha_nacimiento() + "','" + getCiudad()+"','" + getCelular() + "')";
 
         if (conecta.noQuery(sql) == null) {
             return true;
@@ -64,9 +64,9 @@ public class PersonaBD extends PersonaMb {
                 PersonaMb m = new PersonaMb();
                 m.setCedula(rs.getString("cedula"));
                 m.setNombre(rs.getString("nombre"));
-                m.setCelular(rs.getString("direccion"));
-                m.setCelular(rs.getString("fecha_nacimiento"));
-                m.setCelular(rs.getString("ciudad"));
+                m.setDireccion(rs.getString("direccion"));
+                m.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
+                m.setCiudad(rs.getString("ciudad"));
                 m.setCelular(rs.getString("celular"));
                 
                 lista.add(m);
