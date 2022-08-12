@@ -21,7 +21,7 @@ public class Persona_BD_muebles extends M_muebles_persona{
     public List<M_muebles_persona> mostrardatos() {
         try {
             List<M_muebles_persona> lista = new ArrayList<M_muebles_persona>();
-            String sql = "select * from cliente";
+            String sql = "select * from persona";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 M_muebles_persona m = new M_muebles_persona();
