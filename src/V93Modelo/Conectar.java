@@ -17,7 +17,7 @@ public class Conectar {
     
     String cadConexion="jdbc:postgresql://localhost:5432/V93";
     String pgUser="postgres";
-    String pgContra="a";
+    String pgContra="Josue2018.";
    // String cadConexion = "jdbc:postgresql://ec2-3-223-169-166.compute-1.amazonaws.com:5432/d9sf9n4bar9r8o";
    // String pgUser = "uvihzcapdjbpzo";
    // String pgContra = "9f025f115f8c021b6567c6aa2102d40b042212571b0f0e1a8883be057d91ab71";

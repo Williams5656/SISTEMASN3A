@@ -10,9 +10,15 @@ import javax.swing.JOptionPane;
 
 public class CPersonas {
 
+    
+    
     public static VistaPersona VistaP;
 
     private PersonaBD bdpersona = new PersonaBD();
+    
+    
+    
+    
 
     public CPersonas(VistaPersona VistaP) {
         this.VistaP = VistaP;
@@ -21,19 +27,22 @@ public class CPersonas {
         lista();
         VistaP.getBtnGuardarPersona().addActionListener(x -> guardar());
         VistaP.getBtnModificarPersona().addActionListener(e -> modificar());
-        VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
-        VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
+       // VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
+       // VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getTablePersona().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionar();
             }
 
+            
+            
         });
-        VistaP.getBtnGuardarPersona().setEnabled(false);
-        VistaP.getBtnModificarPersona().setEnabled(false);
+        
         VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
+        VistaP.getBtnGuardarPersona().setEnabled(false);
+        VistaP.getBtnModificarPersona().setEnabled(false);
     }
 
     public void lista() {
@@ -58,7 +67,7 @@ public class CPersonas {
            
         }
     }
-
+    
     public void guardar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
@@ -76,22 +85,24 @@ public class CPersonas {
             lista();
         }
 
-    }
-
+    }    
+    
     public void modificar() {
-        bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
-       
+        bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
+        bdpersona.setDireccion(VistaP.getTxtDireccionPersona().getText());
+        bdpersona.setFecha_nacimiento(VistaP.getTxtFechaNacimientoPersona().getText());
+        bdpersona.setCiudad(VistaP.getTxtCiudadPersona().getText());
+        bdpersona.setCelular(VistaP.getTxtCelularPersona().getText());
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Modificar");
         if (rest == 0) {
-            if (bdpersona.modificar(VistaP.getTxtCedulaPersona().getText())) {
+            if (bdpersona.modificar(VistaP.getTxtCedulaPersona().getText())) ;
                 JOptionPane.showMessageDialog(null, "Datos Modificados");
                 lista();
+                nuevo();
             }
 
         }
-
-    }
 
     public void seleccionar() {
         VistaP.getBtnGuardarPersona().setEnabled(false);
@@ -113,21 +124,19 @@ public class CPersonas {
         bdpersona.setCelular(lista.get(0).getCelular());
         VistaP.getTxtCelularPersona().setText(bdpersona.getCelular());
        
-
     }
-
+ 
     public void eliminar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Eliminar");
         if (rest == 0) {
-            if (bdpersona.eliminar(VistaP.getTxtCedulaPersona().getText())) {
+            if (bdpersona.eliminar(VistaP.getTxtCedulaPersona().getText()));
                 JOptionPane.showMessageDialog(null, "Usuario Eliminado");
                 lista();
+                nuevo();
             }
 
         }
-
-    }
 
     public void nuevo() {
         VistaP.getTxtCedulaPersona().setText("");
@@ -137,6 +146,6 @@ public class CPersonas {
         VistaP.getTxtCiudadPersona().setText("");
         VistaP.getTxtCelularPersona().setText("");
         VistaP.getBtnGuardarPersona().setEnabled(true);
-        VistaP.getBtnModificarPersona().setEnabled(true);
+        VistaP.getBtnModificarPersona().setEnabled(false);
     }
 }

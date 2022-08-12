@@ -6,10 +6,8 @@ import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.security.Principal;
 import V93Vista.*;
 
-
 public class Cprincipal {
-    
-       private static VistaPrincipal Vistap;
+       public static VistaPrincipal Vistap;
 
     public Cprincipal(VistaPrincipal Vista) {
         this.Vistap = Vista;
@@ -29,6 +27,7 @@ public class Cprincipal {
         CUsuarios cuser = new CUsuarios(vuser);
         
     }
+    
 
     private void personas() {
         VistaPersona vr = new VistaPersona();
