@@ -27,11 +27,11 @@ public class Persona_BD_muebles extends M_muebles_persona{
                 M_muebles_persona m = new M_muebles_persona();
                 m.setCedula(rs.getString("cedula"));
                 m.setNombre(rs.getString("nombres"));
-                m.setCelular(rs.getString("apellidos"));
-                m.setCelular(rs.getString("direccion"));
+                m.setApellido(rs.getString("apellidos"));
+                m.setDireccion(rs.getString("direccion"));
                 m.setCelular(rs.getString("celular"));
-                m.setCelular(rs.getString("nacionalidad"));
-                m.setCelular(rs.getString("fnacimiento"));
+                m.setNacionalidad(rs.getString("nacionalidad"));
+                m.setFechana(rs.getString("fnacimiento"));
 
                 lista.add(m);
             }
