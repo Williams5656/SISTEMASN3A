@@ -43,11 +43,11 @@ public class C_muebles_persona {
     public void guardar() {
         bdpersona.setCedula(vistaper.getTxtcedula().getText());
         bdpersona.setNombre(vistaper.getTxtnombres().getText());
-        bdpersona.setNombre(vistaper.getTxtapellidos().getText());
-        bdpersona.setNombre(vistaper.getTxtdireccion().getText());
-        bdpersona.setNombre(vistaper.getTxtcelular().getText());
-        bdpersona.setNombre(vistaper.getTxtnacionalidad().getText());
-        bdpersona.setCelular(vistaper.getTxtfecha().getText());
+        bdpersona.setApellido(vistaper.getTxtapellidos().getText());
+        bdpersona.setDireccion(vistaper.getTxtdireccion().getText());
+        bdpersona.setCelular(vistaper.getTxtcelular().getText());
+        bdpersona.setNacionalidad(vistaper.getTxtnacionalidad().getText());
+        bdpersona.setFechana(vistaper.getTxtfecha().getText());
         if (bdpersona.insert()) {
             JOptionPane.showMessageDialog(null, "GUARDADO CORRECTO");
             lista();
