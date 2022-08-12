@@ -9,7 +9,7 @@ package Farmacia.modelo;
  *
  * @author A
  */
-public class UsuarioMD {
+public class Usuario_PersonaMD {
     private String cedula;
     private String nombres;
     private String fechaNacimiento;
@@ -18,10 +18,10 @@ public class UsuarioMD {
     private String clave;
     private String estado;
 
-    public UsuarioMD() {
+    public Usuario_PersonaMD() {
     }
 
-    public UsuarioMD(String cedula, String nombres, String fechaNacimiento, String rol, String nombreU, String clave, String estado) {
+    public Usuario_PersonaMD(String cedula, String nombres, String fechaNacimiento, String rol, String nombreU, String clave, String estado) {
         this.cedula = cedula;
         this.nombres = nombres;
         this.fechaNacimiento = fechaNacimiento;

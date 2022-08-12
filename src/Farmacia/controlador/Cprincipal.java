@@ -8,7 +8,7 @@ package Farmacia.controlador;
 import Farmacia.vista.Vmedicamento;
 import Farmacia.vista.Vmenu;
 import Farmacia.vista.Vproveedor;
-import Farmacia.vista.Vusuario;
+import Farmacia.vista.Vusuario_Vpersona;
 import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 
@@ -29,14 +29,14 @@ public class Cprincipal {
 //        vista.getBtn_factura().addActionListener(e -> factura());
 //        vista.getBtn_farmaceutico().addActionListener(e -> farmaceutico());
 //        vista.getBtn_medicamento().addActionListener(e -> medicamento());
-////        vista.getBtn_pedido().addActionListener(e -> salir());
+////      vista.getBtn_pedido().addActionListener(e -> salir());
 //        vista.getBtn_proveedor().addActionListener(e -> proveedor());
     }
 
 
 
     private void usuario() {
-        Vusuario user = new Vusuario();
+        Vusuario_Vpersona user = new Vusuario_Vpersona();
         vista.getjDesktopPane1().add(user);
         Dimension desktopSize = vista.getjDesktopPane1().getSize();
         Dimension FrameSize = user.getSize();

@@ -15,23 +15,23 @@ import java.util.logging.Logger;
  *
  * @author A
  */
-public class UsuarioBD extends UsuarioMD{
+public class Usuario_PersonaBD extends Usuario_PersonaMD{
     Conect conectar = new Conect();
 
-    public UsuarioBD() {
+    public Usuario_PersonaBD() {
     }
 
-    public UsuarioBD(String cedula, String nombres, String fechaNacimiento, String rol, String nombreU, String clave, String estado) {
+    public Usuario_PersonaBD(String cedula, String nombres, String fechaNacimiento, String rol, String nombreU, String clave, String estado) {
         super(cedula, nombres, fechaNacimiento, rol, nombreU, clave, estado);
     }
 
- public List<UsuarioMD> mostrardatos() {
-        List<UsuarioMD> lista = new ArrayList<UsuarioMD>();
+ public List<Usuario_PersonaMD> mostrardatos() {
+        List<Usuario_PersonaMD> lista = new ArrayList<Usuario_PersonaMD>();
         try {
             String sql = "select * from usuario";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                UsuarioMD m = new UsuarioMD();
+                Usuario_PersonaMD m = new Usuario_PersonaMD();
                 m.setCedula(rs.getString("cedula"));
                 m.setNombres(rs.getString("nombres"));
                 m.setFechaNacimiento(rs.getString("fechaNacimiento"));
@@ -46,7 +46,7 @@ public class UsuarioBD extends UsuarioMD{
             rs.close();
             return lista;
         } catch (Exception e) {
-            Logger.getLogger(UsuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Usuario_PersonaBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }
@@ -85,13 +85,13 @@ public class UsuarioBD extends UsuarioMD{
         }
     }
 
-    public List<UsuarioMD> obtenerDatos(String cedula) {
-        List<UsuarioMD> lista = new ArrayList<UsuarioMD>();
+    public List<Usuario_PersonaMD> obtenerDatos(String cedula) {
+        List<Usuario_PersonaMD> lista = new ArrayList<Usuario_PersonaMD>();
         try {
             String sql = "select * from usuario" + " where \"cedula\"='" + cedula + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                UsuarioMD m = new UsuarioMD();
+                Usuario_PersonaMD m = new Usuario_PersonaMD();
                 m.setCedula(rs.getString("cedula"));
                 m.setNombres(rs.getString("nombres"));
                 m.setFechaNacimiento(rs.getString("fechaNacimiento"));
@@ -105,8 +105,16 @@ public class UsuarioBD extends UsuarioMD{
             rs.close();
             return lista;
         } catch (Exception e) {
-            Logger.getLogger(UsuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Usuario_PersonaBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
+    }
+
+    public boolean desactivar(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean activar(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

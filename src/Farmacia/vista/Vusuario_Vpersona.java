@@ -21,12 +21,12 @@ import javax.swing.ImageIcon;
  *
  * @author A
  */
-public class Vusuario extends javax.swing.JInternalFrame {
+public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
  SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
     /**
      * Creates new form Vusuario
      */
-    public Vusuario() {
+    public Vusuario_Vpersona() {
         initComponents();      
     }
 
@@ -62,12 +62,12 @@ public class Vusuario extends javax.swing.JInternalFrame {
         this.btneliminar = btneliminar;
     }
 
-    public JButton getBtnmodificar() {
-        return btnmodificar;
+    public JButton getBtnguardar() {
+        return btnguardar;
     }
 
-    public void setBtnmodificar(JButton btnmodificar) {
-        this.btnmodificar = btnmodificar;
+    public void setBtnguardar(JButton btnguardar) {
+        this.btnguardar = btnguardar;
     }
 
     public JComboBox<String> getCombo_estado() {
@@ -206,6 +206,8 @@ public class Vusuario extends javax.swing.JInternalFrame {
         this.txtnombre_u = txtnombre_u;
     }
 
+   
+
 //    public Image getIconImage() {
 //        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Farmacia.inicio.imagenes/7457f4f8d72fde5.jpg"));
 //        return retValue;
@@ -235,17 +237,18 @@ public class Vusuario extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaUsuario = new javax.swing.JTable();
         combo_estado = new javax.swing.JComboBox<>();
-        btnmodificar = new javax.swing.JButton();
+        btnguardar = new javax.swing.JButton();
         btn_modificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
         fecha_nacimiento = new com.toedter.calendar.JCalendar();
+        jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("--USUARIO--");
+        setTitle("--USUARIO,PERSONA--");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -311,8 +314,13 @@ public class Vusuario extends javax.swing.JInternalFrame {
         combo_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
         getContentPane().add(combo_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 100, -1));
 
-        btnmodificar.setText("MODIFICAR");
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
+        btnguardar.setText("GUARDAR");
+        btnguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnguardarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
 
         btn_modificar.setText("MODIFICAR");
         getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, -1, -1));
@@ -321,18 +329,25 @@ public class Vusuario extends javax.swing.JInternalFrame {
         getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, -1, -1));
         getContentPane().add(fecha_nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 380, 230));
 
+        jLabel9.setText("**FOTO**");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 130, 140));
+
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia/inicio/imagenes/7457f4f8d72fde5.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnguardarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_nuevo;
     private javax.swing.JButton btneliminar;
-    private javax.swing.JButton btnmodificar;
+    private javax.swing.JButton btnguardar;
     private javax.swing.JComboBox<String> combo_estado;
     private javax.swing.JComboBox<String> combo_rol;
     private com.toedter.calendar.JCalendar fecha_nacimiento;
@@ -344,6 +359,7 @@ public class Vusuario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaUsuario;
     private javax.swing.JTextField txtcedula1;
