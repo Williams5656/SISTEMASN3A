@@ -1,5 +1,6 @@
 package vista;
 
+import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -154,6 +155,11 @@ public class V_Login extends javax.swing.JFrame {
         getContentPane().add(LabelMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 80, 80));
 
         LabelOcultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ojo.png"))); // NOI18N
+        LabelOcultar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LabelOcultarMouseExited(evt);
+            }
+        });
         getContentPane().add(LabelOcultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, 90, 100));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoInico.png"))); // NOI18N
@@ -178,6 +184,10 @@ public class V_Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LabelOcultarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelOcultarMouseExited
+        
+    }//GEN-LAST:event_LabelOcultarMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
