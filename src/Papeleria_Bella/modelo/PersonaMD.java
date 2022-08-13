@@ -2,6 +2,7 @@
 package Papeleria_Bella.modelo;
 
 
+
 public class PersonaMD {
     String cedula;
     String nombres;
@@ -11,6 +12,8 @@ public class PersonaMD {
     String email;
     String rol;
 
+    
+    
     public PersonaMD() {
     }
 
