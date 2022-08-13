@@ -1,4 +1,4 @@
-
+//Clase Main
 package Papeleria_Bella.main;
 
 import Papeleria_Bella.controlador.*;
