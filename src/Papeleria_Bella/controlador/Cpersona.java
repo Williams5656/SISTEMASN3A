@@ -18,7 +18,7 @@ public class Cpersona {
         vista.setLocationRelativeTo(null);
         lista();
         vista.getButtonguardar().addActionListener(e -> guardar());
-        vista.getButtonguardar().setEnabled(false);
+        vista.getButtonguardar().setEnabled(true);
     }
     
     public void lista() {
