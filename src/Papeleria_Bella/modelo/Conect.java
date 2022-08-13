@@ -8,10 +8,9 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author
- */
+//host: ec2-44-205-112-253.compute-1.amazonaws.com
+//database: d4qd8o5sn5csjf
+//user: wbfgdvknrulnpr
 public class Conect {
 
     Connection con;
