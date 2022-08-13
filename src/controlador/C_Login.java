@@ -2,13 +2,20 @@ package controlador;
 
 import java.awt.Color;
 import java.awt.Font;
-import vista.V_Login;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import modelo.*;
+import vista.*;
 
 public class C_Login {
 
     public static V_Login vista;
     String tUsuario = "USUARIO:";
     String pClave = "CONTRASEÑA:";
+    PersonaBD lg = new PersonaBD();
+    PersonaMD us = new PersonaMD();
     int xMouse, yMouse;
     int bloqueo = 3;
     int a = 0;
@@ -76,6 +83,13 @@ public class C_Login {
             @Override
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtUsuarioFocusLost(evt);
+            }
+        });
+        vista.getBtn_Ingresar().addActionListener(x->{
+            try {
+                validar();
+            } catch (SQLException ex) {
+                Logger.getLogger(C_Login.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
     }
@@ -150,5 +164,31 @@ public class C_Login {
             vista.getTxtUsuario().setEditable(false);
         }
 
+    }
+
+    public void validar() throws SQLException {
+        String usuario = vista.getTxtUsuario().getText();
+        String clave = vista.getjPassClave().getText();
+        if (vista.getTxtUsuario().getText().equals("") || String.valueOf(vista.getjPassClave().getPassword()).equals("")) {
+            JOptionPane.showMessageDialog(null, "LLene todos los campos", null, JOptionPane.ERROR_MESSAGE);
+        } else {
+            us = lg.validar(usuario, clave);
+            if (us.getUsuario() != null && us.getClave() != null) {
+                V_Principal vistap = new V_Principal();
+                C_Principal Inicio = new C_Principal(vistap);
+                vista.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos", null, JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Intentos Permitidos: " + bloqueo, null, JOptionPane.WARNING_MESSAGE);
+                vista.getTxtUsuario().requestFocus();
+                vista.getTxtUsuario().setText("");
+                vista.getjPassClave().setText("");
+                bloqueo = bloqueo - 1;
+            }
+        }
+        if (bloqueo == -1) {
+            JOptionPane.showMessageDialog(null, "Usted a agotado sus intentos", "Seguridad del Sistema", JOptionPane.OK_OPTION);
+            System.exit(0);
+        }
     }
 }
