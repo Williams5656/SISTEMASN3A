@@ -7,18 +7,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
-
+ 
 public class CPersonas {
-
-    
-    
+ 
     public static VistaPersona VistaP;
 
     private PersonaBD bdpersona = new PersonaBD();
-    
-    
-    
-    
 
     public CPersonas(VistaPersona VistaP) {
         this.VistaP = VistaP;
@@ -27,18 +21,16 @@ public class CPersonas {
         lista();
         VistaP.getBtnGuardarPersona().addActionListener(x -> guardar());
         VistaP.getBtnModificarPersona().addActionListener(e -> modificar());
-       // VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
-       // VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
+        // VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
+        // VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getTablePersona().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionar();
             }
 
-            
-            
         });
-        
+
         VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
         VistaP.getBtnGuardarPersona().setEnabled(false);
@@ -64,10 +56,10 @@ public class CPersonas {
             VistaP.getTablePersona().setValueAt(lista.get(i).getFecha_nacimiento(), i, 3);
             VistaP.getTablePersona().setValueAt(lista.get(i).getCiudad(), i, 4);
             VistaP.getTablePersona().setValueAt(lista.get(i).getCelular(), i, 5);
-           
+
         }
     }
-    
+
     public void guardar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
@@ -75,8 +67,7 @@ public class CPersonas {
         bdpersona.setFecha_nacimiento(VistaP.getTxtFechaNacimientoPersona().getText());
         bdpersona.setCiudad(VistaP.getTxtCiudadPersona().getText());
         bdpersona.setCelular(VistaP.getTxtCelularPersona().getText());
-       
-       
+
         if (bdpersona.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
@@ -85,8 +76,8 @@ public class CPersonas {
             lista();
         }
 
-    }    
-    
+    }
+
     public void modificar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
@@ -97,12 +88,12 @@ public class CPersonas {
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Modificar");
         if (rest == 0) {
             if (bdpersona.modificar(VistaP.getTxtCedulaPersona().getText())) ;
-                JOptionPane.showMessageDialog(null, "Datos Modificados");
-                lista();
-                nuevo();
-            }
-
+            JOptionPane.showMessageDialog(null, "Datos Modificados");
+            lista();
+            nuevo();
         }
+
+    }
 
     public void seleccionar() {
         VistaP.getBtnGuardarPersona().setEnabled(false);
@@ -123,20 +114,20 @@ public class CPersonas {
         VistaP.getTxtCiudadPersona().setText(bdpersona.getCiudad());
         bdpersona.setCelular(lista.get(0).getCelular());
         VistaP.getTxtCelularPersona().setText(bdpersona.getCelular());
-       
+
     }
- 
+
     public void eliminar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Eliminar");
         if (rest == 0) {
             if (bdpersona.eliminar(VistaP.getTxtCedulaPersona().getText()));
-                JOptionPane.showMessageDialog(null, "Usuario Eliminado");
-                lista();
-                nuevo();
-            }
-
+            JOptionPane.showMessageDialog(null, "Usuario Eliminado");
+            lista();
+            nuevo();
         }
+
+    }
 
     public void nuevo() {
         VistaP.getTxtCedulaPersona().setText("");

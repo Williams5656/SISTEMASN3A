@@ -228,9 +228,6 @@ public class VistaPersona extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(btnGuardarPersona)
                         .addGap(60, 60, 60)
@@ -238,7 +235,10 @@ public class VistaPersona extends javax.swing.JFrame {
                         .addGap(54, 54, 54)
                         .addComponent(btnEliminarPersona)
                         .addGap(67, 67, 67)
-                        .addComponent(btnNuevoPersona)))
+                        .addComponent(btnNuevoPersona))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(266, 266, 266)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(101, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

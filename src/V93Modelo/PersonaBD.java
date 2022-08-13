@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+ 
 public class PersonaBD extends PersonaMb {
-
+ 
     Conectar conecta = new Conectar();
 
     public PersonaBD() {
@@ -43,7 +43,7 @@ public class PersonaBD extends PersonaMb {
     }
 
     public boolean insertar() {
-        String sql = "INSERT INTO persona (cedula, nombre, direccion, fecha_nacimiento, ciudad, celular)  VALUES ('" + getCedula() + "','" + getNombre() + "','"  + getDireccion() + "','" + getFecha_nacimiento() + "','" + getCiudad()+"','" + getCelular() + "')";
+        String sql = "INSERT INTO persona (cedula, nombre, direccion, fecha_nacimiento, ciudad, celular)  VALUES ('" + getCedula() + "','" + getNombre() + "','" + getDireccion() + "','" + getFecha_nacimiento() + "','" + getCiudad() + "','" + getCelular() + "')";
 
         if (conecta.noQuery(sql) == null) {
             return true;
@@ -68,7 +68,7 @@ public class PersonaBD extends PersonaMb {
                 m.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
                 m.setCiudad(rs.getString("ciudad"));
                 m.setCelular(rs.getString("celular"));
-                
+
                 lista.add(m);
             }
             rs.close();
@@ -79,8 +79,6 @@ public class PersonaBD extends PersonaMb {
         }
     }
 
-    
-    
     public boolean modificar(String cedula) {
         String sql = "update persona set \"nombre\"='" + getNombre() + "',\"direccion\"='" + getDireccion() + "',\"fecha_nacimiento\"='" + getFecha_nacimiento() + "',\"ciudad\"='" + getCiudad() + "',\"celular\"='" + getCelular() + "'"
                 + " where \"cedula\"='" + cedula + "'";

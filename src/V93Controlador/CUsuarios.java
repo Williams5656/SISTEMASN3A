@@ -9,7 +9,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class CUsuarios {
-
+  
     public static VistaUsuario VistaU;
 
     private UsuarioBD bdusuario = new UsuarioBD();
@@ -24,14 +24,17 @@ public class CUsuarios {
         VistaU.getTableUsuario().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                //super.mouseClicked(e); //To change body of generated methods, choose Tools | Templates.
                 seleccionar();
             }
 
         });
-        VistaU.getBtnGuardarUsuario().setEnabled(false);
-        VistaU.getBtnModificarUsuario().setEnabled(false);
+
         VistaU.getBtnNuevoUsuario().addActionListener(e -> nuevo());
         VistaU.getBtnEliminarUsuario().addActionListener(e -> eliminar());
+
+        VistaU.getBtnGuardarUsuario().setEnabled(false);
+        VistaU.getBtnModificarUsuario().setEnabled(false);
     }
 
     public void lista() {
@@ -50,48 +53,61 @@ public class CUsuarios {
             VistaU.getTableUsuario().setValueAt(lista.get(i).getCedula(), i, 0);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getNombre(), i, 1);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getCorreo(), i, 2);
-            VistaU.getTableUsuario().setValueAt(lista.get(i).getPass(), i, 3);
+            VistaU.getTableUsuario().setValueAt(lista.get(i).getClave(), i, 3);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getRol(), i, 4);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getEstado(), i, 5);
+
         }
+    }
+
+    public void nuevo() {
+        VistaU.getTxtCedulaUsuario().setText("");
+        VistaU.getTxtNombreUsuario().setText("");
+        VistaU.getTxtCorreoUsuario().setText("");
+        VistaU.getTxtPasswordUsuario().setText("");
+        VistaU.getjComboBoxRolUsuario().setSelectedItem("");
+        VistaU.getjComboBoxEstadoUsuario().setSelectedItem("");
+
+        VistaU.getBtnGuardarUsuario().setEnabled(true);
+        VistaU.getBtnModificarUsuario().setEnabled(false);
+
     }
 
     public void guardar() {
         bdusuario.setCedula(VistaU.getTxtCedulaUsuario().getText());
         bdusuario.setNombre(VistaU.getTxtNombreUsuario().getText());
         bdusuario.setCorreo(VistaU.getTxtCorreoUsuario().getText());
-        bdusuario.setPass(VistaU.getTxtPasswordUsuario().getText());
+        bdusuario.setClave(VistaU.getTxtPasswordUsuario().getText());
         String rol = (String) VistaU.getjComboBoxRolUsuario().getSelectedItem();
-        bdusuario.setEstado(rol);
+        bdusuario.setRol(rol);
         String estado = (String) VistaU.getjComboBoxEstadoUsuario().getSelectedItem();
         bdusuario.setEstado(estado);
+
         if (bdusuario.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
-            lista();
         }
-
     }
 
     public void modificar() {
+        bdusuario.setCedula(VistaU.getTxtCedulaUsuario().getText());
         bdusuario.setNombre(VistaU.getTxtNombreUsuario().getText());
         bdusuario.setCorreo(VistaU.getTxtCorreoUsuario().getText());
-        bdusuario.setPass(VistaU.getTxtPasswordUsuario().getText());
+        bdusuario.setClave(VistaU.getTxtPasswordUsuario().getText());
         String rol = (String) VistaU.getjComboBoxRolUsuario().getSelectedItem();
-        bdusuario.setEstado(rol);
+        bdusuario.setRol(rol);
         String estado = (String) VistaU.getjComboBoxEstadoUsuario().getSelectedItem();
         bdusuario.setEstado(estado);
-        int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Modificar");
-        if (rest == 0) {
-            if (bdusuario.modificar(VistaU.getTxtCedulaUsuario().getText())) {
-                JOptionPane.showMessageDialog(null, "Datos Modificados");
-                lista();
-            }
 
+        int resp = JOptionPane.showConfirmDialog(null, "confirme si desea modificar");
+        if (resp == 0) {
+            if (bdusuario.modificar(VistaU.getTxtCedulaUsuario().getText()));
+            JOptionPane.showMessageDialog(null, "datos actualizados");
+            lista();
+            nuevo();
         }
-
     }
 
     public void seleccionar() {
@@ -107,33 +123,22 @@ public class CUsuarios {
         VistaU.getTxtNombreUsuario().setText(bdusuario.getNombre());
         bdusuario.setCorreo(lista.get(0).getCorreo());
         VistaU.getTxtCorreoUsuario().setText(bdusuario.getCorreo());
-        bdusuario.setPass(lista.get(0).getPass());
-        VistaU.getTxtPasswordUsuario().setText(bdusuario.getPass());
-        bdusuario.setEstado(lista.get(0).getEstado());
+        bdusuario.setClave(lista.get(0).getClave());
+        VistaU.getTxtPasswordUsuario().setText(bdusuario.getClave());
+        bdusuario.setRol(lista.get(0).getRol());
         VistaU.getjComboBoxRolUsuario().setSelectedItem(bdusuario.getRol());
+        bdusuario.setEstado(lista.get(0).getEstado());
         VistaU.getjComboBoxEstadoUsuario().setSelectedItem(bdusuario.getEstado());
-
     }
 
     public void eliminar() {
         bdusuario.setCedula(VistaU.getTxtCedulaUsuario().getText());
-        int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Eliminar");
-        if (rest == 0) {
-            if (bdusuario.eliminar(VistaU.getTxtCedulaUsuario().getText())) {
-                JOptionPane.showMessageDialog(null, "Usuario Eliminado");
-                lista();
-            }
-
+        int resp = JOptionPane.showConfirmDialog(null, "confirme si desea eliminar" + VistaU.getTxtCedulaUsuario().getText());
+        if (resp == 0) {
+            if (bdusuario.eliminar(VistaU.getTxtCedulaUsuario().getText()));
+            JOptionPane.showMessageDialog(null, "datos actualizados");
+            lista();
+            nuevo();
         }
-
-    }
-
-    public void nuevo() {
-        VistaU.getTxtCedulaUsuario().setText("");
-        VistaU.getTxtNombreUsuario().setText("");
-        VistaU.getTxtCorreoUsuario().setText("");
-        VistaU.getTxtPasswordUsuario().setText("");
-        VistaU.getBtnGuardarUsuario().setEnabled(true);
-        VistaU.getBtnModificarUsuario().setEnabled(true);
     }
 }

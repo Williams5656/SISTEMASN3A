@@ -1,25 +1,24 @@
-
 package V93Modelo;
 
-
 public class UsuarioMb {
+
     private String cedula;
     private String nombre;
     private String correo;
-    private String pass;
+    private String clave;
     private String rol;
     private String estado;
 
-    public UsuarioMb(String cedula, String nombre, String correo, String pass, String rol, String estado) {
+    public UsuarioMb() {
+    }
+  
+    public UsuarioMb(String cedula, String nombre, String correo, String clave, String rol, String estado) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.correo = correo;
-        this.pass = pass;
+        this.clave = clave;
         this.rol = rol;
         this.estado = estado;
-    }
-
-    public UsuarioMb() {
     }
 
     public String getCedula() {
@@ -46,12 +45,12 @@ public class UsuarioMb {
         this.correo = correo;
     }
 
-    public String getPass() {
-        return pass;
+    public String getClave() {
+        return clave;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
     public String getRol() {
@@ -69,7 +68,5 @@ public class UsuarioMb {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
-    
+
 }

@@ -1,16 +1,14 @@
-
 package V93Modelo;
 
-
 public class PersonaMb {
-    
+
     private String cedula;
     private String nombre;
     private String direccion;
     private String fecha_nacimiento;
     private String ciudad;
     private String celular;
-
+  
     public PersonaMb(String cedula, String nombre, String direccion, String fecha_nacimiento, String ciudad, String celular) {
         this.cedula = cedula;
         this.nombre = nombre;
@@ -70,6 +68,5 @@ public class PersonaMb {
     public void setCelular(String celular) {
         this.celular = celular;
     }
-    
-    
+
 }
