@@ -24,6 +24,7 @@ public class Vpersona extends javax.swing.JFrame {
     
 
     public Vpersona() {
+        initComponents();
     }
 
     public Vpersona(JButton buttoncargar, JButton buttonguardar, JButton buttonmodificar, JButton buttonnuevo, JComboBox<String> comborol, JLabel jLabel1, JLabel jLabel2, JLabel jLabel3, JLabel jLabel4, JLabel jLabel5, JLabel jLabel6, JLabel jLabel7, JLabel jLabel8, JLabel jLabel9, JScrollPane jScrollPane1, JLabel labelfoto, JTable tablapersona, JTextField txtapellidos, JTextField txtcedula, JTextField txtdireccion, JTextField txtemail, JTextField txtnombres, JTextField txttelefono) {
