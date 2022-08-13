@@ -13,9 +13,12 @@ public class UsuarioBD extends UsuarioMD{
     public UsuarioBD() {
     }
 
-    public UsuarioBD(String usuario, String contraseña, String rol, String estado) {
-        super(usuario, contraseña, rol, estado);
+    public UsuarioBD(String codigo, String usuario, String contraseña, String rol, String estado) {
+        super(codigo, usuario, contraseña, rol, estado);
     }
+    
+
+    
     
     public List<UsuarioMD> mostrardatos() {
         try {
@@ -24,6 +27,7 @@ public class UsuarioBD extends UsuarioMD{
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 UsuarioMD u = new UsuarioMD();
+                u.setCodigo(rs.getString("codigo"));
                 u.setUsuario(rs.getString("usuario"));
                 u.setContraseña(rs.getString("contraseña"));
                 u.setRol(rs.getString("rol"));
@@ -39,7 +43,7 @@ public class UsuarioBD extends UsuarioMD{
         }
     }
     public boolean insertar() {
-        String sql = "INSERT INTO usuario(usuario,contraseña,rol,estado)" + "VALUES ('" + getUsuario()+ "','" + getContraseña()+ "','" + getRol()+ "','" + getEstado()+ "')";
+        String sql = "INSERT INTO usuario(codigo,usuario,contraseña,rol,estado)" + "VALUES ('" + getCodigo()+ "','" + getUsuario()+ "','" + getContraseña()+ "','" + getRol()+ "','" + getEstado()+ "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;

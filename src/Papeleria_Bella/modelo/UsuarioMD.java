@@ -3,20 +3,32 @@ package Papeleria_Bella.modelo;
 
 
 public class UsuarioMD {
+    String codigo;
     String usuario;
     String contraseña;
     String rol;
     String estado;
 
-    public UsuarioMD() {
-    }
-
-    public UsuarioMD(String usuario, String contraseña, String rol, String estado) {
+    public UsuarioMD(String codigo, String usuario, String contraseña, String rol, String estado) {
+        this.codigo = codigo;
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.rol = rol;
         this.estado = estado;
     }
+
+    public UsuarioMD() {
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    
 
     public String getUsuario() {
         return usuario;

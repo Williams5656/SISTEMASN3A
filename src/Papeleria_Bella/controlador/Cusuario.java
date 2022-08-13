@@ -30,15 +30,17 @@ public class Cusuario {
         }
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
-            vista.getTablausuario().setValueAt(lista.get(i).getUsuario(), i, 0);
-            vista.getTablausuario().setValueAt(lista.get(i).getContraseña(), i, 1);
-            vista.getTablausuario().setValueAt(lista.get(i).getRol(), i, 2);
-            vista.getTablausuario().setValueAt(lista.get(i).getEstado(), i, 3);
+            vista.getTablausuario().setValueAt(lista.get(i).getCodigo(), i, 0);
+            vista.getTablausuario().setValueAt(lista.get(i).getUsuario(), i, 1);
+            vista.getTablausuario().setValueAt(lista.get(i).getContraseña(), i, 2);
+            vista.getTablausuario().setValueAt(lista.get(i).getRol(), i, 3);
+            vista.getTablausuario().setValueAt(lista.get(i).getEstado(), i, 4);
 
         }
     }
     
     public void guardar() {
+        busuario.setCodigo(vista.getTxtcodigo().getText());
         busuario.setUsuario(vista.getTxtusuario().getText());
         busuario.setContraseña(vista.getFieldcontraseña().getText());
         busuario.setRol(vista.getComborol().getSelectedItem().toString());
