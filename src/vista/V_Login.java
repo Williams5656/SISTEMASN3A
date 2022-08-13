@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -140,10 +141,12 @@ public class V_Login extends javax.swing.JFrame {
         Btn_Ingresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(Btn_Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 170, 50));
 
-        LabelClave.setText("jLabel1");
+        LabelClave.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        LabelClave.setForeground(new java.awt.Color(164, 224, 240));
         getContentPane().add(LabelClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 220, 60));
 
-        LabelUsuario.setText("jLabel1");
+        LabelUsuario.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        LabelUsuario.setForeground(new java.awt.Color(164, 224, 240));
         getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 220, 60));
         getContentPane().add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 290, 60));
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 290, 60));
@@ -155,11 +158,6 @@ public class V_Login extends javax.swing.JFrame {
         getContentPane().add(LabelMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 80, 80));
 
         LabelOcultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ojo.png"))); // NOI18N
-        LabelOcultar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                LabelOcultarMouseExited(evt);
-            }
-        });
         getContentPane().add(LabelOcultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, 90, 100));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoInico.png"))); // NOI18N
@@ -184,10 +182,6 @@ public class V_Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void LabelOcultarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelOcultarMouseExited
-        
-    }//GEN-LAST:event_LabelOcultarMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
