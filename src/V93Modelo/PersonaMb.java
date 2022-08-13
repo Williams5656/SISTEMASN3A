@@ -1,5 +1,7 @@
 package V93Modelo;
 
+import java.awt.Image;
+
 public class PersonaMb {
 
     private String cedula;
@@ -8,14 +10,17 @@ public class PersonaMb {
     private String fecha_nacimiento;
     private String ciudad;
     private String celular;
-  
-    public PersonaMb(String cedula, String nombre, String direccion, String fecha_nacimiento, String ciudad, String celular) {
+    private Image foto;
+    
+      
+    public PersonaMb(String cedula, String nombre, String direccion, String fecha_nacimiento, String ciudad, String celular, Image foto) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.direccion = direccion;
         this.fecha_nacimiento = fecha_nacimiento;
         this.ciudad = ciudad;
         this.celular = celular;
+        this.foto = foto;
     }
 
     public PersonaMb() {
@@ -68,5 +73,14 @@ public class PersonaMb {
     public void setCelular(String celular) {
         this.celular = celular;
     }
+
+    public Image getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Image foto) {
+        this.foto = foto;
+    }
+    
 
 }

@@ -3,15 +3,22 @@ package V93Controlador;
 import V93Vista.*;
 import javax.swing.table.DefaultTableModel;
 import V93Modelo.*;
+import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
  
-public class CPersonas {
+public class CPersonas { 
  
     public static VistaPersona VistaP;
-
+ 
     private PersonaBD bdpersona = new PersonaBD();
 
     public CPersonas(VistaPersona VistaP) {
@@ -21,6 +28,7 @@ public class CPersonas {
         lista();
         VistaP.getBtnGuardarPersona().addActionListener(x -> guardar());
         VistaP.getBtnModificarPersona().addActionListener(e -> modificar());
+        VistaP.getBtnFoto().addActionListener(e -> obtieneImagen());
         // VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
         // VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getTablePersona().addMouseListener(new MouseAdapter() {
@@ -59,7 +67,7 @@ public class CPersonas {
 
         }
     }
-
+ 
     public void guardar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
@@ -67,6 +75,9 @@ public class CPersonas {
         bdpersona.setFecha_nacimiento(VistaP.getTxtFechaNacimientoPersona().getText());
         bdpersona.setCiudad(VistaP.getTxtCiudadPersona().getText());
         bdpersona.setCelular(VistaP.getTxtCelularPersona().getText());
+
+        ImageIcon ic = (ImageIcon) VistaP.getLbFoto().getIcon();
+        bdpersona.setFoto(ic.getImage());
 
         if (bdpersona.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
@@ -76,6 +87,22 @@ public class CPersonas {
             lista();
         }
 
+    }
+    
+    private void obtieneImagen() {
+        VistaP.getLbFoto().setIcon(null);
+        JFileChooser j = new JFileChooser();
+        j.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int estado = j.showOpenDialog(null);
+        if (estado == JFileChooser.APPROVE_OPTION) {
+            try {
+                Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(VistaP.getLbFoto().getWidth(), VistaP.getLbFoto().getHeight(), Image.SCALE_DEFAULT);
+                VistaP.getLbFoto().setIcon(new ImageIcon(icono));
+                VistaP.getLbFoto().updateUI();
+            } catch (IOException ex) {
+                Logger.getLogger(CPersonas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     public void modificar() {
@@ -94,7 +121,7 @@ public class CPersonas {
         }
 
     }
-
+ 
     public void seleccionar() {
         VistaP.getBtnGuardarPersona().setEnabled(false);
         VistaP.getBtnModificarPersona().setEnabled(true);
@@ -114,8 +141,19 @@ public class CPersonas {
         VistaP.getTxtCiudadPersona().setText(bdpersona.getCiudad());
         bdpersona.setCelular(lista.get(0).getCelular());
         VistaP.getTxtCelularPersona().setText(bdpersona.getCelular());
+        
+        
+        
+         Image img = lista.get(0).getFoto();
+        if (img != null) {
+            Image newimg = img.getScaledInstance(VistaP.getLbFoto().getWidth(), VistaP.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
+            ImageIcon icon = new ImageIcon(newimg);
+            VistaP.getLbFoto().setIcon(icon);
+        } else {
+            VistaP.getLbFoto().setIcon(null);
+        }
 
-    }
+    } 
 
     public void eliminar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());

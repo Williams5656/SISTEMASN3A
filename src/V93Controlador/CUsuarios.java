@@ -9,9 +9,9 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class CUsuarios {
-  
+   
     public static VistaUsuario VistaU;
-
+   
     private UsuarioBD bdusuario = new UsuarioBD();
 
     public CUsuarios(VistaUsuario VistaU) {

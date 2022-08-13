@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UsuarioBD extends UsuarioMb {
-
+ 
     Conectar conectar = new Conectar();
 
     public UsuarioBD() {

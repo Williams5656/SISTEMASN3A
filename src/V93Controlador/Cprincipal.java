@@ -8,7 +8,7 @@ import V93Vista.*;
 public class Cprincipal {
  
     public static VistaPrincipal Vistap;
- 
+    
     public Cprincipal(VistaPrincipal Vista) {
         this.Vistap = Vista;
         Vista.setVisible(true);
@@ -16,7 +16,7 @@ public class Cprincipal {
         Vista.setExtendedState(MAXIMIZED_BOTH);
         Vista.getNuevoPersona().addActionListener(e -> personas());
         Vista.getNuevoUsuario().addActionListener(e -> usuarios());
-
+ 
     }
 
     private void personas() {

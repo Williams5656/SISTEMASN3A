@@ -11,7 +11,7 @@ public class UsuarioMb {
 
     public UsuarioMb() {
     }
-  
+    
     public UsuarioMb(String cedula, String nombre, String correo, String clave, String rol, String estado) {
         this.cedula = cedula;
         this.nombre = nombre;

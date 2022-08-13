@@ -25,13 +25,22 @@ public class VistaPersona extends javax.swing.JFrame {
         
     }
 
-    public JLabel getJLabelFotoPersona() {
-        return JLabelFotoPersona;
+    public JButton getBtnFoto() {
+        return btnFoto;
     }
 
-    public void setJLabelFotoPersona(JLabel JLabelFotoPersona) {
-        this.JLabelFotoPersona = JLabelFotoPersona;
+    public void setBtnFoto(JButton btnFoto) {
+        this.btnFoto = btnFoto;
     }
+ 
+    public JLabel getLbFoto() {
+        return lbFoto;
+    }
+
+    public void setLbFoto(JLabel lbFoto) {
+        this.lbFoto = lbFoto;
+    }
+
 
     public JTable getTablePersona() {
         return TablePersona;
@@ -149,7 +158,8 @@ public class VistaPersona extends javax.swing.JFrame {
         btnModificarPersona = new javax.swing.JButton();
         btnEliminarPersona = new javax.swing.JButton();
         btnNuevoPersona = new javax.swing.JButton();
-        JLabelFotoPersona = new javax.swing.JLabel();
+        lbFoto = new javax.swing.JLabel();
+        btnFoto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -196,14 +206,27 @@ public class VistaPersona extends javax.swing.JFrame {
         btnNuevoPersona.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnNuevoPersona.setText("NUEVO");
 
-        JLabelFotoPersona.setText("FOTO");
+        lbFoto.setText("FOTO");
+
+        btnFoto.setText("foto");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(btnGuardarPersona)
+                        .addGap(60, 60, 60)
+                        .addComponent(btnModificarPersona)
+                        .addGap(54, 54, 54)
+                        .addComponent(btnEliminarPersona)
+                        .addGap(67, 67, 67)
+                        .addComponent(btnNuevoPersona)
+                        .addGap(0, 91, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
@@ -215,31 +238,24 @@ public class VistaPersona extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
                 .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtCedulaPersona)
-                    .addComponent(txtNombrePersona)
-                    .addComponent(txtDireccionPersona)
-                    .addComponent(txtFechaNacimientoPersona)
-                    .addComponent(txtCiudadPersona)
-                    .addComponent(txtCelularPersona, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JLabelFotoPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(btnGuardarPersona)
-                        .addGap(60, 60, 60)
-                        .addComponent(btnModificarPersona)
-                        .addGap(54, 54, 54)
-                        .addComponent(btnEliminarPersona)
-                        .addGap(67, 67, 67)
-                        .addComponent(btnNuevoPersona))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(266, 266, 266)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtCedulaPersona)
+                            .addComponent(txtNombrePersona)
+                            .addComponent(txtDireccionPersona)
+                            .addComponent(txtFechaNacimientoPersona)
+                            .addComponent(txtCiudadPersona)
+                            .addComponent(txtCelularPersona, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(btnFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,19 +276,18 @@ public class VistaPersona extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(txtDireccionPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(JLabelFotoPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtFechaNacimientoPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtCiudadPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(txtFechaNacimientoPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(txtCiudadPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(lbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtCelularPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -285,6 +300,10 @@ public class VistaPersona extends javax.swing.JFrame {
                     .addComponent(btnEliminarPersona)
                     .addComponent(btnNuevoPersona))
                 .addGap(51, 51, 51))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnFoto)
+                .addGap(300, 300, 300))
         );
 
         pack();
@@ -296,9 +315,9 @@ public class VistaPersona extends javax.swing.JFrame {
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JLabelFotoPersona;
     private javax.swing.JTable TablePersona;
     private javax.swing.JButton btnEliminarPersona;
+    private javax.swing.JButton btnFoto;
     private javax.swing.JButton btnGuardarPersona;
     private javax.swing.JButton btnModificarPersona;
     private javax.swing.JButton btnNuevoPersona;
@@ -310,6 +329,7 @@ public class VistaPersona extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbFoto;
     private javax.swing.JTextField txtCedulaPersona;
     private javax.swing.JTextField txtCelularPersona;
     private javax.swing.JTextField txtCiudadPersona;
