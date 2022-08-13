@@ -4,7 +4,14 @@ package Papeleria_Bella.controlador;
 import Papeleria_Bella.controlador.*;
 import Papeleria_Bella.vista.*;
 import Papeleria_Bella.modelo.*;
+import java.awt.Image;
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class Cpersona {
@@ -19,6 +26,8 @@ public class Cpersona {
         lista();
         vista.getButtonguardar().addActionListener(e -> guardar());
         vista.getButtonguardar().setEnabled(true);
+        vista.getButtoncargar().addActionListener(e -> obtieneImagen());
+        vista.getButtoncargar().setEnabled(true);
     }
     
     public void lista() {
@@ -50,11 +59,29 @@ public class Cpersona {
         bpersona.setDireccion(vista.getTxtdireccion().getText());
         bpersona.setEmail(vista.getTxtemail().getText());
         bpersona.setRol(vista.getComborol().getSelectedItem().toString());
+        ImageIcon ic = (ImageIcon) vista.getLabelfoto().getIcon();
+        bpersona.setFoto(ic.getImage());
         if (bpersona.insertar()) {
             JOptionPane.showMessageDialog(null, "GUARDADO CORRECTAMENTE");
             lista();
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+        }
+    }
+    
+    private void obtieneImagen() {
+        vista.getLabelfoto().setIcon(null);
+        JFileChooser j = new JFileChooser();
+        j.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int estado = j.showOpenDialog(null);
+        if (estado == JFileChooser.APPROVE_OPTION) {
+            try {
+                Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(vista.getLabelfoto().getWidth(), vista.getLabelfoto().getHeight(), Image.SCALE_DEFAULT);
+                vista.getLabelfoto().setIcon(new ImageIcon(icono));
+                vista.getLabelfoto().updateUI();
+            } catch (IOException ex) {
+                Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }

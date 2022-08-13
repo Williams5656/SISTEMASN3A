@@ -1,6 +1,8 @@
 
 package Papeleria_Bella.modelo;
 
+import java.awt.Image;
+
 
 
 public class PersonaMD {
@@ -11,13 +13,12 @@ public class PersonaMD {
     String direccion;
     String email;
     String rol;
+    private Image foto;
 
-    
-    
     public PersonaMD() {
     }
 
-    public PersonaMD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, String rol) {
+    public PersonaMD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, String rol, Image foto) {
         this.cedula = cedula;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -25,6 +26,15 @@ public class PersonaMD {
         this.direccion = direccion;
         this.email = email;
         this.rol = rol;
+        this.foto = foto;
+    }
+
+    public Image getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Image foto) {
+        this.foto = foto;
     }
 
     public String getCedula() {

@@ -21,11 +21,13 @@ public class Vpersona extends javax.swing.JFrame {
     /**
      * Creates new form Cpersona
      */
+    
+
     public Vpersona() {
-        initComponents();
     }
 
-    public Vpersona(JButton buttonguardar, JButton buttonmodificar, JButton buttonnuevo, JComboBox<String> comborol, JLabel jLabel1, JLabel jLabel2, JLabel jLabel3, JLabel jLabel4, JLabel jLabel5, JLabel jLabel6, JLabel jLabel7, JLabel jLabel8, JLabel jLabel9, JScrollPane jScrollPane1, JLabel labelfoto, JTable tablapersona, JTextField txtapellidos, JTextField txtcedula, JTextField txtdireccion, JTextField txtemail, JTextField txtnombres, JTextField txttelefono) {
+    public Vpersona(JButton buttoncargar, JButton buttonguardar, JButton buttonmodificar, JButton buttonnuevo, JComboBox<String> comborol, JLabel jLabel1, JLabel jLabel2, JLabel jLabel3, JLabel jLabel4, JLabel jLabel5, JLabel jLabel6, JLabel jLabel7, JLabel jLabel8, JLabel jLabel9, JScrollPane jScrollPane1, JLabel labelfoto, JTable tablapersona, JTextField txtapellidos, JTextField txtcedula, JTextField txtdireccion, JTextField txtemail, JTextField txtnombres, JTextField txttelefono) {
+        this.buttoncargar = buttoncargar;
         this.buttonguardar = buttonguardar;
         this.buttonmodificar = buttonmodificar;
         this.buttonnuevo = buttonnuevo;
@@ -49,6 +51,15 @@ public class Vpersona extends javax.swing.JFrame {
         this.txtnombres = txtnombres;
         this.txttelefono = txttelefono;
     }
+
+    public JButton getButtoncargar() {
+        return buttoncargar;
+    }
+
+    public void setButtoncargar(JButton buttoncargar) {
+        this.buttoncargar = buttoncargar;
+    }
+    
 
     public JButton getButtonguardar() {
         return buttonguardar;
@@ -258,6 +269,7 @@ public class Vpersona extends javax.swing.JFrame {
         buttonguardar = new javax.swing.JButton();
         buttonmodificar = new javax.swing.JButton();
         buttonnuevo = new javax.swing.JButton();
+        buttoncargar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -313,6 +325,9 @@ public class Vpersona extends javax.swing.JFrame {
         buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonnuevo.setText("Nuevo");
 
+        buttoncargar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttoncargar.setText("Cargar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -348,16 +363,20 @@ public class Vpersona extends javax.swing.JFrame {
                     .addComponent(txtemail, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
                     .addComponent(comborol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(labelfoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonguardar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buttonmodificar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonnuevo))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(115, Short.MAX_VALUE))
+                        .addGap(47, 47, 47)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(115, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(buttoncargar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonnuevo)
+                            .addComponent(buttonguardar)
+                            .addComponent(buttonmodificar))
+                        .addGap(166, 166, 166))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -374,14 +393,16 @@ public class Vpersona extends javax.swing.JFrame {
                         .addComponent(jLabel9))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
+                        .addComponent(labelfoto, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buttonguardar)
-                            .addComponent(buttonmodificar)
-                            .addComponent(buttonnuevo)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(labelfoto, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 33, 33)
+                            .addComponent(buttoncargar)
+                            .addComponent(buttonguardar))
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonnuevo)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonmodificar)))
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -391,7 +412,7 @@ public class Vpersona extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtnombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
@@ -427,6 +448,7 @@ public class Vpersona extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttoncargar;
     private javax.swing.JButton buttonguardar;
     private javax.swing.JButton buttonmodificar;
     private javax.swing.JButton buttonnuevo;
