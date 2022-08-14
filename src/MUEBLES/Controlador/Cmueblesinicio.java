@@ -19,7 +19,7 @@ public class Cmueblesinicio {
         vistaini.setResizable(false);
         
         vistaini.getBtncancelar_inicio().addActionListener(e -> salir());
-        vistaini.getBtningresar_inicio().addActionListener(e -> ingreso());
+        vistaini.getBtnloguear_inicio().addActionListener(e -> ingreso());
     }
     
     private void salir() {

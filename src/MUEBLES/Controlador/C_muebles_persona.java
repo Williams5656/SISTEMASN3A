@@ -18,8 +18,7 @@ public class C_muebles_persona {
         vistaper.setLocationRelativeTo(null);
         
         lista();
-        vistaper.getBtnguardar_persona().addActionListener(e -> guardar());
-        //vistaper.getBtnregresar().addActionListener(e -> volver());
+        vistaper.getBtnnuevo().addActionListener(e -> busquedaper());
     }
     
     public void lista() {
@@ -42,26 +41,20 @@ public class C_muebles_persona {
         }
     }
     
-    public void guardar() {
-        bdpersona.setCedula(vistaper.getTxtcedula().getText());
-        bdpersona.setNombre(vistaper.getTxtnombres().getText());
-        bdpersona.setApellido(vistaper.getTxtapellidos().getText());
-        bdpersona.setDireccion(vistaper.getTxtdireccion().getText());
-        bdpersona.setCelular(vistaper.getTxtcelular().getText());
-        bdpersona.setNacionalidad(vistaper.getTxtnacionalidad().getText());
-        bdpersona.setFechana(vistaper.getTxtfecha().getText());
-        if (bdpersona.insert()) {
-            JOptionPane.showMessageDialog(null, "GUARDADO CORRECTO");
-            lista();
-        } else {
-            JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+    public void eliminar(){
+        bdpersona.setCedula(vistaper.getTxtbusqueda().getText());
+        int res = JOptionPane.showConfirmDialog(null, "ESTA SEGURO DE ELIMINAR EL USUARIO "+vistaper.getTxtbusqueda().getText());
+        if (res == 0) {
+            if (bdpersona.eliminar(vistaper.getTxtbusqueda().getText())) {
+                JOptionPane.showMessageDialog(null, "DATOS ELIMINADOS");
+                lista();
+            }
         }
     }
     
-    
-    
-    private void volver(){
-        Cmueblesprincipal cprin = new Cmueblesprincipal(vistaprin);
-        vistaper.dispose();
+    public void busquedaper(){
+        Vista_busqueda_persona visbus =  new Vista_busqueda_persona();
+        C_busqueda_persona bp = new C_busqueda_persona(visbus);
     }
+
 }
