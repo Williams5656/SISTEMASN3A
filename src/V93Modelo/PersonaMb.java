@@ -12,7 +12,7 @@ public class PersonaMb {
     private String celular;
     private Image foto;
     
-      
+         
     public PersonaMb(String cedula, String nombre, String direccion, String fecha_nacimiento, String ciudad, String celular, Image foto) {
         this.cedula = cedula;
         this.nombre = nombre;

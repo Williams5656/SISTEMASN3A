@@ -18,7 +18,7 @@ import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import org.postgresql.util.Base64;
- 
+  
 public class PersonaBD extends PersonaMb {
  
     Conectar conecta = new Conectar();
@@ -100,7 +100,7 @@ public class PersonaBD extends PersonaMb {
             return null;
         }
     }
-
+ 
     public boolean insertar() {
         
         String ef = null;
@@ -113,8 +113,8 @@ public class PersonaBD extends PersonaMb {
         } catch (IOException ex) {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sql = "INSERT INTO persona (cedula, nombre, direccion, fecha_nacimiento, ciudad, celular, foto)  VALUES ('" + getCedula() + "','" + getNombre() + "','" + getDireccion() + "','" + getFecha_nacimiento() + "','" + getCiudad() + "','" + getCelular() + "','" +  getFoto() + "')";
- 
+        String sql = "INSERT INTO persona (cedula, nombre, direccion, fecha_nacimiento, ciudad, celular, foto)  VALUES ('" + getCedula() + "','" + getNombre() + "','" + getDireccion() + "','" + getFecha_nacimiento() + "','" + getCiudad() + "','" + getCelular() + "','" +  ef + "')";
+  
         if (conecta.noQuery(sql) == null) {
             return true;
         } else {
@@ -165,7 +165,17 @@ public class PersonaBD extends PersonaMb {
     }
 
     public boolean modificar(String cedula) {
-        String sql = "update persona set \"nombre\"='" + getNombre() + "',\"direccion\"='" + getDireccion() + "',\"fecha_nacimiento\"='" + getFecha_nacimiento() + "',\"ciudad\"='" + getCiudad() + "',\"celular\"='" + getCelular() + "'"
+        String ef = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        try {
+            BufferedImage img = toBufferedImage(getFoto());
+            ImageIO.write(img, "PNG", bos);
+            byte[] imgb = bos.toByteArray();
+            ef = Base64.encodeBytes(imgb);
+        } catch (IOException ex) {
+            Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String sql = "update persona set \"nombre\"='" + getNombre() + "',\"direccion\"='" + getDireccion() + "',\"fecha_nacimiento\"='" + getFecha_nacimiento() + "',\"ciudad\"='" + getCiudad() + "',\"celular\"='" + getCelular() +  "',\"foto\"='" + ef +"'"
                 + " where \"cedula\"='" + cedula + "'";
 
         if (conecta.noQuery(sql) == null) {
@@ -177,7 +187,7 @@ public class PersonaBD extends PersonaMb {
         }
 
     }
-
+ 
     public boolean eliminar(String cedula) {
         String sql = "delete FROM persona where\"cedula\"='" + cedula + "'";
         if (conecta.noQuery(sql) == null) {

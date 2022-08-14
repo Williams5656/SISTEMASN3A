@@ -14,7 +14,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
- 
+   
 public class CPersonas { 
  
     public static VistaPersona VistaP;
@@ -104,7 +104,7 @@ public class CPersonas {
             }
         }
     }
-
+ 
     public void modificar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
@@ -112,6 +112,8 @@ public class CPersonas {
         bdpersona.setFecha_nacimiento(VistaP.getTxtFechaNacimientoPersona().getText());
         bdpersona.setCiudad(VistaP.getTxtCiudadPersona().getText());
         bdpersona.setCelular(VistaP.getTxtCelularPersona().getText());
+        ImageIcon ic = (ImageIcon) VistaP.getLbFoto().getIcon();
+        bdpersona.setFoto(ic.getImage());
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Modificar");
         if (rest == 0) {
             if (bdpersona.modificar(VistaP.getTxtCedulaPersona().getText())) ;
@@ -178,3 +180,4 @@ public class CPersonas {
         VistaP.getBtnModificarPersona().setEnabled(false);
     }
 }
+ 
