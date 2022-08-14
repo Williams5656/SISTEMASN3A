@@ -29,5 +29,6 @@ public class Cmueblesinicio {
     private void ingreso(){
         Vista_muebles_principal vista = new Vista_muebles_principal();
         Cmueblesprincipal cprin = new Cmueblesprincipal(vista);
+        vistaini.dispose();
     }
 }

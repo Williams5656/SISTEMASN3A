@@ -1,5 +1,6 @@
 package MUEBLES.Controlador;
 
+import static MUEBLES.Controlador.Cmueblesprincipal.vistaprin;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -18,6 +19,7 @@ public class C_muebles_persona {
         
         lista();
         vistaper.getBtnguardar_persona().addActionListener(e -> guardar());
+        //vistaper.getBtnregresar().addActionListener(e -> volver());
     }
     
     public void lista() {
@@ -54,5 +56,12 @@ public class C_muebles_persona {
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
         }
+    }
+    
+    
+    
+    private void volver(){
+        Cmueblesprincipal cprin = new Cmueblesprincipal(vistaprin);
+        vistaper.dispose();
     }
 }

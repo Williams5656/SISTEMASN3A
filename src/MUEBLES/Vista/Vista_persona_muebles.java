@@ -82,9 +82,7 @@ public class Vista_persona_muebles extends javax.swing.JFrame {
     public void setTxtnombres(JTextField Txtnombres) {
         this.Txtnombres = Txtnombres;
     }
-    
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -107,7 +105,8 @@ public class Vista_persona_muebles extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla_muebles_persona = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("PERSONA");
+        setResizable(false);
 
         jLabel1.setText("Cedula:");
 
