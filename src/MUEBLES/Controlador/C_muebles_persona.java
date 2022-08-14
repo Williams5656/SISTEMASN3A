@@ -18,13 +18,13 @@ public class C_muebles_persona {
         vistaper.setLocationRelativeTo(null);
         
         lista();
-        vistaper.getBtnnuevo().addActionListener(e -> busquedaper());
+        vistaper.getBtnnuevo().addActionListener(e -> nuevaper());
     }
     
     public void lista() {
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vistaper.getTabla_muebles_persona().getModel();
-        List<M_muebles_persona> lista = bdpersona.mostrardatos();
+        List<M_muebles_personaMD> lista = bdpersona.mostrardatos();
         int columnas = modelo.getColumnCount();
         for (int j = vistaper.getTabla_muebles_persona().getRowCount() - 1; j >= 0; j--) {
             modelo.removeRow(j);
@@ -52,9 +52,10 @@ public class C_muebles_persona {
         }
     }
     
-    public void busquedaper(){
-        Vista_busqueda_persona visbus =  new Vista_busqueda_persona();
-        C_busqueda_persona bp = new C_busqueda_persona(visbus);
+    public void nuevaper(){
+        Vista_nuevo_persona visbus =  new Vista_nuevo_persona();
+        C_nuevo_persona bp = new C_nuevo_persona(visbus);
+        vistaper.dispose();
     }
 
 }

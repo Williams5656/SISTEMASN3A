@@ -1,6 +1,8 @@
 package MUEBLES.Modelo;
 
-public class M_muebles_persona {
+import java.awt.Image;
+
+public class M_muebles_personaMD {
     
     String cedula;
     String nombre;
@@ -9,8 +11,9 @@ public class M_muebles_persona {
     String celular;
     String nacionalidad;
     String fechana;
+    Image foto;
 
-    public M_muebles_persona(String cedula, String nombre, String apellido, String direccion, String celular, String nacionalidad, String fechana) {
+    public M_muebles_personaMD(String cedula, String nombre, String apellido, String direccion, String celular, String nacionalidad, String fechana, Image foto) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -18,9 +21,10 @@ public class M_muebles_persona {
         this.celular = celular;
         this.nacionalidad = nacionalidad;
         this.fechana = fechana;
+        this.foto = foto;
     }
 
-    public M_muebles_persona() {
+    public M_muebles_personaMD() {
     }
 
     public String getCedula() {
@@ -77,6 +81,14 @@ public class M_muebles_persona {
 
     public void setFechana(String fechana) {
         this.fechana = fechana;
+    }
+
+    public Image getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Image foto) {
+        this.foto = foto;
     }
     
     
