@@ -253,6 +253,7 @@ public class V_Persona extends javax.swing.JInternalFrame {
         labelFoto = new javax.swing.JLabel();
         Btn_CargarFoto = new javax.swing.JButton();
         Btn_QuitarFoto = new javax.swing.JButton();
+        labelBotones = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -263,57 +264,56 @@ public class V_Persona extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel1.setText("PERSONA");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 200, 70));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 180, 40));
 
         jLabel2.setText("CEDULA:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 120, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 120, 30));
 
         jLabel3.setText("NOMBRES:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 120, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 120, 30));
 
         jLabel5.setText("USUARIO:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 100, 40));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 100, 30));
 
         jLabel6.setText("CONTRASEÑA:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 140, 40));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 140, 30));
 
         jLabel7.setText("TELEFONO:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 130, 40));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 110, 30));
 
         jLabel8.setText("APELLIDOS:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 130, 40));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 130, 30));
 
         jLabel4.setText("CORREO ELECTRONICO:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 210, 40));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 170, 30));
 
         jLabel9.setText("ROL:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 80, 50));
-        jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 220, 40));
-        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 220, 40));
-        jPanel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 220, 40));
-        jPanel1.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 220, 40));
-        jPanel1.add(jPasspersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 220, 40));
-        jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 220, 40));
-        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, 220, 40));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 80, 30));
+        jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 220, 30));
+        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 220, 30));
+        jPanel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 220, 30));
+        jPanel1.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 220, 30));
+        jPanel1.add(jPasspersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 220, 30));
+        jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 220, 30));
+        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 220, 30));
 
-        cbrol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cbrol, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, 220, 50));
+        jPanel1.add(cbrol, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 220, 30));
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
-        jPanel1.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 610, 150, 60));
+        jPanel1.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 140, 50));
 
         btnguardarp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar-archivo.png"))); // NOI18N
         btnguardarp.setText("GUARDAR");
-        jPanel1.add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 610, 180, 60));
+        jPanel1.add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 150, 50));
 
         btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lapiz.png"))); // NOI18N
         btnmodificar.setText("MODIFICAR");
-        jPanel1.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 610, 200, 60));
+        jPanel1.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 150, 50));
 
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarusuario.png"))); // NOI18N
         btneliminar.setText("ELIMINAR");
-        jPanel1.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 610, 200, 60));
+        jPanel1.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 150, 50));
 
         tablapersona.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -336,28 +336,29 @@ public class V_Persona extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tablapersona);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 700, 880, 200));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 820, 130));
 
         labelFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuario.png"))); // NOI18N
-        jPanel1.add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 70, 130, 160));
+        jPanel1.add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, -1, 150));
 
         Btn_CargarFoto.setText("Cargar Foto");
-        jPanel1.add(Btn_CargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, 150, 50));
+        jPanel1.add(Btn_CargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 150, 40));
 
         Btn_QuitarFoto.setText("Quitar Foto");
-        jPanel1.add(Btn_QuitarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, 150, 50));
+        jPanel1.add(Btn_QuitarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 290, 150, 40));
+        jPanel1.add(labelBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 710, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 978, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 848, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 955, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -384,6 +385,7 @@ public class V_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasspersona;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelBotones;
     private javax.swing.JLabel labelFoto;
     private javax.swing.JTable tablapersona;
     private javax.swing.JTextField txtapellido;
