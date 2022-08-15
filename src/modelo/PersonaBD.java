@@ -33,8 +33,8 @@ public class PersonaBD extends PersonaMD {
     public PersonaBD() {
     }
 
-    public PersonaBD(int codigo, String cedula, String nombres, String apellidos, String usuario, String clave, String telefono, String correo, String rol, Image foto_perfil) {
-        super(codigo, cedula, nombres, apellidos, usuario, clave, telefono, correo, rol, foto_perfil);
+    public PersonaBD(String cedula, String nombres, String apellidos, String usuario, String clave, String telefono, String correo, String rol, Image foto_perfil) {
+        super(cedula, nombres, apellidos, usuario, clave, telefono, correo, rol, foto_perfil);
     }
 
     public static BufferedImage toBufferedImage(Image img) {
@@ -118,7 +118,7 @@ public class PersonaBD extends PersonaMD {
         } catch (IOException ex) {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sql = "INSERT INTO persona(cedula, nombres, apellidos, usuario, clave, telefono, correo_electronico, rol, \"foto \")" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getUsuario() + "','" + getClave() + "','" + getTelefono() + "','" + getCorreo() + "','" + getRol() + "','" + getFoto_perfil() + "')";
+        String sql = "INSERT INTO persona(cedula, nombres, apellidos, usuario, clave, telefono, correo_electronico, rol,foto)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getUsuario() + "','" + getClave() + "','" + getTelefono() + "','" + getCorreo() + "','" + getRol() + "','" + ef + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -141,7 +141,7 @@ public class PersonaBD extends PersonaMD {
         } catch (IOException ex) {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sql = "update persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"usuario\"='" + getUsuario() + "',\"clave\"='" + getClave() + "',\"telefono\"='" + getTelefono() + "',\"correo_electronico\"='" + getCorreo() + "',\"rol\"='" + getRol() + "',\"\"foto \"\"='" + getFoto_perfil() + "'"
+        String sql = "update persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"usuario\"='" + getUsuario() + "',\"clave\"='" + getClave() + "',\"telefono\"='" + getTelefono() + "',\"correo_electronico\"='" + getCorreo() + "',\"rol\"='" + getRol() + "',\"foto\"='" + ef + "'"
                 + " where \"cedula\"='" + cedula + "'";
 
         if (conectar.noQuery(sql) == null) {

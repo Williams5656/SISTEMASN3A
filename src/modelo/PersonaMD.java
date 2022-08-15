@@ -18,8 +18,7 @@ public class PersonaMD {
     public PersonaMD() {
     }
 
-    public PersonaMD(int codigo, String cedula, String nombres, String apellidos, String usuario, String clave, String telefono, String correo, String rol, Image foto_perfil) {
-        this.codigo = codigo;
+    public PersonaMD(String cedula, String nombres, String apellidos, String usuario, String clave, String telefono, String correo, String rol, Image foto_perfil) {
         this.cedula = cedula;
         this.nombres = nombres;
         this.apellidos = apellidos;
