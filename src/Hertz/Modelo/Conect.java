@@ -36,7 +36,9 @@ public class Conect {
             System.out.println("Se conecto DB.");
         } catch (SQLException ex) {
             Logger.getLogger(Conect.class.getName()).log(Level.SEVERE, null, ex);
-        }  
+        }
+        
+        
     }
     
     public SQLException noQuery(String nsql){
@@ -62,7 +64,8 @@ public class Conect {
         } catch (SQLException ex) {
             Logger.getLogger(Conect.class.getName()).log(Level.SEVERE, null, ex);
             return null;
-        }      
+        }
+            
     }
 
     public Connection getCon() {

@@ -143,7 +143,7 @@ public class CPersona {
         ImageIcon ic = (ImageIcon) vista.getLbFoto().getIcon();
         bdPersona.setFoto(ic.getImage());
         
-        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Modificar?");
+        int respuesta = JOptionPane.showConfirmDialog(null, "Â¿Esta seguro de Modificar?");
         if (respuesta == 0){
             if (bdPersona.modificar(vista.getTxtCedula().getText())){
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
@@ -224,7 +224,7 @@ public class CPersona {
     
     public void eliminar(){
         bdPersona.setCedula(vista.getTxtCedula().getText());
-        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este uduario " + vista.getTxtCedula().getText() );
+        int respuesta = JOptionPane.showConfirmDialog(null, "Â¿Esta seguro de eliminar este uduario " + vista.getTxtCedula().getText() );
         if (respuesta == 0){
             if (bdPersona.eliminar(vista.getTxtCedula().getText())){
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
