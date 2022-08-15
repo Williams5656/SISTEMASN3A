@@ -1,9 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Hertz.Controlador;
 
+import Hertz.Modelo.UsuarioMD;
 import Hertz.Modelo.UsuarioBD;
 import Hertz.Vista.VUsuario;
 import java.awt.event.MouseAdapter;
@@ -11,8 +9,6 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import Hertz.Vista.*;
-import Hertz.Modelo.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

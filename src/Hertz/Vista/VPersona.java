@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
+
 package Hertz.Vista;
 
 import com.toedter.calendar.JDateChooser;
@@ -24,12 +21,60 @@ public class VPersona extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JLabel getLbFoto() {
+        return LbFoto;
+    }
+
+    public void setLbFoto(JLabel LbFoto) {
+        this.LbFoto = LbFoto;
+    }
+
+    public JLabel getBtnBuscar() {
+        return btnBuscar;
+    }
+
+    public void setBtnBuscar(JLabel btnBuscar) {
+        this.btnBuscar = btnBuscar;
+    }
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public void setBtnEliminar(JButton btnEliminar) {
+        this.btnEliminar = btnEliminar;
+    }
+
+    public JButton getBtnFoto() {
+        return btnFoto;
+    }
+
+    public void setBtnFoto(JButton btnFoto) {
+        this.btnFoto = btnFoto;
+    }
+
     public JButton getBtnGuardar() {
         return btnGuardar;
     }
 
     public void setBtnGuardar(JButton btnGuardar) {
         this.btnGuardar = btnGuardar;
+    }
+
+    public JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public void setBtnModificar(JButton btnModificar) {
+        this.btnModificar = btnModificar;
+    }
+
+    public JButton getBtnNuevo() {
+        return btnNuevo;
+    }
+
+    public void setBtnNuevo(JButton btnNuevo) {
+        this.btnNuevo = btnNuevo;
     }
 
     public JLabel getjLabel1() {
@@ -80,22 +125,6 @@ public class VPersona extends javax.swing.JInternalFrame {
         this.jLabel6 = jLabel6;
     }
 
-    public JLabel getjLabel7() {
-        return jLabel7;
-    }
-
-    public void setjLabel7(JLabel jLabel7) {
-        this.jLabel7 = jLabel7;
-    }
-
-    public JLabel getjLabel8() {
-        return jLabel8;
-    }
-
-    public void setjLabel8(JLabel jLabel8) {
-        this.jLabel8 = jLabel8;
-    }
-
     public JLabel getjLabel9() {
         return jLabel9;
     }
@@ -118,6 +147,14 @@ public class VPersona extends javax.swing.JInternalFrame {
 
     public void setTablaPersona(JTable tablaPersona) {
         this.tablaPersona = tablaPersona;
+    }
+
+    public JTextField getTxtBuscar() {
+        return txtBuscar;
+    }
+
+    public void setTxtBuscar(JTextField txtBuscar) {
+        this.txtBuscar = txtBuscar;
     }
 
     public JDateChooser getTxtCalendario() {
@@ -177,45 +214,57 @@ public class VPersona extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel5 = new javax.swing.JLabel();
-        txtCalendario = new com.toedter.calendar.JDateChooser();
-        txtCedula = new javax.swing.JTextField();
-        txtDireccion = new javax.swing.JTextField();
-        btnGuardar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        btnFoto = new javax.swing.JButton();
         txtEmail = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JButton();
+        LbFoto = new javax.swing.JLabel();
+        btnModificar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPersona = new javax.swing.JTable();
+        btnNuevo = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        txtCalendario = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
+        txtCedula = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        btnGuardar = new javax.swing.JButton();
         txtCelular = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        btnBuscar = new javax.swing.JLabel();
 
-        jLabel5.setText("Dirección:");
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
-        btnGuardar.setText("GUARDAR");
+        btnFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hertz/Imagenes/Camera.png"))); // NOI18N
 
-        jLabel6.setText("Email:");
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hertz/Imagenes/BORRAR.png"))); // NOI18N
+        btnEliminar.setText("   ELIMINAR");
 
-        jLabel9.setText("Fecha de Nac:");
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hertz/Imagenes/MODIFICAR.png"))); // NOI18N
+        btnModificar.setText("  MODIFICAR");
 
         tablaPersona.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Cedula", "Nombre", "Dirección", "Celular", "Email", "FechaNac"
+                "Cedula", "Nombre", "Dirección", "Celular", "Email", "FechaNac", "Foto"
             }
         ));
         jScrollPane1.setViewportView(tablaPersona);
+
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hertz/Imagenes/nuevo usuario.png"))); // NOI18N
+        btnNuevo.setText("     NUEVO");
+
+        jLabel5.setText("Dirección:");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("PERSONA");
@@ -224,57 +273,77 @@ public class VPersona extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Nombres:");
 
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hertz/Imagenes/GUARDAR.png"))); // NOI18N
+        btnGuardar.setText(" GUARDAR");
+
+        jLabel6.setText("Email:");
+
         jLabel4.setText("Celular:");
 
-        jLabel8.setText("Foto");
+        jLabel9.setText("Fecha de Nac:");
+
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hertz/Imagenes/BUSCAR.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(79, 79, 79)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnBuscar)
+                        .addGap(62, 62, 62))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(61, 61, 61)
+                                .addComponent(jLabel9))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(LbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(41, 41, 41)
                                 .addComponent(jLabel3))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel9)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                            .addComponent(txtCalendario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCalendario, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE))
+                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(96, 96, 96)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel8)
-                        .addGap(72, 72, 72)
-                        .addComponent(btnGuardar)))
-                .addContainerGap(18, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(332, 332, 332))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(113, 113, 113))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,35 +351,57 @@ public class VPersona extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addComponent(jLabel1)
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)
-                            .addComponent(txtCalendario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnGuardar)
-                            .addComponent(jLabel8))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel3)
+                                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel4))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel9)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel5))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel6))
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtCalendario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(LbFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnNuevo)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnGuardar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnModificar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminar)))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -318,18 +409,23 @@ public class VPersona extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LbFoto;
+    private javax.swing.JLabel btnBuscar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnFoto;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnNuevo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaPersona;
+    private javax.swing.JTextField txtBuscar;
     private com.toedter.calendar.JDateChooser txtCalendario;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtCelular;

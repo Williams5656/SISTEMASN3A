@@ -1,9 +1,11 @@
 
 package Hertz.Controlador;
 
+import Hertz.Vista.VPrincipal;
+import Hertz.Vista.VUsuario;
+import Hertz.Vista.VPersona;
 import java.awt.Dimension;
 import java.awt.Frame;
-import Hertz.Vista.*;
 
 public class CPrincipal {
     
