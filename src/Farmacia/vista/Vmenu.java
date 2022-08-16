@@ -256,6 +256,11 @@ public class Vmenu extends javax.swing.JFrame {
 
         btn_farmaceutico.setSelected(true);
         btn_farmaceutico.setText("Farmaceutico");
+        btn_farmaceutico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_farmaceuticoActionPerformed(evt);
+            }
+        });
         jMenu5.add(btn_farmaceutico);
 
         jMenuBar1.add(jMenu5);
@@ -264,6 +269,11 @@ public class Vmenu extends javax.swing.JFrame {
 
         btn_medicamento.setSelected(true);
         btn_medicamento.setText("Medicamento");
+        btn_medicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_medicamentoActionPerformed(evt);
+            }
+        });
         jMenu6.add(btn_medicamento);
 
         jMenuBar1.add(jMenu6);
@@ -348,6 +358,28 @@ public class Vmenu extends javax.swing.JFrame {
        es.show();
        es.setVisible(true);
     }//GEN-LAST:event_btn_facturaActionPerformed
+
+    private void btn_medicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_medicamentoActionPerformed
+       Vmedicamento es = new Vmedicamento();
+       jDesktopPane1.add(es);
+       Dimension desktopSize = jDesktopPane1.getSize();
+       Dimension FrameSize = es.getSize();
+       es.setLocation((desktopSize.width - FrameSize.width)/2,
+               (desktopSize.height- FrameSize.height)/2);
+       es.show();
+       es.setVisible(true);
+    }//GEN-LAST:event_btn_medicamentoActionPerformed
+
+    private void btn_farmaceuticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_farmaceuticoActionPerformed
+       Vfarmaceutico es = new Vfarmaceutico();
+       jDesktopPane1.add(es);
+       Dimension desktopSize = jDesktopPane1.getSize();
+       Dimension FrameSize = es.getSize();
+       es.setLocation((desktopSize.width - FrameSize.width)/2,
+               (desktopSize.height- FrameSize.height)/2);
+       es.show();
+       es.setVisible(true);
+    }//GEN-LAST:event_btn_farmaceuticoActionPerformed
 
     /**
      * @param args the command line arguments

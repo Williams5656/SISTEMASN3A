@@ -158,6 +158,14 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
         this.jLabel8 = jLabel8;
     }
 
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
@@ -206,6 +214,7 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
         this.txtnombre_u = txtnombre_u;
     }
 
+   
    
 
 //    public Image getIconImage() {

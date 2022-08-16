@@ -38,9 +38,7 @@ public class Usuario_PersonaBD extends Usuario_PersonaMD{
                 m.setRol(rs.getString("rol"));
                 m.setNombreU(rs.getString("nombreU"));
                 m.setClave(rs.getString("clave"));
-                m.setEstado(rs.getString("estado"));
-                
-               
+                m.setEstado(rs.getString("estado"));     
                 lista.add(m);
             }
             rs.close();
