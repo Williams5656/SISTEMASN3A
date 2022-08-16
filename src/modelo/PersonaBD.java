@@ -75,6 +75,7 @@ public class PersonaBD extends PersonaMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PersonaMD m = new PersonaMD();
+                m.setCodigo(Integer.parseInt(rs.getString("CODIGO")));
                 m.setCedula(rs.getString("CEDULA"));
                 m.setNombres(rs.getString("NOMBRES"));
                 m.setApellidos(rs.getString("APELLIDOS"));
@@ -84,10 +85,10 @@ public class PersonaBD extends PersonaMD {
                 m.setCorreo(rs.getString("CORREO_ELECTRONICO"));
                 m.setRol(rs.getString("ROL"));
                 byte[] is;
-                is = rs.getBytes("foto");
+                is = rs.getBytes("FOTO");
                 if (is != null) {
                     try {
-                        is = Base64.decode(is, 0, rs.getBytes("foto").length);
+                        is = Base64.decode(is, 0, rs.getBytes("FOTO").length);
 //                    BufferedImage bi=Base64.decode( ImageIO.read(is));
                         m.setFoto_perfil(getImage(is, false));
                     } catch (IOException | SQLException ex) {
@@ -160,6 +161,7 @@ public class PersonaBD extends PersonaMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PersonaMD m = new PersonaMD();
+                m.setCodigo(Integer.parseInt(rs.getString("CODIGO")));
                 m.setCedula(rs.getString("CEDULA"));
                 m.setNombres(rs.getString("NOMBRES"));
                 m.setApellidos(rs.getString("APELLIDOS"));
@@ -217,6 +219,7 @@ public class PersonaBD extends PersonaMD {
             st.setString(2, Pass);
             rs = st.executeQuery();
             while (rs.next()) {
+                m.setCodigo(Integer.parseInt(rs.getString("CODIGO")));
                 m.setCedula(rs.getString("CEDULA"));
                 m.setNombres(rs.getString("NOMBRES"));
                 m.setApellidos(rs.getString("APELLIDOS"));
@@ -225,6 +228,20 @@ public class PersonaBD extends PersonaMD {
                 m.setTelefono(rs.getString("TELEFONO"));
                 m.setCorreo(rs.getString("CORREO_ELECTRONICO"));
                 m.setRol(rs.getString("ROL"));
+                byte[] is;
+                is = rs.getBytes("FOTO");
+                if (is != null) {
+                    try {
+                        is = Base64.decode(is, 0, rs.getBytes("FOTO").length);
+//                    BufferedImage bi=Base64.decode( ImageIO.read(is));
+                        m.setFoto_perfil(getImage(is, false));
+                    } catch (IOException | SQLException ex) {
+                        m.setFoto_perfil(null);
+                        Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    m.setFoto_perfil(null);
+                }
 
             }
         } catch (SQLException e) {

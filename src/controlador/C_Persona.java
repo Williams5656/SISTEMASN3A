@@ -1,6 +1,8 @@
 package controlador;
 
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
@@ -15,17 +17,47 @@ import modelo.PersonaMD;
 import vista.V_Persona;
 
 public class C_Persona {
-    
+
     public static V_Persona vistapersona;
     private PersonaBD bdpersona = new PersonaBD();
-    
- public C_Persona(V_Persona vistapersona) {
+
+    public C_Persona(V_Persona vistapersona) {
         this.vistapersona = vistapersona;
         vistapersona.setVisible(true);
-        
-        
+        lista();
+        vistapersona.getBtnguardarp().setEnabled(false);
+        vistapersona.getBtnmodificar().setEnabled(false);
+        vistapersona.getBtnguardarp().setVisible(false);
+        vistapersona.getBtnnuevo().setVisible(false);
+        vistapersona.getBtnmodificar().setVisible(false);
+        vistapersona.getBtneliminar().setVisible(false);
+        vistapersona.getBtn_CargarFoto().addActionListener(x -> obtieneImagen());
+        vistapersona.getBtn_QuitarFoto().addActionListener(x -> QuitarImagen());
+        vistapersona.getBtnguardarp().addActionListener(x -> guardar());
+        vistapersona.getBtnmodificar().addActionListener(x -> modificar());
+        vistapersona.getBtneliminar().addActionListener(x -> eliminar());
+        vistapersona.getTablapersona().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                seleccionar();
+            }
+
+        });
+        /*vistapersona.getLabelBotones().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelBotonesMouseEntered(evt);
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                labelBotonesMouseExited(evt);
+            }
+        });*/
+
     }
-  public void lista() {
+
+    public void lista() {
 
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vistapersona.getTablapersona().getModel();
@@ -38,19 +70,20 @@ public class C_Persona {
         }
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getCedula(), i, 0);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getNombres(), i, 1);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getApellidos(), i, 2);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getUsuario(), i, 3);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getClave(), i, 4);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getTelefono(), i, 5);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getCorreo(), i, 6);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getRol(), i, 7);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getFoto_perfil(), i, 8);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getCodigo(), i, 0);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getCedula(), i, 1);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getNombres(), i, 2);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getApellidos(), i, 3);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getUsuario(), i, 4);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getClave(), i, 5);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getTelefono(), i, 6);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getCorreo(), i, 7);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getRol(), i, 8);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getFoto_perfil(), i, 9);
 
         }
     }
- 
+
     public void guardar() {
         bdpersona.setCedula(vistapersona.getTxtcedula().getText());
         bdpersona.setNombres(vistapersona.getTxtnombre().getText());
@@ -73,7 +106,7 @@ public class C_Persona {
         }
 
     }
-    
+
     private void obtieneImagen() {
         vistapersona.getLabelFoto().setIcon(null);
         JFileChooser j = new JFileChooser();
@@ -89,9 +122,9 @@ public class C_Persona {
             }
         }
     }
- 
+
     public void modificar() {
-         bdpersona.setCedula(vistapersona.getTxtcedula().getText());
+        bdpersona.setCedula(vistapersona.getTxtcedula().getText());
         bdpersona.setNombres(vistapersona.getTxtnombre().getText());
         bdpersona.setApellidos(vistapersona.getTxtapellido().getText());
         bdpersona.setUsuario(vistapersona.getTxtusuario().getText());
@@ -111,7 +144,7 @@ public class C_Persona {
         }
 
     }
- 
+
     public void seleccionar() {
         vistapersona.getBtnguardarp().setEnabled(false);
         vistapersona.getBtnmodificar().setEnabled(true);
@@ -135,10 +168,8 @@ public class C_Persona {
         vistapersona.getTxtcorreo().setText(bdpersona.getCorreo());
         bdpersona.setRol(lista.get(0).getRol());
         vistapersona.getCbrol().setSelectedItem(bdpersona.getRol());
-        
-        
-        
-         Image img = lista.get(0).getFoto_perfil();
+
+        Image img = lista.get(0).getFoto_perfil();
         if (img != null) {
             Image newimg = img.getScaledInstance(vistapersona.getLabelFoto().getWidth(), vistapersona.getLabelFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
             ImageIcon icon = new ImageIcon(newimg);
@@ -147,7 +178,7 @@ public class C_Persona {
             vistapersona.getLabelFoto().setIcon(null);
         }
 
-    } 
+    }
 
     public void eliminar() {
         bdpersona.setCedula(vistapersona.getTxtcedula().getText());
@@ -172,5 +203,27 @@ public class C_Persona {
         vistapersona.getLabelFoto().setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuario.png")));
         vistapersona.getBtnguardarp().setEnabled(true);
         vistapersona.getBtnmodificar().setEnabled(false);
+    }
+
+    public void QuitarImagen() {
+        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de quitar la foto?", null, JOptionPane.YES_NO_OPTION);
+        if (respuesta == JOptionPane.YES_NO_OPTION) {
+            vistapersona.getLabelFoto().setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuario.png")));
+        }
+
+    }
+
+    private void labelBotonesMouseEntered(java.awt.event.MouseEvent evt) {
+        vistapersona.getBtnguardarp().setVisible(true);
+        vistapersona.getBtnnuevo().setVisible(true);
+        vistapersona.getBtnmodificar().setVisible(true);
+        vistapersona.getBtneliminar().setVisible(true);
+    }
+
+    private void labelBotonesMouseExited(java.awt.event.MouseEvent evt) {
+        vistapersona.getBtnguardarp().setVisible(false);
+        vistapersona.getBtnnuevo().setVisible(false);
+        vistapersona.getBtnmodificar().setVisible(false);
+        vistapersona.getBtneliminar().setVisible(false);
     }
 }
