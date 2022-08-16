@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Farmacia.modelo;
-
+import java.awt.Image;
 /**
  *
  * @author A
@@ -15,6 +15,7 @@ public class FarmaceuticoMD {
     private String apellido;
     private String telefono;
     private String direccion;
+  
 
     public FarmaceuticoMD() {
     }
@@ -25,6 +26,7 @@ public class FarmaceuticoMD {
         this.apellido = apellido;
         this.telefono = telefono;
         this.direccion = direccion;
+        
     }
 
     public String getCodigo() {

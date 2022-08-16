@@ -94,6 +94,14 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
+    public JLabel getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(JLabel imagen) {
+        this.imagen = imagen;
+    }
+
     public JLabel getjLabel1() {
         return jLabel1;
     }
@@ -156,14 +164,6 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
 
     public void setjLabel8(JLabel jLabel8) {
         this.jLabel8 = jLabel8;
-    }
-
-    public JLabel getjLabel9() {
-        return jLabel9;
-    }
-
-    public void setjLabel9(JLabel jLabel9) {
-        this.jLabel9 = jLabel9;
     }
 
     public JScrollPane getjScrollPane1() {
@@ -250,7 +250,7 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
         btn_modificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
         fecha_nacimiento = new com.toedter.calendar.JCalendar();
-        jLabel9 = new javax.swing.JLabel();
+        imagen = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -338,8 +338,8 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
         getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, -1, -1));
         getContentPane().add(fecha_nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 380, 230));
 
-        jLabel9.setText("**FOTO**");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 130, 140));
+        imagen.setText("**FOTO**");
+        getContentPane().add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 130, 140));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia_imagenes/7457f4f8d72fde5.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 650));
@@ -360,6 +360,7 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> combo_estado;
     private javax.swing.JComboBox<String> combo_rol;
     private com.toedter.calendar.JCalendar fecha_nacimiento;
+    private javax.swing.JLabel imagen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -368,7 +369,6 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaUsuario;
     private javax.swing.JTextField txtcedula1;

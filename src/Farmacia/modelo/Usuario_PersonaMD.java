@@ -5,6 +5,8 @@
  */
 package Farmacia.modelo;
 
+import java.awt.Image;
+
 /**
  *
  * @author A
@@ -17,11 +19,12 @@ public class Usuario_PersonaMD {
     private String nombreU;
     private String clave;
     private String estado;
+    private Image foto;
 
     public Usuario_PersonaMD() {
     }
 
-    public Usuario_PersonaMD(String cedula, String nombres, String fechaNacimiento, String rol, String nombreU, String clave, String estado) {
+    public Usuario_PersonaMD(String cedula, String nombres, String fechaNacimiento, String rol, String nombreU, String clave, String estado,Image foto) {
         this.cedula = cedula;
         this.nombres = nombres;
         this.fechaNacimiento = fechaNacimiento;
@@ -29,6 +32,15 @@ public class Usuario_PersonaMD {
         this.nombreU = nombreU;
         this.clave = clave;
         this.estado = estado;
+        this.foto = foto;
+    }
+
+    public Image getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Image foto) {
+        this.foto = foto;
     }
 
     public String getCedula() {
