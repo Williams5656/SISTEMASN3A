@@ -80,7 +80,6 @@ public class Vista_muebles_principal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         ItmPersona = new javax.swing.JMenuItem();
         ItmUsuario = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         ItmRegresar = new javax.swing.JMenuItem();
 
@@ -121,9 +120,6 @@ public class Vista_muebles_principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu3.setText("jMenu3");
-        jMenuBar1.add(jMenu3);
-
         jMenu2.setText("REGRESAR");
 
         ItmRegresar.setText("Regresar");
@@ -154,7 +150,6 @@ public class Vista_muebles_principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem ItmUsuario;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
