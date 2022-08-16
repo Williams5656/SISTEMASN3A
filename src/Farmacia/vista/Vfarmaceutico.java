@@ -179,6 +179,7 @@ public class Vfarmaceutico extends javax.swing.JInternalFrame {
         btneliminarf = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -229,7 +230,10 @@ public class Vfarmaceutico extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 570, 260));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 570, 260));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia_imagenes/bf23243e1726ccaba8c70279e963e849-grafico-vectorial-de-fondo-azul-abstracto.jpg"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 0, 570, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -244,6 +248,7 @@ public class Vfarmaceutico extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTable jTable1;

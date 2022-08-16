@@ -44,6 +44,7 @@ public class Vfactura extends javax.swing.JInternalFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
         jLabel5.setText("jLabel5");
 
@@ -112,6 +113,9 @@ public class Vfactura extends javax.swing.JInternalFrame {
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 90, -1));
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 90, -1));
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia_imagenes/abstract-background-blue-hexagons-with-2623098.jpg"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 220));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -135,6 +139,7 @@ public class Vfactura extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;

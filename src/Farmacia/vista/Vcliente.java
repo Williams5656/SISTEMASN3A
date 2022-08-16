@@ -214,6 +214,7 @@ public class Vcliente extends javax.swing.JInternalFrame {
         btnguardar = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
@@ -292,6 +293,9 @@ public class Vcliente extends javax.swing.JInternalFrame {
         btneliminar.setText("ELIMINAR");
         getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 178, -1, -1));
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia_imagenes/istockphoto-526058997-1024x1024.jpg"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 510));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -322,6 +326,7 @@ public class Vcliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtapellido_C;
