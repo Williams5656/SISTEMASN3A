@@ -41,6 +41,7 @@ public class Vproveedor extends javax.swing.JInternalFrame {
         btnguardar = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         jTextField2.setText("jTextField2");
 
@@ -51,15 +52,23 @@ public class Vproveedor extends javax.swing.JInternalFrame {
         setTitle("--Proveedor--");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Codigo:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 28, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 66, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Telefono:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 19, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Direccion:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 66, -1, -1));
         getContentPane().add(txtcodigo_p, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 25, 98, -1));
@@ -80,7 +89,7 @@ public class Vproveedor extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 430, 230));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 430, 260));
 
         btnguardar.setText("GUARDAR");
         getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
@@ -95,6 +104,9 @@ public class Vproveedor extends javax.swing.JInternalFrame {
 
         btneliminar.setText("ELIMINAR");
         getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia_imagenes/pngtree-3d-blue-banner-abstract-glass-background-image_303785.jpg"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-130, 10, 670, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,6 +124,7 @@ public class Vproveedor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField2;
