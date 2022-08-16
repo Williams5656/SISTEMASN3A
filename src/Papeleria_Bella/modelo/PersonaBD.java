@@ -1,5 +1,5 @@
-
 package Papeleria_Bella.modelo;
+
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -19,8 +19,7 @@ import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import org.postgresql.util.Base64;
 
-
-public class PersonaBD extends PersonaMD{
+public class PersonaBD extends PersonaMD {
 
     Conect conectar = new Conect();
 
@@ -30,6 +29,7 @@ public class PersonaBD extends PersonaMD{
     public PersonaBD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, String rol, Image foto) {
         super(cedula, nombres, apellidos, telefono, direccion, email, rol, foto);
     }
+
     public static BufferedImage toBufferedImage(Image img) {
         if (img instanceof BufferedImage) {
             return (BufferedImage) img;
@@ -46,6 +46,7 @@ public class PersonaBD extends PersonaMD{
         // Return the buffered image
         return bimage;
     }
+
     private Image getImage(byte[] bytes, boolean isThumbnail) throws IOException {
         ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
         Iterator readers = ImageIO.getImageReadersByFormatName("png");
@@ -59,8 +60,7 @@ public class PersonaBD extends PersonaMD{
         }
         return reader.read(0, param);
     }
-    
-    
+
     public List<PersonaMD> mostrardatos() {
         try {
             List<PersonaMD> lista = new ArrayList<PersonaMD>();
@@ -75,8 +75,8 @@ public class PersonaBD extends PersonaMD{
                 u.setDireccion(rs.getString("direccion"));
                 u.setEmail(rs.getString("email"));
                 u.setRol(rs.getString("rol"));
-                byte[]is;
-                is = rs.getBytes("imagen");
+                byte[] is;
+                is = rs.getBytes("foto");
                 if (is != null) {
                     try {
                         is = Base64.decode(is, 0, rs.getBytes("foto").length);
@@ -97,10 +97,9 @@ public class PersonaBD extends PersonaMD{
             Logger.getLogger(PersonaMD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
-        
-        
+
     }
-    
+
     public boolean insertar() {
         String ef = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -112,18 +111,9 @@ public class PersonaBD extends PersonaMD{
         } catch (IOException ex) {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        String sql = "INSERT INTO persona(cedula,nombres,apellidos,telefono,direccion,email,rol,imagen)" + "VALUES ('" + getCedula()+ "','" + getNombres()+ "','" + getApellidos()+ "','" + getTelefono()+ "','" + getDireccion()+ "','" + getEmail()+ "','" + getRol()+ "','" + ef + "')";
-        
-        
-        try {
-            BufferedImage img = toBufferedImage(getFoto());
-            ImageIO.write(img, "PNG", bos);
-            byte[] imgb = bos.toByteArray();
-            ef = Base64.encodeBytes(imgb);
-        } catch (IOException ex) {
-            Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+        String sql = "INSERT INTO persona(cedula,nombres,apellidos,telefono,direccion,email,rol,imagen)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getTelefono() + "','" + getDireccion() + "','" + getEmail() + "','" + getRol() + "','" + ef + "')";
+
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {
