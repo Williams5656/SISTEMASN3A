@@ -5,6 +5,12 @@
  */
 package Farmacia.vista;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author A
@@ -17,6 +23,127 @@ public class Vproveedor extends javax.swing.JInternalFrame {
     public Vproveedor() {
         initComponents();
     }
+
+    public JButton getBtneliminar() {
+        return btneliminar;
+    }
+
+    public void setBtneliminar(JButton btneliminar) {
+        this.btneliminar = btneliminar;
+    }
+
+    public JButton getBtnguardar() {
+        return btnguardar;
+    }
+
+    public void setBtnguardar(JButton btnguardar) {
+        this.btnguardar = btnguardar;
+    }
+
+    public JButton getBtnmodificar() {
+        return btnmodificar;
+    }
+
+    public void setBtnmodificar(JButton btnmodificar) {
+        this.btnmodificar = btnmodificar;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+    public JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    public void setjTextField2(JTextField jTextField2) {
+        this.jTextField2 = jTextField2;
+    }
+
+    public JTextField getTxtcodigo_p() {
+        return txtcodigo_p;
+    }
+
+    public void setTxtcodigo_p(JTextField txtcodigo_p) {
+        this.txtcodigo_p = txtcodigo_p;
+    }
+
+    public JTextField getTxtdireccion_p() {
+        return txtdireccion_p;
+    }
+
+    public void setTxtdireccion_p(JTextField txtdireccion_p) {
+        this.txtdireccion_p = txtdireccion_p;
+    }
+
+    public JTextField getTxtnombre_p() {
+        return txtnombre_p;
+    }
+
+    public void setTxtnombre_p(JTextField txtnombre_p) {
+        this.txtnombre_p = txtnombre_p;
+    }
+
+    public JTextField getTxttelefono_p() {
+        return txttelefono_p;
+    }
+
+    public void setTxttelefono_p(JTextField txttelefono_p) {
+        this.txttelefono_p = txttelefono_p;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
