@@ -51,6 +51,17 @@ public class Cpersona {
         }
     }
     
+    public void nuevo(){
+        vista.getTxtcedula().setText("");
+        vista.getTxtnombres().setText("");
+        vista.getTxtapellidos().setText("");
+        vista.getTxttelefono().setText("");
+        vista.getTxtdireccion().setText("");
+        vista.getTxtemail().setText("");
+        vista.getComborol().setSelectedItem("");
+        vista.getButtonguardar().setEnabled(true);
+        vista.getButtonmodificar().setEnabled(true);
+    }
     public void guardar() {
         bpersona.setCedula(vista.getTxtcedula().getText());
         bpersona.setNombres(vista.getTxtnombres().getText());
@@ -68,6 +79,26 @@ public class Cpersona {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
         }
     }
+    public void modificar() {
+        bpersona.setCedula(vista.getTxtcedula().getText());
+        bpersona.setNombres(vista.getTxtnombres().getText());
+        bpersona.setApellidos(vista.getTxtapellidos().getText());
+        bpersona.setTelefono(vista.getTxttelefono().getText());
+        bpersona.setDireccion(vista.getTxtdireccion().getText());
+        bpersona.setEmail(vista.getTxtemail().getText());
+        String rol = (String) vista.getComborol().getSelectedItem();
+        bpersona.setRol(rol);
+        int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
+        if (resp == 0) {
+            if (bpersona.modificar(vista.getTxtcedula().getText())) {
+                JOptionPane.showMessageDialog(null, "Datos Actualizados");
+                lista();
+                nuevo();
+                vista.getButtonmodificar().setEnabled(false);
+            }
+        }
+
+    }
     
     private void obtieneImagen() {
         vista.getLabelfoto().setIcon(null);
@@ -81,6 +112,18 @@ public class Cpersona {
                 vista.getLabelfoto().updateUI();
             } catch (IOException ex) {
                 Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    public void eliminar(){
+        bpersona.setCedula(vista.getTxtcedula().getText());
+        int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el usuario  "+vista.getTxtcedula().getText());
+        if (resp == 0) {
+            if (bpersona.eliminar(vista.getTxtcedula().getText())) {
+                JOptionPane.showMessageDialog(null, "Datos Actualizados");
+                lista();
+                nuevo();
+                
             }
         }
     }

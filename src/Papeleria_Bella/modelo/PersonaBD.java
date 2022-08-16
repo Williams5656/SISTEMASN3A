@@ -1,9 +1,12 @@
 package Papeleria_Bella.modelo;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
+//import java.io.ByteArrayOutput.Stream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -122,5 +125,53 @@ public class PersonaBD extends PersonaMD {
             return false;
         }
 
+    }
+    public boolean modificar(String rol) {
+        String sql = "update persona set \"nombres\"='" + getClass()+ "'"
+                + " where \"rol\"='" + rol + "'";
+
+        if (conectar.noQuery(sql) == null) {
+            return true;
+        } else {
+            System.out.println("error al editar");
+
+            return false;
+        }
+
+    }
+    public List<PersonaMD> obtenerdatos(String nombre) {
+        try {
+            List<PersonaMD> lista = new ArrayList<PersonaMD>();
+            String sql = "select * from persona" + " where \rol\"='" + rol + "'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                PersonaMD u = new PersonaMD();
+                u.setCedula(rs.getString("cedula"));
+                u.setNombres(rs.getString("nombres"));
+                u.setApellidos(rs.getString("apellidos"));
+                u.setTelefono(rs.getString("telefono"));
+                u.setDireccion(rs.getString("direccion"));
+                u.setEmail(rs.getString("email"));
+                u.setRol(rs.getString("rol"));
+               
+                lista.add(u);
+            }
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(PersonaMD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
+    
+    public boolean eliminar (String rol){
+        String nsql = "delete from persona where \"rol\"='" + rol + "'";
+        if (conectar.noQuery(nsql)==null) {
+            return true;
+            
+        }else{
+            System.out.println("Error al eliminar");
+            return false;
+        }
     }
 }
