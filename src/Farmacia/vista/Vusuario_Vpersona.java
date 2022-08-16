@@ -332,7 +332,7 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
         jLabel9.setText("**FOTO**");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 130, 140));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia/inicio/imagenes/7457f4f8d72fde5.jpg"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia_imagenes/7457f4f8d72fde5.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 650));
 
         pack();

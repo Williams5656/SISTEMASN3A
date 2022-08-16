@@ -28,7 +28,7 @@ public class Usuario_PersonaBD extends Usuario_PersonaMD{
  public List<Usuario_PersonaMD> mostrardatos() {
         List<Usuario_PersonaMD> lista = new ArrayList<Usuario_PersonaMD>();
         try {
-            String sql = "select * from usuario";
+            String sql = "select * from usuario_persona";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 Usuario_PersonaMD m = new Usuario_PersonaMD();
@@ -52,7 +52,7 @@ public class Usuario_PersonaBD extends Usuario_PersonaMD{
     }
 
     public boolean insertar() {
-        String nsql = "INSERT INTO usuario(cedula, nombres, fechaNacimiento, rol, nombreU, clave, estado)"
+        String nsql = "INSERT INTO usuario_persona(cedula, nombres, fechaNacimiento, rol, nombreU, clave, estado)"
                 + "VALUES ('" + getCedula()+ "','" + getNombres()+ "','" + getFechaNacimiento()+ "','" +getRol()+ "','" + getNombreU()+ "','"+ getClave()+ "','" +getEstado()+"')";
         if (conectar.noQuery(nsql) == null) {
             return true;
@@ -64,7 +64,7 @@ public class Usuario_PersonaBD extends Usuario_PersonaMD{
 
     public boolean modificar(String cedula) {
 
-        String nsql = "UPDATE usuario set \"nombres\"='" + getNombres()+ "',fechaNacimiento ='" + getFechaNacimiento()+ "',rol ='" + getRol()+ "',nombreU ='"+ getNombreU()+ "',clave ='"  + getClave()+"',estado ='" + getEstado()+ "'\n"
+        String nsql = "UPDATE usuario_persona set \"nombres\"='" + getNombres()+ "',fechaNacimiento ='" + getFechaNacimiento()+ "',rol ='" + getRol()+ "',nombreU ='"+ getNombreU()+ "',clave ='"  + getClave()+"',estado ='" + getEstado()+ "'\n"
                 + " WHERE \"cedula\"='" + cedula + "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
@@ -76,7 +76,7 @@ public class Usuario_PersonaBD extends Usuario_PersonaMD{
     }
 
     public boolean Eliminar(String cedula) {
-        String nsql = " delete from usuario where cedula = '" + cedula + "';";
+        String nsql = " delete from usuario_persona where cedula = '" + cedula + "';";
         if (conectar.noQuery(nsql) == null) {
             return true;
         } else {
@@ -88,7 +88,7 @@ public class Usuario_PersonaBD extends Usuario_PersonaMD{
     public List<Usuario_PersonaMD> obtenerDatos(String cedula) {
         List<Usuario_PersonaMD> lista = new ArrayList<Usuario_PersonaMD>();
         try {
-            String sql = "select * from usuario" + " where \"cedula\"='" + cedula + "'";
+            String sql = "select * from usuario_persona" + " where \"cedula\"='" + cedula + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 Usuario_PersonaMD m = new Usuario_PersonaMD();
