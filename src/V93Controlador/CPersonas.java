@@ -14,11 +14,11 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-   
-public class CPersonas { 
- 
+
+public class CPersonas {
+
     public static VistaPersona VistaP;
- 
+
     private PersonaBD bdpersona = new PersonaBD();
 
     public CPersonas(VistaPersona VistaP) {
@@ -29,6 +29,7 @@ public class CPersonas {
         VistaP.getBtnGuardarPersona().addActionListener(x -> guardar());
         VistaP.getBtnModificarPersona().addActionListener(e -> modificar());
         VistaP.getBtnFoto().addActionListener(e -> obtieneImagen());
+        VistaP.getBtnbuscarp().addActionListener(e -> buscar());
         // VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
         // VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getTablePersona().addMouseListener(new MouseAdapter() {
@@ -44,7 +45,7 @@ public class CPersonas {
         VistaP.getBtnGuardarPersona().setEnabled(false);
         VistaP.getBtnModificarPersona().setEnabled(false);
     }
-
+  
     public void lista() {
 
         DefaultTableModel modelo;
@@ -67,7 +68,7 @@ public class CPersonas {
 
         }
     }
- 
+
     public void guardar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
@@ -88,7 +89,7 @@ public class CPersonas {
         }
 
     }
-    
+
     private void obtieneImagen() {
         VistaP.getLbFoto().setIcon(null);
         JFileChooser j = new JFileChooser();
@@ -104,7 +105,32 @@ public class CPersonas {
             }
         }
     }
- 
+
+    public void buscar() {
+        if (VistaP.getTxtbuscarp().getText().equals("")) {
+            lista();
+        } else {
+            DefaultTableModel modelo;
+            modelo = (DefaultTableModel) VistaP.getTablePersona().getModel();
+            List<PersonaMb> lista = bdpersona.obtenerdatos(VistaP.getTxtbuscarp().getText());
+            int columnas = modelo.getColumnCount();
+
+            for (int j = VistaP.getTablePersona().getRowCount() - 1; j >= 0; j--) {
+                modelo.removeRow(j);
+            }
+            for (int i = 0; i < lista.size(); i++) {
+                modelo.addRow(new Object[columnas]);
+                VistaP.getTablePersona().setValueAt(lista.get(i).getCedula(), i, 0);
+                VistaP.getTablePersona().setValueAt(lista.get(i).getNombre(), i, 1);
+                VistaP.getTablePersona().setValueAt(lista.get(i).getDireccion(), i, 2);
+                VistaP.getTablePersona().setValueAt(lista.get(i).getFecha_nacimiento(), i, 3);
+                VistaP.getTablePersona().setValueAt(lista.get(i).getCiudad(), i, 4);
+                VistaP.getTablePersona().setValueAt(lista.get(i).getCelular(), i, 5);
+            }
+        }
+
+    }
+
     public void modificar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
@@ -123,7 +149,7 @@ public class CPersonas {
         }
 
     }
- 
+
     public void seleccionar() {
         VistaP.getBtnGuardarPersona().setEnabled(false);
         VistaP.getBtnModificarPersona().setEnabled(true);
@@ -143,10 +169,8 @@ public class CPersonas {
         VistaP.getTxtCiudadPersona().setText(bdpersona.getCiudad());
         bdpersona.setCelular(lista.get(0).getCelular());
         VistaP.getTxtCelularPersona().setText(bdpersona.getCelular());
-        
-        
-        
-         Image img = lista.get(0).getFoto();
+
+        Image img = lista.get(0).getFoto();
         if (img != null) {
             Image newimg = img.getScaledInstance(VistaP.getLbFoto().getWidth(), VistaP.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
             ImageIcon icon = new ImageIcon(newimg);
@@ -155,7 +179,7 @@ public class CPersonas {
             VistaP.getLbFoto().setIcon(null);
         }
 
-    } 
+    }
 
     public void eliminar() {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
@@ -180,4 +204,3 @@ public class CPersonas {
         VistaP.getBtnModificarPersona().setEnabled(false);
     }
 }
- 

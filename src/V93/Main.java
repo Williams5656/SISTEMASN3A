@@ -1,4 +1,4 @@
-
+ 
 package V93;
 
 import V93Vista.*;
@@ -9,6 +9,4 @@ public class Main {
        VistaPrincipal Vista = new VistaPrincipal();
           Cprincipal Inicio = new Cprincipal(Vista);
     }
-         
-}
-     
+}  

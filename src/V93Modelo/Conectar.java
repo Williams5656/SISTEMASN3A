@@ -13,7 +13,7 @@ public class Conectar {
     Connection con;
     Statement st;
     ResultSet rs;
- 
+   
     String cadConexion = "jdbc:postgresql://localhost:5432/V93";
     String pgUser = "postgres";
     String pgContra = "Josue2018.";

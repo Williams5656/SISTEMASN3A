@@ -19,7 +19,7 @@ public class Cprincipal {
         Vista.getNuevoRol().addActionListener(e ->rol());
  
     }
-  
+    
     private void personas() {
         VistaPersona vr = new VistaPersona();
         CPersonas cr = new CPersonas(vr);

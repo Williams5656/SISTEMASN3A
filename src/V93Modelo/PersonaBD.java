@@ -124,11 +124,11 @@ public class PersonaBD extends PersonaMb {
         }
 
     }
-
+  
     public List<PersonaMb> obtenerdatos(String cedula) {
         try {
             List<PersonaMb> lista = new ArrayList<PersonaMb>();
-            String sql = "select * from persona " + " where \"cedula\"='" + cedula + "'";
+            String sql = "select * from persona " + " where \"cedula\" ILIKE '%" + cedula + "%'";
             ResultSet rs = conecta.query(sql);
             while (rs.next()) {
                 PersonaMb m = new PersonaMb();
@@ -165,6 +165,7 @@ public class PersonaBD extends PersonaMb {
     }
 
     public boolean modificar(String cedula) {
+        
         String ef = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
