@@ -53,6 +53,7 @@ public class Vpersona extends javax.swing.JFrame {
     }
 
     public Vpersona() {
+        initComponents();
     }
 
     public JButton getButtoneliminar() {
