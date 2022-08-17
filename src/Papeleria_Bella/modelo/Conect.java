@@ -1,4 +1,4 @@
-package Papeleria_Bella.modelo;
+ package Papeleria_Bella.modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 //database: d4qd8o5sn5csjf
 //user: wbfgdvknrulnpr
 public class Conect {
-
+  
     Connection con;
     Statement st;
     ResultSet rs;
@@ -25,7 +25,7 @@ public class Conect {
 //    String cadConexion="jdbc:postgresql://ec2-44-199-52-133.compute-1.amazonaws.com:5432/dc3k5f62r653lp";
 //    String pgUser="znfnqjrnxvbgqe";
 //    String pgContra="f48f4656ce162f56bdc4ed25c0384bcff30056bece5403fd038aa4b60f84c75e";
-
+       
     public Conect() {
 
         try {
@@ -34,7 +34,7 @@ public class Conect {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Conect.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+ 
         try {
             con = DriverManager.getConnection(cadConexion, pgUser, pgContra);
             System.out.println("Se conecto DB.");
@@ -42,7 +42,7 @@ public class Conect {
             Logger.getLogger(Conect.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }
+    }  
 
     public SQLException noQuery(String nsql) {
         System.out.println(nsql);
@@ -74,7 +74,7 @@ public class Conect {
     public Connection getCon() {
         return con;
     }
-
+ 
     public void setCon(Connection con) {
         this.con = con;
     }

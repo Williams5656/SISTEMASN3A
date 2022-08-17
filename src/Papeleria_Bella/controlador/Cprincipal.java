@@ -1,4 +1,4 @@
-
+ 
 package Papeleria_Bella.controlador;
 import Papeleria_Bella.controlador.*;
 import Papeleria_Bella.vista.*;
@@ -6,6 +6,8 @@ import Papeleria_Bella.modelo.*;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 public class Cprincipal {
     public static Vprincipal vista;
+    
+     
     
     public Cprincipal(Vprincipal vista) {
         this.vista=vista;
@@ -16,9 +18,10 @@ public class Cprincipal {
         vista.getItemusuario().addActionListener(e-> usuario());
 
     }
-    
+            
+         
     private void persona() {
-        Vpersona p= new Vpersona();
+        Vpersona1 p= new Vpersona1();
         Cpersona cper=new Cpersona(p);
     }
     private void usuario() {

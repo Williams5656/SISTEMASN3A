@@ -15,17 +15,8 @@ import javax.swing.JMenuItem;
  * @author hp
  */
 public class Vprincipal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Cprincipal
-     */
-    public Vprincipal(JMenuItem itempersona, JMenuItem itemusuario, JDesktopPane jDesktopPane1, JMenu jMenu1, JMenu jMenu2, JMenuBar jMenuBar1) {
-        this.itempersona = itempersona;
-        this.itemusuario = itemusuario;
-        this.jDesktopPane1 = jDesktopPane1;
-        this.jMenu1 = jMenu1;
-        this.jMenu2 = jMenu2;
-        this.jMenuBar1 = jMenuBar1;
+ public Vprincipal() {
+        initComponents();
     }
 
     public JMenuItem getItempersona() {
@@ -75,11 +66,7 @@ public class Vprincipal extends javax.swing.JFrame {
     public void setjMenuBar1(JMenuBar jMenuBar1) {
         this.jMenuBar1 = jMenuBar1;
     }
-
-    public Vprincipal() {
-        initComponents();
-    }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -112,11 +99,6 @@ public class Vprincipal extends javax.swing.JFrame {
         jMenu1.setText("Nuevo");
 
         itempersona.setText("Persona");
-        itempersona.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itempersonaActionPerformed(evt);
-            }
-        });
         jMenu1.add(itempersona);
 
         itemusuario.setText("Usuario");
@@ -131,24 +113,20 @@ public class Vprincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void itempersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itempersonaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itempersonaActionPerformed
-
     /**
      * @param args the command line arguments
      */
-
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itempersona;

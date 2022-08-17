@@ -1,4 +1,4 @@
-
+ 
 package Papeleria_Bella.modelo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,9 +17,9 @@ public class UsuarioBD extends UsuarioMD{
         super(codigo, usuario, contraseña, rol, estado);
     }
     
-
-    
-    
+ 
+        
+      
     public List<UsuarioMD> mostrardatos() {
         try {
             List<UsuarioMD> lista = new ArrayList<UsuarioMD>();

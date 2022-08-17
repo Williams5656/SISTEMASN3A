@@ -7,7 +7,7 @@ import Papeleria_Bella.modelo.*;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+           
 public class Cinicio {
     public static Vinicio vista;
     
@@ -19,7 +19,7 @@ public class Cinicio {
         vista.getButtoningresar().addActionListener(e-> principal ());
 
     }
-
+  
     
     private void principal() {
         Vprincipal p= new Vprincipal();

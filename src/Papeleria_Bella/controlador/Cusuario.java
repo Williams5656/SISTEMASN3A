@@ -1,4 +1,4 @@
-
+ 
 package Papeleria_Bella.controlador;
 import Papeleria_Bella.controlador.*;
 import Papeleria_Bella.vista.*;
@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class Cusuario {
     public static Vusuario vista;
-    
+            
     private UsuarioBD busuario = new UsuarioBD();
     
     public Cusuario(Vusuario vista) {
@@ -19,7 +19,7 @@ public class Cusuario {
         vista.getButtonguardar().addActionListener(e -> guardar());
         vista.getButtonguardar().setEnabled(true); 
     }
-    
+       
     public void lista() {
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTablausuario().getModel();

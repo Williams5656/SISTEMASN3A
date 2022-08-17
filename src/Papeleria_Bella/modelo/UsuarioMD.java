@@ -1,4 +1,4 @@
-
+ 
 package Papeleria_Bella.modelo;
 
 
@@ -16,13 +16,13 @@ public class UsuarioMD {
         this.rol = rol;
         this.estado = estado;
     }
-
+    
     public UsuarioMD() {
     }
 
     public String getCodigo() {
         return codigo;
-    }
+    }  
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
