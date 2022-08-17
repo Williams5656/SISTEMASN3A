@@ -129,7 +129,19 @@ public class Persona_BD_muebles extends M_personaMD{
     }
     
     public boolean modificar(String cedula) {
-        String sql = "update usuario persona \"nombres\"='" + getNombre()+ "',\"apellidos\"='" + getApellido()+ "',\"direccion\"='" + getDireccion()+ "',\"celular\"='" + getCelular()+ "',\"nacionalidad\"='" + getNacionalidad()+ "',\"fnacimiento\"='" + getFechana()+ "'" + " where \"cedula\"='" + cedula + "'";
+        
+        String ef = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        try {
+            BufferedImage img = toBufferedImage(getFoto());
+            ImageIO.write(img, "PNG", bos);
+            byte[] imgb = bos.toByteArray();
+            ef = Base64.encodeBytes(imgb);
+        } catch (IOException ex) {
+            Logger.getLogger(Persona_BD_muebles.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        String sql = "update persona set \"nombres\"='" + getNombre()+ "',\"apellidos\"='" + getApellido()+ "',\"direccion\"='" + getDireccion()+ "',\"celular\"='" + getCelular()+ "',\"nacionalidad\"='" + getNacionalidad()+ "',\"fnacimiento\"='" + getFechana()+ "',\"imagen\"='" + ef + "'" + " where \"cedula\"='" + cedula + "'";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -165,6 +177,21 @@ public class Persona_BD_muebles extends M_personaMD{
                 m.setCelular(rs.getString("celular"));
                 m.setNacionalidad(rs.getString("nacionalidad"));
                 m.setFechana(rs.getString("fnacimiento"));
+                
+                byte[] is;
+                is = rs.getBytes("imagen");
+                if (is != null) {
+                    try {
+                        is = Base64.decode(is, 0, rs.getBytes("imagen").length);
+//                    BufferedImage bi=Base64.decode( ImageIO.read(is));
+                        m.setFoto(getImage(is, false));
+                    } catch (Exception ex) {
+                        m.setFoto(null);
+                        Logger.getLogger(Persona_BD_muebles.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    m.setFoto(null);
+                }
 
                 lista.add(m);
             }

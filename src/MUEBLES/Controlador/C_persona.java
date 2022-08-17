@@ -91,6 +91,8 @@ public class C_persona {
         bdpersona.setCelular(vista.getTxtcelular().getText());
         bdpersona.setNacionalidad(vista.getTxtnacionalidad().getText());
         bdpersona.setFechana(vista.getTxtfecha().getText());
+        ImageIcon ic = (ImageIcon) vista.getJimagen().getIcon();
+        bdpersona.setFoto(ic.getImage());
         
         int res = JOptionPane.showConfirmDialog(null, "ESTA SEGURO DE MODIFICAR");
         if (res == 0) {
@@ -144,7 +146,6 @@ public class C_persona {
         vista.getTxtcelular().setText("");
         vista.getTxtnacionalidad().setText("");
         vista.getTxtfecha().setText("");
-        vista.getJimagen().setText("");
 
     }
 
