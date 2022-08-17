@@ -24,7 +24,7 @@ public class C_Persona {
     public C_Persona(V_Persona vistapersona) {
         this.vistapersona = vistapersona;
         vistapersona.setVisible(true);
-//        lista();
+    lista();
             
         vistapersona.getBtn_CargarFoto().addActionListener(x -> obtieneImagen());
         vistapersona.getBtn_QuitarFoto().addActionListener(x -> QuitarImagen());
@@ -65,16 +65,12 @@ public class C_Persona {
         }
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getCodigo(), i, 0);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getCedula(), i, 1);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getNombres(), i, 2);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getApellidos(), i, 3);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getUsuario(), i, 4);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getClave(), i, 5);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getTelefono(), i, 6);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getCorreo(), i, 7);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getRol(), i, 8);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getFoto_perfil(), i, 9);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getCedula(), i, 0);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getNombres(), i, 1);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getApellidos(), i, 2);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getTelefono(), i, 3);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getCorreo(), i, 4);
+            vistapersona.getTablapersona().setValueAt(lista.get(i).getFoto_perfil(), i, 5);
 
         }
     }
@@ -147,7 +143,6 @@ public class C_Persona {
         vistapersona.getTxtnombre().setText(bdpersona.getNombres());
         bdpersona.setApellidos(lista.get(0).getApellidos());
         vistapersona.getTxtapellido().setText(bdpersona.getApellidos());
-        bdpersona.setUsuario(lista.get(0).getUsuario());
         bdpersona.setTelefono(lista.get(0).getTelefono());
         vistapersona.getTxttelefono().setText(bdpersona.getTelefono());
         bdpersona.setCorreo(lista.get(0).getCorreo());

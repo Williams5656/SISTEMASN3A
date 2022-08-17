@@ -79,11 +79,8 @@ public class PersonaBD extends PersonaMD {
                 m.setCedula(rs.getString("CEDULA"));
                 m.setNombres(rs.getString("NOMBRES"));
                 m.setApellidos(rs.getString("APELLIDOS"));
-                m.setUsuario(rs.getString("USUARIO"));
-                m.setClave(rs.getString("CLAVE"));
                 m.setTelefono(rs.getString("TELEFONO"));
-                m.setCorreo(rs.getString("CORREO_ELECTRONICO"));
-                m.setRol(rs.getString("ROL"));
+                m.setCorreo(rs.getString("CORREO"));
                 byte[] is;
                 is = rs.getBytes("FOTO");
                 if (is != null) {
@@ -119,7 +116,7 @@ public class PersonaBD extends PersonaMD {
         } catch (IOException ex) {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sql = "INSERT INTO persona(codigo, cedula, nombres, apellidos, usuario, clave, telefono, correo_electronico, rol, \"foto \")" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getUsuario() + "','" + getClave() + "','" + getTelefono() + "','" + getCorreo() + "','" + getRol() + "','" + ef + "')";
+        String sql = "INSERT INTO persona(cedula, nombres, apellidos, telefono, correo, foto)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getTelefono() + "','" + getCorreo() + "','" + ef + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -142,7 +139,7 @@ public class PersonaBD extends PersonaMD {
         } catch (IOException ex) {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sql = "update persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"usuario\"='" + getUsuario() + "',\"clave\"='" + getClave() + "',\"telefono\"='" + getTelefono() + "',\"correo_electronico\"='" + getCorreo() + "',\"rol\"='" + getRol() + "',\"foto\"='" + ef + "'"
+        String sql = "update persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"telefono\"='" + getTelefono() + "',\"correo\"='" + getCorreo() + "',\"foto\"='" + ef + "'"
                 + " where \"cedula\"='" + cedula + "'";
 
         if (conectar.noQuery(sql) == null) {
@@ -165,11 +162,8 @@ public class PersonaBD extends PersonaMD {
                 m.setCedula(rs.getString("CEDULA"));
                 m.setNombres(rs.getString("NOMBRES"));
                 m.setApellidos(rs.getString("APELLIDOS"));
-                m.setUsuario(rs.getString("USUARIO"));
-                m.setClave(rs.getString("CLAVE"));
                 m.setTelefono(rs.getString("TELEFONO"));
-                m.setCorreo(rs.getString("CORREO_ELECTRONICO"));
-                m.setRol(rs.getString("ROL"));
+                m.setCorreo(rs.getString("CORREO"));
                 byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {
@@ -223,11 +217,8 @@ public class PersonaBD extends PersonaMD {
                 m.setCedula(rs.getString("CEDULA"));
                 m.setNombres(rs.getString("NOMBRES"));
                 m.setApellidos(rs.getString("APELLIDOS"));
-                m.setUsuario(rs.getString("USUARIO"));
-                m.setClave(rs.getString("CLAVE"));
                 m.setTelefono(rs.getString("TELEFONO"));
                 m.setCorreo(rs.getString("CORREO_ELECTRONICO"));
-                m.setRol(rs.getString("ROL"));
                 byte[] is;
                 is = rs.getBytes("FOTO");
                 if (is != null) {
