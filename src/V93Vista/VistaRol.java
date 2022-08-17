@@ -24,6 +24,22 @@ public class VistaRol extends javax.swing.JFrame {
         
     }
 
+    public JButton getBtnbuscarr() {
+        return btnbuscarr;
+    }
+
+    public void setBtnbuscarr(JButton btnbuscarr) {
+        this.btnbuscarr = btnbuscarr;
+    }
+
+    public JTextField getTxtbuscarr() {
+        return txtbuscarr;
+    }
+
+    public void setTxtbuscarr(JTextField txtbuscarr) {
+        this.txtbuscarr = txtbuscarr;
+    }
+
     public JComboBox<String> getjComboBoxRol() {
         return jComboBoxRol;
     }
@@ -120,6 +136,8 @@ public class VistaRol extends javax.swing.JFrame {
         btnNuevoRol = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jComboBoxRol = new javax.swing.JComboBox<>();
+        btnbuscarr = new javax.swing.JButton();
+        txtbuscarr = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,7 +158,7 @@ public class VistaRol extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CODIGO", "NOMBRE", "DESCRIPCION"
+                "CODIGO", "CARGO", "DESCRIPCION", "ESTADO"
             }
         ));
         jScrollPane1.setViewportView(TableRol);
@@ -162,6 +180,8 @@ public class VistaRol extends javax.swing.JFrame {
 
         jComboBoxRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVO", "INACTIVO" }));
 
+        btnbuscarr.setText("BUSCAR POR CARGO");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -181,28 +201,34 @@ public class VistaRol extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtCodigoRol)
-                    .addComponent(txtNombreRol)
-                    .addComponent(txtDesceipcionRol)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel1))
-                    .addComponent(jComboBoxRol, 0, 231, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtCodigoRol)
+                            .addComponent(txtNombreRol)
+                            .addComponent(txtDesceipcionRol)
+                            .addComponent(jComboBoxRol, 0, 231, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnbuscarr, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                        .addGap(29, 29, 29)
+                        .addComponent(txtbuscarr, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtCodigoRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -218,7 +244,11 @@ public class VistaRol extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jComboBoxRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtbuscarr, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnbuscarr))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -273,6 +303,7 @@ public class VistaRol extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardarRol;
     private javax.swing.JButton btnModificarRol;
     private javax.swing.JButton btnNuevoRol;
+    private javax.swing.JButton btnbuscarr;
     private javax.swing.JComboBox<String> jComboBoxRol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -283,5 +314,6 @@ public class VistaRol extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigoRol;
     private javax.swing.JTextField txtDesceipcionRol;
     private javax.swing.JTextField txtNombreRol;
+    private javax.swing.JTextField txtbuscarr;
     // End of variables declaration//GEN-END:variables
 }

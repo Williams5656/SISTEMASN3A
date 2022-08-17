@@ -11,7 +11,7 @@ public class PersonaMb {
     private String ciudad;
     private String celular;
     private Image foto;
-      
+        
          
     public PersonaMb(String cedula, String nombre, String direccion, String fecha_nacimiento, String ciudad, String celular, Image foto) {
         this.cedula = cedula;
@@ -21,7 +21,7 @@ public class PersonaMb {
         this.ciudad = ciudad;
         this.celular = celular;
         this.foto = foto;
-    }
+    } 
 
     public PersonaMb() {
     }

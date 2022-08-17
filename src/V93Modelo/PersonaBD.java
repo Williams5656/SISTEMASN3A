@@ -34,7 +34,7 @@ public class PersonaBD extends PersonaMb {
         if (img instanceof BufferedImage) {
             return (BufferedImage) img;
         }
-
+  
         // Create a buffered image with transparency
         BufferedImage bimage = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
 
@@ -100,7 +100,7 @@ public class PersonaBD extends PersonaMb {
             return null;
         }
     }
- 
+  
     public boolean insertar() {
         
         String ef = null;
@@ -124,7 +124,7 @@ public class PersonaBD extends PersonaMb {
         }
 
     }
-  
+     
     public List<PersonaMb> obtenerdatos(String cedula) {
         try {
             List<PersonaMb> lista = new ArrayList<PersonaMb>();

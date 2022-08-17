@@ -19,13 +19,13 @@ public class Cprincipal {
         Vista.getNuevoRol().addActionListener(e ->rol());
  
     }
-    
+       
     private void personas() {
         VistaPersona vr = new VistaPersona();
         CPersonas cr = new CPersonas(vr);
 
     }
-
+   
     private void usuarios() {
         VistaUsuario vuser = new VistaUsuario();
         CUsuarios cuser = new CUsuarios(vuser);

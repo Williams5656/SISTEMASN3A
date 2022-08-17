@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class RolBD extends RolMb {
 
-    Conectar conecta = new Conectar();
+    Conectar conectar = new Conectar();
 
     public RolBD() {
     }
@@ -20,20 +20,20 @@ public class RolBD extends RolMb {
 
     public List<RolMb> mostrardatos() {
         try {
-            List<RolMb> listarol = new ArrayList<RolMb>();
+            List<RolMb> lista = new ArrayList<RolMb>();
             String sql = "select * from rol";
-            ResultSet rs = conecta.query(sql);
+            ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                RolMb r = new RolMb();
-                r.setCodigo(rs.getString("codigo"));
-                r.setNombre(rs.getString("nombre"));
-                r.setDescripcion(rs.getString("descripcion"));
-                r.setEstado(rs.getString("estado"));
+                RolMb rol = new RolMb();
+                rol.setCodigo(rs.getString("codigo"));
+                rol.setNombre(rs.getString("cargo"));
+                rol.setDescripcion(rs.getString("descripcion"));
+                rol.setEstado(rs.getString("estado"));
 
-                listarol.add(r);
+                lista.add(rol);
             }
             rs.close();
-            return listarol;
+            return lista;
         } catch (SQLException e) {
             Logger.getLogger(RolBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
@@ -41,9 +41,9 @@ public class RolBD extends RolMb {
     }
 
     public boolean insertar() {
-        String sql = "INSERT INTO rol (codigo,nombre,descripcion)" + "VALUES ('" + getCodigo() + "','" + getNombre() + "','" + getDescripcion() + "')";
+        String sql = "insert into rol (codigo, cargo, descripcion, estado)  VALUES ('" + getCodigo() + "','" + getNombre() + "','" + getDescripcion() +"','" + getEstado() + "')";
 
-        if (conecta.noQuery(sql) == null) {
+        if (conectar.noQuery(sql) == null) {
             return true;
         } else {
 
@@ -53,31 +53,11 @@ public class RolBD extends RolMb {
 
     }
 
-    public List<RolMb> obtenerdatos(String codigo) {
-        try {
-            List<RolMb> lista = new ArrayList<RolMb>();
-            String sql = "select * from rol " + " where \"codigo\"='" + codigo + "'";
-            ResultSet rs = conecta.query(sql);
-            while (rs.next()) {
-                RolMb m = new RolMb();
-                m.setCodigo(rs.getString("codigo"));
-                m.setNombre(rs.getString("nombre"));
-                m.setDescripcion(rs.getString("descripcion"));
-                m.setEstado(rs.getString("estado"));
-                lista.add(m);
-            }
-            rs.close();
-            return lista;
-        } catch (SQLException e) {
-            Logger.getLogger(UsuarioBD.class.getName()).log(Level.SEVERE, null, e);
-            return null;
-        }
-    }
+    public boolean modificar(String cedula) {
+        String sql = "update rol set \"cargo\"='" + getNombre() + "',\"descripcion\"='" + getDescripcion() + "',\"estado\"='" + getEstado() + "'"
+                + " where \"codigo\"='" + codigo + "'";
 
-    public boolean modificar(String codigo) {
-        String sql = "update rol set \"nombre\"='" + getNombre() + "',\"descripcion\"='" + getDescripcion() + "'where \"codigo\"='" + codigo + "'";
-
-        if (conecta.noQuery(sql) == null) {
+        if (conectar.noQuery(sql) == null) {
             return true;
         } else {
             System.out.println("error al editar");
@@ -86,17 +66,42 @@ public class RolBD extends RolMb {
         }
 
     }
+ 
+    public List<RolMb> obtenerdatos(String cargo) {
+        try {
+            List<RolMb> lista = new ArrayList<RolMb>();
+            String sql = "select * from rol " + " where \"cargo\" ILIKE '%" + cargo + "%'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                RolMb rol = new RolMb();
+                rol.setCodigo(rs.getString("codigo"));
+                rol.setNombre(rs.getString("cargo"));
+                rol.setDescripcion(rs.getString("descripcion"));
+                rol.setEstado(rs.getString("estado"));
 
+                lista.add(rol);
+            }
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(UsuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
+    
     public boolean eliminar(String codigo) {
-        String sql = "delete FROM rol where\"codigo\"='" + codigo + "'";
-        if (conecta.noQuery(sql) == null) {
+ String sql = "update rol set \"estado\"='" + "INACTIVO" + "'"
+                + " where \"codigo\"='" + codigo + "'";
+       
+ 
+// String nsql = "delete from rol where \"codigo\"='" + codigo + "'";
+        if (conectar.noQuery(sql) == null) {
             return true;
-
         } else {
             System.out.println("error al eliminar");
             return false;
         }
 
     }
-
+ 
 }
