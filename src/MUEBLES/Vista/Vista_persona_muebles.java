@@ -12,6 +12,174 @@ public class Vista_persona_muebles extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getBtncargar() {
+        return Btncargar;
+    }
+
+    public void setBtncargar(JButton Btncargar) {
+        this.Btncargar = Btncargar;
+    }
+
+    public JButton getBtneliminar() {
+        return Btneliminar;
+    }
+
+    public void setBtneliminar(JButton Btneliminar) {
+        this.Btneliminar = Btneliminar;
+    }
+
+    public JButton getBtnguardar_persona() {
+        return Btnguardar_persona;
+    }
+
+    public void setBtnguardar_persona(JButton Btnguardar_persona) {
+        this.Btnguardar_persona = Btnguardar_persona;
+    }
+
+    public JButton getBtnmodificar() {
+        return Btnmodificar;
+    }
+
+    public void setBtnmodificar(JButton Btnmodificar) {
+        this.Btnmodificar = Btnmodificar;
+    }
+
+    public JTable getTabla_muebles_persona() {
+        return Tabla_muebles_persona;
+    }
+
+    public void setTabla_muebles_persona(JTable Tabla_muebles_persona) {
+        this.Tabla_muebles_persona = Tabla_muebles_persona;
+    }
+
+    public JTextField getTxtapellidos() {
+        return Txtapellidos;
+    }
+
+    public void setTxtapellidos(JTextField Txtapellidos) {
+        this.Txtapellidos = Txtapellidos;
+    }
+
+    public JTextField getTxtcedula() {
+        return Txtcedula;
+    }
+
+    public void setTxtcedula(JTextField Txtcedula) {
+        this.Txtcedula = Txtcedula;
+    }
+
+    public JTextField getTxtcelular() {
+        return Txtcelular;
+    }
+
+    public void setTxtcelular(JTextField Txtcelular) {
+        this.Txtcelular = Txtcelular;
+    }
+
+    public JTextField getTxtdireccion() {
+        return Txtdireccion;
+    }
+
+    public void setTxtdireccion(JTextField Txtdireccion) {
+        this.Txtdireccion = Txtdireccion;
+    }
+
+    public JTextField getTxtfecha() {
+        return Txtfecha;
+    }
+
+    public void setTxtfecha(JTextField Txtfecha) {
+        this.Txtfecha = Txtfecha;
+    }
+
+    public JTextField getTxtnacionalidad() {
+        return Txtnacionalidad;
+    }
+
+    public void setTxtnacionalidad(JTextField Txtnacionalidad) {
+        this.Txtnacionalidad = Txtnacionalidad;
+    }
+
+    public JTextField getTxtnombres() {
+        return Txtnombres;
+    }
+
+    public void setTxtnombres(JTextField Txtnombres) {
+        this.Txtnombres = Txtnombres;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JLabel getJimagen() {
+        return jimagen;
+    }
+
+    public void setJimagen(JLabel jimagen) {
+        this.jimagen = jimagen;
+    }
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
