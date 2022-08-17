@@ -119,7 +119,7 @@ public class PersonaBD extends PersonaMD {
         } catch (IOException ex) {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sql = "INSERT INTO persona(cedula, nombres, apellidos, usuario, clave, telefono, correo_electronico, rol,foto)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getUsuario() + "','" + getClave() + "','" + getTelefono() + "','" + getCorreo() + "','" + getRol() + "','" + ef + "')";
+        String sql = "INSERT INTO persona(codigo, cedula, nombres, apellidos, usuario, clave, telefono, correo_electronico, rol, \"foto \")" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getUsuario() + "','" + getClave() + "','" + getTelefono() + "','" + getCorreo() + "','" + getRol() + "','" + ef + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;

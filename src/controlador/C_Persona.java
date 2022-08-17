@@ -83,11 +83,8 @@ public class C_Persona {
         bdpersona.setCedula(vistapersona.getTxtcedula().getText());
         bdpersona.setNombres(vistapersona.getTxtnombre().getText());
         bdpersona.setApellidos(vistapersona.getTxtapellido().getText());
-        bdpersona.setUsuario(vistapersona.getTxtusuario().getText());
-        bdpersona.setClave(vistapersona.getjPasspersona().getText());
         bdpersona.setTelefono(vistapersona.getTxttelefono().getText());
         bdpersona.setCorreo(vistapersona.getTxtcorreo().getText());
-        bdpersona.setRol(vistapersona.getCbrol().getSelectedItem().toString());
 
         ImageIcon ic = (ImageIcon) vistapersona.getLabelFoto().getIcon();
         bdpersona.setFoto_perfil(ic.getImage());
@@ -122,11 +119,8 @@ public class C_Persona {
         bdpersona.setCedula(vistapersona.getTxtcedula().getText());
         bdpersona.setNombres(vistapersona.getTxtnombre().getText());
         bdpersona.setApellidos(vistapersona.getTxtapellido().getText());
-        bdpersona.setUsuario(vistapersona.getTxtusuario().getText());
-        bdpersona.setClave(vistapersona.getjPasspersona().getText());
         bdpersona.setTelefono(vistapersona.getTxttelefono().getText());
         bdpersona.setCorreo(vistapersona.getTxtcorreo().getText());
-        bdpersona.setRol(vistapersona.getCbrol().getSelectedItem().toString());
 
         ImageIcon ic = (ImageIcon) vistapersona.getLabelFoto().getIcon();
         bdpersona.setFoto_perfil(ic.getImage());
@@ -154,15 +148,10 @@ public class C_Persona {
         bdpersona.setApellidos(lista.get(0).getApellidos());
         vistapersona.getTxtapellido().setText(bdpersona.getApellidos());
         bdpersona.setUsuario(lista.get(0).getUsuario());
-        vistapersona.getTxtusuario().setText(bdpersona.getUsuario());
-        bdpersona.setClave(lista.get(0).getClave());
-        vistapersona.getjPasspersona().setText(bdpersona.getClave());
         bdpersona.setTelefono(lista.get(0).getTelefono());
         vistapersona.getTxttelefono().setText(bdpersona.getTelefono());
         bdpersona.setCorreo(lista.get(0).getCorreo());
         vistapersona.getTxtcorreo().setText(bdpersona.getCorreo());
-        bdpersona.setRol(lista.get(0).getRol());
-        vistapersona.getCbrol().setSelectedItem(bdpersona.getRol());
 
         Image img = lista.get(0).getFoto_perfil();
         if (img != null) {
@@ -191,8 +180,6 @@ public class C_Persona {
         vistapersona.getTxtcedula().setText("");
         vistapersona.getTxtnombre().setText("");
         vistapersona.getTxtapellido().setText("");
-        vistapersona.getTxtusuario().setText("");
-        vistapersona.getjPasspersona().setText("");
         vistapersona.getTxttelefono().setText("");
         vistapersona.getTxtcorreo().setText("");
         vistapersona.getLabelFoto().setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuario.png")));

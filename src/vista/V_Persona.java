@@ -62,22 +62,6 @@ public class V_Persona extends javax.swing.JInternalFrame {
         this.btnnuevo = btnnuevo;
     }
 
-    public JComboBox<String> getCbrol() {
-        return cbrol;
-    }
-
-    public void setCbrol(JComboBox<String> cbrol) {
-        this.cbrol = cbrol;
-    }
-
-    public JPasswordField getjPasspersona() {
-        return jPasspersona;
-    }
-
-    public void setjPasspersona(JPasswordField jPasspersona) {
-        this.jPasspersona = jPasspersona;
-    }
-
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
@@ -150,14 +134,6 @@ public class V_Persona extends javax.swing.JInternalFrame {
         this.txttelefono = txttelefono;
     }
 
-    public JTextField getTxtusuario() {
-        return txtusuario;
-    }
-
-    public void setTxtusuario(JTextField txtusuario) {
-        this.txtusuario = txtusuario;
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -166,20 +142,14 @@ public class V_Persona extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         txtcedula = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
         txtapellido = new javax.swing.JTextField();
-        txtusuario = new javax.swing.JTextField();
-        jPasspersona = new javax.swing.JPasswordField();
         txttelefono = new javax.swing.JTextField();
         txtcorreo = new javax.swing.JTextField();
-        cbrol = new javax.swing.JComboBox<>();
         btnnuevo = new javax.swing.JButton();
         btnguardarp = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
@@ -208,32 +178,19 @@ public class V_Persona extends javax.swing.JInternalFrame {
         jLabel3.setText("NOMBRES:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 120, 30));
 
-        jLabel5.setText("USUARIO:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 100, 30));
-
-        jLabel6.setText("CONTRASEÑA:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 140, 30));
-
         jLabel7.setText("TELEFONO:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 110, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 110, 30));
 
         jLabel8.setText("APELLIDOS:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 130, 30));
 
         jLabel4.setText("CORREO ELECTRONICO:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 170, 30));
-
-        jLabel9.setText("ROL:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 80, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 220, 30));
         jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 220, 30));
         jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 220, 30));
         jPanel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 220, 30));
-        jPanel1.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 220, 30));
-        jPanel1.add(jPasspersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 220, 30));
-        jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 220, 30));
-        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, 220, 30));
-
-        jPanel1.add(cbrol, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 220, 30));
+        jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 220, 30));
+        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 220, 30));
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
@@ -253,18 +210,18 @@ public class V_Persona extends javax.swing.JInternalFrame {
 
         tablapersona.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "CEDULA", "NOMBRES", "APELLIDOS", "USUARIO", "CLAVE", "TELEFONO", "CORREO", "ROL", "FOTO"
+                "CODIGO", "CEDULA", "NOMBRES", "APELLIDOS", "TELEFONO", "CORREO", "FOTO"
             }
         ));
         jScrollPane1.setViewportView(tablapersona);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 960, 110));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 960, 170));
         jPanel1.add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, 130, 150));
 
         Btn_CargarFoto.setText("Cargar Foto");
@@ -284,7 +241,10 @@ public class V_Persona extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -298,18 +258,13 @@ public class V_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnguardarp;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
-    private javax.swing.JComboBox<String> cbrol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasspersona;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelBotones;
     private javax.swing.JLabel labelFoto;
@@ -319,6 +274,5 @@ public class V_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtcorreo;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txttelefono;
-    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }
