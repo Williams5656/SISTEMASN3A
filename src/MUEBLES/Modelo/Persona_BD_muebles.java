@@ -127,6 +127,19 @@ public class Persona_BD_muebles extends M_muebles_personaMD{
         }
     }
     
+    public boolean modificar(String cedula) {
+        String sql = "update usuario persona \"nombres\"='" + getNombre()+ "',\"apellidos\"='" + getApellido()+ "',\"direccion\"='" + getDireccion()+ "',\"celular\"='" + getCelular()+ "',\"nacionalidad\"='" + getNacionalidad()+ "',\"fnacimiento\"='" + getFechana()+ "'" + " where \"cedula\"='" + cedula + "'";
+
+        if (conectar.noQuery(sql) == null) {
+            return true;
+        } else {
+            System.out.println("error al editar");
+
+            return false;
+        }
+
+    }
+    
     public boolean eliminar(String cedula) {
         String sql = "delete from persona" + " where \"cedula\"='" + cedula + "'";
         if (conectar.noQuery(sql) == null) {

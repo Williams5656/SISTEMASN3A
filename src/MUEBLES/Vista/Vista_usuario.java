@@ -119,6 +119,11 @@ public class Vista_usuario extends javax.swing.JFrame {
         Btnguardar.setText("GUARDAR");
 
         Btnmodificar.setText("MOSIFICAR");
+        Btnmodificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnmodificarActionPerformed(evt);
+            }
+        });
 
         Btneliminar.setText("ELIMINAR");
 
@@ -201,6 +206,10 @@ public class Vista_usuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnmodificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnmodificarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btneliminar;

@@ -60,6 +60,7 @@ public class C_usuario {
         if (bdcliente.insert()) {
             JOptionPane.showMessageDialog(null, "GUARDADO CORRECTO");
             lista();
+            limpiar();
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
         }
@@ -75,6 +76,7 @@ public class C_usuario {
             if (bdcliente.modificar(vistacli.getTxtcedula().getText())) {
                 JOptionPane.showMessageDialog(null, "datos actualizados");
                 lista();
+                limpiar();
             }
         }
     }
@@ -106,7 +108,16 @@ public class C_usuario {
             if (bdcliente.eliminar(vistacli.getTxtcedula().getText())) {
                 JOptionPane.showMessageDialog(null, "DATOS ELIMINADOS");
                 lista();
+                limpiar();
             }
         }
+    }
+    
+    public void limpiar(){
+        vistacli.getTxtcedula().setText("");
+        vistacli.getTxtusuario().setText("");
+        vistacli.getTxtcontraseña().setText("");
+        vistacli.getTxtrol().setText("");
+        vistacli.getTxtestado().setText("");
     }
 }
