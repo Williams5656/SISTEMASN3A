@@ -30,6 +30,14 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
         initComponents();      
     }
 
+    public JLabel getBtncargar() {
+        return btncargar;
+    }
+
+    public void setBtncargar(JLabel btncargar) {
+        this.btncargar = btncargar;
+    }
+
     public SimpleDateFormat getFormato() {
         return formato;
     }
@@ -95,11 +103,11 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
     }
 
     public JLabel getImagen() {
-        return imagen;
+        return btncargar;
     }
 
     public void setImagen(JLabel imagen) {
-        this.imagen = imagen;
+        this.btncargar = imagen;
     }
 
     public JLabel getjLabel1() {
@@ -250,7 +258,7 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
         btn_modificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
         fecha_nacimiento = new com.toedter.calendar.JCalendar();
-        imagen = new javax.swing.JLabel();
+        btncargar = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -338,11 +346,11 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
         getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, -1, -1));
         getContentPane().add(fecha_nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 380, 230));
 
-        imagen.setText("**FOTO**");
-        getContentPane().add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 130, 140));
+        btncargar.setText("cargarfoto");
+        getContentPane().add(btncargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 130, 140));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia_imagenes/7457f4f8d72fde5.jpg"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 650));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -355,12 +363,12 @@ public class Vusuario_Vpersona extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_nuevo;
+    private javax.swing.JLabel btncargar;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JComboBox<String> combo_estado;
     private javax.swing.JComboBox<String> combo_rol;
     private com.toedter.calendar.JCalendar fecha_nacimiento;
-    private javax.swing.JLabel imagen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
