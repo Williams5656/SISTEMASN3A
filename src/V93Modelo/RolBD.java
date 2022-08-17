@@ -66,11 +66,11 @@ public class RolBD extends RolMb {
         }
 
     }
- 
-    public List<RolMb> obtenerdatos(String cargo) {
+   
+    public List<RolMb> obtenerdatos(String codigo) {
         try {
             List<RolMb> lista = new ArrayList<RolMb>();
-            String sql = "select * from rol " + " where \"cargo\" ILIKE '%" + cargo + "%'";
+            String sql = "select * from rol " + " where \"codigo\" ILIKE '%" + codigo + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 RolMb rol = new RolMb();

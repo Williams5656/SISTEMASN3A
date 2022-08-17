@@ -21,8 +21,8 @@ public class PersonaMb {
         this.ciudad = ciudad;
         this.celular = celular;
         this.foto = foto;
-    } 
-
+    }  
+ 
     public PersonaMb() {
     }
 

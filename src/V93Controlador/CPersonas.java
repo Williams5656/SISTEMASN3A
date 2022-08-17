@@ -169,7 +169,7 @@ public class CPersonas {
         VistaP.getTxtCiudadPersona().setText(bdpersona.getCiudad());
         bdpersona.setCelular(lista.get(0).getCelular());
         VistaP.getTxtCelularPersona().setText(bdpersona.getCelular());
- 
+   
         Image img = lista.get(0).getFoto();
         if (img != null) {
             Image newimg = img.getScaledInstance(VistaP.getLbFoto().getWidth(), VistaP.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);

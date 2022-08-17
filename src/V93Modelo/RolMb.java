@@ -10,7 +10,7 @@ package V93Modelo;
  * @author Usuario
  */
 public class RolMb {
-    
+     
     String codigo;
     String nombre;
     String descripcion;
@@ -22,7 +22,7 @@ public class RolMb {
         this.descripcion = descripcion;
         this.estado=estado;
     }
-  
+   
     public RolMb() {
     }
 

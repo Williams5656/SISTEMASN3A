@@ -85,7 +85,7 @@ public class CRol {
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
         }
-    } 
+    }   
  public void buscar() {
         if (VistaR.getTxtbuscarr().getText().equals("")) {
             lista();
