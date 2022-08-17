@@ -24,7 +24,7 @@ public class C_Persona {
     public C_Persona(V_Persona vistapersona) {
         this.vistapersona = vistapersona;
         vistapersona.setVisible(true);
-        lista();
+//        lista();
         vistapersona.getBtnguardarp().setEnabled(false);
         vistapersona.getBtnmodificar().setEnabled(false);
         vistapersona.getBtnguardarp().setVisible(false);
