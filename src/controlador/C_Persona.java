@@ -25,12 +25,7 @@ public class C_Persona {
         this.vistapersona = vistapersona;
         vistapersona.setVisible(true);
 //        lista();
-        vistapersona.getBtnguardarp().setEnabled(false);
-        vistapersona.getBtnmodificar().setEnabled(false);
-        vistapersona.getBtnguardarp().setVisible(false);
-        vistapersona.getBtnnuevo().setVisible(false);
-        vistapersona.getBtnmodificar().setVisible(false);
-        vistapersona.getBtneliminar().setVisible(false);
+            
         vistapersona.getBtn_CargarFoto().addActionListener(x -> obtieneImagen());
         vistapersona.getBtn_QuitarFoto().addActionListener(x -> QuitarImagen());
         vistapersona.getBtnguardarp().addActionListener(x -> guardar());

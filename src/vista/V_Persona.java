@@ -265,9 +265,7 @@ public class V_Persona extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tablapersona);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 960, 110));
-
-        labelFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuario.png"))); // NOI18N
-        jPanel1.add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, -1, 150));
+        jPanel1.add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, 130, 150));
 
         Btn_CargarFoto.setText("Cargar Foto");
         jPanel1.add(Btn_CargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 150, 40));
