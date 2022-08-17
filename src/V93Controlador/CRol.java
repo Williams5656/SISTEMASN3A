@@ -38,7 +38,7 @@ public class CRol {
         VistaR.getBtnEliminarRol().addActionListener(e -> eliminar());
         VistaR.getBtnGuardarRol().setEnabled(false);
         VistaR.getBtnModificarRol().setEnabled(false);
-    } 
+    }
 
     public void lista() {
 
@@ -66,12 +66,13 @@ public class CRol {
         VistaR.getTxtNombreRol().setText("");
         VistaR.getTxtDesceipcionRol().setText("");
         VistaR.getjComboBoxRol().setSelectedItem("");
+        VistaR.getTxtbuscarr().setText("");
 
         VistaR.getBtnGuardarRol().setEnabled(true);
         VistaR.getBtnModificarRol().setEnabled(false);
 
-    }
-
+    }  
+ 
     public void guardar() {
         bdrol.setCodigo(VistaR.getTxtCodigoRol().getText());
         bdrol.setNombre(VistaR.getTxtNombreRol().getText());
@@ -85,8 +86,9 @@ public class CRol {
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
         }
-    }   
- public void buscar() {
+    }
+
+    public void buscar() {
         if (VistaR.getTxtbuscarr().getText().equals("")) {
             lista();
         } else {
@@ -104,8 +106,8 @@ public class CRol {
                 VistaR.getTableRol().setValueAt(lista.get(i).getNombre(), i, 1);
                 VistaR.getTableRol().setValueAt(lista.get(i).getDescripcion(), i, 2);
                 VistaR.getTableRol().setValueAt(lista.get(i).getEstado(), i, 3);
-              
-            } 
+
+            }
         }
 
     }
@@ -125,7 +127,7 @@ public class CRol {
             nuevo();
         }
     }
-   
+
     public void seleccionar() {
         VistaR.getBtnGuardarRol().setEnabled(false);
         VistaR.getBtnModificarRol().setEnabled(true);

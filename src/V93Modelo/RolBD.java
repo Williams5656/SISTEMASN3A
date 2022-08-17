@@ -66,7 +66,7 @@ public class RolBD extends RolMb {
         }
 
     }
-   
+     
     public List<RolMb> obtenerdatos(String codigo) {
         try {
             List<RolMb> lista = new ArrayList<RolMb>();

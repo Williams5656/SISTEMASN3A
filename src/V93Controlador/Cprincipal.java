@@ -25,7 +25,7 @@ public class Cprincipal {
         CPersonas cr = new CPersonas(vr);
 
     }
-     
+      
     private void usuarios() {
         VistaUsuario vuser = new VistaUsuario();
         CUsuarios cuser = new CUsuarios(vuser);

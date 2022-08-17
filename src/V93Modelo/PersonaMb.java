@@ -22,7 +22,7 @@ public class PersonaMb {
         this.celular = celular;
         this.foto = foto;
     }  
- 
+   
     public PersonaMb() {
     }
 

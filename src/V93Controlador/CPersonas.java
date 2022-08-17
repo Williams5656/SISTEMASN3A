@@ -200,7 +200,8 @@ public class CPersonas {
         VistaP.getTxtFechaNacimientoPersona().setText("");
         VistaP.getTxtCiudadPersona().setText("");
         VistaP.getTxtCelularPersona().setText("");
+        VistaP.getTxtbuscarp().setText("");
         VistaP.getBtnGuardarPersona().setEnabled(true);
         VistaP.getBtnModificarPersona().setEnabled(false);
     }
-}
+}  

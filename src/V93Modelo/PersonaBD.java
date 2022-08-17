@@ -153,7 +153,7 @@ public class PersonaBD extends PersonaMb {
                 } else {
                     m.setFoto(null);
                 }
-    
+      
                 lista.add(m);
             }
             rs.close();

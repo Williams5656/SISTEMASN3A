@@ -10,7 +10,7 @@ package V93Modelo;
  * @author Usuario
  */
 public class RolMb {
-     
+       
     String codigo;
     String nombre;
     String descripcion;

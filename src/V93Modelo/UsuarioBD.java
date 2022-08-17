@@ -17,7 +17,7 @@ public class UsuarioBD extends UsuarioMb {
     public UsuarioBD(String cedula, String nombre, String correo, String clave, String rol, String estado) {
         super(cedula, nombre, correo, clave, rol, estado);
     }
-
+ 
     public List<UsuarioMb> mostrardatos() {
         try {
             List<UsuarioMb> listausuario = new ArrayList<UsuarioMb>();
