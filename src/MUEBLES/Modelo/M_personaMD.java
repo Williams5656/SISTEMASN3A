@@ -2,7 +2,7 @@ package MUEBLES.Modelo;
 
 import java.awt.Image;
 
-public class M_muebles_personaMD {
+public class M_personaMD {
     
     String cedula;
     String nombre;
@@ -13,7 +13,7 @@ public class M_muebles_personaMD {
     String fechana;
     Image foto;
 
-    public M_muebles_personaMD(String cedula, String nombre, String apellido, String direccion, String celular, String nacionalidad, String fechana, Image foto) {
+    public M_personaMD(String cedula, String nombre, String apellido, String direccion, String celular, String nacionalidad, String fechana, Image foto) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -24,7 +24,7 @@ public class M_muebles_personaMD {
         this.foto = foto;
     }
 
-    public M_muebles_personaMD() {
+    public M_personaMD() {
     }
 
     public String getCedula() {

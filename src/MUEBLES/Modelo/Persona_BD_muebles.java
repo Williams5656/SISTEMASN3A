@@ -21,7 +21,7 @@ import javax.imageio.stream.ImageInputStream;
 import javax.swing.JOptionPane;
 import org.postgresql.util.Base64;
 
-public class Persona_BD_muebles extends M_muebles_personaMD{
+public class Persona_BD_muebles extends M_personaMD{
     Conect conectar = new Conect();
 
     public Persona_BD_muebles(String cedula, String nombre, String apellido, String direccion, String celular, String nacionalidad, String fechana, Image foto) {
@@ -63,13 +63,13 @@ public class Persona_BD_muebles extends M_muebles_personaMD{
         return bimage;
     }
     
-    public List<M_muebles_personaMD> mostrardatos() {
+    public List<M_personaMD> mostrardatos() {
         try {
-            List<M_muebles_personaMD> lista = new ArrayList<M_muebles_personaMD>();
+            List<M_personaMD> lista = new ArrayList<M_personaMD>();
             String sql = "select * from persona";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                M_muebles_personaMD m = new M_muebles_personaMD();
+                M_personaMD m = new M_personaMD();
                 m.setCedula(rs.getString("cedula"));
                 m.setNombre(rs.getString("nombres"));
                 m.setApellido(rs.getString("apellidos"));
@@ -98,7 +98,7 @@ public class Persona_BD_muebles extends M_muebles_personaMD{
             rs.close();
             return lista;
         } catch (SQLException e) {
-            Logger.getLogger(M_muebles_personaMD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(M_personaMD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }
@@ -150,13 +150,13 @@ public class Persona_BD_muebles extends M_muebles_personaMD{
         }
     }
     
-    public List<M_muebles_personaMD> obtenerdatos(String cedula) {
+    public List<M_personaMD> obtenerdatos(String cedula) {
         try {
-            List<M_muebles_personaMD> lista = new ArrayList<M_muebles_personaMD>();
+            List<M_personaMD> lista = new ArrayList<M_personaMD>();
             String sql = "select * from persona" + " where \"cedula\"='" + cedula + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                M_muebles_personaMD m = new M_muebles_personaMD();
+                M_personaMD m = new M_personaMD();
                 m.setCedula(rs.getString("cedula"));
                 m.setNombre(rs.getString("nombres"));
                 m.setApellido(rs.getString("apellidos"));
@@ -170,7 +170,7 @@ public class Persona_BD_muebles extends M_muebles_personaMD{
             rs.close();
             return lista;
         } catch (SQLException e) {
-            Logger.getLogger(M_muebles_personaMD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(M_personaMD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }

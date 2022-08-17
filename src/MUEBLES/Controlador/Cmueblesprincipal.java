@@ -22,7 +22,7 @@ public class Cmueblesprincipal {
     
     private void persona(){
         Vista_persona_muebles vistaper = new Vista_persona_muebles();
-        C_muebles_persona cmu = new C_muebles_persona(vistaper);
+        C_persona cmu = new C_persona(vistaper);
         vistaprin.getDesk_escritorio_muebles().add(vistaper);
         Dimension desktopSize = vistaprin.getDesk_escritorio_muebles().getSize();
         Dimension FrameSize = vistaper.getSize();
