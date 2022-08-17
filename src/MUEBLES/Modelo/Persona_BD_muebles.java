@@ -18,6 +18,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import org.postgresql.util.Base64;
 
@@ -78,10 +79,10 @@ public class Persona_BD_muebles extends M_personaMD{
                 m.setNacionalidad(rs.getString("nacionalidad"));
                 m.setFechana(rs.getString("fnacimiento"));
                 byte[] is;
-                is = rs.getBytes("foto");
+                is = rs.getBytes("imagen");
                 if (is != null) {
                     try {
-                        is = Base64.decode(is, 0, rs.getBytes("foto").length);
+                        is = Base64.decode(is, 0, rs.getBytes("imagen").length);
 //                    BufferedImage bi=Base64.decode( ImageIO.read(is));
                         m.setFoto(getImage(is, false));
                     } catch (Exception ex) {
