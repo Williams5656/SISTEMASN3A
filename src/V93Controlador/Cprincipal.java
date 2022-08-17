@@ -16,6 +16,7 @@ public class Cprincipal {
         Vista.setExtendedState(MAXIMIZED_BOTH);
         Vista.getNuevoPersona().addActionListener(e -> personas());
         Vista.getNuevoUsuario().addActionListener(e -> usuarios());
+        Vista.getNuevoRol().addActionListener(e ->rol());
  
     }
   
