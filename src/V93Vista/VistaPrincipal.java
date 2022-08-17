@@ -20,6 +20,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
         initComponents();
         
         
+        
+    }
+
+    public JMenuItem getNuevoRol() {
+        return NuevoRol;
+    }
+
+    public void setNuevoRol(JMenuItem NuevoRol) {
+        this.NuevoRol = NuevoRol;
     }
 
     public JMenuItem getNuevoUsuario() {
@@ -53,6 +62,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         nuevoPersona = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         nuevoUsuario = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        NuevoRol = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,6 +91,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu2.add(nuevoUsuario);
 
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("ROL");
+
+        NuevoRol.setText("NUEVO ROL");
+        jMenu3.add(NuevoRol);
+
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -133,9 +151,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem NuevoRol;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem nuevoPersona;
     private javax.swing.JMenuItem nuevoUsuario;

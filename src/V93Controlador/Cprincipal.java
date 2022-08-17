@@ -30,4 +30,9 @@ public class Cprincipal {
         CUsuarios cuser = new CUsuarios(vuser);
 
     }
+     private void rol() {
+        VistaRol vrol = new VistaRol();
+        CRol crol = new CRol(vrol);
+
+    }
 }
