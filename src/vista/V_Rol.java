@@ -163,13 +163,13 @@ public class V_Rol extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 90, 40));
 
         jLabel4.setText("DESCRIPCION:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 130, 50));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 130, 40));
 
         jLabel5.setText("ESTADO:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 100, 40));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 100, 40));
 
         LabelEstado.setText("Activo");
-        getContentPane().add(LabelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 110, 30));
+        getContentPane().add(LabelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 110, 30));
         getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 170, 40));
 
         TableRol.setModel(new javax.swing.table.DefaultTableModel(
@@ -193,10 +193,10 @@ public class V_Rol extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(TableRol);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 840, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 840, 110));
 
         CheckBoxEstado.setBackground(new java.awt.Color(79, 213, 223));
-        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 30, 30));
+        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 30, 30));
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
@@ -219,7 +219,7 @@ public class V_Rol extends javax.swing.JInternalFrame {
         TxtDescripcion.setRows(5);
         jScrollPane2.setViewportView(TxtDescripcion);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 390, 130));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 390, 110));
 
         jLabel6.setText("BUSCAR POR CODIGO:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 190, 40));
