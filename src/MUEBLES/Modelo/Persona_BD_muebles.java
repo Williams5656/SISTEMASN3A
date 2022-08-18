@@ -166,7 +166,7 @@ public class Persona_BD_muebles extends M_personaMD{
     public List<M_personaMD> obtenerdatos(String cedula) {
         try {
             List<M_personaMD> lista = new ArrayList<M_personaMD>();
-            String sql = "select * from persona" + " where \"cedula\"='" + cedula + "'";
+            String sql = "select * from persona" + " where \"cedula\" LIKE '%" + cedula + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 M_personaMD m = new M_personaMD();
@@ -202,4 +202,6 @@ public class Persona_BD_muebles extends M_personaMD{
             return null;
         }
     }
+    
+    
 }

@@ -180,6 +180,22 @@ public class Vista_persona_muebles extends javax.swing.JFrame {
         this.jimagen = jimagen;
     }
 
+    public JButton getBtnbuscar() {
+        return Btnbuscar;
+    }
+
+    public void setBtnbuscar(JButton Btnbuscar) {
+        this.Btnbuscar = Btnbuscar;
+    }
+
+    public JTextField getTxtbuscar() {
+        return Txtbuscar;
+    }
+
+    public void setTxtbuscar(JTextField Txtbuscar) {
+        this.Txtbuscar = Txtbuscar;
+    }
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -206,10 +222,11 @@ public class Vista_persona_muebles extends javax.swing.JFrame {
         Btmodifica = new javax.swing.JButton();
         Bteliminar = new javax.swing.JButton();
         Btcargar = new javax.swing.JButton();
+        Btnbuscar = new javax.swing.JButton();
+        Txtbuscar = new javax.swing.JTextField();
 
         setTitle("PERSONA");
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Tabla_muebles_persona.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -228,52 +245,154 @@ public class Vista_persona_muebles extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(Tabla_muebles_persona);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 274, 549, 309));
-
         jLabel1.setText("Cedula:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 9, -1, -1));
-        getContentPane().add(Txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 6, 232, -1));
 
         jLabel2.setText("Nombres:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 49, -1, -1));
-        getContentPane().add(Txtnombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 46, 232, -1));
 
         jLabel3.setText("Apellidos:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 89, -1, -1));
-        getContentPane().add(Txtapellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 86, 232, -1));
 
         jLabel7.setText("Direccion:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 129, -1, -1));
-        getContentPane().add(Txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 126, 232, -1));
 
         jLabel6.setText("Celular:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 169, -1, -1));
-        getContentPane().add(Txtcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 166, 232, -1));
-        getContentPane().add(Txtnacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 194, 232, -1));
 
         jLabel5.setText("Nacionalidad:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 197, -1, -1));
 
         jLabel4.setText("Fecha de nacimineto:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 237, -1, -1));
-        getContentPane().add(Txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 234, 232, -1));
 
         jimagen.setText("FOTO");
         jimagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        getContentPane().add(jimagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 6, 145, 148));
 
         Btguarda.setText("GUARDAR");
-        getContentPane().add(Btguarda, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 325, -1, -1));
 
         Btmodifica.setText("MODIFICAR");
-        getContentPane().add(Btmodifica, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 365, -1, -1));
 
         Bteliminar.setText("ELIMINAR");
-        getContentPane().add(Bteliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 405, -1, -1));
 
         Btcargar.setText("CARGAR");
         Btcargar.setToolTipText("");
-        getContentPane().add(Btcargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 166, -1, -1));
+
+        Btnbuscar.setText("BUSCAR");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel3))
+                            .addComponent(jLabel7))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Txtnombres, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Txtapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(Txtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(Txtnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(Txtfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jimagen, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(Btcargar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Btguarda)
+                            .addComponent(Btmodifica)
+                            .addComponent(Bteliminar))))
+                .addGap(21, 21, 21))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Btnbuscar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jimagen, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(Btcargar)
+                        .addGap(193, 193, 193)
+                        .addComponent(Btguarda)
+                        .addGap(18, 18, 18)
+                        .addComponent(Btmodifica)
+                        .addGap(18, 18, 18)
+                        .addComponent(Bteliminar)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(jLabel1)
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel2)
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel3)
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel7))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Txtnombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Txtapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(jLabel6))
+                            .addComponent(Txtcelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Txtnacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Txtfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Btnbuscar)
+                            .addComponent(Txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -285,8 +404,10 @@ public class Vista_persona_muebles extends javax.swing.JFrame {
     private javax.swing.JButton Bteliminar;
     private javax.swing.JButton Btguarda;
     private javax.swing.JButton Btmodifica;
+    private javax.swing.JButton Btnbuscar;
     private javax.swing.JTable Tabla_muebles_persona;
     private javax.swing.JTextField Txtapellidos;
+    private javax.swing.JTextField Txtbuscar;
     private javax.swing.JTextField Txtcedula;
     private javax.swing.JTextField Txtcelular;
     private javax.swing.JTextField Txtdireccion;
