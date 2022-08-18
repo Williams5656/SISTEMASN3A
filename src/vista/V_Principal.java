@@ -1,6 +1,8 @@
 package vista;
 
 import javax.swing.JDesktopPane;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 public class V_Principal extends javax.swing.JFrame {
@@ -25,6 +27,39 @@ public class V_Principal extends javax.swing.JFrame {
         this.Escritorio = Escritorio;
     }
 
+    public JMenu getPersona() {
+        return Persona;
+    }
+
+    public void setPersona(JMenu Persona) {
+        this.Persona = Persona;
+    }
+
+    public JMenuItem getBtn_nuevorol() {
+        return btn_nuevorol;
+    }
+
+    public void setBtn_nuevorol(JMenuItem btn_nuevorol) {
+        this.btn_nuevorol = btn_nuevorol;
+    }
+
+    public JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    public void setjMenuBar1(JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    public JMenu getRol() {
+        return rol;
+    }
+
+    public void setRol(JMenu rol) {
+        this.rol = rol;
+    }
+    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,7 +68,8 @@ public class V_Principal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         Persona = new javax.swing.JMenu();
         Btn_nuevopersona = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        rol = new javax.swing.JMenu();
+        btn_nuevorol = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,8 +91,12 @@ public class V_Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(Persona);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        rol.setText("Rol");
+
+        btn_nuevorol.setText("Nuevo");
+        rol.add(btn_nuevorol);
+
+        jMenuBar1.add(rol);
 
         setJMenuBar(jMenuBar1);
 
@@ -79,7 +119,8 @@ public class V_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem Btn_nuevopersona;
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenu Persona;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuItem btn_nuevorol;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu rol;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,15 +8,15 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Mrol;
-import vista.Vrol;
+import vista.V_Rol;
 
-public class Crol {
+public class C_Rol {
 
     public static ArrayList<RolBD> listarol = new ArrayList();
-    public static Vrol vistarol;
+    public static V_Rol vistarol;
     public RolBD bdrol = new RolBD();
 
-    public Crol(Vrol vistarol) {
+    public C_Rol(V_Rol vistarol) {
         this.vistarol = vistarol;
         vistarol.setVisible(true);
         vistarol.setLocationRelativeTo(null);

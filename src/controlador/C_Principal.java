@@ -15,6 +15,7 @@ public class C_Principal {
         vista.setLocationRelativeTo(null);
         vista.setExtendedState(MAXIMIZED_BOTH);
         vista.getBtn_nuevopersona().addActionListener(x -> persona());
+        vista.getBtn_nuevorol().addActionListener(x -> rol());
     }
 
     public void persona() {
@@ -24,6 +25,15 @@ public class C_Principal {
         Dimension desktopSize = vista.getEscritorio().getSize();
         Dimension FrameSize =vp.getSize();
         vp.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+
+    }
+    public void rol() {
+        V_Rol vr = new V_Rol();
+        C_Rol cp = new C_Rol(vr);
+        vista.getEscritorio().add(vr);
+        Dimension desktopSize = vista.getEscritorio().getSize();
+        Dimension FrameSize =vr.getSize();
+        vr.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
 
     }
 }
