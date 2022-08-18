@@ -19,7 +19,6 @@ public class C_Rol {
     public C_Rol(V_Rol vistarol) {
         this.vistarol = vistarol;
         vistarol.setVisible(true);
-        vistarol.setLocationRelativeTo(null);
         listarol();
         vistarol.getBtnguardarp().addActionListener(e -> guardar());
         vistarol.getBtnmodificar().addActionListener(e -> modificar());

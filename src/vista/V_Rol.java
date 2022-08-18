@@ -1,12 +1,9 @@
-
 package vista;
 
 import javax.swing.*;
 
-
 public class V_Rol extends javax.swing.JInternalFrame {
 
-    
     public V_Rol() {
         initComponents();
     }
@@ -99,7 +96,6 @@ public class V_Rol extends javax.swing.JInternalFrame {
         this.txtnombre = txtnombre;
     }
 
-  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -217,7 +213,4 @@ public class V_Rol extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 
-    public void setLocationRelativeTo(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

@@ -15,7 +15,7 @@ public class C_Principal {
         vista.setLocationRelativeTo(null);
         vista.setExtendedState(MAXIMIZED_BOTH);
         vista.getBtn_nuevopersona().addActionListener(x -> persona());
-        vista.getBtn_nuevorol().addActionListener(x -> rol());
+        vista.getBtn_nuevorol().addActionListener(x-> rol());
     }
 
     public void persona() {
@@ -29,7 +29,7 @@ public class C_Principal {
     }
     public void rol() {
         V_Rol vr = new V_Rol();
-        C_Rol cp = new C_Rol(vr);
+        C_Rol cr = new C_Rol(vr);
         vista.getEscritorio().add(vr);
         Dimension desktopSize = vista.getEscritorio().getSize();
         Dimension FrameSize =vr.getSize();
