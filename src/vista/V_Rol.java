@@ -8,6 +8,22 @@ public class V_Rol extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnBuscarRol() {
+        return BtnBuscarRol;
+    }
+
+    public void setBtnBuscarRol(JButton BtnBuscarRol) {
+        this.BtnBuscarRol = BtnBuscarRol;
+    }
+
+    public JTextField getTxtBuscarRol() {
+        return txtBuscarRol;
+    }
+
+    public void setTxtBuscarRol(JTextField txtBuscarRol) {
+        this.txtBuscarRol = txtBuscarRol;
+    }
+
     public JCheckBox getCheckBoxEstado() {
         return CheckBoxEstado;
     }
@@ -96,6 +112,14 @@ public class V_Rol extends javax.swing.JInternalFrame {
         this.txtnombre = txtnombre;
     }
 
+    public JLabel getLabelEstado() {
+        return LabelEstado;
+    }
+
+    public void setLabelEstado(JLabel LabelEstado) {
+        this.LabelEstado = LabelEstado;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -105,6 +129,7 @@ public class V_Rol extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        LabelEstado = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableRol = new javax.swing.JTable();
@@ -116,6 +141,9 @@ public class V_Rol extends javax.swing.JInternalFrame {
         labelCodRol = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TxtDescripcion = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        txtBuscarRol = new javax.swing.JTextField();
+        BtnBuscarRol = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(79, 213, 223));
         setClosable(true);
@@ -126,20 +154,23 @@ public class V_Rol extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Imgrol.png"))); // NOI18N
         jLabel1.setText("ROLES");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 190, 60));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 190, 50));
 
         jLabel2.setText("CODIGO:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 100, 40));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 100, 30));
 
         jLabel3.setText("NOMBRE:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 90, 40));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 90, 40));
 
         jLabel4.setText("DESCRIPCION:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 130, 50));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 130, 50));
 
         jLabel5.setText("ESTADO:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 100, 40));
-        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 170, 40));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 100, 40));
+
+        LabelEstado.setText("Activo");
+        getContentPane().add(LabelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 110, 30));
+        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 170, 40));
 
         TableRol.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -162,27 +193,27 @@ public class V_Rol extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(TableRol);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 700, 130));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 840, 110));
 
-        CheckBoxEstado.setText("Activo");
-        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 130, 40));
+        CheckBoxEstado.setBackground(new java.awt.Color(79, 213, 223));
+        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 30, 30));
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
-        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 170, 40));
+        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 170, 40));
 
         btnguardarp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar-archivo.png"))); // NOI18N
         btnguardarp.setText("GUARDAR");
-        getContentPane().add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 180, 40));
+        getContentPane().add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 180, 40));
 
         btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lapiz.png"))); // NOI18N
         btnmodificar.setText("MODIFICAR");
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 190, 40));
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 190, 40));
 
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarusuario.png"))); // NOI18N
         btneliminar.setText("ELIMINAR");
-        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 180, 50));
-        getContentPane().add(labelCodRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 160, 40));
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 180, 50));
+        getContentPane().add(labelCodRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 160, 30));
 
         TxtDescripcion.setColumns(20);
         TxtDescripcion.setRows(5);
@@ -190,12 +221,21 @@ public class V_Rol extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 390, 130));
 
+        jLabel6.setText("BUSCAR POR CODIGO:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 190, 40));
+        getContentPane().add(txtBuscarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 160, 40));
+
+        BtnBuscarRol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
+        getContentPane().add(BtnBuscarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 70, 50));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnBuscarRol;
     private javax.swing.JCheckBox CheckBoxEstado;
+    private javax.swing.JLabel LabelEstado;
     private javax.swing.JTable TableRol;
     private javax.swing.JTextArea TxtDescripcion;
     private javax.swing.JButton btneliminar;
@@ -207,9 +247,11 @@ public class V_Rol extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelCodRol;
+    private javax.swing.JTextField txtBuscarRol;
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 

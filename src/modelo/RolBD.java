@@ -6,21 +6,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
-public class RolBD extends Mrol{
-     Conectar conectar = new Conectar();
-     
-    public List<Mrol> mostrardatos() {
+public class RolBD extends RolMD {
+
+    Conectar conectar = new Conectar();
+
+    public List<RolMD> mostrardatos() {
         try {
-            List<Mrol> lista = new ArrayList<Mrol>();
-            String sql = "select * from rol where \"codigo\"='" + codigo + "'";
+            List<RolMD> lista = new ArrayList<RolMD>();
+            String sql = "select * from roles ";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                Mrol r = new Mrol();
-                r.setCodigo(rs.getString("codigo"));
-                r.setNombre(rs.getString("nombre"));
-                r.setDescripcion(rs.getString("descripcion"));
-                r.setEstado(rs.getString("estado"));
+                RolMD r = new RolMD();
+                r.setCodigo(rs.getString("CODIGO"));
+                r.setNombre(rs.getString("NOMBRE"));
+                r.setDescripcion(rs.getString("DESCRIPCION"));
+                r.setEstado(rs.getString("ESTADO"));
                 lista.add(r);
             }
             rs.close();
@@ -30,8 +32,9 @@ public class RolBD extends Mrol{
             return null;
         }
     }
+
     public boolean insertar() {
-        String sql = "INSERT INTO rol(codigo,nombre,descripcion,estado)" + "VALUES ('" + getCodigo() + "','" + getNombre() + "','" + getDescripcion()+ "','" +getEstado()+ "')";
+        String sql = "INSERT INTO roles(codigo,nombre,descripcion,estado)" + "VALUES ('" + getCodigo() + "','" + getNombre() + "','" + getDescripcion() + "','" + getEstado() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -41,29 +44,30 @@ public class RolBD extends Mrol{
             return false;
         }
     }
+
     public boolean modificar(String codigo) {
-        String sql = "update rol set \"nombre\"='" + getNombre() + "',\"descripcion\"='" + getDescripcion()+"',\"estado\"='" + getEstado()+ "'"
+        String sql = "update roles set \"nombre\"='" + getNombre() + "',\"descripcion\"='" + getDescripcion() + "',\"estado\"='" + getEstado() + "'"
                 + "where \"codigo\"='" + codigo + "'";
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {
-            System.out.println("ERROR AL MOMENTO DE EDITAR");
-            System.out.println("INTENTE OTRA VEZ");
-
+            JOptionPane.showMessageDialog(null, "ERROR AL MOMENTO DE EDITAR", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "INTENTE OTRA VEZ", "ERROR", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }
-    public List<Mrol> obtenerdatos(String codigo) {
+
+    public List<RolMD> obtenerdatos(String codigo) {
         try {
-            List<Mrol> lista = new ArrayList<Mrol>();
-            String sql = "select * from rol where \"codigo\"='" + codigo + "'";
+            List<RolMD> lista = new ArrayList<RolMD>();
+            String sql = "select * from roles where \"codigo\"='" + codigo + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                Mrol r = new Mrol();
-                r.setCodigo(rs.getString("codigo"));
-                r.setNombre(rs.getString("nombre"));
-                r.setDescripcion(rs.getString("descripcion"));
-                r.setEstado(rs.getString("estado"));
+                RolMD r = new RolMD();
+                r.setCodigo(rs.getString("CODIGO"));
+                r.setNombre(rs.getString("NOMBRE"));
+                r.setDescripcion(rs.getString("DESCRIPCION"));
+                r.setEstado(rs.getString("ESTADO"));
                 lista.add(r);
             }
             rs.close();
@@ -73,14 +77,36 @@ public class RolBD extends Mrol{
             return null;
         }
     }
+
+    public List<RolMD> buscardatos(String codigo) {
+        try {
+            List<RolMD> lista = new ArrayList<RolMD>();
+            String sql = "select * from roles where \"codigo\" ILIKE '%" + codigo + "%'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                RolMD r = new RolMD();
+                r.setCodigo(rs.getString("CODIGO"));
+                r.setNombre(rs.getString("NOMBRE"));
+                r.setDescripcion(rs.getString("DESCRIPCION"));
+                r.setEstado(rs.getString("ESTADO"));
+                lista.add(r);
+            }
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(RolBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
+
     public boolean eliminar(String codigo) {
-        String nsql = "delete from rol where \"codigo\"='" + codigo + "'";
+        String nsql = "delete from roles where \"codigo\"='" + codigo + "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
 
         } else {
-            System.out.println("ERROR");
-            System.out.println("NO SE PUDO ELIMINAR");
+            JOptionPane.showMessageDialog(null, "ERROR AL MOMENTO DE ELIMINAR", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "INTENTE OTRA VEZ", "ERROR", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }

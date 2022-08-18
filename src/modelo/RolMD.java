@@ -1,20 +1,20 @@
 package modelo;
 
-public class Mrol {
+public class RolMD {
 
     String codigo;
     String nombre;
     String descripcion;
     String estado;
 
-    public Mrol(String codigo, String nombre, String descripcion, String estado) {
+    public RolMD(String codigo, String nombre, String descripcion, String estado) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.estado = estado;
     }
 
-    public Mrol() {
+    public RolMD() {
     }
 
     public String getCodigo() {
