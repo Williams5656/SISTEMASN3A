@@ -2,23 +2,33 @@
 
 public class UsuarioMb {
 
+    private String codigo;
     private String cedula;
-    private String nombre;
-    private String correo;
+    private String nombre_usuario;
     private String clave;
-    private String rol;
+    private String codigo_rol;
     private String estado;
+    private String correo;
 
     public UsuarioMb() {
     }
-    
-    public UsuarioMb(String cedula, String nombre, String correo, String clave, String rol, String estado) {
+       
+    public UsuarioMb(String codigo, String cedula, String nombre_usuario, String clave, String codigo_rol, String estado, String correo) {
+        this.codigo = codigo;
         this.cedula = cedula;
-        this.nombre = nombre;
-        this.correo = correo;
+        this.nombre_usuario = nombre_usuario;
         this.clave = clave;
-        this.rol = rol;
+        this.codigo_rol = codigo_rol;
         this.estado = estado;
+        this.correo = correo;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getCedula() {
@@ -29,20 +39,12 @@ public class UsuarioMb {
         this.cedula = cedula;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombre_usuario() {
+        return nombre_usuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setNombre_usuario(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
     }
 
     public String getClave() {
@@ -53,12 +55,12 @@ public class UsuarioMb {
         this.clave = clave;
     }
 
-    public String getRol() {
-        return rol;
+    public String getCodigo_rol() {
+        return codigo_rol;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setCodigo_rol(String codigo_rol) {
+        this.codigo_rol = codigo_rol;
     }
 
     public String getEstado() {
@@ -69,4 +71,12 @@ public class UsuarioMb {
         this.estado = estado;
     }
 
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    
 }

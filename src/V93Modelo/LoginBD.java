@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginBD extends LoginMb {
- 
+   
 //    Connection con;
 //    PreparedStatement ps;
 //    ResultSet rs;

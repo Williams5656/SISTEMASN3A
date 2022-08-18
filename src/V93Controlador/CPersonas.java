@@ -14,11 +14,11 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-
+    
 public class CPersonas {
 
     public static VistaPersona VistaP;
-
+    
     private PersonaBD bdpersona = new PersonaBD();
 
     public CPersonas(VistaPersona VistaP) {

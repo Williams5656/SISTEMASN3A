@@ -18,7 +18,7 @@ import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import org.postgresql.util.Base64;
-  
+         
 public class PersonaBD extends PersonaMb {
  
     Conectar conecta = new Conectar();
