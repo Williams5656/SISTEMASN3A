@@ -124,7 +124,7 @@ public class PersonaBD extends PersonaMb {
         }
 
     }
-     
+        
     public List<PersonaMb> obtenerdatos(String cedula) {
         try {
             List<PersonaMb> lista = new ArrayList<PersonaMb>();
@@ -189,7 +189,7 @@ public class PersonaBD extends PersonaMb {
 
     }
  
-    public boolean eliminar(String cedula) {
+    public boolean eliminar(String cedula) {   
         String sql = "delete FROM persona where\"cedula\"='" + cedula + "'";
         if (conecta.noQuery(sql) == null) {
             return true;

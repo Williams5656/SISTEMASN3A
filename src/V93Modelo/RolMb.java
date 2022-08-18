@@ -15,7 +15,7 @@ public class RolMb {
     String nombre;
     String descripcion;
     String estado;
-         
+               
     public RolMb(String codigo, String nombre, String descripcion,String estado) {
         this.codigo = codigo;
         this.nombre = nombre;

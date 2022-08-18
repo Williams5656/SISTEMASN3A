@@ -100,11 +100,11 @@ public class CUsuarios {
         bdusuario.setNombre_usuario(VistaU.getTxtnombreu().getText());
         bdusuario.setClave(VistaU.getTxtpasswordu().getText());
         String cod_rol = (String) VistaU.getComborolu().getSelectedItem();
-        bdusuario.setEstado(cod_rol);
+        bdusuario.setCodigo_rol(cod_rol);
         String estado = (String) VistaU.getComboestadou().getSelectedItem();
         bdusuario.setEstado(estado);
         bdusuario.setCorreo(VistaU.getTxtcorreou().getText());
-
+      
         if (bdusuario.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();

@@ -8,16 +8,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UsuarioBD extends UsuarioMb {
- 
+
     Conectar conectar = new Conectar();
 
     public UsuarioBD() {
     }
-  
+
     public UsuarioBD(String codigo, String cedula, String nombre_usuario, String clave, String codigo_rol, String estado, String correo) {
         super(codigo, cedula, nombre_usuario, clave, codigo_rol, estado, correo);
     }
- 
+
     public List<UsuarioMb> mostrardatos() {
         try {
             List<UsuarioMb> listausuario = new ArrayList<UsuarioMb>();
@@ -44,7 +44,7 @@ public class UsuarioBD extends UsuarioMb {
     }
 
     public boolean insertar() {
-        String sql = "insert into usuario (codigo, cedula, usuario, clave, rol, estado, correo)  VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getNombre_usuario() +"','" + getClave() + "','" + getCodigo_rol() + "','" + getEstado() + "','" + getCorreo() + "')";
+        String sql = "insert into usuario (codigo, cedula, usuario, clave, rol, estado, correo)  VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getNombre_usuario() + "','" + getClave() + "','" + getCodigo_rol() + "','" + getEstado() + "','" + getCorreo() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -84,7 +84,7 @@ public class UsuarioBD extends UsuarioMb {
                 usua.setCodigo_rol(rs.getString("rol"));
                 usua.setEstado(rs.getString("estado"));
                 usua.setCorreo(rs.getString("correo"));
- 
+
                 listausuario.add(usua);
             }
             rs.close();
@@ -94,11 +94,11 @@ public class UsuarioBD extends UsuarioMb {
             return null;
         }
     }
-              
-         public boolean eliminar(String codigo) {
- String sql = "update rol set \"estado\"='" + "INACTIVO" + "'"
+
+    public boolean eliminar(String codigo) {
+        // String nsql = "delete from usuario where \"codigo\"='" + codigo + "'";
+        String sql = "update rol set \"estado\"='" + "INACTIVO" + "'"
                 + " where \"codigo\"='" + codigo + "'";
-// String nsql = "delete from rol where \"codigo\"='" + codigo + "'";
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {
@@ -109,3 +109,4 @@ public class UsuarioBD extends UsuarioMb {
     }
 
 }
+ 
