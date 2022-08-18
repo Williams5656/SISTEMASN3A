@@ -116,6 +116,11 @@ public class v_principal extends javax.swing.JFrame {
         jMenu1.setText("ARCHIVO");
 
         btn_persona.setText("Ingreso Persona");
+        btn_persona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_personaActionPerformed(evt);
+            }
+        });
         jMenu1.add(btn_persona);
 
         btn_rol.setText("Ingreso Roles");
@@ -141,8 +146,16 @@ public class v_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_rolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rolActionPerformed
-        // TODO add your handling code here:
+        v_roles me = new v_roles();
+        me.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btn_rolActionPerformed
+
+    private void btn_personaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_personaActionPerformed
+        v_persona me = new v_persona();
+        me.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_personaActionPerformed
 
     /**
      * @param args the command line arguments
