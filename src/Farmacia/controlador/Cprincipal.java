@@ -8,7 +8,7 @@ package Farmacia.controlador;
 import Farmacia.vista.Vmedicamento;
 import Farmacia.vista.Vmenu;
 import Farmacia.vista.Vproveedor;
-import Farmacia.vista.Vusuario_Vpersona;
+import Farmacia.vista.Vista_Persona;
 import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 
@@ -36,7 +36,7 @@ public class Cprincipal {
 
 
     private void usuario() {
-        Vusuario_Vpersona user = new Vusuario_Vpersona();
+        Vista_Persona user = new Vista_Persona();
         vista.getjDesktopPane1().add(user);
         Dimension desktopSize = vista.getjDesktopPane1().getSize();
         Dimension FrameSize = user.getSize();

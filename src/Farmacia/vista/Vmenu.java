@@ -316,7 +316,7 @@ public class Vmenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usuarioActionPerformed
-       Vusuario_Vpersona es = new Vusuario_Vpersona();
+       Vista_Persona es = new Vista_Persona();
        jDesktopPane1.add(es);
        Dimension desktopSize = jDesktopPane1.getSize();
        Dimension FrameSize = es.getSize();

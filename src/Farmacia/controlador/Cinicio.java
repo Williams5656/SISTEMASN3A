@@ -6,7 +6,7 @@
 package Farmacia.controlador;
 
 import Farmacia.modelo.Usuario_PersonaBD;
-import Farmacia.modelo.Usuario_PersonaMD;
+import Farmacia.modelo.Persona_MD;
 import Farmacia.vista.Vinicio;
 import Farmacia.vista.Vmenu;
 import java.sql.SQLException;
