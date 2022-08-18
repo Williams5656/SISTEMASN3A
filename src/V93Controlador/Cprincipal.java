@@ -17,7 +17,7 @@ public class Cprincipal {
         Vista.getNuevoPersona().addActionListener(e -> personas());
         Vista.getNuevoUsuario().addActionListener(e -> usuarios());
         Vista.getNuevoRol().addActionListener(e ->rol());
-              
+                
     }
        
     private void personas() {

@@ -104,7 +104,7 @@ public class CUsuarios {
         String estado = (String) VistaU.getComboestadou().getSelectedItem();
         bdusuario.setEstado(estado);
         bdusuario.setCorreo(VistaU.getTxtcorreou().getText());
-      
+       
         if (bdusuario.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();

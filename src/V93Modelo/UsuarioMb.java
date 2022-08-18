@@ -12,7 +12,7 @@ public class UsuarioMb {
 
     public UsuarioMb() {
     }
-             
+               
     public UsuarioMb(String codigo, String cedula, String nombre_usuario, String clave, String codigo_rol, String estado, String correo) {
         this.codigo = codigo;
         this.cedula = cedula;
