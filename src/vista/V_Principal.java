@@ -27,6 +27,15 @@ public class V_Principal extends javax.swing.JFrame {
         this.Escritorio = Escritorio;
     }
 
+    public JMenuItem getBtn_NuevoUsuario() {
+        return Btn_NuevoUsuario;
+    }
+
+    public void setBtn_NuevoUsuario(JMenuItem Btn_NuevoUsuario) {
+        this.Btn_NuevoUsuario = Btn_NuevoUsuario;
+    }
+    
+
     public JMenu getPersona() {
         return Persona;
     }
@@ -70,6 +79,8 @@ public class V_Principal extends javax.swing.JFrame {
         Btn_nuevopersona = new javax.swing.JMenuItem();
         rol = new javax.swing.JMenu();
         btn_nuevorol = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        Btn_NuevoUsuario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,6 +109,13 @@ public class V_Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(rol);
 
+        jMenu1.setText("Usuario");
+
+        Btn_NuevoUsuario.setText("Nuevo");
+        jMenu1.add(Btn_NuevoUsuario);
+
+        jMenuBar1.add(jMenu1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,10 +134,12 @@ public class V_Principal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Btn_NuevoUsuario;
     private javax.swing.JMenuItem Btn_nuevopersona;
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenu Persona;
     private javax.swing.JMenuItem btn_nuevorol;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu rol;
     // End of variables declaration//GEN-END:variables
