@@ -119,10 +119,10 @@ public class VPrincipal extends javax.swing.JFrame {
         btnNuevoPersona = new javax.swing.JMenuItem();
         menuUsuario = new javax.swing.JMenu();
         btnNuevoUsuario = new javax.swing.JMenuItem();
-        menuSalir = new javax.swing.JMenu();
-        btnSalir = new javax.swing.JMenuItem();
         menuRol = new javax.swing.JMenu();
         btnNuevoRol = new javax.swing.JMenuItem();
+        menuSalir = new javax.swing.JMenu();
+        btnSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -134,7 +134,7 @@ public class VPrincipal extends javax.swing.JFrame {
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 281, Short.MAX_VALUE)
+            .addGap(0, 283, Short.MAX_VALUE)
         );
 
         menuPersona.setText("Persona");
@@ -151,19 +151,19 @@ public class VPrincipal extends javax.swing.JFrame {
 
         barraMenus.add(menuUsuario);
 
-        menuSalir.setText("Salir");
-
-        btnSalir.setText("Salir");
-        menuSalir.add(btnSalir);
-
-        barraMenus.add(menuSalir);
-
         menuRol.setText("Rol");
 
         btnNuevoRol.setText("Nuevo");
         menuRol.add(btnNuevoRol);
 
         barraMenus.add(menuRol);
+
+        menuSalir.setText("Salir");
+
+        btnSalir.setText("Salir");
+        menuSalir.add(btnSalir);
+
+        barraMenus.add(menuSalir);
 
         setJMenuBar(barraMenus);
 
