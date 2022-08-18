@@ -3,6 +3,7 @@ package Hertz.Controlador;
 import Hertz.Vista.VPrincipal;
 import Hertz.Vista.VUsuario;
 import Hertz.Vista.VPersona;
+import Hertz.Vista.VRol;
 import java.awt.Dimension;
 import java.awt.Frame;
 
@@ -20,6 +21,7 @@ public class CPrincipal {
     
         vista.getBtnNuevoPersona().addActionListener(e-> persona());
         vista.getBtnNuevoUsuario().addActionListener(e -> usuario());
+        vista.getBtnNuevoRol().addActionListener(e -> rol());
         vista.getBtnSalir().addActionListener(e -> salir());
     }
     
@@ -35,7 +37,19 @@ public class CPrincipal {
         vpersona.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }
     
-        //***********************     USUARIO     ******************************
+    //***************************     ROL     **********************************
+    
+    private void rol(){
+        VRol vrol = new VRol();
+        CRol crol = new CRol(vrol);
+
+        vista.getEscritorio().add(vrol);
+        Dimension desktopSize = vista.getEscritorio().getSize();
+        Dimension FrameSize = vrol.getSize();
+        vrol.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+    }
+    
+    //***********************     USUARIO     ******************************
     
     private void usuario(){
         VUsuario vusuario = new VUsuario();

@@ -22,6 +22,22 @@ public class VPrincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JMenuItem getBtnNuevoRol() {
+        return btnNuevoRol;
+    }
+
+    public void setBtnNuevoRol(JMenuItem btnNuevoRol) {
+        this.btnNuevoRol = btnNuevoRol;
+    }
+
+    public JMenu getMenuRol() {
+        return menuRol;
+    }
+
+    public void setMenuRol(JMenu menuRol) {
+        this.menuRol = menuRol;
+    }
+
     public JDesktopPane getEscritorio() {
         return Escritorio;
     }
@@ -105,6 +121,8 @@ public class VPrincipal extends javax.swing.JFrame {
         btnNuevoUsuario = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
         btnSalir = new javax.swing.JMenuItem();
+        menuRol = new javax.swing.JMenu();
+        btnNuevoRol = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,7 +134,7 @@ public class VPrincipal extends javax.swing.JFrame {
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGap(0, 281, Short.MAX_VALUE)
         );
 
         menuPersona.setText("Persona");
@@ -139,6 +157,13 @@ public class VPrincipal extends javax.swing.JFrame {
         menuSalir.add(btnSalir);
 
         barraMenus.add(menuSalir);
+
+        menuRol.setText("Rol");
+
+        btnNuevoRol.setText("Nuevo");
+        menuRol.add(btnNuevoRol);
+
+        barraMenus.add(menuRol);
 
         setJMenuBar(barraMenus);
 
@@ -196,9 +221,11 @@ public class VPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenuBar barraMenus;
     private javax.swing.JMenuItem btnNuevoPersona;
+    private javax.swing.JMenuItem btnNuevoRol;
     private javax.swing.JMenuItem btnNuevoUsuario;
     private javax.swing.JMenuItem btnSalir;
     private javax.swing.JMenu menuPersona;
+    private javax.swing.JMenu menuRol;
     private javax.swing.JMenu menuSalir;
     private javax.swing.JMenu menuUsuario;
     // End of variables declaration//GEN-END:variables
