@@ -30,7 +30,7 @@ public class c_principal {
 
     private void persona() {
         v_persona vpersona = new v_persona();
-        c_persona cpersona = new c_persona(vpersona);
+        cpersona cpersona = new cpersona(vpersona);
 
         vista.getjDesktopPane1().add(vpersona);
         Dimension desktopSize = vista.getjDesktopPane1().getSize();
