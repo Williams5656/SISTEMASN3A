@@ -152,6 +152,7 @@ public class PersonaBD extends PersonaMD {
             ef = Base64.encodeBytes(imgb);
         } catch (IOException ex) {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Error"+ex);
         }
         String sql = "INSERT INTO persona(cedula, nombres, apellidos, telefono, correo, foto)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getTelefono() + "','" + getCorreo() + "','" + ef + "')";
 

@@ -4,6 +4,7 @@ import java.awt.Color;
 import modelo.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -92,13 +93,12 @@ public class C_Rol {
         bdrol.setNombre(vistarol.getTxtnombre().getText());
         bdrol.setDescripcion(vistarol.getTxtDescripcion().getText());
         bdrol.setEstado(vistarol.getLabelEstado().getText());
-
         if (bdrol.insertar()) {
             JOptionPane.showMessageDialog(null, "GUARDADO CORRECTAMENTE");
             listarol();
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
-        }
+        }           
     }
 
     public void modificar() {
