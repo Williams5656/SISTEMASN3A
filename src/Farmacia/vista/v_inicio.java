@@ -16,7 +16,7 @@ public class v_inicio extends javax.swing.JFrame {
      */
     public v_inicio() {
         initComponents();
-    }
+            }
 
     /**
      * This method is called from within the constructor to initialize the form.

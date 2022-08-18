@@ -6,6 +6,7 @@
 package Farmacia.vista;
 
 import com.toedter.calendar.JDateChooser;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -23,6 +24,8 @@ public class v_persona extends javax.swing.JInternalFrame {
      */
     public v_persona() {
         initComponents();
+        this.setVisible(true);
+        
     }
 
     public JDateChooser getCalendar_fecha() {
@@ -216,7 +219,9 @@ public class v_persona extends javax.swing.JInternalFrame {
     public void setTxt_nombre_apellido(JTextField txt_nombre_apellido) {
         this.txt_nombre_apellido = txt_nombre_apellido;
     }
-    
+    public static void main(String[] args) {
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -356,4 +361,6 @@ public class v_persona extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txt_direccion;
     private javax.swing.JTextField txt_nombre_apellido;
     // End of variables declaration//GEN-END:variables
+
+   
 }

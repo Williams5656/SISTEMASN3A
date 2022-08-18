@@ -5,6 +5,7 @@
  */
 package Farmacia.vista;
 
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -24,6 +25,8 @@ public class v_usuarios extends javax.swing.JInternalFrame {
      */
     public v_usuarios() {
         initComponents();
+       
+        this.setLocationRelativeTo(null);
     }
 
     public JButton getBtn_eliminar() {

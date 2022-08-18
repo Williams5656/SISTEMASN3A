@@ -5,6 +5,7 @@
  */
 package Farmacia.vista;
 
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -23,6 +24,8 @@ public class v_roles extends javax.swing.JInternalFrame {
      */
     public v_roles() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
     }
 
     public JButton getBtn_buscar() {

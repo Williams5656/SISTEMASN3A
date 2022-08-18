@@ -21,6 +21,8 @@ public class v_principal extends javax.swing.JFrame {
      */
     public v_principal() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
     }
 
     public JMenuItem getBtn_persona() {
