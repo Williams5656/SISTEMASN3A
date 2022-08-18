@@ -1,16 +1,38 @@
+
 package vista;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
+import javax.swing.*;
+
 
 public class V_Rol extends javax.swing.JInternalFrame {
 
+    
     public V_Rol() {
         initComponents();
+    }
+
+    public JCheckBox getCheckBoxEstado() {
+        return CheckBoxEstado;
+    }
+
+    public void setCheckBoxEstado(JCheckBox CheckBoxEstado) {
+        this.CheckBoxEstado = CheckBoxEstado;
+    }
+
+    public JTable getTableRol() {
+        return TableRol;
+    }
+
+    public void setTableRol(JTable TableRol) {
+        this.TableRol = TableRol;
+    }
+
+    public JTextArea getTxtDescripcion() {
+        return TxtDescripcion;
+    }
+
+    public void setTxtDescripcion(JTextArea TxtDescripcion) {
+        this.TxtDescripcion = TxtDescripcion;
     }
 
     public JButton getBtneliminar() {
@@ -21,12 +43,12 @@ public class V_Rol extends javax.swing.JInternalFrame {
         this.btneliminar = btneliminar;
     }
 
-    public JButton getBtnguardar() {
-        return btnguardar;
+    public JButton getBtnguardarp() {
+        return btnguardarp;
     }
 
-    public void setBtnguardar(JButton btnguardar) {
-        this.btnguardar = btnguardar;
+    public void setBtnguardarp(JButton btnguardarp) {
+        this.btnguardarp = btnguardarp;
     }
 
     public JButton getBtnmodificar() {
@@ -45,54 +67,6 @@ public class V_Rol extends javax.swing.JInternalFrame {
         this.btnnuevo = btnnuevo;
     }
 
-    public JComboBox<String> getCbestado() {
-        return cbestado;
-    }
-
-    public void setCbestado(JComboBox<String> cbestado) {
-        this.cbestado = cbestado;
-    }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public void setjLabel2(JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
-    }
-
-    public JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    public void setjLabel3(JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
-    }
-
-    public JLabel getjLabel4() {
-        return jLabel4;
-    }
-
-    public void setjLabel4(JLabel jLabel4) {
-        this.jLabel4 = jLabel4;
-    }
-
-    public JLabel getjLabel5() {
-        return jLabel5;
-    }
-
-    public void setjLabel5(JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
-    }
-
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
@@ -101,28 +75,20 @@ public class V_Rol extends javax.swing.JInternalFrame {
         this.jScrollPane1 = jScrollPane1;
     }
 
-    public JTable getTablarol() {
-        return tablarol;
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
     }
 
-    public void setTablarol(JTable tablarol) {
-        this.tablarol = tablarol;
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
     }
 
-    public JTextField getTxtcodigo() {
-        return txtcodigo;
+    public JLabel getLabelCodRol() {
+        return labelCodRol;
     }
 
-    public void setTxtcodigo(JTextField txtcodigo) {
-        this.txtcodigo = txtcodigo;
-    }
-
-    public JTextField getTxtdescripcion() {
-        return txtdescripcion;
-    }
-
-    public void setTxtdescripcion(JTextField txtdescripcion) {
-        this.txtdescripcion = txtdescripcion;
+    public void setLabelCodRol(JLabel labelCodRol) {
+        this.labelCodRol = labelCodRol;
     }
 
     public JTextField getTxtnombre() {
@@ -133,6 +99,7 @@ public class V_Rol extends javax.swing.JInternalFrame {
         this.txtnombre = txtnombre;
     }
 
+  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -142,43 +109,43 @@ public class V_Rol extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtcodigo = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
-        txtdescripcion = new javax.swing.JTextField();
-        cbestado = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TableRol = new javax.swing.JTable();
+        CheckBoxEstado = new javax.swing.JCheckBox();
         btnnuevo = new javax.swing.JButton();
-        btnguardar = new javax.swing.JButton();
+        btnguardarp = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablarol = new javax.swing.JTable();
+        labelCodRol = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TxtDescripcion = new javax.swing.JTextArea();
 
+        setBackground(new java.awt.Color(79, 213, 223));
         setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
         setResizable(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Imgrol.png"))); // NOI18N
         jLabel1.setText("ROLES");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 190, 60));
 
         jLabel2.setText("CODIGO:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 100, 40));
 
         jLabel3.setText("NOMBRE:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 90, 40));
 
         jLabel4.setText("DESCRIPCION:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 130, 50));
 
         jLabel5.setText("ESTADO:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 100, 40));
+        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 170, 40));
 
-        cbestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVO", "INACTIVO" }));
-
-        btnnuevo.setText("NUEVO");
-
-        btnguardar.setText("GUARDAR");
-
-        btnmodificar.setText("MODIFICAR");
-
-        btneliminar.setText("ELIMINAR");
-
-        tablarol.setModel(new javax.swing.table.DefaultTableModel(
+        TableRol.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -197,104 +164,56 @@ public class V_Rol extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tablarol);
+        jScrollPane1.setViewportView(TableRol);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(215, 215, 215)
-                                        .addComponent(jLabel1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(79, 79, 79)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabel4)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jLabel3)
-                                        .addGap(123, 123, 123)))
-                                .addGap(11, 11, 11)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cbestado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtcodigo)
-                                    .addComponent(txtnombre)
-                                    .addComponent(txtdescripcion))
-                                .addGap(45, 45, 45))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(btnnuevo)
-                                .addGap(42, 42, 42)
-                                .addComponent(btnguardar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnmodificar)
-                                .addGap(18, 18, 18)))
-                        .addComponent(btneliminar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(cbestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnnuevo)
-                    .addComponent(btnguardar)
-                    .addComponent(btnmodificar)
-                    .addComponent(btneliminar))
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 700, 130));
+
+        CheckBoxEstado.setText("Activo");
+        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 130, 40));
+
+        btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
+        btnnuevo.setText("NUEVO");
+        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 170, 40));
+
+        btnguardarp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar-archivo.png"))); // NOI18N
+        btnguardarp.setText("GUARDAR");
+        getContentPane().add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 180, 40));
+
+        btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lapiz.png"))); // NOI18N
+        btnmodificar.setText("MODIFICAR");
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 190, 40));
+
+        btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarusuario.png"))); // NOI18N
+        btneliminar.setText("ELIMINAR");
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 180, 50));
+        getContentPane().add(labelCodRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 160, 40));
+
+        TxtDescripcion.setColumns(20);
+        TxtDescripcion.setRows(5);
+        jScrollPane2.setViewportView(TxtDescripcion);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 390, 130));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox CheckBoxEstado;
+    private javax.swing.JTable TableRol;
+    private javax.swing.JTextArea TxtDescripcion;
     private javax.swing.JButton btneliminar;
-    private javax.swing.JButton btnguardar;
+    private javax.swing.JButton btnguardarp;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
-    private javax.swing.JComboBox<String> cbestado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablarol;
-    private javax.swing.JTextField txtcodigo;
-    private javax.swing.JTextField txtdescripcion;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel labelCodRol;
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 
