@@ -226,7 +226,7 @@ public class V_Rol extends javax.swing.JInternalFrame {
 
         txtBuscarRol.setFont(new java.awt.Font("Tahoma", 2, 16)); // NOI18N
         txtBuscarRol.setForeground(new java.awt.Color(153, 153, 153));
-        txtBuscarRol.setText("Ingrese el Código del rol");
+        txtBuscarRol.setText("Ingrese el nombre del rol");
         getContentPane().add(txtBuscarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 250, 40));
 
         BtnBuscarRol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N

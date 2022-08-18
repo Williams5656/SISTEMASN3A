@@ -205,7 +205,7 @@ public class C_Rol {
 
     private void txtBuscarRolFocusLost(java.awt.event.FocusEvent evt) {
         if (vistarol.getTxtBuscarRol().getText().isEmpty()) {
-            vistarol.getTxtBuscarRol().setText("Ingrese el Código del rol");
+            vistarol.getTxtBuscarRol().setText("Ingrese el nombre del rol");
             vistarol.getTxtBuscarRol().setForeground(Color.GRAY);
         }
     }
