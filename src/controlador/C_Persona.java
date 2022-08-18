@@ -1,5 +1,6 @@
 package controlador;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -24,8 +25,8 @@ public class C_Persona {
     public C_Persona(V_Persona vistapersona) {
         this.vistapersona = vistapersona;
         vistapersona.setVisible(true);
-    lista();
-            
+        lista();
+
         vistapersona.getBtn_CargarFoto().addActionListener(x -> obtieneImagen());
         vistapersona.getBtn_QuitarFoto().addActionListener(x -> QuitarImagen());
         vistapersona.getBtnguardarp().addActionListener(x -> guardar());
@@ -49,7 +50,18 @@ public class C_Persona {
                 labelBotonesMouseExited(evt);
             }
         });*/
+        vistapersona.getTxtBuscarCedula().addFocusListener(new java.awt.event.FocusAdapter() {
+            @Override
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtBuscarCedulaFocusGained(evt);
+            }
 
+            @Override
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtBuscarCedulaFocusLost(evt);
+            }
+        });
+ vistapersona.getBtnBuscarCedula().addActionListener(x->Buscar());
     }
 
     public void lista() {
@@ -202,5 +214,41 @@ public class C_Persona {
         vistapersona.getBtnnuevo().setVisible(false);
         vistapersona.getBtnmodificar().setVisible(false);
         vistapersona.getBtneliminar().setVisible(false);
+    }
+
+    private void txtBuscarCedulaFocusGained(java.awt.event.FocusEvent evt) {
+        vistapersona.getTxtBuscarCedula().setText("");
+        vistapersona.getTxtBuscarCedula().setForeground(Color.BLACK);
+
+    }
+
+    private void txtBuscarCedulaFocusLost(java.awt.event.FocusEvent evt) {
+        if (vistapersona.getTxtBuscarCedula().getText().isEmpty()) {
+            vistapersona.getTxtBuscarCedula().setText("Ingrese el número de Cédula");
+            vistapersona.getTxtBuscarCedula().setForeground(Color.GRAY);
+        }
+    }
+
+    public void Buscar() {
+        if (vistapersona.getTxtBuscarCedula().getText().equals("")) {
+            lista();
+        } else {
+            DefaultTableModel model;
+            model = (DefaultTableModel) vistapersona.getTablapersona().getModel();
+            java.util.List<PersonaMD> lista = bdpersona.buscardatos(vistapersona.getTxtBuscarCedula().getText());
+            int columnas = model.getColumnCount();
+            for (int j = vistapersona.getTablapersona().getRowCount() - 1; j >= 0; j--) {
+                model.removeRow(j);
+            }
+            for (int i = 0; i < lista.size(); i++) {
+                model.addRow(new Object[columnas]);
+                vistapersona.getTablapersona().setValueAt(lista.get(i).getCedula(), i, 0);
+                vistapersona.getTablapersona().setValueAt(lista.get(i).getNombres(), i, 1);
+                vistapersona.getTablapersona().setValueAt(lista.get(i).getApellidos(), i, 2);
+                vistapersona.getTablapersona().setValueAt(lista.get(i).getTelefono(), i, 3);
+                vistapersona.getTablapersona().setValueAt(lista.get(i).getCorreo(), i, 4);
+                vistapersona.getTablapersona().setValueAt(lista.get(i).getFoto_perfil(), i, 5);
+            }
+        }
     }
 }

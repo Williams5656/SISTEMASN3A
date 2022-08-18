@@ -1,5 +1,6 @@
 package controlador;
 
+import java.awt.Color;
 import modelo.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -43,7 +44,18 @@ public class C_Rol {
                 CheckBoxEstadoActionPerformed(evt);
             }
         });
-        vistarol.getBtnBuscarRol().addActionListener(x->Buscar());
+        vistarol.getBtnBuscarRol().addActionListener(x -> Buscar());
+        vistarol.getTxtBuscarRol().addFocusListener(new java.awt.event.FocusAdapter() {
+            @Override
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtBuscarRolFocusGained(evt);
+            }
+
+            @Override
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtBuscarRolFocusLost(evt);
+            }
+        });
     }
 
     public void nuevo() {
@@ -162,7 +174,7 @@ public class C_Rol {
             buffer.append(chars[random.nextInt(charsLength)]);
         }
 
-        vistarol.getLabelCodRol().setText("ROL000-" + buffer.toString());
+        vistarol.getLabelCodRol().setText("RL0" + buffer.toString());
     }
 
     public void Buscar() {
@@ -177,12 +189,24 @@ public class C_Rol {
                 model.removeRow(j);
             }
             for (int i = 0; i < listarol.size(); i++) {
-                    model.addRow(new Object[columnas]);
-                    vistarol.getTableRol().setValueAt(listarol.get(i).getCodigo(), i, 0);
-                    vistarol.getTableRol().setValueAt(listarol.get(i).getNombre(), i, 1);
-                    vistarol.getTableRol().setValueAt(listarol.get(i).getDescripcion(), i, 2);
-                    vistarol.getTableRol().setValueAt(listarol.get(i).getEstado(), i, 3);
+                model.addRow(new Object[columnas]);
+                vistarol.getTableRol().setValueAt(listarol.get(i).getCodigo(), i, 0);
+                vistarol.getTableRol().setValueAt(listarol.get(i).getNombre(), i, 1);
+                vistarol.getTableRol().setValueAt(listarol.get(i).getDescripcion(), i, 2);
+                vistarol.getTableRol().setValueAt(listarol.get(i).getEstado(), i, 3);
             }
+        }
+    }
+
+    private void txtBuscarRolFocusGained(java.awt.event.FocusEvent evt) {
+        vistarol.getTxtBuscarRol().setText("");
+        vistarol.getTxtBuscarRol().setForeground(Color.BLACK);
+    }
+
+    private void txtBuscarRolFocusLost(java.awt.event.FocusEvent evt) {
+        if (vistarol.getTxtBuscarRol().getText().isEmpty()) {
+            vistarol.getTxtBuscarRol().setText("Ingrese el Código del rol");
+            vistarol.getTxtBuscarRol().setForeground(Color.GRAY);
         }
     }
 }

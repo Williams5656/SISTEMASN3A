@@ -221,9 +221,13 @@ public class V_Rol extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 390, 110));
 
-        jLabel6.setText("BUSCAR POR CODIGO:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 190, 40));
-        getContentPane().add(txtBuscarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 160, 40));
+        jLabel6.setText("BUSCAR:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 90, 40));
+
+        txtBuscarRol.setFont(new java.awt.Font("Tahoma", 2, 16)); // NOI18N
+        txtBuscarRol.setForeground(new java.awt.Color(153, 153, 153));
+        txtBuscarRol.setText("Ingrese el Código del rol");
+        getContentPane().add(txtBuscarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 250, 40));
 
         BtnBuscarRol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
         getContentPane().add(BtnBuscarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 70, 50));
