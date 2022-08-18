@@ -1,34 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Farmacia.modelo;
+package farmacia.modelo;
 
 import java.awt.Image;
 
-/**
- *
- * @author A
- */
 public class Persona_MD {
+
     private String cedula;
-    private String nombre_apellido;
-    private String fechaNacimiento;
-    private String correo;
-    private String telefono;
+    private String nombre;
+    private String direccion;
+    private String fecha_nacimiento;
+    private String ciudad;
+    private String celular;
     private Image foto;
-
-    public Persona_MD() {
-    }
-
-    public Persona_MD(String cedula, String nombre_apellido, String fechaNacimiento, String correo, String telefono, Image foto) {
+        
+         
+    public Persona_MD(String cedula, String nombre, String direccion, String fecha_nacimiento, String ciudad, String celular, Image foto) {
         this.cedula = cedula;
-        this.nombre_apellido = nombre_apellido;
-        this.fechaNacimiento = fechaNacimiento;
-        this.correo = correo;
-        this.telefono = telefono;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.ciudad = ciudad;
+        this.celular = celular;
         this.foto = foto;
+    }  
+   
+    public Persona_MD() {
     }
 
     public String getCedula() {
@@ -39,36 +34,44 @@ public class Persona_MD {
         this.cedula = cedula;
     }
 
-    public String getNombre_apellido() {
-        return nombre_apellido;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombre_apellido(String nombre_apellido) {
-        this.nombre_apellido = nombre_apellido;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getFecha_nacimiento() {
+        return fecha_nacimiento;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getCiudad() {
+        return ciudad;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 
     public Image getFoto() {

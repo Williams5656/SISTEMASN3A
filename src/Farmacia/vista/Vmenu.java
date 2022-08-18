@@ -175,7 +175,8 @@ public class Vmenu extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        btn_usuario = new javax.swing.JCheckBoxMenuItem();
+        btn_persona = new javax.swing.JMenuItem();
+        btn_rol = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         btn_cliente = new javax.swing.JCheckBoxMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -213,16 +214,13 @@ public class Vmenu extends javax.swing.JFrame {
             .addGap(0, 447, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Usuario");
+        jMenu1.setText("Archivo");
 
-        btn_usuario.setSelected(true);
-        btn_usuario.setText("Usuario");
-        btn_usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_usuarioActionPerformed(evt);
-            }
-        });
-        jMenu1.add(btn_usuario);
+        btn_persona.setText("Persona");
+        jMenu1.add(btn_persona);
+
+        btn_rol.setText("Rol");
+        jMenu1.add(btn_rol);
 
         jMenuBar1.add(jMenu1);
 
@@ -314,17 +312,6 @@ public class Vmenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usuarioActionPerformed
-       Vista_Persona es = new Vista_Persona();
-       jDesktopPane1.add(es);
-       Dimension desktopSize = jDesktopPane1.getSize();
-       Dimension FrameSize = es.getSize();
-       es.setLocation((desktopSize.width - FrameSize.width)/2,
-               (desktopSize.height- FrameSize.height)/2);
-       es.show();
-       es.setVisible(true);
-    }//GEN-LAST:event_btn_usuarioActionPerformed
 
     private void btn_proveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proveedorActionPerformed
        Vproveedor es = new Vproveedor();
@@ -423,8 +410,9 @@ public class Vmenu extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem btn_farmaceutico;
     private javax.swing.JCheckBoxMenuItem btn_medicamento;
     private javax.swing.JCheckBoxMenuItem btn_pedido;
+    private javax.swing.JMenuItem btn_persona;
     private javax.swing.JCheckBoxMenuItem btn_proveedor;
-    private javax.swing.JCheckBoxMenuItem btn_usuario;
+    private javax.swing.JMenuItem btn_rol;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
