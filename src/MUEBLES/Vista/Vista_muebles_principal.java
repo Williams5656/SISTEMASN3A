@@ -68,7 +68,16 @@ public class Vista_muebles_principal extends javax.swing.JFrame {
     public void setjMenuBar1(JMenuBar jMenuBar1) {
         this.jMenuBar1 = jMenuBar1;
     }
+
+    public JMenuItem getItmrol() {
+        return Itmrol;
+    }
+
+    public void setItmrol(JMenuItem Itmrol) {
+        this.Itmrol = Itmrol;
+    }
   
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -80,6 +89,7 @@ public class Vista_muebles_principal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         ItmPersona = new javax.swing.JMenuItem();
         ItmUsuario = new javax.swing.JMenuItem();
+        Itmrol = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         ItmRegresar = new javax.swing.JMenuItem();
 
@@ -118,6 +128,9 @@ public class Vista_muebles_principal extends javax.swing.JFrame {
         ItmUsuario.setText("Usuario");
         jMenu1.add(ItmUsuario);
 
+        Itmrol.setText("Roles");
+        jMenu1.add(Itmrol);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("REGRESAR");
@@ -148,6 +161,7 @@ public class Vista_muebles_principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem ItmPersona;
     private javax.swing.JMenuItem ItmRegresar;
     private javax.swing.JMenuItem ItmUsuario;
+    private javax.swing.JMenuItem Itmrol;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

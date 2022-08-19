@@ -18,6 +18,7 @@ public class Cmueblesprincipal {
         vistaprin.getItmPersona().addActionListener(e -> persona());
         vistaprin.getItmUsuario().addActionListener(e -> usuario());
         vistaprin.getItmRegresar().addActionListener(e -> regresar());
+        vistaprin.getItmrol().addActionListener(e -> rol());
     }
     
     private void persona(){
@@ -40,5 +41,14 @@ public class Cmueblesprincipal {
     private void regresar(){
         Cmueblesinicio volv = new Cmueblesinicio(vistaini);
         vistaprin.dispose();
+    }
+    
+    private void rol(){
+        Vista_rol vistaper = new Vista_rol();
+        Crol cmu = new Crol(vistaper);
+        vistaprin.getDesk_escritorio_muebles().add(vistaper);
+        Dimension desktopSize = vistaprin.getDesk_escritorio_muebles().getSize();
+        Dimension FrameSize = vistaper.getSize();
+        vistaper.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }
 }
