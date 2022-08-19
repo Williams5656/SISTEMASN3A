@@ -21,6 +21,23 @@ public class VistaPrincipal extends javax.swing.JFrame {
         
         
         
+        
+    }
+
+    public JMenuItem getNuevoProducto() {
+        return NuevoProducto;
+    }
+
+    public void setNuevoProducto(JMenuItem NuevoProducto) {
+        this.NuevoProducto = NuevoProducto;
+    }
+
+    public JMenuItem getNuevoProveedor() {
+        return NuevoProveedor;
+    }
+
+    public void setNuevoProveedor(JMenuItem NuevoProveedor) {
+        this.NuevoProveedor = NuevoProveedor;
     }
 
     public JMenuItem getNuevoRol() {
@@ -64,6 +81,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
         nuevoUsuario = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         NuevoRol = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        NuevoProveedor = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        NuevoProducto = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,6 +119,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu3.add(NuevoRol);
 
         jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("PROVEEDOR");
+
+        NuevoProveedor.setText("NuevoProveedor");
+        jMenu4.add(NuevoProveedor);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("PRODUCTO");
+
+        NuevoProducto.setText("NuevoProducto");
+        jMenu5.add(NuevoProducto);
+
+        jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
 
@@ -151,11 +186,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem NuevoProducto;
+    private javax.swing.JMenuItem NuevoProveedor;
     private javax.swing.JMenuItem NuevoRol;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem nuevoPersona;
     private javax.swing.JMenuItem nuevoUsuario;

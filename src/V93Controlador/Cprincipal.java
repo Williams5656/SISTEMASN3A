@@ -17,6 +17,7 @@ public class Cprincipal {
         Vista.getNuevoPersona().addActionListener(e -> personas());
         Vista.getNuevoUsuario().addActionListener(e -> usuarios());
         Vista.getNuevoRol().addActionListener(e ->rol());
+         Vista.getNuevoProveedor().addActionListener(e -> proveedor());
                 
     }
        
@@ -34,6 +35,11 @@ public class Cprincipal {
      private void rol() {
         VistaRol vrol = new VistaRol();
         CRol crol = new CRol(vrol);
+
+    }
+       private void proveedor() {
+        VistaProveedor vprov = new VistaProveedor();
+        CProveedor cprov = new CProveedor(vprov);
 
     }
 }
