@@ -110,7 +110,7 @@ public class Vista_muebles_principal extends javax.swing.JFrame {
             .addGap(0, 320, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("ROLES");
+        jMenu1.setText("MENU");
 
         ItmPersona.setText("Persona");
         jMenu1.add(ItmPersona);
