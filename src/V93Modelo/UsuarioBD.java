@@ -97,11 +97,9 @@ public class UsuarioBD extends UsuarioMb {
 
     public boolean eliminar(String codigo) {
         // String nsql = "delete from usuario where \"codigo\"='" + codigo + "'";
-       String sql = "update usuario set \"estado\"='" + "INACTIVO" + "'"
+        String sql = "update usuario set \"estado\"='" + "INACTIVO" + "'"
                 + " where \"codigo\"='" + codigo + "'";
-       
- 
-// String nsql = "delete from rol where \"codigo\"='" + codigo + "'";
+
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {
@@ -111,4 +109,3 @@ public class UsuarioBD extends UsuarioMb {
 
     }
 }
- 
