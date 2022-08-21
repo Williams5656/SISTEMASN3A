@@ -19,6 +19,15 @@ public class Vprincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JMenuItem getItemroles() {
+        return itemroles;
+    }
+
+    public void setItemroles(JMenuItem itemroles) {
+        this.itemroles = itemroles;
+    }
+ 
+
     public JMenuItem getItempersona() {
         return itempersona;
     }
@@ -81,6 +90,7 @@ public class Vprincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         itempersona = new javax.swing.JMenuItem();
         itemusuario = new javax.swing.JMenuItem();
+        itemroles = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -103,6 +113,9 @@ public class Vprincipal extends javax.swing.JFrame {
 
         itemusuario.setText("Usuario");
         jMenu1.add(itemusuario);
+
+        itemroles.setText("Roles");
+        jMenu1.add(itemroles);
 
         jMenuBar1.add(jMenu1);
         jMenuBar1.add(jMenu2);
@@ -130,6 +143,7 @@ public class Vprincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itempersona;
+    private javax.swing.JMenuItem itemroles;
     private javax.swing.JMenuItem itemusuario;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;

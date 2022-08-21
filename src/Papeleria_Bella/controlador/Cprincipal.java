@@ -16,6 +16,7 @@ public class Cprincipal {
         vista.setExtendedState(MAXIMIZED_BOTH);
         vista.getItempersona().addActionListener(e-> persona ());
         vista.getItemusuario().addActionListener(e-> usuario());
+        vista.getItemroles().addActionListener(e-> roles());
 
     }
             
@@ -27,6 +28,11 @@ public class Cprincipal {
     private void usuario() {
         Vusuario vus= new Vusuario();
         Cusuario cuser=new Cusuario(vus);
+    }
+
+    private void roles() {
+        Vrol p= new Vrol();
+        Crol cper=new Crol(p);
     }
    
 }
