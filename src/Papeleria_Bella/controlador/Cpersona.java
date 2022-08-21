@@ -15,6 +15,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
+
 public class Cpersona {
     
     public static Vpersona1 vista;
@@ -64,7 +66,7 @@ public class Cpersona {
             vista.getTablapersona().setValueAt(lista.get(i).getTelefono(), i, 3);
             vista.getTablapersona().setValueAt(lista.get(i).getDireccion(), i, 4);
             vista.getTablapersona().setValueAt(lista.get(i).getEmail(), i, 5);
-            vista.getTablapersona().setValueAt(lista.get(i).getRol(), i, 6);
+           
 
         }
     }
@@ -77,7 +79,7 @@ public class Cpersona {
         bpersona.setTelefono(vista.getTxttelefono().getText());
         bpersona.setDireccion(vista.getTxtdireccion().getText());
         bpersona.setEmail(vista.getTxtemail().getText());
-        bpersona.setRol(vista.getComborol().getSelectedItem().toString());
+       
         ImageIcon ic = (ImageIcon) vista.getLabelfoto().getIcon();
         bpersona.setFoto(ic.getImage());
         
@@ -100,8 +102,7 @@ public class Cpersona {
         bpersona.setTelefono(vista.getTxttelefono().getText());
         bpersona.setDireccion(vista.getTxtdireccion().getText());
         bpersona.setEmail(vista.getTxtemail().getText());
-        String rol = (String) vista.getComborol().getSelectedItem();
-        bpersona.setRol(rol);
+        
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
         if (resp == 0) {
             if (bpersona.modificar(vista.getTxtcedula().getText())) ;
@@ -132,8 +133,8 @@ public class Cpersona {
         vista.getTxtdireccion().setText(bpersona.getDireccion());
         bpersona.setEmail(lista.get(0).getEmail());
         vista.getTxtemail().setText(bpersona.getEmail());
-        bpersona.setRol(lista.get(0).getRol());
-        vista.getComborol().setSelectedItem(bpersona.getRol());
+       
+        
         
         
         
@@ -184,7 +185,6 @@ public class Cpersona {
         vista.getTxttelefono().setText("");
         vista.getTxtdireccion().setText("");
         vista.getTxtemail().setText("");
-        vista.getComborol().setSelectedItem("");
         vista.getButtonguardar().setEnabled(true);
         vista.getButtonmodificar().setEnabled(false);
     }

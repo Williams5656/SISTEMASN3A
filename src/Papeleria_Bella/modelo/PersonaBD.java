@@ -1,10 +1,9 @@
 package Papeleria_Bella.modelo;
 
- import java.awt.Graphics2D;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
-//import java.io.ByteArrayOutput.Stream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -24,27 +23,31 @@ public class PersonaBD extends PersonaMD {
   
     Conect conectar = new Conect();
 
+    public PersonaBD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, Image foto) {
+        super(cedula, nombres, apellidos, telefono, direccion, email, foto);
+    }
+
+   
+
     public PersonaBD() {
     }
 
-    public PersonaBD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, String rol, Image foto) {
-        super(cedula, nombres, apellidos, telefono, direccion, email, rol, foto);
-    }
+    
 
      public static BufferedImage toBufferedImage(Image img) {
         if (img instanceof BufferedImage) {
             return (BufferedImage) img;
         }
 
-        // Create a buffered image with transparency
+        
         BufferedImage bimage = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
 
-        // Draw the image on to the buffered image
+        
         Graphics2D bGr = bimage.createGraphics();
         bGr.drawImage(img, 0, 0, null);
         bGr.dispose();
 
-        // Return the buffered image
+        
         return bimage;
     }   
 
@@ -52,7 +55,7 @@ public class PersonaBD extends PersonaMD {
         ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
         Iterator readers = ImageIO.getImageReadersByFormatName("png");
         ImageReader reader = (ImageReader) readers.next();
-        Object source = bis; // File or InputStream
+        Object source = bis; 
         ImageInputStream iis = ImageIO.createImageInputStream(source);
         reader.setInput(iis, true);
         ImageReadParam param = reader.getDefaultReadParam();
@@ -76,7 +79,7 @@ public class PersonaBD extends PersonaMD {
                 u.setTelefono(rs.getString("telefono"));
                 u.setDireccion(rs.getString("direccion"));
                 u.setEmail(rs.getString("email"));
-                u.setRol(rs.getString("rol"));
+                
             byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {
@@ -115,7 +118,7 @@ public class PersonaBD extends PersonaMD {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String sql = "INSERT INTO persona(cedula, nombres, apellidos, telefono, direccion, email, rol, foto) VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getTelefono() + "','" + getDireccion() + "','" + getEmail() + "','" + getRol() + "','" + ef + "')";
+        String sql = "INSERT INTO persona(cedula, nombres, apellidos, telefono, direccion, email, foto) VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getTelefono() + "','" + getDireccion() + "','" + getEmail() + "','" + ef + "')";
 
          if (conectar.noQuery(sql) == null) {
             return true;
@@ -139,7 +142,7 @@ public class PersonaBD extends PersonaMD {
         } catch (IOException ex) {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sql = "update persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"telefono\"='" + getTelefono() + "',\"direccion\"='" + getDireccion() + "',\"email\"='" + getEmail() + "',\"rol\"='" + getRol() + "',\"foto\"='" + ef +"'"
+        String sql = "update persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"telefono\"='" + getTelefono() + "',\"direccion\"='" + getDireccion() + "',\"email\"='" + getEmail() + "',\"foto\"='" + ef +"'"
                 + " where \"cedula\"='" + cedula + "'";
 
         if (conectar.noQuery(sql) == null) {
@@ -166,7 +169,7 @@ public class PersonaBD extends PersonaMD {
                  u.setTelefono(rs.getString("telefono"));
                 u.setDireccion(rs.getString("direccion"));
                 u.setEmail(rs.getString("email"));
-                u.setRol(rs.getString("rol"));
+                
                
                    byte[] is;
                 is = rs.getBytes("foto");

@@ -12,20 +12,19 @@ public class PersonaMD {
     String telefono;
     String direccion;
     String email;
-    String rol;
+    
     private Image foto;
 
     public PersonaMD() {
     }
             
-    public PersonaMD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, String rol, Image foto) {
+    public PersonaMD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, Image foto) {
         this.cedula = cedula;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.telefono = telefono;
         this.direccion = direccion;
         this.email = email;
-        this.rol = rol;
         this.foto = foto;
     }
 
@@ -87,13 +86,6 @@ public class PersonaMD {
         this.email = email;
     }
 
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
-    
+  
             
 }
