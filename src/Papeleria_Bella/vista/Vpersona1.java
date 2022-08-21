@@ -16,6 +16,32 @@ public class Vpersona1 extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getButtonbuscar() {
+        return buttonbuscar;
+    }
+
+    public void setButtonbuscar(JButton buttonbuscar) {
+        this.buttonbuscar = buttonbuscar;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JTextField getTxtbuscar() {
+        return txtbuscar;
+    }
+
+    public void setTxtbuscar(JTextField txtbuscar) {
+        this.txtbuscar = txtbuscar;
+    }
+
+    
+    
     public JButton getButtoncargar() {
         return buttoncargar;
     }
@@ -225,6 +251,9 @@ public class Vpersona1 extends javax.swing.JFrame {
         buttonnuevo = new javax.swing.JButton();
         buttoncargar = new javax.swing.JButton();
         buttoneliminar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        txtbuscar = new javax.swing.JTextField();
+        buttonbuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -280,6 +309,12 @@ public class Vpersona1 extends javax.swing.JFrame {
         buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttoneliminar.setText("Eliminar");
 
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel8.setText("Buscar:");
+
+        buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_Analyze_20px_1.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -311,9 +346,6 @@ public class Vpersona1 extends javax.swing.JFrame {
                     .addComponent(labelfoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(buttoncargar)
                         .addGap(224, 224, 224)
@@ -323,7 +355,17 @@ public class Vpersona1 extends javax.swing.JFrame {
                         .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(buttonmodificar)
-                            .addComponent(buttoneliminar))))
+                            .addComponent(buttoneliminar)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -335,7 +377,7 @@ public class Vpersona1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,12 +399,15 @@ public class Vpersona1 extends javax.swing.JFrame {
                         .addGap(81, 81, 81)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel8)
+                    .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(35, Short.MAX_VALUE))
+                        .addContainerGap(34, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -397,6 +442,7 @@ public class Vpersona1 extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonbuscar;
     private javax.swing.JButton buttoncargar;
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
@@ -409,11 +455,13 @@ public class Vpersona1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelfoto;
     private javax.swing.JTable tablapersona;
     private javax.swing.JTextField txtapellidos;
+    private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtdireccion;
     private javax.swing.JTextField txtemail;

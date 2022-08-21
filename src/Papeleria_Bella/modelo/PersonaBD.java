@@ -205,4 +205,42 @@ public class PersonaBD extends PersonaMD {
             return false;
         }
     }
+    
+    public List<PersonaMD> buscardatos(String cedula) {
+        try {
+            List<PersonaMD> lista = new ArrayList<PersonaMD>();
+            String sql = "select * from persona where \"cedula\" ILIKE '%" + cedula + "%'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                
+                PersonaMD u = new PersonaMD();
+                u.setCedula(rs.getString("cedula"));
+                u.setNombres(rs.getString("nombres"));
+                u.setApellidos(rs.getString("apellidos"));
+                u.setTelefono(rs.getString("telefono"));
+                u.setDireccion(rs.getString("direccion"));
+                u.setEmail(rs.getString("email"));
+                byte[] is;
+                is = rs.getBytes("foto");
+                if (is != null) {
+                    try {
+                        is = Base64.decode(is, 0, rs.getBytes("foto").length);
+//                    BufferedImage bi=Base64.decode( ImageIO.read(is));
+                        u.setFoto(getImage(is, false));
+                    } catch (Exception ex) {
+                        u.setFoto(null);
+                        Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    u.setFoto(null);
+                }
+                lista.add(u);
+            }
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(PersonaMD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
 }
