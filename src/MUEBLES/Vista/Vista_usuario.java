@@ -1,6 +1,7 @@
 package MUEBLES.Vista;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -8,6 +9,14 @@ public class Vista_usuario extends javax.swing.JFrame {
 
     public Vista_usuario() {
         initComponents();
+    }
+
+    public JButton getBtnbuscar() {
+        return Btnbuscar;
+    }
+
+    public void setBtnbuscar(JButton Btnbuscar) {
+        this.Btnbuscar = Btnbuscar;
     }
 
     public JButton getBtneliminar() {
@@ -18,20 +27,36 @@ public class Vista_usuario extends javax.swing.JFrame {
         this.Btneliminar = Btneliminar;
     }
 
-    public JButton getBtnguardar() {
-        return Btnguardar;
-    }
-
-    public void setBtnguardar(JButton Btnguardar) {
-        this.Btnguardar = Btnguardar;
-    }
-
     public JButton getBtnmodificar() {
         return Btnmodificar;
     }
 
     public void setBtnmodificar(JButton Btnmodificar) {
         this.Btnmodificar = Btnmodificar;
+    }
+
+    public JComboBox<String> getCobcodigorol() {
+        return Cobcodigorol;
+    }
+
+    public void setCobcodigorol(JComboBox<String> Cobcodigorol) {
+        this.Cobcodigorol = Cobcodigorol;
+    }
+
+    public JComboBox<String> getCobestado() {
+        return Cobestado;
+    }
+
+    public void setCobestado(JComboBox<String> Cobestado) {
+        this.Cobestado = Cobestado;
+    }
+
+    public JComboBox<String> getConcedulapersona() {
+        return Concedulapersona;
+    }
+
+    public void setConcedulapersona(JComboBox<String> Concedulapersona) {
+        this.Concedulapersona = Concedulapersona;
     }
 
     public JTable getTablausuario() {
@@ -42,12 +67,20 @@ public class Vista_usuario extends javax.swing.JFrame {
         this.Tablausuario = Tablausuario;
     }
 
-    public JTextField getTxtcedula() {
-        return Txtcedula;
+    public JTextField getTxtbuscar() {
+        return Txtbuscar;
     }
 
-    public void setTxtcedula(JTextField Txtcedula) {
-        this.Txtcedula = Txtcedula;
+    public void setTxtbuscar(JTextField Txtbuscar) {
+        this.Txtbuscar = Txtbuscar;
+    }
+
+    public JTextField getTxtcodigousuario() {
+        return Txtcodigousuario;
+    }
+
+    public void setTxtcodigousuario(JTextField Txtcodigousuario) {
+        this.Txtcodigousuario = Txtcodigousuario;
     }
 
     public JTextField getTxtcontraseña() {
@@ -56,22 +89,6 @@ public class Vista_usuario extends javax.swing.JFrame {
 
     public void setTxtcontraseña(JTextField Txtcontraseña) {
         this.Txtcontraseña = Txtcontraseña;
-    }
-
-    public JTextField getTxtestado() {
-        return Txtestado;
-    }
-
-    public void setTxtestado(JTextField Txtestado) {
-        this.Txtestado = Txtestado;
-    }
-
-    public JTextField getTxtrol() {
-        return Txtrol;
-    }
-
-    public void setTxtrol(JTextField Txtrol) {
-        this.Txtrol = Txtrol;
     }
 
     public JTextField getTxtusuario() {
@@ -92,40 +109,38 @@ public class Vista_usuario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        Txtcedula = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        Txtcodigousuario = new javax.swing.JTextField();
+        Concedulapersona = new javax.swing.JComboBox<>();
         Txtusuario = new javax.swing.JTextField();
+        Cobcodigorol = new javax.swing.JComboBox<>();
+        Cobestado = new javax.swing.JComboBox<>();
         Txtcontraseña = new javax.swing.JTextField();
-        Txtrol = new javax.swing.JTextField();
-        Txtestado = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tablausuario = new javax.swing.JTable();
         Btnguardar = new javax.swing.JButton();
         Btnmodificar = new javax.swing.JButton();
         Btneliminar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Tablausuario = new javax.swing.JTable();
+        Txtbuscar = new javax.swing.JTextField();
+        Btnbuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Usuario");
         setResizable(false);
 
-        jLabel1.setText("CEDULA:");
+        jLabel1.setText("CODIGO:");
 
-        jLabel2.setText("NOMBRE USUARIO:");
+        jLabel2.setText("CDL. PERSONA:");
 
-        jLabel3.setText("CONTRASEÑA:");
+        jLabel3.setText("NOMBRE DE USUARIO:");
 
-        jLabel4.setText("ROL:");
+        jLabel4.setText("CONTRASEÑA:");
 
-        jLabel5.setText("ESTADO:");
+        jLabel5.setText("CODIGO ROL:");
 
-        Btnguardar.setText("GUARDAR");
+        jLabel6.setText("ESTADO:");
 
-        Btnmodificar.setText("MOSIFICAR");
-        Btnmodificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnmodificarActionPerformed(evt);
-            }
-        });
-
-        Btneliminar.setText("ELIMINAR");
+        Cobestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INACTIVO", "ACTIVO" }));
 
         Tablausuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -136,10 +151,18 @@ public class Vista_usuario extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "CEDULA", "USUARIO", "CONTRASEÑA", "ROL", "ESTADO"
+                "CODIGO", "CEDULA", "USUARIO", "ROL", "ESTADO"
             }
         ));
         jScrollPane1.setViewportView(Tablausuario);
+
+        Btnguardar.setText("GUARDAR");
+
+        Btnmodificar.setText("MODIFICAR");
+
+        Btneliminar.setText("ELIMINAR");
+
+        Btnbuscar.setText("BUSCAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,83 +172,100 @@ public class Vista_usuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Txtestado)
-                            .addComponent(Txtrol)
-                            .addComponent(Txtcontraseña)
-                            .addComponent(Txtusuario)
-                            .addComponent(Txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Btnguardar)
                             .addComponent(Btnmodificar)
-                            .addComponent(Btneliminar))
-                        .addGap(25, 25, 25))
+                            .addComponent(Btneliminar)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Txtcodigousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Concedulapersona, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Txtusuario)
+                            .addComponent(Cobcodigorol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Cobestado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Btnbuscar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Btnguardar)))
+                    .addComponent(Txtcodigousuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(Txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Btnmodificar))
+                    .addComponent(Concedulapersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(Txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Btneliminar))
+                    .addComponent(Txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(Txtrol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(Txtestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Cobcodigorol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(Cobestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btnbuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Btnguardar)
+                        .addGap(18, 18, 18)
+                        .addComponent(Btnmodificar)
+                        .addGap(18, 18, 18)
+                        .addComponent(Btneliminar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnmodificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnmodificarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btnbuscar;
     private javax.swing.JButton Btneliminar;
     private javax.swing.JButton Btnguardar;
     private javax.swing.JButton Btnmodificar;
+    private javax.swing.JComboBox<String> Cobcodigorol;
+    private javax.swing.JComboBox<String> Cobestado;
+    private javax.swing.JComboBox<String> Concedulapersona;
     private javax.swing.JTable Tablausuario;
-    private javax.swing.JTextField Txtcedula;
+    private javax.swing.JTextField Txtbuscar;
+    private javax.swing.JTextField Txtcodigousuario;
     private javax.swing.JTextField Txtcontraseña;
-    private javax.swing.JTextField Txtestado;
-    private javax.swing.JTextField Txtrol;
     private javax.swing.JTextField Txtusuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
