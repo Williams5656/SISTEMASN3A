@@ -2,41 +2,71 @@ package modelo;
 
 public class UsuarioMD {
 
-    int codigo;
-    String usuario;
-    String clave;
+    String CodUsuario;
+    String Cedula;
+    String Usuario;
+    String Clave;
+    String Rol;
+    String Estado;
 
     public UsuarioMD() {
     }
 
-    public UsuarioMD(int codigo, String usuario, String clave) {
-        this.codigo = codigo;
-        this.usuario = usuario;
-        this.clave = clave;
+    public UsuarioMD(String CodUsuario, String Cedula, String Usuario, String Clave, String Rol, String Estado) {
+        this.CodUsuario = CodUsuario;
+        this.Cedula = Cedula;
+        this.Usuario = Usuario;
+        this.Clave = Clave;
+        this.Rol = Rol;
+        this.Estado = Estado;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public String getCodUsuario() {
+        return CodUsuario;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCodUsuario(String CodUsuario) {
+        this.CodUsuario = CodUsuario;
+    }
+
+    public String getCedula() {
+        return Cedula;
+    }
+
+    public void setCedula(String Cedula) {
+        this.Cedula = Cedula;
     }
 
     public String getUsuario() {
-        return usuario;
+        return Usuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsuario(String Usuario) {
+        this.Usuario = Usuario;
     }
 
     public String getClave() {
-        return clave;
+        return Clave;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setClave(String Clave) {
+        this.Clave = Clave;
+    }
+
+    public String getRol() {
+        return Rol;
+    }
+
+    public void setRol(String Rol) {
+        this.Rol = Rol;
+    }
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
     }
 
 }
