@@ -21,7 +21,7 @@ import org.postgresql.util.Base64;
      
 public class PersonaBD extends PersonaMD {
   
-    Conect conectar = new Conect();
+    Conexion conectar = new Conexion();
 
     public PersonaBD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, Image foto) {
         super(cedula, nombres, apellidos, telefono, direccion, email, foto);
