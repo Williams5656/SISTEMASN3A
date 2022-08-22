@@ -6,18 +6,18 @@ public class M_usuario_MD {
     String codigo;
     String cedula_persona;
     String usuario;
-    String contraseña;
+    String contrasena;
     String codigo_rol;
     String estado;
 
     public M_usuario_MD() {
     }
 
-    public M_usuario_MD(String codigo, String cedula_persona, String usuario, String contraseña, String codigo_rol, String estado) {
+    public M_usuario_MD(String codigo, String cedula_persona, String usuario, String contrasena, String codigo_rol, String estado) {
         this.codigo = codigo;
         this.cedula_persona = cedula_persona;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.codigo_rol = codigo_rol;
         this.estado = estado;
     }
@@ -46,12 +46,12 @@ public class M_usuario_MD {
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getCodigo_rol() {
