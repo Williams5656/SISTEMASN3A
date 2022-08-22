@@ -26,7 +26,7 @@ public class rol_BD extends M_rolMD{
 
     Conect conectar = new Conect();
     
-    public rol_BD(int codigo, String nombre, String descripcion, String estado) {
+    public rol_BD(String codigo, String nombre, String descripcion, String estado) {
         super(codigo, nombre, descripcion, estado);
     }
 
@@ -41,7 +41,7 @@ public class rol_BD extends M_rolMD{
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 M_rolMD m = new M_rolMD();
-                m.setCodigo(Integer.parseInt(rs.getString("codigo")));
+                m.setCodigo(rs.getString("codigo"));
                 m.setNombre(rs.getString("nombre"));
                 m.setDescripcion(rs.getString("descripcion"));
                 m.setEstado(rs.getString("estado"));
@@ -100,7 +100,7 @@ public class rol_BD extends M_rolMD{
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 M_rolMD m = new M_rolMD();
-                m.setCodigo(Integer.parseInt(rs.getString("codigo")));
+                m.setCodigo(rs.getString("codigo"));
                 m.setNombre(rs.getString("nombre"));
                 m.setDescripcion(rs.getString("descripcion"));
                 m.setEstado(rs.getString("estado"));

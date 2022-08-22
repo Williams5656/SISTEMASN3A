@@ -53,14 +53,6 @@ public class Vista_rol extends javax.swing.JFrame {
         this.Cobestado = Cobestado;
     }
 
-    public JComboBox<String> getCobnombre() {
-        return Cobnombre;
-    }
-
-    public void setCobnombre(JComboBox<String> Cobnombre) {
-        this.Cobnombre = Cobnombre;
-    }
-
     public JTable getTablarol() {
         return Tablarol;
     }
@@ -77,14 +69,6 @@ public class Vista_rol extends javax.swing.JFrame {
         this.TxtArea_descripcion = TxtArea_descripcion;
     }
 
-    public JTextField getTxtcodigo() {
-        return Txtcodigo;
-    }
-
-    public void setTxtcodigo(JTextField Txtcodigo) {
-        this.Txtcodigo = Txtcodigo;
-    }
-
     public JTextField getTxtbuscar() {
         return Txtbuscar;
     }
@@ -93,7 +77,22 @@ public class Vista_rol extends javax.swing.JFrame {
         this.Txtbuscar = Txtbuscar;
     }
 
-    
+    public JTextField getTxtcodigo() {
+        return Txtcodigo;
+    }
+
+    public void setTxtcodigo(JTextField Txtcodigo) {
+        this.Txtcodigo = Txtcodigo;
+    }
+
+    public JTextField getTxtnombre() {
+        return Txtnombre;
+    }
+
+    public void setTxtnombre(JTextField Txtnombre) {
+        this.Txtnombre = Txtnombre;
+    }
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -111,10 +110,10 @@ public class Vista_rol extends javax.swing.JFrame {
         Txtbuscar = new javax.swing.JTextField();
         Btnbuscar = new javax.swing.JButton();
         Txtcodigo = new javax.swing.JTextField();
-        Cobnombre = new javax.swing.JComboBox<>();
         Cobestado = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         TxtArea_descripcion = new javax.swing.JTextArea();
+        Txtnombre = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -187,9 +186,9 @@ public class Vista_rol extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Cobnombre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Cobestado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                            .addComponent(Txtnombre))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -202,7 +201,7 @@ public class Vista_rol extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(Cobnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -212,9 +211,9 @@ public class Vista_rol extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Btnbuscar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Txtbuscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btnbuscar, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,11 +241,11 @@ public class Vista_rol extends javax.swing.JFrame {
     private javax.swing.JButton Btnguardar;
     private javax.swing.JButton Btnmodificar;
     private javax.swing.JComboBox<String> Cobestado;
-    private javax.swing.JComboBox<String> Cobnombre;
     private javax.swing.JTable Tablarol;
     private javax.swing.JTextArea TxtArea_descripcion;
     private javax.swing.JTextField Txtbuscar;
     private javax.swing.JTextField Txtcodigo;
+    private javax.swing.JTextField Txtnombre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -3,12 +3,12 @@ package MUEBLES.Modelo;
 
 public class M_rolMD {
     
-    int codigo;
+    String codigo;
     String nombre;
     String descripcion;
     String estado;
 
-    public M_rolMD(int codigo, String nombre, String descripcion, String estado) {
+    public M_rolMD(String codigo, String nombre, String descripcion, String estado) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -18,11 +18,11 @@ public class M_rolMD {
     public M_rolMD() {
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 

@@ -53,9 +53,9 @@
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="Txtcodigo" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="Cobnombre" alignment="0" max="32767" attributes="0"/>
                           <Component id="Cobestado" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jScrollPane2" alignment="0" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="0" pref="280" max="32767" attributes="0"/>
+                          <Component id="Txtnombre" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -74,7 +74,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Cobnombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Txtnombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -87,7 +87,7 @@
                   <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="13" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="Txtbuscar" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="Btnbuscar" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -174,16 +174,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="Txtcodigo">
     </Component>
-    <Component class="javax.swing.JComboBox" name="Cobnombre">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="0"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JComboBox" name="Cobestado">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -215,5 +205,7 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JTextField" name="Txtnombre">
+    </Component>
   </SubComponents>
 </Form>
