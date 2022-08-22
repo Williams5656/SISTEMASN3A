@@ -10,6 +10,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Image;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -36,6 +38,12 @@ public class CPersona {
         vista.getBtnModificar().addActionListener(e -> modificar());
         vista.getBtnEliminar().addActionListener(e -> eliminar());
         vista.getBtnFoto().addActionListener(e -> obtieneImagen());
+        
+        vista.getTxtBuscar().addKeyListener(new KeyAdapter() {
+            public void keyReleased(KeyEvent evt) {
+                buscar();
+            }        
+        });
         
         vista.getTablaPersona().addMouseListener(new MouseAdapter() {
             @Override
@@ -124,11 +132,43 @@ public class CPersona {
         if (bdPersona.insertar()){
             JOptionPane.showMessageDialog(null, "GUARDADO CORRECTAMENTE");
             lista();
+            limpiar();
         }
         else{
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
         }
     }//Fin del Guardar
+    
+    public void buscar(){
+       if(vista.getTxtBuscar().getText().equals("")){
+           lista();
+       }
+       else{
+           DefaultTableModel modelo;
+           modelo = (DefaultTableModel) vista.getTablaPersona().getModel();
+        
+            List<PersonaMD> lista = bdPersona.obtenerDatos(vista.getTxtBuscar().getText());
+            int columnas = modelo.getColumnCount();
+
+            for (int j = vista.getTablaPersona().getRowCount()-1; j >= 0; j--){
+                modelo.removeRow(j);
+            }
+
+            for (int i = 0; i < lista.size(); i++) {
+                modelo.addRow(new Object[columnas]);
+                vista.getTablaPersona().setValueAt(lista.get(i).getCedula(), i, 0);
+                vista.getTablaPersona().setValueAt(lista.get(i).getNombre(), i, 1);
+                vista.getTablaPersona().setValueAt(lista.get(i).getDireccion(), i, 2);
+                vista.getTablaPersona().setValueAt(lista.get(i).getCelular(), i, 3);
+                vista.getTablaPersona().setValueAt(lista.get(i).getEmail(), i, 4);
+                vista.getTablaPersona().setValueAt(lista.get(i).getFechaNac(), i, 5);
+                vista.getTablaPersona().setValueAt(lista.get(i).getFoto(), i, 6);
+                //}
+        }
+       }
+    }//Fin de Buscar
+    
+
     
     public void modificar(){
         
@@ -143,7 +183,7 @@ public class CPersona {
         ImageIcon ic = (ImageIcon) vista.getLbFoto().getIcon();
         bdPersona.setFoto(ic.getImage());
         
-        int respuesta = JOptionPane.showConfirmDialog(null, "Â¿Esta seguro de Modificar?");
+        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Modificar?");
         if (respuesta == 0){
             if (bdPersona.modificar(vista.getTxtCedula().getText())){
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
@@ -180,6 +220,7 @@ public class CPersona {
         vista.getBtnGuardar().setEnabled(false);
         vista.getBtnModificar().setEnabled(true);
         vista.getBtnEliminar().setEnabled(true);
+        vista.getTxtBuscar().setText("");
         
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTablaPersona().getModel();
@@ -224,7 +265,7 @@ public class CPersona {
     
     public void eliminar(){
         bdPersona.setCedula(vista.getTxtCedula().getText());
-        int respuesta = JOptionPane.showConfirmDialog(null, "Â¿Esta seguro de eliminar este uduario " + vista.getTxtCedula().getText() );
+        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este uduario " + vista.getTxtCedula().getText() );
         if (respuesta == 0){
             if (bdPersona.eliminar(vista.getTxtCedula().getText())){
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");

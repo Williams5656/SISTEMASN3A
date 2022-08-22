@@ -4,7 +4,7 @@ package Hertz.Modelo;
 import java.awt.Image;
 
 public class PersonaMD {
-    
+
     String cedula;
     String nombre;
     String direccion;
@@ -17,30 +17,14 @@ public class PersonaMD {
     public PersonaMD() {
     }
 
-    public PersonaMD(String cedula, String nombre, String direccion, String celular, String email, String fechanac, String buscar, Image foto) {
+    public PersonaMD(String cedula, String nombre, String direccion, String celular, String email, String fechaNac, String buscar, Image foto) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.direccion = direccion;
         this.celular = celular;
         this.email = email;
-        this.fechaNac = fechanac;
-        this.foto = foto;
+        this.fechaNac = fechaNac;
         this.buscar = buscar;
-    }
-
-    public String getBuscar() {
-        return buscar;
-    }
-
-    public void setBuscar(String buscar) {
-        this.buscar = buscar;
-    }
-
-    public Image getFoto() {
-        return foto;
-    }
-
-    public void setFoto(Image foto) {
         this.foto = foto;
     }
 
@@ -91,5 +75,22 @@ public class PersonaMD {
     public void setFechaNac(String fechaNac) {
         this.fechaNac = fechaNac;
     }
+
+    public String getBuscar() {
+        return buscar;
+    }
+
+    public void setBuscar(String buscar) {
+        this.buscar = buscar;
+    }
+
+    public Image getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Image foto) {
+        this.foto = foto;
+    }
  
+    
 }

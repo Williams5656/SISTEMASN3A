@@ -9,7 +9,7 @@ package Hertz.Modelo;
  * @author damia
  */
 public class UsuarioMD {
-    
+    int codigo;
     String cedula;
     String usuario;
     String password;
@@ -19,12 +19,21 @@ public class UsuarioMD {
     public UsuarioMD() {
     }
 
-    public UsuarioMD(String cedula, String usuario, String password, String rol, String estado) {
+    public UsuarioMD(int codigo, String cedula, String usuario, String password, String rol, String estado) {
+        this.codigo = codigo;
         this.cedula = cedula;
         this.usuario = usuario;
         this.password = password;
         this.rol = rol;
         this.estado = estado;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getCedula() {
@@ -66,6 +75,5 @@ public class UsuarioMD {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
     
 }

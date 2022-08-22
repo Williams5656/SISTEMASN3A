@@ -20,6 +20,7 @@ import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import javax.swing.JOptionPane;
 import org.postgresql.util.Base64;
+import javax.swing.ImageIcon;
 
 public class PersonaBD extends PersonaMD{
     Conect conectar = new Conect();
@@ -175,7 +176,7 @@ public class PersonaBD extends PersonaMD{
             List<PersonaMD> lista = new ArrayList<PersonaMD>();
             String sql = 
                     "select * from persona " + 
-                    "where cedula = '" + cedula + "'";
+                    "where cedula ILIKE '%" + cedula + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PersonaMD persona = new PersonaMD();
