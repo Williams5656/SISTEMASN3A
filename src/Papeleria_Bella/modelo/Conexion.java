@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Conect {
+public class Conexion {
   
     Connection con;
     Statement st;
@@ -17,20 +17,20 @@ public class Conect {
     String pgUser = "alsappqypndnbd";
     String pgContra = "f62c8aa6efbd5e25954bcdc0d13b83da1479594c9fd9eb4e9724591890e8ad4a";
        
-    public Conect() {
+    public Conexion() {
 
         try {
             Class.forName("org.postgresql.Driver");
             System.out.println("Se Cargo Driver.");
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Conect.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
  
         try {
             con = DriverManager.getConnection(cadConexion, pgUser, pgContra);
             System.out.println("Se conecto DB.");
         } catch (SQLException ex) {
-            Logger.getLogger(Conect.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }  
@@ -43,12 +43,12 @@ public class Conect {
             st.close();
             return null;
         } catch (SQLException ex) {
-            Logger.getLogger(Conect.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             return ex;
         }
     }
 
-    public ResultSet query(String sql) {
+    public  ResultSet query(String sql) {
         System.out.println(sql);
         try {
             st = con.createStatement();
@@ -56,7 +56,7 @@ public class Conect {
             //  st.close();
             return rs;
         } catch (SQLException ex) {
-            Logger.getLogger(Conect.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
 

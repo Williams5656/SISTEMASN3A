@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 
 public class RolBD extends RolMD{
-    Conect conectar = new Conect();
+    Conexion conectar = new Conexion();
 
     public RolBD() {
     }
