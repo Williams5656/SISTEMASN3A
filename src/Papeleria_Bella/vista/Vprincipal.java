@@ -87,38 +87,53 @@ public class Vprincipal extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         itempersona = new javax.swing.JMenuItem();
         itemusuario = new javax.swing.JMenuItem();
         itemroles = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jDesktopPane1.setBackground(new java.awt.Color(231, 244, 244));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 543, Short.MAX_VALUE)
+            .addGap(0, 714, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 367, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Nuevo");
+        jMenuBar1.setBackground(new java.awt.Color(162, 205, 205));
+        jMenuBar1.add(jMenu2);
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-crear-nuevo-16(1).png"))); // NOI18N
+        jMenu1.setText("Nuevo");
+        jMenu1.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+
+        itempersona.setBackground(new java.awt.Color(220, 240, 240));
+        itempersona.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itempersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-persona-de-sexo-masculino-16.png"))); // NOI18N
         itempersona.setText("Persona");
         jMenu1.add(itempersona);
 
+        itemusuario.setBackground(new java.awt.Color(220, 240, 240));
+        itemusuario.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itemusuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-tipo-de-piel-del-cliente-7-16.png"))); // NOI18N
         itemusuario.setText("Usuario");
         jMenu1.add(itemusuario);
 
+        itemroles.setBackground(new java.awt.Color(220, 240, 240));
+        itemroles.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itemroles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-tipo-de-máscara-de-cuenta-de-usuario-7-16.png"))); // NOI18N
         itemroles.setText("Roles");
         jMenu1.add(itemroles);
 
         jMenuBar1.add(jMenu1);
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -126,11 +141,11 @@ public class Vprincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jDesktopPane1)
         );
 
         pack();

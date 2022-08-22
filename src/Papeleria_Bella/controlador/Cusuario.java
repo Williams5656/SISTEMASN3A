@@ -37,7 +37,7 @@ public class Cusuario {
 
         vistau.getButtonbuscar().addActionListener(x -> buscar());
         vistau.getButtonnuevo().addActionListener(e -> nuevo());
-    vistau.getButtoneliminar().addActionListener(e -> eliminar());
+        vistau.getButtoneliminar().addActionListener(e -> eliminar());
         vistau.getButtonguardar().setEnabled(false);
         vistau.getButtonmodificar().setEnabled(false);
     }
@@ -115,7 +115,7 @@ public class Cusuario {
 
     public void eliminar() {
         busuario.setCodigo(vistau.getTxtcedula().getText());
-        int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el usuario  " + vistau.getTxtcedula().getText());
+        int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el usuario tal " + vistau.getTxtcedula().getText());
         if (resp == 0) {
             if (busuario.eliminar(vistau.getTxtcedula().getText())) ;
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
