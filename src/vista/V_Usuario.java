@@ -2,6 +2,7 @@ package vista;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -31,6 +32,14 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         this.Panel_Efecto_Usuario = Panel_Efecto_Usuario;
     }
 
+    public JLabel getLabelEstado() {
+        return labelEstado;
+    }
+
+    public void setLabelEstado(JLabel labelEstado) {
+        this.labelEstado = labelEstado;
+    }
+
     public JButton getBtnBuscarPersona() {
         return BtnBuscarPersona;
     }
@@ -39,14 +48,15 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         this.BtnBuscarPersona = BtnBuscarPersona;
     }
 
-    public JButton getBtnBuscarRol() {
-        return BtnBuscarRol;
+    public JComboBox<String> getCmbRol() {
+        return cmbRol;
     }
 
-    public void setBtnBuscarRol(JButton BtnBuscarRol) {
-        this.BtnBuscarRol = BtnBuscarRol;
+    public void setCmbRol(JComboBox<String> cmbRol) {
+        this.cmbRol = cmbRol;
     }
 
+ 
     public JCheckBox getCheckBoxEstado() {
         return CheckBoxEstado;
     }
@@ -127,12 +137,12 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         this.jScrollPane1 = jScrollPane1;
     }
 
-    public JTextField getjTextField2() {
-        return jTextField2;
+    public JTextField getTxtUsuario() {
+        return TxtUsuario;
     }
 
-    public void setjTextField2(JTextField jTextField2) {
-        this.jTextField2 = jTextField2;
+    public void setTxtUsuario(JTextField TxtUsuario) {
+        this.TxtUsuario = TxtUsuario;
     }
 
     public JLabel getLabelCodigoUsuario() {
@@ -159,13 +169,6 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         this.txtClave = txtClave;
     }
 
-    public JTextField getTxtNombreRol() {
-        return txtNombreRol;
-    }
-
-    public void setTxtNombreRol(JTextField txtNombreRol) {
-        this.txtNombreRol = txtNombreRol;
-    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -179,16 +182,14 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         labelCodigoUsuario = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtCedula = new javax.swing.JTextField();
-        BtnBuscarRol = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         LabelNombresPersona = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        TxtUsuario = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         JPassClave = new javax.swing.JPasswordField();
         txtClave = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtNombreRol = new javax.swing.JTextField();
         BtnBuscarPersona = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         CheckBoxEstado = new javax.swing.JCheckBox();
@@ -198,6 +199,8 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         LabelCodigoRol = new javax.swing.JLabel();
         Panel_Efecto_Usuario = new javax.swing.JPanel();
         LabelTituloUsuario = new javax.swing.JLabel();
+        cmbRol = new javax.swing.JComboBox<>();
+        labelEstado = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -228,16 +231,13 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 80, 40));
         getContentPane().add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 220, 40));
 
-        BtnBuscarRol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
-        getContentPane().add(BtnBuscarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, 90, 50));
-
         jLabel5.setText("NOMBRES:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 110, 50));
         getContentPane().add(LabelNombresPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 300, 50));
 
         jLabel7.setText("USUARIO:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 90, 50));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 220, 40));
+        getContentPane().add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 220, 40));
 
         jLabel8.setText("CLAVE:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 70, 40));
@@ -248,7 +248,6 @@ public class V_Usuario extends javax.swing.JInternalFrame {
 
         jLabel9.setText("ROL:");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 50, 40));
-        getContentPane().add(txtNombreRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 220, 40));
 
         BtnBuscarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
         getContentPane().add(BtnBuscarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 90, 50));
@@ -256,8 +255,12 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         jLabel10.setText("ESTADO:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 80, 40));
 
-        CheckBoxEstado.setText("Activo");
-        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 110, 30));
+        CheckBoxEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckBoxEstadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 30, 30));
 
         TableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -272,11 +275,11 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(TableUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 920, 100));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 930, 100));
 
-        jLabel11.setText("CODIGO:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 110, 50));
-        getContentPane().add(LabelCodigoRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 350, 240, 40));
+        jLabel11.setText("CODIGO DE ROL:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 150, 50));
+        getContentPane().add(LabelCodigoRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 220, 40));
 
         Panel_Efecto_Usuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -287,13 +290,21 @@ public class V_Usuario extends javax.swing.JInternalFrame {
 
         getContentPane().add(Panel_Efecto_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 200, 60));
 
+        getContentPane().add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 220, 40));
+
+        labelEstado.setText("Activo");
+        getContentPane().add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 110, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CheckBoxEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxEstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CheckBoxEstadoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarPersona;
-    private javax.swing.JButton BtnBuscarRol;
     private javax.swing.JCheckBox CheckBoxEstado;
     private javax.swing.JPasswordField JPassClave;
     private javax.swing.JLabel LabelCodigoRol;
@@ -301,10 +312,12 @@ public class V_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LabelTituloUsuario;
     private javax.swing.JPanel Panel_Efecto_Usuario;
     private javax.swing.JTable TableUsuario;
+    private javax.swing.JTextField TxtUsuario;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardarp;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
+    private javax.swing.JComboBox<String> cmbRol;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -314,10 +327,9 @@ public class V_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel labelCodigoUsuario;
+    private javax.swing.JLabel labelEstado;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtClave;
-    private javax.swing.JTextField txtNombreRol;
     // End of variables declaration//GEN-END:variables
 }
