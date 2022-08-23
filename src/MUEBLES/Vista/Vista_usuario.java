@@ -11,6 +11,14 @@ public class Vista_usuario extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getBtnguardar() {
+        return Btnguardar;
+    }
+
+    public void setBtnguardar(JButton Btnguardar) {
+        this.Btnguardar = Btnguardar;
+    }
+
     public JButton getBtnbuscar() {
         return Btnbuscar;
     }
