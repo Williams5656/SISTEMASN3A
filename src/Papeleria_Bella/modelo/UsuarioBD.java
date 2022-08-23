@@ -6,8 +6,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -18,6 +17,7 @@ import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import org.postgresql.util.Base64;
 
 public class UsuarioBD extends UsuarioMD {
@@ -83,7 +83,7 @@ public class UsuarioBD extends UsuarioMD {
     public boolean modificar(String cedula) {
 
         String sql = "update usuario set \"usuario\"='" + getUsuario() + "',\"clave\"='" + getClave() + "',\"rol\"='" + getRol() + "'"
-                + " where \"cedula\"='" + cedula + "'";
+                + " where \"codigo\"='" + cedula + "'";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -99,7 +99,7 @@ public class UsuarioBD extends UsuarioMD {
 
         try {
             List<UsuarioMD> lista = new ArrayList<UsuarioMD>();
-            String sql = "select * from usuario " + " where \"cedula\"='" + cedula + "'";
+            String sql = "select * from usuario " + " where \"codigo\"='" + cedula + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 UsuarioMD u = new UsuarioMD();
@@ -122,7 +122,7 @@ public class UsuarioBD extends UsuarioMD {
     }
 
     public boolean eliminar(String cedula) {
-        String sql = "delete from usuario where \"cedula\"='" + cedula + "'";
+        String sql = "delete from usuario where \"codigo\"='" + cedula + "'";
         if (conectar.noQuery(sql) == null) {
             return true;
 
@@ -196,5 +196,36 @@ public class UsuarioBD extends UsuarioMD {
             Logger.getLogger(PersonaMD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
+    }
+
+    public UsuarioMD validar(String User, String Pass) throws SQLException {
+        PreparedStatement st;
+        ResultSet rs;
+        Connection con;
+        UsuarioMD u = new UsuarioMD();
+        String validar = "Select * From usuario\n"
+                + "where usuario.usuario=? and usuario.clave=?;";
+        try {
+            con = conectar.getCon();
+
+            st = con.prepareStatement(validar);
+            st.setString(1, User);
+            st.setString(2, Pass);
+            rs = st.executeQuery();
+
+            while (rs.next()) {
+
+                u.setCodigo(rs.getString("codigo"));
+                u.setCedula(rs.getString("cedula"));
+                u.setUsuario(rs.getString("usuario"));
+                u.setClave(rs.getString("clave"));
+                u.setRol(rs.getString("rol"));
+                u.setEstado(rs.getString("estado"));
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString(), null, JOptionPane.ERROR_MESSAGE);
+        }
+        return u;
     }
 }

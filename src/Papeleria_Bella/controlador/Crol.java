@@ -11,6 +11,7 @@ import Papeleria_Bella.modelo.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,6 +24,7 @@ public class Crol {
         this.vista = vista;
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
+        CodigoRol();
         lista();
         vista.getButtonguardar().addActionListener(x -> guardar());
         vista.getButtonbuscar().addActionListener(e -> buscar());
@@ -60,7 +62,7 @@ public class Crol {
     }
     
     public void guardar() {
-        brol.setCodigo(vista.getTxtcodigo().getText());
+        brol.setCodigo(vista.getLabelcodigo().getText());
         brol.setNombre(vista.getTxtnombre().getText());
         brol.setDescripcion(vista.getTxtdescripcion().getText());
         brol.setEstado(vista.getComboestado().getSelectedItem().toString());
@@ -75,14 +77,14 @@ public class Crol {
 
     }
     public void modificar() {
-        brol.setCodigo(vista.getTxtcodigo().getText());
+        brol.setCodigo(vista.getLabelcodigo().getText());
         brol.setNombre(vista.getTxtnombre().getText());
         brol.setDescripcion(vista.getTxtdescripcion().getText());
         String estado = (String) vista.getComboestado().getSelectedItem();
         brol.setEstado(estado);
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
         if (resp == 0) {
-            if (brol.modificar(vista.getTxtcodigo().getText())) ;
+            if (brol.modificar(vista.getLabelcodigo().getText())) ;
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
                 lista();
                 nuevo();
@@ -99,7 +101,7 @@ public class Crol {
         String codigo = (String) modelo.getValueAt(vista.getTablarol().getSelectedRow(), 0);
         List<RolMD> lista = brol.obtenerdatos(codigo);
         brol.setCodigo(lista.get(0).getCodigo());
-        vista.getTxtcodigo().setText(brol.getCodigo());
+        vista.getLabelcodigo().setText(brol.getCodigo());
         brol.setNombre(lista.get(0).getNombre());
         vista.getTxtnombre().setText(brol.getNombre());
         brol.setDescripcion(lista.get(0).getDescripcion());
@@ -108,10 +110,10 @@ public class Crol {
         vista.getComboestado().setSelectedItem(brol.getEstado());   
     }
     public void eliminar(){
-        brol.setCodigo(vista.getTxtcodigo().getText());
-        int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el usuario  "+vista.getTxtcodigo().getText());
+        brol.setCodigo(vista.getLabelcodigo().getText());
+        int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el usuario  "+vista.getLabelcodigo().getText());
         if (resp == 0) {
-            if (brol.eliminar(vista.getTxtcodigo().getText())) ;
+            if (brol.eliminar(vista.getLabelcodigo().getText())) ;
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
                 lista();
                 nuevo();
@@ -119,12 +121,29 @@ public class Crol {
             }
     } 
     public void nuevo(){
-        vista.getTxtcodigo().setText("");
+        vista.getLabelcodigo().setText("");
         vista.getTxtnombre().setText("");
         vista.getTxtdescripcion().setText("");
         vista.getComboestado().setSelectedItem("");
         vista.getButtonguardar().setEnabled(true);
         vista.getButtonmodificar().setEnabled(false);
+        CodigoRol();
+    }
+    public void CodigoRol() {
+        char[] chars = "0123".toCharArray();
+
+        int charsLength = chars.length;
+
+        Random random = new Random();
+
+        StringBuilder buffer = new StringBuilder();
+
+        for (int i = 0; i < 3; i++) {
+
+            buffer.append(chars[random.nextInt(charsLength)]);
+        }
+
+        vista.getLabelcodigo().setText("R0" + buffer.toString());
     }
 
     private void buscar() {

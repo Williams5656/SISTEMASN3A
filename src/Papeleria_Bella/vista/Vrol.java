@@ -43,7 +43,6 @@ public class Vrol extends javax.swing.JFrame {
         comboestado = new javax.swing.JComboBox<>();
         txtnombre = new javax.swing.JTextField();
         txtdescripcion = new javax.swing.JTextField();
-        txtcodigo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablarol = new javax.swing.JTable();
         txtbuscar = new javax.swing.JTextField();
@@ -52,10 +51,10 @@ public class Vrol extends javax.swing.JFrame {
         buttoneliminar = new javax.swing.JButton();
         buttonmodificar = new javax.swing.JButton();
         buttonbuscar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        labelcodigo = new javax.swing.JLabel();
+        fondorol = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 24)); // NOI18N
@@ -88,7 +87,6 @@ public class Vrol extends javax.swing.JFrame {
         getContentPane().add(comboestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 127, -1));
         getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 128, -1));
         getContentPane().add(txtdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 130, 20));
-        getContentPane().add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 128, -1));
 
         tablarol.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -135,10 +133,11 @@ public class Vrol extends javax.swing.JFrame {
         buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
         getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, 50, 30));
+        getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 130, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
-        jLabel2.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 660));
+        fondorol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
+        fondorol.setPreferredSize(new java.awt.Dimension(1210, 620));
+        getContentPane().add(fondorol, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -273,13 +272,7 @@ public class Vrol extends javax.swing.JFrame {
         this.txtbuscar = txtbuscar;
     }
 
-    public JTextField getTxtcodigo() {
-        return txtcodigo;
-    }
-
-    public void setTxtcodigo(JTextField txtcodigo) {
-        this.txtcodigo = txtcodigo;
-    }
+    
 
     public JTextField getTxtdescripcion() {
         return txtdescripcion;
@@ -296,6 +289,29 @@ public class Vrol extends javax.swing.JFrame {
     public void setTxtnombre(JTextField txtnombre) {
         this.txtnombre = txtnombre;
     }
+
+    
+
+    public JLabel getLabelcodigo() {
+        return labelcodigo;
+    }
+
+    public void setLabelcodigo(JLabel labelcodigo) {
+        this.labelcodigo = labelcodigo;
+    }
+
+    public JLabel getFondorol() {
+        return fondorol;
+    }
+
+    public void setFondorol(JLabel fondorol) {
+        this.fondorol = fondorol;
+    }
+
+   
+    
+    
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -305,17 +321,17 @@ public class Vrol extends javax.swing.JFrame {
     private javax.swing.JButton buttonmodificar;
     private javax.swing.JButton buttonnuevo;
     private javax.swing.JComboBox<String> comboestado;
+    private javax.swing.JLabel fondorol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelcodigo;
     private javax.swing.JTable tablarol;
     private javax.swing.JTextField txtbuscar;
-    private javax.swing.JTextField txtcodigo;
     private javax.swing.JTextField txtdescripcion;
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables

@@ -89,7 +89,26 @@ public class RolBD extends RolMD{
             return null;
         }
     }
-    
+    public List<RolMD> buscardatospornombre(String codigo) {
+        try {
+            List<RolMD> lista = new ArrayList<RolMD>();
+            String sql = "select * from rol where \"nombre\" ILIKE '%" + codigo + "%'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                RolMD r = new RolMD();
+                r.setCodigo(rs.getString("CODIGO"));
+                r.setNombre(rs.getString("NOMBRE"));
+                r.setDescripcion(rs.getString("DESCRIPCION"));
+                r.setEstado(rs.getString("ESTADO"));
+                lista.add(r);
+            }
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(RolBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
     public boolean eliminar (String codigo){
         String sql = "delete from rol where \"rol\"='" + codigo + "'";
         if (conectar.noQuery(sql)==null) {
