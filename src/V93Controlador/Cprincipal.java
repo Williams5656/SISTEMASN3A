@@ -17,8 +17,8 @@ public class Cprincipal {
         Vista.getNuevoPersona().addActionListener(e -> personas());
         Vista.getNuevoUsuario().addActionListener(e -> usuarios());
         Vista.getNuevoRol().addActionListener(e ->rol());
-         Vista.getNuevoProveedor().addActionListener(e -> proveedor());
-                
+        Vista.getNuevoProveedor().addActionListener(e -> proveedor());
+        Vista.getNuevoProducto().addActionListener(e -> producto());
     }
        
     private void personas() {
@@ -40,6 +40,11 @@ public class Cprincipal {
        private void proveedor() {
         VistaProveedor vprov = new VistaProveedor();
         CProveedor cprov = new CProveedor(vprov);
+
+    }
+           private void producto() {
+        VistaProducto vpro = new VistaProducto();
+        CProducto cpro = new CProducto(vpro);
 
     }
 }
