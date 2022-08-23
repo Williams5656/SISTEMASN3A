@@ -126,7 +126,7 @@ public class UsuarioBD extends UsuarioMD {
         Connection con;
         UsuarioMD UserVal = new UsuarioMD();
         String validar = "Select * From usuario\n"
-                + "where persona.usuario=? and persona.clave=?;";
+                + "where usuario.usuario=? and usuario.clave=?;";
         try {
             con = conectar.getCon();
 

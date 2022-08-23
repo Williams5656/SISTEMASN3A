@@ -3,6 +3,7 @@ package controlador;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -85,7 +86,7 @@ public class C_Login {
                 txtUsuarioFocusLost(evt);
             }
         });
-        vista.getBtn_Ingresar().addActionListener(x->{
+        vista.getBtn_Ingresar().addActionListener(x -> {
             try {
                 validar();
             } catch (SQLException ex) {
@@ -167,23 +168,38 @@ public class C_Login {
     }
 
     public void validar() throws SQLException {
+        RolBD bdrol = new RolBD();
+        String estado = "";
+        List<RolMD> listarol = bdrol.buscardatosporcodigo(us.getRol());
+        for (int i = 0; i < listarol.size(); i++) {
+            estado = listarol.get(i).getEstado();
+        }
         String usuario = vista.getTxtUsuario().getText();
         String clave = vista.getjPassClave().getText();
         if (vista.getTxtUsuario().getText().equals("") || String.valueOf(vista.getjPassClave().getPassword()).equals("")) {
             JOptionPane.showMessageDialog(null, "LLene todos los campos", null, JOptionPane.ERROR_MESSAGE);
         } else {
             us = lg.validar(usuario, clave);
-            if (us.getUsuario() != null && us.getClave() != null) {
-                V_Principal vistap = new V_Principal();
-                C_Principal Inicio = new C_Principal(vistap);
-                vista.setVisible(false);
+            if (us.getEstado().equals("Inactivo")) {
+                JOptionPane.showMessageDialog(null, "Usted es un usuario Inactivo \n Contactese con su administrador", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos", null, JOptionPane.ERROR_MESSAGE);
-                JOptionPane.showMessageDialog(null, "Intentos Permitidos: " + bloqueo, null, JOptionPane.WARNING_MESSAGE);
-                vista.getTxtUsuario().requestFocus();
-                vista.getTxtUsuario().setText("");
-                vista.getjPassClave().setText("");
-                bloqueo = bloqueo - 1;
+                if (estado.equals("Incativo")) {
+                    JOptionPane.showMessageDialog(null, "Ha intentado entrar con un rol inactivo \n Contactese con su administrador", "ERROR", JOptionPane.ERROR_MESSAGE);
+                } else {
+
+                    if (us.getUsuario() != null && us.getClave() != null) {
+                        V_Principal vistap = new V_Principal();
+                        C_Principal Inicio = new C_Principal(vistap);
+                        vista.setVisible(false);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos", null, JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Intentos Permitidos: " + bloqueo, null, JOptionPane.WARNING_MESSAGE);
+                        vista.getTxtUsuario().requestFocus();
+                        vista.getTxtUsuario().setText("");
+                        vista.getjPassClave().setText("");
+                        bloqueo = bloqueo - 1;
+                    }
+                }
             }
         }
         if (bloqueo == -1) {
