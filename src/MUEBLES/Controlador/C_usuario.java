@@ -1,7 +1,7 @@
 package MUEBLES.Controlador;
 
 import MUEBLES.Modelo.*;
-import MUEBLES.Controlador.*;
+import MUEBLES.Vista.*;
 import MUEBLES.Vista.Vista_usuario;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -14,7 +14,9 @@ public class C_usuario{
 
     public static Vista_usuario vistaus;
     private Usuario_BD bdusuario = new Usuario_BD();
+    public static Vista_persona_muebles vistaper;
     private Persona_BD_muebles bdpersona = new Persona_BD_muebles();
+    public static Vista_rol vistarol;
     private rol_BD bdrol = new rol_BD();
 
     public C_usuario(Vista_usuario vistaus) {
@@ -85,7 +87,6 @@ public class C_usuario{
             vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo(), i, 0);
             vistaus.getTablausuario().setValueAt(lista.get(i).getCedula_persona(), i, 1);
             vistaus.getTablausuario().setValueAt(lista.get(i).getUsuario(), i, 2);
-            vistaus.getTablausuario().setValueAt(lista.get(i).getContrasena(), i, 3);
             vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo_rol(), i, 4);
             vistaus.getTablausuario().setValueAt(lista.get(i).getEstado(), i, 5);
 
@@ -208,7 +209,8 @@ public class C_usuario{
     public void guardarpersona(){
         List<M_personaMD> lista = bdpersona.mostrardatos();
         int idselecccionado = vistaus.getConcedulapersona().getSelectedIndex();
-        String cedula = lista.get(idselecccionado).getCedula();        
+        String cedula = lista.get(idselecccionado).getCedula();
+        guarda();
     }
     
     public void vistarolcombo(){
