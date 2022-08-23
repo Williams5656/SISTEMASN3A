@@ -1,8 +1,7 @@
 package MUEBLES.Controlador;
 
-import MUEBLES.Modelo.M_usuario_MD;
-import MUEBLES.Modelo.Usuario_BD;
-import MUEBLES.Modelo.rol_BD;
+import MUEBLES.Modelo.*;
+import MUEBLES.Controlador.*;
 import MUEBLES.Vista.Vista_usuario;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -11,10 +10,12 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class C_usuario {
+public class C_usuario{
 
     public static Vista_usuario vistaus;
     private Usuario_BD bdusuario = new Usuario_BD();
+    private Persona_BD_muebles bdpersona = new Persona_BD_muebles();
+    private rol_BD bdrol = new rol_BD();
 
     public C_usuario(Vista_usuario vistaus) {
         this.vistaus = vistaus;
@@ -23,8 +24,12 @@ public class C_usuario {
         vistaus.setLocationRelativeTo(null);
 
         lista();
+        vistacedulacombo();
+        vistarolcombo();
 
         vistaus.getBtnguardar().addActionListener(e -> guarda());
+        vistaus.getBtnguardar().addActionListener(e -> guardarpersona());
+        vistaus.getBtnguardar().addActionListener(e -> guardarrol());
         vistaus.getBtnmodificar().addActionListener(e -> modifica());
         vistaus.getBtneliminar().addActionListener(e -> eliminar());
         vistaus.getBtnbuscar().addActionListener(e -> buscar());
@@ -172,24 +177,50 @@ public class C_usuario {
         }
     }
 
-    private void ingresar() throws SQLException {
-
-        Usuario_BD bdp = new Usuario_BD();
-        List<M_usuario_MD> lista = bdp.mostrardatos();
-
+//    private void ingresar() throws SQLException {
+//
+//        Usuario_BD bdp = new Usuario_BD();
+//        List<M_usuario_MD> lista = bdp.mostrardatos();
+//
+//        for (int i = 0; i < lista.size(); i++) {
+//            int id_rol = lista.get(i).getRol(); //id_rol = 2353
+//            rol_BD rolestado = new rol_BD();
+//            List<rol_BD> listaroles = rolestado.obtenerdatos(id_rol);
+//            String EstadoRol = listaroles.get(0).getEstado();
+//        }
+//        if (vistaus.getTxtusuario().getText().equals(lista.get(i).getNombreUsuario()) && vistaus.getTxtclave().getText().equals(lista.get(i).getContrasenia()) && lista.get(i).getEstado().equals("Activo") && EstadoRol.equals("Activo")) {
+//            if (lista.get(i).getEstado().equals("Inactivo")) {
+//                JOptionPane.showMessageDialog(null, "USUARIO BLOQUEADO");
+//            } else if (EstadoRol.equals("Inactivo")) {
+//                JOptionPane.showMessageDialog(null, "ROL BLOQUEADO");
+//
+//            }
+//        }
+//    }
+    
+    public void vistacedulacombo(){
+        List<M_personaMD> lista = bdpersona.mostrardatos();
         for (int i = 0; i < lista.size(); i++) {
-            int id_rol = lista.get(i).getRol(); //id_rol = 2353
-            rol_BD rolestado = new rol_BD();
-            List<rol_BD> listaroles = rolestado.obtenerdatos(id_rol);
-            String EstadoRol = listaroles.get(0).getEstado();
+            vistaus.getConcedulapersona().addItem(lista.get(i).getCedula());
         }
-        if (vistaus.getTxtusuario().getText().equals(lista.get(i).getNombreUsuario()) && vistaus.getTxtclave().getText().equals(lista.get(i).getContrasenia()) && lista.get(i).getEstado().equals("Activo") && EstadoRol.equals("Activo")) {
-            if (lista.get(i).getEstado().equals("Inactivo")) {
-                JOptionPane.showMessageDialog(null, "USUARIO BLOQUEADO");
-            } else if (EstadoRol.equals("Inactivo")) {
-                JOptionPane.showMessageDialog(null, "ROL BLOQUEADO");
-
-            }
+    }
+    
+    public void guardarpersona(){
+        List<M_personaMD> lista = bdpersona.mostrardatos();
+        int idselecccionado = vistaus.getConcedulapersona().getSelectedIndex();
+        String cedula = lista.get(idselecccionado).getCedula();        
+    }
+    
+    public void vistarolcombo(){
+        List<M_rolMD> lista = bdrol.mostrardatos();
+        for (int i = 0; i < lista.size(); i++) {
+            vistaus.getCobcodigorol().addItem(lista.get(i).getCodigo());
         }
+    }
+    
+    public void guardarrol(){
+        List<M_rolMD> lista = bdrol.mostrardatos();
+        int idselecccionado = vistaus.getCobcodigorol().getSelectedIndex();
+        String rol = lista.get(idselecccionado).getCodigo();        
     }
 }
