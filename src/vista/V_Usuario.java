@@ -73,13 +73,6 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         this.JPassClave = JPassClave;
     }
 
-    public JLabel getLabelCodigoRol() {
-        return LabelCodigoRol;
-    }
-
-    public void setLabelCodigoRol(JLabel LabelCodigoRol) {
-        this.LabelCodigoRol = LabelCodigoRol;
-    }
 
     public JLabel getLabelNombresPersona() {
         return LabelNombresPersona;
@@ -195,8 +188,6 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         CheckBoxEstado = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableUsuario = new javax.swing.JTable();
-        jLabel11 = new javax.swing.JLabel();
-        LabelCodigoRol = new javax.swing.JLabel();
         Panel_Efecto_Usuario = new javax.swing.JPanel();
         LabelTituloUsuario = new javax.swing.JLabel();
         cmbRol = new javax.swing.JComboBox<>();
@@ -209,77 +200,67 @@ public class V_Usuario extends javax.swing.JInternalFrame {
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
-        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 170, 40));
+        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 170, 30));
 
         btnguardarp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar-archivo.png"))); // NOI18N
         btnguardarp.setText("GUARDAR");
-        getContentPane().add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 180, 40));
+        getContentPane().add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 180, 30));
 
         btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lapiz.png"))); // NOI18N
         btnmodificar.setText("MODIFICAR");
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 190, 40));
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 190, 30));
 
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarusuario.png"))); // NOI18N
         btneliminar.setText("ELIMINAR");
-        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 180, 40));
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 170, 30));
 
         jLabel2.setText("CODIGO:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 100, 40));
-        getContentPane().add(labelCodigoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 130, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 100, 30));
+        getContentPane().add(labelCodigoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 130, 30));
 
         jLabel4.setText("CEDULA:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 80, 40));
-        getContentPane().add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 220, 40));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 80, 30));
+        getContentPane().add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 220, 30));
 
         jLabel5.setText("NOMBRES:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 110, 50));
-        getContentPane().add(LabelNombresPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 300, 50));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 100, 40));
+        getContentPane().add(LabelNombresPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 300, 40));
 
         jLabel7.setText("USUARIO:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 90, 50));
-        getContentPane().add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 220, 40));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 90, 40));
+        getContentPane().add(TxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 220, 30));
 
         jLabel8.setText("CLAVE:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 70, 40));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 70, 30));
 
         JPassClave.setText("jPasswordField1");
-        getContentPane().add(JPassClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 220, 40));
-        getContentPane().add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 220, 40));
+        getContentPane().add(JPassClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 220, 30));
+        getContentPane().add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 220, 30));
 
         jLabel9.setText("ROL:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 50, 40));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 50, 30));
 
         BtnBuscarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
-        getContentPane().add(BtnBuscarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 90, 50));
+        getContentPane().add(BtnBuscarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 90, 40));
 
         jLabel10.setText("ESTADO:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 80, 40));
-
-        CheckBoxEstado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckBoxEstadoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 30, 30));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 80, 30));
+        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 30, 30));
 
         TableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "CEDULA", "USUARIO", "CLAVE", "ROL", "ESTADO"
+                "CODIGO", "CEDULA", "USUARIO", "ROL", "ESTADO"
             }
         ));
         jScrollPane1.setViewportView(TableUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 930, 100));
-
-        jLabel11.setText("CODIGO DE ROL:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 150, 50));
-        getContentPane().add(LabelCodigoRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 220, 40));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 930, 110));
 
         Panel_Efecto_Usuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -290,24 +271,19 @@ public class V_Usuario extends javax.swing.JInternalFrame {
 
         getContentPane().add(Panel_Efecto_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 200, 60));
 
-        getContentPane().add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 220, 40));
+        getContentPane().add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 220, 30));
 
         labelEstado.setText("Activo");
-        getContentPane().add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 110, 30));
+        getContentPane().add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 110, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void CheckBoxEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxEstadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CheckBoxEstadoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarPersona;
     private javax.swing.JCheckBox CheckBoxEstado;
     private javax.swing.JPasswordField JPassClave;
-    private javax.swing.JLabel LabelCodigoRol;
     private javax.swing.JLabel LabelNombresPersona;
     private javax.swing.JLabel LabelTituloUsuario;
     private javax.swing.JPanel Panel_Efecto_Usuario;
@@ -319,7 +295,6 @@ public class V_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnnuevo;
     private javax.swing.JComboBox<String> cmbRol;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

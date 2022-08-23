@@ -183,7 +183,7 @@ public class C_Rol {
         } else {
             DefaultTableModel model;
             model = (DefaultTableModel) vistarol.getTableRol().getModel();
-            java.util.List<RolMD> listarol = bdrol.buscardatos(vistarol.getTxtBuscarRol().getText());
+            java.util.List<RolMD> listarol = bdrol.buscardatospornombre(vistarol.getTxtBuscarRol().getText());
             int columnas = model.getColumnCount();
             for (int j = vistarol.getTableRol().getRowCount() - 1; j >= 0; j--) {
                 model.removeRow(j);

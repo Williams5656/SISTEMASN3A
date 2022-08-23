@@ -14,8 +14,8 @@ public class C_Login {
     public static V_Login vista;
     String tUsuario = "USUARIO:";
     String pClave = "CONTRASEÑA:";
-    PersonaBD lg = new PersonaBD();
-    PersonaMD us = new PersonaMD();
+    UsuarioBD lg = new UsuarioBD();
+    UsuarioMD us = new UsuarioMD();
     int xMouse, yMouse;
     int bloqueo = 3;
     int a = 0;

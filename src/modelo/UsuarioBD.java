@@ -1,11 +1,24 @@
 package modelo;
 
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.imageio.ImageReadParam;
+import javax.imageio.ImageReader;
+import javax.imageio.stream.ImageInputStream;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 public class UsuarioBD extends UsuarioMD {
@@ -35,8 +48,21 @@ public class UsuarioBD extends UsuarioMD {
         }
     }
 
+    public DefaultComboBoxModel NombreROL() {
+        DefaultComboBoxModel listaroles = new DefaultComboBoxModel();
+        ResultSet rs = conectar.query("Select * from roles order by nombre");
+        try {
+            while (rs.next()) {
+                listaroles.addElement(rs.getString("nombre"));
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return listaroles;
+    }
+
     public boolean insertar() {
-        String sql = "INSERT INTO usuario(codigo, cedula, usuario, clave, rol, estado)" + "VALUES ('" + getCodUsuario()+ "','" + getCedula()+ "','" + getUsuario()+ "','" + getClave()+ "','" + getRol()+ "','" + getEstado()+ "')";
+        String sql = "INSERT INTO usuario(codigo, cedula, usuario, clave, rol, estado)" + "VALUES ('" + getCodUsuario() + "','" + getCedula() + "','" + getUsuario() + "','" + getClave() + "','" + getRol() + "','" + getEstado() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -48,7 +74,7 @@ public class UsuarioBD extends UsuarioMD {
     }
 
     public boolean modificar(String codUsuario) {
-        String sql = "update usuario set \"cedula\"='" + getCedula()+ "',\"usuario\"='" + getUsuario()+ "',\"clave\"='" + getClave()+ "',\"rol\"='" + getRol()+ "',\"estado\"='" + getEstado()+ "'"
+        String sql = "update usuario set \"cedula\"='" + getCedula() + "',\"usuario\"='" + getUsuario() + "',\"clave\"='" + getClave() + "',\"rol\"='" + getRol() + "',\"estado\"='" + getEstado() + "'"
                 + "where \"codigo\"='" + codUsuario + "'";
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -65,7 +91,7 @@ public class UsuarioBD extends UsuarioMD {
             String sql = "select * from usuario where \"codigo\"='" + codUsuario + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-              UsuarioMD User = new UsuarioMD();
+                UsuarioMD User = new UsuarioMD();
                 User.setCodUsuario(rs.getString("CODIGO"));
                 User.setCedula(rs.getString("CEDULA"));
                 User.setUsuario(rs.getString("USUARIO"));
@@ -82,8 +108,6 @@ public class UsuarioBD extends UsuarioMD {
         }
     }
 
-
-
     public boolean eliminar(String codUsuario) {
         String nsql = "delete from usuario where \"codigo\"='" + codUsuario + "'";
         if (conectar.noQuery(nsql) == null) {
@@ -95,4 +119,36 @@ public class UsuarioBD extends UsuarioMD {
             return false;
         }
     }
+
+    public UsuarioMD validar(String User, String Pass) throws SQLException {
+        PreparedStatement st;
+        ResultSet rs;
+        Connection con;
+        UsuarioMD UserVal = new UsuarioMD();
+        String validar = "Select * From usuario\n"
+                + "where persona.usuario=? and persona.clave=?;";
+        try {
+            con = conectar.getCon();
+
+            st = con.prepareStatement(validar);
+            st.setString(1, User);
+            st.setString(2, Pass);
+            rs = st.executeQuery();
+
+            while (rs.next()) {
+
+                UserVal.setCodUsuario(rs.getString("CODIGO"));
+                UserVal.setCedula(rs.getString("CEDULA"));
+                UserVal.setUsuario(rs.getString("USUARIO"));
+                UserVal.setClave(rs.getString("CLAVE"));
+                UserVal.setRol(rs.getString("ROL"));
+                UserVal.setEstado(rs.getString("ESTADO"));
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString(), null, JOptionPane.ERROR_MESSAGE);
+        }
+        return UserVal;
+    }
+
 }
