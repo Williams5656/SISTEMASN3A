@@ -10,11 +10,10 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class C_usuario{
+public class C_usuario {
 
     public static Vista_usuario vistaus;
     private Usuario_BD bdusuario = new Usuario_BD();
-    
 
     public C_usuario(Vista_usuario vistaus) {
         this.vistaus = vistaus;
@@ -30,7 +29,7 @@ public class C_usuario{
         vistaus.getBtnbuscar().addActionListener(e -> buscar());
 
         vistaus.getCobcodigorol().setModel(bdusuario.rol());
-        
+
         vistaus.getTablausuario().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -191,6 +190,4 @@ public class C_usuario{
 //            }
 //        }
 //    }
-    
-    
 }
