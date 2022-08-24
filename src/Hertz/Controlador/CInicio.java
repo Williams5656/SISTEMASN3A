@@ -36,10 +36,11 @@ public class CInicio {
     private void ingresar() throws SQLException {
         UsuarioBD bdusuario = new UsuarioBD();
         List<UsuarioMD> lista = bdusuario.mostrardatos();
+        RolBD rolEstado = new RolBD();
+        List<RolMD> listaRoles = rolEstado.mostrardatos();
+        int a = 0;
         for (int i = 0; i < lista.size(); i++){
             int id_rol = lista.get(i).getCodigo();
-            RolBD rolEstado = new RolBD();
-            List<RolMD> listaRoles = rolEstado.mostrardatos();
             String estadoRol = listaRoles.get(id_rol).getEstado();
             
             if(vista.getTxtUsuario().getText().equals(lista.get(i).getUsuario()) && 
@@ -50,18 +51,22 @@ public class CInicio {
                 CPrincipal menu = new CPrincipal(vmenu);
                 vista.setVisible(false);
                 vmenu.setVisible(true);
+                a = 1;
                 
             } else {
                 if(lista.get(i).getEstado().equals("Inactivo")){
                     JOptionPane.showMessageDialog(null, "USUARIO BLOQUEADO");
+                    a=1;
                 } else if (estadoRol.equals("Inactio")){
                     JOptionPane.showMessageDialog(null, "ROL BLOQUEADO");
+                    a=1;
                 }
             }
-            if(vista.getTxtUsuario().getText() != (lista.get(i).getUsuario()) || 
-                    vista.getTxtPassword().getText() != (lista.get(i).getPassword())){
-                JOptionPane.showMessageDialog(null, "CREDENCIALES INCORRECTAS");
-            }
+            
+        } while (a == 0)
+        {
+            JOptionPane.showMessageDialog(null, "CREDENCIALES INCORRECTAS");
+            a = 1;
         }
     }
 }
