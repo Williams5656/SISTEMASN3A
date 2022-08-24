@@ -9,8 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
-
-public class Usuario_BD extends M_usuario_MD{
+public class Usuario_BD extends M_usuario_MD {
 
     public Usuario_BD() {
     }
@@ -18,10 +17,10 @@ public class Usuario_BD extends M_usuario_MD{
     public Usuario_BD(String codigo, String cedula_persona, String usuario, String contrasena, String codigo_rol, String estado) {
         super(codigo, cedula_persona, usuario, contrasena, codigo_rol, estado);
     }
-    
+
     Conect conectar = new Conect();
-    
-     public List<M_usuario_MD> mostrardatos() {
+
+    public List<M_usuario_MD> mostrardatos() {
         try {
             List<M_usuario_MD> lista = new ArrayList<M_usuario_MD>();
             String sql = "select * from usuario";
@@ -34,7 +33,7 @@ public class Usuario_BD extends M_usuario_MD{
                 m.setContrasena(rs.getString("contrasena"));
                 m.setCodigo_rol(rs.getString("codrol"));
                 m.setEstado(rs.getString("estado"));
-                
+
                 lista.add(m);
             }
             rs.close();
@@ -44,10 +43,10 @@ public class Usuario_BD extends M_usuario_MD{
             return null;
         }
     }
-    
+
     public boolean insert() {
 
-        String sql = "insert into usuario(codigo, cdlper, nomusuario, contrasena, codrol, estado)" + "values ('" + getCodigo()+ "','" + getCedula_persona()+ "','" + getUsuario()+ "','" + getContrasena()+ "','" + getCodigo_rol()+ "','" + getEstado()+ "')";
+        String sql = "insert into usuario(codigo, cdlper, nomusuario, contrasena, codrol, estado)" + "values ('" + getCodigo() + "','" + getCedula_persona() + "','" + getUsuario() + "','" + getContrasena() + "','" + getCodigo_rol() + "','" + getEstado() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -57,10 +56,10 @@ public class Usuario_BD extends M_usuario_MD{
             return false;
         }
     }
-    
+
     public boolean modificar(String codigo) {
 
-        String sql = "update usuaio set \"cdlper\"='" + getCedula_persona()+ "',\"nomusuario\"='" + getUsuario()+  "',\"contrasena\"='" + getContrasena()+  "',\"codrol\"='" + getCodigo_rol()+ "',\"estado\"='" + getEstado()+ "'" + " where \"codigo\"='" + codigo + "'";
+        String sql = "update usuaio set \"cdlper\"='" + getCedula_persona() + "',\"nomusuario\"='" + getUsuario() + "',\"contrasena\"='" + getContrasena() + "',\"codrol\"='" + getCodigo_rol() + "',\"estado\"='" + getEstado() + "'" + " where \"codigo\"='" + codigo + "'";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -71,7 +70,7 @@ public class Usuario_BD extends M_usuario_MD{
         }
 
     }
-    
+
     public boolean eliminar(String codigo) {
         String sql = "delete from usuario" + " where \"codigo\"='" + codigo + "'";
         if (conectar.noQuery(sql) == null) {
@@ -81,7 +80,7 @@ public class Usuario_BD extends M_usuario_MD{
             return false;
         }
     }
-    
+
     public List<M_usuario_MD> obtenerdatos(String codigo) {
         try {
             List<M_usuario_MD> lista = new ArrayList<M_usuario_MD>();
@@ -104,20 +103,6 @@ public class Usuario_BD extends M_usuario_MD{
             Logger.getLogger(M_usuario_MD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
-    }
-    
-    public DefaultComboBoxModel rol(){
-        DefaultComboBoxModel listaRol = new DefaultComboBoxModel();
-        listaRol.addElement("Seleccionar");
-        ResultSet rs = conectar.query("Select * from rol");
-        try{
-            while (rs.next()){
-                listaRol.addElement(rs.getString("nombre"));
-            }
-        }catch (SQLException e){
-            JOptionPane.showMessageDialog(null,e.getMessage());
-        }
-        return listaRol;
     }
 
 }

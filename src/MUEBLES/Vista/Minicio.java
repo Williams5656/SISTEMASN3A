@@ -34,14 +34,6 @@ public class Minicio extends javax.swing.JFrame {
         this.Btnloguear_inicio = Btnloguear_inicio;
     }
 
-    public JComboBox<String> getCobrol_inicio() {
-        return Cobrol_inicio;
-    }
-
-    public void setCobrol_inicio(JComboBox<String> Cobrol_inicio) {
-        this.Cobrol_inicio = Cobrol_inicio;
-    }
-
     public JTextField getTxtContrasenia_inicio() {
         return TxtContrasenia_inicio;
     }
@@ -65,13 +57,11 @@ public class Minicio extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         Btningresar_inicio = new javax.swing.JButton();
         Btncancelar_inicio = new javax.swing.JButton();
         Btnloguear_inicio = new javax.swing.JButton();
         Txtusuario_inicio = new javax.swing.JTextField();
         TxtContrasenia_inicio = new javax.swing.JTextField();
-        Cobrol_inicio = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,45 +69,39 @@ public class Minicio extends javax.swing.JFrame {
 
         jLabel2.setText("CONTRASEÑA:");
 
-        jLabel3.setText("ROL:");
-
         Btningresar_inicio.setText("INGRESAR");
 
         Btncancelar_inicio.setText("CANCELAR");
 
         Btnloguear_inicio.setText("LOGUEAR");
 
-        Cobrol_inicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maquinas", "Lijado", "Lacado", "Tapizado", "Empacado", "Bodega", "Despachos", "Entregas" }));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Btningresar_inicio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(Btncancelar_inicio)
-                .addGap(63, 63, 63)
-                .addComponent(Btnloguear_inicio)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Txtusuario_inicio)
-                    .addComponent(TxtContrasenia_inicio)
-                    .addComponent(Cobrol_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Txtusuario_inicio)
+                            .addComponent(TxtContrasenia_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Btningresar_inicio)
+                        .addGap(18, 18, 18)
+                        .addComponent(Btncancelar_inicio)
+                        .addGap(18, 18, 18)
+                        .addComponent(Btnloguear_inicio)))
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(138, Short.MAX_VALUE)
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(Txtusuario_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -127,14 +111,10 @@ public class Minicio extends javax.swing.JFrame {
                     .addComponent(TxtContrasenia_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(Cobrol_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Btningresar_inicio)
                     .addComponent(Btncancelar_inicio)
                     .addComponent(Btnloguear_inicio))
-                .addGap(20, 20, 20))
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -146,11 +126,9 @@ public class Minicio extends javax.swing.JFrame {
     private javax.swing.JButton Btncancelar_inicio;
     private javax.swing.JButton Btningresar_inicio;
     private javax.swing.JButton Btnloguear_inicio;
-    private javax.swing.JComboBox<String> Cobrol_inicio;
     private javax.swing.JTextField TxtContrasenia_inicio;
     private javax.swing.JTextField Txtusuario_inicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

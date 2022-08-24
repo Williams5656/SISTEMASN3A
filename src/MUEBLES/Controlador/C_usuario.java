@@ -5,8 +5,10 @@ import MUEBLES.Vista.*;
 import MUEBLES.Vista.Vista_usuario;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,21 +16,22 @@ public class C_usuario {
 
     public static Vista_usuario vistaus;
     private Usuario_BD bdusuario = new Usuario_BD();
+    private rol_BD bdrol = new rol_BD();
 
     public C_usuario(Vista_usuario vistaus) {
         this.vistaus = vistaus;
 
         vistaus.setVisible(true);
         vistaus.setLocationRelativeTo(null);
-
-        lista();
-
+                
+        codigorol();
+        lista(); 
+   
         vistaus.getBtnguardar().addActionListener(e -> guarda());
+        //vistaus.getBtnguardar().addActionListener(e -> guardarcogigo());
         vistaus.getBtnmodificar().addActionListener(e -> modifica());
         vistaus.getBtneliminar().addActionListener(e -> eliminar());
         vistaus.getBtnbuscar().addActionListener(e -> buscar());
-
-        vistaus.getCobcodigorol().setModel(bdusuario.rol());
 
         vistaus.getTablausuario().addMouseListener(new MouseAdapter() {
             @Override
@@ -169,25 +172,18 @@ public class C_usuario {
             }
         }
     }
-
-    private void ingresar() throws SQLException {
-
-        Usuario_BD bdp = new Usuario_BD();
-        List<M_usuario_MD> lista = bdp.mostrardatos();
-
+    
+    public void codigorol(){
+        List<M_rolMD> lista  = bdrol.mostrardatos();
         for (int i = 0; i < lista.size(); i++) {
-            int id_rol = lista.get(i).getRol(); //id_rol = 2353
-            rol_BD rolestado = new rol_BD();
-            List<rol_BD> listaroles = rolestado.obtenerdatos(id_rol);
-            String EstadoRol = listaroles.get(0).getEstado();
+            vistaus.getCobcodigorol().addItem(lista.get(i).getNombre());
         }
-        if (vistaus.getTxtusuario().getText().equals(lista.get(i).getNombreUsuario()) && vistaus.getTxtclave().getText().equals(lista.get(i).getContrasenia()) && lista.get(i).getEstado().equals("Activo") && EstadoRol.equals("Activo")) {
-            if (lista.get(i).getEstado().equals("Inactivo")) {
-                JOptionPane.showMessageDialog(null, "USUARIO BLOQUEADO");
-            } else if (EstadoRol.equals("Inactivo")) {
-                JOptionPane.showMessageDialog(null, "ROL BLOQUEADO");
-
-            }
-        }
+    }
+    
+    public void guardarcogigo(){
+        List<M_rolMD> lista  = bdrol.mostrardatos();
+        int ideseleccionado = vistaus.getCobcodigorol().getSelectedIndex();
+        String codigo = lista.get(ideseleccionado).getCodigo();
+        guarda();
     }
 }
