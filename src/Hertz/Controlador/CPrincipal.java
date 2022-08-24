@@ -1,9 +1,6 @@
 package Hertz.Controlador;
 
-import Hertz.Vista.VPrincipal;
-import Hertz.Vista.VUsuario;
-import Hertz.Vista.VPersona;
-import Hertz.Vista.VRol;
+import Hertz.Vista.*;
 import java.awt.Dimension;
 import java.awt.Frame;
 

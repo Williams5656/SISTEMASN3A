@@ -119,7 +119,7 @@ public class CRol {
            DefaultTableModel modelo;
            modelo = (DefaultTableModel) vista.getTablaRol().getModel();
         
-            List<RolMD> lista = bdRol.obtenerDatos(Integer.parseInt(vista.getTxtBuscar().getText()));
+            List<RolMD> lista = bdRol.buscarDatos(vista.getTxtBuscar().getText());
             int columnas = modelo.getColumnCount();
 
             for (int j = vista.getTablaRol().getRowCount()-1; j >= 0; j--){

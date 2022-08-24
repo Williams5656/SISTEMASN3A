@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 public class UsuarioBD extends UsuarioMD{
@@ -108,6 +109,48 @@ public class UsuarioBD extends UsuarioMD{
             return null;
         }
     }//Fin de obteer datos
+    
+    public List<UsuarioMD> buscarDatos(String cedula) {
+        
+        try {
+            List<UsuarioMD> lista = new ArrayList<UsuarioMD>();
+            String sql = 
+                    "select * from usuario " + 
+                    "where cedula ILIKE '%" + cedula + "%'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                UsuarioMD usuario = new UsuarioMD();
+                usuario.setCodigo(rs.getInt("codigo"));
+                usuario.setCedula(rs.getString("cedula"));
+                usuario.setUsuario(rs.getString("usuario"));
+                usuario.setPassword(rs.getString("password"));
+                usuario.setRol(rs.getString("rol"));
+                usuario.setEstado(rs.getString("estado"));
+                lista.add(usuario);
+            }
+            
+            rs.close();
+            return lista;
+        }
+        catch (SQLException e) {
+            Logger.getLogger(UsuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }//Fin de buscar datos
+    
+    public DefaultComboBoxModel rol(){
+        DefaultComboBoxModel listaRol = new DefaultComboBoxModel();
+        listaRol.addElement("Seleccionar");
+        ResultSet rs = conectar.query("Select * from rol order by nombre");
+        try{
+            while (rs.next()){
+                listaRol.addElement(rs.getString("nombre"));
+            }
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null,e.getMessage());
+        }
+        return listaRol;
+    }//Fin del metodo rol
     
     public boolean eliminar(Integer codigo){
         String nsql = "update usuario set " + 

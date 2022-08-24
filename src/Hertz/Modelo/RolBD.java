@@ -76,7 +76,7 @@ public class RolBD extends RolMD{
         }
     }//Fin de modificar
     
-    public List<RolMD> obtenerDatos(Integer codigo) {
+    public List<RolMD> obtenerDatos(int codigo) {
         
         try {
             List<RolMD> lista = new ArrayList<RolMD>();
@@ -101,6 +101,32 @@ public class RolBD extends RolMD{
             return null;
         }
     }//Fin de obteer datos
+    
+    public List<RolMD> buscarDatos(String nombre) {
+        
+        try {
+            List<RolMD> lista = new ArrayList<RolMD>();
+            String sql = 
+                    "select * from rol " + 
+                    "where nombre ILIKE '%" + nombre +"%'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                RolMD rol = new RolMD();
+                rol.setCodigo(rs.getInt("codigo"));
+                rol.setNombre(rs.getString("nombre"));
+                rol.setDescripcion(rs.getString("descripcion"));
+                rol.setEstado(rs.getString("estado"));
+                lista.add(rol);
+            }
+            
+            rs.close();
+            return lista;
+        }
+        catch (SQLException e) {
+            Logger.getLogger(RolBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }//Fin de buscar
     
     public boolean eliminar(Integer codigo){
         String nsql = "update rol set " + 

@@ -24,6 +24,7 @@ public class CUsuario {
         lista();
         
         vista.getBtnNuevo().addActionListener(e -> nuevo());
+        vista.getCbRol().setModel(bdusuario.rol());
         vista.getBtnGuardar().addActionListener(e -> guardar());
         vista.getBtnModificar().addActionListener(e -> modificar());
         vista.getBtnEliminar().addActionListener(e -> eliminar());
@@ -130,7 +131,7 @@ public class CUsuario {
            DefaultTableModel modelo;
            modelo = (DefaultTableModel) vista.getTablaUsuarios().getModel();
         
-            List<UsuarioMD> lista = bdusuario.obtenerDatos(Integer.parseInt(vista.getTxtBuscar().getText()));
+            List<UsuarioMD> lista = bdusuario.buscarDatos(vista.getTxtBuscar().getText());
             int columnas = modelo.getColumnCount();
 
             for (int j = vista.getTablaUsuarios().getRowCount()-1; j >= 0; j--){
