@@ -170,24 +170,24 @@ public class C_usuario {
         }
     }
 
-//    private void ingresar() throws SQLException {
-//
-//        Usuario_BD bdp = new Usuario_BD();
-//        List<M_usuario_MD> lista = bdp.mostrardatos();
-//
-//        for (int i = 0; i < lista.size(); i++) {
-//            int id_rol = lista.get(i).getRol(); //id_rol = 2353
-//            rol_BD rolestado = new rol_BD();
-//            List<rol_BD> listaroles = rolestado.obtenerdatos(id_rol);
-//            String EstadoRol = listaroles.get(0).getEstado();
-//        }
-//        if (vistaus.getTxtusuario().getText().equals(lista.get(i).getNombreUsuario()) && vistaus.getTxtclave().getText().equals(lista.get(i).getContrasenia()) && lista.get(i).getEstado().equals("Activo") && EstadoRol.equals("Activo")) {
-//            if (lista.get(i).getEstado().equals("Inactivo")) {
-//                JOptionPane.showMessageDialog(null, "USUARIO BLOQUEADO");
-//            } else if (EstadoRol.equals("Inactivo")) {
-//                JOptionPane.showMessageDialog(null, "ROL BLOQUEADO");
-//
-//            }
-//        }
-//    }
+    private void ingresar() throws SQLException {
+
+        Usuario_BD bdp = new Usuario_BD();
+        List<M_usuario_MD> lista = bdp.mostrardatos();
+
+        for (int i = 0; i < lista.size(); i++) {
+            int id_rol = lista.get(i).getRol(); //id_rol = 2353
+            rol_BD rolestado = new rol_BD();
+            List<rol_BD> listaroles = rolestado.obtenerdatos(id_rol);
+            String EstadoRol = listaroles.get(0).getEstado();
+        }
+        if (vistaus.getTxtusuario().getText().equals(lista.get(i).getNombreUsuario()) && vistaus.getTxtclave().getText().equals(lista.get(i).getContrasenia()) && lista.get(i).getEstado().equals("Activo") && EstadoRol.equals("Activo")) {
+            if (lista.get(i).getEstado().equals("Inactivo")) {
+                JOptionPane.showMessageDialog(null, "USUARIO BLOQUEADO");
+            } else if (EstadoRol.equals("Inactivo")) {
+                JOptionPane.showMessageDialog(null, "ROL BLOQUEADO");
+
+            }
+        }
+    }
 }
