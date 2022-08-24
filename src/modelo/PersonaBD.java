@@ -75,7 +75,7 @@ public class PersonaBD extends PersonaMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PersonaMD m = new PersonaMD();
-                m.setCodigo(Integer.parseInt(rs.getString("CODIGO")));
+                m.setCodigo(Integer.parseInt(rs.getString("CODIGOPERSONA")));
                 m.setCedula(rs.getString("CEDULA"));
                 m.setNombres(rs.getString("NOMBRES"));
                 m.setApellidos(rs.getString("APELLIDOS"));
@@ -112,7 +112,7 @@ public class PersonaBD extends PersonaMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PersonaMD m = new PersonaMD();
-                m.setCodigo(Integer.parseInt(rs.getString("CODIGO")));
+                m.setCodigo(Integer.parseInt(rs.getString("CODIGOPERSONA")));
                 m.setCedula(rs.getString("CEDULA"));
                 m.setNombres(rs.getString("NOMBRES"));
                 m.setApellidos(rs.getString("APELLIDOS"));
@@ -196,7 +196,7 @@ public class PersonaBD extends PersonaMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 PersonaMD m = new PersonaMD();
-                m.setCodigo(Integer.parseInt(rs.getString("CODIGO")));
+                m.setCodigo(Integer.parseInt(rs.getString("CODIGOPERSONA")));
                 m.setCedula(rs.getString("CEDULA"));
                 m.setNombres(rs.getString("NOMBRES"));
                 m.setApellidos(rs.getString("APELLIDOS"));

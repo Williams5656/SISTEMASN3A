@@ -32,11 +32,11 @@ public class UsuarioBD extends UsuarioMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 UsuarioMD User = new UsuarioMD();
-                User.setCodUsuario(rs.getString("CODIGO"));
+                User.setCodUsuario(rs.getString("CODUSR"));
                 User.setCedula(rs.getString("CEDULA"));
                 User.setUsuario(rs.getString("USUARIO"));
                 User.setClave(rs.getString("CLAVE"));
-                User.setRol(rs.getString("ROL"));
+                User.setRol(rs.getString("CODROL"));
                 User.setEstado(rs.getString("ESTADO"));
                 lista.add(User);
             }
@@ -62,7 +62,7 @@ public class UsuarioBD extends UsuarioMD {
     }
 
     public boolean insertar() {
-        String sql = "INSERT INTO usuario(codigo, cedula, usuario, clave, rol, estado)" + "VALUES ('" + getCodUsuario() + "','" + getCedula() + "','" + getUsuario() + "','" + getClave() + "','" + getRol() + "','" + getEstado() + "')";
+        String sql = "INSERT INTO usuario(codusr, cedula, usuario, clave, codrol, estado)" + "VALUES ('" + getCodUsuario() + "','" + getCedula() + "','" + getUsuario() + "','" + getClave() + "','" + getRol() + "','" + getEstado() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -74,8 +74,8 @@ public class UsuarioBD extends UsuarioMD {
     }
 
     public boolean modificar(String codUsuario) {
-        String sql = "update usuario set \"cedula\"='" + getCedula() + "',\"usuario\"='" + getUsuario() + "',\"clave\"='" + getClave() + "',\"rol\"='" + getRol() + "',\"estado\"='" + getEstado() + "'"
-                + "where \"codigo\"='" + codUsuario + "'";
+        String sql = "update usuario set \"cedula\"='" + getCedula() + "',\"usuario\"='" + getUsuario() + "',\"clave\"='" + getClave() + "',\"codrol\"='" + getRol() + "',\"estado\"='" + getEstado() + "'"
+                + "where \"codusr\"='" + codUsuario + "'";
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {
@@ -88,15 +88,15 @@ public class UsuarioBD extends UsuarioMD {
     public List<UsuarioMD> obtenerdatos(String codUsuario) {
         try {
             List<UsuarioMD> lista = new ArrayList<UsuarioMD>();
-            String sql = "select * from usuario where \"codigo\"='" + codUsuario + "'";
+            String sql = "select * from usuario where \"codusr\"='" + codUsuario + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 UsuarioMD User = new UsuarioMD();
-                User.setCodUsuario(rs.getString("CODIGO"));
+                User.setCodUsuario(rs.getString("CODUSR"));
                 User.setCedula(rs.getString("CEDULA"));
                 User.setUsuario(rs.getString("USUARIO"));
                 User.setClave(rs.getString("CLAVE"));
-                User.setRol(rs.getString("ROL"));
+                User.setRol(rs.getString("CODROL"));
                 User.setEstado(rs.getString("ESTADO"));
                 lista.add(User);
             }
@@ -109,7 +109,7 @@ public class UsuarioBD extends UsuarioMD {
     }
 
     public boolean eliminar(String codUsuario) {
-        String nsql = "delete from usuario where \"codigo\"='" + codUsuario + "'";
+        String nsql = "delete from usuario where \"codusr\"='" + codUsuario + "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
 
@@ -137,11 +137,11 @@ public class UsuarioBD extends UsuarioMD {
 
             while (rs.next()) {
 
-                UserVal.setCodUsuario(rs.getString("CODIGO"));
+                UserVal.setCodUsuario(rs.getString("CODUSR"));
                 UserVal.setCedula(rs.getString("CEDULA"));
                 UserVal.setUsuario(rs.getString("USUARIO"));
                 UserVal.setClave(rs.getString("CLAVE"));
-                UserVal.setRol(rs.getString("ROL"));
+                UserVal.setRol(rs.getString("CODROL"));
                 UserVal.setEstado(rs.getString("ESTADO"));
 
             }

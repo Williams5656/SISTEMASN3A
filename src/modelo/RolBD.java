@@ -19,7 +19,7 @@ public class RolBD extends RolMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 RolMD r = new RolMD();
-                r.setCodigo(rs.getString("CODIGO"));
+                r.setCodigo(rs.getString("CODROL"));
                 r.setNombre(rs.getString("NOMBRE"));
                 r.setDescripcion(rs.getString("DESCRIPCION"));
                 r.setEstado(rs.getString("ESTADO"));
@@ -34,7 +34,7 @@ public class RolBD extends RolMD {
     }
 
     public boolean insertar() {
-        String sql = "INSERT INTO roles(codigo,nombre,descripcion,estado)" + "VALUES ('" + getCodigo() + "','" + getNombre() + "','" + getDescripcion() + "','" + getEstado() + "')";
+        String sql = "INSERT INTO roles(codrol,nombre,descripcion,estado)" + "VALUES ('" + getCodigo() + "','" + getNombre() + "','" + getDescripcion() + "','" + getEstado() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -47,7 +47,7 @@ public class RolBD extends RolMD {
 
     public boolean modificar(String codigo) {
         String sql = "update roles set \"nombre\"='" + getNombre() + "',\"descripcion\"='" + getDescripcion() + "',\"estado\"='" + getEstado() + "'"
-                + "where \"codigo\"='" + codigo + "'";
+                + "where \"codrol\"='" + codigo + "'";
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {
@@ -60,11 +60,11 @@ public class RolBD extends RolMD {
     public List<RolMD> obtenerdatos(String codigo) {
         try {
             List<RolMD> lista = new ArrayList<RolMD>();
-            String sql = "select * from roles where \"codigo\"='" + codigo + "'";
+            String sql = "select * from roles where \"codrol\"='" + codigo + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 RolMD r = new RolMD();
-                r.setCodigo(rs.getString("CODIGO"));
+                r.setCodigo(rs.getString("CODROL"));
                 r.setNombre(rs.getString("NOMBRE"));
                 r.setDescripcion(rs.getString("DESCRIPCION"));
                 r.setEstado(rs.getString("ESTADO"));
@@ -85,7 +85,7 @@ public class RolBD extends RolMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 RolMD r = new RolMD();
-                r.setCodigo(rs.getString("CODIGO"));
+                r.setCodigo(rs.getString("CODROL"));
                 r.setNombre(rs.getString("NOMBRE"));
                 r.setDescripcion(rs.getString("DESCRIPCION"));
                 r.setEstado(rs.getString("ESTADO"));
@@ -101,11 +101,11 @@ public class RolBD extends RolMD {
     public List<RolMD> buscardatosporcodigo(String codigo) {
         try {
             List<RolMD> lista = new ArrayList<RolMD>();
-            String sql = "select * from roles where \"codigo\" ILIKE '%" + codigo + "%'";
+            String sql = "select * from roles where \"codrol\" ILIKE '%" + codigo + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 RolMD r = new RolMD();
-                r.setCodigo(rs.getString("CODIGO"));
+                r.setCodigo(rs.getString("CODROL"));
                 r.setNombre(rs.getString("NOMBRE"));
                 r.setDescripcion(rs.getString("DESCRIPCION"));
                 r.setEstado(rs.getString("ESTADO"));
@@ -120,7 +120,7 @@ public class RolBD extends RolMD {
     }
 
     public boolean eliminar(String codigo) {
-        String nsql = "delete from roles where \"codigo\"='" + codigo + "'";
+        String nsql = "delete from roles where \"codrol\"='" + codigo + "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
 
