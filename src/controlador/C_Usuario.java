@@ -22,7 +22,7 @@ public class C_Usuario {
     public C_Usuario(V_Usuario vistaUsuario) {
         this.vistausuario = vistaUsuario;
         vistaUsuario.setVisible(true);
-        lista();
+
         GenerarCodUsuario();
         vistaUsuario.getBtnguardarp().setEnabled(false);
         vistaUsuario.getBtnmodificar().setEnabled(false);
@@ -56,12 +56,7 @@ public class C_Usuario {
             }
 
         });
-        List<RolMD> listarol = bdrol.buscardatosporcodigo(bdusuario.getRol());
-        for (int i = 0; i < listarol.size(); i++) {
-            if (listarol.get(i).getCodigo().equals(bdusuario.getRol())) {
-                NombreRol = listarol.get(i).getNombre();
-            }
-        }
+        lista();
     }
 
     public void lista() {
@@ -70,22 +65,17 @@ public class C_Usuario {
         modelo = (DefaultTableModel) vistausuario.getTableUsuario().getModel();
         List<UsuarioMD> lista = bdusuario.mostrardatos();
         int columnas = modelo.getColumnCount();
-        List<RolMD> listarol = bdrol.buscardatosporcodigo(bdusuario.getRol());
-        for (int i = 0; i < listarol.size(); i++) {
-            if (listarol.get(i).getCodigo().equals(bdusuario.getRol())) {
-                NombreRol = listarol.get(i).getNombre();
-            }
-        }
         for (int j = vistausuario.getTableUsuario().getRowCount() - 1; j >= 0; j--) {
             modelo.removeRow(j);
 
         }
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
+            List<RolMD> lisarol = bdrol.buscardatosporcodigo(lista.get(i).getRol());
             vistausuario.getTableUsuario().setValueAt(lista.get(i).getCodUsuario(), i, 0);
             vistausuario.getTableUsuario().setValueAt(lista.get(i).getCedula(), i, 1);
             vistausuario.getTableUsuario().setValueAt(lista.get(i).getUsuario(), i, 2);
-            vistausuario.getTableUsuario().setValueAt(NombreRol, i, 3);
+            vistausuario.getTableUsuario().setValueAt(lisarol.get(0).getNombre(), i, 3);
             vistausuario.getTableUsuario().setValueAt(lista.get(i).getEstado(), i, 4);
 
         }
@@ -116,11 +106,18 @@ public class C_Usuario {
     }
 
     public void modificar() {
+        String Codroles = "";
+        List<RolMD> listarol = bdrol.buscardatospornombre(vistausuario.getCmbRol().getSelectedItem().toString());
+        for (int i = 0; i < listarol.size(); i++) {
+            Codroles = listarol.get(i).getCodigo();
+
+        }
+        vistausuario.getTxtCedula().setEditable(false);
         bdusuario.setCodUsuario(vistausuario.getLabelCodigoUsuario().getText());
         bdusuario.setCedula(vistausuario.getTxtCedula().getText());
         bdusuario.setUsuario(vistausuario.getTxtUsuario().getText());
         bdusuario.setClave(vistausuario.getJPassClave().getText());
-        bdusuario.setRol(vistausuario.getCmbRol().getSelectedItem().toString());
+        bdusuario.setRol(Codroles);
         bdusuario.setEstado(vistausuario.getLabelEstado().getText());
 
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Modificar");
@@ -134,7 +131,7 @@ public class C_Usuario {
     }
 
     public void seleccionar() {
-
+        List<UsuarioMD> listb = bdusuario.mostrardatos();
         vistausuario.getBtnguardarp().setEnabled(false);
         vistausuario.getBtnmodificar().setEnabled(true);
         DefaultTableModel modelo;
@@ -149,11 +146,13 @@ public class C_Usuario {
         vistausuario.getTxtUsuario().setText(bdusuario.getUsuario());
         bdusuario.setClave(lista.get(0).getClave());
         vistausuario.getJPassClave().setText(bdusuario.getClave());
-        bdusuario.setRol(lista.get(0).getRol());
-        vistausuario.getCmbRol().setSelectedItem(NombreRol);
         bdusuario.setEstado(lista.get(0).getEstado());
         vistausuario.getLabelEstado().setText(bdusuario.getEstado());
-
+        for (int i = 0; i < listb.size(); i++) {
+            List<RolMD> lisarol = bdrol.buscardatospornombre(lista.get(0).getRol());
+            bdusuario.setRol(lisarol.get(0).getCodigo());
+            vistausuario.getCmbRol().setSelectedItem(lisarol.get(0).getNombre());
+        }
     }
 
     public void eliminar() {
