@@ -26,16 +26,14 @@ public class C_usuario{
         vistaus.setLocationRelativeTo(null);
 
         lista();
-        vistacedulacombo();
-        vistarolcombo();
 
         vistaus.getBtnguardar().addActionListener(e -> guarda());
-        vistaus.getBtnguardar().addActionListener(e -> guardarpersona());
-        vistaus.getBtnguardar().addActionListener(e -> guardarrol());
         vistaus.getBtnmodificar().addActionListener(e -> modifica());
         vistaus.getBtneliminar().addActionListener(e -> eliminar());
         vistaus.getBtnbuscar().addActionListener(e -> buscar());
 
+        vistaus.getCobcodigorol().setModel(bdusuario.rol());
+        
         vistaus.getTablausuario().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -199,30 +197,5 @@ public class C_usuario{
 //        }
 //    }
     
-    public void vistacedulacombo(){
-        List<M_personaMD> lista = bdpersona.mostrardatos();
-        for (int i = 0; i < lista.size(); i++) {
-            vistaus.getConcedulapersona().addItem(lista.get(i).getCedula());
-        }
-    }
     
-    public void guardarpersona(){
-        List<M_personaMD> lista = bdpersona.mostrardatos();
-        int idselecccionado = vistaus.getConcedulapersona().getSelectedIndex();
-        String cedula = lista.get(idselecccionado).getCedula();
-        guarda();
-    }
-    
-    public void vistarolcombo(){
-        List<M_rolMD> lista = bdrol.mostrardatos();
-        for (int i = 0; i < lista.size(); i++) {
-            vistaus.getCobcodigorol().addItem(lista.get(i).getCodigo());
-        }
-    }
-    
-    public void guardarrol(){
-        List<M_rolMD> lista = bdrol.mostrardatos();
-        int idselecccionado = vistaus.getCobcodigorol().getSelectedIndex();
-        String rol = lista.get(idselecccionado).getCodigo();        
-    }
 }

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 
@@ -105,5 +106,17 @@ public class Usuario_BD extends M_usuario_MD{
         }
     }
     
-    
+    public DefaultComboBoxModel rol(){
+        DefaultComboBoxModel listaRol = new DefaultComboBoxModel();
+        listaRol.addElement("Seleccionar");
+        ResultSet rs = conectar.query("Select * from rol");
+        try{
+            while (rs.next()){
+                listaRol.addElement(rs.getString("nombre"));
+            }
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null,e.getMessage());
+        }
+        return listaRol;
+    }
 }

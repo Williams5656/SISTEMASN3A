@@ -144,7 +144,7 @@ public class Vista_usuario extends javax.swing.JFrame {
 
         jLabel4.setText("CONTRASEÑA:");
 
-        jLabel5.setText("CODIGO ROL:");
+        jLabel5.setText("ROL:");
 
         jLabel6.setText("ESTADO:");
 

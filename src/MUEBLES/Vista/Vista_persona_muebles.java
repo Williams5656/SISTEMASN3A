@@ -321,10 +321,8 @@ public class Vista_persona_muebles extends javax.swing.JFrame {
                     .addComponent(jimagen, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(Btcargar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Btcargar)
                             .addComponent(Btguarda)
                             .addComponent(Btmodifica)
                             .addComponent(Bteliminar))))
@@ -408,7 +406,7 @@ public class Vista_persona_muebles extends javax.swing.JFrame {
     private javax.swing.JTable Tabla_muebles_persona;
     private javax.swing.JTextField Txtapellidos;
     private javax.swing.JTextField Txtbuscar;
-    private javax.swing.JTextField Txtcedula;
+    public javax.swing.JTextField Txtcedula;
     private javax.swing.JTextField Txtcelular;
     private javax.swing.JTextField Txtdireccion;
     private javax.swing.JTextField Txtfecha;
