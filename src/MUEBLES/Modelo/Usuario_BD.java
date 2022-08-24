@@ -119,4 +119,18 @@ public class Usuario_BD extends M_usuario_MD{
         }
         return listaRol;
     }
+    
+    public DefaultComboBoxModel cedula(){
+        DefaultComboBoxModel listaRol = new DefaultComboBoxModel();
+        listaRol.addElement("Seleccionar");
+        ResultSet rs = conectar.query("Select * from persona");
+        try{
+            while (rs.next()){
+                listaRol.addElement(rs.getString("cedula"));
+            }
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null,e.getMessage());
+        }
+        return listaRol;
+    }
 }

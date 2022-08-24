@@ -59,12 +59,12 @@ public class Vista_usuario extends javax.swing.JFrame {
         this.Cobestado = Cobestado;
     }
 
-    public JComboBox<String> getConcedulapersona() {
-        return Concedulapersona;
+    public JTextField getTxtcedulapersona() {
+        return Txtcedulapersona;
     }
 
-    public void setConcedulapersona(JComboBox<String> Concedulapersona) {
-        this.Concedulapersona = Concedulapersona;
+    public void setTxtcedulapersona(JTextField Txtcedulapersona) {
+        this.Txtcedulapersona = Txtcedulapersona;
     }
 
     public JTable getTablausuario() {
@@ -119,7 +119,6 @@ public class Vista_usuario extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         Txtcodigousuario = new javax.swing.JTextField();
-        Concedulapersona = new javax.swing.JComboBox<>();
         Txtusuario = new javax.swing.JTextField();
         Cobcodigorol = new javax.swing.JComboBox<>();
         Cobestado = new javax.swing.JComboBox<>();
@@ -131,6 +130,7 @@ public class Vista_usuario extends javax.swing.JFrame {
         Btneliminar = new javax.swing.JButton();
         Txtbuscar = new javax.swing.JTextField();
         Btnbuscar = new javax.swing.JButton();
+        Txtcedulapersona = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Usuario");
@@ -172,6 +172,8 @@ public class Vista_usuario extends javax.swing.JFrame {
 
         Btnbuscar.setText("BUSCAR");
 
+        Txtcedulapersona.setText("jTextField1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -197,11 +199,11 @@ public class Vista_usuario extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Txtcodigousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Concedulapersona, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Txtusuario)
                             .addComponent(Cobcodigorol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Cobestado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Txtcontraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(Txtcedulapersona)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -218,8 +220,8 @@ public class Vista_usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(Concedulapersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(Txtcedulapersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(Txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -248,7 +250,7 @@ public class Vista_usuario extends javax.swing.JFrame {
                         .addComponent(Btnmodificar)
                         .addGap(18, 18, 18)
                         .addComponent(Btneliminar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         pack();
@@ -262,9 +264,9 @@ public class Vista_usuario extends javax.swing.JFrame {
     private javax.swing.JButton Btnmodificar;
     private javax.swing.JComboBox<String> Cobcodigorol;
     private javax.swing.JComboBox<String> Cobestado;
-    private javax.swing.JComboBox<String> Concedulapersona;
     private javax.swing.JTable Tablausuario;
     private javax.swing.JTextField Txtbuscar;
+    private javax.swing.JTextField Txtcedulapersona;
     private javax.swing.JTextField Txtcodigousuario;
     private javax.swing.JTextField Txtcontraseña;
     private javax.swing.JTextField Txtusuario;

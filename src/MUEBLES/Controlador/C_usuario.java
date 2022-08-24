@@ -14,10 +14,7 @@ public class C_usuario{
 
     public static Vista_usuario vistaus;
     private Usuario_BD bdusuario = new Usuario_BD();
-    public static Vista_persona_muebles vistaper;
-    private Persona_BD_muebles bdpersona = new Persona_BD_muebles();
-    public static Vista_rol vistarol;
-    private rol_BD bdrol = new rol_BD();
+    
 
     public C_usuario(Vista_usuario vistaus) {
         this.vistaus = vistaus;
@@ -93,8 +90,7 @@ public class C_usuario{
 
     public void guarda() {
         bdusuario.setCodigo(vistaus.getTxtcodigousuario().getText());
-        String cedula = (String) vistaus.getConcedulapersona().getSelectedItem();
-        bdusuario.setCedula_persona(cedula);
+        bdusuario.setCedula_persona(vistaus.getTxtcedulapersona().getText());
         bdusuario.setUsuario(vistaus.getTxtusuario().getText());
         bdusuario.setContrasena(vistaus.getTxtcontraseña().getText());
         String rol = (String) vistaus.getCobcodigorol().getSelectedItem();
@@ -113,8 +109,7 @@ public class C_usuario{
 
     public void modifica() {
         bdusuario.setCodigo(vistaus.getTxtcodigousuario().getText());
-        String cedula = (String) vistaus.getConcedulapersona().getSelectedItem();
-        bdusuario.setCedula_persona(cedula);
+        bdusuario.setCedula_persona(vistaus.getTxtcedulapersona().getText());
         bdusuario.setUsuario(vistaus.getTxtusuario().getText());
         bdusuario.setContrasena(vistaus.getTxtcontraseña().getText());
         String rol = (String) vistaus.getCobcodigorol().getSelectedItem();
@@ -142,7 +137,7 @@ public class C_usuario{
         bdusuario.setCodigo(lista.get(0).getCodigo());
         vistaus.getTxtcodigousuario().setText(bdusuario.getCodigo());
         bdusuario.setCedula_persona(lista.get(0).getCedula_persona());
-        vistaus.getConcedulapersona().setSelectedItem(bdusuario.getCedula_persona());
+        vistaus.getTxtcedulapersona().setText(bdusuario.getCedula_persona());
         bdusuario.setUsuario(lista.get(0).getUsuario());
         vistaus.getTxtusuario().setText(bdusuario.getUsuario());
         bdusuario.setContrasena(lista.get(0).getContrasena());
@@ -155,7 +150,7 @@ public class C_usuario{
 
     public void nuevo() {
         vistaus.getTxtcodigousuario().setText("");
-        vistaus.getConcedulapersona().setSelectedItem(0);
+        vistaus.getTxtcedulapersona().setText("");
         vistaus.getTxtusuario().setText("");
         vistaus.getTxtcontraseña().setText("");
         vistaus.getCobcodigorol().setSelectedItem(0);
