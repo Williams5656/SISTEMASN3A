@@ -172,8 +172,6 @@ public class Vista_usuario extends javax.swing.JFrame {
 
         Btnbuscar.setText("BUSCAR");
 
-        Txtcedulapersona.setText("jTextField1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
