@@ -51,11 +51,11 @@ public class CUsuarios {
     public void rolUsuario() {
         List<RolMb> listar = bdrol.mostrardatos();
         for (int i = 0; i < listar.size(); i++) {
-            VistaU.getComborolu().addItem(listar.get(i).getCodigo());
+            VistaU.getComborolu().addItem(listar.get(i).getNombre());
         }
     }
 
-    public void lista() {
+   public void lista() {
 
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) VistaU.getTableUsuario().getModel();
@@ -68,11 +68,12 @@ public class CUsuarios {
         }
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
+            List<RolMb> listarol = bdrol.obtenerdatos(lista.get(i).getCodigo_rol());
             VistaU.getTableUsuario().setValueAt(lista.get(i).getCodigo(), i, 0);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getCedula(), i, 1);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getNombre_usuario(), i, 2);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getClave(), i, 3);
-            VistaU.getTableUsuario().setValueAt(lista.get(i).getCodigo_rol(), i, 4);
+            VistaU.getTableUsuario().setValueAt(listarol.get(0).getNombre(), i, 4);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getEstado(), i, 5);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getCorreo(), i, 6);
 
