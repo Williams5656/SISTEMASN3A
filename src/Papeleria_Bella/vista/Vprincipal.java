@@ -26,6 +26,23 @@ public class Vprincipal extends javax.swing.JFrame {
     public void setItemroles(JMenuItem itemroles) {
         this.itemroles = itemroles;
     }
+
+    public JMenuItem getItemempresa() {
+        return itemempresa;
+    }
+
+    public void setItemempresa(JMenuItem itemempresa) {
+        this.itemempresa = itemempresa;
+    }
+
+    public JMenu getIteminformacion() {
+        return iteminformacion;
+    }
+
+    public void setIteminformacion(JMenu iteminformacion) {
+        this.iteminformacion = iteminformacion;
+    }
+    
  
 
     public JMenuItem getItempersona() {
@@ -92,6 +109,8 @@ public class Vprincipal extends javax.swing.JFrame {
         itempersona = new javax.swing.JMenuItem();
         itemusuario = new javax.swing.JMenuItem();
         itemroles = new javax.swing.JMenuItem();
+        iteminformacion = new javax.swing.JMenu();
+        itemempresa = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,6 +154,18 @@ public class Vprincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        iteminformacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-crear-nuevo-16(1).png"))); // NOI18N
+        iteminformacion.setText("Informacion");
+        iteminformacion.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+
+        itemempresa.setBackground(new java.awt.Color(220, 240, 240));
+        itemempresa.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itemempresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-tipo-de-máscara-de-cuenta-de-usuario-7-16.png"))); // NOI18N
+        itemempresa.setText("Empresa");
+        iteminformacion.add(itemempresa);
+
+        jMenuBar1.add(iteminformacion);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,6 +188,8 @@ public class Vprincipal extends javax.swing.JFrame {
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itemempresa;
+    private javax.swing.JMenu iteminformacion;
     private javax.swing.JMenuItem itempersona;
     private javax.swing.JMenuItem itemroles;
     private javax.swing.JMenuItem itemusuario;
