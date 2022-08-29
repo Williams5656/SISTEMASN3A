@@ -28,7 +28,7 @@ public class C_usuario {
         lista(); 
    
         vistaus.getBtnguardar().addActionListener(e -> guarda());
-        //vistaus.getBtnguardar().addActionListener(e -> guardarcogigo());
+        vistaus.getBtnguardar().addActionListener(e -> guardarcogigo());
         vistaus.getBtnmodificar().addActionListener(e -> modifica());
         vistaus.getBtneliminar().addActionListener(e -> eliminar());
         vistaus.getBtnbuscar().addActionListener(e -> buscar());
