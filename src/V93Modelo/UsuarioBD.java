@@ -1,11 +1,14 @@
 package V93Modelo;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class UsuarioBD extends UsuarioMb {
 
@@ -27,11 +30,11 @@ public class UsuarioBD extends UsuarioMb {
                 UsuarioMb usua = new UsuarioMb();
                 usua.setCodigo(rs.getString("codigo"));
                 usua.setCedula(rs.getString("cedula"));
-                usua.setNombre_usuario(rs.getString("usuario"));
+                usua.setUsuario(rs.getString("usuario"));
+                usua.setCorreo(rs.getString("correo"));
                 usua.setClave(rs.getString("clave"));
                 usua.setCodigo_rol(rs.getString("rol"));
                 usua.setEstado(rs.getString("estado"));
-                usua.setCorreo(rs.getString("correo"));
 
                 listausuario.add(usua);
             }
@@ -44,7 +47,7 @@ public class UsuarioBD extends UsuarioMb {
     }
 
     public boolean insertar() {
-        String sql = "insert into usuario (codigo, cedula, usuario, clave, rol, estado, correo)  VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getNombre_usuario() + "','" + getClave() + "','" + getCodigo_rol() + "','" + getEstado() + "','" + getCorreo() + "')";
+        String sql = "insert into usuario (codigo, cedula, usuario, correo, clave, rol, estado)  VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getUsuario() + "','" + getClave() + "','" + getCodigo_rol() + "','" + getEstado() + "','" + getCorreo() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -56,8 +59,40 @@ public class UsuarioBD extends UsuarioMb {
 
     }
 
+    public UsuarioMb validar(String User, String Pass) throws SQLException {
+        PreparedStatement st;
+        ResultSet rs;
+        Connection con;
+        UsuarioMb usua = new UsuarioMb();
+        String validar = "Select * From usuario\n"
+                + "where usuario.usuario=? and usuario.clave=?;";
+        try {
+            con = conectar.getCon();
+
+            st = con.prepareStatement(validar);
+            st.setString(1, User);
+            st.setString(2, Pass);
+            rs = st.executeQuery();
+
+            while (rs.next()) {
+
+                usua.setCodigo(rs.getString("codigo"));
+                usua.setCedula(rs.getString("cedula"));
+                usua.setUsuario(rs.getString("usuario"));
+                usua.setCorreo(rs.getString("correo"));
+                usua.setClave(rs.getString("clave"));
+                usua.setCodigo_rol(rs.getString("rol"));
+                usua.setEstado(rs.getString("estado"));
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString(), null, JOptionPane.ERROR_MESSAGE);
+        }
+        return usua;
+    }
+
     public boolean modificar(String codigo) {
-        String sql = "update usuario set \"cedula\"='" + getCedula() + "',\"usuario\"='" + getNombre_usuario() + "',\"clave\"='" + getClave() + "',\"rol\"='" + getCodigo_rol() + "',\"estado\"='" + getEstado() + "',\"correo\"='" + getCorreo() + "'"
+        String sql = "update usuario set \"cedula\"='" + getCedula() + "',\"usuario\"='" + getUsuario() + "',\"correo\"='" + getCorreo() + "',\"clave\"='" + getClave() + "',\"rol\"='" + getCodigo_rol() + "',\"estado\"='" + getEstado() + "'"
                 + " where \"codigo\"='" + codigo + "'";
 
         if (conectar.noQuery(sql) == null) {
@@ -79,11 +114,11 @@ public class UsuarioBD extends UsuarioMb {
                 UsuarioMb usua = new UsuarioMb();
                 usua.setCodigo(rs.getString("codigo"));
                 usua.setCedula(rs.getString("cedula"));
-                usua.setNombre_usuario(rs.getString("usuario"));
+                usua.setUsuario(rs.getString("usuario"));
+                usua.setCorreo(rs.getString("correo"));
                 usua.setClave(rs.getString("clave"));
                 usua.setCodigo_rol(rs.getString("rol"));
                 usua.setEstado(rs.getString("estado"));
-                usua.setCorreo(rs.getString("correo"));
 
                 listausuario.add(usua);
             }
@@ -96,9 +131,7 @@ public class UsuarioBD extends UsuarioMb {
     }
 
     public boolean eliminar(String codigo) {
-        // String nsql = "delete from usuario where \"codigo\"='" + codigo + "'";
-        String sql = "update usuario set \"estado\"='" + "INACTIVO" + "'"
-                + " where \"codigo\"='" + codigo + "'";
+        String sql = "delete from usuario where \"codigo\"='" + codigo + "'";
 
         if (conectar.noQuery(sql) == null) {
             return true;

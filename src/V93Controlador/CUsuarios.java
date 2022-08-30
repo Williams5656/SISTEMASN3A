@@ -71,7 +71,7 @@ public class CUsuarios {
             List<RolMb> listarol = bdrol.obtenerdatos(lista.get(i).getCodigo_rol());
             VistaU.getTableUsuario().setValueAt(lista.get(i).getCodigo(), i, 0);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getCedula(), i, 1);
-            VistaU.getTableUsuario().setValueAt(lista.get(i).getNombre_usuario(), i, 2);
+            VistaU.getTableUsuario().setValueAt(lista.get(i).getUsuario(), i, 2);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getClave(), i, 3);
             VistaU.getTableUsuario().setValueAt(listarol.get(0).getNombre(), i, 4);
             VistaU.getTableUsuario().setValueAt(lista.get(i).getEstado(), i, 5);
@@ -98,7 +98,7 @@ public class CUsuarios {
         bdusuario.setCodigo(VistaU.getTxtcodigou().getText());
         String cedula = (String) VistaU.getCombocedulau().getSelectedItem();
         bdusuario.setCedula(cedula);
-        bdusuario.setNombre_usuario(VistaU.getTxtnombreu().getText());
+        bdusuario.setUsuario(VistaU.getTxtnombreu().getText());
         bdusuario.setClave(VistaU.getTxtpasswordu().getText());
         String cod_rol = (String) VistaU.getComborolu().getSelectedItem();
         bdusuario.setCodigo_rol(cod_rol);
@@ -118,7 +118,7 @@ public class CUsuarios {
         bdusuario.setCodigo(VistaU.getTxtcodigou().getText());
         String cedula = (String) VistaU.getCombocedulau().getSelectedItem();
         bdusuario.setCedula(cedula);
-        bdusuario.setNombre_usuario(VistaU.getTxtnombreu().getText());
+        bdusuario.setUsuario(VistaU.getTxtnombreu().getText());
         bdusuario.setClave(VistaU.getTxtpasswordu().getText());
         String cod_rol = (String) VistaU.getComborolu().getSelectedItem();
         bdusuario.setEstado(cod_rol);
@@ -146,8 +146,8 @@ public class CUsuarios {
         VistaU.getTxtcodigou().setText(bdusuario.getCodigo());
         bdusuario.setCedula(lista.get(0).getCedula());
         VistaU.getCombocedulau().setSelectedItem(bdusuario.getCedula());
-        bdusuario.setNombre_usuario(lista.get(0).getNombre_usuario());
-        VistaU.getTxtnombreu().setText(bdusuario.getNombre_usuario());
+        bdusuario.setUsuario(lista.get(0).getUsuario());
+        VistaU.getTxtnombreu().setText(bdusuario.getUsuario());
         bdusuario.setClave(lista.get(0).getClave());
         VistaU.getTxtpasswordu().setText(bdusuario.getClave());
         bdusuario.setCodigo_rol(lista.get(0).getCodigo_rol());

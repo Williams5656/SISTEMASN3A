@@ -37,9 +37,11 @@ public class ProductoMb {
         return descripcion;
     }
 
-    public void setDescripcion(String nombre) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+ 
 
     public String getProveedor() {
         return proveedor;

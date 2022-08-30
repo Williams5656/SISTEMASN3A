@@ -13,36 +13,7 @@ public class LoginBD extends LoginMb {
  public LoginBD() {
     }
 
-  public LoginBD validar(String User, String Pass) throws SQLException {
-        PreparedStatement st;
-        ResultSet rs;
-        Connection con;
-        LoginBD UserVal = new LoginBD ();
-        String validar = "Select * From usuario\n"
-                + "where usuario.usuario=? and usuario.clave=?;";
-        try {
-            con = conecta.getCon();
 
-            st = con.prepareStatement(validar);
-            st.setString(1, User);
-            st.setString(2, Pass);
-            rs = st.executeQuery();
-
-            while (rs.next()) {
-
-                UserVal.setCedula(rs.getString("cedula"));
-                UserVal.setNombre(rs.getString("nombre"));
-                UserVal.setCorreo(rs.getString("correo"));
-                UserVal.setClave(rs.getString("clave"));
-                UserVal.setRol(rs.getString("rol"));
-               
-
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error: " + e.toString(), null, JOptionPane.ERROR_MESSAGE);
-        }
-        return UserVal;
-    }
 
   /*  public boolean Registrar(LoginMb reg) {
         String sql = "INSERT INTO usuario(Nombre,Correo,Pass,rol) VALUES (?,?,?,?)";

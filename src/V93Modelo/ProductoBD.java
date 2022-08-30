@@ -17,6 +17,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
+import javax.swing.DefaultComboBoxModel;
 import org.postgresql.util.Base64;
          
 public class ProductoBD extends ProductoMb {
@@ -29,7 +30,18 @@ public class ProductoBD extends ProductoMb {
     public ProductoBD(String codigo, String descripcion,String proveedor, int stock, double precio, Image foto) {
         super(codigo, descripcion, proveedor, stock, precio,foto);
     }
-    
+    public DefaultComboBoxModel NombreProveedor() {
+        DefaultComboBoxModel listaroles = new DefaultComboBoxModel();
+        ResultSet rs = conecta.query("Select * from proveedor order by nombre");
+        try {
+            while (rs.next()) {
+                listaroles.addElement(rs.getString("nombre"));
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return listaroles;
+    }
     public static BufferedImage toBufferedImage(Image img) {
         if (img instanceof BufferedImage) {
             return (BufferedImage) img;
@@ -176,8 +188,8 @@ public class ProductoBD extends ProductoMb {
         } catch (IOException ex) {
             Logger.getLogger(ProductoBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String sql = "update producto set \"codigo\"='" + getDescripcion()+ "',\"proveedor\"='" + getProveedor()+ "',\"stock\"='" + getStock()+ "',\"precio\"='" + getPrecio()+ "',\"foto\"='" + ef +"'"
-                + " where \"cedula\"='" + codigo + "'";
+        String sql = "update producto set \"descripcion\"='" + getDescripcion()+ "',\"proveedor\"='" + getProveedor()+ "',\"stock\"='" + getStock()+ "',\"precio\"='" + getPrecio()+ "',\"foto\"='" + ef +"'"
+                + " where \"codigo\"='" + codigo + "'";
 
         if (conecta.noQuery(sql) == null) {
             return true;
@@ -190,7 +202,7 @@ public class ProductoBD extends ProductoMb {
     }
  
     public boolean eliminar(String codigo) {   
-        String sql = "delete FROM producto where\"cedula\"='" + codigo + "'";
+        String sql = "delete FROM producto where\"codigo\"='" + codigo + "'";
         if (conecta.noQuery(sql) == null) {
             return true;
 

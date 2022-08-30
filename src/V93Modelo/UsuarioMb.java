@@ -4,7 +4,7 @@ public class UsuarioMb {
 
     private String codigo;
     private String cedula;
-    private String nombre_usuario;
+    private String usuario;
     private String clave;
     private String codigo_rol;
     private String estado;
@@ -16,7 +16,7 @@ public class UsuarioMb {
     public UsuarioMb(String codigo, String cedula, String nombre_usuario, String clave, String codigo_rol, String estado, String correo) {
         this.codigo = codigo;
         this.cedula = cedula;
-        this.nombre_usuario = nombre_usuario;
+        this.usuario = nombre_usuario;
         this.clave = clave;
         this.codigo_rol = codigo_rol;
         this.estado = estado;
@@ -39,12 +39,12 @@ public class UsuarioMb {
         this.cedula = cedula;
     }
 
-    public String getNombre_usuario() {
-        return nombre_usuario;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setNombre_usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getClave() {
