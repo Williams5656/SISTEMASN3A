@@ -24,15 +24,15 @@ public class Cmueblesinicio {
         vistaini.setResizable(false);
         
         vistaini.getBtncancelar_inicio().addActionListener(e -> salir());
-        vistaini.getBtnloguear_inicio().addActionListener(e -> ingreso());
+        //vistaini.getBtnloguear_inicio().addActionListener(e -> ingreso());
         
-//        vistaini.getBtnloguear_inicio().addActionListener(e -> { 
-//        try {
-//            ingresar();
-//        } catch(SQLException ex){
-//            Logger.getLogger(Cmueblesinicio.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        });
+        vistaini.getBtnloguear_inicio().addActionListener(e -> { 
+        try {
+            ingresar();
+        } catch(SQLException ex){
+            Logger.getLogger(Cmueblesinicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        });
     }
     
     private void salir() {

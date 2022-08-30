@@ -30,7 +30,7 @@ public class Usuario_BD extends M_usuario_MD {
                 m.setCodigo(rs.getString("codigo"));
                 m.setCedula_persona(rs.getString("cdlper"));
                 m.setUsuario(rs.getString("nomusuario"));
-                m.setContrasena(rs.getString("contrasena"));
+                //m.setContrasena(rs.getString("contrasena"));
                 m.setCodigo_rol(rs.getString("codrol"));
                 m.setEstado(rs.getString("estado"));
 

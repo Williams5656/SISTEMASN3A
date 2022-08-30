@@ -20,12 +20,9 @@ public class C_usuario {
 
     public C_usuario(Vista_usuario vistaus) {
         this.vistaus = vistaus;
-
+        
         vistaus.setVisible(true);
         vistaus.setLocationRelativeTo(null);
-                
-        codigorol();
-        lista(); 
    
         vistaus.getBtnguardar().addActionListener(e -> guarda());
         vistaus.getBtnguardar().addActionListener(e -> guardarcogigo());
@@ -33,6 +30,9 @@ public class C_usuario {
         vistaus.getBtneliminar().addActionListener(e -> eliminar());
         vistaus.getBtnbuscar().addActionListener(e -> buscar());
 
+        codigorol();
+        lista();
+        
         vistaus.getTablausuario().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -84,8 +84,8 @@ public class C_usuario {
             vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo(), i, 0);
             vistaus.getTablausuario().setValueAt(lista.get(i).getCedula_persona(), i, 1);
             vistaus.getTablausuario().setValueAt(lista.get(i).getUsuario(), i, 2);
-            vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo_rol(), i, 4);
-            vistaus.getTablausuario().setValueAt(lista.get(i).getEstado(), i, 5);
+            vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo_rol(), i, 3);
+            vistaus.getTablausuario().setValueAt(lista.get(i).getEstado(), i, 4);
 
         }
     }
