@@ -1,5 +1,7 @@
 package MUEBLES.Modelo;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -11,14 +13,14 @@ import javax.swing.JOptionPane;
 
 public class Usuario_BD extends M_usuario_MD {
 
-    public Usuario_BD() {
-    }
-
+    Conect conectar = new Conect();
+   
     public Usuario_BD(String codigo, String cedula_persona, String usuario, String contrasena, String codigo_rol, String estado) {
         super(codigo, cedula_persona, usuario, contrasena, codigo_rol, estado);
     }
 
-    Conect conectar = new Conect();
+    public Usuario_BD() {
+    }
 
     public List<M_usuario_MD> mostrardatos() {
         try {
@@ -30,7 +32,7 @@ public class Usuario_BD extends M_usuario_MD {
                 m.setCodigo(rs.getString("codigo"));
                 m.setCedula_persona(rs.getString("cdlper"));
                 m.setUsuario(rs.getString("nomusuario"));
-                //m.setContrasena(rs.getString("contrasena"));
+                m.setContrasena(rs.getString("contrasena"));
                 m.setCodigo_rol(rs.getString("codrol"));
                 m.setEstado(rs.getString("estado"));
 
@@ -104,5 +106,37 @@ public class Usuario_BD extends M_usuario_MD {
             return null;
         }
     }
+    
+    public M_usuario_MD validar(String User, String Pass) throws SQLException {
+        PreparedStatement st;
+        ResultSet rs;
+        Connection con;
+        M_usuario_MD u = new M_usuario_MD();
+        String validar = "Select * From usuario\n"
+                + "where usuario.nomusuario=? and usuario.contrasena=?;";
+        try {
+            con = conectar.getCon();
+
+            st = con.prepareStatement(validar);
+            st.setString(1, User);
+            st.setString(2, Pass);
+            rs = st.executeQuery();
+
+            while (rs.next()) {
+
+                u.setCodigo(rs.getString("codigo"));
+                u.setCedula_persona(rs.getString("cdlper"));
+                u.setUsuario(rs.getString("nomusuario"));
+                u.setContrasena(rs.getString("contrasena"));
+                u.setCodigo_rol(rs.getString("codrol"));
+                u.setEstado(rs.getString("estado"));
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString(), null, JOptionPane.ERROR_MESSAGE);
+        }
+        return u;
+    }
+    
 
 }

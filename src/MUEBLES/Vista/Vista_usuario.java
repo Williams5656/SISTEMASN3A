@@ -152,14 +152,15 @@ public class Vista_usuario extends javax.swing.JFrame {
 
         Tablausuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "CEDULA", "USUARIO", "ROL", "ESTADO"
+                "CODIGO", "CEDULA", "USUARIO", "CONTRASEÑA", "ROL", "ESTADO"
             }
         ));
         jScrollPane1.setViewportView(Tablausuario);

@@ -2,6 +2,7 @@ package MUEBLES.Vista;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Minicio extends javax.swing.JFrame {
@@ -34,11 +35,11 @@ public class Minicio extends javax.swing.JFrame {
         this.Btnloguear_inicio = Btnloguear_inicio;
     }
 
-    public JTextField getTxtContrasenia_inicio() {
+    public JPasswordField getTxtContrasenia_inicio() {
         return TxtContrasenia_inicio;
     }
 
-    public void setTxtContrasenia_inicio(JTextField TxtContrasenia_inicio) {
+    public void setTxtContrasenia_inicio(JPasswordField TxtContrasenia_inicio) {
         this.TxtContrasenia_inicio = TxtContrasenia_inicio;
     }
 
@@ -61,7 +62,7 @@ public class Minicio extends javax.swing.JFrame {
         Btncancelar_inicio = new javax.swing.JButton();
         Btnloguear_inicio = new javax.swing.JButton();
         Txtusuario_inicio = new javax.swing.JTextField();
-        TxtContrasenia_inicio = new javax.swing.JTextField();
+        TxtContrasenia_inicio = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,8 +89,8 @@ public class Minicio extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Txtusuario_inicio)
-                            .addComponent(TxtContrasenia_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Txtusuario_inicio, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                            .addComponent(TxtContrasenia_inicio)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Btningresar_inicio)
                         .addGap(18, 18, 18)
@@ -126,7 +127,7 @@ public class Minicio extends javax.swing.JFrame {
     private javax.swing.JButton Btncancelar_inicio;
     private javax.swing.JButton Btningresar_inicio;
     private javax.swing.JButton Btnloguear_inicio;
-    private javax.swing.JTextField TxtContrasenia_inicio;
+    private javax.swing.JPasswordField TxtContrasenia_inicio;
     private javax.swing.JTextField Txtusuario_inicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

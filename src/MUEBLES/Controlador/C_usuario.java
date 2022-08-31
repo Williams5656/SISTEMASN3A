@@ -5,6 +5,8 @@ import MUEBLES.Vista.*;
 import MUEBLES.Vista.Vista_usuario;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -20,19 +22,19 @@ public class C_usuario {
 
     public C_usuario(Vista_usuario vistaus) {
         this.vistaus = vistaus;
-        
+
         vistaus.setVisible(true);
         vistaus.setLocationRelativeTo(null);
-   
+
+        codigorol();
+        lista();
+
         vistaus.getBtnguardar().addActionListener(e -> guarda());
         vistaus.getBtnguardar().addActionListener(e -> guardarcogigo());
         vistaus.getBtnmodificar().addActionListener(e -> modifica());
         vistaus.getBtneliminar().addActionListener(e -> eliminar());
         vistaus.getBtnbuscar().addActionListener(e -> buscar());
 
-        codigorol();
-        lista();
-        
         vistaus.getTablausuario().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -84,8 +86,9 @@ public class C_usuario {
             vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo(), i, 0);
             vistaus.getTablausuario().setValueAt(lista.get(i).getCedula_persona(), i, 1);
             vistaus.getTablausuario().setValueAt(lista.get(i).getUsuario(), i, 2);
-            vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo_rol(), i, 3);
-            vistaus.getTablausuario().setValueAt(lista.get(i).getEstado(), i, 4);
+            vistaus.getTablausuario().setValueAt(lista.get(i).getContrasena(), i, 3);
+            vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo_rol(), i, 4);
+            vistaus.getTablausuario().setValueAt(lista.get(i).getEstado(), i, 5);
 
         }
     }
@@ -172,18 +175,19 @@ public class C_usuario {
             }
         }
     }
-    
-    public void codigorol(){
-        List<M_rolMD> lista  = bdrol.mostrardatos();
+
+    public void codigorol() {
+        List<M_rolMD> lista = bdrol.mostrardatos();
         for (int i = 0; i < lista.size(); i++) {
             vistaus.getCobcodigorol().addItem(lista.get(i).getNombre());
         }
     }
-    
-    public void guardarcogigo(){
-        List<M_rolMD> lista  = bdrol.mostrardatos();
+
+    public void guardarcogigo() {
+        List<M_rolMD> lista = bdrol.mostrardatos();
         int ideseleccionado = vistaus.getCobcodigorol().getSelectedIndex();
         String codigo = lista.get(ideseleccionado).getCodigo();
-        guarda();
+
     }
+
 }
