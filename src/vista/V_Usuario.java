@@ -238,7 +238,7 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         getContentPane().add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 220, 30));
 
         jLabel9.setText("ROL:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 50, 30));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 50, 30));
 
         BtnBuscarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
         getContentPane().add(BtnBuscarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 90, 40));
