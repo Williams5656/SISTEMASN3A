@@ -159,7 +159,7 @@ public class personaBD extends personaMD {
         }
 
         String sql = "update persona set "
-                + "nombre = '" + getNombres().toUpperCase() + "', "
+                + "nombres = '" + getNombres().toUpperCase() + "', "
                 + "direccion = '" + getDireccion().toUpperCase() + "', "
                 + "telefono = '" + getTelefono() + "', "
                 + "correo = '" + getCorreo().toLowerCase() + "', "
@@ -188,7 +188,7 @@ public class personaBD extends personaMD {
                 personaMD persona = new personaMD();
 
                 persona.setCedula(rs.getString("cedula"));
-                persona.setNombres(rs.getString("nombre"));
+                persona.setNombres(rs.getString("nombres"));
                 persona.setDireccion(rs.getString("direccion"));
                 persona.setTelefono(rs.getString("telefono"));
                 persona.setCorreo(rs.getString("correo"));
