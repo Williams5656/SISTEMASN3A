@@ -17,10 +17,11 @@ public class CInicio {
     public static VInicio vista;
     
     public CInicio(VInicio vista) {
+
         this.vista = vista;
         vista.setVisible(true);
-        //vista.setLocationRelativeTo(null);
-        //vista.setExtendedState(Frame.MAXIMIZED_BOTH);
+        vista.setLocationRelativeTo(null);
+        vista.setExtendedState(Frame.MAXIMIZED_BOTH);
     
     //-----------------------   MOSTRAR VENTANAS   -----------------------------
     
