@@ -34,6 +34,11 @@ public class vinicio extends javax.swing.JInternalFrame {
         txt_contraseña = new javax.swing.JPasswordField();
         btn_ingresar = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setTitle("INICIO");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("CONTRASEÑA");
