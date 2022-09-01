@@ -32,16 +32,15 @@ public class Usuario_BD extends M_usuario_MD {
                 m.setCodigo(rs.getString("codigo"));
                 m.setCedula_persona(rs.getString("cdlper"));
                 m.setUsuario(rs.getString("nomusuario"));
-                m.setContrasena(rs.getString("contrasena"));
                 m.setCodigo_rol(rs.getString("codrol"));
                 m.setEstado(rs.getString("estado"));
-
+                
                 lista.add(m);
             }
             rs.close();
             return lista;
         } catch (SQLException e) {
-            Logger.getLogger(M_usuario_MD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(M_personaMD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }

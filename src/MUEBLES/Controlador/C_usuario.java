@@ -17,7 +17,8 @@ import javax.swing.table.DefaultTableModel;
 public class C_usuario {
 
     public static Vista_usuario vistaus;
-    private Usuario_BD bdusuario = new Usuario_BD();
+    private Usuario_BD bdusuario = new Usuario_BD();    
+    
     private rol_BD bdrol = new rol_BD();
 
     public C_usuario(Vista_usuario vistaus) {
@@ -75,7 +76,7 @@ public class C_usuario {
     }
 
     public void lista() {
-        DefaultTableModel modelo;
+         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vistaus.getTablausuario().getModel();
         List<M_usuario_MD> lista = bdusuario.mostrardatos();
         int columnas = modelo.getColumnCount();
@@ -83,12 +84,12 @@ public class C_usuario {
             modelo.removeRow(j);
         }
         for (int i = 0; i < lista.size(); i++) {
+            modelo.addRow(new Object[columnas]);
             vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo(), i, 0);
             vistaus.getTablausuario().setValueAt(lista.get(i).getCedula_persona(), i, 1);
             vistaus.getTablausuario().setValueAt(lista.get(i).getUsuario(), i, 2);
-            vistaus.getTablausuario().setValueAt(lista.get(i).getContrasena(), i, 3);
-            vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo_rol(), i, 4);
-            vistaus.getTablausuario().setValueAt(lista.get(i).getEstado(), i, 5);
+            vistaus.getTablausuario().setValueAt(lista.get(i).getCodigo_rol(), i, 3);
+            vistaus.getTablausuario().setValueAt(lista.get(i).getEstado(), i, 4);
 
         }
     }
