@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Farmacia.vista;
+package Vista;
 
 import com.toedter.calendar.JDateChooser;
-import static java.awt.Frame.MAXIMIZED_BOTH;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -17,31 +16,13 @@ import javax.swing.JTextField;
  *
  * @author VICO5
  */
-public class v_persona extends javax.swing.JInternalFrame {
+public class vpersona extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form v_persona
+     * Creates new form vpersona
      */
-    public v_persona() {
+    public vpersona() {
         initComponents();
-        this.setVisible(true);
-        
-    }
-
-    public JDateChooser getCalendar_fecha() {
-        return Calendar_fecha;
-    }
-
-    public void setCalendar_fecha(JDateChooser Calendar_fecha) {
-        this.Calendar_fecha = Calendar_fecha;
-    }
-
-    public JButton getBtn_boto() {
-        return btn_boto;
-    }
-
-    public void setBtn_boto(JButton btn_boto) {
-        this.btn_boto = btn_boto;
     }
 
     public JButton getBtn_buscar() {
@@ -58,6 +39,14 @@ public class v_persona extends javax.swing.JInternalFrame {
 
     public void setBtn_eliminar(JButton btn_eliminar) {
         this.btn_eliminar = btn_eliminar;
+    }
+
+    public JButton getBtn_foto() {
+        return btn_foto;
+    }
+
+    public void setBtn_foto(JButton btn_foto) {
+        this.btn_foto = btn_foto;
     }
 
     public JButton getBtn_guardar() {
@@ -82,6 +71,14 @@ public class v_persona extends javax.swing.JInternalFrame {
 
     public void setBtn_nuevo(JButton btn_nuevo) {
         this.btn_nuevo = btn_nuevo;
+    }
+
+    public JLabel getFoto() {
+        return foto;
+    }
+
+    public void setFoto(JLabel foto) {
+        this.foto = foto;
     }
 
     public JLabel getjLabel1() {
@@ -140,28 +137,12 @@ public class v_persona extends javax.swing.JInternalFrame {
         this.jLabel7 = jLabel7;
     }
 
-    public JLabel getjLabel8() {
-        return jLabel8;
-    }
-
-    public void setjLabel8(JLabel jLabel8) {
-        this.jLabel8 = jLabel8;
-    }
-
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
 
     public void setjScrollPane1(JScrollPane jScrollPane1) {
         this.jScrollPane1 = jScrollPane1;
-    }
-
-    public JLabel getLb_imagen() {
-        return lb_imagen;
-    }
-
-    public void setLb_imagen(JLabel lb_imagen) {
-        this.lb_imagen = lb_imagen;
     }
 
     public JTable getTabla_persona() {
@@ -180,20 +161,20 @@ public class v_persona extends javax.swing.JInternalFrame {
         this.txt_buscar = txt_buscar;
     }
 
+    public JDateChooser getTxt_calendar() {
+        return txt_calendar;
+    }
+
+    public void setTxt_calendar(JDateChooser txt_calendar) {
+        this.txt_calendar = txt_calendar;
+    }
+
     public JTextField getTxt_cedula() {
         return txt_cedula;
     }
 
     public void setTxt_cedula(JTextField txt_cedula) {
         this.txt_cedula = txt_cedula;
-    }
-
-    public JTextField getTxt_cell() {
-        return txt_cell;
-    }
-
-    public void setTxt_cell(JTextField txt_cell) {
-        this.txt_cell = txt_cell;
     }
 
     public JTextField getTxt_correo() {
@@ -212,16 +193,22 @@ public class v_persona extends javax.swing.JInternalFrame {
         this.txt_direccion = txt_direccion;
     }
 
-    public JTextField getTxt_nombre_apellido() {
-        return txt_nombre_apellido;
+    public JTextField getTxt_nombres() {
+        return txt_nombres;
     }
 
-    public void setTxt_nombre_apellido(JTextField txt_nombre_apellido) {
-        this.txt_nombre_apellido = txt_nombre_apellido;
+    public void setTxt_nombres(JTextField txt_nombres) {
+        this.txt_nombres = txt_nombres;
     }
-    public static void main(String[] args) {
-        
+
+    public JTextField getTxt_telefono() {
+        return txt_telefono;
     }
+
+    public void setTxt_telefono(JTextField txt_telefono) {
+        this.txt_telefono = txt_telefono;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -239,110 +226,104 @@ public class v_persona extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txt_nombre_apellido = new javax.swing.JTextField();
-        txt_cedula = new javax.swing.JTextField();
-        txt_direccion = new javax.swing.JTextField();
-        txt_cell = new javax.swing.JTextField();
         txt_correo = new javax.swing.JTextField();
-        Calendar_fecha = new com.toedter.calendar.JDateChooser();
+        txt_cedula = new javax.swing.JTextField();
+        txt_nombres = new javax.swing.JTextField();
+        txt_telefono = new javax.swing.JTextField();
+        txt_direccion = new javax.swing.JTextField();
+        txt_calendar = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_persona = new javax.swing.JTable();
-        btn_nuevo = new javax.swing.JButton();
         btn_guardar = new javax.swing.JButton();
         btn_modificar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
-        btn_boto = new javax.swing.JButton();
+        btn_nuevo = new javax.swing.JButton();
         btn_buscar = new javax.swing.JButton();
         txt_buscar = new javax.swing.JTextField();
-        lb_imagen = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        foto = new javax.swing.JLabel();
+        btn_foto = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("REGISTRO DE PERSONA\n");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("INGRESAR FECHA DE NAC:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+        jLabel1.setText("FECHA DE NAC:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
-        jLabel2.setText("INGRESAR CEDULA:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        jLabel2.setText("REGISTRO DE PERSONA");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
 
-        jLabel3.setText("INGRESAR APELLIDOS Y NOMBRES:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 20));
+        jLabel3.setText("CEDULA:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jLabel4.setText("INGRESAR DIRECCION DE DOMICILIO:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, -1));
+        jLabel4.setText("NOMBRES COMPLETOS:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
-        jLabel5.setText("INGRESAR CELULAR O TELEFONO:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, -1));
+        jLabel5.setText("CELULAR O TELEFONO:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
-        jLabel6.setText("INGRESAR CORREO:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, -1, -1));
+        jLabel6.setText("DIRECCION:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setText("DATOS DE PERSONA");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 20));
-        getContentPane().add(txt_nombre_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 270, -1));
-        getContentPane().add(txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 270, -1));
-        getContentPane().add(txt_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 270, -1));
-        getContentPane().add(txt_cell, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 270, -1));
-        getContentPane().add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 270, -1));
-        getContentPane().add(Calendar_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 270, -1));
+        jLabel7.setText("CORREO:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
+        getContentPane().add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 150, -1));
+        getContentPane().add(txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 150, -1));
+        getContentPane().add(txt_nombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 150, -1));
+        getContentPane().add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 150, -1));
+        getContentPane().add(txt_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 150, -1));
+        getContentPane().add(txt_calendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 140, -1));
 
         tabla_persona.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-
+                "cedula", "nombres", "telefono", "direccion", "correo", "fechanac", "foto"
             }
         ));
         jScrollPane1.setViewportView(tabla_persona);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 460, 180));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 560, 150));
 
-        btn_nuevo.setText("NUEVO");
-        getContentPane().add(btn_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+        btn_guardar.setText("guardar");
+        getContentPane().add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
-        btn_guardar.setText("GUARDAR");
-        getContentPane().add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
+        btn_modificar.setText("modificar");
+        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, -1, -1));
 
-        btn_modificar.setText("MODIFICAR");
-        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
+        btn_eliminar.setText("eliminar");
+        getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
 
-        btn_eliminar.setText("ELIMINAR");
-        getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
+        btn_nuevo.setText("nuevo");
+        getContentPane().add(btn_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
-        btn_boto.setText("SUBIR IMAGEN");
-        getContentPane().add(btn_boto, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, 120, -1));
+        btn_buscar.setText("buscar");
+        getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
+        getContentPane().add(txt_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 90, -1));
 
-        btn_buscar.setText("BUSCAR");
-        getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, -1));
-        getContentPane().add(txt_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 130, 20));
+        foto.setText("foto");
+        getContentPane().add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 180, 160));
 
-        lb_imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia_imagenes/uploadpicture_122309.png"))); // NOI18N
-        getContentPane().add(lb_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 90, 80));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Farmacia_imagenes/healthcare-medical-technology-and-science-wallpaper-template-illustration-vector.jpg"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 420));
+        btn_foto.setText("foto");
+        getContentPane().add(btn_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser Calendar_fecha;
-    private javax.swing.JButton btn_boto;
     private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_eliminar;
+    private javax.swing.JButton btn_foto;
     private javax.swing.JButton btn_guardar;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_nuevo;
+    private javax.swing.JLabel foto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -350,17 +331,14 @@ public class v_persona extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lb_imagen;
     private javax.swing.JTable tabla_persona;
     private javax.swing.JTextField txt_buscar;
+    private com.toedter.calendar.JDateChooser txt_calendar;
     private javax.swing.JTextField txt_cedula;
-    private javax.swing.JTextField txt_cell;
     private javax.swing.JTextField txt_correo;
     private javax.swing.JTextField txt_direccion;
-    private javax.swing.JTextField txt_nombre_apellido;
+    private javax.swing.JTextField txt_nombres;
+    private javax.swing.JTextField txt_telefono;
     // End of variables declaration//GEN-END:variables
-
-   
 }

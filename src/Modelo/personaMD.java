@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Farmacia.modelo;
+package Modelo;
 
 import java.awt.Image;
 
@@ -11,28 +11,28 @@ import java.awt.Image;
  *
  * @author VICO5
  */
-public class persona_MD {
-    private String cedula;
-    private String nombre_apellido;
-    private String direccion;
-    private String telefono;
-    private String correo;
-    private String fecha_nacimiento;
-    private String buscar;
-    private Image foto;
+public class personaMD {
+    String cedula;
+    String nombres;
+    String direccion;
+    String telefono;
+    String correo;
+    String fechanac;
+    String buscar;
+    Image foto;
 
-    public persona_MD() {
-    }
-
-    public persona_MD(String cedula, String nombre_apellido, String direccion, String telefono, String correo, String fecha_nacimiento, String buscar, Image foto) {
+    public personaMD(String cedula, String nombres, String direccion, String telefono, String correo, String fechanac, String buscar, Image foto) {
         this.cedula = cedula;
-        this.nombre_apellido = nombre_apellido;
+        this.nombres = nombres;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correo = correo;
-        this.fecha_nacimiento = fecha_nacimiento;
+        this.fechanac = fechanac;
         this.buscar = buscar;
         this.foto = foto;
+    }
+
+    public personaMD() {
     }
 
     public String getCedula() {
@@ -43,12 +43,12 @@ public class persona_MD {
         this.cedula = cedula;
     }
 
-    public String getNombre_apellido() {
-        return nombre_apellido;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre_apellido(String nombre_apellido) {
-        this.nombre_apellido = nombre_apellido;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getDireccion() {
@@ -75,12 +75,12 @@ public class persona_MD {
         this.correo = correo;
     }
 
-    public String getFecha_nacimiento() {
-        return fecha_nacimiento;
+    public String getFechanac() {
+        return fechanac;
     }
 
-    public void setFecha_nacimiento(String fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setFechanac(String fechanac) {
+        this.fechanac = fechanac;
     }
 
     public String getBuscar() {
@@ -98,10 +98,5 @@ public class persona_MD {
     public void setFoto(Image foto) {
         this.foto = foto;
     }
-
-   
-    
-    
-       
     
 }

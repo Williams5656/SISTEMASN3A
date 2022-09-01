@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Farmacia.inicio;
-import Farmacia.controlador.*;
-import Farmacia.modelo.*;
-import Farmacia.vista.*;
+package Main;
+
+import Controlador.cprincipal;
+import Vista.vprincipal;
 
 /**
  *
  * @author VICO5
  */
 public class main {
-     public static void main(String[] args) {
-       v_principal Vista = new v_principal();
-          c_principal Inicio = new c_principal(Vista);
+    public static void main(String[] args) {
+        vprincipal vista = new vprincipal();
+        cprincipal inicio = new cprincipal(vista);
     }
+    
     
 }

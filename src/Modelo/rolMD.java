@@ -3,34 +3,42 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Farmacia.modelo;
+package Modelo;
 
 /**
  *
  * @author VICO5
  */
-public class roles_MD {
-    private String codigo;
-    private String descripcion;
-    private String estado;
-    private String nombres;
+public class rolMD {
+    int codigo;
+    String nombre;
+    String descripcion;
+    String estado;
 
-    public roles_MD() {
-    }
-
-    public roles_MD(String codigo, String descripcion, String estado, String nombres) {
+    public rolMD(int codigo, String nombre, String descripcion, String estado) {
         this.codigo = codigo;
+        this.nombre = nombre;
         this.descripcion = descripcion;
         this.estado = estado;
-        this.nombres = nombres;
     }
 
-    public String getCodigo() {
+    public rolMD() {
+    }
+
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
@@ -48,14 +56,5 @@ public class roles_MD {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-    
     
 }

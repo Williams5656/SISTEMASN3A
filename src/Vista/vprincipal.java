@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Farmacia.vista;
+package Vista;
 
 import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
@@ -14,15 +14,13 @@ import javax.swing.JMenuItem;
  *
  * @author VICO5
  */
-public class v_principal extends javax.swing.JFrame {
+public class vprincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form v_principal
+     * Creates new form vprincipal
      */
-    public v_principal() {
+    public vprincipal() {
         initComponents();
-        
-        this.setLocationRelativeTo(null);
     }
 
     public JMenuItem getBtn_persona() {
@@ -49,12 +47,20 @@ public class v_principal extends javax.swing.JFrame {
         this.btn_salir = btn_salir;
     }
 
-    public JDesktopPane getjDesktopPane1() {
-        return jDesktopPane1;
+    public JMenuItem getBtn_usuario() {
+        return btn_usuario;
     }
 
-    public void setjDesktopPane1(JDesktopPane jDesktopPane1) {
-        this.jDesktopPane1 = jDesktopPane1;
+    public void setBtn_usuario(JMenuItem btn_usuario) {
+        this.btn_usuario = btn_usuario;
+    }
+
+    public JDesktopPane getEscritorio() {
+        return escritorio;
+    }
+
+    public void setEscritorio(JDesktopPane escritorio) {
+        this.escritorio = escritorio;
     }
 
     public JMenu getjMenu1() {
@@ -71,6 +77,22 @@ public class v_principal extends javax.swing.JFrame {
 
     public void setjMenu2(JMenu jMenu2) {
         this.jMenu2 = jMenu2;
+    }
+
+    public JMenu getjMenu3() {
+        return jMenu3;
+    }
+
+    public void setjMenu3(JMenu jMenu3) {
+        this.jMenu3 = jMenu3;
+    }
+
+    public JMenu getjMenu4() {
+        return jMenu4;
+    }
+
+    public void setjMenu4(JMenu jMenu4) {
+        this.jMenu4 = jMenu4;
     }
 
     public JMenuBar getjMenuBar1() {
@@ -91,73 +113,73 @@ public class v_principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btn_persona = new javax.swing.JMenuItem();
-        btn_rol = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        btn_usuario = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        btn_rol = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
         btn_salir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 480));
+        jMenu1.setText("Persona");
 
-        jMenu1.setText("ARCHIVO");
-
-        btn_persona.setText("Ingreso Persona");
-        btn_persona.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_personaActionPerformed(evt);
-            }
-        });
+        btn_persona.setText("Persona");
         jMenu1.add(btn_persona);
-
-        btn_rol.setText("Ingreso Roles");
-        btn_rol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_rolActionPerformed(evt);
-            }
-        });
-        jMenu1.add(btn_rol);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("SALIR");
+        jMenu2.setText("Usuario");
 
-        btn_salir.setText("Salir");
-        jMenu2.add(btn_salir);
+        btn_usuario.setText("Usuario");
+        jMenu2.add(btn_usuario);
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setText("Rol");
+
+        btn_rol.setText("Rol");
+        jMenu3.add(btn_rol);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Salir");
+
+        btn_salir.setText("Salir");
+        jMenu4.add(btn_salir);
+
+        jMenuBar1.add(jMenu4);
+
         setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(escritorio)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_rolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rolActionPerformed
-        v_roles me = new v_roles();
-        me.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btn_rolActionPerformed
-
-    private void btn_personaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_personaActionPerformed
-        v_persona me = new v_persona();
-        me.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btn_personaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,20 +198,20 @@ public class v_principal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(v_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(v_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(v_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(v_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new v_principal().setVisible(true);
+                new vprincipal().setVisible(true);
             }
         });
     }
@@ -198,9 +220,12 @@ public class v_principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem btn_persona;
     private javax.swing.JMenuItem btn_rol;
     private javax.swing.JMenuItem btn_salir;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenuItem btn_usuario;
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
