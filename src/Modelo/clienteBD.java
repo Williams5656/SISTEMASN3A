@@ -170,40 +170,37 @@ public class clienteBD extends clienteMD{
         }
     }
 
-    public List<personaMD> obtenerDatos(String cedula) {
-        List<personaMD> lista = new ArrayList<personaMD>();
+    public List<clienteMD> obtenerDatos(String id_producto) {
+        List<clienteMD> lista = new ArrayList<clienteMD>();
         try {
             
             String sql
                     = "select * from cliente "
-                    + "where cedula ILIKE '%" + cedula + "%'";
+                    + "where cedula ILIKE '%" + id_producto + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                personaMD persona = new personaMD();
+               clienteMD cliente = new clienteMD();
 
-                persona.setCedula(rs.getString("cedul"));
-                persona.setNombres(rs.getString("nombres"));
-                persona.setDireccion(rs.getString("direccion"));
-                persona.setTelefono(rs.getString("telefono"));
-                persona.setCorreo(rs.getString("correo"));
-                persona.setFechanac(rs.getString("fecha_nacimiento"));
-
+                cliente.setId_producto(rs.getString("id_producto"));
+                cliente.setNombre_pro(rs.getString("nombre_pro"));
+                cliente.setDescripcion_pro(rs.getString("descripcion_pro"));
+               
                 byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {
                     try {
                         is = Base64.decode(is, 0, rs.getBytes("foto").length);
 //                    BufferedImage bi=Base64.decode( ImageIO.read(is));
-                        persona.setFoto(getImage(is, false));
+                        cliente.setFoto(getImage(is, false));
                     } catch (Exception ex) {
-                        persona.setFoto(null);
+                        cliente.setFoto(null);
                         Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
-                    persona.setFoto(null);
+                    cliente.setFoto(null);
                 }
 
-                lista.add(persona);
+                lista.add(cliente);
             }
 
             rs.close();
@@ -214,8 +211,8 @@ public class clienteBD extends clienteMD{
         }
     }
 
-    public boolean eliminar(String cedula) {
-        String nsql = "Delete from persona where cedula = '" + cedula + "'";
+    public boolean eliminar(String id_producto) {
+        String nsql = "Delete from cliente where id_producto= '" + id_producto+ "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
         } else {
