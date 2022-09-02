@@ -12,43 +12,43 @@ import java.awt.Image;
  * @author VICO5
  */
 public class clienteMD {
-    String id_producto;
-    String nombre_pro;
-    String descripcion_pro;
+    String cedula;
+    String nombre_apellido;
+    String descripcion_cli;
     Image foto;
 
     public clienteMD() {
     }
 
-    public clienteMD(String id_producto, String nombre_pro, String descripcion_pro, Image foto) {
-        this.id_producto = id_producto;
-        this.nombre_pro = nombre_pro;
-        this.descripcion_pro = descripcion_pro;
+    public clienteMD(String cedula, String nombre_apellido, String descripcion_cli, Image foto) {
+        this.cedula = cedula;
+        this.nombre_apellido = nombre_apellido;
+        this.descripcion_cli = descripcion_cli;
         this.foto = foto;
     }
 
-    public String getId_producto() {
-        return id_producto;
+    public String getCedula() {
+        return cedula;
     }
 
-    public void setId_producto(String id_producto) {
-        this.id_producto = id_producto;
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
-    public String getNombre_pro() {
-        return nombre_pro;
+    public String getNombre_apellido() {
+        return nombre_apellido;
     }
 
-    public void setNombre_pro(String nombre_pro) {
-        this.nombre_pro = nombre_pro;
+    public void setNombre_apellido(String nombre_apellido) {
+        this.nombre_apellido = nombre_apellido;
     }
 
-    public String getDescripcion_pro() {
-        return descripcion_pro;
+    public String getDescripcion_cli() {
+        return descripcion_cli;
     }
 
-    public void setDescripcion_pro(String descripcion_pro) {
-        this.descripcion_pro = descripcion_pro;
+    public void setDescripcion_cli(String descripcion_cli) {
+        this.descripcion_cli = descripcion_cli;
     }
 
     public Image getFoto() {
@@ -58,6 +58,6 @@ public class clienteMD {
     public void setFoto(Image foto) {
         this.foto = foto;
     }
-    
+
     
 }

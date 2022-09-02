@@ -36,9 +36,11 @@ public class clienteBD extends clienteMD{
     public clienteBD() {
     }
 
-    public clienteBD(String id_producto, String nombre_pro, String descripcion_pro, Image foto) {
-        super(id_producto, nombre_pro, descripcion_pro, foto);
+    public clienteBD(String cedula, String nombre_apellido, String descripcion_cli, Image foto) {
+        super(cedula, nombre_apellido, descripcion_cli, foto);
     }
+
+    
 
     
 
@@ -82,9 +84,9 @@ public class clienteBD extends clienteMD{
             while (rs.next()) {
 
                 clienteMD cliente = new clienteMD();
-                cliente.setId_producto(rs.getString("id_producto"));
-                cliente.setNombre_pro(rs.getString("nombre_pro"));
-                cliente.setDescripcion_pro(rs.getString("descripcion_pro"));
+                cliente.setCedula(rs.getString("cedula"));
+                cliente.setNombre_apellido(rs.getString("nombre_apellido"));
+                cliente.setDescripcion_cli(rs.getString("descripcion_cli"));
                
 
                 byte[] is;
@@ -126,11 +128,11 @@ public class clienteBD extends clienteMD{
             Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String sql = "INSERT INTO cliente(id_producto, nombre_pro, descripcion_pro, foto)"
+        String sql = "INSERT INTO cliente(cedula, nombre_apellido, descripcion_cli, foto)"
                 + "VALUES ('"
-                + getId_producto()+ "','"
-                + getNombre_pro().toUpperCase() + "','"
-                + getDescripcion_pro().toUpperCase() + "','"
+                + getCedula()+ "','"
+                + getNombre_apellido().toUpperCase() + "','"
+                + getDescripcion_cli().toUpperCase() + "','"
                 + ef + "')";
 
         if (conectar.noQuery(sql) == null) {
@@ -142,7 +144,7 @@ public class clienteBD extends clienteMD{
         }
     }
 
-    public boolean modificar(String id_producto) {
+    public boolean modificar(String cedula) {
 
         String ef = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -156,10 +158,10 @@ public class clienteBD extends clienteMD{
         }
 
         String sql = "update cliente set "
-                + "nombre_pro = '" + getNombre_pro().toUpperCase() + "', "
-                + "descripcion_pro = '" + getDescripcion_pro().toUpperCase() + "', "
+                + "nombre_apellido = '" + getNombre_apellido().toUpperCase() + "', "
+                + "descripcion_cli = '" + getDescripcion_cli().toUpperCase() + "', "
                 + "foto = '" + ef + "' "
-                + "where id_producto = '" + id_producto + "'";
+                + "where cedula = '" + cedula + "'";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -181,9 +183,9 @@ public class clienteBD extends clienteMD{
             while (rs.next()) {
                clienteMD cliente = new clienteMD();
 
-                cliente.setId_producto(rs.getString("id_producto"));
-                cliente.setNombre_pro(rs.getString("nombre_pro"));
-                cliente.setDescripcion_pro(rs.getString("descripcion_pro"));
+                cliente.setCedula(rs.getString("cedula"));
+                cliente.setNombre_apellido(rs.getString("nombre_apellido"));
+                cliente.setDescripcion_cli(rs.getString("descripcion_cli"));
                
                 byte[] is;
                 is = rs.getBytes("foto");
@@ -212,7 +214,7 @@ public class clienteBD extends clienteMD{
     }
 
     public boolean eliminar(String id_producto) {
-        String nsql = "Delete from cliente where id_producto= '" + id_producto+ "'";
+        String nsql = "Delete from cliente where cedula= '" + id_producto+ "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
         } else {

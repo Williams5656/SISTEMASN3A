@@ -24,6 +24,15 @@ public class vcliente extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnfoto() {
+        return btnfoto;
+    }
+
+    public void setBtnfoto(JButton btnfoto) {
+        this.btnfoto = btnfoto;
+    }
+    
+
     public JButton getBtnbuscar() {
         return Btnbuscar;
     }
@@ -198,6 +207,7 @@ public class vcliente extends javax.swing.JInternalFrame {
         Btnimprimirc = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_cliente = new javax.swing.JTable();
+        btnfoto = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -226,7 +236,7 @@ public class vcliente extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         fot.setText("foto");
-        getContentPane().add(fot, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 90, 90));
+        getContentPane().add(fot, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 90, 90));
 
         Btnnuevo.setText("Nuevo");
         getContentPane().add(Btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, -1, -1));
@@ -262,6 +272,9 @@ public class vcliente extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 570, 260));
 
+        btnfoto.setText("foto");
+        getContentPane().add(btnfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -273,6 +286,7 @@ public class vcliente extends javax.swing.JInternalFrame {
     private javax.swing.JButton Btnimprimirc;
     private javax.swing.JButton Btnmodificar;
     private javax.swing.JButton Btnnuevo;
+    private javax.swing.JButton btnfoto;
     private javax.swing.JLabel fot;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

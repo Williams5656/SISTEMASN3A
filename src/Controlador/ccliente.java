@@ -42,81 +42,70 @@ public class ccliente {
         vista.getBtnguardar().addActionListener(e -> guardar());
         vista.getBtnmodificar().addActionListener(e -> modificar());
         vista.getBtneliminar().addActionListener(e -> eliminar());
-        vista.getBTnfoto().addActionListener(e -> foto());
+        vista.getBtnfoto().addActionListener(e -> foto());
         vista.getTxtbuscar().addKeyListener(new KeyAdapter() {
             public void keyReleased(KeyEvent evt) {
                 buscar();
             }
         });
 
-        vista.getTabla_persona().addMouseListener(new MouseAdapter() {
+        vista.getTabla_cliente().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionar();
             }
         });
 
-        vista.getTxt_cedula().setEnabled(false);
-        vista.getTxt_nombres().setEnabled(false);
-        vista.getTxt_direccion().setEnabled(false);
-        vista.getTxt_telefono().setEnabled(false);
-        vista.getTxt_correo().setEnabled(false);
-        vista.getTxt_calendar().setEnabled(false);
-        vista.getBtn_foto().setEnabled(false);
-        vista.getBtn_guardar().setEnabled(false);
-        vista.getBtn_modificar().setEnabled(false);
-        vista.getBtn_eliminar().setEnabled(false);
+        vista.getTxtcedula().setEnabled(false);
+        vista.getTxtnomyap().setEnabled(false);
+        vista.getTxtdescrip().setEnabled(false);
+        vista.getBtnfoto().setEnabled(false);
+        vista.getBtnguardar().setEnabled(false);
+        vista.getBtnmodificar().setEnabled(false);
+        vista.getBtneliminar().setEnabled(false);
     }
 
     private void lista() {
         DefaultTableModel modelo;
-        modelo = (DefaultTableModel) vista.getTabla_persona().getModel();
+        modelo = (DefaultTableModel) vista.getTabla_cliente().getModel();
 
-        List<personaMD> lista = bdpersona.mostrardatos();
+        List<clienteMD> lista = bdpersona.mostrardatos();
         int columnas = modelo.getColumnCount();
 
-        for (int j = vista.getTabla_persona().getRowCount() - 1; j >= 0; j--) {
+        for (int j = vista.getTabla_cliente().getRowCount() - 1; j >= 0; j--) {
             modelo.removeRow(j);
         }
 
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
-            vista.getTabla_persona().setValueAt(lista.get(i).getCedula(), i, 0);
-            vista.getTabla_persona().setValueAt(lista.get(i).getNombres(), i, 1);
-            vista.getTabla_persona().setValueAt(lista.get(i).getDireccion(), i, 2);
-            vista.getTabla_persona().setValueAt(lista.get(i).getTelefono(), i, 3);
-            vista.getTabla_persona().setValueAt(lista.get(i).getCorreo(), i, 4);
-            vista.getTabla_persona().setValueAt(lista.get(i).getFechanac(), i, 5);
-            vista.getTabla_persona().setValueAt(lista.get(i).getFoto(), i, 6);
+            vista.getTabla_cliente().setValueAt(lista.get(i).getCedula(), i, 0);
+            vista.getTabla_cliente().setValueAt(lista.get(i).getNombre_apellido(), i, 1);
+            vista.getTabla_cliente().setValueAt(lista.get(i).getDescripcion_cli(), i, 2);
+            vista.getTabla_cliente().setValueAt(lista.get(i).getFoto(), i, 3);
         }
 
     }
 
     private void nuevo() {
         limpiar();
-        vista.getTxt_cedula().setEnabled(true);
-        vista.getTxt_nombres().setEnabled(true);
-        vista.getTxt_direccion().setEnabled(true);
-        vista.getTxt_telefono().setEnabled(true);
-        vista.getTxt_correo().setEnabled(true);
-        vista.getTxt_calendar().setEnabled(true);
-        vista.getBtn_foto().setEnabled(true);
-        vista.getBtn_guardar().setEnabled(true);
-        vista.getBtn_modificar().setEnabled(true);
-        vista.getBtn_eliminar().setEnabled(true);
+        vista.getTxtcedula().setEnabled(true);
+        vista.getTxtnomyap().setEnabled(true);
+        vista.getTxtdescrip().setEnabled(true);
+        vista.getBtnfoto().setEnabled(true);
+        vista.getBtnguardar().setEnabled(true);
+        vista.getBtnmodificar().setEnabled(true);
+        vista.getBtneliminar().setEnabled(true);
 
     }
 
     private void guardar() {
-        SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
+       // SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
 
-        bdpersona.setCedula(vista.getTxt_cedula().getText());
-        bdpersona.setNombres(vista.getTxt_nombres().getText());
-        bdpersona.setDireccion(vista.getTxt_direccion().getText());
-        bdpersona.setTelefono(vista.getTxt_telefono().getText());
-        bdpersona.setCorreo(vista.getTxt_correo().getText());
-        bdpersona.setFechanac(f.format(vista.getTxt_calendar().getDate()));
-        ImageIcon ic = (ImageIcon) vista.getFoto().getIcon();
+        bdpersona.setCedula(vista.getTxtcedula().getText());
+        bdpersona.setNombre_apellido(vista.getTxtnomyap().getText());
+        bdpersona.setDescripcion_cli(vista.getTxtdescrip().getText());
+        //bdpersona.setFechanac(f.format(vista.getTxt_calendar().getDate()));
+        ImageIcon ic = (ImageIcon) vista.getFot().getIcon();
         bdpersona.setFoto(ic.getImage());
 
         if (bdpersona.insertar()) {
@@ -130,20 +119,18 @@ public class ccliente {
     }
 
     private void modificar() {
-        SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
+       // SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
 
-        bdpersona.setCedula(vista.getTxt_cedula().getText());
-        bdpersona.setNombres(vista.getTxt_nombres().getText());
-        bdpersona.setDireccion(vista.getTxt_direccion().getText());
-        bdpersona.setTelefono(vista.getTxt_telefono().getText());
-        bdpersona.setCorreo(vista.getTxt_correo().getText());
-        bdpersona.setFechanac(f.format(vista.getTxt_calendar().getDate()));
-        ImageIcon ic = (ImageIcon) vista.getFoto().getIcon();
+        bdpersona.setCedula(vista.getTxtcedula().getText());
+        bdpersona.setNombre_apellido(vista.getTxtnomyap().getText());
+        bdpersona.setDescripcion_cli(vista.getTxtdescrip().getText());
+        //bdpersona.setFechanac(f.format(vista.getTxt_calendar().getDate()));
+        ImageIcon ic = (ImageIcon) vista.getFot().getIcon();
         bdpersona.setFoto(ic.getImage());
 
         int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Modificar?");
         if (respuesta == 0) {
-            if (bdpersona.modificar(vista.getTxt_cedula().getText())) {
+            if (bdpersona.modificar(vista.getTxtcedula().getText())) {
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
                 lista();
                 limpiar();
@@ -153,10 +140,10 @@ public class ccliente {
     }
 
     private void eliminar() {
-        bdpersona.setCedula(vista.getTxt_cedula().getText());
-        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este uduario " + vista.getTxt_cedula().getText());
+        bdpersona.setCedula(vista.getTxtcedula().getText());
+        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este uduario " + vista.getTxtcedula().getText());
         if (respuesta == 0) {
-            if (bdpersona.eliminar(vista.getTxt_cedula().getText())) {
+            if (bdpersona.eliminar(vista.getTxtcedula().getText())) {
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
                 lista();
                 limpiar();
@@ -165,15 +152,15 @@ public class ccliente {
     }
 
     private void foto() {
-        vista.getFoto().setIcon(null);
+        vista.getFot().setIcon(null);
         JFileChooser j = new JFileChooser();
         j.setFileSelectionMode(JFileChooser.FILES_ONLY);
         int estado = j.showOpenDialog(null);
         if (estado == JFileChooser.APPROVE_OPTION) {
             try {
-                Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(vista.getFoto().getWidth(), vista.getFoto().getHeight(), Image.SCALE_DEFAULT);
-                vista.getFoto().setIcon(new ImageIcon(icono));
-                vista.getFoto().updateUI();
+                Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(vista.getFot().getWidth(), vista.getFot().getHeight(), Image.SCALE_DEFAULT);
+                vista.getFot().setIcon(new ImageIcon(icono));
+                vista.getFot().updateUI();
             } catch (IOException ex) {
                 Logger.getLogger(cpersona.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -182,28 +169,25 @@ public class ccliente {
     }
 
     private void buscar() {
-        if (vista.getTxt_buscar().getText().equals("")) {
+        if (vista.getTxtbuscar().getText().equals("")) {
             lista();
         } else {
             DefaultTableModel modelo;
-            modelo = (DefaultTableModel) vista.getTabla_persona().getModel();
+            modelo = (DefaultTableModel) vista.getTabla_cliente().getModel();
 
-            List<personaMD> lista = bdpersona.obtenerDatos(vista.getTxt_buscar().getText());
+            List<clienteMD> lista = bdpersona.obtenerDatos(vista.getTxtbuscar().getText());
             int columnas = modelo.getColumnCount();
 
-            for (int j = vista.getTabla_persona().getRowCount() - 1; j >= 0; j--) {
+            for (int j = vista.getTabla_cliente().getRowCount() - 1; j >= 0; j--) {
                 modelo.removeRow(j);
             }
 
             for (int i = 0; i < lista.size(); i++) {
                 modelo.addRow(new Object[columnas]);
-                vista.getTabla_persona().setValueAt(lista.get(i).getCedula(), i, 0);
-                vista.getTabla_persona().setValueAt(lista.get(i).getNombres(), i, 1);
-                vista.getTabla_persona().setValueAt(lista.get(i).getDireccion(), i, 2);
-                vista.getTabla_persona().setValueAt(lista.get(i).getTelefono(), i, 3);
-                vista.getTabla_persona().setValueAt(lista.get(i).getCorreo(), i, 4);
-                vista.getTabla_persona().setValueAt(lista.get(i).getFechanac(), i, 5);
-                vista.getTabla_persona().setValueAt(lista.get(i).getFoto(), i, 6);
+                vista.getTabla_cliente().setValueAt(lista.get(i).getCedula(), i, 0);
+                vista.getTabla_cliente().setValueAt(lista.get(i).getNombre_apellido(), i, 1);
+                vista.getTabla_cliente().setValueAt(lista.get(i).getDescripcion_cli(), i, 2);
+                vista.getTabla_cliente().setValueAt(lista.get(i).getFoto(), i, 6);
                 
             }
         }
@@ -211,35 +195,28 @@ public class ccliente {
     }
 
     private void seleccionar() {
-        vista.getTxt_cedula().setEnabled(true);
-        vista.getTxt_nombres().setEnabled(true);
-        vista.getTxt_direccion().setEnabled(true);
-        vista.getTxt_telefono().setEnabled(true);
-        vista.getTxt_correo().setEnabled(true);
-        vista.getTxt_calendar().setEnabled(true);
-        vista.getBtn_foto().setEnabled(true);
-        vista.getBtn_guardar().setEnabled(false);
-        vista.getBtn_modificar().setEnabled(true);
-        vista.getBtn_eliminar().setEnabled(true);
-        vista.getTxt_buscar().setText("");
+        vista.getTxtcedula().setEnabled(true);
+        vista.getTxtnomyap().setEnabled(true);
+        vista.getTxtdescrip().setEnabled(true);
+        vista.getBtnfoto().setEnabled(true);
+        vista.getBtnguardar().setEnabled(false);
+        vista.getBtnmodificar().setEnabled(true);
+        vista.getBtneliminar().setEnabled(true);
+        vista.getTxtbuscar().setText("");
 
         DefaultTableModel modelo;
-        modelo = (DefaultTableModel) vista.getTabla_persona().getModel();
-        String cedula = (String) modelo.getValueAt(vista.getTabla_persona().getSelectedRow(), 0);
+        modelo = (DefaultTableModel) vista.getTabla_cliente().getModel();
+        String cedula = (String) modelo.getValueAt(vista.getTabla_cliente().getSelectedRow(), 0);
 
-        List<personaMD> lista = bdpersona.obtenerDatos(cedula);
+        List<clienteMD> lista = bdpersona.obtenerDatos(cedula);
 
         bdpersona.setCedula(lista.get(0).getCedula());
-        vista.getTxt_cedula().setText(bdpersona.getCedula());
-        bdpersona.setNombres(lista.get(0).getNombres());
-        vista.getTxt_nombres().setText(bdpersona.getNombres());
-        bdpersona.setDireccion(lista.get(0).getDireccion());
-        vista.getTxt_direccion().setText(bdpersona.getDireccion());
-        bdpersona.setTelefono(lista.get(0).getTelefono());
-        vista.getTxt_telefono().setText(bdpersona.getTelefono());
-        bdpersona.setCorreo(lista.get(0).getCorreo());
-        vista.getTxt_correo().setText(bdpersona.getCorreo());
-        bdpersona.setFechanac(lista.get(0).getFechanac());
+        vista.getTxtcedula().setText(bdpersona.getCedula());
+        bdpersona.setNombre_apellido(lista.get(0).getNombre_apellido());
+        vista.getTxtnomyap().setText(bdpersona.getNombre_apellido());
+        bdpersona.setDescripcion_cli(lista.get(0).getDescripcion_cli());
+        //vista.getTxtdescrip().setText(bdpersona.getDescripcion_cli());
+        /*bdpersona.setFechanac(lista.get(0).getFechanac());
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
         Date fecha = null;
         try {
@@ -247,27 +224,25 @@ public class ccliente {
             vista.getTxt_calendar().setDate(fecha);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
-        }
+        }*/
 
         Image img = lista.get(0).getFoto();
         if (img != null) {
-            Image newimg = img.getScaledInstance(vista.getFoto().getWidth(), vista.getFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
+            Image newimg = img.getScaledInstance(vista.getFot().getWidth(), vista.getFot().getHeight(), java.awt.Image.SCALE_SMOOTH);
             ImageIcon icon = new ImageIcon(newimg);
-            vista.getFoto().setIcon(icon);
+            vista.getFot().setIcon(icon);
         } else {
-            vista.getFoto().setIcon(null);
+            vista.getFot().setIcon(null);
         }
 
     }
 
     private void limpiar() {
-        vista.getTxt_cedula().setText("");
-        vista.getTxt_nombres().setText("");
-        vista.getTxt_direccion().setText("");
-        vista.getTxt_telefono().setText("");
-        vista.getTxt_correo().setText("");
-        vista.getTxt_calendar().setCalendar(null);
-        vista.getFoto().setIcon(null);
+        vista.getTxtcedula().setText("");
+        vista.getTxtnomyap().setText("");
+        vista.getTxtdescrip().setText("");
+        //vista.getTxt_calendar().setCalendar(null);
+        vista.getFot().setIcon(null);
 
     }
     
