@@ -1,19 +1,10 @@
 package V93Controlador;
 
 import V93Vista.*;
-import javax.swing.table.DefaultTableModel;
 import V93Modelo.*;
-import java.awt.Image;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 public class CLogin {

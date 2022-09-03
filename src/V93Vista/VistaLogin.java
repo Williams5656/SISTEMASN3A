@@ -80,8 +80,6 @@ public class VistaLogin extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("PASSWORD");
 
-        PasswordLogin.setText("jPasswordField1");
-
         btnIniciarLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnIniciarLogin.setForeground(new java.awt.Color(102, 0, 255));
         btnIniciarLogin.setText("INICIAR");
