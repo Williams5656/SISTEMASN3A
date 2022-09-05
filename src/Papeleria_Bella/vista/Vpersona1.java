@@ -218,6 +218,23 @@ public class Vpersona1 extends javax.swing.JFrame {
         this.txttelefono = txttelefono;
     }
 
+    public JButton getButtonimprimir() {
+        return buttonimprimir;
+    }
+
+    public void setButtonimprimir(JButton buttonimprimir) {
+        this.buttonimprimir = buttonimprimir;
+    }
+
+    public JLabel getFondo() {
+        return fondo;
+    }
+
+    public void setFondo(JLabel fondo) {
+        this.fondo = fondo;
+    }
+    
+
    
 
     /**
@@ -254,7 +271,8 @@ public class Vpersona1 extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
         buttonbuscar = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
+        buttonimprimir = new javax.swing.JButton();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(178, 255, 255));
@@ -351,9 +369,14 @@ public class Vpersona1 extends javax.swing.JFrame {
         buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
         getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 40, 50, 40));
 
-        jLabel10.setBackground(new java.awt.Color(51, 255, 204));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 670));
+        buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
+        buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-imprimir-32.png"))); // NOI18N
+        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 550, 50, 40));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
+        fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 1070, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -368,10 +391,11 @@ public class Vpersona1 extends javax.swing.JFrame {
     private javax.swing.JButton buttoncargar;
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
+    private javax.swing.JButton buttonimprimir;
     private javax.swing.JButton buttonmodificar;
     private javax.swing.JButton buttonnuevo;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

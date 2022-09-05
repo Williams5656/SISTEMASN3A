@@ -52,7 +52,8 @@ public class Vrol extends javax.swing.JFrame {
         buttonmodificar = new javax.swing.JButton();
         buttonbuscar = new javax.swing.JButton();
         labelcodigo = new javax.swing.JLabel();
-        fondorol = new javax.swing.JLabel();
+        buttonimprimir = new javax.swing.JButton();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -135,9 +136,14 @@ public class Vrol extends javax.swing.JFrame {
         getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, 50, 30));
         getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 130, 30));
 
-        fondorol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
-        fondorol.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondorol, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 660));
+        buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
+        buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-imprimir-32.png"))); // NOI18N
+        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 590, 30, 40));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
+        fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 850, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -300,13 +306,7 @@ public class Vrol extends javax.swing.JFrame {
         this.labelcodigo = labelcodigo;
     }
 
-    public JLabel getFondorol() {
-        return fondorol;
-    }
-
-    public void setFondorol(JLabel fondorol) {
-        this.fondorol = fondorol;
-    }
+    
 
    
     
@@ -318,10 +318,11 @@ public class Vrol extends javax.swing.JFrame {
     private javax.swing.JButton buttonbuscar;
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
+    private javax.swing.JButton buttonimprimir;
     private javax.swing.JButton buttonmodificar;
     private javax.swing.JButton buttonnuevo;
     private javax.swing.JComboBox<String> comboestado;
-    private javax.swing.JLabel fondorol;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

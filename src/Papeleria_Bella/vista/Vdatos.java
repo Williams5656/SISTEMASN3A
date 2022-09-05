@@ -66,6 +66,14 @@ public class Vdatos extends javax.swing.JFrame {
         this.buttonnuevo = buttonnuevo;
     }
 
+    public JButton getButtonimprimir() {
+        return buttonimprimir;
+    }
+
+    public void setButtonimprimir(JButton buttonimprimir) {
+        this.buttonimprimir = buttonimprimir;
+    }
+
     
 
     public JLabel getjLabel1() {
@@ -245,6 +253,7 @@ public class Vdatos extends javax.swing.JFrame {
         buttoneliminar = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         comboestado = new javax.swing.JComboBox<>();
+        buttonimprimir = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -343,9 +352,14 @@ public class Vdatos extends javax.swing.JFrame {
         });
         getContentPane().add(comboestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 127, -1));
 
+        buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
+        buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-imprimir-32.png"))); // NOI18N
+        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 540, 50, 40));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 660));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 860, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -368,6 +382,7 @@ public class Vdatos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
+    private javax.swing.JButton buttonimprimir;
     private javax.swing.JButton buttonmodificar;
     private javax.swing.JButton buttonnuevo;
     private javax.swing.JComboBox<String> comboestado;
