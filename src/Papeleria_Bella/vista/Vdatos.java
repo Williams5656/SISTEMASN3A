@@ -5,6 +5,7 @@
 package Papeleria_Bella.vista;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -65,13 +66,7 @@ public class Vdatos extends javax.swing.JFrame {
         this.buttonnuevo = buttonnuevo;
     }
 
-    public JLabel getFondorol() {
-        return fondorol;
-    }
-
-    public void setFondorol(JLabel fondorol) {
-        this.fondorol = fondorol;
-    }
+    
 
     public JLabel getjLabel1() {
         return jLabel1;
@@ -192,6 +187,32 @@ public class Vdatos extends javax.swing.JFrame {
     public void setTxtruc(JTextField txtruc) {
         this.txtruc = txtruc;
     }
+
+    public JComboBox<String> getComboestado() {
+        return comboestado;
+    }
+
+    public void setComboestado(JComboBox<String> comboestado) {
+        this.comboestado = comboestado;
+    }
+
+    public JLabel getFondo() {
+        return fondo;
+    }
+
+    public void setFondo(JLabel fondo) {
+        this.fondo = fondo;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+    
+    
     
 
     /**
@@ -222,7 +243,9 @@ public class Vdatos extends javax.swing.JFrame {
         labelcodigo = new javax.swing.JLabel();
         buttonmodificar = new javax.swing.JButton();
         buttoneliminar = new javax.swing.JButton();
-        fondorol = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        comboestado = new javax.swing.JComboBox<>();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -236,8 +259,8 @@ public class Vdatos extends javax.swing.JFrame {
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel10.setText("Celular:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
+        jLabel10.setText("Estado:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel11.setText("Código:");
@@ -268,23 +291,23 @@ public class Vdatos extends javax.swing.JFrame {
 
         tabladatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Codigo", "Ruc", "Nombre Comercial", "Razón Social", "Matriz Principal", "Celular"
+                "Codigo", "Ruc", "Nombre Comercial", "Razón Social", "Matriz Principal", "Celular", "Estado"
             }
         ));
         jScrollPane1.setViewportView(tabladatos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 690, 230));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 690, 230));
 
         buttonnuevo.setBackground(new java.awt.Color(232, 255, 255));
         buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add(3).png"))); // NOI18N
-        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 50, 40));
+        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 50, 40));
 
         buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
         buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
@@ -294,22 +317,35 @@ public class Vdatos extends javax.swing.JFrame {
                 buttonguardarActionPerformed(evt);
             }
         });
-        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 50, 40));
+        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 50, 40));
         getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 120, 20));
 
         buttonmodificar.setBackground(new java.awt.Color(232, 255, 255));
         buttonmodificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
-        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 40, 40));
+        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 40, 40));
 
         buttoneliminar.setBackground(new java.awt.Color(232, 255, 255));
         buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
-        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 40, 40));
+        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, 40, 40));
 
-        fondorol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
-        fondorol.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondorol, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 660));
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel15.setText("Celular:");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
+
+        comboestado.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        comboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        comboestado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboestadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(comboestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 127, -1));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
+        fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -322,6 +358,11 @@ public class Vdatos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnombrecActionPerformed
 
+    private void comboestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboestadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboestadoActionPerformed
+
+    
       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -329,13 +370,15 @@ public class Vdatos extends javax.swing.JFrame {
     private javax.swing.JButton buttonguardar;
     private javax.swing.JButton buttonmodificar;
     private javax.swing.JButton buttonnuevo;
-    private javax.swing.JLabel fondorol;
+    private javax.swing.JComboBox<String> comboestado;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelcodigo;

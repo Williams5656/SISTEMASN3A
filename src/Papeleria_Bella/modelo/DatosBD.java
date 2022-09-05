@@ -29,9 +29,11 @@ public class DatosBD extends DatosMD{
     public DatosBD() {
     }
 
-    public DatosBD(String codigo, String ruc, String nombrec, String razons, String matrizp, String celular) {
-        super(codigo, ruc, nombrec, razons, matrizp, celular);
+    public DatosBD(String codigo, String ruc, String nombrec, String razons, String matrizp, String celular, String estado) {
+        super(codigo, ruc, nombrec, razons, matrizp, celular, estado);
     }
+
+    
     
     Conexion conectar = new Conexion();
     
@@ -48,6 +50,7 @@ public class DatosBD extends DatosMD{
                 u.setRazons(rs.getString("razon"));
                 u.setMatrizp(rs.getString("matriz"));
                 u.setCelular(rs.getString("celular"));
+                u.setEstado(rs.getString("estado"));
 
                 listad.add(u);
             }
@@ -61,7 +64,7 @@ public class DatosBD extends DatosMD{
     
     public boolean insertar() {
 
-        String sql = "INSERT INTO datos_papeleria(codigo, ruc, nombrecomercial, razon, matriz, celular) VALUES ('" + getCodigo() + "','" + getRuc()+ "','" + getNombrec()+ "','" + getRazons()+ "','" + getMatrizp()+ "','" + getCelular()+ "')";
+        String sql = "INSERT INTO datos_papeleria(codigo, ruc, nombrecomercial, razon, matriz, celular, estado) VALUES ('" + getCodigo() + "','" + getRuc()+ "','" + getNombrec()+ "','" + getRazons()+ "','" + getMatrizp()+ "','" + getCelular()+ "','" + getEstado()+ "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -75,7 +78,7 @@ public class DatosBD extends DatosMD{
 
     public boolean modificar(String codigo) {
 
-        String sql = "update datos_papeleria set \"ruc\"='" + getRuc()+ "',\"nombrecomercial\"='" + getNombrec()+ "',\"razon\"='" + getRazons()+ "',\"matriz\"='" + getMatrizp()+ "',\"celular\"='" + getCelular()+ "'"
+        String sql = "update datos_papeleria set \"ruc\"='" + getRuc()+ "',\"nombrecomercial\"='" + getNombrec()+ "',\"razon\"='" + getRazons()+ "',\"matriz\"='" + getMatrizp()+ "',\"celular\"='" + getCelular()+ "',\"estado\"='" + getEstado()+ "'"
                 + " where \"codigo\"='" + codigo + "'";
 
         if (conectar.noQuery(sql) == null) {
@@ -102,6 +105,7 @@ public class DatosBD extends DatosMD{
                 u.setRazons(rs.getString("razon"));
                 u.setMatrizp(rs.getString("matriz"));
                 u.setCelular(rs.getString("celular"));
+                u.setEstado(rs.getString("estado"));
 
                 listad.add(u);
 
@@ -124,6 +128,7 @@ public class DatosBD extends DatosMD{
             return false;
         }
     }
+    
     public List<DatosMD> buscardatos(String ruc) {
         DatosMD u = new DatosMD();
         try {
@@ -137,7 +142,7 @@ public class DatosBD extends DatosMD{
                 u.setRazons(rs.getString("razon"));
                 u.setMatrizp(rs.getString("matriz"));
                 u.setCelular(rs.getString("celular"));
-                
+                u.setEstado(rs.getString("estado"));
                 
                 listad.add(u);
             }

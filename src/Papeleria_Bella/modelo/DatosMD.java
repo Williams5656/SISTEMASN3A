@@ -9,18 +9,30 @@ public class DatosMD {
     String razons;
     String matrizp;
     String celular;
+    String estado;
 
     public DatosMD() {
     }
 
-    public DatosMD(String codigo, String ruc, String nombrec, String razons, String matrizp, String celular) {
+    public DatosMD(String codigo, String ruc, String nombrec, String razons, String matrizp, String celular, String estado) {
         this.codigo = codigo;
         this.ruc = ruc;
         this.nombrec = nombrec;
         this.razons = razons;
         this.matrizp = matrizp;
         this.celular = celular;
+        this.estado = estado;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+   
 
     public String getCodigo() {
         return codigo;

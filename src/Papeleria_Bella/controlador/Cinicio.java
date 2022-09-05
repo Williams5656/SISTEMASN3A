@@ -36,15 +36,15 @@ public class Cinicio {
     }
 
     public void validar() throws SQLException {
-
+        String estado = "";
         String usuario = vista.getTxtusuario().getText();
         String clave = vista.getFieldcontraseña().getText();
         if (vista.getTxtusuario().getText().equals("") || String.valueOf(vista.getFieldcontraseña().getPassword()).equals("")) {
-            JOptionPane.showMessageDialog(null, "LLene todos los campos", null, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No dejar campos vacios", null, JOptionPane.ERROR_MESSAGE);
         } else {
             us = lg.validar(usuario, clave);
             if (us.getEstado().equals("Inactivo")) {
-                JOptionPane.showMessageDialog(null, "Usted es un usuario Inactivo \n Contactese con su administrador", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuario Inactivo", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else {
                 if (us.getUsuario() != null && us.getClave() != null) {
                     Vprincipal vistap = new Vprincipal();

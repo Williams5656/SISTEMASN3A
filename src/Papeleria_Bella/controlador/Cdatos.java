@@ -7,6 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -24,6 +25,7 @@ public class Cdatos {
         this.vistad = vistad;
         vistad.setVisible(true);
         vistad.setLocationRelativeTo(null);
+        GenerarCodDatos();
         lista();
         vistad.getButtonguardar().addActionListener(x -> guardar());
         vistad.getButtonmodificar().addActionListener(e -> modificar());
@@ -57,6 +59,7 @@ public class Cdatos {
             vistad.getTabladatos().setValueAt(lista.get(i).getRazons(), i, 3);
             vistad.getTabladatos().setValueAt(lista.get(i).getMatrizp(), i, 4);
             vistad.getTabladatos().setValueAt(lista.get(i).getCelular(), i, 5);
+            vistad.getTabladatos().setValueAt(lista.get(i).getEstado(), i, 6);
 
         }
     }
@@ -68,6 +71,7 @@ public class Cdatos {
         bdatos.setRazons(vistad.getTxtrazons().getText());
         bdatos.setMatrizp(vistad.getTxtmatrizp().getText());
         bdatos.setCelular(vistad.getTxtcelular().getText());
+        bdatos.setEstado(vistad.getComboestado().getSelectedItem().toString());
 
         
         if (bdatos.insertar()) {
@@ -87,6 +91,7 @@ public class Cdatos {
         bdatos.setRazons(vistad.getTxtrazons().getText());
         bdatos.setMatrizp(vistad.getTxtmatrizp().getText());
         bdatos.setCelular(vistad.getTxtcelular().getText());
+        bdatos.setEstado(vistad.getComboestado().getSelectedItem().toString());
 
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
         if (resp == 0) {
@@ -119,6 +124,8 @@ public class Cdatos {
         vistad.getTxtmatrizp().setText(bdatos.getMatrizp());
         bdatos.setCelular(lista.get(0).getCelular());
         vistad.getTxtcelular().setText(bdatos.getCelular());
+        bdatos.setEstado(lista.get(0).getEstado());
+        vistad.getComboestado().setSelectedItem(bdatos.getEstado());
 
         
     }
@@ -142,7 +149,26 @@ public class Cdatos {
         vistad.getTxtrazons().setText("");
         vistad.getTxtmatrizp().setText("");
         vistad.getTxtcelular().setText("");
+        vistad.getComboestado().setSelectedItem("");
         vistad.getButtonguardar().setEnabled(true);
         vistad.getButtonmodificar().setEnabled(false);
+        GenerarCodDatos();
+    }
+    
+    public void GenerarCodDatos() {
+        char[] chars = "0123".toCharArray();
+
+        int charsLength = chars.length;
+
+        Random random = new Random();
+
+        StringBuilder buffer = new StringBuilder();
+
+        for (int i = 0; i < 3; i++) {
+
+            buffer.append(chars[random.nextInt(charsLength)]);
+        }
+
+        vistad.getLabelcodigo().setText("D" + buffer.toString());
     }
 }
