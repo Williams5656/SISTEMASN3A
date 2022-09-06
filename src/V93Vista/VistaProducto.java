@@ -208,15 +208,19 @@ public class VistaProducto extends javax.swing.JFrame {
         jScrollPane1.setViewportView(TableProducto);
 
         btnGuardarProducto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnGuardarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/GuardarTodo.png"))); // NOI18N
         btnGuardarProducto.setText("GUARDAR");
 
         btnModificarProducto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnModificarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Actualizar (2).png"))); // NOI18N
         btnModificarProducto.setText("MODIFICAR");
 
         btnEliminarProducto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/eliminar.png"))); // NOI18N
         btnEliminarProducto.setText("ELIMINAR");
 
         btnNuevoProducto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnNuevoProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/nuevo.png"))); // NOI18N
         btnNuevoProducto.setText("NUEVO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -230,7 +234,7 @@ public class VistaProducto extends javax.swing.JFrame {
                         .addComponent(btnGuardarProducto)
                         .addGap(35, 35, 35)
                         .addComponent(btnModificarProducto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnEliminarProducto)
                         .addGap(27, 27, 27)
                         .addComponent(btnNuevoProducto))

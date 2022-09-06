@@ -193,15 +193,19 @@ public class VistaCliente extends javax.swing.JFrame {
         jScrollPane1.setViewportView(TableClientes);
 
         btnGuardarCliente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/GuardarTodo.png"))); // NOI18N
         btnGuardarCliente.setText("GUARDAR");
 
         btnModificarCliente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnModificarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Actualizar (2).png"))); // NOI18N
         btnModificarCliente.setText("MODIFICAR");
 
         btnEliminarCliente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/eliminar.png"))); // NOI18N
         btnEliminarCliente.setText("ELIMINAR");
 
         btnNuevoCliente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/nuevo.png"))); // NOI18N
         btnNuevoCliente.setText("NUEVO");
 
         btnBuscarCliente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -225,7 +229,7 @@ public class VistaCliente extends javax.swing.JFrame {
                         .addComponent(btnEliminarCliente)
                         .addGap(37, 37, 37)
                         .addComponent(btnNuevoCliente)
-                        .addGap(0, 86, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
@@ -278,7 +282,7 @@ public class VistaCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtCorreoElectronicoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscarCliente))

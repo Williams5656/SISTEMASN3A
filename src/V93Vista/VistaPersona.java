@@ -215,15 +215,19 @@ public class VistaPersona extends javax.swing.JFrame {
         jScrollPane1.setViewportView(TablePersona);
 
         btnGuardarPersona.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnGuardarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/GuardarTodo.png"))); // NOI18N
         btnGuardarPersona.setText("GUARDAR");
 
         btnModificarPersona.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnModificarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Actualizar (2).png"))); // NOI18N
         btnModificarPersona.setText("MODIFICAR");
 
         btnEliminarPersona.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEliminarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/eliminar.png"))); // NOI18N
         btnEliminarPersona.setText("ELIMINAR");
 
         btnNuevoPersona.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnNuevoPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/nuevo.png"))); // NOI18N
         btnNuevoPersona.setText("NUEVO");
 
         lbFoto.setText("FOTO");
@@ -334,7 +338,7 @@ public class VistaPersona extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtbuscarp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnbuscarp, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnFoto)
