@@ -80,18 +80,19 @@ public class ClienteBD extends ClienteMD {
         }
     }
 
-    public List<RolMD> buscardatosporcodigo(String codigo) {
+    public List<ClienteMD> buscardatosporcodigo(String codigo) {
         try {
-            List<RolMD> lista = new ArrayList<RolMD>();
-            String sql = "select * from roles where \"codrol\" ILIKE '%" + codigo + "%'";
+            List<ClienteMD> lista = new ArrayList<ClienteMD>();
+            String sql = "select * from cliente where \"codigo\" ILIKE '%" + codigo + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                RolMD r = new RolMD();
-                r.setCodigo(rs.getString("CODROL"));
-                r.setNombre(rs.getString("NOMBRE"));
-                r.setDescripcion(rs.getString("DESCRIPCION"));
-                r.setEstado(rs.getString("ESTADO"));
-                lista.add(r);
+                ClienteMD cl = new ClienteMD();
+                cl.setCodigo(rs.getString("COIGO"));
+                cl.setCedula(rs.getString("CEDULA"));
+                cl.setNombres(rs.getString("NOMBRES"));
+                cl.setEstado(rs.getString("TELEFONO"));
+                cl.setEstado(rs.getString("ESTADO"));
+                lista.add(cl);
             }
             rs.close();
             return lista;
