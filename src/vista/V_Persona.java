@@ -14,6 +14,14 @@ public class V_Persona extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnimprimir() {
+        return btnimprimir;
+    }
+
+    public void setBtnimprimir(JButton btnimprimir) {
+        this.btnimprimir = btnimprimir;
+    }
+
     public JButton getBtn_CargarFoto() {
         return Btn_CargarFoto;
     }
@@ -150,8 +158,6 @@ public class V_Persona extends javax.swing.JInternalFrame {
         this.txtBuscarCedula = txtBuscarCedula;
     }
 
-    
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -181,6 +187,7 @@ public class V_Persona extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         txtBuscarCedula = new javax.swing.JTextField();
         BtnBuscarCedula = new javax.swing.JButton();
+        btnimprimir = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -273,17 +280,18 @@ public class V_Persona extends javax.swing.JInternalFrame {
         BtnBuscarCedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
         jPanel1.add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, 60, 50));
 
+        btnimprimir.setText("IMPRIMIR");
+        jPanel1.add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 530, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE)
         );
 
         pack();
@@ -304,6 +312,7 @@ public class V_Persona extends javax.swing.JInternalFrame {
     private javax.swing.JButton Btn_QuitarFoto;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardarp;
+    private javax.swing.JButton btnimprimir;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JLabel jLabel1;

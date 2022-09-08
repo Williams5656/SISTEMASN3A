@@ -16,6 +16,14 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnimprimir() {
+        return btnimprimir;
+    }
+
+    public void setBtnimprimir(JButton btnimprimir) {
+        this.btnimprimir = btnimprimir;
+    }
+
     public JLabel getLabelTituloUsuario() {
         return LabelTituloUsuario;
     }
@@ -56,7 +64,6 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         this.cmbRol = cmbRol;
     }
 
- 
     public JCheckBox getCheckBoxEstado() {
         return CheckBoxEstado;
     }
@@ -72,7 +79,6 @@ public class V_Usuario extends javax.swing.JInternalFrame {
     public void setJPassClave(JPasswordField JPassClave) {
         this.JPassClave = JPassClave;
     }
-
 
     public JLabel getLabelNombresPersona() {
         return LabelNombresPersona;
@@ -162,7 +168,6 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         this.txtClave = txtClave;
     }
 
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -192,6 +197,7 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         LabelTituloUsuario = new javax.swing.JLabel();
         cmbRol = new javax.swing.JComboBox<>();
         labelEstado = new javax.swing.JLabel();
+        btnimprimir = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -276,6 +282,9 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         labelEstado.setText("Activo");
         getContentPane().add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 110, 30));
 
+        btnimprimir.setText("IMPRIMIR");
+        getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 550, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -291,6 +300,7 @@ public class V_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TxtUsuario;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardarp;
+    private javax.swing.JButton btnimprimir;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JComboBox<String> cmbRol;

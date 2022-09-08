@@ -8,6 +8,14 @@ public class V_Rol extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnimprimir() {
+        return btnimprimir;
+    }
+
+    public void setBtnimprimir(JButton btnimprimir) {
+        this.btnimprimir = btnimprimir;
+    }
+
     public JButton getBtnBuscarRol() {
         return BtnBuscarRol;
     }
@@ -144,6 +152,7 @@ public class V_Rol extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         txtBuscarRol = new javax.swing.JTextField();
         BtnBuscarRol = new javax.swing.JButton();
+        btnimprimir = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(79, 213, 223));
         setClosable(true);
@@ -232,6 +241,9 @@ public class V_Rol extends javax.swing.JInternalFrame {
         BtnBuscarRol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
         getContentPane().add(BtnBuscarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 70, 50));
 
+        btnimprimir.setText("IMPRIMIR");
+        getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -244,6 +256,7 @@ public class V_Rol extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea TxtDescripcion;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardarp;
+    private javax.swing.JButton btnimprimir;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JLabel jLabel1;

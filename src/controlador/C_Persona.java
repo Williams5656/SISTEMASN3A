@@ -5,16 +5,26 @@ import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
+import modelo.Conectar;
 import modelo.PersonaBD;
 import modelo.PersonaMD;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import vista.V_Persona;
 
 public class C_Persona {
@@ -32,6 +42,7 @@ public class C_Persona {
         vistapersona.getBtnguardarp().addActionListener(x -> guardar());
         vistapersona.getBtnmodificar().addActionListener(x -> modificar());
         vistapersona.getBtneliminar().addActionListener(x -> eliminar());
+        vistapersona.getBtnimprimir().addActionListener(x -> imprimir());
         vistapersona.getTablapersona().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -61,7 +72,7 @@ public class C_Persona {
                 txtBuscarCedulaFocusLost(evt);
             }
         });
- vistapersona.getBtnBuscarCedula().addActionListener(x->Buscar());
+        vistapersona.getBtnBuscarCedula().addActionListener(x -> Buscar());
     }
 
     public void lista() {
@@ -249,6 +260,23 @@ public class C_Persona {
                 vistapersona.getTablapersona().setValueAt(lista.get(i).getCorreo(), i, 4);
                 vistapersona.getTablapersona().setValueAt(lista.get(i).getFoto_perfil(), i, 5);
             }
+        }
+    }
+
+    private void imprimir() {
+        Conectar con = new Conectar();
+        try {
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reporte/auto.jasper"));
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("logo", "imagen/parqueadero.jpg");
+            JasperPrint jm = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(jm, false);
+            JOptionPane.showMessageDialog(null, "IMPRIMIENDO REPORTE DE PERSONAS");
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("NO SE ENCONTRO REGISTRO DE PERSONAS" + e.getMessage());
+            Logger.getLogger(C_Persona.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 }

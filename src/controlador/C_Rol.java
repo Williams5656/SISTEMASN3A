@@ -6,11 +6,22 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
 import modelo.RolMD;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import vista.V_Rol;
 
 public class C_Rol {
@@ -27,6 +38,7 @@ public class C_Rol {
         GenerarCodRol();
         vistarol.getBtnguardarp().addActionListener(e -> guardar());
         vistarol.getBtnmodificar().addActionListener(e -> modificar());
+        vistarol.getBtnimprimir().addActionListener(e -> imprimir());
         vistarol.getTableRol().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -207,6 +219,22 @@ public class C_Rol {
         if (vistarol.getTxtBuscarRol().getText().isEmpty()) {
             vistarol.getTxtBuscarRol().setText("Ingrese el nombre del rol");
             vistarol.getTxtBuscarRol().setForeground(Color.GRAY);
+        }
+    }
+     private void imprimir() {
+        Conectar con = new Conectar();
+        try {
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reporte/auto.jasper"));
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("logo", "imagen/parqueadero.jpg");
+            JasperPrint jm = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(jm, false);
+            JOptionPane.showMessageDialog(null, "IMPRIMIENDO REPORTE DE ROLES");
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("NO SE ENCONTRO REGISTRO DE ROLES" + e.getMessage());
+            Logger.getLogger(C_Rol.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 }

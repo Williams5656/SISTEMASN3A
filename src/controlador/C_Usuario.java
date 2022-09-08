@@ -3,11 +3,22 @@ package controlador;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
 import modelo.*;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import vista.V_Usuario;
 
 public class C_Usuario {
@@ -32,6 +43,7 @@ public class C_Usuario {
         vistaUsuario.getBtnmodificar().addActionListener(e -> modificar());
         vistaUsuario.getBtnnuevo().addActionListener(e -> nuevo());
         vistaUsuario.getBtneliminar().addActionListener(e -> eliminar());
+        vistaUsuario.getBtnimprimir().addActionListener(e -> imprimir());
         vistaUsuario.getTxtCedula().addFocusListener(new java.awt.event.FocusAdapter() {
             @Override
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -229,5 +241,21 @@ public class C_Usuario {
         }
 
         vistausuario.getLabelCodigoUsuario().setText("USRO" + buffer.toString());
+    }
+     private void imprimir() {
+        Conectar con = new Conectar();
+        try {
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reporte/auto.jasper"));
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("logo", "imagen/parqueadero.jpg");
+            JasperPrint jm = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(jm, false);
+            JOptionPane.showMessageDialog(null, "IMPRIMIENDO REPORTE DE USUARIOS");
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("NO SE ENCONTRO REGISTRO DE USUARIOS" + e.getMessage());
+            Logger.getLogger(C_Usuario.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 }
