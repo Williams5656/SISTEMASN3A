@@ -21,6 +21,16 @@ public class VistaProveedor extends javax.swing.JFrame {
     public VistaProveedor() {
         initComponents();
         
+        
+        
+    }
+
+    public JButton getBtnImprimirProveedor() {
+        return btnImprimirProveedor;
+    }
+
+    public void setBtnImprimirProveedor(JButton btnImprimirProveedor) {
+        this.btnImprimirProveedor = btnImprimirProveedor;
     }
 
     public JTextField getTxtBuscarProveedor() {
@@ -147,10 +157,12 @@ public class VistaProveedor extends javax.swing.JFrame {
         btnNuevoProveedor = new javax.swing.JButton();
         btnBuscarProveedor = new javax.swing.JButton();
         txtBuscarProveedor = new javax.swing.JTextField();
+        btnImprimirProveedor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/proveedor.png"))); // NOI18N
         jLabel1.setText("PROVEEDOR");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -197,54 +209,59 @@ public class VistaProveedor extends javax.swing.JFrame {
         btnBuscarProveedor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnBuscarProveedor.setText("BUSCAR PROVEEDOR");
 
+        btnImprimirProveedor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnImprimirProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/print.png"))); // NOI18N
+        btnImprimirProveedor.setText("IMPRIMIR");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel1))
+                        .addGap(1, 1, 1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnGuardarProveedor)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnModificarProveedor)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminarProveedor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnNuevoProveedor))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(btnBuscarProveedor))
-                                .addGap(51, 51, 51)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtRucProveedor)
-                                    .addComponent(txtNombreProveedor)
-                                    .addComponent(txtCelularProveedor)
-                                    .addComponent(txtDireccionProveedor)
-                                    .addComponent(txtRazonSocialProveedor)
-                                    .addComponent(txtBuscarProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnGuardarProveedor)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnModificarProveedor)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnEliminarProveedor)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnNuevoProveedor))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(btnBuscarProveedor))
+                        .addGap(51, 51, 51)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtRucProveedor)
+                                .addComponent(txtNombreProveedor)
+                                .addComponent(txtCelularProveedor)
+                                .addComponent(txtDireccionProveedor)
+                                .addComponent(txtRazonSocialProveedor)
+                                .addComponent(txtBuscarProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnImprimirProveedor)
+                .addGap(221, 221, 221))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtRucProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -268,7 +285,7 @@ public class VistaProveedor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscarProveedor)
                     .addComponent(txtBuscarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -276,7 +293,9 @@ public class VistaProveedor extends javax.swing.JFrame {
                     .addComponent(btnModificarProveedor)
                     .addComponent(btnEliminarProveedor)
                     .addComponent(btnNuevoProveedor))
-                .addGap(62, 62, 62))
+                .addGap(28, 28, 28)
+                .addComponent(btnImprimirProveedor)
+                .addContainerGap())
         );
 
         pack();
@@ -323,6 +342,7 @@ public class VistaProveedor extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarProveedor;
     private javax.swing.JButton btnEliminarProveedor;
     private javax.swing.JButton btnGuardarProveedor;
+    private javax.swing.JButton btnImprimirProveedor;
     private javax.swing.JButton btnModificarProveedor;
     private javax.swing.JButton btnNuevoProveedor;
     private javax.swing.JLabel jLabel1;

@@ -22,6 +22,16 @@ public class VistaCliente extends javax.swing.JFrame {
         initComponents();
         
         
+        
+        
+    }
+
+    public JButton getBtnImprimirCliente() {
+        return btnImprimirCliente;
+    }
+
+    public void setBtnImprimirCliente(JButton btnImprimirCliente) {
+        this.btnImprimirCliente = btnImprimirCliente;
     }
 
     public JButton getBtnBuscarCliente() {
@@ -158,10 +168,12 @@ public class VistaCliente extends javax.swing.JFrame {
         btnNuevoCliente = new javax.swing.JButton();
         btnBuscarCliente = new javax.swing.JButton();
         txtBuscarCliente = new javax.swing.JTextField();
+        btnImprimirCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Clientes.png"))); // NOI18N
         jLabel1.setText("CLIENTES");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -211,47 +223,51 @@ public class VistaCliente extends javax.swing.JFrame {
         btnBuscarCliente.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnBuscarCliente.setText("BUSCAR POR CEDULA");
 
+        btnImprimirCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnImprimirCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/print.png"))); // NOI18N
+        btnImprimirCliente.setText("IMPRIMIR");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jScrollPane1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnGuardarCliente)
-                        .addGap(31, 31, 31)
-                        .addComponent(btnModificarCliente)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnEliminarCliente)
                         .addGap(37, 37, 37)
-                        .addComponent(btnNuevoCliente)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtBuscarCliente)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(txtCedulaCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(txtNombreCliente)
-                    .addComponent(txtCiudadCliente)
-                    .addComponent(txtDireccionCliente)
-                    .addComponent(txtTelefonoCliente)
-                    .addComponent(txtCorreoElectronicoCliente)
-                    .addComponent(btnBuscarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtBuscarCliente)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel7))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1)
+                            .addComponent(txtCedulaCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(txtNombreCliente)
+                            .addComponent(txtCiudadCliente)
+                            .addComponent(txtDireccionCliente)
+                            .addComponent(txtTelefonoCliente)
+                            .addComponent(txtCorreoElectronicoCliente)
+                            .addComponent(btnBuscarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(279, 279, 279)
+                        .addComponent(btnImprimirCliente)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(btnGuardarCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(btnModificarCliente)
+                .addGap(18, 18, 18)
+                .addComponent(btnEliminarCliente)
+                .addGap(28, 28, 28)
+                .addComponent(btnNuevoCliente)
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,7 +298,7 @@ public class VistaCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtCorreoElectronicoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscarCliente))
@@ -294,7 +310,9 @@ public class VistaCliente extends javax.swing.JFrame {
                     .addComponent(btnModificarCliente)
                     .addComponent(btnEliminarCliente)
                     .addComponent(btnNuevoCliente))
-                .addGap(35, 35, 35))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(btnImprimirCliente)
+                .addContainerGap())
         );
 
         pack();
@@ -340,6 +358,7 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscarCliente;
     private javax.swing.JButton btnEliminarCliente;
     private javax.swing.JButton btnGuardarCliente;
+    private javax.swing.JButton btnImprimirCliente;
     private javax.swing.JButton btnModificarCliente;
     private javax.swing.JButton btnNuevoCliente;
     private javax.swing.JLabel jLabel1;

@@ -24,6 +24,16 @@ public class VistaProducto extends javax.swing.JFrame {
         initComponents();
         
         
+        
+        
+    }
+
+    public JButton getBtnImprimirProducto() {
+        return btnImprimirProducto;
+    }
+
+    public void setBtnImprimirProducto(JButton btnImprimirProducto) {
+        this.btnImprimirProducto = btnImprimirProducto;
     }
 
     public JTable getTableProducto() {
@@ -170,10 +180,12 @@ public class VistaProducto extends javax.swing.JFrame {
         btnModificarProducto = new javax.swing.JButton();
         btnEliminarProducto = new javax.swing.JButton();
         btnNuevoProducto = new javax.swing.JButton();
+        btnImprimirProducto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/producto.png"))); // NOI18N
         jLabel1.setText("PRODUCTO");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -223,6 +235,10 @@ public class VistaProducto extends javax.swing.JFrame {
         btnNuevoProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/nuevo.png"))); // NOI18N
         btnNuevoProducto.setText("NUEVO");
 
+        btnImprimirProducto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnImprimirProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/print_1.png"))); // NOI18N
+        btnImprimirProducto.setText("IMPRIMIR");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -230,14 +246,6 @@ public class VistaProducto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnGuardarProducto)
-                        .addGap(35, 35, 35)
-                        .addComponent(btnModificarProducto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEliminarProducto)
-                        .addGap(27, 27, 27)
-                        .addComponent(btnNuevoProducto))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,12 +268,25 @@ public class VistaProducto extends javax.swing.JFrame {
                             .addComponent(btnFotoProducto)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addComponent(jLabelFotoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jLabelFotoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnGuardarProducto)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnModificarProducto)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarProducto)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnNuevoProducto)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(39, 39, 39))
             .addGroup(layout.createSequentialGroup()
                 .addGap(206, 206, 206)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnImprimirProducto)
+                .addGap(247, 247, 247))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,13 +326,15 @@ public class VistaProducto extends javax.swing.JFrame {
                     .addComponent(txtBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarProducto)
                     .addComponent(btnModificarProducto)
                     .addComponent(btnEliminarProducto)
                     .addComponent(btnNuevoProducto))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(btnImprimirProducto)
+                .addGap(28, 28, 28))
         );
 
         pack();
@@ -359,6 +382,7 @@ public class VistaProducto extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnFotoProducto;
     private javax.swing.JButton btnGuardarProducto;
+    private javax.swing.JButton btnImprimirProducto;
     private javax.swing.JButton btnModificarProducto;
     private javax.swing.JButton btnNuevoProducto;
     private javax.swing.JComboBox<String> jComboBoxProveedorProducto;
