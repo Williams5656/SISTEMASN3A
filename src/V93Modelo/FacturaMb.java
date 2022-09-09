@@ -3,19 +3,16 @@ package V93Modelo;
 
 
 public class FacturaMb {
-    
     private int id;
-    private int cod_pro;
-    private int cantidad;
-    private double precio;
-    private int id_venta;
+    private String cliente;
+    private String vendedor;
+    private double total;
 
-    public FacturaMb(int id, int cod_pro, int cantidad, double precio, int id_venta) {
+    public FacturaMb(int id, String cliente, String vendedor, double total) {
         this.id = id;
-        this.cod_pro = cod_pro;
-        this.cantidad = cantidad;
-        this.precio = precio;
-        this.id_venta = id_venta;
+        this.cliente = cliente;
+        this.vendedor = vendedor;
+        this.total = total;
     }
 
     public FacturaMb() {
@@ -29,36 +26,28 @@ public class FacturaMb {
         this.id = id;
     }
 
-    public int getCod_pro() {
-        return cod_pro;
+    public String getCliente() {
+        return cliente;
     }
 
-    public void setCod_pro(int cod_pro) {
-        this.cod_pro = cod_pro;
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public String getVendedor() {
+        return vendedor;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setVendedor(String vendedor) {
+        this.vendedor = vendedor;
     }
 
-    public double getPrecio() {
-        return precio;
+    public double getTotal() {
+        return total;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public int getId_venta() {
-        return id_venta;
-    }
-
-    public void setId_venta(int id_venta) {
-        this.id_venta = id_venta;
+    public void setTotal(double total) {
+        this.total = total;
     }
     
     

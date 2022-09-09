@@ -6,9 +6,9 @@ import java.security.Principal;
 import V93Vista.*;
 
 public class Cprincipal {
- 
+
     public static VistaPrincipal Vistap;
-     
+
     public Cprincipal(VistaPrincipal Vista) {
         this.Vistap = Vista;
         Vista.setVisible(true);
@@ -16,41 +16,51 @@ public class Cprincipal {
         Vista.setExtendedState(MAXIMIZED_BOTH);
         Vista.getNuevoPersona().addActionListener(e -> personas());
         Vista.getNuevoUsuario().addActionListener(e -> usuarios());
-        Vista.getNuevoRol().addActionListener(e ->rol());
+        Vista.getNuevoRol().addActionListener(e -> rol());
         Vista.getNuevoProveedor().addActionListener(e -> proveedor());
         Vista.getNuevoProducto().addActionListener(e -> producto());
         Vista.getNuevoCliente().addActionListener(e -> cliente());
+        Vista.getNuevaFactura().addActionListener(e -> factura());
     }
-       
+
     private void personas() {
         VistaPersona vr = new VistaPersona();
         CPersonas cr = new CPersonas(vr);
 
     }
-      
+
     private void usuarios() {
         VistaUsuario vuser = new VistaUsuario();
         CUsuarios cuser = new CUsuarios(vuser);
 
     }
-     private void rol() {
+
+    private void rol() {
         VistaRol vrol = new VistaRol();
         CRol crol = new CRol(vrol);
 
     }
-       private void proveedor() {
+
+    private void proveedor() {
         VistaProveedor vprov = new VistaProveedor();
         CProveedor cprov = new CProveedor(vprov);
 
     }
-           private void producto() {
+
+    private void producto() {
         VistaProducto vpro = new VistaProducto();
         CProducto cpro = new CProducto(vpro);
 
     }
-             private void cliente() {
+
+    private void cliente() {
         VistaCliente vclie = new VistaCliente();
         CCliente cclie = new CCliente(vclie);
 
+    }
+
+    private void factura() {
+        VistaFactura vfact = new VistaFactura();
+        CFactura fac = new CFactura(vfact);
     }
 }

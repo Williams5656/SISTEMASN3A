@@ -1,60 +1,127 @@
-
 package V93Modelo;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReadParam;
-import javax.imageio.ImageReader;
-import javax.imageio.stream.ImageInputStream;
-import org.postgresql.util.Base64;
+import javax.swing.JOptionPane;
 
+public class FacturaBD {
 
-public class FacturaBD extends FacturaMb {
+    Conectar cn = new Conectar();
+    Connection con;
+    PreparedStatement ps;
+    ResultSet rs;
+    int r;
     
-     Conectar conecta = new Conectar();
-
-    public FacturaBD(int id, int cod_pro, int cantidad, double precio, int id_venta) {
-        super(id, cod_pro, cantidad, precio, id_venta);
+    public int IdVenta(){
+        int id = 0;
+        String sql = "SELECT MAX(id) FROM venta";
+        try{
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                id = rs.getInt(1);
+            }
+        }catch (SQLException e){
+            System.out.println(e.toString());
+        }
+         return id;       
     }
 
-    public FacturaBD() {
+    public int RegistrarVenta(FacturaMb v) {
+
+        String sql = "INSERT INTO ventas(cliente,vendedor,total) VALUES (?,?,?)";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, v.getCliente());
+            ps.setString(2, v.getVendedor());
+            ps.setDouble(3, v.getTotal());
+            ps.execute();
+
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+
+        }finally{
+            try{
+                con.close();
+            }catch (SQLException e){
+                System.out.println(e.toString());
+                
+                
+            }
+        }
+        return r;
+
     }
     
-//      public FacturaBD BuscarPro(String cod){
-//            ProductoMb producto = new  ProductoMb();
-//            
-//         String sql = "SELECT * FROM producto WHERE codigo = ?";
-//         try{
-//             //con = conecta.getConnection();
-//              ResultSet rs = conecta.query(sql);
-//             //rs = conecta.prepareStatement(sql);
-//             //rs.set(1, cod);
-//             //rs = ps.executeQuery();
-//             
-//             if (rs.next()){
-//                 producto.setDescripcion(rs.getString("deescripcion"));
-//                 producto.setPrecio(rs.getDouble("precio"));
-//                 producto.setStock(rs.getInt("Stock"));
-//                 
-//             }
-//         }catch (SQLException e){
-//             System.out.println(e.toString());
-//         }
-//         
-//        // return producto;
-//     }
-//     
-     
+    public int RegistrarDetalle(DetalleMb Dv){
+         String sql = "INSERT INTO detalle(cod_pro,cantidad,precio,id_venta) VALUES (?,?,?,?)";
+        try{
+             con = cn.getConnection();
+             ps = con.prepareStatement(sql);
+             ps.setInt(1, Dv.getCod_pro());
+             ps.setInt(2, Dv.getCantidad());
+             ps.setDouble(3, Dv.getPrecio());
+             ps.setInt(4, Dv.getId());
+             ps.execute();
+            
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                con.close();
+            }catch (SQLException e){
+                System.out.println(e.toString());
+                
+                
+            }
+        }
+        return r;
+    }
     
+    public boolean ActualizarStock(int cant,String cod){
+        String sql = "UPDATE producto SET stock = ? WHERE codigo = ?";
+        try{
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, cant);
+            ps.setString(2, cod);
+            ps.execute();
+            return true;
+        }catch (SQLException e){
+            System.out.println(e.toString());
+            return false;
+        }
+    }
+    
+    public List ListarVentas() {
+        List<FacturaMb> ListaVenta = new ArrayList();
+        String sql = "SELECT * FROM venta";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                FacturaMb vent = new FacturaMb();
+                vent.setId(rs.getInt("id"));
+                vent.setCliente(rs.getString("cliente"));
+                vent.setVendedor(rs.getString("vendedor"));
+                vent.setTotal(rs.getDouble("total"));
+                ListaVenta.add(vent);
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+
+        }
+        return ListaVenta;
+
+    }
+
 }

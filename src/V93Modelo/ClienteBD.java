@@ -1,5 +1,7 @@
 package V93Modelo;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -91,6 +93,33 @@ public class ClienteBD extends ClienteMb {
 
             return false;
         }
+
+    }
+
+    public ClienteMb BuscarCliente(String cedula) {
+        ClienteMb m = new ClienteMb();
+        Connection con;
+        PreparedStatement ps;
+        ResultSet rs;
+        String sql = "SELECT * FROM cliente WHERE cedula = ?";
+        try {
+            con = conecta.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, cedula);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                m.setCedula(rs.getString("cedula"));
+                m.setNombre(rs.getString("nombre"));
+                m.setCiudad(rs.getString("ciudad"));
+                m.setDireccion(rs.getString("direccion"));
+                m.setTelefono(rs.getString("telefono"));
+                m.setCorreo(rs.getString("correo"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+        }
+        return m;
 
     }
 
