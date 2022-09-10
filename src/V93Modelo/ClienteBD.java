@@ -96,33 +96,7 @@ public class ClienteBD extends ClienteMb {
 
     }
 
-    public ClienteMb BuscarCliente(String cedula) {
-        ClienteMb m = new ClienteMb();
-        Connection con;
-        PreparedStatement ps;
-        ResultSet rs;
-        String sql = "SELECT * FROM cliente WHERE cedula = ?";
-        try {
-            con = conecta.getConnection();
-            ps = con.prepareStatement(sql);
-            ps.setString(1, cedula);
-            rs = ps.executeQuery();
-            if (rs.next()) {
-                m.setCedula(rs.getString("cedula"));
-                m.setNombre(rs.getString("nombre"));
-                m.setCiudad(rs.getString("ciudad"));
-                m.setDireccion(rs.getString("direccion"));
-                m.setTelefono(rs.getString("telefono"));
-                m.setCorreo(rs.getString("correo"));
-            }
-
-        } catch (SQLException e) {
-            System.out.println(e.toString());
-        }
-        return m;
-
-    }
-
+   
     public boolean eliminar(String cedula) {
         String sql = "delete FROM cliente where\"cedula\"='" + cedula + "'";
         if (conecta.noQuery(sql) == null) {
@@ -133,5 +107,28 @@ public class ClienteBD extends ClienteMb {
             return false;
         }
 
+    }
+    public List<ClienteMb> BuscarCliente(String cedula) {
+        try {
+            List<ClienteMb> lista = new ArrayList<ClienteMb>();
+            String sql = "select * from cliente " + " where \"cedula\" ILIKE '%" + cedula + "%'";
+            ResultSet rs = conecta.query(sql);
+            while (rs.next()) {
+                ClienteMb m = new ClienteMb();
+                m.setCedula(rs.getString("cedula"));
+                m.setNombre(rs.getString("nombre"));
+                m.setCiudad(rs.getString("ciudad"));
+                m.setDireccion(rs.getString("direccion"));
+                m.setTelefono(rs.getString("telefono"));
+                m.setCorreo(rs.getString("correo"));
+
+                lista.add(m);
+            }
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(ClienteBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
     }
 }

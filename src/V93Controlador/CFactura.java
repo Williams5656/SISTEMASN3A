@@ -11,6 +11,7 @@ import V93Modelo.ProductoMb;
 import V93Vista.VistaFactura;
 import com.sun.glass.events.KeyEvent;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -36,42 +37,52 @@ public class CFactura {
         VistaFac.setVisible(true);
         VistaFac.setLocationRelativeTo(null);
         VistaFac.getTxtCodigoProFactura().addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCodigoProFacturaKeyPressed(evt);
             }
 
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCodigoProFacturaKeyTyped(evt);
             }
         });
         VistaFac.getTxtCedulaClienteFactura().addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCedulaClienteFacturaKeyPressed(evt);
             }
 
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCedulaClienteFacturaKeyTyped(evt);
             }
         });
         VistaFac.getTxtDescripcionProFactura().addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtDescripcionProFacturaKeyTyped(evt);
             }
         });
         VistaFac.getTxtCantidadFactura().addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCantidadFacturaKeyPressed(evt);
             }
-             public void keyTyped(java.awt.event.KeyEvent evt) {
+
+            @Override
+            public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCantidadFacturaKeyTyped(evt);
             }
         });
         VistaFac.getTxtStockFactura().addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtStockFacturaKeyTyped(evt);
             }
         });
         VistaFac.getTxtPrecioFactura().addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPrecioFacturaKeyTyped(evt);
             }
@@ -82,13 +93,16 @@ public class CFactura {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!"".equals(VistaFac.getTxtCedulaClienteFactura().getText())) {
 
-                cl = cliente.BuscarCliente(VistaFac.getTxtCedulaClienteFactura().getText());
-                if (cl.getNombre() != null) {
-                    VistaFac.getTxtNombreClienteFactura().setText("" + cl.getNombre());
+                List<ClienteMb> cl = cliente.BuscarCliente(VistaFac.getTxtCedulaClienteFactura().getText());
+                for (int i = 0; i < cl.size(); i++) {
+                    if (cl.get(i).getNombre() != null) {
+                        VistaFac.getTxtNombreClienteFactura().setText("" + cl.get(i).getNombre());
 
-                } else {
-                    VistaFac.getTxtCedulaClienteFactura().setText("");
-                    JOptionPane.showMessageDialog(null, "El Cliente no Existe");
+                    } else {
+                        VistaFac.getTxtCedulaClienteFactura().setText("");
+                        JOptionPane.showMessageDialog(null, "El Cliente no Existe");
+                    }
+
                 }
             }
         }
@@ -109,17 +123,19 @@ public class CFactura {
     private void txtCodigoProFacturaKeyPressed(java.awt.event.KeyEvent evt) {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!"".equals(VistaFac.getTxtCodigoProFactura().getText())) {
-                String cod = VistaFac.getTxtCodigoProFactura().getText();
-                pro = proDao.BuscarPro(cod);
-                if (pro.getDescripcion() != null) {
-                    VistaFac.getTxtDescripcionProFactura().setText("" + pro.getDescripcion());
-                    VistaFac.getTxtPrecioFactura().setText("" + pro.getPrecio());
-                    VistaFac.getTxtStockFactura().setText("" + pro.getStock());
-                    VistaFac.getTxtCantidadFactura().requestFocus();
+                List<ProductoMb> pro = proDao.BuscarPro(VistaFac.getTxtCodigoProFactura().getText());
+                for (int i = 0; i < pro.size(); i++) {
+                    if (pro.get(i).getDescripcion() != null) {
+                        VistaFac.getTxtDescripcionProFactura().setText("" + pro.get(i).getDescripcion());
+                        VistaFac.getTxtPrecioFactura().setText("" + pro.get(i).getPrecio());
+                        VistaFac.getTxtStockFactura().setText("" + pro.get(i).getStock());
+                        VistaFac.getTxtCantidadFactura().requestFocus();
 
-                } else {
-                    LimpiarVenta();
-                    VistaFac.getTxtCodigoProFactura().requestFocus();
+                    } else {
+                        LimpiarVenta();
+                        VistaFac.getTxtCodigoProFactura().requestFocus();
+
+                    }
 
                 }
             } else {
@@ -137,27 +153,27 @@ public class CFactura {
         VistaFac.getTxtStockFactura().setText("");
         VistaFac.getTxtPrecioFactura().setText("");
     }
-    
-    private void txtCantidadFacturaKeyPressed(java.awt.event.KeyEvent evt) {    
-        double iva=0.12;
-        if (evt.getKeyCode()== KeyEvent.VK_ENTER){
-            if(!"".equals(VistaFac.getTxtCantidadFactura().getText())){
+
+    private void txtCantidadFacturaKeyPressed(java.awt.event.KeyEvent evt) {
+        double iva = 0.12;
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (!"".equals(VistaFac.getTxtCantidadFactura().getText())) {
                 String cod = VistaFac.getTxtCodigoProFactura().getText();
                 String descripcion = VistaFac.getTxtDescripcionProFactura().getText();
                 int cant = Integer.parseInt(VistaFac.getTxtCantidadFactura().getText());
                 double precio = Double.parseDouble(VistaFac.getTxtPrecioFactura().getText());
                 double total = cant * precio * iva;
                 int stock = Integer.parseInt(VistaFac.getTxtStockFactura().getText());
-                if(stock>= cant){
+                if (stock >= cant) {
                     item = item + 1;
-                    DefaultTableModel  tmp = (DefaultTableModel) VistaFac.getTableFactura().getModel();
-                    for(int i=0; i<VistaFac.getTableFactura().getRowCount();i++){
-                        if(VistaFac.getTableFactura().getValueAt(i, 1).equals(VistaFac.getTxtDescripcionProFactura().getText())){
-                           JOptionPane.showMessageDialog(null, "El Producto ya esta registrado");
-                           return;
+                    DefaultTableModel tmp = (DefaultTableModel) VistaFac.getTableFactura().getModel();
+                    for (int i = 0; i < VistaFac.getTableFactura().getRowCount(); i++) {
+                        if (VistaFac.getTableFactura().getValueAt(i, 1).equals(VistaFac.getTxtDescripcionProFactura().getText())) {
+                            JOptionPane.showMessageDialog(null, "El Producto ya esta registrado");
+                            return;
                         }
                     }
-                    
+
                     ArrayList lista = new ArrayList();
                     lista.add(item);
                     lista.add(cod);
@@ -176,103 +192,112 @@ public class CFactura {
                     Totalpagar();
                     LimpiarVenta();
                     VistaFac.getTxtCodigoProFactura().requestFocus();
-                    
-                }else{
+
+                } else {
                     JOptionPane.showMessageDialog(null, "Stock no disponible");
                 }
-                
-            }else{
-               JOptionPane.showMessageDialog(null, "Ingrese la Cantidad"); 
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Ingrese la Cantidad");
             }
         }
     }
-      private void  Totalpagar(){
-         Totalpagar = 0.00;
-         int numFila = VistaFac.getTableFactura().getRowCount();
-         for (int i = 0; i< numFila; i++){
-             double cal = Double.parseDouble(String.valueOf(VistaFac.getTableFactura().getModel().getValueAt(i, 4)));
-             Totalpagar = Totalpagar + cal;
-         }
-         VistaFac.getLabelTotalaPagar().setText(String.format("%.2f",Totalpagar));
-     }
-      
-       private void txtCantidadFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                            
-         event.numberKeyPress(evt);
+
+    private void Totalpagar() {
+        Totalpagar = 0.00;
+        int numFila = VistaFac.getTableFactura().getRowCount();
+        for (int i = 0; i < numFila; i++) {
+            double cal = Double.parseDouble(String.valueOf(VistaFac.getTableFactura().getModel().getValueAt(i, 4)));
+            Totalpagar = Totalpagar + cal;
+        }
+        VistaFac.getLabelTotalaPagar().setText(String.format("%.2f", Totalpagar));
     }
-        private void txtPrecioFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                          
-          event.numberDecimalKeyPress(evt, VistaFac.getTxtPrecioFactura());
-    }
-        private void txtStockFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                         
+
+    private void txtCantidadFacturaKeyTyped(java.awt.event.KeyEvent evt) {
         event.numberKeyPress(evt);
     }
-          private void btnGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) { 
-                if(VistaFac.getTableFactura().getRowCount()> 0){
-            if(!"".equals(VistaFac.getTxtNombreClienteFactura().getText())){
+
+    private void txtPrecioFacturaKeyTyped(java.awt.event.KeyEvent evt) {
+        event.numberDecimalKeyPress(evt, VistaFac.getTxtPrecioFactura());
+    }
+
+    private void txtStockFacturaKeyTyped(java.awt.event.KeyEvent evt) {
+        event.numberKeyPress(evt);
+    }
+
+    private void btnGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {
+        if (VistaFac.getTableFactura().getRowCount() > 0) {
+            if (!"".equals(VistaFac.getTxtNombreClienteFactura().getText())) {
                 RegistrarVenta();
                 RegistrarDetalle();
                 ActualizarStock();
-               
+
                 LimpiarTableVenta();
                 LimpiarClienteVenta();
-                
-            }else{
+
+            } else {
                 JOptionPane.showMessageDialog(null, "Debes buscar un Cliente");
             }
-        }else{
-                JOptionPane.showMessageDialog(null, "No existen Productos en la Venta");
-            
+        } else {
+            JOptionPane.showMessageDialog(null, "No existen Productos en la Venta");
+
         }
-        
-    } 
-               private void RegistrarVenta(){
-         String cliente = VistaFac.getTxtNombreClienteFactura().getText();
-         
-         double monto = Totalpagar;
-         v.setCliente(cliente);
-         v.setTotal(monto);
-         Vdao.RegistrarVenta(v);
-         
-     }
-     
-     private void RegistrarDetalle(){
-         int id = Vdao.IdVenta();
-         for(int i = 0; i<VistaFac.getTableFactura().getRowCount(); i++){
-             int cod = Integer.parseInt(VistaFac.getTableFactura().getValueAt(i, 0).toString());
-             int cant = Integer.parseInt(VistaFac.getTableFactura().getValueAt(i, 2).toString());
-             double precio = Double.parseDouble(VistaFac.getTableFactura().getValueAt(i, 3).toString());
-             Dv.setCod_pro(cod);
-             Dv.setCantidad(cant);
-             Dv.setPrecio(precio);
-             Dv.setId(id);
-             Vdao.RegistrarDetalle(Dv);
-         }
-     }
+
+    }
+
+    private void RegistrarVenta() {
+        String cliente = VistaFac.getTxtNombreClienteFactura().getText();
+
+        double monto = Totalpagar;
+        v.setCliente(cliente);
+        v.setTotal(monto);
+        Vdao.RegistrarVenta(v);
+
+    }
+
+    private void RegistrarDetalle() {
+        int id = Vdao.IdVenta();
+        for (int i = 0; i < VistaFac.getTableFactura().getRowCount(); i++) {
+            int cod = Integer.parseInt(VistaFac.getTableFactura().getValueAt(i, 0).toString());
+            int cant = Integer.parseInt(VistaFac.getTableFactura().getValueAt(i, 2).toString());
+            double precio = Double.parseDouble(VistaFac.getTableFactura().getValueAt(i, 3).toString());
+            Dv.setCod_pro(cod);
+            Dv.setCantidad(cant);
+            Dv.setPrecio(precio);
+            Dv.setId(id);
+            Vdao.RegistrarDetalle(Dv);
+        }
+    }
 //     
-     private void ActualizarStock(){
-         for(int i = 0; i <VistaFac.getTableFactura().getRowCount(); i++){
-         String cod = VistaFac.getTableFactura().getValueAt(i, 0).toString();
-         int cant = Integer.parseInt(VistaFac.getTableFactura().getValueAt(i, 2).toString());
-         pro = proDao.BuscarPro(cod);
-         int StockActual = pro.getStock() - cant;
-         Vdao.ActualizarStock(StockActual, cod);
-         
-     }
-     }
+
+    private void ActualizarStock() {
+        for (int i = 0; i < VistaFac.getTableFactura().getRowCount(); i++) {
+            String cod = VistaFac.getTableFactura().getValueAt(i, 0).toString();
+            int cant = Integer.parseInt(VistaFac.getTableFactura().getValueAt(i, 2).toString());
+            List<ProductoMb> pro = proDao.BuscarPro(cod);
+            for (int j = 0; j < pro.size(); j++) {
+                int StockActual = pro.get(i).getStock() - cant;
+                Vdao.ActualizarStock(StockActual, cod);
+            }
+
+        }
+    }
 //     
-     private void LimpiarTableVenta(){
-         tmp = (DefaultTableModel)VistaFac.getTableFactura().getModel();
-         int fila = VistaFac.getTableFactura().getRowCount();
-         for(int i = 0; i<fila; i++){
-             tmp.removeRow(0);
-         }
+
+    private void LimpiarTableVenta() {
+        tmp = (DefaultTableModel) VistaFac.getTableFactura().getModel();
+        int fila = VistaFac.getTableFactura().getRowCount();
+        for (int i = 0; i < fila; i++) {
+            tmp.removeRow(0);
+        }
 //         
-     }
-     
-     private void LimpiarClienteVenta(){
+    }
+
+    private void LimpiarClienteVenta() {
         VistaFac.getTxtCedulaClienteFactura().setText("");
         VistaFac.getTxtNombreClienteFactura().setText("");
 //        VistaFac.gettxtTelefonoClienteVenta.setText("");
 //        VistaFac.gettxtDireccionClienteFactura.setText("");
 //        VistaFac.gettxtRazonClienteFactura.setText("");
-     }
+    }
 }
