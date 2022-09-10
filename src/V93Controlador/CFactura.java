@@ -155,7 +155,7 @@ public class CFactura {
     }
 
     private void txtCantidadFacturaKeyPressed(java.awt.event.KeyEvent evt) {
-        double iva = 0.12;
+        double iva = 1.12;
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!"".equals(VistaFac.getTxtCantidadFactura().getText())) {
                 String cod = VistaFac.getTxtCodigoProFactura().getText();

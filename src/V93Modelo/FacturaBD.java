@@ -101,7 +101,7 @@ public class FacturaBD {
     
     public List ListarVentas() {
         List<FacturaMb> ListaVenta = new ArrayList();
-        String sql = "SELECT * FROM venta";
+        String sql = "SELECT * FROM ventas";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);

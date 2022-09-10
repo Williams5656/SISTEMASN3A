@@ -21,6 +21,7 @@ public class Cprincipal {
         Vista.getNuevoProducto().addActionListener(e -> producto());
         Vista.getNuevoCliente().addActionListener(e -> cliente());
         Vista.getNuevaFactura().addActionListener(e -> factura());
+         Vista.getNuevaVenta().addActionListener(e -> venta());
     }
 
     private void personas() {
@@ -62,5 +63,9 @@ public class Cprincipal {
     private void factura() {
         VistaFactura vfact = new VistaFactura();
         CFactura fac = new CFactura(vfact);
+    }
+     private void venta() {
+        VistaVentas vvent = new VistaVentas();
+        CVentas vent = new CVentas(vvent);
     }
 }

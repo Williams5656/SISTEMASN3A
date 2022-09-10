@@ -26,6 +26,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         
     }
 
+    public JMenuItem getNuevaVenta() {
+        return NuevaVenta;
+    }
+
+    public void setNuevaVenta(JMenuItem NuevaVenta) {
+        this.NuevaVenta = NuevaVenta;
+    }
+
     public JMenuItem getNuevaFactura() {
         return NuevaFactura;
     }
@@ -107,6 +115,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         NuevoCliente = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         NuevaFactura = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        NuevaVenta = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,6 +180,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu7);
 
+        jMenu8.setText("VENTAS");
+
+        NuevaVenta.setText("NuevaVenta");
+        jMenu8.add(NuevaVenta);
+
+        jMenuBar1.add(jMenu8);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -223,6 +240,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem NuevaFactura;
+    private javax.swing.JMenuItem NuevaVenta;
     private javax.swing.JMenuItem NuevoCliente;
     private javax.swing.JMenuItem NuevoProducto;
     private javax.swing.JMenuItem NuevoProveedor;
@@ -235,6 +253,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem nuevoPersona;
     private javax.swing.JMenuItem nuevoUsuario;
