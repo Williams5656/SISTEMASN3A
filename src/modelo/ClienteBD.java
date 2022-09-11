@@ -21,8 +21,6 @@ public class ClienteBD extends ClienteMD {
                 ClienteMD cl = new ClienteMD();
                 cl.setCodigo(rs.getString("COIGO"));
                 cl.setCedula(rs.getString("CEDULA"));
-                cl.setNombres(rs.getString("NOMBRES"));
-                cl.setEstado(rs.getString("TELEFONO"));
                 cl.setEstado(rs.getString("ESTADO"));
                 lista.add(cl);
             }
@@ -35,7 +33,7 @@ public class ClienteBD extends ClienteMD {
     }
 
     public boolean insertar() {
-        String sql = "INSERT INTO cliente(codigo, cedula, nombres, telefono, estado)" + "VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getNombres() + "','" + getTelefono() + "','" + getEstado() + "')";
+        String sql = "INSERT INTO cliente(codigo, cedula, nombres, telefono, estado)" + "VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getEstado() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -47,7 +45,7 @@ public class ClienteBD extends ClienteMD {
     }
 
     public boolean modificar(String codigo) {
-        String sql = "update cliente set \"cedula\"='" + getCedula() + "',\"nombres\"='" + getNombres() + "',\"telefono\"='" + getTelefono() + "',\"estado\"='" + getEstado() + "'"
+        String sql = "update cliente set \"cedula\"='" + getCedula() + "',\"estado\"='" + getEstado() + "'"
                 + "where \"codigo\"='" + codigo + "'";
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -67,8 +65,6 @@ public class ClienteBD extends ClienteMD {
                 ClienteMD cl = new ClienteMD();
                 cl.setCodigo(rs.getString("COIGO"));
                 cl.setCedula(rs.getString("CEDULA"));
-                cl.setNombres(rs.getString("NOMBRES"));
-                cl.setEstado(rs.getString("TELEFONO"));
                 cl.setEstado(rs.getString("ESTADO"));
                 lista.add(cl);
             }
@@ -89,8 +85,6 @@ public class ClienteBD extends ClienteMD {
                 ClienteMD cl = new ClienteMD();
                 cl.setCodigo(rs.getString("COIGO"));
                 cl.setCedula(rs.getString("CEDULA"));
-                cl.setNombres(rs.getString("NOMBRES"));
-                cl.setEstado(rs.getString("TELEFONO"));
                 cl.setEstado(rs.getString("ESTADO"));
                 lista.add(cl);
             }

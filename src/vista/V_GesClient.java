@@ -133,6 +133,14 @@ public class V_GesClient extends javax.swing.JInternalFrame {
         this.cmbEstadoCliente = cmbEstadoCliente;
     }
 
+    public JTextField getTxtBuscarCliente() {
+        return TxtBuscarCliente;
+    }
+
+    public void setTxtBuscarCliente(JTextField TxtBuscarCliente) {
+        this.TxtBuscarCliente = TxtBuscarCliente;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -156,6 +164,8 @@ public class V_GesClient extends javax.swing.JInternalFrame {
         TableCliente = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         cmbEstadoCliente = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        TxtBuscarCliente = new javax.swing.JTextField();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -200,13 +210,13 @@ public class V_GesClient extends javax.swing.JInternalFrame {
 
         TableCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "CEDULA", "NOMBRES", "TELEFONO", "ESTADO"
+                "CODIGO", "CEDULA", "ESTADO"
             }
         ));
         jScrollPane1.setViewportView(TableCliente);
@@ -218,6 +228,10 @@ public class V_GesClient extends javax.swing.JInternalFrame {
 
         cmbEstadoCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cancelado", "Por Cancelar" }));
         jPanel1.add(cmbEstadoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 150, 30));
+
+        jLabel3.setText("BUSCAR:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 70, 30));
+        jPanel1.add(TxtBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 150, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -248,6 +262,7 @@ public class V_GesClient extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LabelTiTelefono;
     private javax.swing.JTable TableCliente;
     private javax.swing.JTextField TxtBuscarCedula;
+    private javax.swing.JTextField TxtBuscarCliente;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardarp;
     private javax.swing.JButton btnmodificar;
@@ -255,6 +270,7 @@ public class V_GesClient extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> cmbEstadoCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

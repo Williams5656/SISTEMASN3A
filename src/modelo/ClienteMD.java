@@ -4,8 +4,6 @@ public class ClienteMD {
 
     String Codigo;
     String Cedula;
-    String Nombres;
-    String Telefono;
     String Estado;
 
     public ClienteMD() {
@@ -14,8 +12,6 @@ public class ClienteMD {
     public ClienteMD(String Codigo, String Cedula, String Nombres, String Telefono, String Estado) {
         this.Codigo = Codigo;
         this.Cedula = Cedula;
-        this.Nombres = Nombres;
-        this.Telefono = Telefono;
         this.Estado = Estado;
     }
 
@@ -35,22 +31,7 @@ public class ClienteMD {
         this.Cedula = Cedula;
     }
 
-    public String getNombres() {
-        return Nombres;
-    }
-
-    public void setNombres(String Nombres) {
-        this.Nombres = Nombres;
-    }
-
-    public String getTelefono() {
-        return Telefono;
-    }
-
-    public void setTelefono(String Telefono) {
-        this.Telefono = Telefono;
-    }
-
+ 
     public String getEstado() {
         return Estado;
     }

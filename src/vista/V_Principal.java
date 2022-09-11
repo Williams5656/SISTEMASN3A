@@ -34,14 +34,13 @@ public class V_Principal extends javax.swing.JFrame {
     public void setBtn_NuevoUsuario(JMenuItem Btn_NuevoUsuario) {
         this.Btn_NuevoUsuario = Btn_NuevoUsuario;
     }
-    
 
-    public JMenu getPersona() {
-        return Persona;
+    public JMenuItem getBtn_NuevoCliente() {
+        return Btn_NuevoCliente;
     }
 
-    public void setPersona(JMenu Persona) {
-        this.Persona = Persona;
+    public void setBtn_NuevoCliente(JMenuItem Btn_NuevoCliente) {
+        this.Btn_NuevoCliente = Btn_NuevoCliente;
     }
 
     public JMenuItem getBtn_nuevorol() {
@@ -61,13 +60,12 @@ public class V_Principal extends javax.swing.JFrame {
     }
 
     public JMenu getRol() {
-        return rol;
+        return Rol;
     }
 
     public void setRol(JMenu rol) {
-        this.rol = rol;
+        this.Rol = rol;
     }
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -77,10 +75,12 @@ public class V_Principal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         Persona = new javax.swing.JMenu();
         Btn_nuevopersona = new javax.swing.JMenuItem();
-        rol = new javax.swing.JMenu();
+        Rol = new javax.swing.JMenu();
         btn_nuevorol = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        Usuario = new javax.swing.JMenu();
         Btn_NuevoUsuario = new javax.swing.JMenuItem();
+        Cliente = new javax.swing.JMenu();
+        Btn_NuevoCliente = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,19 +102,26 @@ public class V_Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(Persona);
 
-        rol.setText("Rol");
+        Rol.setText("Rol");
 
         btn_nuevorol.setText("Nuevo");
-        rol.add(btn_nuevorol);
+        Rol.add(btn_nuevorol);
 
-        jMenuBar1.add(rol);
+        jMenuBar1.add(Rol);
 
-        jMenu1.setText("Usuario");
+        Usuario.setText("Usuario");
 
         Btn_NuevoUsuario.setText("Nuevo");
-        jMenu1.add(Btn_NuevoUsuario);
+        Usuario.add(Btn_NuevoUsuario);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(Usuario);
+
+        Cliente.setText("Cliente");
+
+        Btn_NuevoCliente.setText("Nuevo");
+        Cliente.add(Btn_NuevoCliente);
+
+        jMenuBar1.add(Cliente);
 
         setJMenuBar(jMenuBar1);
 
@@ -134,13 +141,15 @@ public class V_Principal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Btn_NuevoCliente;
     private javax.swing.JMenuItem Btn_NuevoUsuario;
     private javax.swing.JMenuItem Btn_nuevopersona;
+    private javax.swing.JMenu Cliente;
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenu Persona;
+    private javax.swing.JMenu Rol;
+    private javax.swing.JMenu Usuario;
     private javax.swing.JMenuItem btn_nuevorol;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu rol;
     // End of variables declaration//GEN-END:variables
 }
