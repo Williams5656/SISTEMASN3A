@@ -24,7 +24,6 @@ public class Conexion {
             System.out.println("Se Cargo Driver.");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
-            //Esto es una prueba
         }
  
         try {
