@@ -19,7 +19,7 @@ public class ClienteBD extends ClienteMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 ClienteMD cl = new ClienteMD();
-                cl.setCodigo(rs.getString("COIGO"));
+                cl.setCodigo(rs.getString("CODIGO"));
                 cl.setCedula(rs.getString("CEDULA"));
                 cl.setEstado(rs.getString("ESTADO"));
                 lista.add(cl);
@@ -33,7 +33,7 @@ public class ClienteBD extends ClienteMD {
     }
 
     public boolean insertar() {
-        String sql = "INSERT INTO cliente(codigo, cedula, nombres, telefono, estado)" + "VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getEstado() + "')";
+        String sql = "INSERT INTO cliente(codigo, cedula,estado)" + "VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getEstado() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -63,7 +63,7 @@ public class ClienteBD extends ClienteMD {
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 ClienteMD cl = new ClienteMD();
-                cl.setCodigo(rs.getString("COIGO"));
+                cl.setCodigo(rs.getString("CODIGO"));
                 cl.setCedula(rs.getString("CEDULA"));
                 cl.setEstado(rs.getString("ESTADO"));
                 lista.add(cl);
@@ -76,14 +76,14 @@ public class ClienteBD extends ClienteMD {
         }
     }
 
-    public List<ClienteMD> buscardatosporcodigo(String codigo) {
+    public List<ClienteMD> buscardatos(String cedula) {
         try {
             List<ClienteMD> lista = new ArrayList<ClienteMD>();
-            String sql = "select * from cliente where \"codigo\" ILIKE '%" + codigo + "%'";
+            String sql = "select * from cliente where \"cedula\" ILIKE '%" + cedula + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 ClienteMD cl = new ClienteMD();
-                cl.setCodigo(rs.getString("COIGO"));
+                cl.setCodigo(rs.getString("CODIGO"));
                 cl.setCedula(rs.getString("CEDULA"));
                 cl.setEstado(rs.getString("ESTADO"));
                 lista.add(cl);

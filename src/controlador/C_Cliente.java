@@ -5,11 +5,7 @@ import java.awt.Color;
 import java.awt.Image;
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.ClienteBD;
@@ -27,10 +23,19 @@ public class C_Cliente extends ClienteBD {
     public C_Cliente(V_GesClient vistacl) {
         C_Cliente.vistacliente = vistacl;
         vistacl.setVisible(true);
+        lista();
+        GenerarCodCliente();
         vistacl.getLabelTINombres().setVisible(false);
         vistacl.getLabelNombres().setVisible(false);
         vistacl.getLabelTelefono().setVisible(false);
         vistacl.getLabelTiTelefono().setVisible(false);
+        vistacl.getBtnguardarp().setEnabled(false);
+        vistacl.getBtnmodificar().setEnabled(false);
+        vistacl.getBtnguardarp().addActionListener(x -> guardar());
+        vistacl.getBtnmodificar().addActionListener(x -> modificar());
+        vistacl.getBtneliminar().addActionListener(x -> eliminar());
+        vistacl.getBtnnuevo().addActionListener(x -> nuevo());
+        vistacl.getBtnBuscarCedula().addActionListener(x -> BuscarPersona());
         vistacl.getTxtBuscarCliente().addKeyListener(new java.awt.event.KeyAdapter() {
             @Override
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -72,7 +77,7 @@ public class C_Cliente extends ClienteBD {
 
     public void guardar() {
         bdcliente.setCodigo(vistacliente.getLabelCodigo().getText());
-        bdcliente.setCedula(vistacliente.getLabelCedula().getText());
+        bdcliente.setCedula(vistacliente.getTxtBuscarCedula().getText());
         bdcliente.setEstado(vistacliente.getCmbEstadoCliente().getSelectedItem().toString());
 
         if (bdcliente.insertar()) {
@@ -115,6 +120,23 @@ public class C_Cliente extends ClienteBD {
 
     }
 
+    public void GenerarCodCliente() {
+        char[] chars = "0123".toCharArray();
+
+        int charsLength = chars.length;
+
+        Random random = new Random();
+
+        StringBuilder buffer = new StringBuilder();
+
+        for (int i = 0; i < 3; i++) {
+
+            buffer.append(chars[random.nextInt(charsLength)]);
+        }
+
+        vistacliente.getLabelCodigo().setText("CLNT" + buffer.toString());
+    }
+
     public void eliminar() {
         bdcliente.setCodigo(vistacliente.getLabelCodigo().getText());
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Eliminar");
@@ -128,9 +150,15 @@ public class C_Cliente extends ClienteBD {
     }
 
     public void nuevo() {
-
+        vistacliente.getLabelNombres().setText("");
+        vistacliente.getLabelTelefono().setText("");
+        vistacliente.getLabelTINombres().setVisible(false);
+        vistacliente.getLabelNombres().setVisible(false);
+        vistacliente.getLabelTelefono().setVisible(false);
+        vistacliente.getLabelTiTelefono().setVisible(false);
         vistacliente.getBtnguardarp().setEnabled(true);
-        vistacliente.getBtnmodificar().setEnabled(false);
+        vistacliente.getBtnmodificar().setEnabled(true);
+        GenerarCodCliente();
     }
 
     private void TxtBuscarCedulaFocusGained(java.awt.event.FocusEvent evt) {
@@ -163,18 +191,22 @@ public class C_Cliente extends ClienteBD {
     }
 
     public void BuscarCliente() {
-        if (vistacliente.getTxtBuscarCedula().getText().equals("")) {
+        if (vistacliente.getTxtBuscarCliente().getText().equals("")) {
             lista();
         } else {
-            DefaultTableModel model;
-            model = (DefaultTableModel) vistacliente.getTableCliente().getModel();
-            java.util.List<ClienteMD> lista = bdcliente.buscardatosporcodigo(vistacliente.getTxtBuscarCedula().getText());
-            int columnas = model.getColumnCount();
+            DefaultTableModel modelo;
+            modelo = (DefaultTableModel) vistacliente.getTableCliente().getModel();
+
+            List<ClienteMD> lista = bdcliente.buscardatos(vistacliente.getTxtBuscarCliente().getText());
+            int columnas = modelo.getColumnCount();
+
             for (int j = vistacliente.getTableCliente().getRowCount() - 1; j >= 0; j--) {
-                model.removeRow(j);
+                modelo.removeRow(j);
             }
+
             for (int i = 0; i < lista.size(); i++) {
-                model.addRow(new Object[columnas]);
+                modelo.addRow(new Object[columnas]);
+
                 vistacliente.getTableCliente().setValueAt(lista.get(i).getCodigo(), i, 0);
                 vistacliente.getTableCliente().setValueAt(lista.get(i).getCedula(), i, 1);
                 vistacliente.getTableCliente().setValueAt(lista.get(i).getEstado(), i, 2);

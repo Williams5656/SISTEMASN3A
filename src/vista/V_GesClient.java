@@ -167,6 +167,10 @@ public class V_GesClient extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         TxtBuscarCliente = new javax.swing.JTextField();
 
+        setClosable(true);
+        setIconifiable(true);
+        setResizable(true);
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
@@ -175,7 +179,7 @@ public class V_GesClient extends javax.swing.JInternalFrame {
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
-        jPanel1.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 110, 40));
+        jPanel1.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 140, 40));
 
         btnguardarp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar-archivo.png"))); // NOI18N
         btnguardarp.setText("GUARDAR");
@@ -198,7 +202,7 @@ public class V_GesClient extends javax.swing.JInternalFrame {
 
         LabelTINombres.setText("NOMBRES:");
         jPanel1.add(LabelTINombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 70, 30));
-        jPanel1.add(LabelNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 160, 30));
+        jPanel1.add(LabelNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 230, 30));
 
         LabelTiTelefono.setText("TELEFONO:");
         jPanel1.add(LabelTiTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 70, 30));

@@ -55,11 +55,8 @@ public class C_Usuario {
                 txtCedulaFocusLost(evt);
             }
         });
-        vistaUsuario.getCheckBoxEstado().addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckBoxEstadoActionPerformed(evt);
-            }
+        vistaUsuario.getCheckBoxEstado().addActionListener((java.awt.event.ActionEvent evt) -> {
+            CheckBoxEstadoActionPerformed(evt);
         });
         vistaUsuario.getTableUsuario().addMouseListener(new MouseAdapter() {
             @Override
