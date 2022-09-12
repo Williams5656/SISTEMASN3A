@@ -170,9 +170,10 @@ public class C_Login {
     public void validar() throws SQLException {
         RolBD bdrol = new RolBD();
         String estado = "";
-        List<RolMD> listarol = bdrol.buscardatosporcodigo(us.getRol());
+        List<RolMD> listarol = bdrol.mostrardatos();
         for (int i = 0; i < listarol.size(); i++) {
-            estado = listarol.get(i).getEstado();
+            int id_rol = Integer.parseInt(listarol.get(i).getCodigo());
+            estado = listarol.get(id_rol).getEstado();
         }
         String usuario = vista.getTxtUsuario().getText();
         String clave = vista.getjPassClave().getText();
@@ -206,5 +207,6 @@ public class C_Login {
             JOptionPane.showMessageDialog(null, "Usted a agotado sus intentos", "Seguridad del Sistema", JOptionPane.OK_OPTION);
             System.exit(0);
         }
+
     }
 }
