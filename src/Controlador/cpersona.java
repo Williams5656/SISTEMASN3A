@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Conect;
 import Modelo.personaBD;
 import Modelo.personaMD;
 import Vista.vpersona;
@@ -23,7 +24,16 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
+
+
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -44,6 +54,7 @@ public class cpersona {
         vista.getBtn_guardar().addActionListener(e -> guardar());
         vista.getBtn_modificar().addActionListener(e -> modificar());
         vista.getBtn_eliminar().addActionListener(e -> eliminar());
+        vista.getBtn_imprimir().addActionListener(e -> imprimir());
         vista.getBtn_foto().addActionListener(e -> foto());
         vista.getTxt_buscar().addKeyListener(new KeyAdapter() {
             public void keyReleased(KeyEvent evt) {
@@ -270,6 +281,22 @@ public class cpersona {
         vista.getTxt_correo().setText("");
         vista.getTxt_calendar().setCalendar(null);
         vista.getFoto().setIcon(null);
+
+    }
+    
+        //sin parametros
+    public void imprimir() {
+        Conect con = new Conect();
+        try {
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/RepAutos.jasper"));
+            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, null, con.getCon());
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(cpersona.class.getName()).log(Level.SEVERE, null, e);
+        }
 
     }
 

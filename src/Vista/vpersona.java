@@ -208,6 +208,14 @@ public class vpersona extends javax.swing.JInternalFrame {
     public void setTxt_telefono(JTextField txt_telefono) {
         this.txt_telefono = txt_telefono;
     }
+
+    public JButton getBtn_imprimir() {
+        return btn_imprimir;
+    }
+
+    public void setBtn_imprimir(JButton btn_imprimir) {
+        this.btn_imprimir = btn_imprimir;
+    }
     
 
     /**
@@ -242,6 +250,7 @@ public class vpersona extends javax.swing.JInternalFrame {
         txt_buscar = new javax.swing.JTextField();
         foto = new javax.swing.JLabel();
         btn_foto = new javax.swing.JButton();
+        btn_imprimir = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -312,6 +321,9 @@ public class vpersona extends javax.swing.JInternalFrame {
         btn_foto.setText("foto");
         getContentPane().add(btn_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, -1));
 
+        btn_imprimir.setText("imprimir");
+        getContentPane().add(btn_imprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -321,6 +333,7 @@ public class vpersona extends javax.swing.JInternalFrame {
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_foto;
     private javax.swing.JButton btn_guardar;
+    private javax.swing.JButton btn_imprimir;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_nuevo;
     private javax.swing.JLabel foto;
