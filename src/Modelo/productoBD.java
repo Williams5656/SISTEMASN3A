@@ -69,21 +69,18 @@ public class productoBD extends productoMD{
         return reader.read(0, param);
     }
 
-    public List<personaMD> mostrardatos() {
+    public List<productoMD> mostrardatos() {
 
         try {
-            List<personaMD> lista = new ArrayList<personaMD>();
-            String sql = "select * from persona";
+            List<productoMD> lista = new ArrayList<productoMD>();
+            String sql = "select * from producto";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
 
-                personaMD persona = new personaMD();
-                persona.setCedula(rs.getString("cedula"));
-                persona.setNombres(rs.getString("nombres"));
-                persona.setDireccion(rs.getString("direccion"));
-                persona.setTelefono(rs.getString("telefono"));
-                persona.setCorreo(rs.getString("correo"));
-                persona.setFechanac(rs.getString("fecha_nacimiento"));
+                productoMD p = new productoMD();
+                p.setId_producto(rs.getString("id_producto"));
+                p.setNombre_pro(rs.getString("nombre_pro"));
+                p.setDescripcion_pro(rs.getString("descripcion_pro"));
 
                 byte[] is;
                 is = rs.getBytes("foto");
@@ -91,16 +88,16 @@ public class productoBD extends productoMD{
                     try {
                         is = Base64.decode(is, 0, rs.getBytes("foto").length);
 //                    BufferedImage bi=Base64.decode( ImageIO.read(is));
-                        persona.setFoto(getImage(is, false));
+                        p.setFoto(getImage(is, false));
                     } catch (Exception ex) {
-                        persona.setFoto(null);
+                        p.setFoto(null);
                         Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
-                    persona.setFoto(null);
+                    p.setFoto(null);
                 }
 
-                lista.add(persona);
+                lista.add(p);
             }
 
             rs.close();
@@ -123,27 +120,17 @@ public class productoBD extends productoMD{
         } catch (IOException ex) {
             Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
+         String nsql = "INSERT INTO producto (id_producto,nombre_pro,descripcion_pro,foto)" + "VALUES ('" + getId_producto()+ "','" + getNombre_pro()+   "','" + getDescripcion_pro()+ "','" + getFoto()+ "')";
 
-        String sql = "INSERT INTO persona(cedula, nombres, direccion, telefono, correo, fecha_nacimiento, foto)"
-                + "VALUES ('"
-                + getCedula() + "','"
-                + getNombres().toUpperCase() + "','"
-                + getDireccion().toUpperCase() + "','"
-                + getTelefono() + "','"
-                + getCorreo().toLowerCase() + "','"
-                + getFechanac() + "','"
-                + ef + "')";
-
-        if (conectar.noQuery(sql) == null) {
+        if (conectar.noQuery(nsql) == null) {
             return true;
         } else {
-
-            JOptionPane.showMessageDialog(null, "ERROR");
+            System.out.println("Error");
             return false;
         }
     }
 
-    public boolean modificar(String cedula) {
+    public boolean modificar(String id_producto) {
 
         String ef = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -156,14 +143,11 @@ public class productoBD extends productoMD{
             Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String sql = "update persona set "
-                + "nombres = '" + getNombres().toUpperCase() + "', "
-                + "direccion = '" + getDireccion().toUpperCase() + "', "
-                + "telefono = '" + getTelefono() + "', "
-                + "correo = '" + getCorreo().toLowerCase() + "', "
-                + "fecha_nacimiento = '" + getFechanac() + "', "
+        String sql = "update productos set "
+                + "nombre_pro = '" + getNombre_pro().toUpperCase() + "', "
+                + "descripcion_pro = '" + getDescripcion_pro().toUpperCase() + "', "               
                 + "foto = '" + ef + "' "
-                + "where cedula = '" + cedula + "'";
+                + "where id_producto = '" + id_producto + "'";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -174,23 +158,21 @@ public class productoBD extends productoMD{
         }
     }
 
-    public List<personaMD> obtenerDatos(String cedula) {
-        List<personaMD> lista = new ArrayList<personaMD>();
+    public List<productoMD> obtenerDatos(String id_producto) {
+        List<productoMD> lista = new ArrayList<productoMD>();
         try {
             
             String sql
-                    = "select * from persona "
-                    + "where cedula ILIKE '%" + cedula + "%'";
+                    = "select * from productos "
+                    + "where id_producto ILIKE '%" + id_producto + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                personaMD persona = new personaMD();
+                productoMD p = new productoMD();
 
-                persona.setCedula(rs.getString("cedula"));
-                persona.setNombres(rs.getString("nombres"));
-                persona.setDireccion(rs.getString("direccion"));
-                persona.setTelefono(rs.getString("telefono"));
-                persona.setCorreo(rs.getString("correo"));
-                persona.setFechanac(rs.getString("fecha_nacimiento"));
+                p.setId_producto(rs.getString("id_producto"));
+                p.setNombre_pro(rs.getString("nombre_pro"));
+                p.setDescripcion_pro(rs.getString("descripcion_pro"));
+              
 
                 byte[] is;
                 is = rs.getBytes("foto");
@@ -198,16 +180,16 @@ public class productoBD extends productoMD{
                     try {
                         is = Base64.decode(is, 0, rs.getBytes("foto").length);
 //                    BufferedImage bi=Base64.decode( ImageIO.read(is));
-                        persona.setFoto(getImage(is, false));
+                        p.setFoto(getImage(is, false));
                     } catch (Exception ex) {
-                        persona.setFoto(null);
+                        p.setFoto(null);
                         Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
-                    persona.setFoto(null);
+                    p.setFoto(null);
                 }
 
-                lista.add(persona);
+                lista.add(p);
             }
 
             rs.close();
@@ -218,8 +200,8 @@ public class productoBD extends productoMD{
         }
     }
 
-    public boolean eliminar(String cedula) {
-        String nsql = "Delete from persona where cedula = '" + cedula + "'";
+    public boolean eliminar(String id_producto) {
+        String nsql = "Delete from productos where id_producto = '" + id_producto + "'";
         if (conectar.noQuery(nsql) == null) {
             return true;
         } else {
@@ -230,4 +212,4 @@ public class productoBD extends productoMD{
 }
 
     
-}
+
