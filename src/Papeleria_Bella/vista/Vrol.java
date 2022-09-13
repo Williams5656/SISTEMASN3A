@@ -152,10 +152,27 @@ public class Vrol extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonguardarActionPerformed
 
+    
+    
+
+    public JButton getButtonimprimir() {
+        return buttonimprimir;
+    }
+
+    public void setButtonimprimir(JButton buttonimprimir) {
+        this.buttonimprimir = buttonimprimir;
+    }
+
+    public JLabel getFondo() {
+        return fondo;
+    }
+
     /**
      * @param args the command line arguments
      */
-    
+    public void setFondo(JLabel fondo) {
+        this.fondo = fondo;
+    }
 
     public JButton getButtonbuscar() {
         return buttonbuscar;

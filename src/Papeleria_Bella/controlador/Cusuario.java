@@ -6,17 +6,22 @@ import Papeleria_Bella.vista.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
-/*import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.view.JasperViewer;*/
+import net.sf.jasperreports.view.JasperViewer;
 
 public class Cusuario {
 
@@ -36,7 +41,7 @@ public class Cusuario {
         vistau.getButtonguardar().addActionListener(x -> guardar());
         vistau.getButtonbuscar().addActionListener(e -> buscar());
         vistau.getButtonmodificar().addActionListener(e -> modificar());
-        /*vista.getButtonimprimir().addActionListener(e -> imprimir());*/
+        vistau.getButtonimprimir().addActionListener(e -> imprimir());
         vistau.getComborol().setModel(busuario.ROL());
         vistau.getTablausuario().addMouseListener(new MouseAdapter() {
             @Override
@@ -189,7 +194,7 @@ public class Cusuario {
 
         vistau.getLabelcodigo().setText("U" + buffer.toString());
     }
-    /*private void imprimir_sinparametro() {
+    private void imprimir_sinparametro() {
         Conexion conectar = new Conexion();
         try {
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona.jasper"));
@@ -285,6 +290,6 @@ public class Cusuario {
         default:
             JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
     }
-    }*/
+    }
 
 }

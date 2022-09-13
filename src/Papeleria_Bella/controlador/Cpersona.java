@@ -17,12 +17,12 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
-/*import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.view.JasperViewer;*/
+import net.sf.jasperreports.view.JasperViewer;
 
 public class Cpersona {
 
@@ -39,7 +39,7 @@ public class Cpersona {
         vista.getButtonmodificar().addActionListener(e -> modificar());
         vista.getButtoncargar().addActionListener(e -> obtieneImagen());
         vista.getButtonbuscar().addActionListener(e -> Buscar());
-        /*vista.getButtonimprimir().addActionListener(e -> imprimir());*/
+        vista.getButtonimprimir().addActionListener(e -> imprimir());
         vista.getTablapersona().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -207,7 +207,7 @@ public class Cpersona {
         }
     }
     
-    /*private void imprimir_sinparametro() {
+    private void imprimir_sinparametro() {
         Conexion conectar = new Conexion();
         try {
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona.jasper"));
@@ -303,6 +303,6 @@ public class Cpersona {
         default:
             JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
     }
-    }*/
+    }
 
 }

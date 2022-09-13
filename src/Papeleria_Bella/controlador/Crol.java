@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Papeleria_Bella.controlador;
 
 import static Papeleria_Bella.controlador.Cpersona.vista;
@@ -10,17 +6,22 @@ import Papeleria_Bella.vista.*;
 import Papeleria_Bella.modelo.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
-/*import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.view.JasperViewer;*/
+import net.sf.jasperreports.view.JasperViewer;
 
 public class Crol {
     public static Vrol vista;
@@ -36,7 +37,7 @@ public class Crol {
         vista.getButtonguardar().addActionListener(x -> guardar());
         vista.getButtonbuscar().addActionListener(e -> buscar());
         vista.getButtonmodificar().addActionListener(e -> modificar());
-        /*vista.getButtonimprimir().addActionListener(e -> imprimir());*/
+        vista.getButtonimprimir().addActionListener(e -> imprimir());
         vista.getTablarol().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -175,7 +176,7 @@ public class Crol {
         }
     
     }
-    /*private void imprimir_sinparametro() {
+    private void imprimir_sinparametro() {
         Conexion conectar = new Conexion();
         try {
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona.jasper"));
@@ -271,5 +272,5 @@ public class Crol {
         default:
             JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
     }
-    }*/
+    }
 }

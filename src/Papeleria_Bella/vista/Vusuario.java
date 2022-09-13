@@ -24,6 +24,7 @@ public class Vusuario extends javax.swing.JFrame {
     public void setFondo(JLabel fondo) {
         this.fondo = fondo;
     }
+    
 
     
     
