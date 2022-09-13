@@ -17,7 +17,9 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -287,9 +289,14 @@ public class cpersona {
         //sin parametros
     public void imprimir() {
         Conect con = new Conect();
+
         try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/RepPersona.jasper"));
-            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, null, con.getCon());
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/Repersona.jasper"));
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("logo", "imagenes/991231.jpg");
+            String nombre = JOptionPane.showInputDialog("Ingrese su cedula");
+            map.put("par", nombre);
+            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
             JasperViewer jv = new JasperViewer(jp, false);
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
@@ -297,7 +304,5 @@ public class cpersona {
             System.out.println("no se pudo encontrar registros" + e.getMessage());
             Logger.getLogger(cpersona.class.getName()).log(Level.SEVERE, null, e);
         }
-
     }
-
 }

@@ -6,7 +6,10 @@
 	<parameter name="logo" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
-	<queryString language="SQL">
+	<parameter name="par" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
 		<![CDATA[SELECT
      persona."cedula" AS persona_cedula,
      persona."nombres" AS persona_nombres,
@@ -16,7 +19,8 @@
      persona."fecha_nacimiento" AS persona_fecha_nacimiento,
      persona."foto" AS persona_foto
 FROM
-     "public"."persona" persona]]>
+     "public"."persona" persona
+where persona."cedula" like $P{par}]]>
 	</queryString>
 	<field name="persona_cedula" class="java.lang.String"/>
 	<field name="persona_nombres" class="java.lang.String"/>
