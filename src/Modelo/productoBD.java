@@ -195,7 +195,7 @@ public class productoBD extends productoMD{
             rs.close();
             return lista;
         } catch (SQLException e) {
-            Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(productoBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }
