@@ -28,11 +28,11 @@ FROM
 	<title>
 		<band height="39" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="19" width="555" height="20" uuid="5265721a-7707-4952-a4ef-5077956ef9b4"/>
+				<reportElement x="0" y="0" width="555" height="20" uuid="5265721a-7707-4952-a4ef-5077956ef9b4"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Reporte General]]></text>
+				<text><![CDATA[**Reporte General**]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -42,32 +42,64 @@ FROM
 	<columnHeader>
 		<band height="25" splitType="Stretch">
 			<staticText>
-				<reportElement x="99" y="5" width="100" height="20" uuid="1411ca54-82bd-44da-b31e-5ef4f26ae536"/>
+				<reportElement x="0" y="2" width="82" height="20" uuid="63ee87b6-3875-4703-923b-d3d38f759c2f"/>
 				<text><![CDATA[persona_cedula]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="199" y="5" width="100" height="20" uuid="24c5a725-57cf-4fae-aa1c-c9697e22c612"/>
+				<reportElement x="82" y="2" width="86" height="20" uuid="2d56115f-952e-485c-afb4-ea80962f8e5e"/>
 				<text><![CDATA[persona_nombres]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="299" y="5" width="100" height="20" uuid="69cd6c6c-1786-4900-97bc-02e0e6263a21"/>
+				<reportElement x="168" y="5" width="90" height="20" uuid="41ce84a5-9eef-41e2-946c-47830452911f"/>
 				<text><![CDATA[persona_direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="5" width="89" height="20" uuid="0fc753cf-5cde-4106-985e-37d5a2b9631b"/>
+				<text><![CDATA[persona_telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="347" y="5" width="73" height="20" uuid="66bb67ad-3263-4211-baf5-97ab43f4e4a0"/>
+				<text><![CDATA[persona_correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="5" width="100" height="20" uuid="35f8aedb-787c-4ee2-991b-9c8114281a2a"/>
+				<text><![CDATA[persona_fecha_nacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="520" y="5" width="100" height="20" uuid="706f9f83-47c1-4d7f-a3ad-e685d2d5f0fe"/>
+				<text><![CDATA[persona_foto]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="25" splitType="Stretch">
+		<band height="75" splitType="Stretch">
 			<textField>
-				<reportElement x="99" y="0" width="100" height="20" uuid="6e9acc2f-5172-4c0d-886a-1840ccada0f5"/>
+				<reportElement x="0" y="0" width="100" height="20" uuid="5a2f8884-462e-4be0-bafa-2a13823bc416"/>
 				<textFieldExpression><![CDATA[$F{persona_cedula}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="199" y="0" width="100" height="20" uuid="67fb1f78-4ebc-4f3e-9c98-6ce09587712b"/>
+				<reportElement x="100" y="0" width="56" height="20" uuid="985105a0-aabf-43d1-9535-2800e3770a58"/>
 				<textFieldExpression><![CDATA[$F{persona_nombres}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="299" y="0" width="100" height="20" uuid="281476e9-683d-403e-adce-f34e54ad507b"/>
+				<reportElement x="156" y="0" width="78" height="20" uuid="0f22e232-5265-4855-b141-6aaa098b2ad7"/>
 				<textFieldExpression><![CDATA[$F{persona_direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="0" width="100" height="20" uuid="c231763f-0566-4c49-b58d-6fdfc3aa196c"/>
+				<textFieldExpression><![CDATA[$F{persona_telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="0" width="97" height="20" uuid="9e5af19c-a24f-41f4-a660-892e81b37f51"/>
+				<textFieldExpression><![CDATA[$F{persona_correo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="0" width="64" height="20" uuid="1c6ff601-8ea8-40e4-ad93-ad79705810b6"/>
+				<textFieldExpression><![CDATA[$F{persona_fecha_nacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="0" width="100" height="20" uuid="994a097b-ad2f-47b6-ab65-20c3e37eee77"/>
+				<textFieldExpression><![CDATA[""+$F{persona_foto}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

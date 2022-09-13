@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -55,12 +56,36 @@ public class vprincipal extends javax.swing.JFrame {
         this.btn_usuario = btn_usuario;
     }
 
+    public JCheckBoxMenuItem getBtncliente() {
+        return btncliente;
+    }
+
+    public void setBtncliente(JCheckBoxMenuItem btncliente) {
+        this.btncliente = btncliente;
+    }
+
+    public JMenu getBtnproductos() {
+        return btnproductos;
+    }
+
+    public void setBtnproductos(JMenu btnproductos) {
+        this.btnproductos = btnproductos;
+    }
+
     public JDesktopPane getEscritorio() {
         return escritorio;
     }
 
     public void setEscritorio(JDesktopPane escritorio) {
         this.escritorio = escritorio;
+    }
+
+    public JCheckBoxMenuItem getjCheckBoxMenuItem1() {
+        return jCheckBoxMenuItem1;
+    }
+
+    public void setjCheckBoxMenuItem1(JCheckBoxMenuItem jCheckBoxMenuItem1) {
+        this.jCheckBoxMenuItem1 = jCheckBoxMenuItem1;
     }
 
     public JMenu getjMenu1() {
@@ -95,6 +120,14 @@ public class vprincipal extends javax.swing.JFrame {
         this.jMenu4 = jMenu4;
     }
 
+    public JMenu getjMenu5() {
+        return jMenu5;
+    }
+
+    public void setjMenu5(JMenu jMenu5) {
+        this.jMenu5 = jMenu5;
+    }
+
     public JMenuBar getjMenuBar1() {
         return jMenuBar1;
     }
@@ -102,6 +135,8 @@ public class vprincipal extends javax.swing.JFrame {
     public void setjMenuBar1(JMenuBar jMenuBar1) {
         this.jMenuBar1 = jMenuBar1;
     }
+
+   
     
 
     /**
@@ -119,8 +154,12 @@ public class vprincipal extends javax.swing.JFrame {
         btn_persona = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         btn_usuario = new javax.swing.JMenuItem();
+        btnproductos = new javax.swing.JMenu();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jMenu3 = new javax.swing.JMenu();
         btn_rol = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        btncliente = new javax.swing.JCheckBoxMenuItem();
         jMenu4 = new javax.swing.JMenu();
         btn_salir = new javax.swing.JMenuItem();
 
@@ -134,7 +173,7 @@ public class vprincipal extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 283, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Persona");
@@ -151,12 +190,28 @@ public class vprincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        btnproductos.setText("Productos");
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("productos");
+        btnproductos.add(jCheckBoxMenuItem1);
+
+        jMenuBar1.add(btnproductos);
+
         jMenu3.setText("Rol");
 
         btn_rol.setText("Rol");
         jMenu3.add(btn_rol);
 
         jMenuBar1.add(jMenu3);
+
+        jMenu5.setText("Cliente");
+
+        btncliente.setSelected(true);
+        btncliente.setText("cliente");
+        jMenu5.add(btncliente);
+
+        jMenuBar1.add(jMenu5);
 
         jMenu4.setText("Salir");
 
@@ -221,11 +276,15 @@ public class vprincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem btn_rol;
     private javax.swing.JMenuItem btn_salir;
     private javax.swing.JMenuItem btn_usuario;
+    private javax.swing.JCheckBoxMenuItem btncliente;
+    private javax.swing.JMenu btnproductos;
     private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

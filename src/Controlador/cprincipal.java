@@ -27,7 +27,9 @@ public class cprincipal {
         
         vista.getBtn_persona().addActionListener(e-> persona());
         vista.getBtn_usuario().addActionListener(e-> usuario());
+        vista.getBtnproductos().addActionListener(e-> productos());
         vista.getBtn_rol().addActionListener(e-> rol());
+        vista.getBtncliente().addActionListener(e-> cliente());
         vista.getBtn_salir().addActionListener(e-> salir());
         
     }
@@ -52,6 +54,16 @@ public class cprincipal {
         Dimension FrameSize = vusu.getSize();
         vusu.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }
+    
+    private void productos() {
+        vusuario vusu = new vusuario();
+        cusuario cpersona = new cusuario(vusu);
+
+        vista.getEscritorio().add(vusu);
+        Dimension desktopSize = vista.getEscritorio().getSize();
+        Dimension FrameSize = vusu.getSize();
+        vusu.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+    }
 
     private void rol() {
         vrol vrol = new vrol();
@@ -64,6 +76,16 @@ public class cprincipal {
         
     }
 
+     private void cliente() {
+        vrol vrol = new vrol();
+        crol cpersona = new crol(vrol);
+
+        vista.getEscritorio().add(vrol);
+        Dimension desktopSize = vista.getEscritorio().getSize();
+        Dimension FrameSize = vrol.getSize();
+        vrol.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        
+    }
     private void salir() {
          vista.dispose();
     }

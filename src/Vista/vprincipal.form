@@ -28,6 +28,19 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="btnproductos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Productos"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JCheckBoxMenuItem" name="jCheckBoxMenuItem1">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="productos"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Rol"/>
@@ -36,6 +49,19 @@
             <MenuItem class="javax.swing.JMenuItem" name="btn_rol">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Rol"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cliente"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JCheckBoxMenuItem" name="btncliente">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="cliente"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -98,7 +124,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="279" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="283" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
