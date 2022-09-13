@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import Vista.vcliente;
+import Vista.vproductos;
 import Vista.vpersona;
 import Vista.vprincipal;
 import Vista.vrol;
@@ -56,13 +58,12 @@ public class cprincipal {
     }
     
     private void productos() {
-        vusuario vusu = new vusuario();
-        cusuario cpersona = new cusuario(vusu);
-
-        vista.getEscritorio().add(vusu);
+        vproductos vpro = new vproductos();
+        cproductos cpersona = new cproductos(vpro);
+        vista.getEscritorio().add(vpro);
         Dimension desktopSize = vista.getEscritorio().getSize();
-        Dimension FrameSize = vusu.getSize();
-        vusu.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        Dimension FrameSize = vpro.getSize();
+        vpro.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }
 
     private void rol() {
@@ -77,13 +78,12 @@ public class cprincipal {
     }
 
      private void cliente() {
-        vrol vrol = new vrol();
-        crol cpersona = new crol(vrol);
-
-        vista.getEscritorio().add(vrol);
+        vcliente vcl = new vcliente();
+        ccliente cpersona = new ccliente(vcl);
+        vista.getEscritorio().add(vcl);
         Dimension desktopSize = vista.getEscritorio().getSize();
-        Dimension FrameSize = vrol.getSize();
-        vrol.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        Dimension FrameSize = vcl.getSize();
+        vcl.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         
     }
     private void salir() {
