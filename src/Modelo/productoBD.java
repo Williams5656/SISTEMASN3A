@@ -103,7 +103,7 @@ public class productoBD extends productoMD{
             rs.close();
             return lista;
         } catch (SQLException e) {
-            Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(productoBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }
@@ -118,7 +118,7 @@ public class productoBD extends productoMD{
             byte[] imgb = bos.toByteArray();
             ef = Base64.encodeBytes(imgb);
         } catch (IOException ex) {
-            Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(productoBD.class.getName()).log(Level.SEVERE, null, ex);
         }
          String nsql = "INSERT INTO producto (id_producto,nombre_pro,descripcion_pro,foto)" + "VALUES ('" + getId_producto()+ "','" + getNombre_pro()+   "','" + getDescripcion_pro()+ "','" + getFoto()+ "')";
 
