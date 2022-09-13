@@ -288,7 +288,7 @@ public class cpersona {
     public void imprimir() {
         Conect con = new Conect();
         try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/RepAutos.jasper"));
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/RepPersona.jasper"));
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, null, con.getCon());
             JasperViewer jv = new JasperViewer(jp, false);
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
