@@ -26,6 +26,7 @@ public class usuarioBD extends usuarioMD{
     public usuarioBD(int codigo, String cedula, String usuario, String password, String rol, String estado) {
         super(codigo, cedula, usuario, password, rol, estado);
     }
+
     public List<usuarioMD> mostrardatos() {
         
         try {

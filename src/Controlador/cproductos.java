@@ -26,6 +26,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
+
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -109,24 +110,24 @@ public class cproductos {
         vista.getBtneliminar01().setEnabled(true);
 
     }
-//      public void imprimir() {
-//        Conect con = new Conect();
-////        
-//        try {
-//            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/RepAutos.jasper"));
-//            Map<String, Object> map = new HashMap<String, Object>();
-//            map.put("logo", "imagenes/991231.jpg");
-//            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
-//            JasperViewer jv = new JasperViewer(jp, false);
-//            JOptionPane.showMessageDialog(null, "Imprimiendo Autos");
-//            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-//            jv.setVisible(true);
-//        } catch (JRException e) {
-//            System.out.println("no se pudo encontrar registros" + e.getMessage());
-//            Logger.getLogger(cproductos.class.getName()).log(Level.SEVERE, null, e);
-//        }
-//
-//    }
+      public void imprimir() {
+        Conect con = new Conect();
+//        
+        try {
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/RepAutos.jasper"));
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("logo", "imagenes/991231.jpg");
+            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(jp, false);
+            JOptionPane.showMessageDialog(null, "Imprimiendo Autos");
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(cproductos.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+    }
 
     private void guardar() {
        // SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");

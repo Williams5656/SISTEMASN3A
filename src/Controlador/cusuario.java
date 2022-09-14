@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Conect;
 import Modelo.usuarioBD;
 import Modelo.usuarioMD;
 import Vista.vusuario;
@@ -16,11 +17,20 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
 /**
  *
  * @author VICO5
  */
 public class cusuario {
+    
      public static vusuario vista;
     
     private usuarioBD bdusuario = new usuarioBD();
@@ -86,20 +96,13 @@ public class cusuario {
     }
     
     public void lista(){
-        DefaultTableModel modelo;
+       DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTabla_usuarios().getModel();
-        
         List<usuarioMD> lista = bdusuario.mostrardatos();
         int columnas = modelo.getColumnCount();
-        
-
-
-        for (int j = vista.getTabla_usuarios().getRowCount()-1; j >= 0; j--){
+        for (int j = vista.getTabla_usuarios().getRowCount() - 1; j >= 0; j--) {
             modelo.removeRow(j);
         }
-
-
-        
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
             vista.getTabla_usuarios().setValueAt(lista.get(i).getCodigo(), i, 0);
@@ -212,6 +215,7 @@ public class cusuario {
         
         bdusuario.setEstado(lista.get(0).getEstado());
         vista.getCombo_estado().setSelectedItem(bdusuario.getEstado());
+        
     }//Fin del seleccionar
     
     public void eliminar(){
