@@ -38,7 +38,7 @@ public class C_Rol {
         GenerarCodRol();
         vistarol.getBtnguardarp().addActionListener(e -> guardar());
         vistarol.getBtnmodificar().addActionListener(e -> modificar());
-        vistarol.getBtnimprimir().addActionListener(e -> imprimir());
+        vistarol.getBtnimprimir().addActionListener(e -> Imprimir());
         vistarol.getTableRol().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -110,7 +110,7 @@ public class C_Rol {
             listarol();
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
-        }           
+        }
     }
 
     public void modificar() {
@@ -221,19 +221,83 @@ public class C_Rol {
             vistarol.getTxtBuscarRol().setForeground(Color.GRAY);
         }
     }
-     private void imprimir() {
+
+    private void Imprimir() {
+        int opcion = Integer.parseInt(JOptionPane.showInputDialog("Elija una opcion para imprimir: \n 1. Imprimir Todo \n 2. Imprimir con un parametro \n 3.Imprimir con dos parametros"));
+        try {
+            switch (opcion) {
+                case 1:
+                    ImprimirTodo();
+                    break;
+                case 2:
+                    ImprimirunParametro();
+                    break;
+                case 3:
+                    ImprimirDosParametros();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "No elijio una opcion correcta", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (NumberFormatException | NullPointerException ex) {
+            JOptionPane.showMessageDialog(null, "Ingrese solo números", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
+    private void ImprimirTodo() {
         Conectar con = new Conectar();
         try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reporte/auto.jasper"));
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/rol.jasper"));
+
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/parqueadero.jpg");
-            JasperPrint jm = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
-            JasperViewer jv = new JasperViewer(jm, false);
-            JOptionPane.showMessageDialog(null, "IMPRIMIENDO REPORTE DE ROLES");
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {
-            System.out.println("NO SE ENCONTRO REGISTRO DE ROLES" + e.getMessage());
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(C_Rol.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    private void ImprimirunParametro() {
+        Conectar con = new Conectar();
+        try {
+            String codigo = JOptionPane.showInputDialog("Escriba el codigo del rol");
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/rol1.jasper"));
+
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            map.put("codigor", codigo);
+            
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(C_Rol.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    private void ImprimirDosParametros() {
+        Conectar con = new Conectar();
+        try {
+            String codigo = JOptionPane.showInputDialog("Escriba el codigo del rol");
+            int nombre = Integer.parseInt(JOptionPane.showInputDialog("Escriba el nombre del rol"));
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/auto3.jasper"));
+
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            map.put("codigor", codigo);
+            map.put("nombrer", nombre);
+            
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
             Logger.getLogger(C_Rol.class.getName()).log(Level.SEVERE, null, e);
         }
     }

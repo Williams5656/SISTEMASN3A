@@ -43,7 +43,7 @@ public class C_Usuario {
         vistaUsuario.getBtnmodificar().addActionListener(e -> modificar());
         vistaUsuario.getBtnnuevo().addActionListener(e -> nuevo());
         vistaUsuario.getBtneliminar().addActionListener(e -> eliminar());
-        vistaUsuario.getBtnimprimir().addActionListener(e -> imprimir());
+        vistaUsuario.getBtnimprimir().addActionListener(e -> Imprimir());
         vistaUsuario.getTxtCedula().addFocusListener(new java.awt.event.FocusAdapter() {
             @Override
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -239,19 +239,84 @@ public class C_Usuario {
 
         vistausuario.getLabelCodigoUsuario().setText("USRO" + buffer.toString());
     }
-     private void imprimir() {
+
+    
+
+    private void Imprimir() {
+        int opcion = Integer.parseInt(JOptionPane.showInputDialog("Elija una opcion para imprimir: \n 1. Imprimir Todo \n 2. Imprimir con un parametro \n 3.Imprimir con dos parametros"));
+        try {
+            switch (opcion) {
+                case 1:
+                    ImprimirTodo();
+                    break;
+                case 2:
+                    ImprimirunParametro();
+                    break;
+                case 3:
+                    ImprimirDosParametros();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "No elijio una opcion correcta", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (NumberFormatException | NullPointerException ex) {
+            JOptionPane.showMessageDialog(null, "Ingrese solo números", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
+    private void ImprimirTodo() {
         Conectar con = new Conectar();
         try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reporte/auto.jasper"));
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/usuario.jasper"));
+
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/parqueadero.jpg");
-            JasperPrint jm = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
-            JasperViewer jv = new JasperViewer(jm, false);
-            JOptionPane.showMessageDialog(null, "IMPRIMIENDO REPORTE DE USUARIOS");
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {
-            System.out.println("NO SE ENCONTRO REGISTRO DE USUARIOS" + e.getMessage());
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(C_Usuario.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    private void ImprimirunParametro() {
+        Conectar con = new Conectar();
+        try {
+            String cedula = JOptionPane.showInputDialog("Escriba la cedula del usuario");
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/usuario1.jasper"));
+
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            map.put("ucedula", cedula);
+
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(C_Usuario.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    private void ImprimirDosParametros() {
+        Conectar con = new Conectar();
+        try {
+            String cedula = JOptionPane.showInputDialog("Escriba la cedula del usuario");
+            int nombre = Integer.parseInt(JOptionPane.showInputDialog("Escriba el nombre del usuario"));
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/usuario2.jasper"));
+
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            map.put("ucedula", cedula);
+            map.put("nusuario", nombre);
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
             Logger.getLogger(C_Usuario.class.getName()).log(Level.SEVERE, null, e);
         }
     }
