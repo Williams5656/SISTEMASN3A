@@ -1,10 +1,9 @@
 
 package Hertz.Controlador;
 
-
-import Hertz.Modelo.*;
-import Hertz.Vista.*;
-
+import Hertz.Modelo.UsuarioBD;
+import Hertz.Modelo.UsuarioMD;
+import Hertz.Vista.VUsuario;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -17,7 +16,6 @@ public class CUsuario {
     public static VUsuario vista;
     
     private UsuarioBD bdusuario = new UsuarioBD();
-    private RolBD bdrol = new RolBD();
 
     public CUsuario(VUsuario vista) {
         this.vista = vista;
@@ -97,13 +95,11 @@ public class CUsuario {
         
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
-            List<RolMD> listaRol = bdrol.obtenerDatos(Integer.parseInt(lista.get(i).getRol()));
             vista.getTablaUsuarios().setValueAt(lista.get(i).getCodigo(), i, 0);
             vista.getTablaUsuarios().setValueAt(lista.get(i).getCedula(), i, 1);
             vista.getTablaUsuarios().setValueAt(lista.get(i).getUsuario(), i, 2);
             vista.getTablaUsuarios().setValueAt(lista.get(i).getPassword(), i, 3);
-            vista.getTablaUsuarios().setValueAt(listaRol.get(0).getNombre(), i, 4);
-            //vista.getTablaUsuarios().setValueAt(lista.get(i).getRol(), i, 4);
+            vista.getTablaUsuarios().setValueAt(lista.get(i).getRol(), i, 4);
             vista.getTablaUsuarios().setValueAt(lista.get(i).getEstado(), i, 5);
         }
     }//Fin de Lista
@@ -114,7 +110,7 @@ public class CUsuario {
         bdusuario.setCedula(vista.getTxtCedula().getText());
         bdusuario.setUsuario(vista.getTxtUsuario().getText());
         bdusuario.setPassword(vista.getTxtPassword().getText());
-        //bdusuario.setRol(vista.getCbRol().getSelectedItem().toString());
+        bdusuario.setRol(vista.getCbRol().getSelectedItem().toString());
         bdusuario.setEstado(vista.getCbEstado().getSelectedItem().toString());
         
         if (bdusuario.insertar()){
@@ -213,7 +209,7 @@ public class CUsuario {
     
     public void eliminar(){
         bdusuario.setCodigo(Integer.parseInt(vista.getTxtCodigo().getText()));
-        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este rol " + vista.getTxtCodigo().getText());
+        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este usuario " + vista.getTxtCodigo().getText());
         if (respuesta == 0){
             if (bdusuario.eliminar(Integer.parseInt(vista.getTxtCodigo().getText()))){
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");

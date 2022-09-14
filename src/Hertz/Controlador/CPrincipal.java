@@ -3,8 +3,6 @@ package Hertz.Controlador;
 import Hertz.Vista.*;
 import java.awt.Dimension;
 import java.awt.Frame;
-import org.postgresql.util.JdbcBlackHole;
-import sun.tools.jconsole.inspector.XDataViewer;
 
 public class CPrincipal {
     
@@ -63,20 +61,7 @@ public class CPrincipal {
     //*************************     SALIR     **********************************
     
     private void salir(){
-        //vista.dispose();
-        
-        VInicio vinicio = new VInicio();
-        CInicio cinicio = new CInicio(vinicio);
-
-        vista.getEscritorio().add(vinicio);
-        Dimension desktopSize = vista.getEscritorio().getSize();
-        Dimension FrameSize = vinicio.getSize();
-        vinicio.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        vista.dispose();
     }
-    
-   /* private void regresar(){
-        CInicio salir = new CInicio(VInicio);
-        VPrincipal.dispose();
-    }*/
     
 }//Fin de la clase

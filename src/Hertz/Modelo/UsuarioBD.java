@@ -153,13 +153,13 @@ public class UsuarioBD extends UsuarioMD{
     }//Fin del metodo rol
     
     public boolean eliminar(Integer codigo){
-        String nsql = "update usuario set " + 
-                "cedula = '" + getCedula() + "', " +
-                "usuario = '" + getUsuario() + "', " +
-                "password = '" + getPassword() + "', " +
-                "rol = '" + getRol() + "', " +
-                "estado = '" + getEstado() + "', " +
-                "where codigo = " + codigo;
+        String nsql = "update usuario set " +
+                    "cedula = '" + getCedula() + "', " +
+                    "usuario = '" + getUsuario() + "', " +
+                    "password = '" + getPassword() + "', " +
+                    "rol = '" + getRol() + "', " +
+                    "estado = 'Inactivo'" +
+                    "where codigo = " + codigo;
                 
         if(conectar.noQuery(nsql) == null){
             return true;
