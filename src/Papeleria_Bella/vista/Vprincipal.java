@@ -92,6 +92,14 @@ public class Vprincipal extends javax.swing.JFrame {
     public void setjMenuBar1(JMenuBar jMenuBar1) {
         this.jMenuBar1 = jMenuBar1;
     }
+
+    public JMenuItem getItemproductos() {
+        return itemproductos;
+    }
+
+    public void setItemproductos(JMenuItem itemproductos) {
+        this.itemproductos = itemproductos;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -109,6 +117,7 @@ public class Vprincipal extends javax.swing.JFrame {
         itempersona = new javax.swing.JMenuItem();
         itemusuario = new javax.swing.JMenuItem();
         itemroles = new javax.swing.JMenuItem();
+        itemproductos = new javax.swing.JMenuItem();
         iteminformacion = new javax.swing.JMenu();
         itemempresa = new javax.swing.JMenuItem();
 
@@ -152,6 +161,17 @@ public class Vprincipal extends javax.swing.JFrame {
         itemroles.setText("Roles");
         jMenu1.add(itemroles);
 
+        itemproductos.setBackground(new java.awt.Color(220, 240, 240));
+        itemproductos.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itemproductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-tipo-de-máscara-de-cuenta-de-usuario-7-16.png"))); // NOI18N
+        itemproductos.setText("Productos");
+        itemproductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemproductosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemproductos);
+
         jMenuBar1.add(jMenu1);
 
         iteminformacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-crear-nuevo-16(1).png"))); // NOI18N
@@ -182,6 +202,10 @@ public class Vprincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void itemproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemproductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemproductosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -191,6 +215,7 @@ public class Vprincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemempresa;
     private javax.swing.JMenu iteminformacion;
     private javax.swing.JMenuItem itempersona;
+    private javax.swing.JMenuItem itemproductos;
     private javax.swing.JMenuItem itemroles;
     private javax.swing.JMenuItem itemusuario;
     private javax.swing.JDesktopPane jDesktopPane1;

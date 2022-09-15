@@ -85,7 +85,7 @@ public class PersonaBD extends PersonaMD {
                 if (is != null) {
                     try {
                         is = Base64.decode(is, 0, rs.getBytes("foto").length);
-//                    BufferedImage bi=Base64.decode( ImageIO.read(is));
+
                         u.setFoto(getImage(is, false));
                     } catch (Exception ex) {
                         u.setFoto(null);
@@ -176,7 +176,6 @@ public class PersonaBD extends PersonaMD {
                 if (is != null) {
                     try {
                         is = Base64.decode(is, 0, rs.getBytes("foto").length);
-//                    BufferedImage bi=Base64.decode( ImageIO.read(is));
                         u.setFoto(getImage(is, false));
                     } catch (Exception ex) {
                         u.setFoto(null);
@@ -225,7 +224,6 @@ public class PersonaBD extends PersonaMD {
                 if (is != null) {
                     try {
                         is = Base64.decode(is, 0, rs.getBytes("foto").length);
-//                    BufferedImage bi=Base64.decode( ImageIO.read(is));
                         u.setFoto(getImage(is, false));
                     } catch (Exception ex) {
                         u.setFoto(null);

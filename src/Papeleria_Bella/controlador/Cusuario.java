@@ -197,9 +197,9 @@ public class Cusuario {
     private void imprimir_sinparametro() {
         Conexion conectar = new Conexion();
         try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona.jasper"));
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/usuario.jasper"));
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/persona.png");
+            map.put("logo", "imagen/usuario.png");
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
@@ -254,13 +254,13 @@ public class Cusuario {
     private void imprimir_todo() {
         Conexion conectar = new Conexion();
         try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona.jasper"));
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/usuario.jasper"));
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/persona.png");
+            map.put("logo", "imagen/usuario.png");
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
-            JOptionPane.showMessageDialog(null, "Imprimiendo personas");
+            JOptionPane.showMessageDialog(null, "Imprimiendo usuarios");
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {

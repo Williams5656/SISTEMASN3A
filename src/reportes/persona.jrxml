@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2022-09-13T21:26:17 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="persona" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19a7a5fb-a8be-4374-98fb-f6503d633308">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="proyecto"/>
+	<queryString>
+		<![CDATA[select * from persona ]]>
+	</queryString>
+	<field name="cedula" class="java.lang.String"/>
+	<field name="nombres" class="java.lang.String"/>
+	<field name="apellidos" class="java.lang.String"/>
+	<field name="telefono" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="foto" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="219" y="0" width="63" height="24" uuid="fc94c2ec-5ce5-41c5-b9e9-5079d3d027aa"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Persona]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="68bbbdbb-ab78-4b7d-b406-8e89fe53be0c"/>
+				<text><![CDATA[cedula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="30" uuid="cd069d12-a91b-4076-b5d7-4f5446ce3630"/>
+				<text><![CDATA[nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="30" uuid="f93b98a4-e2f8-448c-95d2-8f6c89c1c537"/>
+				<text><![CDATA[apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="30" uuid="7d370643-8dde-43b3-be65-e58abc0940ca"/>
+				<text><![CDATA[telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="100" height="30" uuid="6b20cfd8-75aa-44ae-ba34-e4aec4c2832c"/>
+				<text><![CDATA[direccion]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="500" height="1" uuid="88d41957-79db-480c-b2be-8381fc981b38"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="0" width="1" height="40" uuid="04579715-aca6-46a1-bf89-64c1df860d46"/>
+			</line>
+			<line>
+				<reportElement x="91" y="1" width="1" height="37" uuid="1506a9a8-396e-4ad8-8a56-a7d254804ee5"/>
+			</line>
+			<line>
+				<reportElement x="190" y="1" width="1" height="33" uuid="10e2ca88-39f1-4946-ae8a-0e48b8a6ad17"/>
+			</line>
+			<line>
+				<reportElement x="380" y="1" width="1" height="31" uuid="22a0aaf2-972f-4dfa-9a3d-09314120546a"/>
+			</line>
+			<line>
+				<reportElement x="500" y="0" width="1" height="35" uuid="ebea5d77-ad82-496b-b8c1-00b948e3da1a"/>
+			</line>
+			<line>
+				<reportElement x="290" y="0" width="1" height="39" uuid="792fcf5d-a032-4020-b737-694d47354c81"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="30" width="501" height="1" uuid="f752557b-5d6f-41bb-acd3-4deed132de46"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="100" height="30" uuid="ef56166a-acb0-4570-afe1-30ecf17d68a8"/>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="10" width="100" height="30" uuid="3e5a2061-acb1-4264-89ae-cb94c7aa3aea"/>
+				<textFieldExpression><![CDATA[$F{nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="10" width="100" height="30" uuid="0b8ce492-fa8a-4ff6-a218-1034edcab237"/>
+				<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="10" width="100" height="30" uuid="112b1f8a-11ba-4116-b4fd-619d03626401"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="10" width="100" height="30" uuid="d4017553-8643-492d-a293-23e3ef03fb67"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="38" width="500" height="1" uuid="b4c28425-65d0-4ae3-99de-5606cd3adbc2"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="-9" width="1" height="47" uuid="a2d3375e-8b76-4607-b815-fd90fb7c35e7"/>
+			</line>
+			<line>
+				<reportElement x="91" y="-4" width="1" height="43" uuid="c6f598cb-bb46-45d0-8767-f09b002ad579"/>
+			</line>
+			<line>
+				<reportElement x="190" y="-6" width="1" height="45" uuid="23799045-7541-4012-a94b-d8af36816af4"/>
+			</line>
+			<line>
+				<reportElement x="380" y="-8" width="1" height="46" uuid="0961cba1-9d6b-4673-8690-6e542a4a55d3"/>
+			</line>
+			<line>
+				<reportElement x="500" y="-6" width="1" height="45" uuid="144c994f-1059-40e6-97fd-47a063c5d837"/>
+			</line>
+			<line>
+				<reportElement x="290" y="-9" width="1" height="47" uuid="e2d223a5-9e47-48aa-8990-0a1ec792f4e6"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

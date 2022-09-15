@@ -179,9 +179,9 @@ public class Crol {
     private void imprimir_sinparametro() {
         Conexion conectar = new Conexion();
         try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona.jasper"));
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/rol.jasper"));
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/persona.png");
+            map.put("logo", "imagen/rol.png");
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
@@ -236,13 +236,13 @@ public class Crol {
     private void imprimir_todo() {
         Conexion conectar = new Conexion();
         try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona.jasper"));
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/rol.jasper"));
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/persona.png");
+            map.put("logo", "imagen/rol.png");
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
-            JOptionPane.showMessageDialog(null, "Imprimiendo personas");
+            JOptionPane.showMessageDialog(null, "Imprimiendo roles");
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {
@@ -255,22 +255,22 @@ public class Crol {
     public void imprimir() {
         int opcion=Integer.parseInt(JOptionPane.showInputDialog("Escoja una opción: \n1. Imprimir un parametro \n2. Imprimir dos parametros \n 3. Imprimir todo "));
     
-    switch(opcion){
+        switch(opcion){
     
-        case 1: 
-            imprimir_unparametro();
-             break;
+            case 1: 
+                imprimir_unparametro();
+                break;
             
-        case 2: 
-            imprimir_dosparametro();
-            break;
+            case 2: 
+                imprimir_dosparametro();
+                break;
             
-        case 3: 
-            imprimir_todo();
-            break;
+            case 3: 
+                imprimir_todo();
+                break;
             
-        default:
-            JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
-    }
+            default:
+                JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
+        }
     }
 }

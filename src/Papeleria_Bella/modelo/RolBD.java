@@ -110,7 +110,7 @@ public class RolBD extends RolMD{
         }
     }
     public boolean eliminar (String codigo){
-        String sql = "delete from rol where \"rol\"='" + codigo + "'";
+        String sql = "delete from rol where \"codigo\"='" + codigo + "'";
         if (conectar.noQuery(sql)==null) {
             return true;
             

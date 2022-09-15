@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2022-09-15T18:09:38 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="usuario" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="10f99693-c355-4a9f-aa40-e2b2f843a6ce">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="usuario"/>
+	<queryString>
+		<![CDATA[select * from usuario;]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String"/>
+	<field name="cedula" class="java.lang.String"/>
+	<field name="usuario" class="java.lang.String"/>
+	<field name="clave" class="java.lang.String"/>
+	<field name="rol" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<group name="codigo">
+		<groupExpression><![CDATA[$F{codigo}]]></groupExpression>
+	</group>
+	<group name="cedula">
+		<groupExpression><![CDATA[$F{cedula}]]></groupExpression>
+	</group>
+	<group name="usuario">
+		<groupExpression><![CDATA[$F{usuario}]]></groupExpression>
+	</group>
+	<group name="clave">
+		<groupExpression><![CDATA[$F{clave}]]></groupExpression>
+	</group>
+	<group name="rol">
+		<groupExpression><![CDATA[$F{rol}]]></groupExpression>
+	</group>
+	<group name="estado">
+		<groupExpression><![CDATA[$F{estado}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="250" y="0" width="49" height="25" uuid="db2a1c74-018b-4845-b7c9-6a29fc1513b6"/>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="95" height="30" uuid="f22b427c-5b0e-45ef-b457-ab841f67e01a"/>
+				<text><![CDATA[codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="0" width="92" height="30" uuid="c42eacea-2aac-4ba0-9e1c-c72e1b1639ed"/>
+				<text><![CDATA[cedula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="0" width="92" height="30" uuid="570d344f-0f2f-45b6-9e32-b31d7e857736"/>
+				<text><![CDATA[usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="92" height="30" uuid="aa34f8c2-5710-4cf8-bd84-c782cf8b6317"/>
+				<text><![CDATA[clave]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="92" height="30" uuid="893fb14d-638d-4527-bfe8-9d613ea42389"/>
+				<text><![CDATA[rol]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="0" width="92" height="30" uuid="d6a88534-107b-46f9-b22a-0943ec4ba013"/>
+				<text><![CDATA[estado]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="8fe34db8-8665-4ab2-a45c-b4141427de2e"/>
+			</line>
+			<line>
+				<reportElement x="0" y="43" width="555" height="1" uuid="89d6b892-f337-4f0f-b14b-a7199a3accf9"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="1" width="1" height="39" uuid="0e64b602-baa3-4d29-97fe-7e5d035a77e6"/>
+			</line>
+			<line>
+				<reportElement x="555" y="1" width="1" height="41" uuid="807a1caf-2d1e-4b6e-9c83-724c3ec83d9e"/>
+			</line>
+			<line>
+				<reportElement x="80" y="1" width="1" height="43" uuid="9c5c5301-a047-4914-aef9-7573ce426e40"/>
+			</line>
+			<line>
+				<reportElement x="170" y="0" width="1" height="42" uuid="906f59c5-0d92-4f3c-835e-e22c32ed0a2e"/>
+			</line>
+			<line>
+				<reportElement x="250" y="1" width="1" height="42" uuid="5223e983-93ec-4a9d-9ea0-ef2f0f0b0de0"/>
+			</line>
+			<line>
+				<reportElement x="340" y="0" width="1" height="43" uuid="506c5ffe-9b58-4976-ba6f-545ff787356f"/>
+			</line>
+			<line>
+				<reportElement x="430" y="0" width="1" height="42" uuid="1786430c-ac5d-4cb5-bad6-48ec9bbc5398"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="89" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="19" width="95" height="30" uuid="aebc4103-be68-4d52-8d57-4ca648f206ae"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="19" width="92" height="30" uuid="b40fef74-62f4-4a72-9d35-de6c76a4ed49"/>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="19" width="92" height="30" uuid="da5d9b69-638d-487a-8757-8a492bd65f09"/>
+				<textFieldExpression><![CDATA[$F{usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="19" width="92" height="30" uuid="5baf7625-c293-4808-b3d4-c91147f981b6"/>
+				<textFieldExpression><![CDATA[$F{clave}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="19" width="92" height="30" uuid="6c068b2a-428e-412a-97a2-5c65ba129bd7"/>
+				<textFieldExpression><![CDATA[$F{rol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="19" width="92" height="30" uuid="39c82537-9591-4162-a82e-f6e9da558b7c"/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-1" y="-7" width="1" height="92" uuid="44167b32-eb58-4634-aab5-9a09da738a3e"/>
+			</line>
+			<line>
+				<reportElement x="555" y="-5" width="1" height="89" uuid="4b4c35ae-bdba-4c8c-afab-99d838a3186e"/>
+			</line>
+			<line>
+				<reportElement x="80" y="-3" width="1" height="86" uuid="8826b2f8-b57c-4f43-9fe5-38a379f1e5a9"/>
+			</line>
+			<line>
+				<reportElement x="170" y="-3" width="1" height="86" uuid="54ef6240-40ea-4581-9c54-36bca2815185"/>
+			</line>
+			<line>
+				<reportElement x="250" y="-5" width="1" height="88" uuid="a10d864f-cbb3-4c59-b287-141cf5035440"/>
+			</line>
+			<line>
+				<reportElement x="340" y="-4" width="1" height="88" uuid="54df91b4-4c61-45fe-b714-e29e989c6df2"/>
+			</line>
+			<line>
+				<reportElement x="430" y="-7" width="1" height="91" uuid="deeb67ec-f876-4eb0-9937-fd6c30fa66e4"/>
+			</line>
+			<line>
+				<reportElement x="0" y="84" width="555" height="1" uuid="bf3685a8-ca5b-4385-81d7-52f83cba3d2a"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
