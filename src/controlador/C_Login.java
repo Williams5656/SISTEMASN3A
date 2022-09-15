@@ -170,10 +170,12 @@ public class C_Login {
     public void validar() throws SQLException {
         RolBD bdrol = new RolBD();
         String estado = "";
+        boolean estado1=false;
         List<RolMD> listarol = bdrol.mostrardatos();
         for (int i = 0; i < listarol.size(); i++) {
-            int id_rol = Integer.parseInt(listarol.get(i).getCodigo());
-            estado = listarol.get(id_rol).getEstado();
+            String id_rol = listarol.get(i).getCodigo();
+            estado = listarol.get(i).getEstado();
+            estado1=estado.equals("Inactivo");
         }
         String usuario = vista.getTxtUsuario().getText();
         String clave = vista.getjPassClave().getText();
@@ -184,8 +186,9 @@ public class C_Login {
             if (us.getEstado().equals("Inactivo")) {
                 JOptionPane.showMessageDialog(null, "Usted es un usuario Inactivo \n Contactese con su administrador", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else {
-                if (estado.equals("Incativo")) {
+                if (us.getRol().equals(estado1)) {
                     JOptionPane.showMessageDialog(null, "Ha intentado entrar con un rol inactivo \n Contactese con su administrador", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    estado1=true;
                 } else {
 
                     if (us.getUsuario() != null && us.getClave() != null) {

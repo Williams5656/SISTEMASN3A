@@ -198,6 +198,8 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         cmbRol = new javax.swing.JComboBox<>();
         labelEstado = new javax.swing.JLabel();
         btnimprimir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setClosable(true);
         setIconifiable(true);
@@ -255,18 +257,18 @@ public class V_Usuario extends javax.swing.JInternalFrame {
 
         TableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "CEDULA", "USUARIO", "ROL", "ESTADO"
+                "CODIGO", "CEDULA", "USUARIO", "ROL", "ESTADO", "CONSULTORIO"
             }
         ));
         jScrollPane1.setViewportView(TableUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 930, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 390, 930, 110));
 
         Panel_Efecto_Usuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -284,6 +286,11 @@ public class V_Usuario extends javax.swing.JInternalFrame {
 
         btnimprimir.setText("IMPRIMIR");
         getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 550, -1, -1));
+
+        jLabel1.setText("CONSULTORIO:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 100, 40));
+
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 210, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -304,6 +311,8 @@ public class V_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JComboBox<String> cmbRol;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
