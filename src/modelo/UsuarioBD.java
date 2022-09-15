@@ -107,6 +107,28 @@ public class UsuarioBD extends UsuarioMD {
             return null;
         }
     }
+     public List<UsuarioMD> buscardatos(String codUsuario) {
+        try {
+            List<UsuarioMD> lista = new ArrayList<UsuarioMD>();
+            String sql = "select * from usuario where \"codusr\" ILIKE '%" + codUsuario + "%'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                UsuarioMD User = new UsuarioMD();
+                User.setCodUsuario(rs.getString("CODUSR"));
+                User.setCedula(rs.getString("CEDULA"));
+                User.setUsuario(rs.getString("USUARIO"));
+                User.setClave(rs.getString("CLAVE"));
+                User.setRol(rs.getString("CODROL"));
+                User.setEstado(rs.getString("ESTADO"));
+                lista.add(User);
+            }
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(UsuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
 
     public boolean eliminar(String codUsuario) {
         String nsql = "delete from usuario where \"codusr\"='" + codUsuario + "'";

@@ -55,6 +55,12 @@ public class C_Usuario {
                 txtCedulaFocusLost(evt);
             }
         });
+        vistaUsuario.getTxtBuscarUsuario().addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BuscarUsuario();
+            }
+        });
         vistaUsuario.getCheckBoxEstado().addActionListener((java.awt.event.ActionEvent evt) -> {
             CheckBoxEstadoActionPerformed(evt);
         });
@@ -66,6 +72,32 @@ public class C_Usuario {
 
         });
         lista();
+    }
+
+    public void BuscarUsuario() {
+        if (vistausuario.getTxtBuscarUsuario().getText().equals("")) {
+            lista();
+        } else {
+            DefaultTableModel modelo;
+            modelo = (DefaultTableModel) vistausuario.getTableUsuario().getModel();
+
+            List<UsuarioMD> lista = bdusuario.buscardatos(vistausuario.getTxtBuscarUsuario().getText());
+            int columnas = modelo.getColumnCount();
+
+            for (int j = vistausuario.getTableUsuario().getRowCount() - 1; j >= 0; j--) {
+                modelo.removeRow(j);
+            }
+
+            for (int i = 0; i < lista.size(); i++) {
+                modelo.addRow(new Object[columnas]);
+                List<RolMD> lisarol = bdrol.buscardatosporcodigo(lista.get(i).getRol());
+                vistausuario.getTableUsuario().setValueAt(lista.get(i).getCodUsuario(), i, 0);
+                vistausuario.getTableUsuario().setValueAt(lista.get(i).getCedula(), i, 1);
+                vistausuario.getTableUsuario().setValueAt(lista.get(i).getUsuario(), i, 2);
+                vistausuario.getTableUsuario().setValueAt(lisarol.get(0).getNombre(), i, 3);
+                vistausuario.getTableUsuario().setValueAt(lista.get(i).getEstado(), i, 4);
+            }
+        }
     }
 
     public void lista() {
@@ -239,8 +271,6 @@ public class C_Usuario {
 
         vistausuario.getLabelCodigoUsuario().setText("USRO" + buffer.toString());
     }
-
-    
 
     private void Imprimir() {
         int opcion = Integer.parseInt(JOptionPane.showInputDialog("Elija una opcion para imprimir: \n 1. Imprimir Todo \n 2. Imprimir con un parametro \n 3.Imprimir con dos parametros"));
