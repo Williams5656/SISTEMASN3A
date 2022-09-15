@@ -284,7 +284,7 @@ public class C_Rol {
         Conectar con = new Conectar();
         try {
             String codigo = JOptionPane.showInputDialog("Escriba el codigo del rol");
-            int nombre = Integer.parseInt(JOptionPane.showInputDialog("Escriba el nombre del rol"));
+            String nombre = JOptionPane.showInputDialog("Escriba el nombre del rol");
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/auto3.jasper"));
 
             Map<String, Object> map = new HashMap<String, Object>();

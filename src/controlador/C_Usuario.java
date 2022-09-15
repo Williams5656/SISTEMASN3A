@@ -334,7 +334,7 @@ public class C_Usuario {
         Conectar con = new Conectar();
         try {
             String cedula = JOptionPane.showInputDialog("Escriba la cedula del usuario");
-            int nombre = Integer.parseInt(JOptionPane.showInputDialog("Escriba el nombre del usuario"));
+            String nombre = JOptionPane.showInputDialog("Escriba el nombre del usuario");
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/usuario2.jasper"));
 
             Map<String, Object> map = new HashMap<String, Object>();
