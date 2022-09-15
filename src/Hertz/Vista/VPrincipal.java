@@ -22,6 +22,22 @@ public class VPrincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JMenuItem getBtnNuevoEmpresa() {
+        return btnNuevoEmpresa;
+    }
+
+    public void setBtnNuevoEmpresa(JMenuItem btnNuevoEmpresa) {
+        this.btnNuevoEmpresa = btnNuevoEmpresa;
+    }
+
+    public JMenu getMenuEmpresa() {
+        return menuEmpresa;
+    }
+
+    public void setMenuEmpresa(JMenu menuEmpresa) {
+        this.menuEmpresa = menuEmpresa;
+    }
+
     public JMenuItem getBtnNuevoRol() {
         return btnNuevoRol;
     }
@@ -123,6 +139,8 @@ public class VPrincipal extends javax.swing.JFrame {
         btnSalir = new javax.swing.JMenuItem();
         menuRol = new javax.swing.JMenu();
         btnNuevoRol = new javax.swing.JMenuItem();
+        menuEmpresa = new javax.swing.JMenu();
+        btnNuevoEmpresa = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -164,6 +182,13 @@ public class VPrincipal extends javax.swing.JFrame {
         menuRol.add(btnNuevoRol);
 
         barraMenus.add(menuRol);
+
+        menuEmpresa.setText("Empresa");
+
+        btnNuevoEmpresa.setText("Nuevo");
+        menuEmpresa.add(btnNuevoEmpresa);
+
+        barraMenus.add(menuEmpresa);
 
         setJMenuBar(barraMenus);
 
@@ -220,10 +245,12 @@ public class VPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenuBar barraMenus;
+    private javax.swing.JMenuItem btnNuevoEmpresa;
     private javax.swing.JMenuItem btnNuevoPersona;
     private javax.swing.JMenuItem btnNuevoRol;
     private javax.swing.JMenuItem btnNuevoUsuario;
     private javax.swing.JMenuItem btnSalir;
+    private javax.swing.JMenu menuEmpresa;
     private javax.swing.JMenu menuPersona;
     private javax.swing.JMenu menuRol;
     private javax.swing.JMenu menuSalir;
