@@ -202,7 +202,7 @@ public class V_Rol extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(TableRol);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 840, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 840, 110));
 
         CheckBoxEstado.setBackground(new java.awt.Color(79, 213, 223));
         getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 30, 30));
@@ -242,7 +242,7 @@ public class V_Rol extends javax.swing.JInternalFrame {
         getContentPane().add(BtnBuscarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 70, 50));
 
         btnimprimir.setText("IMPRIMIR");
-        getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, -1, -1));
+        getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 550, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

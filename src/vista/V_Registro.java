@@ -197,10 +197,10 @@ public class V_Registro extends javax.swing.JInternalFrame {
 
         jLabel4.setText("TIPO DE JUICIO:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 120, 30));
-        getContentPane().add(numjuicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 110, 30));
+        getContentPane().add(numjuicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 110, 30));
 
-        cbtipojuicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Civil", "Penal", "Contensioso-Administrativo", "Laboral" }));
-        getContentPane().add(cbtipojuicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 140, 30));
+        cbtipojuicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Civil", "Penal", "Contensioso-Administrativo", "Laboral", "Niñez y Adolescencia", "Fragrancia" }));
+        getContentPane().add(cbtipojuicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 200, 30));
 
         tablajuicio.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -228,7 +228,7 @@ public class V_Registro extends javax.swing.JInternalFrame {
 
         BtnBuscarCedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
         getContentPane().add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 60, 40));
-        getContentPane().add(labelcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 140, 150, 30));
+        getContentPane().add(labelcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 180, 30));
 
         jLabel5.setText("NOMBRES:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, -1, 30));
