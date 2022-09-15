@@ -109,7 +109,7 @@ public class Cpersona {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
-            //vista.getButtonmodificar().setEnabled(false);
+
         }
     }
 

@@ -255,22 +255,22 @@ public class Crol {
     public void imprimir() {
         int opcion=Integer.parseInt(JOptionPane.showInputDialog("Escoja una opción: \n1. Imprimir un parametro \n2. Imprimir dos parametros \n 3. Imprimir todo "));
     
-    switch(opcion){
+        switch(opcion){
     
-        case 1: 
-            imprimir_unparametro();
-             break;
+            case 1: 
+                imprimir_unparametro();
+                break;
             
-        case 2: 
-            imprimir_dosparametro();
-            break;
+            case 2: 
+                imprimir_dosparametro();
+                break;
             
-        case 3: 
-            imprimir_todo();
-            break;
+            case 3: 
+                imprimir_todo();
+                break;
             
-        default:
-            JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
-    }
+            default:
+                JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
+        }
     }
 }

@@ -10,4 +10,3 @@ public class Main {
         Cinicio main = new Cinicio(vista);
     }
 }       
-//hhhhhh

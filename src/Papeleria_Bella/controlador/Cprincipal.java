@@ -27,7 +27,7 @@ public class Cprincipal {
         vista.getItemusuario().addActionListener(e-> usuario());
         vista.getItemroles().addActionListener(e-> roles());
         vista.getItemempresa().addActionListener(e-> info());
-
+        vista.getItemproductos().addActionListener(e-> productos());
     }
            
          
@@ -50,4 +50,8 @@ public class Cprincipal {
         Cdatos cper=new Cdatos(p);
     }
    
+    private void productos() {
+        Vproductos p= new Vproductos();
+        Cproductos cper=new Cproductos(p);
+    }
 }
