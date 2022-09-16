@@ -195,7 +195,7 @@ public class VistaProducto extends javax.swing.JFrame {
         jLabel3.setText("DESCRIPCION:");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Stock:");
+        jLabel4.setText("CANTIDAD:");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("PRECIO:");

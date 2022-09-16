@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public class FacturaBD {
+public class FacturaBD extends FacturaMb {
 
     Conectar cn = new Conectar();
     Connection con;
@@ -32,35 +32,25 @@ public class FacturaBD {
          return id;       
     }
 
-    public int RegistrarVenta(FacturaMb v) {
+   
 
-        String sql = "INSERT INTO ventas(cliente,vendedor,total) VALUES (?,?,?)";
-        try {
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql);
-            ps.setString(1, v.getCliente());
-            ps.setString(2, v.getVendedor());
-            ps.setDouble(3, v.getTotal());
-            ps.execute();
+        public boolean insertar() {
+     
+        String sql = "INSERT INTO venta(cliente,vendedor,total)  VALUES ('" + getCliente()+ "','" + getVendedor() + "','" + getTotal()+ "')";
+  
+        if (cn.noQuery(sql) == null) {
+            return true;
+        } else {
 
-        } catch (SQLException e) {
-            System.out.println(e.toString());
-
-        }finally{
-            try{
-                con.close();
-            }catch (SQLException e){
-                System.out.println(e.toString());
-                
-                
-            }
+            System.out.println("Error");
+            return false;
         }
-        return r;
 
-    }
+    
+        }
     
     public int RegistrarDetalle(DetalleMb Dv){
-         String sql = "INSERT INTO detalle(cod_pro,cantidad,precio,id_venta) VALUES (?,?,?,?)";
+         String sql = "INSERT INTO venta(cod_pro,cantidad,precio,id_venta) VALUES (?,?,?,?)";
         try{
              con = cn.getConnection();
              ps = con.prepareStatement(sql);

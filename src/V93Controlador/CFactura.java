@@ -15,6 +15,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+
 public class CFactura {
 
     public static VistaFactura VistaFac;
@@ -31,6 +32,7 @@ public class CFactura {
     DetalleMb Dv = new DetalleMb();
     DefaultTableModel tmp = new DefaultTableModel();
     Eventos event = new Eventos();
+    DefaultTableModel modelo = new DefaultTableModel();
 
     public CFactura(VistaFactura VistaFac) {
         this.VistaFac = VistaFac;
@@ -87,6 +89,11 @@ public class CFactura {
                 txtPrecioFacturaKeyTyped(evt);
             }
         });
+        
+        VistaFac.getBtnGenerarFactura().addActionListener(x->btnGenerarFacturaActionPerformed());
+        
+        VistaFac.getBtnEliminarFactura().addActionListener(e->btnEliminarFacturaActionPerformed());
+      
     }
 
     private void txtCedulaClienteFacturaKeyPressed(java.awt.event.KeyEvent evt) {
@@ -224,8 +231,15 @@ public class CFactura {
     private void txtStockFacturaKeyTyped(java.awt.event.KeyEvent evt) {
         event.numberKeyPress(evt);
     }
+     private void btnEliminarFacturaActionPerformed() {
+        
+        modelo = (DefaultTableModel)VistaFac.getTableFactura().getModel();
+        modelo.removeRow(VistaFac.getTableFactura().getSelectedRow());
+        Totalpagar();
+        VistaFac.getTxtCodigoProFactura().requestFocus();
+    }
 
-    private void btnGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnGenerarFacturaActionPerformed() {
         if (VistaFac.getTableFactura().getRowCount() > 0) {
             if (!"".equals(VistaFac.getTxtNombreClienteFactura().getText())) {
                 RegistrarVenta();
@@ -246,12 +260,10 @@ public class CFactura {
     }
 
     private void RegistrarVenta() {
-        String cliente = VistaFac.getTxtNombreClienteFactura().getText();
-
-        double monto = Totalpagar;
-        v.setCliente(cliente);
-        v.setTotal(monto);
-        Vdao.RegistrarVenta(v);
+       bdfactura.setCliente(VistaFac.getLabelVendedorFactura().getText());
+       bdfactura.setVendedor(VistaFac.getTxtNombreClienteFactura().getText());
+       bdfactura.setTotal(Double.parseDouble(VistaFac.getLabelTotalaPagar().getText()));
+        
 
     }
 

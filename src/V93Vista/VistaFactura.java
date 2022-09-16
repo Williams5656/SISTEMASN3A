@@ -23,6 +23,16 @@ public class VistaFactura extends javax.swing.JFrame {
         initComponents();
         
         
+        
+        
+    }
+
+    public JLabel getLabelVendedorFactura() {
+        return LabelVendedorFactura;
+    }
+
+    public void setLabelVendedorFactura(JLabel LabelVendedorFactura) {
+        this.LabelVendedorFactura = LabelVendedorFactura;
     }
 
     public JLabel getLabelTotalaPagar() {
@@ -143,6 +153,7 @@ public class VistaFactura extends javax.swing.JFrame {
         txtNombreClienteFactura = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         LabelTotalaPagar = new javax.swing.JLabel();
+        LabelVendedorFactura = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -170,6 +181,11 @@ public class VistaFactura extends javax.swing.JFrame {
         btnEliminarFactura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEliminarFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/eliminar.png"))); // NOI18N
         btnEliminarFactura.setText("ELIMINAR");
+        btnEliminarFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarFacturaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnEliminarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(703, 77, -1, -1));
         getContentPane().add(txtCodigoProFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 112, 90, -1));
 
@@ -247,9 +263,12 @@ public class VistaFactura extends javax.swing.JFrame {
         jLabel9.setText("TOTAL A PAGAR");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(582, 387, -1, -1));
 
-        LabelTotalaPagar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        LabelTotalaPagar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LabelTotalaPagar.setText("---------------------");
-        getContentPane().add(LabelTotalaPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 455, 114, -1));
+        getContentPane().add(LabelTotalaPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 455, 180, -1));
+
+        LabelVendedorFactura.setText("Eduardo");
+        getContentPane().add(LabelVendedorFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 140, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -275,8 +294,12 @@ public class VistaFactura extends javax.swing.JFrame {
     }//GEN-LAST:event_txtStockFacturaKeyTyped
 
     private void btnGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFacturaActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
     }//GEN-LAST:event_btnGenerarFacturaActionPerformed
+
+    private void btnEliminarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarFacturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarFacturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,6 +338,7 @@ public class VistaFactura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelTotalaPagar;
+    private javax.swing.JLabel LabelVendedorFactura;
     private javax.swing.JTable TableFactura;
     private javax.swing.JButton btnEliminarFactura;
     private javax.swing.JButton btnGenerarFactura;
