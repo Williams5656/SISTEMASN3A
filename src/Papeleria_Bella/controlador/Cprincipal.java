@@ -1,8 +1,10 @@
  
 package Papeleria_Bella.controlador;
 import Papeleria_Bella.controlador.*;
+import static Papeleria_Bella.controlador.Cproductos.vistapr;
 import Papeleria_Bella.vista.*;
 import Papeleria_Bella.modelo.*;
+import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.sql.SQLException;
 import java.util.List;
@@ -28,6 +30,7 @@ public class Cprincipal {
         vista.getItemroles().addActionListener(e-> roles());
         vista.getItemempresa().addActionListener(e-> info());
         vista.getItemproductos().addActionListener(e-> productos());
+        vista.getItemproveedores().addActionListener(e-> proveedores());
     }
            
          
@@ -53,5 +56,10 @@ public class Cprincipal {
     private void productos() {
         Vproductos p= new Vproductos();
         Cproductos cper=new Cproductos(p);
+        
+    }
+    private void proveedores() {
+        Vproveedores p= new Vproveedores();
+        Cproveedores cper=new Cproveedores(p);
     }
 }

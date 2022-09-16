@@ -42,6 +42,16 @@ public class Vprincipal extends javax.swing.JFrame {
     public void setIteminformacion(JMenu iteminformacion) {
         this.iteminformacion = iteminformacion;
     }
+
+    public JMenuItem getItemproveedores() {
+        return itemproveedores;
+    }
+
+    public void setItemproveedores(JMenuItem itemproveedores) {
+        this.itemproveedores = itemproveedores;
+    }
+
+    
     
  
 
@@ -118,6 +128,7 @@ public class Vprincipal extends javax.swing.JFrame {
         itemusuario = new javax.swing.JMenuItem();
         itemroles = new javax.swing.JMenuItem();
         itemproductos = new javax.swing.JMenuItem();
+        itemproveedores = new javax.swing.JMenuItem();
         iteminformacion = new javax.swing.JMenu();
         itemempresa = new javax.swing.JMenuItem();
 
@@ -163,7 +174,7 @@ public class Vprincipal extends javax.swing.JFrame {
 
         itemproductos.setBackground(new java.awt.Color(220, 240, 240));
         itemproductos.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
-        itemproductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-tipo-de-máscara-de-cuenta-de-usuario-7-16.png"))); // NOI18N
+        itemproductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/caja-de-entrega.png"))); // NOI18N
         itemproductos.setText("Productos");
         itemproductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,6 +182,17 @@ public class Vprincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(itemproductos);
+
+        itemproveedores.setBackground(new java.awt.Color(220, 240, 240));
+        itemproveedores.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itemproveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.png"))); // NOI18N
+        itemproveedores.setText("Proveedores");
+        itemproveedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemproveedoresActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemproveedores);
 
         jMenuBar1.add(jMenu1);
 
@@ -206,6 +228,10 @@ public class Vprincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itemproductosActionPerformed
 
+    private void itemproveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemproveedoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemproveedoresActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,6 +242,7 @@ public class Vprincipal extends javax.swing.JFrame {
     private javax.swing.JMenu iteminformacion;
     private javax.swing.JMenuItem itempersona;
     private javax.swing.JMenuItem itemproductos;
+    private javax.swing.JMenuItem itemproveedores;
     private javax.swing.JMenuItem itemroles;
     private javax.swing.JMenuItem itemusuario;
     private javax.swing.JDesktopPane jDesktopPane1;
