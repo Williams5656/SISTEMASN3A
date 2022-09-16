@@ -5,18 +5,16 @@
  */
 package Papeleria_Bella.vista;
 
-import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
  *
- * @author hp
+ * @author JimmGM
  */
 public class Vproductos extends javax.swing.JFrame {
 
@@ -27,7 +25,6 @@ public class Vproductos extends javax.swing.JFrame {
         initComponents();
     }
 
-    
     public JButton getButtonbuscar() {
         return buttonbuscar;
     }
@@ -180,6 +177,14 @@ public class Vproductos extends javax.swing.JFrame {
         this.jLabel18 = jLabel18;
     }
 
+    public JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    public void setjLabel19(JLabel jLabel19) {
+        this.jLabel19 = jLabel19;
+    }
+
     public JLabel getjLabel9() {
         return jLabel9;
     }
@@ -218,6 +223,14 @@ public class Vproductos extends javax.swing.JFrame {
 
     public void setTablaproductos(JTable tablaproductos) {
         this.tablaproductos = tablaproductos;
+    }
+
+    public JTextField getTxtbuscar() {
+        return txtbuscar;
+    }
+
+    public void setTxtbuscar(JTextField txtbuscar) {
+        this.txtbuscar = txtbuscar;
     }
 
     public JTextField getTxtdescripcion() {
@@ -275,33 +288,6 @@ public class Vproductos extends javax.swing.JFrame {
     public void setTxtvaloru(JTextField txtvaloru) {
         this.txtvaloru = txtvaloru;
     }
-
-    public JRootPane getRootPane() {
-        return rootPane;
-    }
-
-    public void setRootPane(JRootPane rootPane) {
-        this.rootPane = rootPane;
-    }
-
-    public boolean isRootPaneCheckingEnabled() {
-        return rootPaneCheckingEnabled;
-    }
-
-    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
-        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
-    }
-
-    public AccessibleContext getAccessibleContext() {
-        return accessibleContext;
-    }
-
-    public void setAccessibleContext(AccessibleContext accessibleContext) {
-        this.accessibleContext = accessibleContext;
-    }
-
-    
-    
     
 
     /**
@@ -313,76 +299,66 @@ public class Vproductos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        txtbuscar = new javax.swing.JTextField();
+        buttonbuscar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        labelfoto = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         txtdescripcion = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         txtproveedor = new javax.swing.JTextField();
+        buttonnuevo = new javax.swing.JButton();
+        buttonguardar = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         txtmarca = new javax.swing.JTextField();
         txtmodelo = new javax.swing.JTextField();
         txtstock = new javax.swing.JTextField();
         txtvaloru = new javax.swing.JTextField();
-        comboiva = new javax.swing.JComboBox<>();
+        buttonmodificar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaproductos = new javax.swing.JTable();
-        buttoncargar = new javax.swing.JButton();
-        buttonnuevo = new javax.swing.JButton();
-        buttonguardar = new javax.swing.JButton();
-        buttonmodificar = new javax.swing.JButton();
-        buttoneliminar = new javax.swing.JButton();
-        labelcodigo = new javax.swing.JLabel();
-        buttonbuscar = new javax.swing.JButton();
         buttonimprimir = new javax.swing.JButton();
+        comboiva = new javax.swing.JComboBox<>();
+        jLabel19 = new javax.swing.JLabel();
+        buttoneliminar = new javax.swing.JButton();
+        buttoncargar = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        labelfoto = new javax.swing.JLabel();
+        labelcodigo = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel13.setText("Buscar");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
+
+        txtbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtbuscarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 130, 20));
+
+        buttonbuscar.setBackground(new java.awt.Color(232, 255, 255));
+        buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
+        getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 50, 30));
+
         jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 24)); // NOI18N
         jLabel1.setText("Productos");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 134, -1));
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel9.setText("Foto:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 80, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel10.setText("Descripción:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
-
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel11.setText("Proveedor:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
-
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel12.setText("Stock:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, -1, -1));
-
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel13.setText("Marca:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
-
         jLabel14.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel14.setText("Modelo:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, -1, -1));
-
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel15.setText("Valor Unitario:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, -1));
-
-        jLabel16.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel16.setText("IVA:");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, -1, -1));
+        jLabel14.setText("Marca:");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel17.setText("Código:");
@@ -392,15 +368,16 @@ public class Vproductos extends javax.swing.JFrame {
         jLabel18.setText("Nombre:");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
-        labelfoto.setText("foto");
-        getContentPane().add(labelfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 150, 120));
-
         txtnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnombreActionPerformed(evt);
             }
         });
         getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 130, 20));
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel10.setText("Descripción:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         txtdescripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -409,6 +386,10 @@ public class Vproductos extends javax.swing.JFrame {
         });
         getContentPane().add(txtdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 130, 20));
 
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel11.setText("Proveedor:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
+
         txtproveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtproveedorActionPerformed(evt);
@@ -416,43 +397,60 @@ public class Vproductos extends javax.swing.JFrame {
         });
         getContentPane().add(txtproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 130, 20));
 
+        buttonnuevo.setBackground(new java.awt.Color(232, 255, 255));
+        buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add(3).png"))); // NOI18N
+        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 40, 40));
+
+        buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
+        buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
+        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 40, -1));
+
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel16.setText("Valor Unitario:");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel12.setText("Stock:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel15.setText("Modelo:");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, -1, -1));
+
         txtmarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtmarcaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtmarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 130, 20));
+        getContentPane().add(txtmarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 130, 20));
 
         txtmodelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtmodeloActionPerformed(evt);
             }
         });
-        getContentPane().add(txtmodelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 130, 20));
+        getContentPane().add(txtmodelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 130, 20));
 
         txtstock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtstockActionPerformed(evt);
             }
         });
-        getContentPane().add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 130, 20));
+        getContentPane().add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 130, 20));
 
         txtvaloru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtvaloruActionPerformed(evt);
             }
         });
-        getContentPane().add(txtvaloru, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, 130, 20));
+        getContentPane().add(txtvaloru, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, 130, 20));
 
-        comboiva.setBackground(new java.awt.Color(232, 255, 255));
-        comboiva.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        comboiva.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0%", "12%", "14%" }));
-        comboiva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboivaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(comboiva, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 127, -1));
+        buttonmodificar.setBackground(new java.awt.Color(232, 255, 255));
+        buttonmodificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
+        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 50, 40));
 
         tablaproductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -466,55 +464,57 @@ public class Vproductos extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(tablaproductos);
-        if (tablaproductos.getColumnModel().getColumnCount() > 0) {
-            tablaproductos.getColumnModel().getColumn(8).setResizable(false);
-        }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 660, 320));
-
-        buttoncargar.setBackground(new java.awt.Color(232, 255, 255));
-        buttoncargar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttoncargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/photo-camera.png"))); // NOI18N
-        buttoncargar.setText("Cargar Foto");
-        getContentPane().add(buttoncargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, -1, 40));
-
-        buttonnuevo.setBackground(new java.awt.Color(232, 255, 255));
-        buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add(3).png"))); // NOI18N
-        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 40, 40));
-
-        buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
-        buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
-        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 40, -1));
-
-        buttonmodificar.setBackground(new java.awt.Color(232, 255, 255));
-        buttonmodificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
-        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 50, 40));
-
-        buttoneliminar.setBackground(new java.awt.Color(232, 255, 255));
-        buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
-        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, 40, 40));
-        getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 130, 30));
-
-        buttonbuscar.setBackground(new java.awt.Color(232, 255, 255));
-        buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
-        getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 50, 30));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 660, 320));
 
         buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
         buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-imprimir-32.png"))); // NOI18N
         getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 620, 30, 40));
 
+        comboiva.setBackground(new java.awt.Color(232, 255, 255));
+        comboiva.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        comboiva.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0%", "12%", "14%" }));
+        comboiva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboivaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(comboiva, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 127, -1));
+
+        jLabel19.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel19.setText("IVA:");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, -1, -1));
+
+        buttoneliminar.setBackground(new java.awt.Color(232, 255, 255));
+        buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
+        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 290, 40, 40));
+
+        buttoncargar.setBackground(new java.awt.Color(232, 255, 255));
+        buttoncargar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttoncargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/photo-camera.png"))); // NOI18N
+        buttoncargar.setText("Cargar Foto");
+        getContentPane().add(buttoncargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 150, -1, 40));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel9.setText("Foto:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 80, -1, -1));
+
+        labelfoto.setText("foto");
+        getContentPane().add(labelfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 150, 120));
+        getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 130, 30));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -60, 960, 780));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 680));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtbuscarActionPerformed
 
     private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
         // TODO add your handling code here:
@@ -551,7 +551,37 @@ public class Vproductos extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Vproductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Vproductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Vproductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Vproductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Vproductos().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonbuscar;
@@ -573,11 +603,13 @@ public class Vproductos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelcodigo;
     private javax.swing.JLabel labelfoto;
     private javax.swing.JTable tablaproductos;
+    private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtdescripcion;
     private javax.swing.JTextField txtmarca;
     private javax.swing.JTextField txtmodelo;

@@ -1,6 +1,7 @@
 
 package Papeleria_Bella.controlador;
 import static Papeleria_Bella.controlador.Cpersona.vista;
+import static Papeleria_Bella.controlador.Cusuario.vistau;
 import Papeleria_Bella.vista.*;
 import Papeleria_Bella.modelo.*;
 import java.awt.Image;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -32,13 +34,14 @@ public class Cproductos {
     public Cproductos(Vproductos vistapr) {
         this.vistapr = vistapr;
         vistapr.setVisible(true);
-        vistapr.setLocationRelativeTo(null);
+        vista.setLocationRelativeTo(null);
+        
         lista();
+        GenerarCodProductos();
         vistapr.getButtonguardar().addActionListener(x -> guardar());
         vistapr.getButtonmodificar().addActionListener(e -> modificar());
         vistapr.getButtoncargar().addActionListener(e -> obtieneImagen());
-        /*vistapr.getButtonbuscar().addActionListener(e -> Buscar());
-        vistapr.getButtonimprimir().addActionListener(e -> imprimir());*/
+        vistapr.getButtonbuscar().addActionListener(e -> Buscar());
         vistapr.getTablaproductos().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -192,9 +195,10 @@ public class Cproductos {
 
         vistapr.getButtonguardar().setEnabled(true);
         vistapr.getButtonmodificar().setEnabled(false);
+        GenerarCodProductos();
     }
     
-    /*public void Buscar() {
+    public void Buscar() {
         if (vistapr.getTxtbuscar().getText().equals("")) {
             lista();
         } else {
@@ -202,23 +206,43 @@ public class Cproductos {
             model = (DefaultTableModel) vistapr.getTablaproductos().getModel();
             java.util.List<ProductosMD> lista = bproductos.buscardatos(vistapr.getTxtbuscar().getText());
             int columnas = model.getColumnCount();
-            for (int j = vista.getTablapersona().getRowCount() - 1; j >= 0; j--) {
+            for (int j = vistapr.getTablaproductos().getRowCount() - 1; j >= 0; j--) {
                 model.removeRow(j);
             }
             for (int i = 0; i < lista.size(); i++) {
                 model.addRow(new Object[columnas]);
-                vista.getTablapersona().setValueAt(lista.get(i).getCedula(), i, 0);
-                vista.getTablapersona().setValueAt(lista.get(i).getNombres(), i, 1);
-                vista.getTablapersona().setValueAt(lista.get(i).getApellidos(), i, 2);
-                vista.getTablapersona().setValueAt(lista.get(i).getTelefono(), i, 3);
-                vista.getTablapersona().setValueAt(lista.get(i).getDireccion(), i, 4);
-                vista.getTablapersona().setValueAt(lista.get(i).getEmail(), i, 5);
+                vistapr.getTablaproductos().setValueAt(lista.get(i).getCodigo(), i, 0);
+                vistapr.getTablaproductos().setValueAt(lista.get(i).getNombre(), i, 1);
+                vistapr.getTablaproductos().setValueAt(lista.get(i).getDescripcion(), i, 2);
+                vistapr.getTablaproductos().setValueAt(lista.get(i).getProveedor(), i, 3);
+                vistapr.getTablaproductos().setValueAt(lista.get(i).getMarca(), i, 4);
+                vistapr.getTablaproductos().setValueAt(lista.get(i).getModelo(), i, 5);
+                vistapr.getTablaproductos().setValueAt(lista.get(i).getStock(), i, 6);
+                vistapr.getTablaproductos().setValueAt(lista.get(i).getValorunitario(), i, 7);
+                vistapr.getTablaproductos().setValueAt(lista.get(i).getIva(), i, 8);
+                vistapr.getTablaproductos().setValueAt(lista.get(i).getFoto(), i, 9);
 
             }
         }
-    }*/
+    }
+    public void GenerarCodProductos() {
+        char[] chars = "0123".toCharArray();
 
+        int charsLength = chars.length;
 
+        Random random = new Random();
+
+        StringBuilder buffer = new StringBuilder();
+
+        for (int i = 0; i < 3; i++) {
+
+            buffer.append(chars[random.nextInt(charsLength)]);
+        }
+
+        vistapr.getLabelcodigo().setText("P0" + buffer.toString());
+    }
 
 
 }
+
+
