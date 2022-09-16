@@ -34,7 +34,7 @@ public class Cproductos {
     public Cproductos(Vproductos vistapr) {
         this.vistapr = vistapr;
         vistapr.setVisible(true);
-        vista.setLocationRelativeTo(null);
+        vistapr.setLocationRelativeTo(null);
         
         lista();
         GenerarCodProductos();
@@ -166,7 +166,7 @@ public class Cproductos {
                 vistapr.getLabelfoto().setIcon(new ImageIcon(icono));
                 vistapr.getLabelfoto().updateUI();
             } catch (IOException ex) {
-                Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Cproductos.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
