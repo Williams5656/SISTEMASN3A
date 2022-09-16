@@ -101,16 +101,27 @@ public class C_Rol {
     }
 
     public void guardar() {
-        bdrol.setCodigo(vistarol.getLabelCodRol().getText());
-        bdrol.setNombre(vistarol.getTxtnombre().getText());
-        bdrol.setDescripcion(vistarol.getTxtDescripcion().getText());
-        bdrol.setEstado(vistarol.getLabelEstado().getText());
-        if (bdrol.insertar()) {
-            JOptionPane.showMessageDialog(null, "GUARDADO CORRECTAMENTE");
-            listarol();
-        } else {
-            JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+        List<RolMD> listarol = bdrol.mostrardatos();
+        String nombrerol = "";
+        for (int i = 0; i < listarol.size(); i++) {
+            nombrerol = listarol.get(i).getNombre();
+
         }
+        if (nombrerol.equalsIgnoreCase(vistarol.getTxtnombre().getText())) {
+            JOptionPane.showMessageDialog(null, "Rol ya existente en los registros", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } else {
+            bdrol.setCodigo(vistarol.getLabelCodRol().getText());
+            bdrol.setNombre(vistarol.getTxtnombre().getText());
+            bdrol.setDescripcion(vistarol.getTxtDescripcion().getText());
+            bdrol.setEstado(vistarol.getLabelEstado().getText());
+            if (bdrol.insertar()) {
+                JOptionPane.showMessageDialog(null, "GUARDADO CORRECTAMENTE");
+                listarol();
+            } else {
+                JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+            }
+        }
+
     }
 
     public void modificar() {
@@ -269,7 +280,7 @@ public class C_Rol {
             Map<String, Object> map = new HashMap<String, Object>();
 
             map.put("codigor", codigo);
-            
+
             JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
             JasperViewer jv = new JasperViewer(ja, false);
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -291,7 +302,7 @@ public class C_Rol {
 
             map.put("codigor", codigo);
             map.put("nombrer", nombre);
-            
+
             JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
             JasperViewer jv = new JasperViewer(ja, false);
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
