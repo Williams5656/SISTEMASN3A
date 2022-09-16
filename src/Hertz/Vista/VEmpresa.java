@@ -240,7 +240,7 @@ public class VEmpresa extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Nombre", "Ciudad", "Direccion", "Email", "Celular", "Foto"
+                "nombre", "ciudad", "direccion", "email", "celular", "foto"
             }
         ));
         jScrollPane1.setViewportView(tablaempresa);

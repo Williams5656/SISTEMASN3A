@@ -85,10 +85,10 @@ public class EmpresaBD extends EmpresaMD{
                 empresa.setEmail(rs.getString("email"));
                 empresa.setCelular(rs.getString("celular"));              
                 byte[] is;
-                is = rs.getBytes("imagen");
+                is = rs.getBytes("foto");
                 if (is != null) {
                     try {
-                        is = Base64.decode(is, 0, rs.getBytes("imagen").length);
+                        is = Base64.decode(is, 0, rs.getBytes("foto").length);
 //                    BufferedImage bi=Base64.decode( ImageIO.read(is));
                         empresa.setFoto(getImage(is, false));
                     } catch (Exception ex) {
@@ -121,16 +121,16 @@ public class EmpresaBD extends EmpresaMD{
             byte[] imgb = bos.toByteArray();
             ef = Base64.encodeBytes(imgb);
         } catch (IOException ex) {
-            Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmpresaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        String sql = "INSERT INTO empresa(nombre, ciudad, direccion, email , celular, imagen)" + 
+        String sql = "INSERT INTO empresa(nombre, ciudad, direccion, email , celular, foto)" + 
                 "VALUES ('" + 
                 getNombre()+ "','" + 
-                getCiudad().toUpperCase() + "','" + 
+                getCiudad() + "','" + 
                 getDireccion().toUpperCase() + "','" + 
                 getEmail()+ "','" + 
-                getCelular().toLowerCase() + "','" +
+                getCelular() + "','" +
                 ef + "')"; 
 
         if (conectar.noQuery(sql) == null) {
@@ -143,7 +143,7 @@ public class EmpresaBD extends EmpresaMD{
         }
     }//Fin de insertar
     
-    public boolean modificar(String cedula){
+    public boolean modificar(String nombre){
         
         String ef = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -161,7 +161,7 @@ public class EmpresaBD extends EmpresaMD{
                 "direccion = '" + getDireccion()+ "', " +
                 "email = '" + getEmail().toLowerCase() + "', " +
                 "celular = '" + getCelular()+ "', " +
-                "imagen = '" + ef + "' " +
+                "foto = '" + ef + "' " +
                 "where nombre = '" + nombre + "'";
 
         if (conectar.noQuery(sql) == null) {
@@ -187,14 +187,15 @@ public class EmpresaBD extends EmpresaMD{
                
                 empresa.setNombre(rs.getString("nombre"));
                 empresa.setCiudad(rs.getString("ciudad"));
+                empresa.setDireccion(rs.getString("direccion"));
                 empresa.setEmail(rs.getString("email"));
                 empresa.setCelular(rs.getString("celular"));
                                 
                 byte[] is;
-                is = rs.getBytes("imagen");
+                is = rs.getBytes("foto");
                 if (is != null) {
                     try {
-                        is = Base64.decode(is, 0, rs.getBytes("imagen").length);
+                        is = Base64.decode(is, 0, rs.getBytes("foto").length);
 //                    BufferedImage bi=Base64.decode( ImageIO.read(is));
                         empresa.setFoto(getImage(is, false));
                     } catch (Exception ex) {

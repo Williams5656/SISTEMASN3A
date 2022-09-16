@@ -58,6 +58,7 @@ public class CEmpresa {
         
         
         vista.getTxtNombre().setEnabled(false);
+        vista.getTxtCiudad().setEnabled(false);
         vista.getTxtDireccion().setEnabled(false);
         vista.getTxtCelular().setEnabled(false);
         vista.getTxtEmail().setEnabled(false);
@@ -71,6 +72,7 @@ public class CEmpresa {
     public void nuevo(){
         limpiar();
         vista.getTxtNombre().setEnabled(true);
+        vista.getTxtCiudad().setEnabled(true);
         vista.getTxtDireccion().setEnabled(true);
         vista.getTxtCelular().setEnabled(true);
         vista.getTxtEmail().setEnabled(true);
@@ -83,6 +85,7 @@ public class CEmpresa {
     public void limpiar(){
         
         vista.getTxtNombre().setText("");
+        vista.getTxtCiudad().setText("");
         vista.getTxtDireccion().setText("");
         vista.getTxtCelular().setText("");
         vista.getTxtEmail().setText("");
@@ -108,10 +111,11 @@ public class CEmpresa {
             modelo.addRow(new Object[columnas]);
             
             vista.getTablaempresa().setValueAt(lista.get(i).getNombre(), i, 0);
-            vista.getTablaempresa().setValueAt(lista.get(i).getDireccion(), i, 1);
-            vista.getTablaempresa().setValueAt(lista.get(i).getCelular(), i, 2);
-            vista.getTablaempresa().setValueAt(lista.get(i).getEmail(), i, 3);
-            vista.getTablaempresa().setValueAt(lista.get(i).getFoto(), i, 4);
+            vista.getTablaempresa().setValueAt(lista.get(i).getCiudad(), i, 1);
+            vista.getTablaempresa().setValueAt(lista.get(i).getDireccion(), i, 2);
+            vista.getTablaempresa().setValueAt(lista.get(i).getCelular(), i, 3);
+            vista.getTablaempresa().setValueAt(lista.get(i).getEmail(), i, 4);
+            vista.getTablaempresa().setValueAt(lista.get(i).getFoto(), i, 5);
         }
     }//Fin de Lista
     
@@ -121,9 +125,11 @@ public class CEmpresa {
         
         
         bdEmpresa.setNombre(vista.getTxtNombre().getText());
+        bdEmpresa.setCiudad(vista.getTxtCiudad().getText());
         bdEmpresa.setDireccion(vista.getTxtDireccion().getText());
-        bdEmpresa.setCelular(vista.getTxtCelular().getText());
         bdEmpresa.setEmail(vista.getTxtEmail().getText());
+        bdEmpresa.setCelular(vista.getTxtCelular().getText());
+        
         ImageIcon ic = (ImageIcon) vista.getLbFoto().getIcon();
         bdEmpresa.setFoto(ic.getImage());
         
@@ -156,10 +162,11 @@ public class CEmpresa {
                 modelo.addRow(new Object[columnas]);
                 
                 vista.getTablaempresa().setValueAt(lista.get(i).getNombre(), i, 0);
-                vista.getTablaempresa().setValueAt(lista.get(i).getDireccion(), i, 1);
-                vista.getTablaempresa().setValueAt(lista.get(i).getCelular(), i, 2);
-                vista.getTablaempresa().setValueAt(lista.get(i).getEmail(), i, 3);
-                vista.getTablaempresa().setValueAt(lista.get(i).getFoto(), i, 4);
+                vista.getTablaempresa().setValueAt(lista.get(i).getCiudad(), i, 1);
+                vista.getTablaempresa().setValueAt(lista.get(i).getDireccion(), i, 2);
+                vista.getTablaempresa().setValueAt(lista.get(i).getCelular(), i, 3);
+                vista.getTablaempresa().setValueAt(lista.get(i).getEmail(), i, 4);
+                vista.getTablaempresa().setValueAt(lista.get(i).getFoto(), i, 5);
                 //}
         }
        }
@@ -173,6 +180,7 @@ public class CEmpresa {
         
        
         bdEmpresa.setNombre(vista.getTxtNombre().getText());
+        bdEmpresa.setCiudad(vista.getTxtCiudad().getText());
         bdEmpresa.setDireccion(vista.getTxtDireccion().getText());
         bdEmpresa.setCelular(vista.getTxtCelular().getText());
         bdEmpresa.setEmail(vista.getTxtEmail().getText());
@@ -208,6 +216,7 @@ public class CEmpresa {
     public void seleccionar(){
         
         vista.getTxtNombre().setEnabled(true);
+        vista.getTxtCiudad().setEnabled(true);
         vista.getTxtDireccion().setEnabled(true);
         vista.getTxtCelular().setEnabled(true);
         vista.getTxtEmail().setEnabled(true);
@@ -227,6 +236,9 @@ public class CEmpresa {
         
         bdEmpresa.setNombre(lista.get(0).getNombre());
         vista.getTxtNombre().setText(bdEmpresa.getNombre());
+        
+        bdEmpresa.setCiudad(lista.get(0).getCiudad());
+        vista.getTxtCiudad().setText(bdEmpresa.getCiudad());
         
         bdEmpresa.setDireccion(lista.get(0).getDireccion());
         vista.getTxtDireccion().setText(bdEmpresa.getDireccion());
