@@ -2,6 +2,7 @@ package controlador;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -26,6 +27,7 @@ public class C_Login {
         C_Login.vista = vista;
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
+        vista.getjLabel1().requestFocus();
         vista.getLabelOcultar().setVisible(false);
         vista.getBtn_Cerrar().setVisible(false);
         vista.getTxtClave().setVisible(false);
@@ -91,7 +93,35 @@ public class C_Login {
                 validar();
             } catch (SQLException ex) {
                 Logger.getLogger(C_Login.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(null, "Ingrese datos en los campos", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
+        });
+        vista.getBarraMovi().addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                BarraMoviMouseDragged(evt);
+            }
+        });
+        vista.getBarraMovi().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BarraMoviMousePressed(evt);
+            }
+        });
+        vista.getTxtUsuario().addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyPressed(evt);
+            }
+        });
+        vista.getjPassClave().addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtClaveKeyPressed(evt);
+
+            }
+
         });
     }
 
@@ -118,6 +148,7 @@ public class C_Login {
     private void LabelMostrarMouseEntered(java.awt.event.MouseEvent evt) {
         vista.getLabelOcultar().setVisible(true);
         vista.getLabelMostrar().setVisible(false);
+        vista.getTxtUsuario().setText(vista.getTxtUsuario().getText());
         vista.getTxtClave().setVisible(true);
         vista.getjPassClave().setVisible(false);
         vista.getTxtClave().setText(vista.getjPassClave().getText());
@@ -127,6 +158,7 @@ public class C_Login {
     private void LabelOcultarMouseExited(java.awt.event.MouseEvent evt) {
         vista.getLabelOcultar().setVisible(false);
         vista.getLabelMostrar().setVisible(true);
+        vista.getTxtUsuario().setText(vista.getTxtUsuario().getText());
         vista.getTxtClave().setVisible(false);
         vista.getjPassClave().setVisible(true);
         vista.getjPassClave().setForeground(Color.BLACK);
@@ -153,6 +185,7 @@ public class C_Login {
         vista.getTxtUsuario().setText("");
         vista.getLabelUsuario().setText(tUsuario);
         vista.getTxtUsuario().setEditable(true);
+        vista.getTxtUsuario().setForeground(Color.BLACK);
         vista.getTxtUsuario().setFont(new Font("Arial", 3, 14));
     }
 
@@ -160,11 +193,39 @@ public class C_Login {
         if (vista.getTxtUsuario().getText().isEmpty()) {
             vista.getTxtUsuario().setText("Escriba su nombre de usuario");
             vista.getTxtUsuario().setForeground(Color.GRAY);
-            vista.getTxtUsuario().setFont(new Font("Serif", 3, 20));
+            vista.getTxtUsuario().setFont(new Font("Serif", 3, 14));
             vista.getLabelUsuario().setText("");
             vista.getTxtUsuario().setEditable(false);
         }
 
+    }
+
+    private void BarraMoviMousePressed(java.awt.event.MouseEvent evt) {
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }
+
+    private void BarraMoviMouseDragged(java.awt.event.MouseEvent evt) {
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        vista.setLocation(x - xMouse, y - yMouse);
+    }
+
+    private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            vista.getjPassClave().requestFocus();
+        }
+    }
+
+    private void txtClaveKeyPressed(java.awt.event.KeyEvent evt) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            vista.getBtn_Ingresar().requestFocus();
+            try {
+                validar();
+            } catch (SQLException ex) {
+                Logger.getLogger(C_Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     public void validar() throws SQLException {

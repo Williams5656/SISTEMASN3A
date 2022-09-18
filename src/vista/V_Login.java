@@ -108,6 +108,14 @@ public class V_Login extends javax.swing.JFrame {
         this.txtUsuario = txtUsuario;
     }
 
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -134,47 +142,47 @@ public class V_Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Btn_Ingresar.setBackground(new java.awt.Color(186, 246, 158));
-        Btn_Ingresar.setFont(new java.awt.Font("Microsoft Tai Le", 3, 24)); // NOI18N
+        Btn_Ingresar.setFont(new java.awt.Font("Microsoft Tai Le", 3, 18)); // NOI18N
         Btn_Ingresar.setText("Ingresar");
         Btn_Ingresar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(Btn_Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 160, 40));
+        getContentPane().add(Btn_Ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 140, 30));
 
-        LabelClave.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        LabelClave.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         LabelClave.setForeground(new java.awt.Color(164, 224, 240));
-        getContentPane().add(LabelClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 220, 40));
+        getContentPane().add(LabelClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 140, 30));
 
-        LabelUsuario.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        LabelUsuario.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         LabelUsuario.setForeground(new java.awt.Color(164, 224, 240));
-        getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 200, 40));
-        getContentPane().add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 270, 40));
+        getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 130, 30));
+        getContentPane().add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 240, 30));
 
         jPassClave.setText("jPasswordField1");
-        getContentPane().add(jPassClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 270, 40));
-        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 270, 40));
+        getContentPane().add(jPassClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 240, 30));
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 240, 30));
 
-        LabelMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/esconder.png"))); // NOI18N
-        getContentPane().add(LabelMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 80, 80));
+        LabelMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/esconder2.png"))); // NOI18N
+        getContentPane().add(LabelMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 50, 30));
 
-        LabelOcultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ojo.png"))); // NOI18N
-        getContentPane().add(LabelOcultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 90, 100));
+        LabelOcultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ojo2.png"))); // NOI18N
+        getContentPane().add(LabelOcultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 50, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoInico.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 120, 110));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconLog.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 70, 80));
 
         PanelCerrar.setBackground(new java.awt.Color(3, 3, 3));
         PanelCerrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Efecto_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cerca.png"))); // NOI18N
-        PanelCerrar.add(Efecto_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 70));
+        PanelCerrar.add(Efecto_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 40));
 
-        Btn_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cerrar-sesion.png"))); // NOI18N
-        PanelCerrar.add(Btn_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 70));
+        Btn_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cerrar-sesion2.png"))); // NOI18N
+        PanelCerrar.add(Btn_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 40));
 
-        getContentPane().add(PanelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 70, 70));
+        getContentPane().add(PanelCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 50, 40));
 
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Login.png"))); // NOI18N
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 530));
-        getContentPane().add(BarraMovi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 60));
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LoginFondo.png"))); // NOI18N
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 380));
+        getContentPane().add(BarraMovi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
