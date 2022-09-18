@@ -194,6 +194,25 @@ public class vusuario extends javax.swing.JInternalFrame {
         this.txt_usuario = txt_usuario;
     }
 
+    public JButton getBuscarlo() {
+        return buscarlo;
+    }
+
+    public void setBuscarlo(JButton buscarlo) {
+        this.buscarlo = buscarlo;
+    }
+
+    public JComboBox<String> getCombo_id() {
+        return combo_id;
+    }
+
+    public void setCombo_id(JComboBox<String> combo_id) {
+        this.combo_id = combo_id;
+    }
+    
+    
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -224,6 +243,10 @@ public class vusuario extends javax.swing.JInternalFrame {
         btn_modificar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
         txt_codigo = new javax.swing.JTextField();
+        buscarlo = new javax.swing.JButton();
+        combo_id = new javax.swing.JComboBox<>();
+        apelido = new javax.swing.JLabel();
+        nombre = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -251,11 +274,11 @@ public class vusuario extends javax.swing.JInternalFrame {
         jLabel7.setText("ROL");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
         getContentPane().add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 170, -1));
-        getContentPane().add(txt_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 170, -1));
-        getContentPane().add(txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 170, -1));
+        getContentPane().add(txt_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 170, -1));
+        getContentPane().add(txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 170, -1));
         getContentPane().add(txt_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 170, -1));
 
-        combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", " " }));
+        combo_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Empleados" }));
         getContentPane().add(combo_rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 170, -1));
 
         combo_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo", " " }));
@@ -282,7 +305,7 @@ public class vusuario extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 560, 150));
 
         btn_buscar.setText("buscar");
-        getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, -1, -1));
+        getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, -1, -1));
 
         btn_nuevo.setText("nuevo");
         getContentPane().add(btn_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
@@ -297,17 +320,55 @@ public class vusuario extends javax.swing.JInternalFrame {
         getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
         getContentPane().add(txt_codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 170, -1));
 
+        buscarlo.setText("IR");
+        buscarlo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarloActionPerformed(evt);
+            }
+        });
+        getContentPane().add(buscarlo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
+
+        combo_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_idActionPerformed(evt);
+            }
+        });
+        getContentPane().add(combo_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 150, -1));
+
+        apelido.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        apelido.setText("apellido");
+        getContentPane().add(apelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 120, 20));
+
+        nombre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nombre.setText("nombre");
+        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 120, 20));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buscarloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarloActionPerformed
+//        String crol=combo_rol.getSelectedItem().toString();
+        //////////////////////////////////////////////
+         
+        ///////////////////////////////////////////////
+     
+    }//GEN-LAST:event_buscarloActionPerformed
+
+    private void combo_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_idActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel apelido;
     private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_guardar;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_nuevo;
+    private javax.swing.JButton buscarlo;
     private javax.swing.JComboBox<String> combo_estado;
+    private javax.swing.JComboBox<String> combo_id;
     private javax.swing.JComboBox<String> combo_rol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -317,6 +378,7 @@ public class vusuario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel nombre;
     private javax.swing.JTable tabla_usuarios;
     private javax.swing.JTextField txt_buscar;
     private javax.swing.JTextField txt_cedula;
