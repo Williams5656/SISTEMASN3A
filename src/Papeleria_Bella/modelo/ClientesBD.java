@@ -1,5 +1,5 @@
-package Papeleria_Bella.modelo;
 
+package Papeleria_Bella.modelo;
 import Papeleria_Bella.vista.*;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -20,55 +20,46 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import org.postgresql.util.Base64;
 
-public class UsuarioBD extends UsuarioMD {
 
-    public static Vusuario vistau;
+public class ClientesBD extends ClientesMD{
+    public static Vclientes vistac;
 
-    public UsuarioBD() {
+    public ClientesBD() {
     }
 
+   
+    
+    
     Conexion conectar = new Conexion();
-
-    public DefaultComboBoxModel ROL() {
-        DefaultComboBoxModel listarol = new DefaultComboBoxModel();
-        ResultSet rs = conectar.query("Select * from rol order by nombre");
+    
+    public List<ClientesMD> mostrardatos() {
         try {
-            while (rs.next()) {
-                listarol.addElement(rs.getString("nombre"));
-            }
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        return listarol;
-    }
-
-    public List<UsuarioMD> mostrardatos() {
-        try {
-            List<UsuarioMD> listau = new ArrayList<UsuarioMD>();
-            String sql = "select * from usuario";
+            List<ClientesMD> listau = new ArrayList<ClientesMD>();
+            String sql = "select * from clientes";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                UsuarioMD u = new UsuarioMD();
+                ClientesMD u = new ClientesMD();
                 u.setCodigo(rs.getString("codigo"));
                 u.setCedula(rs.getString("cedula"));
-                u.setUsuario(rs.getString("usuario"));
-                u.setClave(rs.getString("clave"));
-                u.setRol(rs.getString("rol"));
-                u.setEstado(rs.getString("estado"));
+                u.setNombres(rs.getString("nombres"));
+                u.setApellidos(rs.getString("apellidos"));
+                u.setCelular(rs.getString("celular"));
+                u.setDireccion(rs.getString("direccion"));
+                u.setEmail(rs.getString("email"));
 
                 listau.add(u);
             }
             rs.close();
             return listau;
         } catch (SQLException e) {
-            Logger.getLogger(UsuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(ClientesBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }
-
+    
     public boolean insertar() {
 
-        String sql = "INSERT INTO usuario(codigo, cedula, usuario, clave, rol, estado) VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getUsuario() + "','" + getClave() + "','" + getRol() + "','" + getEstado() + "')";
+        String sql = "INSERT INTO clientes(codigo, cedula, nombres, apellidos, celular, direccion, email) VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getNombres()+ "','" + getApellidos()+ "','" + getCelular()+ "','" + getDireccion()+ "','" + getEmail()+ "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -79,10 +70,10 @@ public class UsuarioBD extends UsuarioMD {
         }
 
     }
-
+    
     public boolean modificar(String codigo) {
 
-        String sql = "update usuario set \"cedula\"='" + getCedula()+ "',\"usuario\"='" + getUsuario()+ "',\"clave\"='" + getClave()+ "',\"rol\"='" + getRol()+ "',\"estado\"='" + getEstado()+ "'"
+        String sql = "update clientes set \"cedula\"='" + getCedula()+ "',\"nombres\"='" + getNombres()+ "',\"apellidos\"='" + getApellidos()+ "',\"celular\"='" + getCelular()+ "',\"direccion\"='" + getDireccion()+ "',\"email\"='" + getEmail()+ "'"
                 + " where \"codigo\"='" + codigo + "'";
 
         if (conectar.noQuery(sql) == null) {
@@ -94,21 +85,22 @@ public class UsuarioBD extends UsuarioMD {
         }
 
     }
-
-    public List<UsuarioMD> obtenerdatos(String codigo) {
+    
+    public List<ClientesMD> obtenerdatos(String codigo) {
 
         try {
-            List<UsuarioMD> lista = new ArrayList<UsuarioMD>();
-            String sql = "select * from usuario " + " where \"codigo\"='" + codigo + "'";
+            List<ClientesMD> lista = new ArrayList<ClientesMD>();
+            String sql = "select * from clientes " + " where \"codigo\"='" + codigo + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                UsuarioMD u = new UsuarioMD();
+                ClientesMD u = new ClientesMD();
                 u.setCodigo(rs.getString("codigo"));
                 u.setCedula(rs.getString("cedula"));
-                u.setUsuario(rs.getString("usuario"));
-                u.setClave(rs.getString("clave"));
-                u.setRol(rs.getString("rol"));
-                u.setEstado(rs.getString("estado"));
+                u.setNombres(rs.getString("nombres"));
+                u.setApellidos(rs.getString("apellidos"));
+                u.setCelular(rs.getString("celular"));
+                u.setDireccion(rs.getString("direccion"));
+                u.setEmail(rs.getString("email"));
 
                 lista.add(u);
 
@@ -116,13 +108,12 @@ public class UsuarioBD extends UsuarioMD {
             rs.close();
             return lista;
         } catch (SQLException e) {
-            Logger.getLogger(UsuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(ClientesBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }
-
     public boolean eliminar(String codigo) {
-        String sql = "delete from usuario where \"codigo\"='" + codigo + "'";
+        String sql = "delete from clientes where \"codigo\"='" + codigo + "'";
         if (conectar.noQuery(sql) == null) {
             return true;
 
@@ -131,7 +122,7 @@ public class UsuarioBD extends UsuarioMD {
             return false;
         }
     }
-
+    
     public static BufferedImage toBufferedImage(Image img) {
         if (img instanceof BufferedImage) {
             return (BufferedImage) img;
@@ -195,36 +186,5 @@ public class UsuarioBD extends UsuarioMD {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
-    }
-
-    public UsuarioMD validar(String User, String Pass) throws SQLException {
-        PreparedStatement st;
-        ResultSet rs;
-        Connection con;
-        UsuarioMD u = new UsuarioMD();
-        String validar = "Select * From usuario\n"
-                + "where usuario.usuario=? and usuario.clave=?;";
-        try {
-            con = conectar.getCon();
-
-            st = con.prepareStatement(validar);
-            st.setString(1, User);
-            st.setString(2, Pass);
-            rs = st.executeQuery();
-
-            while (rs.next()) {
-
-                u.setCodigo(rs.getString("codigo"));
-                u.setCedula(rs.getString("cedula"));
-                u.setUsuario(rs.getString("usuario"));
-                u.setClave(rs.getString("clave"));
-                u.setRol(rs.getString("rol"));
-                u.setEstado(rs.getString("estado"));
-
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error: " + e.toString(), null, JOptionPane.ERROR_MESSAGE);
-        }
-        return u;
     }
 }

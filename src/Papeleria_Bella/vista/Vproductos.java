@@ -324,7 +324,7 @@ public class Vproductos extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaproductos = new javax.swing.JTable();
         buttonimprimir = new javax.swing.JButton();
-        comboiva = new javax.swing.JComboBox<>();
+        comboiva = new javax.swing.JComboBox<String>();
         jLabel19 = new javax.swing.JLabel();
         buttoneliminar = new javax.swing.JButton();
         buttoncargar = new javax.swing.JButton();
@@ -333,7 +333,7 @@ public class Vproductos extends javax.swing.JFrame {
         labelcodigo = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
@@ -474,7 +474,7 @@ public class Vproductos extends javax.swing.JFrame {
 
         comboiva.setBackground(new java.awt.Color(232, 255, 255));
         comboiva.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        comboiva.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0%", "12%", "14%" }));
+        comboiva.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0%", "12%", "14%" }));
         comboiva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboivaActionPerformed(evt);
