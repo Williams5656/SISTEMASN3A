@@ -98,7 +98,7 @@ public class Cproveedores {
         
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
         if (resp == 0) {
-            if (bproveedores.modificar(vistaprov.getTxtcelular().getText())) ;
+            if (bproveedores.modificar(vistaprov.getLabelcodigo().getText())) ;
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();

@@ -132,17 +132,8 @@ public class PersonaBD extends PersonaMD {
 
     public boolean modificar(String cedula) {
         
-         String ef = null;
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        try {
-            BufferedImage img = toBufferedImage(getFoto());
-            ImageIO.write(img, "PNG", bos);
-            byte[] imgb = bos.toByteArray();
-            ef = Base64.encodeBytes(imgb);
-        } catch (IOException ex) {
-            Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String sql = "update persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"telefono\"='" + getTelefono() + "',\"direccion\"='" + getDireccion() + "',\"email\"='" + getEmail() + "',\"foto\"='" + ef +"'"
+
+        String sql = "update persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"telefono\"='" + getTelefono() + "',\"direccion\"='" + getDireccion() + "',\"email\"='" + getEmail() + "'"
                 + " where \"cedula\"='" + cedula + "'";
 
         if (conectar.noQuery(sql) == null) {

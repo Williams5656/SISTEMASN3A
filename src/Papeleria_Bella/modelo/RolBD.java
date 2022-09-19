@@ -119,10 +119,10 @@ public class RolBD extends RolMD{
             return false;
         }
     }
-    public List<RolMD> buscardatos(String codigo) {
+    public List<RolMD> buscardatos(String nombre) {
         try {
             List<RolMD> lista = new ArrayList<RolMD>();
-            String sql = "select * from rol where \"codigo\" ILIKE '%" + codigo + "%'";
+            String sql = "select * from rol where \"nombre\" ILIKE '%" + nombre + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 RolMD r = new RolMD();

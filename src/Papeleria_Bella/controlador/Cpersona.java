@@ -72,6 +72,7 @@ public class Cpersona {
             vista.getTablapersona().setValueAt(lista.get(i).getEmail(), i, 5);
 
         }
+        nuevo();
     }
 
     public void guardar() {
@@ -116,6 +117,7 @@ public class Cpersona {
     public void seleccionar() {
         vista.getButtonguardar().setEnabled(false);
         vista.getButtonmodificar().setEnabled(true);
+        
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTablapersona().getModel();
         String cedula = (String) modelo.getValueAt(vista.getTablapersona().getSelectedRow(), 0);
@@ -162,13 +164,12 @@ public class Cpersona {
 
     public void eliminar() {
         bpersona.setCedula(vista.getTxtcedula().getText());
-        int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el usuario  " + vista.getTxtcedula().getText());
+        int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar la persona?" + vista.getTxtcedula().getText());
         if (resp == 0) {
             if (bpersona.eliminar(vista.getTxtcedula().getText())) ;
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
-
         }
     }
 
