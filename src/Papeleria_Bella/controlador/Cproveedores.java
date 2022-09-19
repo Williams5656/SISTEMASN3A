@@ -69,7 +69,7 @@ public class Cproveedores {
             vistaprov.getTablaproveedores().setValueAt(lista.get(i).getRepresentanteleg(), i, 3);
             vistaprov.getTablaproveedores().setValueAt(lista.get(i).getCelular(), i, 4);
         }
-        nuevo();
+       
     }
 
     public void guardar() {
@@ -95,12 +95,13 @@ public class Cproveedores {
         bproveedores.setNombrecom(vistaprov.getTxtnombrecom().getText());
         bproveedores.setRepresentanteleg(vistaprov.getTxtrepresentanteleg().getText());
         bproveedores.setCelular(vistaprov.getTxtcelular().getText());
+        
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
         if (resp == 0) {
             if (bproveedores.modificar(vistaprov.getTxtcelular().getText())) ;
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
-
+            nuevo();
         }
     }
 

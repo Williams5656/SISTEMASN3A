@@ -80,7 +80,7 @@ public class ProveedoresBD extends ProveedoresMD {
         
         try {
             List<ProveedoresMD> lista = new ArrayList<ProveedoresMD>();
-            String sql = "select * from proveedores";
+            String sql = "select * from proveedores " + " where \"codigo\"='" + codigo + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 ProveedoresMD u = new ProveedoresMD();
