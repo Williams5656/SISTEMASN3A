@@ -76,8 +76,8 @@ public class ProductosBD extends ProductosMD{
                 u.setMarca(rs.getString("marca"));
                 u.setModelo(rs.getString("modelo"));
                 u.setStock(rs.getInt("stock"));
-                u.setValorunitario(rs.getInt("valor unitario"));
-                u.setIva(rs.getString("IVA"));
+                u.setValorunitario(rs.getInt("valorunitario"));
+                u.setIva(rs.getString("iva"));
                 byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {
@@ -87,7 +87,7 @@ public class ProductosBD extends ProductosMD{
                         u.setFoto(getImage(is, false));
                     } catch (Exception ex) {
                         u.setFoto(null);
-                        Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(ProductosBD.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
                     u.setFoto(null);
@@ -115,7 +115,7 @@ public class ProductosBD extends ProductosMD{
             Logger.getLogger(ProductosBD.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String sql = "INSERT INTO productos(codigo, nombre, descripcion, proveedor, marca, modelo, stock, valorunitario, iva, foto) VALUES ('" + getCodigo()+ "','" + getNombre() + "','" + getDescripcion()+ "','" + getProveedor()+ "','" + getMarca()+ "','" + getModelo()+ "','" + getStock()+ "','" + getValorunitario()+ "','" + getIva()+ "','" + ef + "')";
+        String sql = "INSERT INTO producto(codigo, nombre, descripcion, proveedor, marca, modelo, stock, valorunitario, iva, foto) VALUES ('" + getCodigo()+ "','" + getNombre() + "','" + getDescripcion()+ "','" + getProveedor()+ "','" + getMarca()+ "','" + getModelo()+ "','" + getStock()+ "','" + getValorunitario()+ "','" + getIva()+ "','" + ef + "')";
 
          if (conectar.noQuery(sql) == null) {
             return true;
@@ -128,17 +128,7 @@ public class ProductosBD extends ProductosMD{
     }
     public boolean modificar(String codigo) {
         
-         String ef = null;
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        try {
-            BufferedImage img = toBufferedImage(getFoto());
-            ImageIO.write(img, "PNG", bos);
-            byte[] imgb = bos.toByteArray();
-            ef = Base64.encodeBytes(imgb);
-        } catch (IOException ex) {
-            Logger.getLogger(ProductosBD.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String sql = "update producto set \"nombre\"='" + getNombre() + "',\"descripcion\"='" + getDescripcion()+ "',\"proveedor\"='" + getProveedor()+ "',\"marca\"='" + getMarca()+ "',\"modelo\"='" + getModelo()+ "',\"stock\"='" + getStock()+ "',\"valorunitario\"='" + getValorunitario()+"',\"iva\"='" + getIva()+"',\"foto\"='" + ef +"'"
+        String sql = "update producto set \"nombre\"='" + getNombre() + "',\"descripcion\"='" + getDescripcion()+ "',\"proveedor\"='" + getProveedor()+ "',\"marca\"='" + getMarca()+ "',\"modelo\"='" + getModelo()+ "',\"stock\"='" + getStock()+ "',\"valorunitario\"='" + getValorunitario()+"',\"iva\"='" + getIva()+"'"
                 + " where \"codigo\"='" + codigo + "'";
 
         if (conectar.noQuery(sql) == null) {
@@ -165,8 +155,8 @@ public class ProductosBD extends ProductosMD{
                 u.setMarca(rs.getString("marca"));
                 u.setModelo(rs.getString("modelo"));
                 u.setStock(rs.getInt("stock"));
-                u.setValorunitario(rs.getInt("valor unitario"));
-                u.setIva(rs.getString("IVA"));
+                u.setValorunitario(rs.getInt("valorunitario"));
+                u.setIva(rs.getString("iva"));
                 byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {
@@ -216,8 +206,8 @@ public class ProductosBD extends ProductosMD{
                 u.setMarca(rs.getString("marca"));
                 u.setModelo(rs.getString("modelo"));
                 u.setStock(rs.getInt("stock"));
-                u.setValorunitario(rs.getInt("valor unitario"));
-                u.setIva(rs.getString("IVA"));
+                u.setValorunitario(rs.getInt("valorunitario"));
+                u.setIva(rs.getString("iva"));
                 byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {

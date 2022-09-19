@@ -75,7 +75,6 @@ public class Cproductos {
             vistapr.getTablaproductos().setValueAt(lista.get(i).getStock(), i, 6);
             vistapr.getTablaproductos().setValueAt(lista.get(i).getValorunitario(), i, 7);
             vistapr.getTablaproductos().setValueAt(lista.get(i).getIva(), i, 8);
-            vistapr.getTablaproductos().setValueAt(lista.get(i).getFoto(), i, 9);
 
         }
     }
@@ -143,6 +142,12 @@ public class Cproductos {
         vistapr.getTxtmarca().setText(bproductos.getMarca());
         bproductos.setModelo(lista.get(0).getModelo());
         vistapr.getTxtmodelo().setText(bproductos.getModelo());
+        bproductos.setStock(lista.get(0).getStock());
+        vistapr.getTxtstock().setText(String.valueOf(bproductos.getStock()));
+        bproductos.setValorunitario(lista.get(0).getValorunitario());
+        vistapr.getTxtvaloru().setText(String.valueOf(bproductos.getValorunitario()));
+        bproductos.setIva(lista.get(0).getIva());
+        vistapr.getComboiva().setSelectedItem(bproductos.getIva());
 
         Image img = lista.get(0).getFoto();
         if (img != null) {
@@ -220,7 +225,6 @@ public class Cproductos {
                 vistapr.getTablaproductos().setValueAt(lista.get(i).getStock(), i, 6);
                 vistapr.getTablaproductos().setValueAt(lista.get(i).getValorunitario(), i, 7);
                 vistapr.getTablaproductos().setValueAt(lista.get(i).getIva(), i, 8);
-                vistapr.getTablaproductos().setValueAt(lista.get(i).getFoto(), i, 9);
 
             }
         }

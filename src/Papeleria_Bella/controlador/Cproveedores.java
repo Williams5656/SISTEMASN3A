@@ -141,6 +141,7 @@ public class Cproveedores {
         vistaprov.getTxtruc().setText("");
         vistaprov.getTxtnombrecom().setText("");
         vistaprov.getTxtrepresentanteleg().setText("");
+        vistaprov.getTxtcelular().setText("");
         vistaprov.getButtonguardar().setEnabled(true);
         vistaprov.getButtonmodificar().setEnabled(false);
         GenerarCodProvee();
