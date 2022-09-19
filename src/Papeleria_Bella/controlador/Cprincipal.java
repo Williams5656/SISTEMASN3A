@@ -31,6 +31,12 @@ public class Cprincipal {
         vista.getItemempresa().addActionListener(e-> info());
         vista.getItemproductos().addActionListener(e-> productos());
         vista.getItemproveedores().addActionListener(e-> proveedores());
+        vista.getItemclientes().addActionListener(e-> clientes());
+        vista.getItemstock().addActionListener(e-> stock());
+        vista.getItemventas().addActionListener(e-> ventas());
+        vista.getItemcotizacion().addActionListener(e-> cotizacion());
+        vista.getItemreportes().addActionListener(e-> reportes());
+        
     }
            
          
@@ -42,24 +48,41 @@ public class Cprincipal {
         Vusuario vus= new Vusuario();
         Cusuario cuser=new Cusuario(vus);
     }
-
     private void roles() {
         Vrol p= new Vrol();
         Crol cper=new Crol(p);
-    }
-    
+    }  
     private void info() {
         Vdatos p= new Vdatos();
         Cdatos cper=new Cdatos(p);
     }
-   
     private void productos() {
         Vproductos p= new Vproductos();
-        Cproductos cper=new Cproductos(p);
-        
+        Cproductos cper=new Cproductos(p); 
     }
     private void proveedores() {
         Vproveedores p= new Vproveedores();
         Cproveedores cper=new Cproveedores(p);
     }
+    private void clientes() {
+        Vclientes p= new Vclientes();
+        /*Cclientes cper=new Cclientes(p);*/
+    }
+    private void stock() {
+        Vproveedores p= new Vproveedores();
+        Cproveedores cper=new Cproveedores(p);
+    }
+    private void ventas() {
+        Vproveedores p= new Vproveedores();
+        Cproveedores cper=new Cproveedores(p);
+    }
+    private void cotizacion() {
+        Vproveedores p= new Vproveedores();
+        Cproveedores cper=new Cproveedores(p);
+    }
+    private void reportes() {
+        Vproveedores p= new Vproveedores();
+        Cproveedores cper=new Cproveedores(p);
+    }
+    
 }

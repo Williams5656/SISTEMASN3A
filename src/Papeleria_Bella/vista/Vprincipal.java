@@ -19,6 +19,55 @@ public class Vprincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JMenuItem getItemclientes() {
+        return itemclientes;
+    }
+
+    public void setItemclientes(JMenuItem itemclientes) {
+        this.itemclientes = itemclientes;
+    }
+
+    public JMenuItem getItemcotizacion() {
+        return itemcotizacion;
+    }
+
+    public void setItemcotizacion(JMenuItem itemcotizacion) {
+        this.itemcotizacion = itemcotizacion;
+    }
+
+    public JMenu getItemotros() {
+        return itemotros;
+    }
+
+    public void setItemotros(JMenu itemotros) {
+        this.itemotros = itemotros;
+    }
+
+    public JMenuItem getItemreportes() {
+        return itemreportes;
+    }
+
+    public void setItemreportes(JMenuItem itemreportes) {
+        this.itemreportes = itemreportes;
+    }
+
+    public JMenuItem getItemstock() {
+        return itemstock;
+    }
+
+    public void setItemstock(JMenuItem itemstock) {
+        this.itemstock = itemstock;
+    }
+
+    public JMenuItem getItemventas() {
+        return itemventas;
+    }
+
+    public void setItemventas(JMenuItem itemventas) {
+        this.itemventas = itemventas;
+    }
+ 
+
     public JMenuItem getItemroles() {
         return itemroles;
     }
@@ -129,8 +178,14 @@ public class Vprincipal extends javax.swing.JFrame {
         itemroles = new javax.swing.JMenuItem();
         itemproductos = new javax.swing.JMenuItem();
         itemproveedores = new javax.swing.JMenuItem();
+        itemclientes = new javax.swing.JMenuItem();
+        itemstock = new javax.swing.JMenuItem();
+        itemventas = new javax.swing.JMenuItem();
+        itemcotizacion = new javax.swing.JMenuItem();
         iteminformacion = new javax.swing.JMenu();
         itemempresa = new javax.swing.JMenuItem();
+        itemotros = new javax.swing.JMenu();
+        itemreportes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -194,19 +249,75 @@ public class Vprincipal extends javax.swing.JFrame {
         });
         jMenu1.add(itemproveedores);
 
+        itemclientes.setBackground(new java.awt.Color(220, 240, 240));
+        itemclientes.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itemclientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/objetivo.png"))); // NOI18N
+        itemclientes.setText("Clientes");
+        itemclientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemclientesActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemclientes);
+
+        itemstock.setBackground(new java.awt.Color(220, 240, 240));
+        itemstock.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itemstock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/almacen.png"))); // NOI18N
+        itemstock.setText("Stock");
+        itemstock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemstockActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemstock);
+
+        itemventas.setBackground(new java.awt.Color(220, 240, 240));
+        itemventas.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itemventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/venta-al-por-mayor.png"))); // NOI18N
+        itemventas.setText("Ventas");
+        itemventas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemventasActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemventas);
+
+        itemcotizacion.setBackground(new java.awt.Color(220, 240, 240));
+        itemcotizacion.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itemcotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cotizacion.png"))); // NOI18N
+        itemcotizacion.setText("Cotización");
+        itemcotizacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemcotizacionActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemcotizacion);
+
         jMenuBar1.add(jMenu1);
 
-        iteminformacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-crear-nuevo-16(1).png"))); // NOI18N
+        iteminformacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/informacion.png"))); // NOI18N
         iteminformacion.setText("Informacion");
         iteminformacion.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
 
         itemempresa.setBackground(new java.awt.Color(220, 240, 240));
         itemempresa.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
-        itemempresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-tipo-de-máscara-de-cuenta-de-usuario-7-16.png"))); // NOI18N
+        itemempresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edificio.png"))); // NOI18N
         itemempresa.setText("Empresa");
         iteminformacion.add(itemempresa);
 
         jMenuBar1.add(iteminformacion);
+
+        itemotros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mas (1).png"))); // NOI18N
+        itemotros.setText("Otros");
+        itemotros.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+
+        itemreportes.setBackground(new java.awt.Color(220, 240, 240));
+        itemreportes.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
+        itemreportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
+        itemreportes.setText("Reportes");
+        itemotros.add(itemreportes);
+
+        jMenuBar1.add(itemotros);
 
         setJMenuBar(jMenuBar1);
 
@@ -232,19 +343,41 @@ public class Vprincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itemproveedoresActionPerformed
 
+    private void itemclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemclientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemclientesActionPerformed
+
+    private void itemstockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemstockActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemstockActionPerformed
+
+    private void itemventasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemventasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemventasActionPerformed
+
+    private void itemcotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemcotizacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemcotizacionActionPerformed
+
     /**
      * @param args the command line arguments
      */
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itemclientes;
+    private javax.swing.JMenuItem itemcotizacion;
     private javax.swing.JMenuItem itemempresa;
     private javax.swing.JMenu iteminformacion;
+    private javax.swing.JMenu itemotros;
     private javax.swing.JMenuItem itempersona;
     private javax.swing.JMenuItem itemproductos;
     private javax.swing.JMenuItem itemproveedores;
+    private javax.swing.JMenuItem itemreportes;
     private javax.swing.JMenuItem itemroles;
+    private javax.swing.JMenuItem itemstock;
     private javax.swing.JMenuItem itemusuario;
+    private javax.swing.JMenuItem itemventas;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

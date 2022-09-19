@@ -237,8 +237,8 @@ public class Vusuario extends javax.swing.JFrame {
         txtcedula = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         labelcodigo = new javax.swing.JLabel();
-        comborol = new javax.swing.JComboBox<>();
-        comboestado = new javax.swing.JComboBox<>();
+        comborol = new javax.swing.JComboBox<String>();
+        comboestado = new javax.swing.JComboBox<String>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablausuario = new javax.swing.JTable();
         buttonbuscar = new javax.swing.JButton();
@@ -251,7 +251,7 @@ public class Vusuario extends javax.swing.JFrame {
         buttoneliminar = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 24)); // NOI18N
@@ -297,7 +297,7 @@ public class Vusuario extends javax.swing.JFrame {
 
         comboestado.setBackground(new java.awt.Color(232, 255, 255));
         comboestado.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        comboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        comboestado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Activo", "Inactivo" }));
         getContentPane().add(comboestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 127, -1));
 
         tablausuario.setModel(new javax.swing.table.DefaultTableModel(
@@ -351,7 +351,7 @@ public class Vusuario extends javax.swing.JFrame {
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 870, 660));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 900, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

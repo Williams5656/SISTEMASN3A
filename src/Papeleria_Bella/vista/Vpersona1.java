@@ -274,7 +274,7 @@ public class Vpersona1 extends javax.swing.JFrame {
         buttonimprimir = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(178, 255, 255));
         setForeground(new java.awt.Color(170, 244, 244));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

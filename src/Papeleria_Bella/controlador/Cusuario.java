@@ -107,11 +107,12 @@ public class Cusuario {
         busuario.setCodigo(vistau.getLabelcodigo().getText());
         busuario.setCedula(vistau.getTxtcedula().getText());
         busuario.setUsuario(vistau.getTxtusuario().getText());
-        String rol = (String) vistau.getComboestado().getSelectedItem();
+        String rol = (String) vistau.getComborol().getSelectedItem();
         busuario.setRol(rol);
+        busuario.setEstado(vistau.getComboestado().getSelectedItem().toString());
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
         if (resp == 0) {
-            if (busuario.modificar(vistau.getTxtcedula().getText())) ;
+            if (busuario.modificar(vistau.getLabelcodigo().getText())) ;
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
 

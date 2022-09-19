@@ -252,11 +252,11 @@ public class Vdatos extends javax.swing.JFrame {
         buttonmodificar = new javax.swing.JButton();
         buttoneliminar = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
-        comboestado = new javax.swing.JComboBox<>();
+        comboestado = new javax.swing.JComboBox<String>();
         buttonimprimir = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 24)); // NOI18N
@@ -344,7 +344,7 @@ public class Vdatos extends javax.swing.JFrame {
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
 
         comboestado.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        comboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        comboestado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Activo", "Inactivo" }));
         comboestado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboestadoActionPerformed(evt);

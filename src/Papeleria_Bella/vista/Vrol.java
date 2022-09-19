@@ -40,7 +40,7 @@ public class Vrol extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        comboestado = new javax.swing.JComboBox<>();
+        comboestado = new javax.swing.JComboBox<String>();
         txtnombre = new javax.swing.JTextField();
         txtdescripcion = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -55,7 +55,7 @@ public class Vrol extends javax.swing.JFrame {
         buttonimprimir = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 24)); // NOI18N
@@ -84,7 +84,7 @@ public class Vrol extends javax.swing.JFrame {
 
         comboestado.setBackground(new java.awt.Color(232, 255, 255));
         comboestado.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        comboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        comboestado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Activo", "Inactivo" }));
         getContentPane().add(comboestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 127, -1));
         getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 128, -1));
         getContentPane().add(txtdescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 130, 20));
