@@ -1,4 +1,4 @@
-                                           package Papeleria_Bella.controlador;
+package Papeleria_Bella.controlador;
 
 import Papeleria_Bella.modelo.Conexion;
 import Papeleria_Bella.modelo.*;
