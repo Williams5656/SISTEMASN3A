@@ -142,7 +142,7 @@ public class PersonaBD extends PersonaMD {
         }
     }
 
-    public boolean insertar() {
+    public boolean insertar()throws SQLException{
         String ef = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
@@ -155,7 +155,10 @@ public class PersonaBD extends PersonaMD {
             JOptionPane.showMessageDialog(null, "Error"+ex);
         }
         String sql = "INSERT INTO persona(cedula, nombres, apellidos, telefono, correo, foto)" + "VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getTelefono() + "','" + getCorreo() + "','" + ef + "')";
-
+        try {
+            
+        } catch (Exception e) {
+        }
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {

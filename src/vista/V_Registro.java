@@ -182,24 +182,24 @@ public class V_Registro extends javax.swing.JInternalFrame {
 
         btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lapiz.png"))); // NOI18N
         btnmodificar.setText("MODIFICAR");
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 190, 40));
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 140, 40));
 
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarusuario.png"))); // NOI18N
         btneliminar.setText("ELIMINAR");
-        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 180, 40));
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 120, 40));
 
         jLabel2.setText("CLIENTE:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 120, 30));
-        getContentPane().add(txtcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 180, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 90, 30));
+        getContentPane().add(txtcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 180, 30));
 
         jLabel3.setText("NRO DE JUICIO:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 120, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 120, 30));
 
         jLabel4.setText("TIPO DE JUICIO:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 120, 30));
-        getContentPane().add(numjuicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 110, 30));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 120, 30));
+        getContentPane().add(numjuicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 110, 30));
 
-        cbtipojuicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Civil", "Penal", "Contensioso-Administrativo", "Laboral", "Niñez y Adolescencia", "Fragrancia" }));
+        cbtipojuicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Civil", "Penal", "Contensioso-Administrativo", "Laboral", "Niñez y Adolescencia", "Fragrancia", "Intrafamiliar" }));
         getContentPane().add(cbtipojuicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 200, 30));
 
         tablajuicio.setModel(new javax.swing.table.DefaultTableModel(
@@ -227,7 +227,7 @@ public class V_Registro extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, 110));
 
         BtnBuscarCedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
-        getContentPane().add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 60, 40));
+        getContentPane().add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 60, 30));
         getContentPane().add(labelcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 180, 30));
 
         jLabel5.setText("NOMBRES:");

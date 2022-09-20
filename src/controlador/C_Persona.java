@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +40,13 @@ public class C_Persona {
 
         vistapersona.getBtn_CargarFoto().addActionListener(x -> obtieneImagen());
         vistapersona.getBtn_QuitarFoto().addActionListener(x -> QuitarImagen());
-        vistapersona.getBtnguardarp().addActionListener(x -> guardar());
+        vistapersona.getBtnguardarp().addActionListener(x -> {
+            try {
+                guardar();
+            } catch (SQLException ex) {
+                Logger.getLogger(C_Persona.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
         vistapersona.getBtnmodificar().addActionListener(x -> modificar());
         vistapersona.getBtneliminar().addActionListener(x -> eliminar());
         vistapersona.getBtnimprimir().addActionListener(x -> Imprimir());
@@ -98,7 +105,7 @@ public class C_Persona {
         }
     }
 
-    public void guardar() {
+    public void guardar() throws SQLException {
         bdpersona.setCedula(vistapersona.getTxtcedula().getText());
         bdpersona.setNombres(vistapersona.getTxtnombre().getText());
         bdpersona.setApellidos(vistapersona.getTxtapellido().getText());
@@ -107,14 +114,18 @@ public class C_Persona {
 
         ImageIcon ic = (ImageIcon) vistapersona.getLabelFoto().getIcon();
         bdpersona.setFoto_perfil(ic.getImage());
-
-        if (bdpersona.insertar()) {
+        try {
+              if (bdpersona.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
         }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,"ERROR: "+e.toString(),"!ERROR¡",JOptionPane.ERROR_MESSAGE);
+        }
+      
 
     }
 
