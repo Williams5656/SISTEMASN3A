@@ -122,19 +122,19 @@ public class Vstock extends javax.swing.JFrame {
     }
 
     public JLabel getLabelcod_producto() {
-        return labelcod_producto;
+        return labelcodigoproducto;
     }
 
     public void setLabelcod_producto(JLabel labelcod_producto) {
-        this.labelcod_producto = labelcod_producto;
+        this.labelcodigoproducto = labelcod_producto;
     }
 
     public JLabel getLabelcodigo1() {
-        return labelcodigo1;
+        return labelcodigo;
     }
 
     public void setLabelcodigo1(JLabel labelcodigo1) {
-        this.labelcodigo1 = labelcodigo1;
+        this.labelcodigo = labelcodigo1;
     }
 
     public JTable getTablastock() {
@@ -154,11 +154,11 @@ public class Vstock extends javax.swing.JFrame {
     }
 
     public JTextField getTxtstock1() {
-        return txtstock1;
+        return txtstock;
     }
 
     public void setTxtstock1(JTextField txtstock1) {
-        this.txtstock1 = txtstock1;
+        this.txtstock = txtstock1;
     }
 
     
@@ -172,10 +172,10 @@ public class Vstock extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        labelcod_producto = new javax.swing.JLabel();
-        labelcodigo1 = new javax.swing.JLabel();
+        labelcodigoproducto = new javax.swing.JLabel();
+        labelcodigo = new javax.swing.JLabel();
         txtnom_producto = new javax.swing.JTextField();
-        txtstock1 = new javax.swing.JTextField();
+        txtstock = new javax.swing.JTextField();
         buttonbuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablastock = new javax.swing.JTable();
@@ -184,13 +184,14 @@ public class Vstock extends javax.swing.JFrame {
         buttonmodificar = new javax.swing.JButton();
         buttoneliminar = new javax.swing.JButton();
         buttonimprimir = new javax.swing.JButton();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Sitka Small", 3, 24)); // NOI18N
         jLabel2.setText("Stock");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 80, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 80, -1));
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel17.setText("Código Producto:");
@@ -207,15 +208,15 @@ public class Vstock extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel20.setText("Código:");
         getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
-        getContentPane().add(labelcod_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 110, 20));
-        getContentPane().add(labelcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 110, 20));
-        getContentPane().add(txtnom_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 90, -1));
-        getContentPane().add(txtstock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, 90, -1));
+        getContentPane().add(labelcodigoproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 110, 20));
+        getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 110, 20));
+        getContentPane().add(txtnom_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, 130, -1));
+        getContentPane().add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 130, -1));
 
         buttonbuscar.setBackground(new java.awt.Color(232, 255, 255));
         buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
-        getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, 30, 30));
+        getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 130, 30, 30));
 
         tablastock.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -230,7 +231,7 @@ public class Vstock extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablastock);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, 140));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 570, 260));
 
         buttonnuevo.setBackground(new java.awt.Color(232, 255, 255));
         buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
@@ -255,7 +256,11 @@ public class Vstock extends javax.swing.JFrame {
         buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
         buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-imprimir-32.png"))); // NOI18N
-        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 40, 40));
+        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 430, 40, 40));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
+        fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -272,16 +277,17 @@ public class Vstock extends javax.swing.JFrame {
     private javax.swing.JButton buttonimprimir;
     private javax.swing.JButton buttonmodificar;
     private javax.swing.JButton buttonnuevo;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelcod_producto;
-    private javax.swing.JLabel labelcodigo1;
+    private javax.swing.JLabel labelcodigo;
+    private javax.swing.JLabel labelcodigoproducto;
     private javax.swing.JTable tablastock;
     private javax.swing.JTextField txtnom_producto;
-    private javax.swing.JTextField txtstock1;
+    private javax.swing.JTextField txtstock;
     // End of variables declaration//GEN-END:variables
 }
