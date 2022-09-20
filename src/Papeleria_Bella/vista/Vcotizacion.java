@@ -297,19 +297,19 @@ public class Vcotizacion extends javax.swing.JFrame {
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel17.setText("Cantidad:");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel18.setText("Valor Unitario:");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel19.setText("Total:");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, -1, -1));
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel20.setText("IVA:");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel21.setText("Buscar:");
@@ -321,18 +321,18 @@ public class Vcotizacion extends javax.swing.JFrame {
 
         jLabel23.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel23.setText("Cédula:");
-        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         jLabel24.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel24.setText("Código de Producto:");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jLabel25.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel25.setText("Nombre de Producto:");
-        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
-        getContentPane().add(labelcodigoproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 130, 30));
-        getContentPane().add(labelvaloru, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 130, 30));
-        getContentPane().add(labeliva, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 130, 30));
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        getContentPane().add(labelcodigoproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 130, 30));
+        getContentPane().add(labelvaloru, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 130, 30));
+        getContentPane().add(labeliva, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 130, 30));
         getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 130, 30));
 
         txtcedula.addActionListener(new java.awt.event.ActionListener() {
@@ -340,28 +340,28 @@ public class Vcotizacion extends javax.swing.JFrame {
                 txtcedulaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 130, 20));
+        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 130, 20));
 
         txtcantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcantidadActionPerformed(evt);
             }
         });
-        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 130, 20));
+        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 130, 20));
 
         txtnombreproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnombreproductoActionPerformed(evt);
             }
         });
-        getContentPane().add(txtnombreproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 130, 20));
+        getContentPane().add(txtnombreproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 130, 20));
 
         txttotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txttotalActionPerformed(evt);
             }
         });
-        getContentPane().add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 130, 20));
+        getContentPane().add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 130, 20));
 
         txtbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -378,37 +378,37 @@ public class Vcotizacion extends javax.swing.JFrame {
         buttonnuevo.setBackground(new java.awt.Color(232, 255, 255));
         buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add(3).png"))); // NOI18N
-        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 180, 40, 40));
+        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, 40, 40));
 
         buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
         buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
-        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 180, 40, -1));
+        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 100, 40, -1));
 
         buttonmodificar.setBackground(new java.awt.Color(232, 255, 255));
         buttonmodificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
-        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 270, 50, 40));
+        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 180, 40, 40));
 
         buttoneliminar.setBackground(new java.awt.Color(232, 255, 255));
         buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
-        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 270, 40, 40));
+        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 180, 40, 40));
 
         tablacotizacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Codigo", "Ruc", "Nombre Comercial", "Celular", "Representante Legal"
+                "Codigo", "Cédula", "Código Producto", "Nombre Producto", "Cantidad", "Valor Unitario", "IVA", "Total"
             }
         ));
         jScrollPane1.setViewportView(tablacotizacion);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 680, 200));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 680, 250));
 
         buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
         buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
@@ -417,7 +417,7 @@ public class Vcotizacion extends javax.swing.JFrame {
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 570));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -445,37 +445,7 @@ public class Vcotizacion extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vcotizacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vcotizacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vcotizacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vcotizacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Vcotizacion().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonbuscar;
