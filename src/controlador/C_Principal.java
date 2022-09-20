@@ -10,7 +10,7 @@ public class C_Principal {
     public static V_Principal vista;
     
     public C_Principal(V_Principal vista) {
-        C_Principal.vista = vista;
+        this.vista = vista;
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
         vista.setExtendedState(MAXIMIZED_BOTH);

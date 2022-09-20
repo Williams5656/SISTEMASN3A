@@ -94,7 +94,7 @@ public class C_Login {
             } catch (SQLException ex) {
                 Logger.getLogger(C_Login.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NullPointerException e) {
-                JOptionPane.showMessageDialog(null, "Ingrese datos en los campos", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Error: " + e.toString(), "!ERRORRR¡", JOptionPane.ERROR_MESSAGE);
             }
         });
         vista.getBarraMovi().addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -254,7 +254,7 @@ public class C_Login {
 
                         if (us.getUsuario() != null && us.getClave() != null) {
                             V_Principal vistap = new V_Principal();
-                            C_Principal Inicio = new C_Principal(vistap);
+                            C_Principal Iniciop = new C_Principal(vistap);
                             vista.setVisible(false);
                         } else {
                             JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos", null, JOptionPane.ERROR_MESSAGE);
@@ -263,6 +263,7 @@ public class C_Login {
                             vista.getTxtUsuario().setText("");
                             vista.getjPassClave().setText("");
                             bloqueo = bloqueo - 1;
+
                         }
                     }
                 }
