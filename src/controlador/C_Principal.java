@@ -59,4 +59,17 @@ public class C_Principal {
         vr.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         
     }
+    public void consultorio(){
+        V_Consultorio con=new V_Consultorio();
+        C_Consultorio cn=new C_Consultorio(con);
+        vista.getEscritorio().add(con);
+        Dimension desktopSize = vista.getEscritorio().getSize();
+        Dimension FrameSize = con.getSize();
+        con.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        
+    }
+    public void registro(){
+        V_Registro reg=new V_Registro();
+        
+    }
 }

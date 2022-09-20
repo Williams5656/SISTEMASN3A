@@ -21,6 +21,14 @@ public class V_Registro extends javax.swing.JInternalFrame {
         this.BtnBuscarCedula = BtnBuscarCedula;
     }
 
+    public JComboBox<String> getCmbEstadoJuicio() {
+        return CmbEstadoJuicio;
+    }
+
+    public void setCmbEstadoJuicio(JComboBox<String> CmbEstadoJuicio) {
+        this.CmbEstadoJuicio = CmbEstadoJuicio;
+    }
+
     public JButton getBtneliminar() {
         return btneliminar;
     }
@@ -161,6 +169,8 @@ public class V_Registro extends javax.swing.JInternalFrame {
         BtnBuscarCedula = new javax.swing.JButton();
         labelcliente = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        CmbEstadoJuicio = new javax.swing.JComboBox<>();
 
         setClosable(true);
         setIconifiable(true);
@@ -224,7 +234,7 @@ public class V_Registro extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tablajuicio);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, -1, 110));
 
         BtnBuscarCedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
         getContentPane().add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 60, 30));
@@ -233,12 +243,19 @@ public class V_Registro extends javax.swing.JInternalFrame {
         jLabel5.setText("NOMBRES:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, -1, 30));
 
+        jLabel6.setText("ESTADO:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 60, 30));
+
+        CmbEstadoJuicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En Curso", "Finalizado" }));
+        getContentPane().add(CmbEstadoJuicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 150, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarCedula;
+    private javax.swing.JComboBox<String> CmbEstadoJuicio;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardarp;
     private javax.swing.JButton btnmodificar;
@@ -249,6 +266,7 @@ public class V_Registro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelcliente;
     private javax.swing.JLabel numjuicio;

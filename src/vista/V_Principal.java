@@ -31,6 +31,22 @@ public class V_Principal extends javax.swing.JFrame {
         return Btn_NuevoUsuario;
     }
 
+    public JMenuItem getBtn_NuevoConsultorio() {
+        return Btn_NuevoConsultorio;
+    }
+
+    public void setBtn_NuevoConsultorio(JMenuItem Btn_NuevoConsultorio) {
+        this.Btn_NuevoConsultorio = Btn_NuevoConsultorio;
+    }
+
+    public JMenuItem getBtn_NuevoJuicio() {
+        return Btn_NuevoJuicio;
+    }
+
+    public void setBtn_NuevoJuicio(JMenuItem Btn_NuevoJuicio) {
+        this.Btn_NuevoJuicio = Btn_NuevoJuicio;
+    }
+
     public void setBtn_NuevoUsuario(JMenuItem Btn_NuevoUsuario) {
         this.Btn_NuevoUsuario = Btn_NuevoUsuario;
     }
@@ -79,8 +95,10 @@ public class V_Principal extends javax.swing.JFrame {
         btn_nuevorol = new javax.swing.JMenuItem();
         Usuario = new javax.swing.JMenu();
         Btn_NuevoUsuario = new javax.swing.JMenuItem();
-        Cliente = new javax.swing.JMenu();
+        Consultorio = new javax.swing.JMenu();
         Btn_NuevoCliente = new javax.swing.JMenuItem();
+        Btn_NuevoConsultorio = new javax.swing.JMenuItem();
+        Btn_NuevoJuicio = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,12 +134,18 @@ public class V_Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(Usuario);
 
-        Cliente.setText("Cliente");
+        Consultorio.setText("Consultorio");
 
-        Btn_NuevoCliente.setText("Nuevo");
-        Cliente.add(Btn_NuevoCliente);
+        Btn_NuevoCliente.setText("Nuevo Cliente");
+        Consultorio.add(Btn_NuevoCliente);
 
-        jMenuBar1.add(Cliente);
+        Btn_NuevoConsultorio.setText("Nuevo Consultorio");
+        Consultorio.add(Btn_NuevoConsultorio);
+
+        Btn_NuevoJuicio.setText("Registro de Juicios");
+        Consultorio.add(Btn_NuevoJuicio);
+
+        jMenuBar1.add(Consultorio);
 
         setJMenuBar(jMenuBar1);
 
@@ -142,9 +166,11 @@ public class V_Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Btn_NuevoCliente;
+    private javax.swing.JMenuItem Btn_NuevoConsultorio;
+    private javax.swing.JMenuItem Btn_NuevoJuicio;
     private javax.swing.JMenuItem Btn_NuevoUsuario;
     private javax.swing.JMenuItem Btn_nuevopersona;
-    private javax.swing.JMenu Cliente;
+    private javax.swing.JMenu Consultorio;
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenu Persona;
     private javax.swing.JMenu Rol;

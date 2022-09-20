@@ -5,15 +5,37 @@ public class ClienteMD {
     String Codigo;
     String Cedula;
     String Estado;
+    String trabajo;
+    String profesion;
 
     public ClienteMD() {
     }
 
-    public ClienteMD(String Codigo, String Cedula, String Nombres, String Telefono, String Estado) {
+    public ClienteMD(String Codigo, String Cedula, String Estado, String trabajo, String profesion) {
         this.Codigo = Codigo;
         this.Cedula = Cedula;
         this.Estado = Estado;
+        this.trabajo = trabajo;
+        this.profesion = profesion;
     }
+
+    public String getTrabajo() {
+        return trabajo;
+    }
+
+    public void setTrabajo(String trabajo) {
+        this.trabajo = trabajo;
+    }
+
+    public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
+    }
+
+ 
 
     public String getCodigo() {
         return Codigo;

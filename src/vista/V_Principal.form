@@ -40,14 +40,24 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="Cliente">
+        <Menu class="javax.swing.JMenu" name="Consultorio">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cliente"/>
+            <Property name="text" type="java.lang.String" value="Consultorio"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="Btn_NuevoCliente">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nuevo"/>
+                <Property name="text" type="java.lang.String" value="Nuevo Cliente"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Btn_NuevoConsultorio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nuevo Consultorio"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Btn_NuevoJuicio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Registro de Juicios"/>
               </Properties>
             </MenuItem>
           </SubComponents>

@@ -71,6 +71,8 @@ public class C_Cliente extends ClienteBD {
             vistacliente.getTableCliente().setValueAt(lista.get(i).getCodigo(), i, 0);
             vistacliente.getTableCliente().setValueAt(lista.get(i).getCedula(), i, 1);
             vistacliente.getTableCliente().setValueAt(lista.get(i).getEstado(), i, 2);
+            vistacliente.getTableCliente().setValueAt(lista.get(i).getTrabajo(), i, 3);
+            vistacliente.getTableCliente().setValueAt(lista.get(i).getProfesion(), i, 4);
 
         }
     }
@@ -79,6 +81,8 @@ public class C_Cliente extends ClienteBD {
         bdcliente.setCodigo(vistacliente.getLabelCodigo().getText());
         bdcliente.setCedula(vistacliente.getTxtBuscarCedula().getText());
         bdcliente.setEstado(vistacliente.getCmbEstadoCliente().getSelectedItem().toString());
+        bdcliente.setTrabajo(vistacliente.getCmbTrabajo().getSelectedItem().toString());
+        bdcliente.setProfesion(vistacliente.getTxtProfesion().getText());
 
         if (bdcliente.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
@@ -94,6 +98,9 @@ public class C_Cliente extends ClienteBD {
         bdcliente.setCodigo(vistacliente.getLabelCodigo().getText());
         bdcliente.setCedula(vistacliente.getLabelCedula().getText());
         bdcliente.setEstado(vistacliente.getCmbEstadoCliente().getSelectedItem().toString());
+        bdcliente.setTrabajo(vistacliente.getCmbTrabajo().getSelectedItem().toString());
+        bdcliente.setProfesion(vistacliente.getTxtProfesion().getText());
+
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Modificar");
         if (rest == 0) {
             if (bdcliente.modificar(vistacliente.getLabelCodigo().getText())) ;
@@ -117,7 +124,10 @@ public class C_Cliente extends ClienteBD {
         vistacliente.getLabelCedula().setText(bdcliente.getCedula());
         bdcliente.setEstado(lista.get(0).getEstado());
         vistacliente.getCmbEstadoCliente().setSelectedItem(bdcliente.getEstado());
-
+        bdcliente.setTrabajo(lista.get(0).getTrabajo());
+        vistacliente.getCmbTrabajo().setSelectedItem(bdcliente.getTrabajo());
+        bdcliente.setProfesion(lista.get(0).getProfesion());
+        vistacliente.getTxtProfesion().setText(bdcliente.getProfesion());
     }
 
     public void GenerarCodCliente() {
@@ -210,6 +220,8 @@ public class C_Cliente extends ClienteBD {
                 vistacliente.getTableCliente().setValueAt(lista.get(i).getCodigo(), i, 0);
                 vistacliente.getTableCliente().setValueAt(lista.get(i).getCedula(), i, 1);
                 vistacliente.getTableCliente().setValueAt(lista.get(i).getEstado(), i, 2);
+                vistacliente.getTableCliente().setValueAt(lista.get(i).getTrabajo(), i, 3);
+                vistacliente.getTableCliente().setValueAt(lista.get(i).getProfesion(), i, 4);
             }
         }
     }

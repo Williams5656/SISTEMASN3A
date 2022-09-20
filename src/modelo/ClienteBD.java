@@ -22,6 +22,8 @@ public class ClienteBD extends ClienteMD {
                 cl.setCodigo(rs.getString("CODIGO"));
                 cl.setCedula(rs.getString("CEDULA"));
                 cl.setEstado(rs.getString("ESTADO"));
+                cl.setProfesion(rs.getString("PROFESION"));
+                cl.setTrabajo(rs.getString("TRABAJO"));
                 lista.add(cl);
             }
             rs.close();
@@ -33,7 +35,7 @@ public class ClienteBD extends ClienteMD {
     }
 
     public boolean insertar() {
-        String sql = "INSERT INTO cliente(codigo, cedula,estado)" + "VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getEstado() + "')";
+        String sql = "INSERT INTO cliente(codigo, cedula,estado,profesion,trabajo)" + "VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getEstado() + "','" + getProfesion()+ "'),'" + getTrabajo()+ "'";
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -45,7 +47,7 @@ public class ClienteBD extends ClienteMD {
     }
 
     public boolean modificar(String codigo) {
-        String sql = "update cliente set \"cedula\"='" + getCedula() + "',\"estado\"='" + getEstado() + "'"
+        String sql = "update cliente set \"cedula\"='" + getCedula() + "',\"estado\"='" + getEstado() + "',\"profesion\"='" + getProfesion()+ "',\"trabajo\"='" + getTrabajo()+ "'"
                 + "where \"codigo\"='" + codigo + "'";
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -62,10 +64,12 @@ public class ClienteBD extends ClienteMD {
             String sql = "select * from cliente where \"codigo\"='" + codigo + "'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                ClienteMD cl = new ClienteMD();
+                 ClienteMD cl = new ClienteMD();
                 cl.setCodigo(rs.getString("CODIGO"));
                 cl.setCedula(rs.getString("CEDULA"));
                 cl.setEstado(rs.getString("ESTADO"));
+                cl.setProfesion(rs.getString("PROFESION"));
+                cl.setTrabajo(rs.getString("TRABAJO"));
                 lista.add(cl);
             }
             rs.close();
@@ -86,6 +90,8 @@ public class ClienteBD extends ClienteMD {
                 cl.setCodigo(rs.getString("CODIGO"));
                 cl.setCedula(rs.getString("CEDULA"));
                 cl.setEstado(rs.getString("ESTADO"));
+                cl.setProfesion(rs.getString("PROFESION"));
+                cl.setTrabajo(rs.getString("TRABAJO"));
                 lista.add(cl);
             }
             rs.close();
