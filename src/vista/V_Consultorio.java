@@ -13,12 +13,28 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JTextField getTxtBuscarConsultorio() {
+        return TxtBuscarConsultorio;
+    }
+
+    public void setTxtBuscarConsultorio(JTextField TxtBuscarConsultorio) {
+        this.TxtBuscarConsultorio = TxtBuscarConsultorio;
+    }
+
     public JTextArea getTxtLema() {
         return TxtLema;
     }
 
     public void setTxtLema(JTextArea TxtLema) {
         this.TxtLema = TxtLema;
+    }
+
+    public JLabel getLabelFondo() {
+        return labelFondo;
+    }
+
+    public void setLabelFondo(JLabel labelFondo) {
+        this.labelFondo = labelFondo;
     }
 
     public JTextField getTxttelefonoConsultorio() {
@@ -45,13 +61,15 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
         this.Btn_QuitarFondo = Btn_QuitarFondo;
     }
 
-    public JLabel getCodigoConsultorio() {
-        return CodigoConsultorio;
+    public JLabel getLabelCodigoConsultorio() {
+        return LabelCodigoConsultorio;
     }
 
-    public void setCodigoConsultorio(JLabel CodigoConsultorio) {
-        this.CodigoConsultorio = CodigoConsultorio;
+    public void setLabelCodigoConsultorio(JLabel LabelCodigoConsultorio) {
+        this.LabelCodigoConsultorio = LabelCodigoConsultorio;
     }
+
+ 
 
     public JTable getTableConsultorio() {
         return TableConsultorio;
@@ -142,7 +160,7 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableConsultorio = new javax.swing.JTable();
-        CodigoConsultorio = new javax.swing.JLabel();
+        LabelCodigoConsultorio = new javax.swing.JLabel();
         TxttelefonoConsultorio = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         labelFondo = new javax.swing.JLabel();
@@ -151,6 +169,8 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
         TxtLema = new javax.swing.JTextArea();
         Btn_CargarFondo = new javax.swing.JButton();
         Btn_QuitarFondo = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        TxtBuscarConsultorio = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -214,8 +234,8 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(TableConsultorio);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 630, 110));
-        getContentPane().add(CodigoConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 160, 30));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 630, 110));
+        getContentPane().add(LabelCodigoConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 160, 30));
         getContentPane().add(TxttelefonoConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 160, 30));
 
         jLabel7.setText("FONDO DE ESCRITORIO:");
@@ -237,6 +257,10 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
         Btn_QuitarFondo.setText("Quitar Fondo");
         getContentPane().add(Btn_QuitarFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 110, 30));
 
+        jLabel8.setText("BUSCAR:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 60, 30));
+        getContentPane().add(TxtBuscarConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 160, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -244,8 +268,9 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_CargarFondo;
     private javax.swing.JButton Btn_QuitarFondo;
-    private javax.swing.JLabel CodigoConsultorio;
+    private javax.swing.JLabel LabelCodigoConsultorio;
     private javax.swing.JTable TableConsultorio;
+    private javax.swing.JTextField TxtBuscarConsultorio;
     private javax.swing.JTextField TxtDireccionConsultorio;
     private javax.swing.JTextArea TxtLema;
     private javax.swing.JTextField TxtNombreConsultorio;
@@ -261,6 +286,7 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelFondo;
