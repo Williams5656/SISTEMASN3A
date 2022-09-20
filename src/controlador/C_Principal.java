@@ -6,9 +6,9 @@ import static java.awt.Frame.MAXIMIZED_BOTH;
 import vista.*;
 
 public class C_Principal {
-    
+
     public static V_Principal vista;
-    
+
     public C_Principal(V_Principal vista) {
         this.vista = vista;
         vista.setVisible(true);
@@ -18,8 +18,10 @@ public class C_Principal {
         vista.getBtn_nuevorol().addActionListener(x -> rol());
         vista.getBtn_NuevoUsuario().addActionListener(x -> usuario());
         vista.getBtn_NuevoCliente().addActionListener(x -> cliente());
+        vista.getBtn_NuevoJuicio().addActionListener(x->registro());
+        vista.getBtn_NuevoConsultorio().addActionListener(x->consultorio());
     }
-    
+
     public void persona() {
         V_Persona vp = new V_Persona();
         C_Persona cp = new C_Persona(vp);
@@ -27,7 +29,7 @@ public class C_Principal {
         Dimension desktopSize = vista.getEscritorio().getSize();
         Dimension FrameSize = vp.getSize();
         vp.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        
+
     }
 
     public void rol() {
@@ -37,7 +39,7 @@ public class C_Principal {
         Dimension desktopSize = vista.getEscritorio().getSize();
         Dimension FrameSize = vr.getSize();
         vr.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        
+
     }
 
     public void usuario() {
@@ -47,7 +49,7 @@ public class C_Principal {
         Dimension desktopSize = vista.getEscritorio().getSize();
         Dimension FrameSize = vr.getSize();
         vr.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        
+
     }
 
     public void cliente() {
@@ -57,19 +59,26 @@ public class C_Principal {
         Dimension desktopSize = vista.getEscritorio().getSize();
         Dimension FrameSize = vr.getSize();
         vr.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        
+
     }
-    public void consultorio(){
-        V_Consultorio con=new V_Consultorio();
-        C_Consultorio cn=new C_Consultorio(con);
+
+    public void consultorio() {
+        V_Consultorio con = new V_Consultorio();
+        C_Consultorio cn = new C_Consultorio(con);
         vista.getEscritorio().add(con);
         Dimension desktopSize = vista.getEscritorio().getSize();
         Dimension FrameSize = con.getSize();
         con.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-        
+
     }
-    public void registro(){
-        V_Registro reg=new V_Registro();
-        
+
+    public void registro() {
+        V_Registro reg = new V_Registro();
+        C_Registro regis = new C_Registro(reg);
+        vista.getEscritorio().add(reg);
+        Dimension desktopSize = vista.getEscritorio().getSize();
+        Dimension FrameSize = reg.getSize();
+        reg.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+
     }
 }
