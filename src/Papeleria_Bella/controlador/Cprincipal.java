@@ -69,8 +69,8 @@ public class Cprincipal {
         /*Cclientes cper=new Cclientes(p);*/
     }
     private void stock() {
-        Vproveedores p= new Vproveedores();
-        Cproveedores cper=new Cproveedores(p);
+        Vstock p= new Vstock();
+        Cstock cper=new Cstock(p);
     }
     private void ventas() {
         Vventas p= new Vventas();
