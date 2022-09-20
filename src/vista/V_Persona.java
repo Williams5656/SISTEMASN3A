@@ -238,13 +238,13 @@ public class V_Persona extends javax.swing.JInternalFrame {
 
         tablapersona.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "CEDULA", "NOMBRES", "APELLIDOS", "TELEFONO", "CORREO", "FOTO"
+                "CEDULA", "NOMBRES", "APELLIDOS", "TELEFONO", "CORREO"
             }
         ));
         jScrollPane1.setViewportView(tablapersona);

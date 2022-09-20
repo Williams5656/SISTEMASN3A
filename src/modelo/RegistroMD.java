@@ -5,14 +5,24 @@ public class RegistroMD {
     String cedula_cliente;
     String n_juicio;
     String tipo_juicio;
+    String Estado;
 
-    public RegistroMD(String cedula_cliente, String n_juicio, String tipo_juicio) {
+    public RegistroMD() {
+    }
+
+    public RegistroMD(String cedula_cliente, String n_juicio, String tipo_juicio, String Estado) {
         this.cedula_cliente = cedula_cliente;
         this.n_juicio = n_juicio;
         this.tipo_juicio = tipo_juicio;
+        this.Estado = Estado;
     }
 
-    public RegistroMD() {
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
     }
 
     public String getCedula_cliente() {

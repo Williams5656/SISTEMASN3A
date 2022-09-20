@@ -25,6 +25,14 @@ public class V_Registro extends javax.swing.JInternalFrame {
         return CmbEstadoJuicio;
     }
 
+    public JTextField getTxtBuscarJuicio() {
+        return TxtBuscarJuicio;
+    }
+
+    public void setTxtBuscarJuicio(JTextField TxtBuscarJuicio) {
+        this.TxtBuscarJuicio = TxtBuscarJuicio;
+    }
+
     public void setCmbEstadoJuicio(JComboBox<String> CmbEstadoJuicio) {
         this.CmbEstadoJuicio = CmbEstadoJuicio;
     }
@@ -171,6 +179,8 @@ public class V_Registro extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         CmbEstadoJuicio = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        TxtBuscarJuicio = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -214,18 +224,18 @@ public class V_Registro extends javax.swing.JInternalFrame {
 
         tablajuicio.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "CLIENTE", "NRO DE JUICIO", "TIPO DE JUICIO"
+                "NRO DE JUICIO", "CLIENTE", "TIPO DE JUICIO", "ESTADO"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -237,11 +247,11 @@ public class V_Registro extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, -1, 110));
 
         BtnBuscarCedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
-        getContentPane().add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 60, 30));
-        getContentPane().add(labelcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 180, 30));
+        getContentPane().add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 60, 30));
+        getContentPane().add(labelcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 190, 30));
 
         jLabel5.setText("NOMBRES:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, -1, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, -1, 30));
 
         jLabel6.setText("ESTADO:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 60, 30));
@@ -249,13 +259,44 @@ public class V_Registro extends javax.swing.JInternalFrame {
         CmbEstadoJuicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En Curso", "Finalizado" }));
         getContentPane().add(CmbEstadoJuicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 150, 30));
 
+        jLabel7.setText("BUSCAR:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 60, 30));
+
+        TxtBuscarJuicio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                TxtBuscarJuicioFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                TxtBuscarJuicioFocusLost(evt);
+            }
+        });
+        TxtBuscarJuicio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TxtBuscarJuicioKeyReleased(evt);
+            }
+        });
+        getContentPane().add(TxtBuscarJuicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 150, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TxtBuscarJuicioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtBuscarJuicioKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtBuscarJuicioKeyReleased
+
+    private void TxtBuscarJuicioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TxtBuscarJuicioFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtBuscarJuicioFocusGained
+
+    private void TxtBuscarJuicioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TxtBuscarJuicioFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtBuscarJuicioFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarCedula;
     private javax.swing.JComboBox<String> CmbEstadoJuicio;
+    private javax.swing.JTextField TxtBuscarJuicio;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardarp;
     private javax.swing.JButton btnmodificar;
@@ -267,6 +308,7 @@ public class V_Registro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelcliente;
     private javax.swing.JLabel numjuicio;
