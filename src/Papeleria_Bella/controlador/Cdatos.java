@@ -1,5 +1,5 @@
-
 package Papeleria_Bella.controlador;
+
 import Papeleria_Bella.vista.*;
 import Papeleria_Bella.modelo.*;
 import java.awt.Image;
@@ -17,10 +17,11 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Cdatos {
+
     public static Vdatos vistad;
-    
+
     private DatosBD bdatos = new DatosBD();
-    
+
     public Cdatos(Vdatos vistad) {
         this.vistad = vistad;
         vistad.setVisible(true);
@@ -42,7 +43,7 @@ public class Cdatos {
         vistad.getButtonguardar().setEnabled(false);
         vistad.getButtonmodificar().setEnabled(false);
     }
-    
+
     public void lista() {
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vistad.getTabladatos().getModel();
@@ -63,7 +64,7 @@ public class Cdatos {
 
         }
     }
-    
+
     public void guardar() {
         bdatos.setCodigo(vistad.getLabelcodigo().getText());
         bdatos.setRuc(vistad.getTxtruc().getText());
@@ -73,7 +74,13 @@ public class Cdatos {
         bdatos.setCelular(vistad.getTxtcelular().getText());
         bdatos.setEstado(vistad.getComboestado().getSelectedItem().toString());
 
-        
+        int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar");
+        if (resp == 0) {
+            if (bdatos.modificarestadoalguardar(vistad.getComboestado().getSelectedItem().toString())) ;
+            JOptionPane.showMessageDialog(null, "Datos Actualizados");
+            lista();
+            nuevo();
+        }
         if (bdatos.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
@@ -83,7 +90,7 @@ public class Cdatos {
         }
 
     }
-    
+
     public void modificar() {
         bdatos.setCodigo(vistad.getLabelcodigo().getText());
         bdatos.setRuc(vistad.getTxtruc().getText());
@@ -93,6 +100,13 @@ public class Cdatos {
         bdatos.setCelular(vistad.getTxtcelular().getText());
         bdatos.setEstado(vistad.getComboestado().getSelectedItem().toString());
 
+//        int resp1 = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar el estado");
+//        if (resp1 == 0) {
+//            if (bdatos.modificarestado(vistad.getComboestado().getSelectedItem().toString(),vistad.getLabelcodigo().getText())) ;
+//            JOptionPane.showMessageDialog(null, "Datos Actualizados");
+//            lista();
+//            nuevo();
+//        }
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
         if (resp == 0) {
             if (bdatos.modificar(vistad.getLabelcodigo().getText())) ;
@@ -107,8 +121,7 @@ public class Cdatos {
         vistad.getButtonguardar().setEnabled(false);
         vistad.getButtonmodificar().setEnabled(true);
         DefaultTableModel modelo;
-        
-        
+
         modelo = (DefaultTableModel) vistad.getTabladatos().getModel();
         String codigo = (String) modelo.getValueAt(vistad.getTabladatos().getSelectedRow(), 0);
         List<DatosMD> lista = bdatos.obtenerdatos(codigo);
@@ -127,9 +140,8 @@ public class Cdatos {
         bdatos.setEstado(lista.get(0).getEstado());
         vistad.getComboestado().setSelectedItem(bdatos.getEstado());
 
-        
     }
-    
+
     public void eliminar() {
         bdatos.setCodigo(vistad.getLabelcodigo().getText());
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el usuario  " + vistad.getLabelcodigo().getText());
@@ -154,7 +166,7 @@ public class Cdatos {
         vistad.getButtonmodificar().setEnabled(false);
         GenerarCodDatos();
     }
-    
+
     public void GenerarCodDatos() {
         char[] chars = "0123".toCharArray();
 

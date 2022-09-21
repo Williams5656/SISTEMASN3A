@@ -90,6 +90,35 @@ public class DatosBD extends DatosMD{
         }
 
     }
+    
+      public boolean modificarestadoalguardar(String estado) {
+
+        String sql = "update datos_papeleria set \"estado\"='Inactivo'"
+                + " where \"estado\"='" + estado + "'";
+
+        if (conectar.noQuery(sql) == null) {
+            return true;
+        } else {
+            System.out.println("error al editar");
+
+            return false;
+        }
+
+    }
+//          public boolean modificarestado(String estado,String codigo) {
+//
+//        String sql = "update datos_papeleria set \"estado\"='Activo'"
+//                + " where \"estado\"='" + estado + "'and \"codigo\"='" + codigo+ "'";
+//
+//        if (conectar.noQuery(sql) == null) {
+//            return true;
+//        } else {
+//            System.out.println("error al editar");
+//
+//            return false;
+//        }
+
+    
 
     public List<DatosMD> obtenerdatos(String codigo) {
 
