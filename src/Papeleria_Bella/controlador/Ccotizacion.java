@@ -50,6 +50,11 @@ public class Ccotizacion {
         vistacot.getButtoneliminar().addActionListener(e -> eliminar());
         vistacot.getButtonguardar().setEnabled(false);
         vistacot.getButtonmodificar().setEnabled(false);
+        vistacot.getTxtcedula().setEnabled(false);
+        vistacot.getTxtnombreproducto().setEnabled(false);
+        vistacot.getTxtcantidad().setEnabled(false);
+        vistacot.getTxttotal().setEnabled(false);
+
     }
 
     public void lista() {
@@ -82,6 +87,23 @@ public class Ccotizacion {
         bcotizacion.setValorunitario(Integer.parseInt(vistacot.getLabelvaloru().getText()));
         bcotizacion.setIva(vistacot.getLabeliva().getText());
         bcotizacion.setTotal(Integer.parseInt(vistacot.getTxttotal().getText()));
+        if (bcotizacion.insertar()) {
+            JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
+            lista();
+        vistacot.getTxtcedula().setEnabled(false);
+        vistacot.getTxtnombreproducto().setEnabled(false);
+        vistacot.getTxtcantidad().setEnabled(false);
+        vistacot.getTxttotal().setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+            lista();
+            
+        vistacot.getTxtcedula().setEnabled(false);
+        vistacot.getTxtnombreproducto().setEnabled(false);
+        vistacot.getTxtcantidad().setEnabled(false);
+        vistacot.getTxttotal().setEnabled(false);
+        }
+        
     }
 
     public void modificar() {
@@ -100,6 +122,11 @@ public class Ccotizacion {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+            
+        vistacot.getTxtcedula().setEnabled(false);
+        vistacot.getTxtnombreproducto().setEnabled(false);
+        vistacot.getTxtcantidad().setEnabled(false);
+        vistacot.getTxttotal().setEnabled(false);
 
         }
     }
@@ -125,6 +152,11 @@ public class Ccotizacion {
         vistacot.getLabelvaloru().setText(String.valueOf(bcotizacion.getCantidad()));
         bcotizacion.setIva(lista.get(0).getIva());
         vistacot.getLabeliva().setText(bcotizacion.getIva());
+        
+        vistacot.getTxtcedula().setEnabled(true);
+        vistacot.getTxtnombreproducto().setEnabled(true);
+        vistacot.getTxtcantidad().setEnabled(true);
+        vistacot.getTxttotal().setEnabled(true);
 
     }
     
@@ -136,6 +168,11 @@ public class Ccotizacion {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+            
+        vistacot.getTxtcedula().setEnabled(false);
+        vistacot.getTxtnombreproducto().setEnabled(false);
+        vistacot.getTxtcantidad().setEnabled(false);
+        vistacot.getTxttotal().setEnabled(false);
 
         }
     }
@@ -150,5 +187,9 @@ public class Ccotizacion {
         vistacot.getLabeliva().setText("");
         vistacot.getButtonguardar().setEnabled(true);
         vistacot.getButtonmodificar().setEnabled(false);
+        vistacot.getTxtcedula().setEnabled(true);
+        vistacot.getTxtnombreproducto().setEnabled(true);
+        vistacot.getTxtcantidad().setEnabled(true);
+        vistacot.getTxttotal().setEnabled(true);
     }
 }

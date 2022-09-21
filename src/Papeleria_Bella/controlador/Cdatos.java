@@ -42,6 +42,13 @@ public class Cdatos {
         vistad.getButtoneliminar().addActionListener(e -> eliminar());
         vistad.getButtonguardar().setEnabled(false);
         vistad.getButtonmodificar().setEnabled(false);
+        
+        vistad.getTxtruc().setEnabled(false);
+        vistad.getTxtnombrec().setEnabled(false);
+        vistad.getTxtrazons().setEnabled(false);
+        vistad.getTxtmatrizp().setEnabled(false);
+        vistad.getTxtcelular().setEnabled(false);
+        vistad.getComboestado().setEnabled(false);
     }
 
     public void lista() {
@@ -84,10 +91,24 @@ public class Cdatos {
         if (bdatos.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
+            
+        vistad.getTxtruc().setEnabled(false);
+        vistad.getTxtnombrec().setEnabled(false);
+        vistad.getTxtrazons().setEnabled(false);
+        vistad.getTxtmatrizp().setEnabled(false);
+        vistad.getTxtcelular().setEnabled(false);
+        vistad.getComboestado().setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
+        vistad.getTxtruc().setEnabled(false);
+        vistad.getTxtnombrec().setEnabled(false);
+        vistad.getTxtrazons().setEnabled(false);
+        vistad.getTxtmatrizp().setEnabled(false);
+        vistad.getTxtcelular().setEnabled(false);
+        vistad.getComboestado().setEnabled(false);
         }
+       
 
     }
 
@@ -113,7 +134,13 @@ public class Cdatos {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
-            //vista.getButtonmodificar().setEnabled(false);
+        vistad.getTxtruc().setEnabled(false);
+        vistad.getTxtnombrec().setEnabled(false);
+        vistad.getTxtrazons().setEnabled(false);
+        vistad.getTxtmatrizp().setEnabled(false);
+        vistad.getTxtcelular().setEnabled(false);
+        vistad.getComboestado().setEnabled(false);
+  
         }
     }
 
@@ -139,6 +166,13 @@ public class Cdatos {
         vistad.getTxtcelular().setText(bdatos.getCelular());
         bdatos.setEstado(lista.get(0).getEstado());
         vistad.getComboestado().setSelectedItem(bdatos.getEstado());
+        
+        vistad.getTxtruc().setEnabled(true);
+        vistad.getTxtnombrec().setEnabled(true);
+        vistad.getTxtrazons().setEnabled(true);
+        vistad.getTxtmatrizp().setEnabled(true);
+        vistad.getTxtcelular().setEnabled(true);
+        vistad.getComboestado().setEnabled(true);
 
     }
 
@@ -150,6 +184,12 @@ public class Cdatos {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+        vistad.getTxtruc().setEnabled(false);
+        vistad.getTxtnombrec().setEnabled(false);
+        vistad.getTxtrazons().setEnabled(false);
+        vistad.getTxtmatrizp().setEnabled(false);
+        vistad.getTxtcelular().setEnabled(false);
+        vistad.getComboestado().setEnabled(false);
 
         }
     }

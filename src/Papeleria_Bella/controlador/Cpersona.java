@@ -37,6 +37,7 @@ public class Cpersona {
         JOptionPane.showMessageDialog(null, "Presione el Boton nuevo antes de iniciar",null,JOptionPane.INFORMATION_MESSAGE);
         
         lista();
+        validar();
         try {
             vista.getButtonguardar().addActionListener(x -> guardar());
             vista.getButtonmodificar().addActionListener(e -> modificar());
@@ -59,6 +60,13 @@ public class Cpersona {
         vista.getButtoneliminar().addActionListener(e -> eliminar());
         vista.getButtonguardar().setEnabled(false);
         vista.getButtonmodificar().setEnabled(false);
+        
+        vista.getTxtcedula().setEnabled(false);
+        vista.getTxtnombres().setEnabled(false);
+        vista.getTxtapellidos().setEnabled(false);
+        vista.getTxttelefono().setEnabled(false);
+        vista.getTxtdireccion().setEnabled(false);
+        vista.getTxtemail().setEnabled(false);
     }
 
     public void lista() {
@@ -96,9 +104,22 @@ public class Cpersona {
         if (bpersona.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
+            vista.getTxtcedula().setEnabled(false);
+            vista.getTxtnombres().setEnabled(false);
+            vista.getTxtapellidos().setEnabled(false);
+            vista.getTxttelefono().setEnabled(false);
+            vista.getTxtdireccion().setEnabled(false);
+            vista.getTxtemail().setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
+            
+            vista.getTxtcedula().setEnabled(false);
+            vista.getTxtnombres().setEnabled(false);
+            vista.getTxtapellidos().setEnabled(false);
+            vista.getTxttelefono().setEnabled(false);
+            vista.getTxtdireccion().setEnabled(false);
+            vista.getTxtemail().setEnabled(false);
         }
 
     }
@@ -117,6 +138,12 @@ public class Cpersona {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+            vista.getTxtcedula().setEnabled(false);
+            vista.getTxtnombres().setEnabled(false);
+            vista.getTxtapellidos().setEnabled(false);
+            vista.getTxttelefono().setEnabled(false);
+            vista.getTxtdireccion().setEnabled(false);
+            vista.getTxtemail().setEnabled(false);
 
         }
     }
@@ -151,6 +178,12 @@ public class Cpersona {
             vista.getLabelfoto().setIcon(null);
         }
 
+        vista.getTxtcedula().setEnabled(true);
+        vista.getTxtnombres().setEnabled(true);
+        vista.getTxtapellidos().setEnabled(true);
+        vista.getTxttelefono().setEnabled(true);
+        vista.getTxtdireccion().setEnabled(true);
+        vista.getTxtemail().setEnabled(true);
     }
 
     private void obtieneImagen() {
@@ -177,6 +210,12 @@ public class Cpersona {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+            vista.getTxtcedula().setEnabled(false);
+            vista.getTxtnombres().setEnabled(false);
+            vista.getTxtapellidos().setEnabled(false);
+            vista.getTxttelefono().setEnabled(false);
+            vista.getTxtdireccion().setEnabled(false);
+            vista.getTxtemail().setEnabled(false);
         }
     }
 
@@ -189,6 +228,12 @@ public class Cpersona {
         vista.getTxtemail().setText("");
         vista.getButtonguardar().setEnabled(true);
         vista.getButtonmodificar().setEnabled(false);
+        vista.getTxtcedula().setEnabled(true);
+        vista.getTxtnombres().setEnabled(true);
+        vista.getTxtapellidos().setEnabled(true);
+        vista.getTxttelefono().setEnabled(true);
+        vista.getTxtdireccion().setEnabled(true);
+        vista.getTxtemail().setEnabled(true);
     }
 
     public void Buscar() {
@@ -310,7 +355,11 @@ public class Cpersona {
             
         default:
             JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
+        }
     }
+    
+    public void validar(){
+        Validadores.Letras.solo_letras(vista.getTxtnombres());
     }
 
 }
