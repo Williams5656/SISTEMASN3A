@@ -39,7 +39,10 @@ public class C_Persona {
         vistapersona.getBtnguardarp().setEnabled(false);
         vistapersona.getBtnmodificar().setEnabled(false);
         lista();
-
+        vistapersona.getBtnguardarp().setVisible(false);
+        vistapersona.getBtnnuevo().setVisible(false);
+        vistapersona.getBtnmodificar().setVisible(false);
+        vistapersona.getBtneliminar().setVisible(false);
         vistapersona.getBtn_CargarFoto().addActionListener(x -> obtieneImagen());
         vistapersona.getBtn_QuitarFoto().addActionListener(x -> QuitarImagen());
         vistapersona.getBtnguardarp().addActionListener(x -> {
@@ -52,6 +55,7 @@ public class C_Persona {
         vistapersona.getBtnmodificar().addActionListener(x -> modificar());
         vistapersona.getBtneliminar().addActionListener(x -> eliminar());
         vistapersona.getBtnimprimir().addActionListener(x -> Imprimir());
+        vistapersona.getBtnnuevo().addActionListener(x -> nuevo());
         vistapersona.getTablapersona().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -59,7 +63,7 @@ public class C_Persona {
             }
 
         });
-        /*vistapersona.getLabelBotones().addMouseListener(new java.awt.event.MouseAdapter() {
+        vistapersona.getLabelBotones().addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 labelBotonesMouseEntered(evt);
@@ -69,7 +73,7 @@ public class C_Persona {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 labelBotonesMouseExited(evt);
             }
-        });*/
+        });
         vistapersona.getTxtBuscarCedula().addFocusListener(new java.awt.event.FocusAdapter() {
             @Override
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -79,6 +83,16 @@ public class C_Persona {
             @Override
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtBuscarCedulaFocusLost(evt);
+            }
+        });
+        vistapersona.getBtnnuevo().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnnuevoMouseEntered(evt);
+            }
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnnuevoMouseExited(evt);
             }
         });
         vistapersona.getBtnBuscarCedula().addActionListener(x -> Buscar());
@@ -229,6 +243,14 @@ public class C_Persona {
         vistapersona.getBtnnuevo().setVisible(true);
         vistapersona.getBtnmodificar().setVisible(true);
         vistapersona.getBtneliminar().setVisible(true);
+    }
+
+    private void btnnuevoMouseEntered(java.awt.event.MouseEvent evt) {
+        vistapersona.getBtnnuevo().setBounds(30, 30, 230, 100);
+    }
+
+    private void btnnuevoMouseExited(java.awt.event.MouseEvent evt) {
+        vistapersona.getBtnnuevo().setBounds(30, 30, 170, 40);
     }
 
     private void labelBotonesMouseExited(java.awt.event.MouseEvent evt) {

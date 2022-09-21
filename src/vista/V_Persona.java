@@ -183,11 +183,11 @@ public class V_Persona extends javax.swing.JInternalFrame {
         labelFoto = new javax.swing.JLabel();
         Btn_CargarFoto = new javax.swing.JButton();
         Btn_QuitarFoto = new javax.swing.JButton();
-        labelBotones = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtBuscarCedula = new javax.swing.JTextField();
         BtnBuscarCedula = new javax.swing.JButton();
         btnimprimir = new javax.swing.JButton();
+        labelBotones = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -198,43 +198,51 @@ public class V_Persona extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel1.setText("PERSONA");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 180, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 180, 40));
 
         jLabel2.setText("CEDULA:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 120, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 120, 30));
 
         jLabel3.setText("NOMBRES:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 120, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 120, 30));
 
         jLabel7.setText("TELEFONO:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 110, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 110, 30));
 
         jLabel8.setText("APELLIDOS:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 130, 30));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 130, 30));
 
         jLabel4.setText("CORREO ELECTRONICO:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 220, 30));
-        jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 220, 30));
-        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 220, 30));
-        jPanel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 220, 30));
-        jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 220, 30));
-        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 220, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 180, 30));
+        jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 220, 30));
+        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 220, 30));
+        jPanel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 220, 30));
+        jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 220, 30));
+        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 220, 30));
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
-        jPanel1.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 170, 40));
+        btnnuevo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnnuevoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnnuevoMouseExited(evt);
+            }
+        });
+        jPanel1.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 140, 40));
 
         btnguardarp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar-archivo.png"))); // NOI18N
         btnguardarp.setText("GUARDAR");
-        jPanel1.add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 180, 40));
+        jPanel1.add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 150, 40));
 
         btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lapiz.png"))); // NOI18N
         btnmodificar.setText("MODIFICAR");
-        jPanel1.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 190, 40));
+        jPanel1.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 150, 40));
 
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarusuario.png"))); // NOI18N
         btneliminar.setText("ELIMINAR");
-        jPanel1.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, 180, 50));
+        jPanel1.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 130, 40));
 
         tablapersona.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -249,20 +257,19 @@ public class V_Persona extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tablapersona);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 960, 110));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 880, 100));
 
         labelFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuario.png"))); // NOI18N
-        jPanel1.add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, 130, 150));
+        jPanel1.add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 170, 130, 130));
 
         Btn_CargarFoto.setText("Cargar Foto");
-        jPanel1.add(Btn_CargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 250, 150, 40));
+        jPanel1.add(Btn_CargarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 150, 40));
 
         Btn_QuitarFoto.setText("Quitar Foto");
-        jPanel1.add(Btn_QuitarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 310, 150, 40));
-        jPanel1.add(labelBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 20));
+        jPanel1.add(Btn_QuitarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 150, 40));
 
-        jLabel5.setText("BUSCAR POR CEDULA:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 180, 40));
+        jLabel5.setText("BUSCAR:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 70, 40));
 
         txtBuscarCedula.setFont(new java.awt.Font("Tahoma", 2, 16)); // NOI18N
         txtBuscarCedula.setForeground(new java.awt.Color(153, 153, 153));
@@ -275,23 +282,28 @@ public class V_Persona extends javax.swing.JInternalFrame {
                 txtBuscarCedulaFocusLost(evt);
             }
         });
-        jPanel1.add(txtBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 220, 30));
+        jPanel1.add(txtBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 200, 40));
 
         BtnBuscarCedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
-        jPanel1.add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, 60, 50));
+        jPanel1.add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, 60, 40));
 
         btnimprimir.setText("IMPRIMIR");
-        jPanel1.add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 530, -1, -1));
+        jPanel1.add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 100, 30));
+        jPanel1.add(labelBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 949, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -304,6 +316,14 @@ public class V_Persona extends javax.swing.JInternalFrame {
     private void txtBuscarCedulaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscarCedulaFocusLost
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarCedulaFocusLost
+
+    private void btnnuevoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnnuevoMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnnuevoMouseEntered
+
+    private void btnnuevoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnnuevoMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnnuevoMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
