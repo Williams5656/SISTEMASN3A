@@ -34,12 +34,19 @@ public class Cpersona {
         this.vista = vista;
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
+        JOptionPane.showMessageDialog(null, "Presione el Boton nuevo antes de iniciar",null,JOptionPane.INFORMATION_MESSAGE);
+        
         lista();
-        vista.getButtonguardar().addActionListener(x -> guardar());
-        vista.getButtonmodificar().addActionListener(e -> modificar());
-        vista.getButtoncargar().addActionListener(e -> obtieneImagen());
-        vista.getButtonbuscar().addActionListener(e -> Buscar());
-        vista.getButtonimprimir().addActionListener(e -> imprimir());
+        try {
+            vista.getButtonguardar().addActionListener(x -> guardar());
+            vista.getButtonmodificar().addActionListener(e -> modificar());
+            vista.getButtoncargar().addActionListener(e -> obtieneImagen());
+            vista.getButtonbuscar().addActionListener(e -> Buscar());
+            vista.getButtonimprimir().addActionListener(e -> imprimir());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",JOptionPane.ERROR_MESSAGE);
+        }
+       
         vista.getTablapersona().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
