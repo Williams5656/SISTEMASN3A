@@ -36,6 +36,8 @@ public class C_Persona {
     public C_Persona(V_Persona vistapersona) {
         this.vistapersona = vistapersona;
         vistapersona.setVisible(true);
+        vistapersona.getBtnguardarp().setEnabled(false);
+        vistapersona.getBtnmodificar().setEnabled(false);
         lista();
 
         vistapersona.getBtn_CargarFoto().addActionListener(x -> obtieneImagen());
@@ -100,7 +102,6 @@ public class C_Persona {
             vistapersona.getTablapersona().setValueAt(lista.get(i).getApellidos(), i, 2);
             vistapersona.getTablapersona().setValueAt(lista.get(i).getTelefono(), i, 3);
             vistapersona.getTablapersona().setValueAt(lista.get(i).getCorreo(), i, 4);
-            vistapersona.getTablapersona().setValueAt(lista.get(i).getFoto_perfil(), i, 5);
 
         }
     }
@@ -115,17 +116,16 @@ public class C_Persona {
         ImageIcon ic = (ImageIcon) vistapersona.getLabelFoto().getIcon();
         bdpersona.setFoto_perfil(ic.getImage());
         try {
-              if (bdpersona.insertar()) {
-            JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
-            lista();
-        } else {
-            JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
-            lista();
-        }
+            if (bdpersona.insertar()) {
+                JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
+                lista();
+            } else {
+                JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+                lista();
+            }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null,"ERROR: "+e.toString(),"!ERROR¡",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "!ERROR¡", JOptionPane.ERROR_MESSAGE);
         }
-      
 
     }
 
@@ -213,7 +213,7 @@ public class C_Persona {
         vistapersona.getTxtcorreo().setText("");
         vistapersona.getLabelFoto().setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuario.png")));
         vistapersona.getBtnguardarp().setEnabled(true);
-        vistapersona.getBtnmodificar().setEnabled(false);
+        vistapersona.getBtnmodificar().setEnabled(true);
     }
 
     public void QuitarImagen() {
@@ -269,7 +269,6 @@ public class C_Persona {
                 vistapersona.getTablapersona().setValueAt(lista.get(i).getApellidos(), i, 2);
                 vistapersona.getTablapersona().setValueAt(lista.get(i).getTelefono(), i, 3);
                 vistapersona.getTablapersona().setValueAt(lista.get(i).getCorreo(), i, 4);
-                vistapersona.getTablapersona().setValueAt(lista.get(i).getFoto_perfil(), i, 5);
             }
         }
     }

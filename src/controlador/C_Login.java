@@ -249,7 +249,7 @@ public class C_Login {
                 if (us.getRol().equals(id_rol)) {
                     if (estado.equals("Inactivo")) {
                         JOptionPane.showMessageDialog(null, "Ha intentado entrar con un rol inactivo \n Contactese con su administrador", "ERROR", JOptionPane.ERROR_MESSAGE);
-
+                    }
                     } else {
 
                         if (us.getUsuario() != null && us.getClave() != null) {
@@ -275,4 +275,4 @@ public class C_Login {
 
         }
     }
-}
+
