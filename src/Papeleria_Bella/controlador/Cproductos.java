@@ -26,7 +26,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
-
+//
 public class Cproductos {
     public static Vproductos vistapr;
     private ProductosBD bproductos = new ProductosBD();
@@ -54,6 +54,16 @@ public class Cproductos {
         vistapr.getButtoneliminar().addActionListener(e -> eliminar());
         vistapr.getButtonguardar().setEnabled(false);
         vistapr.getButtonmodificar().setEnabled(false);
+        
+        vistapr.getLabelcodigo().setEnabled(false);
+        vistapr.getTxtnombre().setEnabled(false);
+        vistapr.getTxtdescripcion().setEnabled(false);
+        vistapr.getTxtproveedor().setEnabled(false);
+        vistapr.getTxtmarca().setEnabled(false);
+        vistapr.getTxtmodelo().setEnabled(false);
+        vistapr.getTxtstock().setEnabled(false);
+        vistapr.getTxtvaloru().setEnabled(false);
+        vistapr.getComboiva().setEnabled(false);
     }
     
     public void lista() {
@@ -96,9 +106,27 @@ public class Cproductos {
         if (bproductos.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
+            vistapr.getLabelcodigo().setEnabled(false);
+        vistapr.getTxtnombre().setEnabled(false);
+        vistapr.getTxtdescripcion().setEnabled(false);
+        vistapr.getTxtproveedor().setEnabled(false);
+        vistapr.getTxtmarca().setEnabled(false);
+        vistapr.getTxtmodelo().setEnabled(false);
+        vistapr.getTxtstock().setEnabled(false);
+        vistapr.getTxtvaloru().setEnabled(false);
+        vistapr.getComboiva().setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
+            vistapr.getLabelcodigo().setEnabled(false);
+        vistapr.getTxtnombre().setEnabled(false);
+        vistapr.getTxtdescripcion().setEnabled(false);
+        vistapr.getTxtproveedor().setEnabled(false);
+        vistapr.getTxtmarca().setEnabled(false);
+        vistapr.getTxtmodelo().setEnabled(false);
+        vistapr.getTxtstock().setEnabled(false);
+        vistapr.getTxtvaloru().setEnabled(false);
+        vistapr.getComboiva().setEnabled(false);
         }
 
     }
@@ -120,6 +148,15 @@ public class Cproductos {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+            vistapr.getLabelcodigo().setEnabled(false);
+        vistapr.getTxtnombre().setEnabled(false);
+        vistapr.getTxtdescripcion().setEnabled(false);
+        vistapr.getTxtproveedor().setEnabled(false);
+        vistapr.getTxtmarca().setEnabled(false);
+        vistapr.getTxtmodelo().setEnabled(false);
+        vistapr.getTxtstock().setEnabled(false);
+        vistapr.getTxtvaloru().setEnabled(false);
+        vistapr.getComboiva().setEnabled(false);
 
         }
     }
@@ -157,6 +194,16 @@ public class Cproductos {
         } else {
             vistapr.getLabelfoto().setIcon(null);
         }
+        
+        vistapr.getLabelcodigo().setEnabled(true);
+        vistapr.getTxtnombre().setEnabled(true);
+        vistapr.getTxtdescripcion().setEnabled(true);
+        vistapr.getTxtproveedor().setEnabled(true);
+        vistapr.getTxtmarca().setEnabled(true);
+        vistapr.getTxtmodelo().setEnabled(true);
+        vistapr.getTxtstock().setEnabled(true);
+        vistapr.getTxtvaloru().setEnabled(true);
+        vistapr.getComboiva().setEnabled(true);
 
     }
     
@@ -184,6 +231,7 @@ public class Cproductos {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+            
 
         }
     }

@@ -9,4 +9,5 @@ public class Main {
         Vinicio vista = new  Vinicio();
         Cinicio main = new Cinicio(vista);
     }
+    
 }       

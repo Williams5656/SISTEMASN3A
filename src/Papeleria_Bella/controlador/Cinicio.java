@@ -1,11 +1,12 @@
 package Papeleria_Bella.controlador;
 
 import Papeleria_Bella.controlador.*;
-import Papeleria_Bella.vista.*;
 import Papeleria_Bella.modelo.*;
+import Papeleria_Bella.vista.*;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -25,6 +26,7 @@ public class Cinicio {
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
 
+        
         vista.getButtoningresar().addActionListener(e -> {
             try {
                 validar();
@@ -34,6 +36,7 @@ public class Cinicio {
         });
 
     }
+    
 
     public void validar() throws SQLException {
         String estado = "";

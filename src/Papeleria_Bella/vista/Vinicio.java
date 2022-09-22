@@ -5,6 +5,8 @@
  */
 package Papeleria_Bella.vista;
 
+import static Papeleria_Bella.controlador.Cinicio.vista;
+import com.sun.glass.events.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
@@ -117,6 +119,11 @@ public class Vinicio extends javax.swing.JFrame {
 
         buttoningresar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttoningresar.setText("Ingresar");
+        buttoningresar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                buttoningresarKeyReleased(evt);
+            }
+        });
         getContentPane().add(buttoningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
         getContentPane().add(fieldcontraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 107, -1));
 
@@ -125,6 +132,12 @@ public class Vinicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttoningresarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buttoningresarKeyReleased
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {
+            getButtoningresar();
+        }
+    }//GEN-LAST:event_buttoningresarKeyReleased
 
     /**
      * @param args the command line arguments

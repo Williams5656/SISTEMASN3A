@@ -77,12 +77,12 @@ public class Cprincipal {
         Cventas cper=new Cventas(p);
     }
     private void cotizacion() {
-        Vproveedores p= new Vproveedores();
-        Cproveedores cper=new Cproveedores(p);
+        Vcotizacion p= new Vcotizacion();
+        Ccotizacion cper=new Ccotizacion(p);
     }
     private void reportes() {
-        Vproveedores p= new Vproveedores();
-        Cproveedores cper=new Cproveedores(p);
+        Vreportes p= new Vreportes();
+        Creportes cper=new Creportes(p);
     }
     
 }
