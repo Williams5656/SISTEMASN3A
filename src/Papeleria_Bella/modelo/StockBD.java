@@ -70,7 +70,7 @@ public class StockBD extends StockMD{
                 StockMD u = new StockMD();
                 u.setCodigo(rs.getString("codigo"));
                 u.setCodigo_producto(rs.getString("codigoproducto"));
-                u.setStock(rs.getInt("nombrecomercial"));
+                u.setStock(rs.getInt("stock"));
                 u.setNombre_producto(rs.getString("nombre"));
                 
                 lista.add(u);
@@ -117,7 +117,7 @@ public class StockBD extends StockMD{
                 StockMD u = new StockMD();
                 u.setCodigo(rs.getString("codigo"));
                 u.setCodigo_producto(rs.getString("codigoproducto"));
-                u.setStock(rs.getInt(rs.getString("stock")));
+                u.setStock(rs.getInt("stock"));
                 u.setNombre_producto(rs.getString("nombre"));
                 
                 lista.add(u);
@@ -143,7 +143,7 @@ public class StockBD extends StockMD{
        public List<ProductosMD> buscardatos(String nombre) {
         try {
             List<ProductosMD> lista = new ArrayList<ProductosMD>();
-            String sql = "select * from productos where \"nombre\" ILIKE '%" + nombre + "%'";
+            String sql = "select * from producto where \"nombre\" ILIKE '%" + nombre + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 

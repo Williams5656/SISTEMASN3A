@@ -180,20 +180,26 @@ public class Cproveedores {
     }
 
     private void buscar() {
-        if (vistaprov.getLabelcodigo().getText().equals("")) {
+        if (vistaprov.getTxtbuscar().getText().equals("")) {
             lista();
         } else {
-
-            java.util.List<ProveedoresMD> lista = bproveedores.buscardatos(vistaprov.getLabelcodigo().getText());
+            DefaultTableModel model;
+            model = (DefaultTableModel) vistaprov.getTablaproveedores().getModel();
+            java.util.List<ProveedoresMD> lista = bproveedores.buscardatos(vistaprov.getTxtbuscar().getText());
+            int columnas = model.getColumnCount();
+            for (int j = vistaprov.getTablaproveedores().getRowCount() - 1; j >= 0; j--) {
+                model.removeRow(j);
+            }
             for (int i = 0; i < lista.size(); i++) {
-                if (lista.get(i).getCodigo().equals(vistaprov.getLabelcodigo().getText())) {
-                    vistaprov.getTxtruc().setText(lista.get(i).getNombrecom()+ "  " + lista.get(i).getRepresentanteleg());
-                } else {
-                    JOptionPane.showMessageDialog(null, "Persona no registrada", "ERROR", JOptionPane.ERROR_MESSAGE);
-                }
+                    model.addRow(new Object[columnas]);
+                    vistaprov.getTablaproveedores().setValueAt(lista.get(i).getCodigo(), i, 0);
+                    vistaprov.getTablaproveedores().setValueAt(lista.get(i).getRuc(), i, 1);
+                    vistaprov.getTablaproveedores().setValueAt(lista.get(i).getNombrecom(), i, 2);
+                    vistaprov.getTablaproveedores().setValueAt(lista.get(i).getRepresentanteleg(), i, 3);
+                    vistaprov.getTablaproveedores().setValueAt(lista.get(i).getCelular(), i, 4);
             }
         }
-
+    
     }
 
     public void GenerarCodProvee() {

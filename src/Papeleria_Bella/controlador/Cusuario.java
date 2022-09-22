@@ -291,7 +291,6 @@ public class Cusuario {
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
-            JOptionPane.showMessageDialog(null, "Imprimiendo usuarios");
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {

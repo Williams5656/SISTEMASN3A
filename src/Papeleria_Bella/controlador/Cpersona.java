@@ -34,8 +34,6 @@ public class Cpersona {
         this.vista = vista;
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
-        JOptionPane.showMessageDialog(null, "Presione el Boton nuevo antes de iniciar",null,JOptionPane.INFORMATION_MESSAGE);
-        
         lista();
         validar();
         try {
@@ -326,7 +324,6 @@ public class Cpersona {
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
-            JOptionPane.showMessageDialog(null, "Imprimiendo personas");
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {

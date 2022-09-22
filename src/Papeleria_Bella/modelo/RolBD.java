@@ -89,17 +89,17 @@ public class RolBD extends RolMD{
             return null;
         }
     }
-    public List<RolMD> buscardatospornombre(String codigo) {
+    public List<RolMD> buscardatospornombre(String nombre) {
         try {
             List<RolMD> lista = new ArrayList<RolMD>();
-            String sql = "select * from rol where \"nombre\" ILIKE '%" + codigo + "%'";
+            String sql = "select * from rol where \"nombre\" ILIKE '%" + nombre + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 RolMD r = new RolMD();
-                r.setCodigo(rs.getString("CODIGO"));
-                r.setNombre(rs.getString("NOMBRE"));
-                r.setDescripcion(rs.getString("DESCRIPCION"));
-                r.setEstado(rs.getString("ESTADO"));
+                r.setCodigo(rs.getString("codigo"));
+                r.setNombre(rs.getString("nombre"));
+                r.setDescripcion(rs.getString("descripcion"));
+                r.setEstado(rs.getString("estado"));
                 lista.add(r);
             }
             rs.close();

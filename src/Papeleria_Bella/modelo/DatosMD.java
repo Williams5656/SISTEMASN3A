@@ -1,6 +1,8 @@
 
 package Papeleria_Bella.modelo;
 
+import java.awt.Image;
+
 
 public class DatosMD {
     String codigo;
@@ -10,11 +12,13 @@ public class DatosMD {
     String matrizp;
     String celular;
     String estado;
+    String email;
+     private Image foto;
 
     public DatosMD() {
     }
 
-    public DatosMD(String codigo, String ruc, String nombrec, String razons, String matrizp, String celular, String estado) {
+    public DatosMD(String codigo, String ruc, String nombrec, String razons, String matrizp, String celular, String estado, String email, Image foto) {
         this.codigo = codigo;
         this.ruc = ruc;
         this.nombrec = nombrec;
@@ -22,7 +26,27 @@ public class DatosMD {
         this.matrizp = matrizp;
         this.celular = celular;
         this.estado = estado;
+        this.email = email;
+        this.foto = foto;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Image getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Image foto) {
+        this.foto = foto;
+    }
+
+    
 
     public String getEstado() {
         return estado;

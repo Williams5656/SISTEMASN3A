@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -33,6 +34,7 @@ public class Ccotizacion {
         vistacot.setVisible(true);
         vistacot.setLocationRelativeTo(null);
         lista();
+        GenerarCodVentas();
         vistacot.getButtonguardar().addActionListener(x -> guardar());
         vistacot.getButtonmodificar().addActionListener(e -> modificar());
 //        vistacot.getButtonbuscarproducto().addActionListener(e -> Buscarproducto());
@@ -186,11 +188,28 @@ public class Ccotizacion {
         vistacot.getTxtcantidad().setText("");
         vistacot.getLabelvaloru().setText("");
         vistacot.getLabeliva().setText("");
+        GenerarCodVentas();
         vistacot.getButtonguardar().setEnabled(true);
         vistacot.getButtonmodificar().setEnabled(false);
         vistacot.getTxtcedula().setEnabled(true);
         vistacot.getTxtnombreproducto().setEnabled(true);
         vistacot.getTxtcantidad().setEnabled(true);
         vistacot.getTxttotal().setEnabled(true);
+    }
+    public void GenerarCodVentas() {
+        char[] chars = "0123".toCharArray();
+
+        int charsLength = chars.length;
+
+        Random random = new Random();
+
+        StringBuilder buffer = new StringBuilder();
+
+        for (int i = 0; i < 3; i++) {
+
+            buffer.append(chars[random.nextInt(charsLength)]);
+        }
+
+        vistacot.getLabelcodigo().setText("C0" + buffer.toString());
     }
 }

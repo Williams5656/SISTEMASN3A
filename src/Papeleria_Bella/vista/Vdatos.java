@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Papeleria_Bella.vista;
 
 import javax.swing.JButton;
@@ -11,19 +8,55 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-/**
- *
- * @author cris_
- */
+
 public class Vdatos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Vdatos
-     */
+    
     public Vdatos() {
         initComponents();
     }
 
+    public JButton getButtoncargar() {
+        return buttoncargar;
+    }
+
+    public void setButtoncargar(JButton buttoncargar) {
+        this.buttoncargar = buttoncargar;
+    }
+
+    public JLabel getFoto() {
+        return foto;
+    }
+
+    public void setFoto(JLabel foto) {
+        this.foto = foto;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public void setjLabel16(JLabel jLabel16) {
+        this.jLabel16 = jLabel16;
+    }
+
+    public JTextField getTxtemail() {
+        return txtemail;
+    }
+
+    public void setTxtemail(JTextField txtemail) {
+        this.txtemail = txtemail;
+    }
+
+    public JTextField getTxtnombrec1() {
+        return txtnombrec1;
+    }
+
+    public void setTxtnombrec1(JTextField txtnombrec1) {
+        this.txtnombrec1 = txtnombrec1;
+    }
+
+    
     public JTable getTabladatos() {
         return tabladatos;
     }
@@ -34,6 +67,7 @@ public class Vdatos extends javax.swing.JFrame {
     
     
 
+    
     public JButton getButtoneliminar() {
         return buttoneliminar;
     }
@@ -173,11 +207,11 @@ public class Vdatos extends javax.swing.JFrame {
     }
 
     public JTextField getTxtnombrec() {
-        return txtnombrec;
+        return txtemail;
     }
 
     public void setTxtnombrec(JTextField txtnombrec) {
-        this.txtnombrec = txtnombrec;
+        this.txtemail = txtnombrec;
     }
 
     public JTextField getTxtrazons() {
@@ -240,7 +274,7 @@ public class Vdatos extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         txtcelular = new javax.swing.JTextField();
         txtruc = new javax.swing.JTextField();
-        txtnombrec = new javax.swing.JTextField();
+        txtemail = new javax.swing.JTextField();
         txtrazons = new javax.swing.JTextField();
         txtmatrizp = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
@@ -252,8 +286,12 @@ public class Vdatos extends javax.swing.JFrame {
         buttonmodificar = new javax.swing.JButton();
         buttoneliminar = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
-        comboestado = new javax.swing.JComboBox<String>();
+        comboestado = new javax.swing.JComboBox<>();
         buttonimprimir = new javax.swing.JButton();
+        foto = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        txtnombrec1 = new javax.swing.JTextField();
+        buttoncargar = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -265,10 +303,10 @@ public class Vdatos extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel9.setText("Matriz Principal:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel10.setText("Estado:");
+        jLabel10.setText("E-mail:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
@@ -281,18 +319,18 @@ public class Vdatos extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel13.setText("Razón Social:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
-        getContentPane().add(txtcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 134, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+        getContentPane().add(txtcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 134, -1));
         getContentPane().add(txtruc, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 134, -1));
 
-        txtnombrec.addActionListener(new java.awt.event.ActionListener() {
+        txtemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnombrecActionPerformed(evt);
+                txtemailActionPerformed(evt);
             }
         });
-        getContentPane().add(txtnombrec, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 134, -1));
-        getContentPane().add(txtrazons, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 134, -1));
-        getContentPane().add(txtmatrizp, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 134, -1));
+        getContentPane().add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 130, -1));
+        getContentPane().add(txtrazons, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 134, -1));
+        getContentPane().add(txtmatrizp, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, 134, -1));
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel14.setText("Ruc:");
@@ -300,13 +338,13 @@ public class Vdatos extends javax.swing.JFrame {
 
         tabladatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Codigo", "Ruc", "Nombre Comercial", "Razón Social", "Matriz Principal", "Celular", "Estado"
+                "Codigo", "Ruc", "Nombre Comercial", "Razón Social", "Matriz Principal", "Celular", "Estado", "Email"
             }
         ));
         jScrollPane1.setViewportView(tabladatos);
@@ -341,25 +379,43 @@ public class Vdatos extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel15.setText("Celular:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, -1, -1));
 
         comboestado.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        comboestado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Activo", "Inactivo" }));
+        comboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
         comboestado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboestadoActionPerformed(evt);
             }
         });
-        getContentPane().add(comboestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 127, -1));
+        getContentPane().add(comboestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 127, -1));
 
         buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
         buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-imprimir-32.png"))); // NOI18N
         getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 540, 50, 40));
+        getContentPane().add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, 130, 130));
+
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel16.setText("Estado:");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
+
+        txtnombrec1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnombrec1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtnombrec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 134, -1));
+
+        buttoncargar.setBackground(new java.awt.Color(232, 255, 255));
+        buttoncargar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttoncargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/photo-camera.png"))); // NOI18N
+        buttoncargar.setText("Cargar Foto");
+        getContentPane().add(buttoncargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, 160, 30));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 860, 660));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -368,18 +424,23 @@ public class Vdatos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonguardarActionPerformed
 
-    private void txtnombrecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombrecActionPerformed
+    private void txtemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtemailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnombrecActionPerformed
+    }//GEN-LAST:event_txtemailActionPerformed
 
     private void comboestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboestadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboestadoActionPerformed
 
+    private void txtnombrec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombrec1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnombrec1ActionPerformed
+
     
       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttoncargar;
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
     private javax.swing.JButton buttonimprimir;
@@ -387,6 +448,7 @@ public class Vdatos extends javax.swing.JFrame {
     private javax.swing.JButton buttonnuevo;
     private javax.swing.JComboBox<String> comboestado;
     private javax.swing.JLabel fondo;
+    private javax.swing.JLabel foto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -394,13 +456,15 @@ public class Vdatos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelcodigo;
     private javax.swing.JTable tabladatos;
     private javax.swing.JTextField txtcelular;
+    private javax.swing.JTextField txtemail;
     private javax.swing.JTextField txtmatrizp;
-    private javax.swing.JTextField txtnombrec;
+    private javax.swing.JTextField txtnombrec1;
     private javax.swing.JTextField txtrazons;
     private javax.swing.JTextField txtruc;
     // End of variables declaration//GEN-END:variables

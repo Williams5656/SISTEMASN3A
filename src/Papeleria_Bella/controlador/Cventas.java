@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -33,6 +34,7 @@ public class Cventas {
         vistav.setVisible(true);
         vistav.setLocationRelativeTo(null);
         lista();
+        GenerarCodVentas();
         vistav.getButtonguardar().addActionListener(x -> guardar());
         vistav.getButtonmodificar().addActionListener(e -> modificar());
         /*vistav.getButtonbuscarproducto().addActionListener(e -> Buscarproducto());
@@ -196,6 +198,7 @@ public class Cventas {
         vistav.getLabeliva().setText("");
         vistav.getButtonguardar().setEnabled(true);
         vistav.getButtonmodificar().setEnabled(false);
+        GenerarCodVentas();
         
         vistav.getTxtcedula().setEnabled(true);
         vistav.getLabelcodigo().setEnabled(true);
@@ -203,5 +206,21 @@ public class Cventas {
         vistav.getTxtcantidad().setEnabled(true);
         vistav.getTxtvalor().setEnabled(true);
         vistav.getTxttotal().setEnabled(true);
+    }
+    public void GenerarCodVentas() {
+        char[] chars = "0123456789".toCharArray();
+
+        int charsLength = chars.length;
+
+        Random random = new Random();
+
+        StringBuilder buffer = new StringBuilder();
+
+        for (int i = 0; i < 10; i++) {
+
+            buffer.append(chars[random.nextInt(charsLength)]);
+        }
+
+        vistav.getLabelnumero().setText( buffer.toString());
     }
 }

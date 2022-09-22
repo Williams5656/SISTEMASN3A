@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -37,6 +38,8 @@ public class Creportes {
         lista();
         vistarep.getButtonguardar().addActionListener(x -> guardar());
         vistarep.getButtonmodificar().addActionListener(e -> modificar());
+        GenerarCodDatos();
+
         /*vistav.getButtonbuscarproducto().addActionListener(e -> Buscarproducto());
         vistav.getButtonbuscarfactura().addActionListener(e -> Buscarfactura());
         vistav.getButtonimprimir().addActionListener(e -> imprimir());*/
@@ -173,10 +176,28 @@ public class Creportes {
 
         vistarep.getButtonguardar().setEnabled(true);
         vistarep.getButtonmodificar().setEnabled(false);
+        GenerarCodDatos();
         
 
         vistarep.getTxtcantidadproducto().setEnabled(true);
         vistarep.getTxtingreso().setEnabled(true);
         vistarep.getTxtegreso().setEnabled(true);
+    }
+    
+    public void GenerarCodDatos() {
+        char[] chars = "0123".toCharArray();
+
+        int charsLength = chars.length;
+
+        Random random = new Random();
+
+        StringBuilder buffer = new StringBuilder();
+
+        for (int i = 0; i < 3; i++) {
+
+            buffer.append(chars[random.nextInt(charsLength)]);
+        }
+
+        vistarep.getLabelcodigo().setText("REP" + buffer.toString());
     }
 }

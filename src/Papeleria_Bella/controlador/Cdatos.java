@@ -30,6 +30,7 @@ public class Cdatos {
         lista();
         vistad.getButtonguardar().addActionListener(x -> guardar());
         vistad.getButtonmodificar().addActionListener(e -> modificar());
+        vistad.getButtoncargar().addActionListener(e -> obtieneImagen());
         vistad.getTabladatos().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -42,13 +43,14 @@ public class Cdatos {
         vistad.getButtoneliminar().addActionListener(e -> eliminar());
         vistad.getButtonguardar().setEnabled(false);
         vistad.getButtonmodificar().setEnabled(false);
-        
+
         vistad.getTxtruc().setEnabled(false);
-        vistad.getTxtnombrec().setEnabled(false);
+        vistad.getTxtnombrec1().setEnabled(false);
         vistad.getTxtrazons().setEnabled(false);
         vistad.getTxtmatrizp().setEnabled(false);
         vistad.getTxtcelular().setEnabled(false);
         vistad.getComboestado().setEnabled(false);
+        vistad.getTxtemail().setEnabled(false);
     }
 
     public void lista() {
@@ -68,18 +70,24 @@ public class Cdatos {
             vistad.getTabladatos().setValueAt(lista.get(i).getMatrizp(), i, 4);
             vistad.getTabladatos().setValueAt(lista.get(i).getCelular(), i, 5);
             vistad.getTabladatos().setValueAt(lista.get(i).getEstado(), i, 6);
+            vistad.getTabladatos().setValueAt(lista.get(i).getEmail(), i, 7);
 
         }
+        nuevo();
     }
 
     public void guardar() {
         bdatos.setCodigo(vistad.getLabelcodigo().getText());
         bdatos.setRuc(vistad.getTxtruc().getText());
-        bdatos.setNombrec(vistad.getTxtnombrec().getText());
+        bdatos.setNombrec(vistad.getTxtnombrec1().getText());
         bdatos.setRazons(vistad.getTxtrazons().getText());
         bdatos.setMatrizp(vistad.getTxtmatrizp().getText());
         bdatos.setCelular(vistad.getTxtcelular().getText());
         bdatos.setEstado(vistad.getComboestado().getSelectedItem().toString());
+        bdatos.setEmail(vistad.getTxtemail().getText());
+
+        ImageIcon ic = (ImageIcon) vistad.getFoto().getIcon();
+        bdatos.setFoto(ic.getImage());
 
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de guardar");
         if (resp == 0) {
@@ -91,35 +99,37 @@ public class Cdatos {
         if (bdatos.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
-            
-        vistad.getTxtruc().setEnabled(false);
-        vistad.getTxtnombrec().setEnabled(false);
-        vistad.getTxtrazons().setEnabled(false);
-        vistad.getTxtmatrizp().setEnabled(false);
-        vistad.getTxtcelular().setEnabled(false);
-        vistad.getComboestado().setEnabled(false);
+
+            vistad.getTxtruc().setEnabled(false);
+            vistad.getTxtnombrec1().setEnabled(false);
+            vistad.getTxtrazons().setEnabled(false);
+            vistad.getTxtmatrizp().setEnabled(false);
+            vistad.getTxtcelular().setEnabled(false);
+            vistad.getComboestado().setEnabled(false);
+            vistad.getTxtemail().setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
-        vistad.getTxtruc().setEnabled(false);
-        vistad.getTxtnombrec().setEnabled(false);
-        vistad.getTxtrazons().setEnabled(false);
-        vistad.getTxtmatrizp().setEnabled(false);
-        vistad.getTxtcelular().setEnabled(false);
-        vistad.getComboestado().setEnabled(false);
+            vistad.getTxtruc().setEnabled(false);
+            vistad.getTxtnombrec1().setEnabled(false);
+            vistad.getTxtrazons().setEnabled(false);
+            vistad.getTxtmatrizp().setEnabled(false);
+            vistad.getTxtcelular().setEnabled(false);
+            vistad.getComboestado().setEnabled(false);
+            vistad.getTxtemail().setEnabled(false);
         }
-       
 
     }
 
     public void modificar() {
         bdatos.setCodigo(vistad.getLabelcodigo().getText());
         bdatos.setRuc(vistad.getTxtruc().getText());
-        bdatos.setNombrec(vistad.getTxtnombrec().getText());
+        bdatos.setNombrec(vistad.getTxtnombrec1().getText());
         bdatos.setRazons(vistad.getTxtrazons().getText());
         bdatos.setMatrizp(vistad.getTxtmatrizp().getText());
         bdatos.setCelular(vistad.getTxtcelular().getText());
         bdatos.setEstado(vistad.getComboestado().getSelectedItem().toString());
+        bdatos.setEmail(vistad.getTxtemail().getText());
 
 //        int resp1 = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar el estado");
 //        if (resp1 == 0) {
@@ -134,13 +144,14 @@ public class Cdatos {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
-        vistad.getTxtruc().setEnabled(false);
-        vistad.getTxtnombrec().setEnabled(false);
-        vistad.getTxtrazons().setEnabled(false);
-        vistad.getTxtmatrizp().setEnabled(false);
-        vistad.getTxtcelular().setEnabled(false);
-        vistad.getComboestado().setEnabled(false);
-  
+            vistad.getTxtruc().setEnabled(false);
+            vistad.getTxtnombrec1().setEnabled(false);
+            vistad.getTxtrazons().setEnabled(false);
+            vistad.getTxtmatrizp().setEnabled(false);
+            vistad.getTxtcelular().setEnabled(false);
+            vistad.getComboestado().setEnabled(false);
+            vistad.getTxtemail().setEnabled(false);
+
         }
     }
 
@@ -157,7 +168,7 @@ public class Cdatos {
         bdatos.setRuc(lista.get(0).getRuc());
         vistad.getTxtruc().setText(bdatos.getRuc());
         bdatos.setNombrec(lista.get(0).getNombrec());
-        vistad.getTxtnombrec().setText(bdatos.getNombrec());
+        vistad.getTxtnombrec1().setText(bdatos.getNombrec());
         bdatos.setRazons(lista.get(0).getRazons());
         vistad.getTxtrazons().setText(bdatos.getRazons());
         bdatos.setMatrizp(lista.get(0).getMatrizp());
@@ -166,14 +177,42 @@ public class Cdatos {
         vistad.getTxtcelular().setText(bdatos.getCelular());
         bdatos.setEstado(lista.get(0).getEstado());
         vistad.getComboestado().setSelectedItem(bdatos.getEstado());
-        
+        bdatos.setEmail(lista.get(0).getEmail());
+        vistad.getTxtemail().setText(bdatos.getEmail());
+
+        Image img = lista.get(0).getFoto();
+        if (img != null) {
+            Image newimg = img.getScaledInstance(vistad.getFoto().getWidth(), vistad.getFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
+            ImageIcon icon = new ImageIcon(newimg);
+            vistad.getFoto().setIcon(icon);
+        } else {
+            vistad.getFoto().setIcon(null);
+        }
+
         vistad.getTxtruc().setEnabled(true);
-        vistad.getTxtnombrec().setEnabled(true);
+        vistad.getTxtnombrec1().setEnabled(true);
         vistad.getTxtrazons().setEnabled(true);
         vistad.getTxtmatrizp().setEnabled(true);
         vistad.getTxtcelular().setEnabled(true);
         vistad.getComboestado().setEnabled(true);
+        vistad.getTxtemail().setEnabled(true);
 
+    }
+    
+    private void obtieneImagen() {
+        vistad.getFoto().setIcon(null);
+        JFileChooser j = new JFileChooser();
+        j.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        int estado = j.showOpenDialog(null);
+        if (estado == JFileChooser.APPROVE_OPTION) {
+            try {
+                Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(vistad.getFoto().getWidth(), vistad.getFoto().getHeight(), Image.SCALE_DEFAULT);
+                vistad.getFoto().setIcon(new ImageIcon(icono));
+                vistad.getFoto().updateUI();
+            } catch (IOException ex) {
+                Logger.getLogger(Cdatos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     public void eliminar() {
@@ -184,12 +223,13 @@ public class Cdatos {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
-        vistad.getTxtruc().setEnabled(false);
-        vistad.getTxtnombrec().setEnabled(false);
-        vistad.getTxtrazons().setEnabled(false);
-        vistad.getTxtmatrizp().setEnabled(false);
-        vistad.getTxtcelular().setEnabled(false);
-        vistad.getComboestado().setEnabled(false);
+            vistad.getTxtruc().setEnabled(false);
+            vistad.getTxtnombrec1().setEnabled(false);
+            vistad.getTxtrazons().setEnabled(false);
+            vistad.getTxtmatrizp().setEnabled(false);
+            vistad.getTxtcelular().setEnabled(false);
+            vistad.getComboestado().setEnabled(false);
+            vistad.getTxtemail().setEnabled(false);
 
         }
     }
@@ -197,14 +237,22 @@ public class Cdatos {
     public void nuevo() {
         vistad.getLabelcodigo().setText("");
         vistad.getTxtruc().setText("");
-        vistad.getTxtnombrec().setText("");
+        vistad.getTxtnombrec1().setText("");
         vistad.getTxtrazons().setText("");
         vistad.getTxtmatrizp().setText("");
         vistad.getTxtcelular().setText("");
         vistad.getComboestado().setSelectedItem("");
+        vistad.getTxtemail().setText("");
         vistad.getButtonguardar().setEnabled(true);
         vistad.getButtonmodificar().setEnabled(false);
         GenerarCodDatos();
+        vistad.getTxtruc().setEnabled(true);
+            vistad.getTxtnombrec1().setEnabled(true);
+            vistad.getTxtrazons().setEnabled(true);
+            vistad.getTxtmatrizp().setEnabled(true);
+            vistad.getTxtcelular().setEnabled(true);
+            vistad.getComboestado().setEnabled(true);
+            vistad.getTxtemail().setEnabled(true);
     }
 
     public void GenerarCodDatos() {

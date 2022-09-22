@@ -108,10 +108,10 @@ public class ProveedoresBD extends ProveedoresMD {
             return false;
         }
     }
-        public List<ProveedoresMD> buscardatos(String codigo) {
+        public List<ProveedoresMD> buscardatos(String ruc) {
         try {
             List<ProveedoresMD> lista = new ArrayList<ProveedoresMD>();
-            String sql = "select * from proveedores where \"codigo\" ILIKE '%" + codigo + "%'";
+            String sql = "select * from proveedores where \"ruc\" ILIKE '%" + ruc + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 ProveedoresMD u = new ProveedoresMD();
