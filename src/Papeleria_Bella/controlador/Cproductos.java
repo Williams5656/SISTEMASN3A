@@ -55,7 +55,7 @@ public class Cproductos {
         vistapr.getButtonguardar().setEnabled(false);
         vistapr.getButtonmodificar().setEnabled(false);
         
-        vistapr.getLabelcodigo().setEnabled(false);
+
         vistapr.getTxtnombre().setEnabled(false);
         vistapr.getTxtdescripcion().setEnabled(false);
         vistapr.getTxtproveedor().setEnabled(false);
@@ -106,7 +106,7 @@ public class Cproductos {
         if (bproductos.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
-            vistapr.getLabelcodigo().setEnabled(false);
+
         vistapr.getTxtnombre().setEnabled(false);
         vistapr.getTxtdescripcion().setEnabled(false);
         vistapr.getTxtproveedor().setEnabled(false);
@@ -118,7 +118,7 @@ public class Cproductos {
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
-            vistapr.getLabelcodigo().setEnabled(false);
+
         vistapr.getTxtnombre().setEnabled(false);
         vistapr.getTxtdescripcion().setEnabled(false);
         vistapr.getTxtproveedor().setEnabled(false);
@@ -148,7 +148,7 @@ public class Cproductos {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
-            vistapr.getLabelcodigo().setEnabled(false);
+
         vistapr.getTxtnombre().setEnabled(false);
         vistapr.getTxtdescripcion().setEnabled(false);
         vistapr.getTxtproveedor().setEnabled(false);
@@ -195,7 +195,7 @@ public class Cproductos {
             vistapr.getLabelfoto().setIcon(null);
         }
         
-        vistapr.getLabelcodigo().setEnabled(true);
+
         vistapr.getTxtnombre().setEnabled(true);
         vistapr.getTxtdescripcion().setEnabled(true);
         vistapr.getTxtproveedor().setEnabled(true);
@@ -231,7 +231,15 @@ public class Cproductos {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
-            
+
+        vistapr.getTxtnombre().setEnabled(false);
+        vistapr.getTxtdescripcion().setEnabled(false);
+        vistapr.getTxtproveedor().setEnabled(false);
+        vistapr.getTxtmarca().setEnabled(false);
+        vistapr.getTxtmodelo().setEnabled(false);
+        vistapr.getTxtstock().setEnabled(false);
+        vistapr.getTxtvaloru().setEnabled(false);
+        vistapr.getComboiva().setEnabled(false);
 
         }
     }
@@ -249,6 +257,15 @@ public class Cproductos {
         vistapr.getButtonguardar().setEnabled(true);
         vistapr.getButtonmodificar().setEnabled(false);
         GenerarCodProductos();
+
+        vistapr.getTxtnombre().setEnabled(true);
+        vistapr.getTxtdescripcion().setEnabled(true);
+        vistapr.getTxtproveedor().setEnabled(true);
+        vistapr.getTxtmarca().setEnabled(true);
+        vistapr.getTxtmodelo().setEnabled(true);
+        vistapr.getTxtstock().setEnabled(true);
+        vistapr.getTxtvaloru().setEnabled(true);
+        vistapr.getComboiva().setEnabled(true);
     }
     
     public void Buscar() {

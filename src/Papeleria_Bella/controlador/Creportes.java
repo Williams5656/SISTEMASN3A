@@ -52,6 +52,11 @@ public class Creportes {
         vistarep.getButtoneliminar().addActionListener(e -> eliminar());
         vistarep.getButtonguardar().setEnabled(false);
         vistarep.getButtonmodificar().setEnabled(false);
+        
+
+        vistarep.getTxtcantidadproducto().setEnabled(false);
+        vistarep.getTxtingreso().setEnabled(false);
+        vistarep.getTxtegreso().setEnabled(false);
     }
     public void lista() {
         DefaultTableModel modelo;
@@ -77,6 +82,23 @@ public class Creportes {
         breportes.setCantidadprod(vistarep.getTxtcantidadproducto().getText());
         breportes.setIngreso(Integer.parseInt(vistarep.getTxtingreso().getText()));
         breportes.setEgreso(Integer.parseInt(vistarep.getTxtegreso().getText()));
+        
+        if (breportes.insertar()) {
+            JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
+            lista();
+
+        vistarep.getTxtcantidadproducto().setEnabled(false);
+        vistarep.getTxtingreso().setEnabled(false);
+        vistarep.getTxtegreso().setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+            lista();
+            
+
+        vistarep.getTxtcantidadproducto().setEnabled(false);
+        vistarep.getTxtingreso().setEnabled(false);
+        vistarep.getTxtegreso().setEnabled(false);
+        }
     }
 
     public void modificar() {
@@ -92,6 +114,10 @@ public class Creportes {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+
+        vistarep.getTxtcantidadproducto().setEnabled(false);
+        vistarep.getTxtingreso().setEnabled(false);
+        vistarep.getTxtegreso().setEnabled(false);
 
         }
     }
@@ -116,6 +142,10 @@ public class Creportes {
         vistarep.getTxtegreso().setText(String.valueOf(breportes.getEgreso()));
 
 
+        vistarep.getTxtcantidadproducto().setEnabled(true);
+        vistarep.getTxtingreso().setEnabled(true);
+        vistarep.getTxtegreso().setEnabled(true);
+
     }
     
     public void eliminar() {
@@ -126,6 +156,10 @@ public class Creportes {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+
+        vistarep.getTxtcantidadproducto().setEnabled(false);
+        vistarep.getTxtingreso().setEnabled(false);
+        vistarep.getTxtegreso().setEnabled(false);
 
         }
     }
@@ -139,5 +173,10 @@ public class Creportes {
 
         vistarep.getButtonguardar().setEnabled(true);
         vistarep.getButtonmodificar().setEnabled(false);
+        
+
+        vistarep.getTxtcantidadproducto().setEnabled(true);
+        vistarep.getTxtingreso().setEnabled(true);
+        vistarep.getTxtegreso().setEnabled(true);
     }
 }

@@ -50,6 +50,11 @@ public class Crol {
         vista.getButtoneliminar().addActionListener(e -> eliminar());
         vista.getButtonguardar().setEnabled(false);
         vista.getButtonmodificar().setEnabled(false);
+        
+
+        vista.getTxtnombre().setEnabled(false);
+        vista.getTxtdescripcion().setEnabled(false);
+        vista.getComboestado().setEnabled(false);
     }
     
     public void lista() {
@@ -79,9 +84,17 @@ public class Crol {
         if (brol.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
+
+        vista.getTxtnombre().setEnabled(false);
+        vista.getTxtdescripcion().setEnabled(false);
+        vista.getComboestado().setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
+
+        vista.getTxtnombre().setEnabled(false);
+        vista.getTxtdescripcion().setEnabled(false);
+        vista.getComboestado().setEnabled(false);
         }
 
     }
@@ -97,6 +110,10 @@ public class Crol {
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
                 lista();
                 nuevo();
+     
+        vista.getTxtnombre().setEnabled(false);
+        vista.getTxtdescripcion().setEnabled(false);
+        vista.getComboestado().setEnabled(false);
                 
             }
     }
@@ -117,6 +134,11 @@ public class Crol {
         vista.getTxtdescripcion().setText(brol.getDescripcion());
         brol.setEstado(lista.get(0).getEstado());
         vista.getComboestado().setSelectedItem(brol.getEstado());   
+        
+
+        vista.getTxtnombre().setEnabled(true);
+        vista.getTxtdescripcion().setEnabled(true);
+        vista.getComboestado().setEnabled(true);
     }
     public void eliminar(){
         brol.setCodigo(vista.getLabelcodigo().getText());
@@ -126,6 +148,10 @@ public class Crol {
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
                 lista();
                 nuevo();
+     
+        vista.getTxtnombre().setEnabled(false);
+        vista.getTxtdescripcion().setEnabled(false);
+        vista.getComboestado().setEnabled(false);
                 
             }
     } 
@@ -137,6 +163,11 @@ public class Crol {
         vista.getButtonguardar().setEnabled(true);
         vista.getButtonmodificar().setEnabled(false);
         CodigoRol();
+        
+
+        vista.getTxtnombre().setEnabled(true);
+        vista.getTxtdescripcion().setEnabled(true);
+        vista.getComboestado().setEnabled(true);
     }
     public void CodigoRol() {
         char[] chars = "0123".toCharArray();

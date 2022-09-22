@@ -50,6 +50,7 @@ public class Ccotizacion {
         vistacot.getButtoneliminar().addActionListener(e -> eliminar());
         vistacot.getButtonguardar().setEnabled(false);
         vistacot.getButtonmodificar().setEnabled(false);
+        
         vistacot.getTxtcedula().setEnabled(false);
         vistacot.getTxtnombreproducto().setEnabled(false);
         vistacot.getTxtcantidad().setEnabled(false);

@@ -45,7 +45,7 @@ public class Cpersona {
             vista.getButtonbuscar().addActionListener(e -> Buscar());
             vista.getButtonimprimir().addActionListener(e -> imprimir());
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "Error",JOptionPane.ERROR_MESSAGE);
         }
        
         vista.getTablapersona().addMouseListener(new MouseAdapter() {

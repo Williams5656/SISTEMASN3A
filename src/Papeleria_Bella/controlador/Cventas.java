@@ -50,6 +50,13 @@ public class Cventas {
         vistav.getButtoneliminar().addActionListener(e -> eliminar());
         vistav.getButtonguardar().setEnabled(false);
         vistav.getButtonmodificar().setEnabled(false);
+        
+        vistav.getTxtcedula().setEnabled(false);
+        vistav.getLabelcodigo().setEnabled(false);
+        vistav.getTxtnombre().setEnabled(false);
+        vistav.getTxtcantidad().setEnabled(false);
+        vistav.getTxtvalor().setEnabled(false);
+        vistav.getTxttotal().setEnabled(false);
     }
 
     public void lista() {
@@ -82,6 +89,26 @@ public class Cventas {
         bventas.setValoru(vistav.getTxtvalor().getText());
         bventas.setIva(vistav.getLabeliva().getText());
         bventas.setTotal(vistav.getTxttotal().getText());
+        if (bventas.insertar()) {
+            JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
+            lista();
+            vistav.getTxtcedula().setEnabled(false);
+        vistav.getLabelcodigo().setEnabled(false);
+        vistav.getTxtnombre().setEnabled(false);
+        vistav.getTxtcantidad().setEnabled(false);
+        vistav.getTxtvalor().setEnabled(false);
+        vistav.getTxttotal().setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+            lista();
+            
+            vistav.getTxtcedula().setEnabled(false);
+        vistav.getLabelcodigo().setEnabled(false);
+        vistav.getTxtnombre().setEnabled(false);
+        vistav.getTxtcantidad().setEnabled(false);
+        vistav.getTxtvalor().setEnabled(false);
+        vistav.getTxttotal().setEnabled(false);
+        }
     }
 
     public void modificar() {
@@ -100,6 +127,12 @@ public class Cventas {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+            vistav.getTxtcedula().setEnabled(false);
+        vistav.getLabelcodigo().setEnabled(false);
+        vistav.getTxtnombre().setEnabled(false);
+        vistav.getTxtcantidad().setEnabled(false);
+        vistav.getTxtvalor().setEnabled(false);
+        vistav.getTxttotal().setEnabled(false);
 
         }
     }
@@ -125,6 +158,13 @@ public class Cventas {
         vistav.getTxtvalor().setText(bventas.getValoru());
         bventas.setIva(lista.get(0).getIva());
         vistav.getLabeliva().setText(bventas.getIva());
+        
+        vistav.getTxtcedula().setEnabled(true);
+        vistav.getLabelcodigo().setEnabled(true);
+        vistav.getTxtnombre().setEnabled(true);
+        vistav.getTxtcantidad().setEnabled(true);
+        vistav.getTxtvalor().setEnabled(true);
+        vistav.getTxttotal().setEnabled(true);
 
     }
     
@@ -136,6 +176,12 @@ public class Cventas {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+            vistav.getTxtcedula().setEnabled(false);
+        vistav.getLabelcodigo().setEnabled(false);
+        vistav.getTxtnombre().setEnabled(false);
+        vistav.getTxtcantidad().setEnabled(false);
+        vistav.getTxtvalor().setEnabled(false);
+        vistav.getTxttotal().setEnabled(false);
 
         }
     }
@@ -150,5 +196,12 @@ public class Cventas {
         vistav.getLabeliva().setText("");
         vistav.getButtonguardar().setEnabled(true);
         vistav.getButtonmodificar().setEnabled(false);
+        
+        vistav.getTxtcedula().setEnabled(true);
+        vistav.getLabelcodigo().setEnabled(true);
+        vistav.getTxtnombre().setEnabled(true);
+        vistav.getTxtcantidad().setEnabled(true);
+        vistav.getTxtvalor().setEnabled(true);
+        vistav.getTxttotal().setEnabled(true);
     }
 }

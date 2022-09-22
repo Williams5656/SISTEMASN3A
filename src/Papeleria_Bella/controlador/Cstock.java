@@ -52,6 +52,11 @@ public class Cstock {
         vistastock.getButtoneliminar().addActionListener(e -> eliminar());
         vistastock.getButtonguardar().setEnabled(false);
         vistastock.getButtonmodificar().setEnabled(false);
+        
+
+        vistastock.getLabelcod_producto().setEnabled(false);
+        vistastock.getTxtstock1().setEnabled(false);
+        vistastock.getTxtnom_producto().setEnabled(false);
 
         lista();
     }
@@ -85,9 +90,17 @@ public class Cstock {
         if (bstock.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
+    
+        vistastock.getLabelcod_producto().setEnabled(false);
+        vistastock.getTxtstock1().setEnabled(false);
+        vistastock.getTxtnom_producto().setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
+
+        vistastock.getLabelcod_producto().setEnabled(false);
+        vistastock.getTxtstock1().setEnabled(false);
+        vistastock.getTxtnom_producto().setEnabled(false);
         }
 
     }
@@ -103,6 +116,10 @@ public class Cstock {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
 
+        
+        vistastock.getLabelcod_producto().setEnabled(false);
+        vistastock.getTxtstock1().setEnabled(false);
+        vistastock.getTxtnom_producto().setEnabled(false);
         }
     }
 
@@ -123,6 +140,10 @@ public class Cstock {
         bstock.setNombre_producto(lista.get(0).getNombre_producto());
         vistastock.getTxtnom_producto().setText(bstock.getNombre_producto());
         
+ 
+        vistastock.getLabelcod_producto().setEnabled(true);
+        vistastock.getTxtstock1().setEnabled(true);
+        vistastock.getTxtnom_producto().setEnabled(true);
 
     }
 
@@ -134,6 +155,9 @@ public class Cstock {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
 
+        vistastock.getLabelcod_producto().setEnabled(false);
+        vistastock.getTxtstock1().setEnabled(false);
+        vistastock.getTxtnom_producto().setEnabled(false);
         }
 
     }
@@ -145,6 +169,11 @@ public class Cstock {
         vistastock.getButtonguardar().setEnabled(true);
         vistastock.getButtonmodificar().setEnabled(false);
         GenerarCodStock();
+        
+ 
+        vistastock.getLabelcod_producto().setEnabled(true);
+        vistastock.getTxtstock1().setEnabled(true);
+        vistastock.getTxtnom_producto().setEnabled(true);
     }
 
     private void buscar() {

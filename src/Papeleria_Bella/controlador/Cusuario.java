@@ -56,6 +56,12 @@ public class Cusuario {
         vistau.getButtoneliminar().addActionListener(e -> eliminar());
         vistau.getButtonguardar().setEnabled(false);
         vistau.getButtonmodificar().setEnabled(false);
+        
+
+        vistau.getTxtcedula().setEnabled(false);
+        vistau.getTxtusuario().setEnabled(false);
+        vistau.getComborol().setEnabled(false);
+        vistau.getComboestado().setEnabled(false);
 
         lista();
     }
@@ -96,9 +102,17 @@ public class Cusuario {
         if (busuario.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
+            vistau.getTxtcedula().setEnabled(false);
+        vistau.getTxtusuario().setEnabled(false);
+        vistau.getComborol().setEnabled(false);
+        vistau.getComboestado().setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
+            vistau.getTxtcedula().setEnabled(false);
+        vistau.getTxtusuario().setEnabled(false);
+        vistau.getComborol().setEnabled(false);
+        vistau.getComboestado().setEnabled(false);
         }
 
     }
@@ -115,6 +129,10 @@ public class Cusuario {
             if (busuario.modificar(vistau.getLabelcodigo().getText())) ;
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
+            vistau.getTxtcedula().setEnabled(false);
+        vistau.getTxtusuario().setEnabled(false);
+        vistau.getComborol().setEnabled(false);
+        vistau.getComboestado().setEnabled(false);
 
         }
     }
@@ -138,6 +156,10 @@ public class Cusuario {
         busuario.setEstado(lista.get(0).getEstado());
         vistau.getComboestado().setSelectedItem(busuario.getEstado());
 
+        vistau.getTxtcedula().setEnabled(true);
+        vistau.getTxtusuario().setEnabled(true);
+        vistau.getComborol().setEnabled(true);
+        vistau.getComboestado().setEnabled(true);
     }
 
     public void eliminar() {
@@ -147,6 +169,10 @@ public class Cusuario {
             if (busuario.eliminar(vistau.getLabelcodigo().getText())) ;
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
+            vistau.getTxtcedula().setEnabled(false);
+        vistau.getTxtusuario().setEnabled(false);
+        vistau.getComborol().setEnabled(false);
+        vistau.getComboestado().setEnabled(false);
 
         }
 
@@ -160,6 +186,10 @@ public class Cusuario {
         vistau.getButtonguardar().setEnabled(true);
         vistau.getButtonmodificar().setEnabled(false);
         GenerarCodUsuario();
+        vistau.getTxtcedula().setEnabled(true);
+        vistau.getTxtusuario().setEnabled(true);
+        vistau.getComborol().setEnabled(true);
+        vistau.getComboestado().setEnabled(true);
     }
 
     private void buscar() {

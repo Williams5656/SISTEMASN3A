@@ -50,6 +50,13 @@ public class Cproveedores {
         vistaprov.getButtoneliminar().addActionListener(e -> eliminar());
         vistaprov.getButtonguardar().setEnabled(false);
         vistaprov.getButtonmodificar().setEnabled(false);
+        
+        vistaprov.getTxtruc().setEnabled(false);
+        vistaprov.getTxtnombrecom().setEnabled(false);
+        vistaprov.getTxtrepresentanteleg().setEnabled(false);
+        vistaprov.getTxtcelular().setEnabled(false);
+
+
 
         lista();
     }
@@ -83,9 +90,17 @@ public class Cproveedores {
         if (bproveedores.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
+            vistaprov.getTxtruc().setEnabled(false);
+        vistaprov.getTxtnombrecom().setEnabled(false);
+        vistaprov.getTxtrepresentanteleg().setEnabled(false);
+        vistaprov.getTxtcelular().setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
+            vistaprov.getTxtruc().setEnabled(false);
+        vistaprov.getTxtnombrecom().setEnabled(false);
+        vistaprov.getTxtrepresentanteleg().setEnabled(false);
+        vistaprov.getTxtcelular().setEnabled(false);
         }
 
     }
@@ -102,6 +117,10 @@ public class Cproveedores {
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
             nuevo();
+            vistaprov.getTxtruc().setEnabled(false);
+        vistaprov.getTxtnombrecom().setEnabled(false);
+        vistaprov.getTxtrepresentanteleg().setEnabled(false);
+        vistaprov.getTxtcelular().setEnabled(false);
         }
     }
 
@@ -123,6 +142,10 @@ public class Cproveedores {
         vistaprov.getTxtrepresentanteleg().setText(bproveedores.getRepresentanteleg());
         bproveedores.setCelular(lista.get(0).getCelular());
         vistaprov.getTxtcelular().setText(bproveedores.getCelular());
+        vistaprov.getTxtruc().setEnabled(true);
+        vistaprov.getTxtnombrecom().setEnabled(true);
+        vistaprov.getTxtrepresentanteleg().setEnabled(true);
+        vistaprov.getTxtcelular().setEnabled(true);
 
     }
 
@@ -133,6 +156,10 @@ public class Cproveedores {
             if (bproveedores.eliminar(vistaprov.getLabelcodigo().getText())) ;
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
+            vistaprov.getTxtruc().setEnabled(false);
+        vistaprov.getTxtnombrecom().setEnabled(false);
+        vistaprov.getTxtrepresentanteleg().setEnabled(false);
+        vistaprov.getTxtcelular().setEnabled(false);
 
         }
 
@@ -146,6 +173,10 @@ public class Cproveedores {
         vistaprov.getButtonguardar().setEnabled(true);
         vistaprov.getButtonmodificar().setEnabled(false);
         GenerarCodProvee();
+        vistaprov.getTxtruc().setEnabled(true);
+        vistaprov.getTxtnombrecom().setEnabled(true);
+        vistaprov.getTxtrepresentanteleg().setEnabled(true);
+        vistaprov.getTxtcelular().setEnabled(true);
     }
 
     private void buscar() {
