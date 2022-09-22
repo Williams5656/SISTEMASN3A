@@ -15,24 +15,44 @@ import java.awt.Image;
 public class EmpresaMD {
     
     String nombre;
+    String ruc;
     String ciudad;
     String direccion;
     String email;
     String celular;
+    String estado;
     String buscar;
     Image foto;
 
     public EmpresaMD() {
     }
 
-    public EmpresaMD(String nombre, String ciudad, String direccion, String email, String celular, String buscar, Image foto) {
+    public EmpresaMD(String nombre,String ruc, String ciudad, String direccion, String email, String celular, String estado, String buscar, Image foto) {
         this.nombre = nombre;
+        this.ruc = ruc;
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.email = email;
         this.celular = celular;
+        this.estado = estado;
         this.buscar = buscar;
         this.foto = foto;
+    }
+
+    public String getRuc() {
+        return ruc;
+    }
+
+    public void setRuc(String ruc) {
+        this.ruc = ruc;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getNombre() {

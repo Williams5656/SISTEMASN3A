@@ -19,6 +19,7 @@ public class CPrincipal {
         vista.getBtnNuevoPersona().addActionListener(e-> persona());
         vista.getBtnNuevoUsuario().addActionListener(e -> usuario());
         vista.getBtnNuevoEmpresa().addActionListener(e -> empresa ());
+        vista.getBtnNuevoServicio().addActionListener(e-> servicios());
         vista.getBtnNuevoRol().addActionListener(e -> rol());
         vista.getBtnSalir().addActionListener(e -> salir());
     }
@@ -67,6 +68,15 @@ public class CPrincipal {
         Dimension desktopSize = vista.getEscritorio().getSize();
         Dimension FrameSize = vempresa.getSize();
         vempresa.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+    }
+    private void servicios(){
+        VServicios vservicios = new VServicios();
+        CServicios cservicios = new CServicios(vservicios);
+
+        vista.getEscritorio().add(vservicios);
+        Dimension desktopSize = vista.getEscritorio().getSize();
+        Dimension FrameSize = vservicios.getSize();
+        vservicios.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
     }
     
     //*************************     SALIR     **********************************

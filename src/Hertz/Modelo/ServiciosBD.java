@@ -29,14 +29,15 @@ import javax.swing.ImageIcon;
  *
  * @author ESTEBAN
  */
-public class EmpresaBD extends EmpresaMD{
+public class ServiciosBD extends ServiciosMD{
     Conect conectar = new Conect();
 
-    public EmpresaBD() {  
+    public ServiciosBD() {  
     }
 
-    public EmpresaBD(String nombre, String ruc,String ciudad, String direccion, String email, String celular,String estado, String buscar, Image foto) {
-        super(nombre,ruc, ciudad, direccion, email, celular, estado, buscar, foto);  
+    public ServiciosBD(String codigo, String nombre, String descripcion, String actividad, String recursos, String precio, String buscar, Image foto) {
+        super(codigo, nombre, descripcion, actividad, recursos, precio, buscar, foto);
+    
     }
     
     public static BufferedImage toBufferedImage(Image img) {
@@ -70,45 +71,44 @@ public class EmpresaBD extends EmpresaMD{
         return reader.read(0, param);
     }
     
-    public List<EmpresaMD> mostrardatos() {
+    public List<ServiciosMD> mostrardatos() {
         
         try {
-            List<EmpresaMD> lista = new ArrayList<EmpresaMD>();
-            String sql = "select * from empresa";
+            List<ServiciosMD> lista = new ArrayList<ServiciosMD>();
+            String sql = "select * from servicios";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 
-                EmpresaMD empresa = new EmpresaMD();
-                empresa.setNombre(rs.getString("nombre"));
-                empresa.setRuc(rs.getString("ruc"));
-                empresa.setCiudad(rs.getString("ciudad"));
-                empresa.setDireccion(rs.getString("direccion"));
-                empresa.setEmail(rs.getString("email"));
-                empresa.setCelular(rs.getString("celular"));
-                empresa.setEstado(rs.getString("estado"));
+                ServiciosMD servicios = new ServiciosMD();
+                servicios.setCodigo(rs.getString("codigo"));
+                servicios.setNombre(rs.getString("nombre"));
+                servicios.setDescripcion(rs.getString("descripcion"));
+                servicios.setActividad(rs.getString("actividad"));
+                servicios.setRecursos(rs.getString("recursos"));
+                servicios.setPrecio(rs.getString("precio"));
                 byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {
                     try {
                         is = Base64.decode(is, 0, rs.getBytes("foto").length);
 //                    BufferedImage bi=Base64.decode( ImageIO.read(is));
-                        empresa.setFoto(getImage(is, false));
+                        servicios.setFoto(getImage(is, false));
                     } catch (Exception ex) {
-                        empresa.setFoto(null);
-                        Logger.getLogger(EmpresaBD.class.getName()).log(Level.SEVERE, null, ex);
+                        servicios.setFoto(null);
+                        Logger.getLogger(ServiciosBD.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
-                    empresa.setFoto(null);
+                    servicios.setFoto(null);
                 }
                 
-                lista.add(empresa);   
+                lista.add(servicios);   
             }
             
             rs.close();
             return lista;
         }
         catch (SQLException e) {
-            Logger.getLogger(EmpresaBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(ServiciosBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }//Fin mostrar datos
@@ -123,18 +123,17 @@ public class EmpresaBD extends EmpresaMD{
             byte[] imgb = bos.toByteArray();
             ef = Base64.encodeBytes(imgb);
         } catch (IOException ex) {
-            Logger.getLogger(EmpresaBD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServiciosBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        String sql = "INSERT INTO empresa(nombre, ruc, ciudad, direccion, email , celular, estado, foto)" + 
+        String sql = "INSERT INTO servicios(codigo, nombre, descripcion, actividad, recursos , precio, foto)" + 
                 "VALUES ('" + 
+                getCodigo()+ "','" +
                 getNombre()+ "','" +
-                getRuc()+ "','" +
-                getCiudad() + "','" + 
-                getDireccion().toUpperCase() + "','" + 
-                getEmail()+ "','" + 
-                getCelular() + "','" +
-                getEstado()+ "','" +
+                getDescripcion()+ "','" + 
+                getActividad().toUpperCase() + "','" + 
+                getRecursos()+ "','" + 
+                getPrecio()+ "','" +
                 ef + "')"; 
 
         if (conectar.noQuery(sql) == null) {
@@ -147,7 +146,7 @@ public class EmpresaBD extends EmpresaMD{
         }
     }//Fin de insertar
     
-    public boolean modificar(String ruc){
+    public boolean modificar(String codigo){
         
         String ef = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -157,18 +156,17 @@ public class EmpresaBD extends EmpresaMD{
             byte[] imgb = bos.toByteArray();
             ef = Base64.encodeBytes(imgb);
         } catch (IOException ex) {
-            Logger.getLogger(EmpresaBD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServiciosBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        String sql = "update empresa set " +
+        String sql = "update servicios set " +
                 "nombre = '" + getNombre().toUpperCase() + "', " +
-                "ciudad = '" + getCiudad().toUpperCase() + "', " +
-                "direccion = '" + getDireccion()+ "', " +
-                "email = '" + getEmail().toLowerCase() + "', " +
-                "celular = '" + getCelular()+ "', " +
-                "estado = '" + getEstado().toUpperCase() + "', " +
+                "descripcion = '" + getDescripcion()+ "', " +
+                "actividad = '" + getActividad().toLowerCase() + "', " +
+                "recursos = '" + getRecursos()+ "', " +
+                "precio = '" + getPrecio().toUpperCase() + "', " +
                 "foto = '" + ef + "' " +
-                "where ruc = '" + ruc + "' "  ;
+                "where codigo = '" + codigo + "' "  ;
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -179,62 +177,60 @@ public class EmpresaBD extends EmpresaMD{
         }
     }//Fin del modificar
     
-    public List<EmpresaMD> obtenerDatos(String ruc) {
+    public List<ServiciosMD> obtenerDatos(String codigo) {
         
         try {
-            List<EmpresaMD> lista = new ArrayList<EmpresaMD>();
+            List<ServiciosMD> lista = new ArrayList<ServiciosMD>();
             String sql = 
-                    "select * from empresa " + 
-                    "where ruc ILIKE '%" + ruc + "%'";
+                    "select * from servicios " + 
+                    "where codigo ILIKE '%" + codigo + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-                EmpresaMD empresa = new EmpresaMD();
+                ServiciosMD servicios = new ServiciosMD();
                 
                
-                empresa.setNombre(rs.getString("nombre"));
-                empresa.setRuc(rs.getString("ruc"));
-                empresa.setCiudad(rs.getString("ciudad"));
-                empresa.setDireccion(rs.getString("direccion"));
-                empresa.setEmail(rs.getString("email"));
-                empresa.setCelular(rs.getString("celular"));
-                empresa.setEstado(rs.getString("estado"));
-                                
+                servicios.setCodigo(rs.getString("codigo"));
+                servicios.setNombre(rs.getString("nombre"));
+                servicios.setDescripcion(rs.getString("descripcion"));
+                servicios.setActividad(rs.getString("actividad"));
+                servicios.setRecursos(rs.getString("recursos"));
+                servicios.setPrecio(rs.getString("precio"));
+                                                
                 byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {
                     try {
                         is = Base64.decode(is, 0, rs.getBytes("foto").length);
 //                    BufferedImage bi=Base64.decode( ImageIO.read(is));
-                        empresa.setFoto(getImage(is, false));
+                        servicios.setFoto(getImage(is, false));
                     } catch (Exception ex) {
-                        empresa.setFoto(null);
-                        Logger.getLogger(EmpresaBD.class.getName()).log(Level.SEVERE, null, ex);
+                        servicios.setFoto(null);
+                        Logger.getLogger(ServiciosBD.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } else {
-                    empresa.setFoto(null);
+                    servicios.setFoto(null);
                 }
                 
-                lista.add(empresa);
+                lista.add(servicios);
             }
             
             rs.close();
             return lista;
         }
         catch (SQLException e) {
-            Logger.getLogger(EmpresaBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(ServiciosBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }//Fin de obtener datos
     
-    public boolean eliminar(String ruc){
-            String nsql = "update empresa set " + 
+    public boolean eliminar(String codigo){
+            String nsql = "update servicios set " + 
                 "nombre = '" + getNombre() + "', " +
-                "ciudad = '" + getCiudad()+ "', " +
-                "direccion = '" + getDireccion()+ "', " +
-                "email = '" + getEmail()+ "', " +
-                "celular = '" + getCelular()+ "', " +
-                "estado = 'Inactivo' " +
-                "where ruc = '" + ruc + "'" ;
+                "descripcion = '" + getDescripcion()+ "', " +
+                "actividad = '" + getActividad()+ "', " +
+                "recursos = '" + getRecursos()+ "', " +
+                "precio = '" + getPrecio()+ "', " +
+                "where codigo = '" + codigo + "'" ;
                 
         if(conectar.noQuery(nsql) == null){
             return true;

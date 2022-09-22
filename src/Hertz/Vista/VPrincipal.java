@@ -22,6 +22,22 @@ public class VPrincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JMenuItem getBtnNuevoServicio() {
+        return btnNuevoServicio;
+    }
+
+    public void setBtnNuevoServicio(JMenuItem btnNuevoServicio) {
+        this.btnNuevoServicio = btnNuevoServicio;
+    }
+
+    public JMenu getMenuServicios() {
+        return menuServicios;
+    }
+
+    public void setMenuServicios(JMenu menuServicios) {
+        this.menuServicios = menuServicios;
+    }
+
     public JMenuItem getBtnNuevoEmpresa() {
         return btnNuevoEmpresa;
     }
@@ -139,6 +155,8 @@ public class VPrincipal extends javax.swing.JFrame {
         btnNuevoRol = new javax.swing.JMenuItem();
         menuEmpresa = new javax.swing.JMenu();
         btnNuevoEmpresa = new javax.swing.JMenuItem();
+        menuServicios = new javax.swing.JMenu();
+        btnNuevoServicio = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
         btnSalir = new javax.swing.JMenuItem();
 
@@ -182,6 +200,13 @@ public class VPrincipal extends javax.swing.JFrame {
         menuEmpresa.add(btnNuevoEmpresa);
 
         barraMenus.add(menuEmpresa);
+
+        menuServicios.setText("Servicios");
+
+        btnNuevoServicio.setText("Nuevo");
+        menuServicios.add(btnNuevoServicio);
+
+        barraMenus.add(menuServicios);
 
         menuSalir.setText("Salir");
 
@@ -248,12 +273,14 @@ public class VPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem btnNuevoEmpresa;
     private javax.swing.JMenuItem btnNuevoPersona;
     private javax.swing.JMenuItem btnNuevoRol;
+    private javax.swing.JMenuItem btnNuevoServicio;
     private javax.swing.JMenuItem btnNuevoUsuario;
     private javax.swing.JMenuItem btnSalir;
     private javax.swing.JMenu menuEmpresa;
     private javax.swing.JMenu menuPersona;
     private javax.swing.JMenu menuRol;
     private javax.swing.JMenu menuSalir;
+    private javax.swing.JMenu menuServicios;
     private javax.swing.JMenu menuUsuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,7 +6,6 @@
 package Hertz.Controlador;
 
 import Hertz.Modelo.*;
-import Hertz.Modelo.*;
 import Hertz.Vista.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -19,27 +18,18 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.view.JasperViewer;
 
-public class CEmpresa {
-    public static VEmpresa vista;
+public class CServicios {
+    public static VServicios vista;
     
-    private EmpresaBD bdEmpresa = new EmpresaBD();
+    private ServiciosBD bdservicios = new ServiciosBD();
 
-    public CEmpresa(VEmpresa vista) {
+    public CServicios(VServicios vista) {
         this.vista = vista;
         
         vista.setVisible(true);
@@ -58,19 +48,18 @@ public class CEmpresa {
             }        
         });
         
-        vista.getTablaPersona().addMouseListener(new MouseAdapter() {
+        vista.getTablaServicios().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionar();
             }        
         });
-        
-        
-        vista.getTxtNombre().setEnabled(false);
-        vista.getTxtCiudad().setEnabled(false);
-        vista.getTxtDireccion().setEnabled(false);
-        vista.getTxtCelular().setEnabled(false);
-        vista.getTxtEmail().setEnabled(false);
+       
+        vista.getComboNombre().setEnabled(false);
+        vista.getTxtDescripcion().setEnabled(false);
+        vista.getTxtActividad().setEnabled(false);
+        vista.getTxtRecursos().setEnabled(false);
+        vista.getTxtPrecio().setEnabled(false);
         vista.getBtnFoto().setEnabled(false);
         vista.getBtnGuardar().setEnabled(false);
         vista.getBtnModificar().setEnabled(false);
@@ -80,13 +69,12 @@ public class CEmpresa {
     
     public void nuevo(){
         limpiar();
-        vista.getTxtNombre().setEnabled(true);
-        vista.getTxtRuc().setEnabled(true);
-        vista.getTxtCiudad().setEnabled(true);
-        vista.getTxtDireccion().setEnabled(true);
-        vista.getTxtCelular().setEnabled(true);
-        vista.getTxtEmail().setEnabled(true);
-        vista.getComboEstado().setEnabled(true);
+        vista.getTxtCodigo().setEnabled(true);
+        vista.getComboNombre().setEnabled(true);
+        vista.getTxtDescripcion().setEnabled(true);
+        vista.getTxtActividad().setEnabled(true);
+        vista.getTxtRecursos().setEnabled(true);
+        vista.getTxtPrecio().setEnabled(true);
         vista.getBtnFoto().setEnabled(true);
         vista.getBtnGuardar().setEnabled(true);
         vista.getBtnModificar().setEnabled(true);
@@ -96,26 +84,25 @@ public class CEmpresa {
     
     public void limpiar(){
         
-        vista.getTxtNombre().setText("");
-        vista.getTxtRuc().setText("");
-        vista.getTxtCiudad().setText("");
-        vista.getTxtDireccion().setText("");
-        vista.getTxtCelular().setText("");
-        vista.getTxtEmail().setText("");
-        vista.getComboEstado().setSelectedIndex(0);
+        vista.getTxtCodigo().setText("");
+        vista.getComboNombre().setSelectedIndex(0);
+        vista.getTxtDescripcion().setText("");
+        vista.getTxtActividad().setText("");
+        vista.getTxtRecursos().setText("");
+        vista.getTxtPrecio().setText("");
         vista.getLbFoto().setIcon(null);
     }
     
     public void lista(){
         DefaultTableModel modelo;
-        modelo = (DefaultTableModel) vista.getTablaempresa().getModel();
+        modelo = (DefaultTableModel) vista.getTablaServicios().getModel();
         
-        List<EmpresaMD> lista = bdEmpresa.mostrardatos();
+        List<ServiciosMD> lista = bdservicios.mostrardatos();
         int columnas = modelo.getColumnCount();
         
 //**************** Limpiar en decremento   ************************
 
-        for (int j = vista.getTablaempresa().getRowCount()-1; j >= 0; j--){
+        for (int j = vista.getTablaServicios().getRowCount()-1; j >= 0; j--){
             modelo.removeRow(j);
         }
 
@@ -124,14 +111,13 @@ public class CEmpresa {
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
             
-            vista.getTablaempresa().setValueAt(lista.get(i).getRuc(), i, 0);
-            vista.getTablaempresa().setValueAt(lista.get(i).getNombre(), i, 1);
-            vista.getTablaempresa().setValueAt(lista.get(i).getCiudad(), i, 2);
-            vista.getTablaempresa().setValueAt(lista.get(i).getDireccion(), i, 3);
-            vista.getTablaempresa().setValueAt(lista.get(i).getCelular(), i, 4);
-            vista.getTablaempresa().setValueAt(lista.get(i).getEmail(), i, 5);
-            vista.getTablaempresa().setValueAt(lista.get(i).getEstado(), i, 6);
-            vista.getTablaempresa().setValueAt(lista.get(i).getFoto(), i, 7);
+            vista.getTablaServicios().setValueAt(lista.get(i).getCodigo(), i, 0);
+            vista.getTablaServicios().setValueAt(lista.get(i).getNombre(), i, 1);
+            vista.getTablaServicios().setValueAt(lista.get(i).getDescripcion(), i, 2);
+            vista.getTablaServicios().setValueAt(lista.get(i).getActividad(), i, 3);
+            vista.getTablaServicios().setValueAt(lista.get(i).getRecursos(), i, 4);
+            vista.getTablaServicios().setValueAt(lista.get(i).getPrecio(), i, 5);
+            vista.getTablaServicios().setValueAt(lista.get(i).getFoto(), i, 6);
         }
     }//Fin de Lista
     
@@ -140,18 +126,17 @@ public class CEmpresa {
         //SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
         
         
-        bdEmpresa.setNombre(vista.getTxtNombre().getText());
-        bdEmpresa.setRuc(vista.getTxtRuc().getText());
-        bdEmpresa.setCiudad(vista.getTxtCiudad().getText());
-        bdEmpresa.setDireccion(vista.getTxtDireccion().getText());
-        bdEmpresa.setEmail(vista.getTxtEmail().getText());
-        bdEmpresa.setCelular(vista.getTxtCelular().getText());
-        bdEmpresa.setEstado(vista.getComboEstado().getSelectedItem().toString());
-        
+        bdservicios.setCodigo(vista.getTxtCodigo().getText());
+        bdservicios.setNombre(vista.getComboNombre().getSelectedItem().toString());
+        bdservicios.setDescripcion(vista.getTxtDescripcion().getText());
+        bdservicios.setActividad(vista.getTxtActividad().getText());
+        bdservicios.setRecursos(vista.getTxtRecursos().getText());
+        bdservicios.setPrecio(vista.getTxtPrecio().getText());
+                
         ImageIcon ic = (ImageIcon) vista.getLbFoto().getIcon();
-        bdEmpresa.setFoto(ic.getImage());
+        bdservicios.setFoto(ic.getImage());
         
-        if (bdEmpresa.insertar()){
+        if (bdservicios.insertar()){
             JOptionPane.showMessageDialog(null, "GUARDADO CORRECTAMENTE");
             lista();
             limpiar();
@@ -167,26 +152,25 @@ public class CEmpresa {
        }
        else{
            DefaultTableModel modelo;
-           modelo = (DefaultTableModel) vista.getTablaempresa().getModel();
+           modelo = (DefaultTableModel) vista.getTablaServicios().getModel();
         
-            List<EmpresaMD> lista = bdEmpresa.obtenerDatos(vista.getTxtBuscar().getText());
+            List<ServiciosMD> lista = bdservicios.obtenerDatos(vista.getTxtBuscar().getText());
             int columnas = modelo.getColumnCount();
 
-            for (int j = vista.getTablaempresa().getRowCount()-1; j >= 0; j--){
+            for (int j = vista.getTablaServicios().getRowCount()-1; j >= 0; j--){
                 modelo.removeRow(j);
             }
 
             for (int i = 0; i < lista.size(); i++) {
                 modelo.addRow(new Object[columnas]);
                 
-                vista.getTablaempresa().setValueAt(lista.get(i).getRuc(), i, 0);
-                vista.getTablaempresa().setValueAt(lista.get(i).getNombre(), i, 1);
-                vista.getTablaempresa().setValueAt(lista.get(i).getCiudad(), i, 2);
-                vista.getTablaempresa().setValueAt(lista.get(i).getDireccion(), i, 3);
-                vista.getTablaempresa().setValueAt(lista.get(i).getCelular(), i, 4);
-                vista.getTablaempresa().setValueAt(lista.get(i).getEmail(), i, 5);
-                vista.getTablaempresa().setValueAt(lista.get(i).getEstado(), i, 6);
-                vista.getTablaempresa().setValueAt(lista.get(i).getFoto(), i, 7);
+                vista.getTablaServicios().setValueAt(lista.get(i).getCodigo(), i, 0);
+                vista.getTablaServicios().setValueAt(lista.get(i).getNombre(), i, 1);
+                vista.getTablaServicios().setValueAt(lista.get(i).getDescripcion(), i, 2);
+                vista.getTablaServicios().setValueAt(lista.get(i).getActividad(), i, 3);
+                vista.getTablaServicios().setValueAt(lista.get(i).getRecursos(), i, 4);
+                vista.getTablaServicios().setValueAt(lista.get(i).getPrecio(), i, 5);
+                vista.getTablaServicios().setValueAt(lista.get(i).getFoto(), i, 6);
                 //}
         }
        }
@@ -199,19 +183,18 @@ public class CEmpresa {
         //SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
         
        
-        bdEmpresa.setNombre(vista.getTxtNombre().getText());
-        bdEmpresa.setRuc(vista.getTxtRuc().getText());
-        bdEmpresa.setCiudad(vista.getTxtCiudad().getText());
-        bdEmpresa.setDireccion(vista.getTxtDireccion().getText());
-        bdEmpresa.setCelular(vista.getTxtCelular().getText());
-        bdEmpresa.setEmail(vista.getTxtEmail().getText());
-        bdEmpresa.setEstado(vista.getComboEstado().getSelectedItem().toString());
+        bdservicios.setCodigo(vista.getTxtCodigo().getText());
+        bdservicios.setNombre(vista.getComboNombre().getSelectedItem().toString());
+        bdservicios.setDescripcion(vista.getTxtDescripcion().getText());
+        bdservicios.setActividad(vista.getTxtActividad().getText());
+        bdservicios.setRecursos(vista.getTxtRecursos().getText());
+        bdservicios.setPrecio(vista.getTxtPrecio().getText());
         ImageIcon ic = (ImageIcon) vista.getLbFoto().getIcon();
-        bdEmpresa.setFoto(ic.getImage());
+        bdservicios.setFoto(ic.getImage());
         
         int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de Modificar?");
         if (respuesta == 0){
-            if (bdEmpresa.modificar(vista.getTxtRuc().getText())){
+            if (bdservicios.modificar(vista.getTxtCodigo().getText())){
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
                 lista();
                 limpiar();
@@ -230,20 +213,19 @@ public class CEmpresa {
                 vista.getLbFoto().setIcon(new ImageIcon(icono));
                 vista.getLbFoto().updateUI();
             } catch (IOException ex) {
-                Logger.getLogger(CEmpresa.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(CServicios.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
     
     public void seleccionar(){
         
-        vista.getTxtNombre().setEnabled(true);
-        vista.getTxtRuc().setEnabled(true);
-        vista.getTxtCiudad().setEnabled(true);
-        vista.getTxtDireccion().setEnabled(true);
-        vista.getTxtCelular().setEnabled(true);
-        vista.getTxtEmail().setEnabled(true);
-        vista.getComboEstado().setEnabled(true);
+        vista.getTxtCodigo().setEnabled(true);
+        vista.getComboNombre().setEnabled(true);
+        vista.getTxtDescripcion().setEnabled(true);
+        vista.getTxtActividad().setEnabled(true);
+        vista.getTxtRecursos().setEnabled(true);
+        vista.getTxtPrecio().setEnabled(true);
         vista.getBtnFoto().setEnabled(true);
         vista.getBtnGuardar().setEnabled(false);
         vista.getBtnModificar().setEnabled(true);
@@ -252,34 +234,32 @@ public class CEmpresa {
         vista.getTxtBuscar().setText("");
         
         DefaultTableModel modelo;
-        modelo = (DefaultTableModel) vista.getTablaempresa().getModel();
-        String ruc = (String) modelo.getValueAt(vista.getTablaempresa().getSelectedRow(), 0);
+        modelo = (DefaultTableModel) vista.getTablaServicios().getModel();
+        String codigo = (String) modelo.getValueAt(vista.getTablaServicios().getSelectedRow(), 0);
         
-        List<EmpresaMD> lista = bdEmpresa.obtenerDatos(ruc);
+        List<ServiciosMD> lista = bdservicios.obtenerDatos(codigo);
         
         
         
-        bdEmpresa.setRuc(lista.get(0).getRuc());
-        vista.getTxtRuc().setText(bdEmpresa.getRuc());
+        bdservicios.setCodigo(lista.get(0).getCodigo());
+        vista.getTxtCodigo().setText(bdservicios.getCodigo());
         
-        bdEmpresa.setNombre(lista.get(0).getNombre());
-        vista.getTxtNombre().setText(bdEmpresa.getNombre());
+        bdservicios.setNombre(lista.get(0).getNombre());
+        vista.getComboNombre().setSelectedItem(bdservicios.getNombre());
         
-        bdEmpresa.setCiudad(lista.get(0).getCiudad());
-        vista.getTxtCiudad().setText(bdEmpresa.getCiudad());
+        bdservicios.setDescripcion(lista.get(0).getDescripcion());
+        vista.getTxtDescripcion().setText(bdservicios.getDescripcion());
         
-        bdEmpresa.setDireccion(lista.get(0).getDireccion());
-        vista.getTxtDireccion().setText(bdEmpresa.getDireccion());
+        bdservicios.setActividad(lista.get(0).getActividad());
+        vista.getTxtActividad().setText(bdservicios.getActividad());
         
-        bdEmpresa.setCelular(lista.get(0).getCelular());
-        vista.getTxtCelular().setText(bdEmpresa.getCelular());
+        bdservicios.setRecursos(lista.get(0).getRecursos());
+        vista.getTxtRecursos().setText(bdservicios.getRecursos());
         
-        bdEmpresa.setEmail(lista.get(0).getEmail());
-        vista.getTxtEmail().setText(bdEmpresa.getEmail());
+        bdservicios.setPrecio(lista.get(0).getPrecio());
+        vista.getTxtPrecio().setText(bdservicios.getPrecio());
         
-        bdEmpresa.setEstado(lista.get(0).getEstado());
-        vista.getComboEstado().setSelectedItem(bdEmpresa.getEstado());
-        
+                
         /*bdEmpresa.setFechaNac(lista.get(0).getFechaNac());
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
         Date fecha = null;
@@ -301,10 +281,10 @@ public class CEmpresa {
     }//Fin del seleccionar
     
     public void eliminar(){
-        bdEmpresa.setRuc(vista.getTxtRuc().getText());
-        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar esta empresa " + vista.getTxtRuc().getText() );
+        bdservicios.setCodigo(vista.getTxtCodigo().getText());
+        int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar esta empresa " + vista.getTxtCodigo().getText() );
         if (respuesta == 0){
-            if (bdEmpresa.eliminar(vista.getTxtRuc().getText())){
+            if (bdservicios.eliminar(vista.getTxtCodigo().getText())){
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
                 lista();
                 limpiar();
@@ -312,7 +292,7 @@ public class CEmpresa {
         }
     }//Fin de eliminar
     
-    private void imprimir(){
+    /*private void imprimir(){
         
         Conect con = new Conect();
         
@@ -337,7 +317,7 @@ public class CEmpresa {
                 Map<String,Object> map = new HashMap<String, Object>();
                 map.put("logo","Hertz\\Imagenes\\logoHertz.png");
                 //String cedula = JOptionPane.showInputDialog("Ingresar cedula");
-                map.put("cedula", vista.getTxtRuc().getText());
+                map.put("cedula", vista.getTxtCedula().getText());
                 JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
                 JasperViewer jv = new JasperViewer(jp, false);
                 jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -348,6 +328,6 @@ public class CEmpresa {
                 Logger.getLogger(CPersona.class.getName()).log(Level.SEVERE, null, e);
             }
         }
-    }
+    }*/
     
 }//Fin de la clase
