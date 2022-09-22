@@ -234,13 +234,13 @@ public class V_GesClient extends javax.swing.JInternalFrame {
 
         TableCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "CEDULA", "ESTADO"
+                "CODIGO", "CEDULA", "ESTADO", "PROFESION", "TRABAJO"
             }
         ));
         jScrollPane1.setViewportView(TableCliente);

@@ -29,6 +29,7 @@ public class C_Registro {
      vistaresgistro.getBtnmodificar().addActionListener(x->modificar());
      vistaresgistro.getBtneliminar().addActionListener(x->eliminar());
      vistaresgistro.getBtnnuevo().addActionListener(x->nuevo());
+     vistaresgistro.getBtnBuscarCedula().addActionListener(x->BuscarCliente());
      vistaresgistro.getTxtBuscarJuicio().addFocusListener(new java.awt.event.FocusAdapter() {
             @Override
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -144,10 +145,10 @@ public void BuscarCliente() {
         if (vistaregistro.getTxtBuscarJuicio().equals("")) {
             JOptionPane.showMessageDialog(null, "Nó deje el campo vacio");
         } else {
-            List<ClienteMD> listacliente = bdcliente.buscardatos(vistaregistro.getTxtBuscarJuicio().getText());
-            List<PersonaMD> listapersona=bdpersona.mostrardatos();
-            for (int i = 0; i < listapersona.size(); i++) {
-                if (listapersona.get(i).getCedula().equals(listacliente.get(0).getCedula())) {
+            List<ClienteMD> listacliente = bdcliente.mostrardatos();
+            List<PersonaMD> listapersona=bdpersona.buscardatos(vistaregistro.getTxtBuscarJuicio().getText());
+            for (int i = 0; i < listacliente.size(); i++) {
+                if (listacliente.get(i).getCedula().equals(listapersona.get(0).getCedula())) {
                     vistaregistro.getLabelcliente().setText(listapersona.get(i).getNombres()+ " " + listapersona.get(i).getApellidos());
                 }else{
                 JOptionPane.showMessageDialog(null,"No existen datos con ese número de cédula","ERROR",JOptionPane.ERROR_MESSAGE);

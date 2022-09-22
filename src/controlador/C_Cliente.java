@@ -3,6 +3,8 @@ package controlador;
 import static controlador.C_Persona.vistapersona;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.List;
 import java.util.Random;
@@ -52,6 +54,13 @@ public class C_Cliente extends ClienteBD {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 TxtBuscarCedulaFocusLost(evt);
             }
+        });
+        vistacl.getTableCliente().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                seleccionar();
+            }
+
         });
     }
 
@@ -121,13 +130,14 @@ public class C_Cliente extends ClienteBD {
         bdcliente.setCodigo(lista.get(0).getCodigo());
         vistacliente.getLabelCodigo().setText(bdcliente.getCodigo());
         bdcliente.setCedula(lista.get(0).getCedula());
-        vistacliente.getLabelCedula().setText(bdcliente.getCedula());
+        vistacliente.getTxtBuscarCedula().setText(bdcliente.getCedula());
         bdcliente.setEstado(lista.get(0).getEstado());
         vistacliente.getCmbEstadoCliente().setSelectedItem(bdcliente.getEstado());
         bdcliente.setTrabajo(lista.get(0).getTrabajo());
         vistacliente.getCmbTrabajo().setSelectedItem(bdcliente.getTrabajo());
         bdcliente.setProfesion(lista.get(0).getProfesion());
         vistacliente.getTxtProfesion().setText(bdcliente.getProfesion());
+        vistacliente.getTxtBuscarCedula().setEditable(false);
     }
 
     public void GenerarCodCliente() {

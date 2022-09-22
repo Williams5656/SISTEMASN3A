@@ -208,6 +208,8 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         btnimprimir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         TxtBuscarUsuario = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        CmbConsultorio = new javax.swing.JComboBox<>();
 
         setClosable(true);
         setIconifiable(true);
@@ -260,23 +262,23 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         getContentPane().add(BtnBuscarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 90, 40));
 
         jLabel10.setText("ESTADO:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 80, 30));
-        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 30, 30));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 80, 30));
+        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 30, 30));
 
         TableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "CEDULA", "USUARIO", "ROL", "ESTADO"
+                "CODIGO", "CEDULA", "USUARIO", "ROL", "ESTADO", "CONSULTORIO"
             }
         ));
         jScrollPane1.setViewportView(TableUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 930, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 910, 110));
 
         Panel_Efecto_Usuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -290,14 +292,19 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         getContentPane().add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 220, 30));
 
         labelEstado.setText("Activo");
-        getContentPane().add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 110, 30));
+        getContentPane().add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 110, 30));
 
         btnimprimir.setText("IMPRIMIR");
-        getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 550, -1, -1));
+        getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 380, 90, 40));
 
         jLabel3.setText("BUSCAR:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 90, 30));
         getContentPane().add(TxtBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 200, 40));
+
+        jLabel1.setText("CONDULTORIO:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 90, 30));
+
+        getContentPane().add(CmbConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 220, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -306,6 +313,7 @@ public class V_Usuario extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarPersona;
     private javax.swing.JCheckBox CheckBoxEstado;
+    private javax.swing.JComboBox<String> CmbConsultorio;
     private javax.swing.JPasswordField JPassClave;
     private javax.swing.JLabel LabelNombresPersona;
     private javax.swing.JLabel LabelTituloUsuario;
@@ -319,6 +327,7 @@ public class V_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JComboBox<String> cmbRol;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

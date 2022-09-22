@@ -3,6 +3,8 @@ package controlador;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
@@ -31,7 +33,7 @@ public class C_Consultorio {
         vista.getBtnguardarp().addActionListener(x -> guardar());
         vista.getBtnmodificar().addActionListener(x -> modificar());
         vista.getBtneliminar().addActionListener(x -> eliminar());
-        vista.getBtnnuevo().addActionListener(x -> eliminar());
+        vista.getBtnnuevo().addActionListener(x -> nuevo());
 
         vista.getTableConsultorio().addFocusListener(new java.awt.event.FocusAdapter() {
             @Override
@@ -49,6 +51,13 @@ public class C_Consultorio {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 BuscarConsultorio();
             }
+        });
+        vista.getTableConsultorio().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                seleccionar();
+            }
+
         });
     }
 
@@ -187,9 +196,6 @@ public class C_Consultorio {
     public void nuevo() {
         GenerarCodConsultorio();
         vistaconsultorio.getTxtNombreConsultorio().setText("");
-        vistaconsultorio.getTxtDireccionConsultorio().setVisible(false);
-        vistaconsultorio.getTxttelefonoConsultorio().setVisible(false);
-        vistaconsultorio.getTxtLema().setVisible(false);
         vistaconsultorio.getBtnguardarp().setEnabled(true);
         vistaconsultorio.getBtnmodificar().setEnabled(true);
     }

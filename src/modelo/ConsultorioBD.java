@@ -103,7 +103,7 @@ public class ConsultorioBD extends ConsultorioMD {
     public List<ConsultorioMD> mostrardatos() {
         try {
             List<ConsultorioMD> listaconsultorio = new ArrayList<>();
-            String sql = "select * from persona";
+            String sql = "select * from consultorio";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 ConsultorioMD cbd = new ConsultorioMD();
