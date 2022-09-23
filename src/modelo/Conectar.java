@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Conectar {
 
@@ -44,6 +45,7 @@ public class Conectar {
             return null;
         } catch (SQLException ex) {
             Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "ERROR: "+ex.toString());
             return ex;
         }
     }

@@ -87,18 +87,27 @@ public class C_Cliente extends ClienteBD {
     }
 
     public void guardar() {
-        bdcliente.setCodigo(vistacliente.getLabelCodigo().getText());
-        bdcliente.setCedula(vistacliente.getTxtBuscarCedula().getText());
-        bdcliente.setEstado(vistacliente.getCmbEstadoCliente().getSelectedItem().toString());
-        bdcliente.setTrabajo(vistacliente.getCmbTrabajo().getSelectedItem().toString());
-        bdcliente.setProfesion(vistacliente.getTxtProfesion().getText());
+        List<ClienteMD> listacliente = bdcliente.mostrardatos();
+       
+        for (int i = 0; i < listacliente.size(); i++) {
+            String cedula = listacliente.get(i).getCedula();
+            if (cedula.contentEquals(vistacliente.getTxtBuscarCedula().getText())) {
+                JOptionPane.showMessageDialog(null, "No puede repetir un dato ya existente");
+            } else {
+                bdcliente.setCodigo(vistacliente.getLabelCodigo().getText());
+                bdcliente.setCedula(vistacliente.getTxtBuscarCedula().getText());
+                bdcliente.setEstado(vistacliente.getCmbEstadoCliente().getSelectedItem().toString());
+                bdcliente.setTrabajo(vistacliente.getCmbTrabajo().getSelectedItem().toString());
+                bdcliente.setProfesion(vistacliente.getTxtProfesion().getText());
 
-        if (bdcliente.insertar()) {
-            JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
-            lista();
-        } else {
-            JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
-            lista();
+                if (bdcliente.insertar()) {
+                    JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
+                    lista();
+                } else {
+                    JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+                    lista();
+                }
+            }
         }
 
     }

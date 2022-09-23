@@ -38,11 +38,7 @@ public class C_Persona {
         vistapersona.setVisible(true);
         vistapersona.getBtnguardarp().setEnabled(false);
         vistapersona.getBtnmodificar().setEnabled(false);
-        lista();
-        vistapersona.getBtnguardarp().setVisible(false);
-        vistapersona.getBtnnuevo().setVisible(false);
-        vistapersona.getBtnmodificar().setVisible(false);
-        vistapersona.getBtneliminar().setVisible(false);
+         lista();
         vistapersona.getBtn_CargarFoto().addActionListener(x -> obtieneImagen());
         vistapersona.getBtn_QuitarFoto().addActionListener(x -> QuitarImagen());
         vistapersona.getBtnguardarp().addActionListener(x -> {
@@ -100,6 +96,7 @@ public class C_Persona {
     }
 
     public void guardar() throws SQLException {
+        try {
         bdpersona.setCedula(vistapersona.getTxtcedula().getText());
         bdpersona.setNombres(vistapersona.getTxtnombre().getText());
         bdpersona.setApellidos(vistapersona.getTxtapellido().getText());
@@ -108,7 +105,7 @@ public class C_Persona {
 
         ImageIcon ic = (ImageIcon) vistapersona.getLabelFoto().getIcon();
         bdpersona.setFoto_perfil(ic.getImage());
-        try {
+        
             if (bdpersona.insertar()) {
                 JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
                 lista();

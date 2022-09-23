@@ -1,12 +1,19 @@
 package controlador;
 
 import java.awt.Color;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import modelo.ClienteBD;
 import modelo.ClienteMD;
+import modelo.Conectar;
 import modelo.PersonaBD;
 import modelo.PersonaMD;
 import modelo.RegistroBD;
@@ -17,24 +24,25 @@ public class C_Registro {
 
     public static V_Registro vistaregistro;
     RegistroBD bdregistro = new RegistroBD();
-    ClienteBD bdcliente=new ClienteBD();
-    PersonaBD bdpersona=new PersonaBD();
+    ClienteBD bdcliente = new ClienteBD();
+    PersonaBD bdpersona = new PersonaBD();
 
     public C_Registro(V_Registro vistaresgistro) {
-     this.vistaregistro=vistaresgistro;
-     vistaresgistro.setVisible(true);
-     GenerarCodRegistro();
-     listaregistro();
-     vistaresgistro.getBtnguardarp().addActionListener(x->guardar());
-     vistaresgistro.getBtnmodificar().addActionListener(x->modificar());
-     vistaresgistro.getBtneliminar().addActionListener(x->eliminar());
-     vistaresgistro.getBtnnuevo().addActionListener(x->nuevo());
-     vistaresgistro.getBtnBuscarCedula().addActionListener(x->BuscarCliente());
-     vistaresgistro.getTxtBuscarJuicio().addFocusListener(new java.awt.event.FocusAdapter() {
+        this.vistaregistro = vistaresgistro;
+        vistaresgistro.setVisible(true);
+        GenerarCodRegistro();
+        listaregistro();
+        vistaresgistro.getBtnguardarp().addActionListener(x -> guardar());
+        vistaresgistro.getBtnmodificar().addActionListener(x -> modificar());
+        vistaresgistro.getBtneliminar().addActionListener(x -> eliminar());
+        vistaresgistro.getBtnnuevo().addActionListener(x -> nuevo());
+        vistaresgistro.getBtnBuscarCedula().addActionListener(x -> BuscarCliente(vistaregistro.getTxtcliente().getText()));
+        vistaresgistro.getTxtBuscarJuicio().addFocusListener(new java.awt.event.FocusAdapter() {
             @Override
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtBuscarJuicioFocusGained(evt);
             }
+
             @Override
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtBuscarJuicioFocusLost(evt);
@@ -141,22 +149,34 @@ public class C_Registro {
         }
 
     }
-public void BuscarCliente() {
-        if (vistaregistro.getTxtBuscarJuicio().equals("")) {
-            JOptionPane.showMessageDialog(null, "Nó deje el campo vacio");
-        } else {
-            List<ClienteMD> listacliente = bdcliente.mostrardatos();
-            List<PersonaMD> listapersona=bdpersona.buscardatos(vistaregistro.getTxtBuscarJuicio().getText());
-            for (int i = 0; i < listacliente.size(); i++) {
-                if (listacliente.get(i).getCedula().equals(listapersona.get(0).getCedula())) {
-                    vistaregistro.getLabelcliente().setText(listapersona.get(i).getNombres()+ " " + listapersona.get(i).getApellidos());
-                }else{
-                JOptionPane.showMessageDialog(null,"No existen datos con ese número de cédula","ERROR",JOptionPane.ERROR_MESSAGE);
+
+    public void BuscarCliente(String cedula) {
+        try {
+            if (vistaregistro.getTxtcliente().getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Llene el campo para realizar la busqueda", "ERROR", JOptionPane.ERROR_MESSAGE);
+            } else {
+                Conectar conectar = new Conectar();
+                String sql = "Select nombres,apellidos from persona\n"
+                        + "Where cedula=(Select cedula from cliente Where \"cedula\"='" + cedula + "')";
+                ResultSet rs = conectar.query(sql);
+                while (rs.next()) {
+                    if (rs.next()) {
+                        JOptionPane.showMessageDialog(null, "No existe esa cedula");
+                        vistaregistro.getLabelcliente().setText(rs.getString("nombres") + " " + rs.getString("apellidos"));
+                    } else {
+                    }
+
                 }
-               
+
             }
+
+        } catch (SQLException e) {
+            Logger.getLogger(C_Registro.class.getName()).log(Level.SEVERE, null, e);
+            JOptionPane.showMessageDialog(null, "Error: " + e.toString(), "ERROR", JOptionPane.ERROR_MESSAGE);
+
         }
     }
+
     public void GenerarCodRegistro() {
         char[] chars = "0123".toCharArray();
 

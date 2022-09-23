@@ -34,7 +34,7 @@ public class ClienteBD extends ClienteMD {
         }
     }
 
-    public boolean insertar() {
+    public boolean insertar()  {
         String sql = "INSERT INTO cliente(codigo, cedula,estado,profesion,trabajo)" + "VALUES ('" + getCodigo() + "','" + getCedula() + "','" + getEstado() + "','" + getProfesion()+ "','" + getTrabajo()+ "')";
 
         if (conectar.noQuery(sql) == null) {
