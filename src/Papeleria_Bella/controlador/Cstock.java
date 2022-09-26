@@ -36,7 +36,6 @@ public class Cstock {
         GenerarCodStock();
 
         vistastock.getButtonguardar().addActionListener(x -> guardar());
-        vistastock.getButtonbuscar().addActionListener(e -> buscar());
         vistastock.getButtonmodificar().addActionListener(e -> modificar());
 
         vistastock.getTablastock().addMouseListener(new MouseAdapter() {
@@ -47,7 +46,7 @@ public class Cstock {
 
         });
 
-        vistastock.getButtonbuscar().addActionListener(x -> buscar());
+        vistastock.getButtonbuscar1().addActionListener(x -> buscar());
         vistastock.getButtonnuevo().addActionListener(e -> nuevo());
         vistastock.getButtoneliminar().addActionListener(e -> eliminar());
         vistastock.getButtonguardar().setEnabled(false);

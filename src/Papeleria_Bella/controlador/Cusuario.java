@@ -43,6 +43,15 @@ public class Cusuario {
         vistau.getButtonmodificar().addActionListener(e -> modificar());
         vistau.getButtonimprimir().addActionListener(e -> imprimir());
         vistau.getComborol().setModel(busuario.ROL());
+        vistau.getButtonmodificar().setEnabled(false);
+        vistau.getButtonguardar().setEnabled(false);
+        
+
+        vistau.getTxtcedula().setEnabled(false);
+        vistau.getTxtusuario().setEnabled(false);
+        vistau.getPassword().setEnabled(false);
+        vistau.getComborol().setEnabled(false);
+        vistau.getComboestado().setEnabled(false);
         vistau.getTablausuario().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -54,14 +63,8 @@ public class Cusuario {
         vistau.getButtonbuscar().addActionListener(x -> buscar());
         vistau.getButtonnuevo().addActionListener(e -> nuevo());
         vistau.getButtoneliminar().addActionListener(e -> eliminar());
-        vistau.getButtonguardar().setEnabled(false);
-        vistau.getButtonmodificar().setEnabled(false);
         
-
-        vistau.getTxtcedula().setEnabled(false);
-        vistau.getTxtusuario().setEnabled(false);
-        vistau.getComborol().setEnabled(false);
-        vistau.getComboestado().setEnabled(false);
+        
 
         lista();
     }
@@ -104,6 +107,7 @@ public class Cusuario {
             lista();
             vistau.getTxtcedula().setEnabled(false);
         vistau.getTxtusuario().setEnabled(false);
+        vistau.getPassword().setEnabled(false);
         vistau.getComborol().setEnabled(false);
         vistau.getComboestado().setEnabled(false);
         } else {
@@ -113,6 +117,7 @@ public class Cusuario {
         vistau.getTxtusuario().setEnabled(false);
         vistau.getComborol().setEnabled(false);
         vistau.getComboestado().setEnabled(false);
+        vistau.getPassword().setEnabled(false);
         }
 
     }
@@ -132,6 +137,7 @@ public class Cusuario {
             vistau.getTxtcedula().setEnabled(false);
         vistau.getTxtusuario().setEnabled(false);
         vistau.getComborol().setEnabled(false);
+        vistau.getPassword().setEnabled(false);
         vistau.getComboestado().setEnabled(false);
 
         }
@@ -159,6 +165,7 @@ public class Cusuario {
         vistau.getTxtcedula().setEnabled(true);
         vistau.getTxtusuario().setEnabled(true);
         vistau.getComborol().setEnabled(true);
+        vistau.getPassword().setEnabled(true);
         vistau.getComboestado().setEnabled(true);
     }
 
@@ -172,6 +179,7 @@ public class Cusuario {
             vistau.getTxtcedula().setEnabled(false);
         vistau.getTxtusuario().setEnabled(false);
         vistau.getComborol().setEnabled(false);
+        vistau.getPassword().setEnabled(false);
         vistau.getComboestado().setEnabled(false);
 
         }
@@ -189,6 +197,7 @@ public class Cusuario {
         vistau.getTxtcedula().setEnabled(true);
         vistau.getTxtusuario().setEnabled(true);
         vistau.getComborol().setEnabled(true);
+        vistau.getPassword().setEnabled(true);
         vistau.getComboestado().setEnabled(true);
     }
 

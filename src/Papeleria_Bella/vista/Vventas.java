@@ -25,13 +25,7 @@ public class Vventas extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JButton getButtonbuscar2() {
-        return buttonbuscar2;
-    }
-
-    public void setButtonbuscar2(JButton buttonbuscar2) {
-        this.buttonbuscar2 = buttonbuscar2;
-    }
+    
 
     public JButton getButtonbuscarfactura() {
         return buttonbuscarfactura;
@@ -41,12 +35,12 @@ public class Vventas extends javax.swing.JFrame {
         this.buttonbuscarfactura = buttonbuscarfactura;
     }
 
-    public JButton getButtonbuscarproducto() {
-        return buttonbuscarproducto;
+    public JButton getButtonbuscarnombreproducto() {
+        return buttonbuscarnombreproducto;
     }
 
-    public void setButtonbuscarproducto(JButton buttonbuscarproducto) {
-        this.buttonbuscarproducto = buttonbuscarproducto;
+    public void setButtonbuscarnombreproducto(JButton buttonbuscarnombreproducto) {
+        this.buttonbuscarnombreproducto = buttonbuscarnombreproducto;
     }
 
     
@@ -296,16 +290,15 @@ public class Vventas extends javax.swing.JFrame {
         labelcodigo = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
         txtcantidad = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaventas = new javax.swing.JTable();
+        buttonbuscarnombreproducto = new javax.swing.JButton();
         buttonbuscarfactura = new javax.swing.JButton();
         buttonnuevo = new javax.swing.JButton();
         buttonguardar = new javax.swing.JButton();
         buttonmodificar = new javax.swing.JButton();
         buttoneliminar = new javax.swing.JButton();
         buttonimprimir = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaventas = new javax.swing.JTable();
-        buttonbuscarproducto = new javax.swing.JButton();
-        buttonbuscar2 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -313,7 +306,7 @@ public class Vventas extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Sitka Small", 3, 24)); // NOI18N
         jLabel1.setText("Ventas");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 100, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 90, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel2.setText("Cédula:");
@@ -321,23 +314,23 @@ public class Vventas extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel3.setText("IVA:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel4.setText("Total:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel5.setText("Cantidad:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel6.setText("Nombre Producto:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel7.setText("Valor Unitario:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel8.setText("Código:");
@@ -345,49 +338,20 @@ public class Vventas extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel9.setText("Buscar:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel10.setText("Nro. Factura:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
-        getContentPane().add(labeliva, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 80, 110, 22));
-        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 110, -1));
-        getContentPane().add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 130, 110, -1));
-        getContentPane().add(txtvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 110, -1));
-        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 110, -1));
-        getContentPane().add(labelnumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 110, 22));
-        getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 110, 22));
-        getContentPane().add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 180, 110, -1));
-        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 110, -1));
-
-        buttonbuscarfactura.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonbuscarfactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_Analyze_20px_1.png"))); // NOI18N
-        getContentPane().add(buttonbuscarfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 180, 40, 23));
-
-        buttonnuevo.setBackground(new java.awt.Color(232, 255, 255));
-        buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add(3).png"))); // NOI18N
-        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 40, 40));
-
-        buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
-        buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
-        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 40, -1));
-
-        buttonmodificar.setBackground(new java.awt.Color(232, 255, 255));
-        buttonmodificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
-        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 50, 40));
-
-        buttoneliminar.setBackground(new java.awt.Color(232, 255, 255));
-        buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
-        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, 40, 40));
-
-        buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
-        buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-imprimir-32.png"))); // NOI18N
-        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 550, 50, 40));
+        getContentPane().add(labeliva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 110, 22));
+        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 110, -1));
+        getContentPane().add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 110, -1));
+        getContentPane().add(txtvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 110, -1));
+        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 110, -1));
+        getContentPane().add(labelnumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 110, 22));
+        getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 110, 22));
+        getContentPane().add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 110, -1));
+        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 110, -1));
 
         tablaventas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -402,19 +366,56 @@ public class Vventas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaventas);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 600, 292));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 580, 270));
 
-        buttonbuscarproducto.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonbuscarproducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_Analyze_20px_1.png"))); // NOI18N
-        getContentPane().add(buttonbuscarproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 40, 23));
+        buttonbuscarnombreproducto.setBackground(new java.awt.Color(232, 255, 255));
+        buttonbuscarnombreproducto.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonbuscarnombreproducto.setForeground(new java.awt.Color(55, 107, 160));
+        buttonbuscarnombreproducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
+        getContentPane().add(buttonbuscarnombreproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 40, 20));
 
-        buttonbuscar2.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonbuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_Analyze_20px_1.png"))); // NOI18N
-        getContentPane().add(buttonbuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 40, 23));
+        buttonbuscarfactura.setBackground(new java.awt.Color(232, 255, 255));
+        buttonbuscarfactura.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonbuscarfactura.setForeground(new java.awt.Color(55, 107, 160));
+        buttonbuscarfactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
+        getContentPane().add(buttonbuscarfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 40, 20));
+
+        buttonnuevo.setBackground(new java.awt.Color(232, 255, 255));
+        buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonnuevo.setForeground(new java.awt.Color(55, 107, 160));
+        buttonnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add(3).png"))); // NOI18N
+        buttonnuevo.setText("Nuevo");
+        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 130, 40));
+
+        buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
+        buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonguardar.setForeground(new java.awt.Color(55, 107, 160));
+        buttonguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
+        buttonguardar.setText("Guardar");
+        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 130, 40));
+
+        buttonmodificar.setBackground(new java.awt.Color(232, 255, 255));
+        buttonmodificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonmodificar.setForeground(new java.awt.Color(55, 107, 160));
+        buttonmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
+        buttonmodificar.setText("Modificar");
+        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, 130, 40));
+
+        buttoneliminar.setBackground(new java.awt.Color(232, 255, 255));
+        buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttoneliminar.setForeground(new java.awt.Color(55, 107, 160));
+        buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
+        buttoneliminar.setText("Eliminar");
+        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 130, 130, 40));
+
+        buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
+        buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5)_1.png"))); // NOI18N
+        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 420, 50, 40));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 620));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -425,9 +426,8 @@ public class Vventas extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonbuscar2;
     private javax.swing.JButton buttonbuscarfactura;
-    private javax.swing.JButton buttonbuscarproducto;
+    private javax.swing.JButton buttonbuscarnombreproducto;
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
     private javax.swing.JButton buttonimprimir;

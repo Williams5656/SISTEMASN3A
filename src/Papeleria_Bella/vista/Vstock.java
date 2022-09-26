@@ -25,12 +25,12 @@ public class Vstock extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JButton getButtonbuscar() {
-        return buttonbuscar;
+    public JButton getButtonbuscar1() {
+        return buttonbuscar1;
     }
 
-    public void setButtonbuscar(JButton buttonbuscar) {
-        this.buttonbuscar = buttonbuscar;
+    public void setButtonbuscar1(JButton buttonbuscar1) {
+        this.buttonbuscar1 = buttonbuscar1;
     }
 
     public JButton getButtoneliminar() {
@@ -176,7 +176,6 @@ public class Vstock extends javax.swing.JFrame {
         labelcodigo = new javax.swing.JLabel();
         txtnom_producto = new javax.swing.JTextField();
         txtstock = new javax.swing.JTextField();
-        buttonbuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablastock = new javax.swing.JTable();
         buttonnuevo = new javax.swing.JButton();
@@ -184,6 +183,7 @@ public class Vstock extends javax.swing.JFrame {
         buttonmodificar = new javax.swing.JButton();
         buttoneliminar = new javax.swing.JButton();
         buttonimprimir = new javax.swing.JButton();
+        buttonbuscar1 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -213,11 +213,6 @@ public class Vstock extends javax.swing.JFrame {
         getContentPane().add(txtnom_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, 130, -1));
         getContentPane().add(txtstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 130, -1));
 
-        buttonbuscar.setBackground(new java.awt.Color(232, 255, 255));
-        buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
-        getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 130, 30, 30));
-
         tablastock.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -235,28 +230,42 @@ public class Vstock extends javax.swing.JFrame {
 
         buttonnuevo.setBackground(new java.awt.Color(232, 255, 255));
         buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonnuevo.setForeground(new java.awt.Color(55, 107, 160));
         buttonnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add(3).png"))); // NOI18N
-        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 50, 40));
+        buttonnuevo.setText("Nuevo");
+        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 130, 40));
 
         buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
         buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonguardar.setForeground(new java.awt.Color(55, 107, 160));
         buttonguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
-        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 50, -1));
+        buttonguardar.setText("Guardar");
+        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 130, 40));
 
         buttonmodificar.setBackground(new java.awt.Color(232, 255, 255));
         buttonmodificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonmodificar.setForeground(new java.awt.Color(55, 107, 160));
         buttonmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
-        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 60, 40));
+        buttonmodificar.setText("Modificar");
+        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 130, 40));
 
         buttoneliminar.setBackground(new java.awt.Color(232, 255, 255));
         buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttoneliminar.setForeground(new java.awt.Color(55, 107, 160));
         buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
-        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 50, 40));
+        buttoneliminar.setText("Eliminar");
+        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 130, 40));
 
         buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
         buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-imprimir-32.png"))); // NOI18N
-        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 430, 40, 40));
+        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5)_1.png"))); // NOI18N
+        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 480, 50, 40));
+
+        buttonbuscar1.setBackground(new java.awt.Color(232, 255, 255));
+        buttonbuscar1.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonbuscar1.setForeground(new java.awt.Color(55, 107, 160));
+        buttonbuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
+        getContentPane().add(buttonbuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 40, 20));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
@@ -271,7 +280,7 @@ public class Vstock extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonbuscar;
+    private javax.swing.JButton buttonbuscar1;
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
     private javax.swing.JButton buttonimprimir;

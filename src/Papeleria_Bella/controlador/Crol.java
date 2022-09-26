@@ -35,7 +35,7 @@ public class Crol {
         CodigoRol();
         lista();
         vista.getButtonguardar().addActionListener(x -> guardar());
-        vista.getButtonbuscar().addActionListener(e -> buscar());
+        vista.getButtonbuscar1().addActionListener(e -> buscar());
         vista.getButtonmodificar().addActionListener(e -> modificar());
         vista.getButtonimprimir().addActionListener(e -> imprimir());
         vista.getTablarol().addMouseListener(new MouseAdapter() {
