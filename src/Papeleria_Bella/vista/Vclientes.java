@@ -325,8 +325,8 @@ public class Vclientes extends javax.swing.JFrame {
 
         buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
         buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-imprimir-32.png"))); // NOI18N
-        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 510, 30, 40));
+        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5).png"))); // NOI18N
+        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 540, 50, -1));
 
         buttonbuscar.setBackground(new java.awt.Color(232, 255, 255));
         buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N

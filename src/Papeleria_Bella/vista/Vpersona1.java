@@ -246,6 +246,7 @@ public class Vpersona1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonbuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -270,9 +271,14 @@ public class Vpersona1 extends javax.swing.JFrame {
         buttoneliminar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
-        buttonbuscar = new javax.swing.JButton();
         buttonimprimir = new javax.swing.JButton();
+        buttonbuscar1 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
+
+        buttonbuscar.setBackground(new java.awt.Color(232, 255, 255));
+        buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonbuscar.setForeground(new java.awt.Color(55, 107, 160));
+        buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(178, 255, 255));
@@ -335,48 +341,58 @@ public class Vpersona1 extends javax.swing.JFrame {
 
         buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
         buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonguardar.setForeground(new java.awt.Color(55, 107, 160));
         buttonguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
-        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 40, -1));
+        buttonguardar.setText("Guardar");
+        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 130, 40));
 
         buttonmodificar.setBackground(new java.awt.Color(232, 255, 255));
         buttonmodificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonmodificar.setForeground(new java.awt.Color(55, 107, 160));
         buttonmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
-        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 50, 40));
+        buttonmodificar.setText("Modificar");
+        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 130, 40));
 
         buttonnuevo.setBackground(new java.awt.Color(232, 255, 255));
         buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonnuevo.setForeground(new java.awt.Color(55, 107, 160));
         buttonnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add(3).png"))); // NOI18N
-        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 40, 40));
+        buttonnuevo.setText("Nuevo");
+        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 130, 40));
 
         buttoncargar.setBackground(new java.awt.Color(232, 255, 255));
         buttoncargar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttoncargar.setForeground(new java.awt.Color(55, 107, 160));
         buttoncargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/photo-camera.png"))); // NOI18N
         buttoncargar.setText("Cargar Foto");
-        getContentPane().add(buttoncargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, 40));
+        getContentPane().add(buttoncargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 140, 30));
 
         buttoneliminar.setBackground(new java.awt.Color(232, 255, 255));
         buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttoneliminar.setForeground(new java.awt.Color(55, 107, 160));
         buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
-        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 40, 40));
+        buttoneliminar.setText("Eliminar");
+        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 130, 40));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel8.setText("Buscar:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, -1, -1));
-        getContentPane().add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, 119, -1));
-
-        buttonbuscar.setBackground(new java.awt.Color(232, 255, 255));
-        buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
-        getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 40, 50, 40));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 30, -1, -1));
+        getContentPane().add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 140, -1));
 
         buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
         buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-imprimir-32.png"))); // NOI18N
+        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5)_1.png"))); // NOI18N
         getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 550, 50, 40));
+
+        buttonbuscar1.setBackground(new java.awt.Color(232, 255, 255));
+        buttonbuscar1.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonbuscar1.setForeground(new java.awt.Color(55, 107, 160));
+        buttonbuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
+        getContentPane().add(buttonbuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 30, 40, 20));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 1070, 660));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -388,6 +404,7 @@ public class Vpersona1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonbuscar;
+    private javax.swing.JButton buttonbuscar1;
     private javax.swing.JButton buttoncargar;
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
