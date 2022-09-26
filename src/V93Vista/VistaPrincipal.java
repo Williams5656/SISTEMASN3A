@@ -1,29 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package V93Vista;
 
 import javax.swing.JMenuItem;
 
-/**
- *
- * @author Usuario
- */
 public class VistaPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VistaPrincipal
-     */
     public VistaPrincipal() {
         initComponents();
-        
-        
-        
-        
-        
-        
+
+    }
+
+    public JMenuItem getBtn_Cotizacion() {
+        return Btn_Cotizacion;
+    }
+
+    public void setBtn_Cotizacion(JMenuItem Btn_Cotizacion) {
+        this.Btn_Cotizacion = Btn_Cotizacion;
     }
 
     public JMenuItem getNuevaVenta() {
@@ -117,6 +108,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         NuevaFactura = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         NuevaVenta = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        Btn_Cotizacion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -187,6 +180,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu8);
 
+        jMenu9.setText("Cotizacion");
+
+        Btn_Cotizacion.setText("Ver");
+        jMenu9.add(Btn_Cotizacion);
+
+        jMenuBar1.add(jMenu9);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -239,6 +239,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Btn_Cotizacion;
     private javax.swing.JMenuItem NuevaFactura;
     private javax.swing.JMenuItem NuevaVenta;
     private javax.swing.JMenuItem NuevoCliente;
@@ -254,6 +255,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem nuevoPersona;
     private javax.swing.JMenuItem nuevoUsuario;

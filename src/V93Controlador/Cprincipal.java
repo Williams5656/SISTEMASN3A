@@ -29,8 +29,11 @@ public class Cprincipal {
         CPersonas cr = new CPersonas(vr);
 
     }
-
-    private void usuarios() {
+private void cotizacion(){
+    VistaCotizacion vc=new VistaCotizacion();
+    CCotizacion cc=new CCotizacion(vc);
+}
+private void usuarios() {
         VistaUsuario vuser = new VistaUsuario();
         CUsuarios cuser = new CUsuarios(vuser);
 
