@@ -44,6 +44,7 @@ public class CCotizacion {
     DefaultTableModel tmp = new DefaultTableModel();
     Eventos event = new Eventos();
     DefaultTableModel modelo = new DefaultTableModel();
+    List<Object> listadetalle = new ArrayList();
 
     public CCotizacion(VistaCotizacion Vista) {
         this.VistaCotizacion = Vista;
@@ -191,19 +192,19 @@ public class CCotizacion {
                         }
                     }
 
-                    ArrayList lista = new ArrayList();
-                    lista.add(item);
-                    lista.add(cod);
-                    lista.add(descripcion);
-                    lista.add(cant);
-                    lista.add(precio);
-                    lista.add(total);
+                    
+                    listadetalle.add(item);
+                    listadetalle.add(cod);
+                    listadetalle.add(descripcion);
+                    listadetalle.add(cant);
+                    listadetalle.add(precio);
+                    listadetalle.add(total);
                     Object[] o = new Object[5];
-                    o[0] = lista.get(1);
-                    o[1] = lista.get(2);
-                    o[2] = lista.get(3);
-                    o[3] = lista.get(4);
-                    o[4] = lista.get(5);
+                    o[0] = listadetalle.get(1);
+                    o[1] = listadetalle.get(2);
+                    o[2] = listadetalle.get(3);
+                    o[3] = listadetalle.get(4);
+                    o[4] = listadetalle.get(5);
                     tmp.addRow(o);
                     VistaCotizacion.getTableFactura().setModel(tmp);
                     Totalpagar();
@@ -253,39 +254,39 @@ public class CCotizacion {
     private void btnGenerarFacturaActionPerformed() {
         if (VistaCotizacion.getTableFactura().getRowCount() > 0) {
             if (!"".equals(VistaCotizacion.getTxtNombreClienteFactura().getText())) {
-               Conectar con = new Conectar();
-        try {
-            String vendedor=VistaCotizacion.getLabelVendedorFactura().getText();
-            String codigo = "";
-            String descripcion = "";
-            String cantidad="";
-            String precio="";
-            String total="";
-            for (int i = 0; i < VistaCotizacion.getTableFactura().getRowCount(); i++) {
-                 codigo=(String) VistaCotizacion.getTableFactura().getValueAt(i,0);
-                 descripcion=(String) VistaCotizacion.getTableFactura().getValueAt(i,1);
-                 cantidad=(String) VistaCotizacion.getTableFactura().getValueAt(i,2);
-                 precio=(String) VistaCotizacion.getTableFactura().getValueAt(i,3);
-                 total=(String) VistaCotizacion.getTableFactura().getValueAt(i,4);
-            }
-            
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/Cotizacion.jasper"));
-               
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("codigo", codigo);
-            map.put("descripcion", descripcion);
-            map.put("cantidad", cantidad);
-            map.put("precio", precio);
-            map.put("total", total);
-            map.put("vendedor",vendedor);
-            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
-            JasperViewer jv = new JasperViewer(ja, false);
-            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            jv.setVisible(true);
-        } catch (JRException e) {
-            System.out.println("no se pudo encontrar registros" + e.getMessage());
-            Logger.getLogger(CCotizacion.class.getName()).log(Level.SEVERE, null, e);
-        }
+                Conectar con = new Conectar();
+                try {
+                    String vendedor = VistaCotizacion.getLabelVendedorFactura().getText();
+                    Object codigo = "";
+                    Object descripcion = "";
+                    Object cantidad = "";
+                    Object precio = "";
+                    Object total = "";
+                    for (int i = 0; i < VistaCotizacion.getTableFactura().getRowCount(); i++) {
+                        codigo = VistaCotizacion.getTableFactura().getValueAt(i, 0);
+                        descripcion = VistaCotizacion.getTableFactura().getValueAt(i, 1);
+                        cantidad = VistaCotizacion.getTableFactura().getValueAt(i, 2);
+                        precio = VistaCotizacion.getTableFactura().getValueAt(i, 3);
+                        total = VistaCotizacion.getTableFactura().getValueAt(i, 4);
+                    }
+
+                    JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/Cotizacion.jasper"));
+
+                    Map<String, Object> map = new HashMap<String, Object>();
+                    map.put("Codigo", listadetalle.get(1));
+                    map.put("descripcion", listadetalle.get(2));
+                    map.put("cantidad", listadetalle.get(3));
+                    map.put("precio", listadetalle.get(4));
+                    map.put("total", listadetalle.get(5));
+                    map.put("vendedor", vendedor);
+                    JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+                    JasperViewer jv = new JasperViewer(ja, false);
+                    jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+                    jv.setVisible(true);
+                } catch (JRException e) {
+                    System.out.println("no se pudo encontrar registros" + e.getMessage());
+                    Logger.getLogger(CCotizacion.class.getName()).log(Level.SEVERE, null, e);
+                }
                 LimpiarTableVenta();
                 LimpiarClienteVenta();
 
