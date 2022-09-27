@@ -6,7 +6,17 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     public VistaPrincipal() {
         initComponents();
+        
+        
 
+    }
+
+    public JMenuItem getNuevaEmpresa() {
+        return NuevaEmpresa;
+    }
+
+    public void setNuevaEmpresa(JMenuItem NuevaEmpresa) {
+        this.NuevaEmpresa = NuevaEmpresa;
     }
 
     public JMenuItem getBtn_Cotizacion() {
@@ -110,6 +120,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         NuevaVenta = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         Btn_Cotizacion = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        NuevaEmpresa = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,7 +129,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 621, Short.MAX_VALUE)
+            .addGap(0, 662, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,12 +192,19 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu8);
 
-        jMenu9.setText("Cotizacion");
+        jMenu9.setText("COTIZACION");
 
         Btn_Cotizacion.setText("Ver");
         jMenu9.add(Btn_Cotizacion);
 
         jMenuBar1.add(jMenu9);
+
+        jMenu10.setText("EMPRESA");
+
+        NuevaEmpresa.setText("NuevaEmpresa");
+        jMenu10.add(NuevaEmpresa);
+
+        jMenuBar1.add(jMenu10);
 
         setJMenuBar(jMenuBar1);
 
@@ -240,6 +259,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Btn_Cotizacion;
+    private javax.swing.JMenuItem NuevaEmpresa;
     private javax.swing.JMenuItem NuevaFactura;
     private javax.swing.JMenuItem NuevaVenta;
     private javax.swing.JMenuItem NuevoCliente;
@@ -248,6 +268,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem NuevoRol;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;

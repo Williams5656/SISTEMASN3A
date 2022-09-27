@@ -23,6 +23,7 @@ public class Cprincipal {
         Vista.getNuevaFactura().addActionListener(e -> factura());
          Vista.getNuevaVenta().addActionListener(e -> venta());
          Vista.getBtn_Cotizacion().addActionListener(e->cotizacion());
+          Vista.getNuevaEmpresa().addActionListener(e -> empresa());
     }
 
     private void personas() {
@@ -71,5 +72,11 @@ private void usuarios() {
      private void venta() {
         VistaVentas vvent = new VistaVentas();
         CVentas vent = new CVentas(vvent);
+    }
+     
+      private void empresa() {
+        VistaEmpresa emp = new VistaEmpresa();
+       CEmpresa cem = new CEmpresa(emp);
+
     }
 }

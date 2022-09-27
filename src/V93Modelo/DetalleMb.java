@@ -1,22 +1,21 @@
-
 package V93Modelo;
 
-
 public class DetalleMb {
-    
-    private int id;
-    private int cod_pro;
-    private int cantidad;
-    private double precio;
-    private int id_venta;
 
-    public DetalleMb(int id, int cod_pro, int cantidad, double precio, int id_venta) {
+    int id;
+    String cod_pro;
+    int cantidad;
+    double precio;
+    int id_venta;
+
+    public DetalleMb(int id, String cod_pro, int cantidad, double precio, int id_venta) {
         this.id = id;
         this.cod_pro = cod_pro;
         this.cantidad = cantidad;
         this.precio = precio;
         this.id_venta = id_venta;
     }
+
 
     public DetalleMb() {
     }
@@ -29,14 +28,15 @@ public class DetalleMb {
         this.id = id;
     }
 
-    public int getCod_pro() {
+    public String getCod_pro() {
         return cod_pro;
     }
 
-    public void setCod_pro(int cod_pro) {
+    public void setCod_pro(String cod_pro) {
         this.cod_pro = cod_pro;
     }
 
+    
     public int getCantidad() {
         return cantidad;
     }
@@ -60,7 +60,5 @@ public class DetalleMb {
     public void setId_venta(int id_venta) {
         this.id_venta = id_venta;
     }
-    
-    
-    
+
 }

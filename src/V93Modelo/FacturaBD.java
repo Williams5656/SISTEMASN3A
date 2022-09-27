@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class FacturaBD extends FacturaMb {
@@ -15,29 +17,33 @@ public class FacturaBD extends FacturaMb {
     PreparedStatement ps;
     ResultSet rs;
     int r;
-    
-    public int IdVenta(){
-        int id = 0;
-        String sql = "SELECT MAX(id) FROM venta";
-        try{
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            if(rs.next()){
-                id = rs.getInt(1);
+
+    public List<FacturaMb> mostrardatos() {
+        try {
+            List<FacturaMb> listafactura = new ArrayList<FacturaMb>();
+            String sql = "select * from venta";
+            ResultSet rs = cn.query(sql);
+            while (rs.next()) {
+                FacturaMb u = new FacturaMb();
+                u.setId(rs.getInt("CODIGO_VENTA"));
+                u.setCliente(rs.getString("cliente"));
+                u.setVendedor(rs.getString("vendedor"));
+                u.setTotal(rs.getDouble("total"));
+
+                listafactura.add(u);
             }
-        }catch (SQLException e){
-            System.out.println(e.toString());
+            rs.close();
+            return listafactura;
+        } catch (SQLException e) {
+            Logger.getLogger(FacturaBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
         }
-         return id;       
     }
 
-   
+    public boolean insertar() {
 
-        public boolean insertar() {
-     
-        String sql = "INSERT INTO venta(cliente,vendedor,total)  VALUES ('" + getCliente()+ "','" + getVendedor() + "','" + getTotal()+ "')";
-  
+        String sql = "INSERT INTO venta(cliente,vendedor,total)  VALUES ('" + getCliente() + "','" + getVendedor() + "','" + getTotal() + "')";
+
         if (cn.noQuery(sql) == null) {
             return true;
         } else {
@@ -46,72 +52,41 @@ public class FacturaBD extends FacturaMb {
             return false;
         }
 
-    
-        }
-    
-    public int RegistrarDetalle(DetalleMb Dv){
-         String sql = "INSERT INTO venta(cod_pro,cantidad,precio,id_venta) VALUES (?,?,?,?)";
-        try{
-             con = cn.getConnection();
-             ps = con.prepareStatement(sql);
-             ps.setInt(1, Dv.getCod_pro());
-             ps.setInt(2, Dv.getCantidad());
-             ps.setDouble(3, Dv.getPrecio());
-             ps.setInt(4, Dv.getId());
-             ps.execute();
-            
-        }catch(SQLException e){
-            System.out.println(e.toString());
-        }finally{
-            try{
-                con.close();
-            }catch (SQLException e){
-                System.out.println(e.toString());
-                
-                
-            }
-        }
-        return r;
     }
-    
-    public boolean ActualizarStock(int cant,String cod){
+
+    public boolean ActualizarStock(int cant, String cod) {
         String sql = "UPDATE producto SET stock = ? WHERE codigo = ?";
-        try{
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql);
+        try {
+            ps = cn.getCon().prepareStatement(sql);
             ps.setInt(1, cant);
             ps.setString(2, cod);
             ps.execute();
             return true;
-        }catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println(e.toString());
             return false;
         }
     }
-    
-    public List ListarVentas() {
-        List<FacturaMb> ListaVenta = new ArrayList();
-        String sql = "SELECT * FROM ventas";
-        try {
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
 
+    public List<FacturaMb> ListarVentas() {
+        try {
+            List<FacturaMb> listaventa = new ArrayList<FacturaMb>();
+            String sql = "select * from venta";
+            ResultSet rs = cn.query(sql);
             while (rs.next()) {
                 FacturaMb vent = new FacturaMb();
-                vent.setId(rs.getInt("id"));
+                vent.setId(rs.getInt("codigo_venta"));
                 vent.setCliente(rs.getString("cliente"));
                 vent.setVendedor(rs.getString("vendedor"));
                 vent.setTotal(rs.getDouble("total"));
-                ListaVenta.add(vent);
+                listaventa.add(vent);
             }
-
+            rs.close();
+            return listaventa;
         } catch (SQLException e) {
-            System.out.println(e.toString());
-
+            Logger.getLogger(ProveedorBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
         }
-        return ListaVenta;
-
     }
 
 }

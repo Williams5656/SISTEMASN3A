@@ -192,7 +192,6 @@ public class CCotizacion {
                         }
                     }
 
-                    
                     listadetalle.add(item);
                     listadetalle.add(cod);
                     listadetalle.add(descripcion);
@@ -263,17 +262,17 @@ public class CCotizacion {
                     Object precio = "";
                     Object total = "";
                     for (int i = 0; i < VistaCotizacion.getTableFactura().getRowCount(); i++) {
-                        codigo = VistaCotizacion.getTableFactura().getValueAt(i, 0);
-                        descripcion = VistaCotizacion.getTableFactura().getValueAt(i, 1);
-                        cantidad = VistaCotizacion.getTableFactura().getValueAt(i, 2);
-                        precio = VistaCotizacion.getTableFactura().getValueAt(i, 3);
-                        total = VistaCotizacion.getTableFactura().getValueAt(i, 4);
+                        codigo = VistaCotizacion.getTableFactura().getValueAt(i, 0).toString();
+                        descripcion = VistaCotizacion.getTableFactura().getValueAt(i, 1).toString();
+                        cantidad = VistaCotizacion.getTableFactura().getValueAt(i, 2).toString();
+                        precio = VistaCotizacion.getTableFactura().getValueAt(i, 3).toString();
+                        total = VistaCotizacion.getTableFactura().getValueAt(i, 4).toString();
                     }
 
                     JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/Cotizacion.jasper"));
-
+                          System.out.println(codigo);
                     Map<String, Object> map = new HashMap<String, Object>();
-                    map.put("Codigo", listadetalle.get(1));
+                    map.put("Codigo", codigo);
                     map.put("descripcion", listadetalle.get(2));
                     map.put("cantidad", listadetalle.get(3));
                     map.put("precio", listadetalle.get(4));
@@ -307,21 +306,7 @@ public class CCotizacion {
 
     }
 
-    private void RegistrarDetalle() {
-        int id = Vdao.IdVenta();
-        for (int i = 0; i < VistaCotizacion.getTableFactura().getRowCount(); i++) {
-            int cod = Integer.parseInt(VistaCotizacion.getTableFactura().getValueAt(i, 0).toString());
-            int cant = Integer.parseInt(VistaCotizacion.getTableFactura().getValueAt(i, 2).toString());
-            double precio = Double.parseDouble(VistaCotizacion.getTableFactura().getValueAt(i, 3).toString());
-            Dv.setCod_pro(cod);
-            Dv.setCantidad(cant);
-            Dv.setPrecio(precio);
-            Dv.setId(id);
-            Vdao.RegistrarDetalle(Dv);
-        }
-    }
 //     
-
     private void ActualizarStock() {
         for (int i = 0; i < VistaCotizacion.getTableFactura().getRowCount(); i++) {
             String cod = VistaCotizacion.getTableFactura().getValueAt(i, 0).toString();

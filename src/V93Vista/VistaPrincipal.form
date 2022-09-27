@@ -102,12 +102,24 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu9">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cotizacion"/>
+            <Property name="text" type="java.lang.String" value="COTIZACION"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="Btn_Cotizacion">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="EMPRESA"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="NuevaEmpresa">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="NuevaEmpresa"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -153,7 +165,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="621" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="662" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
