@@ -29,50 +29,15 @@ import org.postgresql.util.Base64;
  *
  * @author VICO5
  */
-public class clienteBD extends clienteMD{
-    
+public class clienteBD extends clienteMD {
+
     Conect conectar = new Conect();
 
     public clienteBD() {
     }
 
-    public clienteBD(String cedula, String nombre_apellido, String descripcion_cli, Image foto) {
-        super(cedula, nombre_apellido, descripcion_cli, foto);
-    }
-
-    
-
-    
-
-    public static BufferedImage toBufferedImage(Image img) {
-        if (img instanceof BufferedImage) {
-            return (BufferedImage) img;
-        }
-
-        // Create a buffered image with transparency
-        BufferedImage bimage = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
-
-        // Draw the image on to the buffered image
-        Graphics2D bGr = bimage.createGraphics();
-        bGr.drawImage(img, 0, 0, null);
-        bGr.dispose();
-
-        // Return the buffered image
-        return bimage;
-    }
-
-    private Image getImage(byte[] bytes, boolean isThumbnail) throws IOException {
-        ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
-        Iterator readers = ImageIO.getImageReadersByFormatName("png");
-        ImageReader reader = (ImageReader) readers.next();
-        Object source = bis; // File or InputStream
-        ImageInputStream iis = ImageIO.createImageInputStream(source);
-        reader.setInput(iis, true);
-        ImageReadParam param = reader.getDefaultReadParam();
-        if (isThumbnail) {
-            param.setSourceSubsampling(4, 4, 0, 0);
-        }
-        return reader.read(0, param);
+    public clienteBD(int codigo, String cedula, String nombre, String telefono, String alergias, String enfermedades, String direccion) {
+        super(codigo, cedula, nombre, telefono, alergias, enfermedades, direccion);
     }
 
     public List<clienteMD> mostrardatos() {
@@ -82,145 +47,178 @@ public class clienteBD extends clienteMD{
             String sql = "select * from cliente";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-
                 clienteMD cliente = new clienteMD();
+
+                cliente.setCodigo(rs.getInt("codigo"));
                 cliente.setCedula(rs.getString("cedula"));
-                cliente.setNombre_apellido(rs.getString("nombre_apellido"));
-                cliente.setDescripcion_cli(rs.getString("descripcion_cli"));
-               
-
-                byte[] is;
-                is = rs.getBytes("foto");
-                if (is != null) {
-                    try {
-                        is = Base64.decode(is, 0, rs.getBytes("foto").length);
-//                    BufferedImage bi=Base64.decode( ImageIO.read(is));
-                       cliente.setFoto(getImage(is, false));
-                    } catch (Exception ex) {
-                        cliente.setFoto(null);
-                        Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    cliente.setFoto(null);
-                }
-
+                cliente.setNombre(rs.getString("nombres"));
+                cliente.setTelefono(rs.getString("telefono"));
+                cliente.setAlergias(rs.getString("alergias"));
+                cliente.setEnfermedades(rs.getString("enfermedades"));
+                cliente.setDireccion(rs.getString("direccion"));
                 lista.add(cliente);
             }
 
             rs.close();
             return lista;
         } catch (SQLException e) {
-            Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(clienteBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }
 
     public boolean insertar() {
-
-        String ef = null;
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        try {
-            BufferedImage img = toBufferedImage(getFoto());
-            ImageIO.write(img, "PNG", bos);
-            byte[] imgb = bos.toByteArray();
-            ef = Base64.encodeBytes(imgb);
-        } catch (IOException ex) {
-            Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        String sql = "INSERT INTO cliente(cedula, nombre_apellido, descripcion_cli, foto)"
-                + "VALUES ('"
-                + getCedula()+ "','"
-                + getNombre_apellido().toUpperCase() + "','"
-                + getDescripcion_cli().toUpperCase() + "','"
-                + ef + "')";
+        String sql = "INSERT INTO cliente(codigo, cedula, nombres, telefono, alergias, enfermedades, direccion)"
+                + "VALUES ("
+                + getCodigo() + ",'"
+                + getCedula() + "','"
+                + getNombre() + "','"
+                + getTelefono() + "','"
+                + getAlergias() + "','"
+                + getEnfermedades() + "','"
+                + getDireccion() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {
-
-            JOptionPane.showMessageDialog(null, "ERROR");
+            JOptionPane.showMessageDialog(null, "Error");
             return false;
         }
     }
 
-    public boolean modificar(String cedula) {
-
-        String ef = null;
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        try {
-            BufferedImage img = toBufferedImage(getFoto());
-            ImageIO.write(img, "PNG", bos);
-            byte[] imgb = bos.toByteArray();
-            ef = Base64.encodeBytes(imgb);
-        } catch (IOException ex) {
-            Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+    public boolean modificar(int codigo) {
         String sql = "update cliente set "
-                + "nombre_apellido = '" + getNombre_apellido().toUpperCase() + "', "
-                + "descripcion_cli = '" + getDescripcion_cli().toUpperCase() + "', "
-                + "foto = '" + ef + "' "
-                + "where cedula = '" + cedula + "'";
+                + "cedula = '" + getCedula() + "', "
+                
+                + "nombres = '" + getNombre() + "', "
+                
+                + "telefono = '" + getTelefono() + "', "
+                
+                + "alergias = '" + getAlergias() + "', "
+                
+                + " enfermedades = '" + getEnfermedades() + "', "
+                
+                + "direccion = '" + getDireccion() + "' "
+                
+                + "where codigo = " + codigo;
 
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {
-            System.out.println("error al editar");
+            JOptionPane.showMessageDialog(null, "error al editar");
 
             return false;
         }
     }
 
-    public List<clienteMD> obtenerDatos(String id_producto) {
-        List<clienteMD> lista = new ArrayList<clienteMD>();
+    public List<clienteMD> obtenerDatos(int codigo) {
+
         try {
-            
+            List<clienteMD> lista = new ArrayList<clienteMD>();
             String sql
                     = "select * from cliente "
-                    + "where cedula ILIKE '%" + id_producto + "%'";
+                    + "where codigo = " + codigo;
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-               clienteMD cliente = new clienteMD();
-
+                clienteMD cliente = new clienteMD();
+                cliente.setCodigo(rs.getInt("codigo"));
                 cliente.setCedula(rs.getString("cedula"));
-                cliente.setNombre_apellido(rs.getString("nombre_apellido"));
-                cliente.setDescripcion_cli(rs.getString("descripcion_cli"));
-               
-                byte[] is;
-                is = rs.getBytes("foto");
-                if (is != null) {
-                    try {
-                        is = Base64.decode(is, 0, rs.getBytes("foto").length);
-//                    BufferedImage bi=Base64.decode( ImageIO.read(is));
-                        cliente.setFoto(getImage(is, false));
-                    } catch (Exception ex) {
-                        cliente.setFoto(null);
-                        Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    cliente.setFoto(null);
-                }
-
+                cliente.setNombre(rs.getString("nombres"));
+                cliente.setTelefono(rs.getString("telefono"));
+                cliente.setAlergias(rs.getString("alergias"));
+                cliente.setEnfermedades(rs.getString("enfermedades"));
+                cliente.setDireccion(rs.getString("direccion"));
                 lista.add(cliente);
             }
 
             rs.close();
             return lista;
         } catch (SQLException e) {
-            Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(clienteBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }
 
-    public boolean eliminar(String id_producto) {
-        String nsql = "Delete from cliente where cedula= '" + id_producto+ "'";
+    public boolean eliminar(Integer codigo) {
+        String nsql = "Delete from cliente where codigo = " + codigo + "";
         if (conectar.noQuery(nsql) == null) {
             return true;
         } else {
             JOptionPane.showConfirmDialog(null, "Error al eliminar");
             return false;
         }
+
     }
-    
+
+    public List<Integer> obtenerCodigoActual() {
+
+        try {
+            List<Integer> lista = new ArrayList<Integer>();
+            String sql
+                    = "select max(codigo) codigo_maximo from cliente ";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                lista.add(rs.getInt("codigo_maximo"));
+            }
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(clienteBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
+
+    public List<clienteMD> obtenerDatosPorNombre(String nombre) {
+
+        try {
+            List<clienteMD> lista = new ArrayList<clienteMD>();
+            String sql
+                    = "select * from cliente "
+                    + "where nombres LIKE '%" + nombre + "%'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                 clienteMD cliente = new clienteMD();
+                cliente.setCodigo(rs.getInt("codigo"));
+                cliente.setCedula(rs.getString("cedula"));
+                cliente.setNombre(rs.getString("nombres"));
+                cliente.setTelefono(rs.getString("telefono"));
+                cliente.setAlergias(rs.getString("alergias"));
+                cliente.setEnfermedades(rs.getString("enfermedades"));
+                cliente.setDireccion(rs.getString("direccion"));
+                lista.add(cliente);
+            }
+     
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(clienteBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
+
+    public clienteMD obtenerUsuario(String nombrecliente) {
+        try {
+            String sql
+                    = "select * from cliente " + nombrecliente + "'";
+            ResultSet rs = conectar.query(sql);
+            if (rs.next()) {
+                 clienteMD cliente = new clienteMD();
+                cliente.setCodigo(rs.getInt("codigo"));
+                cliente.setCedula(rs.getString("cedula"));
+                cliente.setNombre(rs.getString("nombres"));
+                cliente.setTelefono(rs.getString("telefono"));
+                cliente.setAlergias(rs.getString("alergias"));
+                cliente.setEnfermedades(rs.getString("enfermedades"));
+                cliente.setDireccion(rs.getString("direccion"));
+                
+                return cliente;
+                
+            }
+            rs.close();
+            return null;
+        } catch (SQLException e) {
+            Logger.getLogger(usuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
 }

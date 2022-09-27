@@ -5,8 +5,8 @@
  */
 package Main;
 
-import Controlador.cprincipal;
-import Vista.vprincipal;
+import Controlador.cinicio;
+import Vista.v_inicio;
 
 /**
  *
@@ -14,8 +14,8 @@ import Vista.vprincipal;
  */
 public class main {
     public static void main(String[] args) {
-        vprincipal vista = new vprincipal();
-        cprincipal inicio = new cprincipal(vista);
+        v_inicio vista = new v_inicio();
+        cinicio inicio = new cinicio(vista);
     }
     
     

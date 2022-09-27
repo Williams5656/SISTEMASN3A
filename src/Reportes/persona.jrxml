@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a0f77d1c-ec68-450f-87d6-bfd6074c735a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="reportperson" uuid="4976e6d5-23ff-4aa8-8d53-bfe2535a919e">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     persona."cedula" AS persona_cedula,
+     persona."nombres" AS persona_nombres,
+     persona."direccion" AS persona_direccion,
+     persona."telefono" AS persona_telefono,
+     persona."correo" AS persona_correo,
+     persona."fecha_nacimiento" AS persona_fecha_nacimiento,
+     persona."foto" AS persona_foto
+FROM
+     "public"."persona" persona]]>
+		</queryString>
+		<field name="persona_cedula" class="java.lang.String"/>
+		<field name="persona_nombres" class="java.lang.String"/>
+		<field name="persona_direccion" class="java.lang.String"/>
+		<field name="persona_telefono" class="java.lang.String"/>
+		<field name="persona_correo" class="java.lang.String"/>
+		<field name="persona_fecha_nacimiento" class="java.lang.String"/>
+		<field name="persona_foto" class="java.lang.Object"/>
+	</subDataset>
+	<subDataset name="Table Dataset 1" uuid="faa725d5-4c9f-471e-a1c9-e18ebf496d7b"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     persona."cedula" AS persona_cedula,
+     persona."nombres" AS persona_nombres,
+     persona."direccion" AS persona_direccion,
+     persona."telefono" AS persona_telefono,
+     persona."correo" AS persona_correo,
+     persona."fecha_nacimiento" AS persona_fecha_nacimiento,
+     persona."foto" AS persona_foto
+FROM
+     "public"."persona" persona]]>
+	</queryString>
+	<field name="persona_cedula" class="java.lang.String"/>
+	<field name="persona_nombres" class="java.lang.String"/>
+	<field name="persona_direccion" class="java.lang.String"/>
+	<field name="persona_telefono" class="java.lang.String"/>
+	<field name="persona_correo" class="java.lang.String"/>
+	<field name="persona_fecha_nacimiento" class="java.lang.String"/>
+	<field name="persona_foto" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<image hyperlinkTarget="Blank">
+				<reportElement x="94" y="0" width="71" height="37" uuid="cc8d96a7-8f1e-4790-a9db-6f4ca0f2b02c"/>
+				<anchorNameExpression><![CDATA[$P{logo}]]></anchorNameExpression>
+			</image>
+			<staticText>
+				<reportElement x="241" y="0" width="113" height="40" uuid="2592c6d5-8686-4e04-a604-87e755635859"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[**-FARMACIA-**]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="39" forecolor="#3333FF" backcolor="#006699" uuid="316b704c-9861-4cc9-b51f-e6f8d8c45d67"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="176" y="5" width="178" height="28" uuid="39b88a67-a049-4a8a-8204-33d249298783"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[***REPORTE DE PERSONAS**]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="121" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="0" y="0" width="540" height="100" uuid="a0da70da-514a-4c70-977d-ff9d9f7525e0"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 1" uuid="c2b661f2-edc5-4bfe-9be7-22ad140b1def">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="76" uuid="78eb3619-3ea3-4b40-a628-fc002c540836">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="f7e015e9-7190-4aa5-895d-c7caeb8892f8"/>
+								<textElement verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[CEDULA]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="82" uuid="5914a710-8234-43bc-b531-b2d7daaa0c41">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="63" height="30" uuid="05166490-2ba6-44c4-8eb9-4c173b3c5ff1"/>
+								<textElement verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[NOMBRES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="81" uuid="84803001-6066-42e0-9b85-466c237906a3">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="72" height="30" uuid="8e0299d8-37ef-48d0-9061-b5006ad28cfa"/>
+								<textElement verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[DIRRECCION]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="77a6863a-ab85-456f-8d35-6223f1e27c0e">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="65" height="30" uuid="f7c19806-df03-48ee-b067-0ebdd532d3e6"/>
+								<textElement verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[TELEFONO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="84" uuid="0c573462-913d-4b62-a6ea-51dcf006220d">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="73" height="30" uuid="e270c58c-8762-4a18-8ea6-ba8d36129303"/>
+								<textElement verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[CORREO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="802d0965-202c-405d-b81c-56e1db010b4d">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="1a4280d6-57da-4b18-8929-701999cb4dd3"/>
+								<textElement verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[FECHA NACIMIENTO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement x="0" y="29" width="81" height="20" uuid="8e92ed97-bd0c-41b5-be60-c82e5f78a677"/>
+				<textFieldExpression><![CDATA[$F{persona_cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="29" width="71" height="20" uuid="5869ea32-7e56-48be-a371-6dc7ec9070bc"/>
+				<textFieldExpression><![CDATA[$F{persona_nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="29" width="76" height="20" uuid="00e047f2-505f-4772-93f0-2804f87cbae5"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{persona_direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="29" width="95" height="20" uuid="f6fddf0e-8d4f-47eb-9826-633845e5b7d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{persona_telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="29" width="90" height="20" uuid="b6864a65-0bb9-47b1-a510-5f8ee4369832"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{persona_correo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="29" width="100" height="20" uuid="f4ac2e6f-2907-4d69-a4f3-ee751ca5e6e8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{persona_fecha_nacimiento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="56" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

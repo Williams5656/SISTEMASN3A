@@ -17,9 +17,7 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -28,8 +26,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
-
-
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -51,12 +47,13 @@ public class cpersona {
         this.vista = vista;
         vista.setVisible(true);
         lista();
+        validar();
 
         vista.getBtn_nuevo().addActionListener(e -> nuevo());
         vista.getBtn_guardar().addActionListener(e -> guardar());
         vista.getBtn_modificar().addActionListener(e -> modificar());
         vista.getBtn_eliminar().addActionListener(e -> eliminar());
-        vista.getBtn_imprimir().addActionListener(e -> imprimir());
+        vista.getBtnimprimir().addActionListener(e -> imprimir());
         vista.getBtn_foto().addActionListener(e -> foto());
         vista.getTxt_buscar().addKeyListener(new KeyAdapter() {
             public void keyReleased(KeyEvent evt) {
@@ -68,6 +65,7 @@ public class cpersona {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionar();
+                imprimir();
             }
         });
 
@@ -77,6 +75,7 @@ public class cpersona {
         vista.getTxt_telefono().setEnabled(false);
         vista.getTxt_correo().setEnabled(false);
         vista.getTxt_calendar().setEnabled(false);
+        
         vista.getBtn_foto().setEnabled(false);
         vista.getBtn_guardar().setEnabled(false);
         vista.getBtn_modificar().setEnabled(false);
@@ -102,7 +101,7 @@ public class cpersona {
             vista.getTabla_persona().setValueAt(lista.get(i).getTelefono(), i, 3);
             vista.getTabla_persona().setValueAt(lista.get(i).getCorreo(), i, 4);
             vista.getTabla_persona().setValueAt(lista.get(i).getFechanac(), i, 5);
-            vista.getTabla_persona().setValueAt(lista.get(i).getFoto(), i, 6);
+//            vista.getTabla_persona().setValueAt(lista.get(i).getFoto(), i, 6);
         }
 
     }
@@ -119,28 +118,35 @@ public class cpersona {
         vista.getBtn_guardar().setEnabled(true);
         vista.getBtn_modificar().setEnabled(true);
         vista.getBtn_eliminar().setEnabled(true);
+        vista.getBtnimprimir().setEnabled(true);
 
     }
 
     private void guardar() {
         SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
 
-        bdpersona.setCedula(vista.getTxt_cedula().getText());
-        bdpersona.setNombres(vista.getTxt_nombres().getText());
-        bdpersona.setDireccion(vista.getTxt_direccion().getText());
-        bdpersona.setTelefono(vista.getTxt_telefono().getText());
-        bdpersona.setCorreo(vista.getTxt_correo().getText());
-        bdpersona.setFechanac(f.format(vista.getTxt_calendar().getDate()));
-        ImageIcon ic = (ImageIcon) vista.getFoto().getIcon();
-        bdpersona.setFoto(ic.getImage());
+        personaMD mdPersona=bdpersona.obtenerPersonaPorCedula(vista.getTxt_cedula().getText());
+        if(mdPersona==null){
+            bdpersona.setCedula(vista.getTxt_cedula().getText());
+            bdpersona.setNombres(vista.getTxt_nombres().getText());
+            bdpersona.setDireccion(vista.getTxt_direccion().getText());
+            bdpersona.setTelefono(vista.getTxt_telefono().getText());
+            bdpersona.setCorreo(vista.getTxt_correo().getText());
+            bdpersona.setFechanac(f.format(vista.getTxt_calendar().getDate()));
+            ImageIcon ic = (ImageIcon) vista.getFoto().getIcon();
+            bdpersona.setFoto(ic.getImage());
 
-        if (bdpersona.insertar()) {
-            JOptionPane.showMessageDialog(null, "GUARDADO CORRECTAMENTE");
-            lista();
-            limpiar();
-        } else {
-            JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+            if (bdpersona.insertar()) {
+                JOptionPane.showMessageDialog(null, "GUARDADO CORRECTAMENTE");
+                lista();
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+            }
+        } else{
+            JOptionPane.showMessageDialog(null, "YA EXISTE UNA PERSONA CON ESTA CEDULA");
         }
+        
 
     }
 
@@ -219,7 +225,7 @@ public class cpersona {
                 vista.getTabla_persona().setValueAt(lista.get(i).getCorreo(), i, 4);
                 vista.getTabla_persona().setValueAt(lista.get(i).getFechanac(), i, 5);
                 vista.getTabla_persona().setValueAt(lista.get(i).getFoto(), i, 6);
-                
+                //}
             }
         }
 
@@ -246,14 +252,19 @@ public class cpersona {
 
         bdpersona.setCedula(lista.get(0).getCedula());
         vista.getTxt_cedula().setText(bdpersona.getCedula());
+
         bdpersona.setNombres(lista.get(0).getNombres());
         vista.getTxt_nombres().setText(bdpersona.getNombres());
+
         bdpersona.setDireccion(lista.get(0).getDireccion());
         vista.getTxt_direccion().setText(bdpersona.getDireccion());
+
         bdpersona.setTelefono(lista.get(0).getTelefono());
         vista.getTxt_telefono().setText(bdpersona.getTelefono());
+
         bdpersona.setCorreo(lista.get(0).getCorreo());
         vista.getTxt_correo().setText(bdpersona.getCorreo());
+
         bdpersona.setFechanac(lista.get(0).getFechanac());
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
         Date fecha = null;
@@ -286,17 +297,19 @@ public class cpersona {
 
     }
     
-        //sin parametros
-    public void imprimir() {
+    
+    private void validar(){
+        Validaciones.Numeros.solo_numeros(vista.getTxt_cedula());
+        Validaciones.Letras.solo_letras(vista.getTxt_nombres());
+        
+        
+    }
+    
+     public void imprimir() {
         Conect con = new Conect();
-
         try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/Repersona.jasper"));
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagenes/991231.jpg");
-            String nombre = JOptionPane.showInputDialog("Ingrese su cedula");
-            map.put("par", nombre);
-            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/persona.jasper"));
+            JasperPrint jp = (JasperPrint)JasperFillManager.fillReport(jas, null, con.getCon());
             JasperViewer jv = new JasperViewer(jp, false);
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
@@ -304,5 +317,7 @@ public class cpersona {
             System.out.println("no se pudo encontrar registros" + e.getMessage());
             Logger.getLogger(cpersona.class.getName()).log(Level.SEVERE, null, e);
         }
+
     }
+
 }

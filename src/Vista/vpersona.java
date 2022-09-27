@@ -209,13 +209,14 @@ public class vpersona extends javax.swing.JInternalFrame {
         this.txt_telefono = txt_telefono;
     }
 
-    public JButton getBtn_imprimir() {
-        return btn_imprimir;
+    public JButton getBtnimprimir() {
+        return Btnimprimir;
     }
 
-    public void setBtn_imprimir(JButton btn_imprimir) {
-        this.btn_imprimir = btn_imprimir;
+    public void setBtnimprimir(JButton Btnimprimir) {
+        this.Btnimprimir = Btnimprimir;
     }
+    
     
 
     /**
@@ -250,11 +251,12 @@ public class vpersona extends javax.swing.JInternalFrame {
         txt_buscar = new javax.swing.JTextField();
         foto = new javax.swing.JLabel();
         btn_foto = new javax.swing.JButton();
-        btn_imprimir = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        Btnimprimir = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
+        setTitle("REGISTRO DE PERSONA\n");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("FECHA DE NAC:");
@@ -278,6 +280,12 @@ public class vpersona extends javax.swing.JInternalFrame {
         jLabel7.setText("CORREO:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
         getContentPane().add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 150, -1));
+
+        txt_cedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_cedulaActionPerformed(evt);
+            }
+        });
         getContentPane().add(txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 150, -1));
         getContentPane().add(txt_nombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 150, -1));
         getContentPane().add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 150, -1));
@@ -294,10 +302,18 @@ public class vpersona extends javax.swing.JInternalFrame {
             new String [] {
                 "cedula", "nombres", "telefono", "direccion", "correo", "fechanac", "foto"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Byte.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tabla_persona);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 560, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 560, 150));
 
         btn_guardar.setText("guardar");
         getContentPane().add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
@@ -320,20 +336,25 @@ public class vpersona extends javax.swing.JInternalFrame {
 
         btn_foto.setText("foto");
         getContentPane().add(btn_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, -1, -1));
 
-        btn_imprimir.setText("imprimir");
-        getContentPane().add(btn_imprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, -1));
+        Btnimprimir.setText("Imprimir");
+        getContentPane().add(Btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 540, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txt_cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_cedulaActionPerformed
+      
+    }//GEN-LAST:event_txt_cedulaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btnimprimir;
     private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_foto;
     private javax.swing.JButton btn_guardar;
-    private javax.swing.JButton btn_imprimir;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_nuevo;
     private javax.swing.JLabel foto;
@@ -344,6 +365,7 @@ public class vpersona extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabla_persona;
     private javax.swing.JTextField txt_buscar;

@@ -5,7 +5,6 @@
  */
 package Vista;
 
-import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -22,6 +21,30 @@ public class vprincipal extends javax.swing.JFrame {
      */
     public vprincipal() {
         initComponents();
+    }
+
+    public JMenuItem getBtn_productos() {
+        return btn_productos;
+    }
+
+    public void setBtn_productos(JMenuItem btn_productos) {
+        this.btn_productos = btn_productos;
+    }
+
+    public JMenu getMenuproductos() {
+        return menuproductos;
+    }
+
+    public void setMenuproductos(JMenu menuproductos) {
+        this.menuproductos = menuproductos;
+    }
+
+    public JMenuItem getBtn_cliente() {
+        return btn_cliente;
+    }
+
+    public void setBtn_cliente(JMenuItem btn_cliente) {
+        this.btn_cliente = btn_cliente;
     }
 
     public JMenuItem getBtn_persona() {
@@ -56,76 +79,12 @@ public class vprincipal extends javax.swing.JFrame {
         this.btn_usuario = btn_usuario;
     }
 
-    public JCheckBoxMenuItem getBtncliente() {
-        return btncliente;
-    }
-
-    public void setBtncliente(JCheckBoxMenuItem btncliente) {
-        this.btncliente = btncliente;
-    }
-
-    public JMenu getBtnproductos() {
-        return btnproductos;
-    }
-
-    public void setBtnproductos(JMenu btnproductos) {
-        this.btnproductos = btnproductos;
-    }
-
     public JDesktopPane getEscritorio() {
         return escritorio;
     }
 
     public void setEscritorio(JDesktopPane escritorio) {
         this.escritorio = escritorio;
-    }
-
-    public JCheckBoxMenuItem getjCheckBoxMenuItem1() {
-        return jCheckBoxMenuItem1;
-    }
-
-    public void setjCheckBoxMenuItem1(JCheckBoxMenuItem jCheckBoxMenuItem1) {
-        this.jCheckBoxMenuItem1 = jCheckBoxMenuItem1;
-    }
-
-    public JMenu getjMenu1() {
-        return jMenu1;
-    }
-
-    public void setjMenu1(JMenu jMenu1) {
-        this.jMenu1 = jMenu1;
-    }
-
-    public JMenu getjMenu2() {
-        return jMenu2;
-    }
-
-    public void setjMenu2(JMenu jMenu2) {
-        this.jMenu2 = jMenu2;
-    }
-
-    public JMenu getjMenu3() {
-        return jMenu3;
-    }
-
-    public void setjMenu3(JMenu jMenu3) {
-        this.jMenu3 = jMenu3;
-    }
-
-    public JMenu getjMenu4() {
-        return jMenu4;
-    }
-
-    public void setjMenu4(JMenu jMenu4) {
-        this.jMenu4 = jMenu4;
-    }
-
-    public JMenu getjMenu5() {
-        return jMenu5;
-    }
-
-    public void setjMenu5(JMenu jMenu5) {
-        this.jMenu5 = jMenu5;
     }
 
     public JMenuBar getjMenuBar1() {
@@ -136,8 +95,63 @@ public class vprincipal extends javax.swing.JFrame {
         this.jMenuBar1 = jMenuBar1;
     }
 
-   
-    
+    public JMenu getMenucliente() {
+        return menucliente;
+    }
+
+    public void setMenucliente(JMenu menucliente) {
+        this.menucliente = menucliente;
+    }
+
+    public JMenu getMenupersona() {
+        return menupersona;
+    }
+
+    public void setMenupersona(JMenu menupersona) {
+        this.menupersona = menupersona;
+    }
+
+    public JMenu getMenurol() {
+        return menurol;
+    }
+
+    public void setMenurol(JMenu menurol) {
+        this.menurol = menurol;
+    }
+
+    public JMenu getMenusalir() {
+        return menusalir;
+    }
+
+    public void setMenusalir(JMenu menusalir) {
+        this.menusalir = menusalir;
+    }
+
+    public JMenu getMenuusuario() {
+        return menuusuario;
+    }
+
+    public void setMenuusuario(JMenu menuusuario) {
+        this.menuusuario = menuusuario;
+    }
+
+    public JMenuItem getBtn_proveedor() {
+        return btn_proveedor;
+    }
+
+    public void setBtn_proveedor(JMenuItem btn_proveedor) {
+        this.btn_proveedor = btn_proveedor;
+    }
+
+    public JMenu getMenupro() {
+        return menupro;
+    }
+
+    public void setMenupro(JMenu menupro) {
+        this.menupro = menupro;
+    }
+
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -150,17 +164,19 @@ public class vprincipal extends javax.swing.JFrame {
 
         escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menupersona = new javax.swing.JMenu();
         btn_persona = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        btn_usuario = new javax.swing.JMenuItem();
-        btnproductos = new javax.swing.JMenu();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        menurol = new javax.swing.JMenu();
         btn_rol = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        btncliente = new javax.swing.JCheckBoxMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        menuusuario = new javax.swing.JMenu();
+        btn_usuario = new javax.swing.JMenuItem();
+        menucliente = new javax.swing.JMenu();
+        btn_cliente = new javax.swing.JMenuItem();
+        menupro = new javax.swing.JMenu();
+        btn_proveedor = new javax.swing.JMenuItem();
+        menuproductos = new javax.swing.JMenu();
+        btn_productos = new javax.swing.JMenuItem();
+        menusalir = new javax.swing.JMenu();
         btn_salir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -173,52 +189,57 @@ public class vprincipal extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addGap(0, 281, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Persona");
+        menupersona.setText("Persona");
 
         btn_persona.setText("Persona");
-        jMenu1.add(btn_persona);
+        menupersona.add(btn_persona);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menupersona);
 
-        jMenu2.setText("Usuario");
-
-        btn_usuario.setText("Usuario");
-        jMenu2.add(btn_usuario);
-
-        jMenuBar1.add(jMenu2);
-
-        btnproductos.setText("Productos");
-
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("productos");
-        btnproductos.add(jCheckBoxMenuItem1);
-
-        jMenuBar1.add(btnproductos);
-
-        jMenu3.setText("Rol");
+        menurol.setText("Rol");
 
         btn_rol.setText("Rol");
-        jMenu3.add(btn_rol);
+        menurol.add(btn_rol);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(menurol);
 
-        jMenu5.setText("Cliente");
+        menuusuario.setText("Usuario");
 
-        btncliente.setSelected(true);
-        btncliente.setText("cliente");
-        jMenu5.add(btncliente);
+        btn_usuario.setText("Usuario");
+        menuusuario.add(btn_usuario);
 
-        jMenuBar1.add(jMenu5);
+        jMenuBar1.add(menuusuario);
 
-        jMenu4.setText("Salir");
+        menucliente.setText("Cliente");
+
+        btn_cliente.setText("Cliente");
+        menucliente.add(btn_cliente);
+
+        jMenuBar1.add(menucliente);
+
+        menupro.setText("Proveedor");
+
+        btn_proveedor.setText("Proveedor");
+        menupro.add(btn_proveedor);
+
+        jMenuBar1.add(menupro);
+
+        menuproductos.setText("Productos");
+
+        btn_productos.setText("Porductos");
+        menuproductos.add(btn_productos);
+
+        jMenuBar1.add(menuproductos);
+
+        menusalir.setText("Salir");
 
         btn_salir.setText("Salir");
-        jMenu4.add(btn_salir);
+        menusalir.add(btn_salir);
 
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(menusalir);
 
         setJMenuBar(jMenuBar1);
 
@@ -236,55 +257,57 @@ public class vprincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new vprincipal().setVisible(true);
-//            }
-//        });
-//    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(vprincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new vprincipal().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem btn_cliente;
     private javax.swing.JMenuItem btn_persona;
+    private javax.swing.JMenuItem btn_productos;
+    private javax.swing.JMenuItem btn_proveedor;
     private javax.swing.JMenuItem btn_rol;
     private javax.swing.JMenuItem btn_salir;
     private javax.swing.JMenuItem btn_usuario;
-    private javax.swing.JCheckBoxMenuItem btncliente;
-    private javax.swing.JMenu btnproductos;
     private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu menucliente;
+    private javax.swing.JMenu menupersona;
+    private javax.swing.JMenu menupro;
+    private javax.swing.JMenu menuproductos;
+    private javax.swing.JMenu menurol;
+    private javax.swing.JMenu menusalir;
+    private javax.swing.JMenu menuusuario;
     // End of variables declaration//GEN-END:variables
 }

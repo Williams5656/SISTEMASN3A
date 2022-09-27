@@ -9,20 +9,20 @@ package Modelo;
  *
  * @author VICO5
  */
-public class rolMD {
+public class rol_MD {
     int codigo;
     String nombre;
     String descripcion;
     String estado;
 
-    public rolMD(int codigo, String nombre, String descripcion, String estado) {
+    public rol_MD(int codigo, String nombre, String descripcion, String estado) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.estado = estado;
     }
 
-    public rolMD() {
+    public rol_MD() {
     }
 
     public int getCodigo() {

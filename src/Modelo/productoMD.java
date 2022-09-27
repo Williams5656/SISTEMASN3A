@@ -12,33 +12,103 @@ import java.awt.Image;
  * @author VICO5
  */
 public class productoMD {
-    String id_producto;
-    String nombre_pro;
-    String descripcion_pro;
+    int codigo;
+    String nombrep;
+    String presentacion;
+    String lab;
+    String cantidad;
+    String pvp;
+    String fechai;
+    String fechasal;
+    String desc;
     Image foto;
 
-    public String getId_producto() {
-        return id_producto;
+    public productoMD() {
     }
 
-    public void setId_producto(String id_producto) {
-        this.id_producto = id_producto;
+    public productoMD(int codigo, String nombrep, String presentacion, String lab, String cantidad, String pvp, String fechai, String fechasal, String desc, Image foto) {
+        this.codigo = codigo;
+        this.nombrep = nombrep;
+        this.presentacion = presentacion;
+        this.lab = lab;
+        this.cantidad = cantidad;
+        this.pvp = pvp;
+        this.fechai = fechai;
+        this.fechasal = fechasal;
+        this.desc = desc;
+        this.foto = foto;
     }
 
-    public String getNombre_pro() {
-        return nombre_pro;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setNombre_pro(String nombre_pro) {
-        this.nombre_pro = nombre_pro;
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
-    public String getDescripcion_pro() {
-        return descripcion_pro;
+    public String getNombrep() {
+        return nombrep;
     }
 
-    public void setDescripcion_pro(String descripcion_pro) {
-        this.descripcion_pro = descripcion_pro;
+    public void setNombrep(String nombrep) {
+        this.nombrep = nombrep;
+    }
+
+    public String getPresentacion() {
+        return presentacion;
+    }
+
+    public void setPresentacion(String presentacion) {
+        this.presentacion = presentacion;
+    }
+
+    public String getLab() {
+        return lab;
+    }
+
+    public void setLab(String lab) {
+        this.lab = lab;
+    }
+
+    public String getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String getPvp() {
+        return pvp;
+    }
+
+    public void setPvp(String pvp) {
+        this.pvp = pvp;
+    }
+
+    public String getFechai() {
+        return fechai;
+    }
+
+    public void setFechai(String fechai) {
+        this.fechai = fechai;
+    }
+
+    public String getFechasal() {
+        return fechasal;
+    }
+
+    public void setFechasal(String fechasal) {
+        this.fechasal = fechasal;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public Image getFoto() {
@@ -48,17 +118,5 @@ public class productoMD {
     public void setFoto(Image foto) {
         this.foto = foto;
     }
-
-    public productoMD(String id_producto, String nombre_pro, String descripcion_pro, Image foto) {
-        this.id_producto = id_producto;
-        this.nombre_pro = nombre_pro;
-        this.descripcion_pro = descripcion_pro;
-        this.foto = foto;
-    }
-
-    public productoMD() {
-    }
-    
-    
     
 }

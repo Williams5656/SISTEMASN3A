@@ -17,7 +17,10 @@ public class Conect {
     Connection con;
     Statement st;
     ResultSet rs;
-    String cadConexion = "jdbc:postgresql://localhost:5433/Proyecto";
+//    String cadConexion = "jdbc:postgresql://localhost:5433/Proyecto";
+//    String pgUser = "postgres";
+//    String pgContra = "1234";
+    String cadConexion = "jdbc:postgresql://localhost:5433/ProyectoF";
     String pgUser = "postgres";
     String pgContra = "123";
 //    Connection con;

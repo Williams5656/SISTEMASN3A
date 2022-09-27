@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c7839a34-a6b8-4380-b056-98f7ec3b7c1a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FAEBD7">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFE4BF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="cfbeebfe-70e5-4e38-8bb5-4a2802422d24"/>
+	<subDataset name="reportcliente" uuid="ad3c6f03-f1e8-42c6-aa4e-3f550724d83a">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     cliente."cedula" AS cliente_cedula,
+     cliente."nombre_apellido" AS cliente_nombre_apellido,
+     cliente."descripcion_cli" AS cliente_descripcion_cli,
+     cliente."foto" AS cliente_foto
+FROM
+     "public"."cliente" cliente]]>
+		</queryString>
+		<field name="cliente_cedula" class="java.lang.String"/>
+		<field name="cliente_nombre_apellido" class="java.lang.String"/>
+		<field name="cliente_descripcion_cli" class="java.lang.String"/>
+		<field name="cliente_foto" class="java.lang.Object"/>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     cliente."cedula" AS cliente_cedula,
+     cliente."nombre_apellido" AS cliente_nombre_apellido,
+     cliente."descripcion_cli" AS cliente_descripcion_cli,
+     cliente."foto" AS cliente_foto
+FROM
+     "public"."cliente" cliente]]>
+	</queryString>
+	<field name="cliente_cedula" class="java.lang.String"/>
+	<field name="cliente_nombre_apellido" class="java.lang.String"/>
+	<field name="cliente_descripcion_cli" class="java.lang.String"/>
+	<field name="cliente_foto" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="235" y="9" width="100" height="20" uuid="47552508-562f-491e-ae58-03208b9ac680"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[**-FARMACIA-**]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<rectangle>
+				<reportElement x="134" y="0" width="300" height="35" backcolor="#FF9966" uuid="ba08bec5-c3d7-42d6-a6b7-73d68eef6a21"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="207" y="0" width="152" height="35" uuid="6929ecbe-1e98-400c-a607-b399241af5d3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[**REPORTE DE CLIENTES**]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="92" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="144" y="11" width="274" height="81" uuid="c877cdd0-4117-4dc9-ae01-08e39e10f560"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="reportcliente" uuid="89a54e9a-81dc-41ab-9613-d1c2bd729a90">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="100" uuid="08cdf0eb-fa51-4233-991e-3c502b209f0a">
+						<jr:tableFooter style="table_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="e6422d04-2d30-4a12-ba03-e26284628d74"/>
+								<text><![CDATA[CEDULA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="c6fbbe0e-b94d-4650-aa22-971958a066e6"/>
+								<textFieldExpression><![CDATA[$F{cliente_cedula}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="56a3be9a-eab9-4d74-adaa-f0813f2d67db">
+						<jr:tableFooter style="table_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="9384d46b-a917-46b3-93bd-b92462722b27"/>
+								<text><![CDATA[NOMBRE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="419673e8-f29b-44c6-b502-23916f860376"/>
+								<textFieldExpression><![CDATA[$F{cliente_nombre_apellido}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="a3f1964a-73df-4c50-ba04-6091a01cd49e">
+						<jr:tableFooter style="table_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="159f0afa-c735-43cf-b58c-02dd25fbe97f"/>
+								<text><![CDATA[DESCRIPCION]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="8d0c79f6-6c83-4708-82f8-54f31144b1e1"/>
+								<textFieldExpression><![CDATA[$F{cliente_descripcion_cli}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

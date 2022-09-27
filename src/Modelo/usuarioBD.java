@@ -17,7 +17,8 @@ import javax.swing.JOptionPane;
  *
  * @author VICO5
  */
-public class usuarioBD extends usuarioMD{
+public class usuarioBD extends usuarioMD {
+
     Conect conectar = new Conect();
 
     public usuarioBD() {
@@ -28,14 +29,14 @@ public class usuarioBD extends usuarioMD{
     }
 
     public List<usuarioMD> mostrardatos() {
-        
+
         try {
             List<usuarioMD> lista = new ArrayList<usuarioMD>();
             String sql = "select * from usuario";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 usuarioMD usuario = new usuarioMD();
-                
+
                 usuario.setCodigo(rs.getInt("codigo"));
                 usuario.setCedula(rs.getString("cedula"));
                 usuario.setUsuario(rs.getString("usuario"));
@@ -44,43 +45,46 @@ public class usuarioBD extends usuarioMD{
                 usuario.setEstado(rs.getString("estado"));
                 lista.add(usuario);
             }
-            
+
             rs.close();
             return lista;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             Logger.getLogger(usuarioBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }
-    
+
     public boolean insertar() {
-        String sql = "INSERT INTO usuario(codigo, cedula, usuario, contrasena, rol, estado)" + 
-                "VALUES (" + 
-                getCodigo() + ",'" + 
-                getCedula() + "','" +  
-                getUsuario() + "','" + 
-                getPassword() + "','" + 
-                getRol() + "','" + 
-                getEstado() + "')"; 
+        String sql = "INSERT INTO usuario(codigo, cedula, usuario, contrasena, rol, estado)"
+                + "VALUES ("
+                + getCodigo() + ",'"
+                + getCedula() + "','"
+                + getUsuario() + "','"
+                + getPassword() + "','"
+                + getRol() + "','"
+                + getEstado() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
-        } 
-        else {
+        } else {
             JOptionPane.showMessageDialog(null, "Error");
             return false;
         }
     }
-    
-    public boolean modificar(int codigo){
-            String sql = "update usuario set " +
-                    "cedula = '" + getCedula() + "', " +
-                    "usuario = '" + getUsuario() + "', " +
-                    "contrasena = '" + getPassword() + "', " +
-                    "rol = '" + getRol() + "', " +
-                    "estado = '" + getEstado() + "' " +
-                    "where codigo = " + codigo;
+
+    public boolean modificar(int codigo) {
+        String sql = "update usuario set "
+                + "cedula = '" + getCedula() + "', "
+                
+                + "usuario = '" + getUsuario() + "', "
+                
+                + "contrasena = '" + getPassword() + "', "
+                
+                + "rol = '" + getRol() + "', "
+                
+                + "estado = '" + getEstado() + "' "
+                
+                + "where codigo = " + codigo;
 
         if (conectar.noQuery(sql) == null) {
             return true;
@@ -90,14 +94,14 @@ public class usuarioBD extends usuarioMD{
             return false;
         }
     }
-    
+
     public List<usuarioMD> obtenerDatos(int codigo) {
-        
+
         try {
             List<usuarioMD> lista = new ArrayList<usuarioMD>();
-            String sql = 
-                    "select * from usuario " + 
-                    "where codigo = " + codigo ;
+            String sql
+                    = "select * from usuario "
+                    + "where codigo = " + codigo;
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 usuarioMD usuario = new usuarioMD();
@@ -109,33 +113,93 @@ public class usuarioBD extends usuarioMD{
                 usuario.setEstado(rs.getString("estado"));
                 lista.add(usuario);
             }
-            
+
             rs.close();
             return lista;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             Logger.getLogger(usuarioBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }
-    
-    public boolean eliminar(Integer codigo){
-        String nsql = "update usuario set " + 
-                "cedula = '" + getCedula() + "', " +
-                "usuario = '" + getUsuario() + "', " +
-                "contrasena = '" + getPassword() + "', " +
-                "rol = '" + getRol() + "', " +
-                "estado = '" + getEstado() + "', " +
-                "where codigo = " + codigo;
-                
-        if(conectar.noQuery(nsql) == null){
+
+    public boolean eliminar(Integer codigo) {
+       String nsql = "Delete from usuario where codigo = " + codigo + "";
+        if (conectar.noQuery(nsql) == null) {
             return true;
-        }
-        else{
-            JOptionPane.showConfirmDialog(null, "Error al elimianr");
+        } else {
+            JOptionPane.showConfirmDialog(null, "Error al eliminar");
             return false;
         }
+
     }
-    
-    
+
+    public List<Integer> obtenerCodigoActual() {
+
+        try {
+            List<Integer> lista = new ArrayList<Integer>();
+            String sql
+                    = "select max(codigo) codigo_maximo from usuario ";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                lista.add(rs.getInt("codigo_maximo"));
+            }
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(usuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
+
+    public List<usuarioMD> obtenerDatosPorNombre(String nombre) {
+
+        try {
+            List<usuarioMD> lista = new ArrayList<usuarioMD>();
+            String sql
+                    = "select * from usuario "
+                    + "where usuario LIKE '%" + nombre + "%'";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                usuarioMD usuario = new usuarioMD();
+                usuario.setCodigo(rs.getInt("codigo"));
+                usuario.setCedula(rs.getString("cedula"));
+                usuario.setUsuario(rs.getString("usuario"));
+                usuario.setPassword(rs.getString("contrasena"));
+                usuario.setRol(rs.getString("rol"));
+                usuario.setEstado(rs.getString("estado"));
+                lista.add(usuario);
+            }
+
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(usuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
+      
+
+    public usuarioMD obtenerUsuario(String nombreUsuario) {
+        try {
+            String sql
+                    = "select * from usuario "
+                    + "where usuario = '" + nombreUsuario + "'";
+            ResultSet rs = conectar.query(sql);
+            if (rs.next()) {
+                usuarioMD usuario = new usuarioMD();
+                usuario.setCodigo(rs.getInt("codigo"));
+                usuario.setCedula(rs.getString("cedula"));
+                usuario.setUsuario(rs.getString("usuario"));
+                usuario.setPassword(rs.getString("contrasena"));
+                usuario.setRol(rs.getString("rol"));
+                usuario.setEstado(rs.getString("estado"));
+                return usuario;
+            }
+            rs.close();
+            return null;
+        } catch (SQLException e) {
+            Logger.getLogger(usuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
 }

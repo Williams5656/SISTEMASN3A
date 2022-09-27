@@ -177,9 +177,9 @@ public class personaBD extends personaMD {
     }
 
     public List<personaMD> obtenerDatos(String cedula) {
-        List<personaMD> lista = new ArrayList<personaMD>();
+
         try {
-            
+            List<personaMD> lista = new ArrayList<personaMD>();
             String sql
                     = "select * from persona "
                     + "where cedula ILIKE '%" + cedula + "%'";
@@ -219,6 +219,49 @@ public class personaBD extends personaMD {
             return null;
         }
     }
+    
+    public personaMD obtenerPersonaPorCedula(String cedula) {
+
+        try {            
+            String sql
+                    // consulta no repita la cedula
+                    = "select * from persona "
+                    + "where cedula = '" + cedula + "'";
+            ResultSet rs = conectar.query(sql);
+            if (rs.next()) {
+                personaMD persona = new personaMD();
+
+                persona.setCedula(rs.getString("cedula"));
+                persona.setNombres(rs.getString("nombres"));
+                persona.setDireccion(rs.getString("direccion"));
+                persona.setTelefono(rs.getString("telefono"));
+                persona.setCorreo(rs.getString("correo"));
+                persona.setFechanac(rs.getString("fecha_nacimiento"));
+                
+                byte[] is;
+                is = rs.getBytes("foto");
+                if (is != null) {
+                    try {
+                        is = Base64.decode(is, 0, rs.getBytes("foto").length);
+//                    BufferedImage bi=Base64.decode( ImageIO.read(is));
+                        persona.setFoto(getImage(is, false));
+                    } catch (Exception ex) {
+                        persona.setFoto(null);
+                        Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } else {
+                    persona.setFoto(null);
+                }
+
+                return persona;
+            }
+            rs.close();
+            return null;
+        } catch (SQLException e) {
+            Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
 
     public boolean eliminar(String cedula) {
         String nsql = "Delete from persona where cedula = '" + cedula + "'";
@@ -227,6 +270,27 @@ public class personaBD extends personaMD {
         } else {
             JOptionPane.showConfirmDialog(null, "Error al eliminar");
             return false;
+        }
+    }
+    
+    public List<String> obtenerCedulas() {
+
+        try {
+            List<String> lista = new ArrayList<String>();
+            String sql
+                    = "select cedula from persona ";
+            ResultSet rs = conectar.query(sql);
+            while (rs.next()) {
+                String cedula = rs.getString("cedula");
+               
+                lista.add(cedula);
+            }
+
+            rs.close();
+            return lista;
+        } catch (SQLException e) {
+            Logger.getLogger(personaBD.class.getName()).log(Level.SEVERE, null, e);
+            return null;
         }
     }
 }

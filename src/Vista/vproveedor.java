@@ -1,0 +1,454 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Vista;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author VICO5
+ */
+public class vproveedor extends javax.swing.JInternalFrame {
+
+    /**
+     * Creates new form vproveedor
+     */
+    public vproveedor() {
+        initComponents();
+        
+    }
+
+    public JButton getBtn_buscar() {
+        return btn_buscar;
+    }
+
+    public void setBtn_buscar(JButton btn_buscar) {
+        this.btn_buscar = btn_buscar;
+    }
+
+    public JButton getBtn_eliminar() {
+        return btn_eliminar;
+    }
+
+    public void setBtn_eliminar(JButton btn_eliminar) {
+        this.btn_eliminar = btn_eliminar;
+    }
+
+    public JButton getBtn_guardar() {
+        return btn_guardar;
+    }
+
+    public void setBtn_guardar(JButton btn_guardar) {
+        this.btn_guardar = btn_guardar;
+    }
+
+    public JButton getBtn_modificar() {
+        return btn_modificar;
+    }
+
+    public void setBtn_modificar(JButton btn_modificar) {
+        this.btn_modificar = btn_modificar;
+    }
+
+    public JButton getBtn_nuevo() {
+        return btn_nuevo;
+    }
+
+    public void setBtn_nuevo(JButton btn_nuevo) {
+        this.btn_nuevo = btn_nuevo;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getTabla_pro() {
+        return tabla_pro;
+    }
+
+    public void setTabla_pro(JTable tabla_pro) {
+        this.tabla_pro = tabla_pro;
+    }
+
+    
+
+    public JTextField getTxt_buscar() {
+        return txt_buscar;
+    }
+
+    public void setTxt_buscar(JTextField txt_buscar) {
+        this.txt_buscar = txt_buscar;
+    }
+
+    public JTextField getTxt_codfigo() {
+        return txt_codfigo;
+    }
+
+    public void setTxt_codfigo(JTextField txt_codfigo) {
+        this.txt_codfigo = txt_codfigo;
+    }
+
+    public JTextField getTxt_correo() {
+        return txt_correo;
+    }
+
+    public void setTxt_correo(JTextField txt_correo) {
+        this.txt_correo = txt_correo;
+    }
+
+    public JTextField getTxt_direccion() {
+        return txt_direccion;
+    }
+
+    public void setTxt_direccion(JTextField txt_direccion) {
+        this.txt_direccion = txt_direccion;
+    }
+
+    public JTextField getTxt_encargado() {
+        return txt_encargado;
+    }
+
+    public void setTxt_encargado(JTextField txt_encargado) {
+        this.txt_encargado = txt_encargado;
+    }
+
+    public JTextField getTxt_laboratorio() {
+        return txt_laboratorio;
+    }
+
+    public void setTxt_laboratorio(JTextField txt_laboratorio) {
+        this.txt_laboratorio = txt_laboratorio;
+    }
+
+    public JTextField getTxt_pagina() {
+        return txt_pagina;
+    }
+
+    public void setTxt_pagina(JTextField txt_pagina) {
+        this.txt_pagina = txt_pagina;
+    }
+
+    public JTextField getTxt_ruc() {
+        return txt_ruc;
+    }
+
+    public void setTxt_ruc(JTextField txt_ruc) {
+        this.txt_ruc = txt_ruc;
+    }
+
+    public JTextField getTxt_telefono() {
+        return txt_telefono;
+    }
+
+    public void setTxt_telefono(JTextField txt_telefono) {
+        this.txt_telefono = txt_telefono;
+    }
+    
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla_pro = new javax.swing.JTable();
+        btn_buscar = new javax.swing.JButton();
+        btn_guardar = new javax.swing.JButton();
+        btn_modificar = new javax.swing.JButton();
+        btn_eliminar = new javax.swing.JButton();
+        btn_nuevo = new javax.swing.JButton();
+        txt_laboratorio = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txt_buscar = new javax.swing.JTextField();
+        txt_ruc = new javax.swing.JTextField();
+        txt_telefono = new javax.swing.JTextField();
+        txt_correo = new javax.swing.JTextField();
+        txt_encargado = new javax.swing.JTextField();
+        txt_pagina = new javax.swing.JTextField();
+        txt_direccion = new javax.swing.JTextField();
+        txt_codfigo = new javax.swing.JTextField();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("REGISTRO DE PROVEEDORES\n");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tabla_pro.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "codigo", "laboratorio", "ruc", "telefono", "encargado", "pagina_web", "direccion", "correo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabla_pro);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 560, 210));
+
+        btn_buscar.setText("BUSCAR");
+        getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
+
+        btn_guardar.setText("GUARDAR");
+        getContentPane().add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
+
+        btn_modificar.setText("MODIFICAR");
+        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, -1));
+
+        btn_eliminar.setText("ELIMINAR");
+        getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
+
+        btn_nuevo.setText("NUEVO");
+        getContentPane().add(btn_nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        txt_laboratorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_laboratorioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_laboratorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 170, -1));
+
+        jLabel1.setText("LABORATORIO DE PROCEDENCIA");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        jLabel2.setText("RUC");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+
+        jLabel3.setText("TELEFONO DEL LABORATORIO");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+
+        jLabel4.setText("ENCARGADO");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, -1));
+
+        jLabel5.setText("PAGINA WEB");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
+
+        jLabel6.setText("CORREO");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
+
+        jLabel7.setText("CODIGO DEL PROVEEDOR");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel8.setText("DIRECCION");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
+
+        txt_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_buscarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, 120, -1));
+
+        txt_ruc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_rucActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_ruc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 170, -1));
+
+        txt_telefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_telefonoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 170, -1));
+
+        txt_correo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_correoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 190, 20));
+
+        txt_encargado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_encargadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_encargado, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 190, -1));
+
+        txt_pagina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_paginaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_pagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 190, -1));
+
+        txt_direccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_direccionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 190, -1));
+
+        txt_codfigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_codfigoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_codfigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 40, -1));
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void txt_laboratorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_laboratorioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_laboratorioActionPerformed
+
+    private void txt_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_buscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_buscarActionPerformed
+
+    private void txt_rucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_rucActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_rucActionPerformed
+
+    private void txt_telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_telefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_telefonoActionPerformed
+
+    private void txt_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_correoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_correoActionPerformed
+
+    private void txt_encargadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_encargadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_encargadoActionPerformed
+
+    private void txt_paginaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_paginaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_paginaActionPerformed
+
+    private void txt_direccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_direccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_direccionActionPerformed
+
+    private void txt_codfigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_codfigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_codfigoActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_buscar;
+    private javax.swing.JButton btn_eliminar;
+    private javax.swing.JButton btn_guardar;
+    private javax.swing.JButton btn_modificar;
+    private javax.swing.JButton btn_nuevo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabla_pro;
+    private javax.swing.JTextField txt_buscar;
+    private javax.swing.JTextField txt_codfigo;
+    private javax.swing.JTextField txt_correo;
+    private javax.swing.JTextField txt_direccion;
+    private javax.swing.JTextField txt_encargado;
+    private javax.swing.JTextField txt_laboratorio;
+    private javax.swing.JTextField txt_pagina;
+    private javax.swing.JTextField txt_ruc;
+    private javax.swing.JTextField txt_telefono;
+    // End of variables declaration//GEN-END:variables
+}

@@ -12,19 +12,34 @@ import java.awt.Image;
  * @author VICO5
  */
 public class clienteMD {
+
+    int codigo;
     String cedula;
-    String nombre_apellido;
-    String descripcion_cli;
-    Image foto;
+    String nombre;
+    String telefono;
+    String alergias;
+    String enfermedades;
+    String direccion;
 
     public clienteMD() {
     }
 
-    public clienteMD(String cedula, String nombre_apellido, String descripcion_cli, Image foto) {
+    public clienteMD(int codigo, String cedula, String nombre, String telefono, String alergias, String enfermedades, String direccion) {
+        this.codigo = codigo;
         this.cedula = cedula;
-        this.nombre_apellido = nombre_apellido;
-        this.descripcion_cli = descripcion_cli;
-        this.foto = foto;
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.alergias = alergias;
+        this.enfermedades = enfermedades;
+        this.direccion = direccion;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getCedula() {
@@ -35,29 +50,44 @@ public class clienteMD {
         this.cedula = cedula;
     }
 
-    public String getNombre_apellido() {
-        return nombre_apellido;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombre_apellido(String nombre_apellido) {
-        this.nombre_apellido = nombre_apellido;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDescripcion_cli() {
-        return descripcion_cli;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setDescripcion_cli(String descripcion_cli) {
-        this.descripcion_cli = descripcion_cli;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public Image getFoto() {
-        return foto;
+    public String getAlergias() {
+        return alergias;
     }
 
-    public void setFoto(Image foto) {
-        this.foto = foto;
+    public void setAlergias(String alergias) {
+        this.alergias = alergias;
     }
 
-    
+    public String getEnfermedades() {
+        return enfermedades;
+    }
+
+    public void setEnfermedades(String enfermedades) {
+        this.enfermedades = enfermedades;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
 }
