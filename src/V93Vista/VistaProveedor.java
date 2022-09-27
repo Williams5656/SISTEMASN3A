@@ -159,7 +159,7 @@ public class VistaProveedor extends javax.swing.JFrame {
         txtBuscarProveedor = new javax.swing.JTextField();
         btnImprimirProveedor = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/proveedor.png"))); // NOI18N

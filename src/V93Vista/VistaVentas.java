@@ -63,7 +63,7 @@ public class VistaVentas extends javax.swing.JFrame {
         btnImprimirVentas = new javax.swing.JButton();
         txtIdVentas = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TableVentas.setModel(new javax.swing.table.DefaultTableModel(

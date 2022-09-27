@@ -192,7 +192,7 @@ public class VistaPersona extends javax.swing.JFrame {
         txtbuscarp = new javax.swing.JTextField();
         btnImprimirPersona = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/NuevoUsuarioP.png"))); // NOI18N
