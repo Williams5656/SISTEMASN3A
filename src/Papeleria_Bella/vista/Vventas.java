@@ -85,13 +85,7 @@ public class Vventas extends javax.swing.JFrame {
         this.buttonnuevo = buttonnuevo;
     }
 
-    public JLabel getFondo() {
-        return fondo;
-    }
-
-    public void setFondo(JLabel fondo) {
-        this.fondo = fondo;
-    }
+ 
 
     public JLabel getjLabel1() {
         return jLabel1;
@@ -181,13 +175,15 @@ public class Vventas extends javax.swing.JFrame {
         this.jScrollPane1 = jScrollPane1;
     }
 
-    public JLabel getLabelcodigo() {
-        return labelcodigo;
+    public JLabel getLabelnombre() {
+        return labelnombre;
     }
 
-    public void setLabelcodigo(JLabel labelcodigo) {
-        this.labelcodigo = labelcodigo;
+    public void setLabelnombre(JLabel labelnombre) {
+        this.labelnombre = labelnombre;
     }
+
+    
 
     public JLabel getLabeliva() {
         return labeliva;
@@ -287,7 +283,7 @@ public class Vventas extends javax.swing.JFrame {
         txtvalor = new javax.swing.JTextField();
         txtcedula = new javax.swing.JTextField();
         labelnumero = new javax.swing.JLabel();
-        labelcodigo = new javax.swing.JLabel();
+        labelnombre = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
         txtcantidad = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -299,7 +295,9 @@ public class Vventas extends javax.swing.JFrame {
         buttonmodificar = new javax.swing.JButton();
         buttoneliminar = new javax.swing.JButton();
         buttonimprimir = new javax.swing.JButton();
-        fondo = new javax.swing.JLabel();
+        buttonbuscarcedula = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        txtfecha = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -310,31 +308,31 @@ public class Vventas extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel2.setText("Cédula:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel3.setText("IVA:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel4.setText("Total:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
+        jLabel4.setText("Fecha:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel5.setText("Cantidad:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel6.setText("Nombre Producto:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel7.setText("Valor Unitario:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel8.setText("Código:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+        jLabel8.setText("Nombre:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel9.setText("Buscar:");
@@ -343,15 +341,15 @@ public class Vventas extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel10.setText("Nro. Factura:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
-        getContentPane().add(labeliva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 110, 22));
-        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 110, -1));
-        getContentPane().add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 110, -1));
-        getContentPane().add(txtvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 110, -1));
-        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 110, -1));
+        getContentPane().add(labeliva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 110, 22));
+        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 110, -1));
+        getContentPane().add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 110, -1));
+        getContentPane().add(txtvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 110, -1));
+        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 110, -1));
         getContentPane().add(labelnumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 110, 22));
-        getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 110, 22));
+        getContentPane().add(labelnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 110, 22));
         getContentPane().add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 110, -1));
-        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 110, -1));
+        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 110, -1));
 
         tablaventas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -372,7 +370,7 @@ public class Vventas extends javax.swing.JFrame {
         buttonbuscarnombreproducto.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonbuscarnombreproducto.setForeground(new java.awt.Color(55, 107, 160));
         buttonbuscarnombreproducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
-        getContentPane().add(buttonbuscarnombreproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 40, 20));
+        getContentPane().add(buttonbuscarnombreproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 40, 20));
 
         buttonbuscarfactura.setBackground(new java.awt.Color(232, 255, 255));
         buttonbuscarfactura.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
@@ -413,12 +411,29 @@ public class Vventas extends javax.swing.JFrame {
         buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5)_1.png"))); // NOI18N
         getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 420, 50, 40));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
-        fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 520));
+        buttonbuscarcedula.setBackground(new java.awt.Color(232, 255, 255));
+        buttonbuscarcedula.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonbuscarcedula.setForeground(new java.awt.Color(55, 107, 160));
+        buttonbuscarcedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
+        getContentPane().add(buttonbuscarcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 40, 20));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel11.setText("Total:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
+
+        txtfecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfechaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 110, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtfechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfechaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -426,6 +441,7 @@ public class Vventas extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonbuscarcedula;
     private javax.swing.JButton buttonbuscarfactura;
     private javax.swing.JButton buttonbuscarnombreproducto;
     private javax.swing.JButton buttoneliminar;
@@ -433,9 +449,9 @@ public class Vventas extends javax.swing.JFrame {
     private javax.swing.JButton buttonimprimir;
     private javax.swing.JButton buttonmodificar;
     private javax.swing.JButton buttonnuevo;
-    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -445,13 +461,14 @@ public class Vventas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelcodigo;
     private javax.swing.JLabel labeliva;
+    private javax.swing.JLabel labelnombre;
     private javax.swing.JLabel labelnumero;
     private javax.swing.JTable tablaventas;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcantidad;
     private javax.swing.JTextField txtcedula;
+    private javax.swing.JTextField txtfecha;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txttotal;
     private javax.swing.JTextField txtvalor;

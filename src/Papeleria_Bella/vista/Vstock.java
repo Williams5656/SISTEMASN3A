@@ -25,12 +25,12 @@ public class Vstock extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JButton getButtonbuscar1() {
-        return buttonbuscar1;
+    public JButton getButtonbuscar() {
+        return buttonbuscar;
     }
 
-    public void setButtonbuscar1(JButton buttonbuscar1) {
-        this.buttonbuscar1 = buttonbuscar1;
+    public void setButtonbuscar(JButton buttonbuscar) {
+        this.buttonbuscar = buttonbuscar;
     }
 
     public JButton getButtoneliminar() {
@@ -71,6 +71,14 @@ public class Vstock extends javax.swing.JFrame {
 
     public void setButtonnuevo(JButton buttonnuevo) {
         this.buttonnuevo = buttonnuevo;
+    }
+
+    public JLabel getFondo() {
+        return fondo;
+    }
+
+    public void setFondo(JLabel fondo) {
+        this.fondo = fondo;
     }
 
     public JLabel getjLabel17() {
@@ -121,20 +129,20 @@ public class Vstock extends javax.swing.JFrame {
         this.jScrollPane1 = jScrollPane1;
     }
 
-    public JLabel getLabelcod_producto() {
-        return labelcodigoproducto;
-    }
-
-    public void setLabelcod_producto(JLabel labelcod_producto) {
-        this.labelcodigoproducto = labelcod_producto;
-    }
-
-    public JLabel getLabelcodigo1() {
+    public JLabel getLabelcodigo() {
         return labelcodigo;
     }
 
-    public void setLabelcodigo1(JLabel labelcodigo1) {
-        this.labelcodigo = labelcodigo1;
+    public void setLabelcodigo(JLabel labelcodigo) {
+        this.labelcodigo = labelcodigo;
+    }
+
+    public JLabel getLabelcodigoproducto() {
+        return labelcodigoproducto;
+    }
+
+    public void setLabelcodigoproducto(JLabel labelcodigoproducto) {
+        this.labelcodigoproducto = labelcodigoproducto;
     }
 
     public JTable getTablastock() {
@@ -153,13 +161,17 @@ public class Vstock extends javax.swing.JFrame {
         this.txtnom_producto = txtnom_producto;
     }
 
-    public JTextField getTxtstock1() {
+    public JTextField getTxtstock() {
         return txtstock;
     }
 
-    public void setTxtstock1(JTextField txtstock1) {
-        this.txtstock = txtstock1;
+    public void setTxtstock(JTextField txtstock) {
+        this.txtstock = txtstock;
     }
+
+    
+
+    
 
     
     
@@ -183,7 +195,7 @@ public class Vstock extends javax.swing.JFrame {
         buttonmodificar = new javax.swing.JButton();
         buttoneliminar = new javax.swing.JButton();
         buttonimprimir = new javax.swing.JButton();
-        buttonbuscar1 = new javax.swing.JButton();
+        buttonbuscar = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -261,11 +273,11 @@ public class Vstock extends javax.swing.JFrame {
         buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5)_1.png"))); // NOI18N
         getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 480, 50, 40));
 
-        buttonbuscar1.setBackground(new java.awt.Color(232, 255, 255));
-        buttonbuscar1.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonbuscar1.setForeground(new java.awt.Color(55, 107, 160));
-        buttonbuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
-        getContentPane().add(buttonbuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 40, 20));
+        buttonbuscar.setBackground(new java.awt.Color(232, 255, 255));
+        buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonbuscar.setForeground(new java.awt.Color(55, 107, 160));
+        buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
+        getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 40, 20));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
@@ -280,7 +292,7 @@ public class Vstock extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonbuscar1;
+    private javax.swing.JButton buttonbuscar;
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
     private javax.swing.JButton buttonimprimir;

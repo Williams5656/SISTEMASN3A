@@ -28,6 +28,7 @@ import net.sf.jasperreports.view.JasperViewer;
 public class Cventas {
     public static Vventas vistav;
     private VentasBD bventas = new VentasBD();
+    final double iva=0.12;
     
     public Cventas(Vventas vistav) {
         this.vistav = vistav;
@@ -54,7 +55,7 @@ public class Cventas {
         vistav.getButtonmodificar().setEnabled(false);
         
         vistav.getTxtcedula().setEnabled(false);
-        vistav.getLabelcodigo().setEnabled(false);
+        vistav.getLabel().setEnabled(false);
         vistav.getTxtnombre().setEnabled(false);
         vistav.getTxtcantidad().setEnabled(false);
         vistav.getTxtvalor().setEnabled(false);

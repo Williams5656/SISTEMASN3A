@@ -34,7 +34,23 @@ public class Cinicio {
                 Logger.getLogger(Cinicio.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+        vista.getFieldcontraseña().addKeyListener(new java.awt.event.KeyAdapter() {
+            
+            public void KeyPressed(java.awt.event.KeyEvent evt){
+                txtClaveKeyPressed(evt);
+            }
+        });
 
+    }
+    private void txtClaveKeyPressed(java.awt.event.KeyEvent evt){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            vista.getButtoningresar().requestFocus();
+            try {
+                validar();
+            } catch (SQLException e) {
+                Logger.getLogger(Cinicio.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
     }
     
 

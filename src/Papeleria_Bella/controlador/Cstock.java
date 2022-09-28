@@ -46,15 +46,15 @@ public class Cstock {
 
         });
 
-        vistastock.getButtonbuscar1().addActionListener(x -> buscar());
+        vistastock.getButtonbuscar().addActionListener(x -> buscar());
         vistastock.getButtonnuevo().addActionListener(e -> nuevo());
         vistastock.getButtoneliminar().addActionListener(e -> eliminar());
         vistastock.getButtonguardar().setEnabled(false);
         vistastock.getButtonmodificar().setEnabled(false);
         
 
-        vistastock.getLabelcod_producto().setEnabled(false);
-        vistastock.getTxtstock1().setEnabled(false);
+        vistastock.getLabelcodigoproducto().setEnabled(false);
+        vistastock.getTxtstock().setEnabled(false);
         vistastock.getTxtnom_producto().setEnabled(false);
 
         lista();
@@ -80,9 +80,9 @@ public class Cstock {
 
     public void guardar() {
 
-        bstock.setCodigo(vistastock.getLabelcodigo1().getText());
-        bstock.setCodigo_producto(vistastock.getLabelcod_producto().getText());
-        bstock.setStock(Integer.parseInt(vistastock.getTxtstock1().getText()));
+        bstock.setCodigo(vistastock.getLabelcodigo().getText());
+        bstock.setCodigo_producto(vistastock.getLabelcodigoproducto().getText());
+        bstock.setStock(Integer.parseInt(vistastock.getTxtstock().getText()));
         bstock.setNombre_producto(vistastock.getTxtnom_producto().getText());
         
 
@@ -90,34 +90,34 @@ public class Cstock {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
     
-        vistastock.getLabelcod_producto().setEnabled(false);
-        vistastock.getTxtstock1().setEnabled(false);
+        vistastock.getLabelcodigoproducto().setEnabled(false);
+        vistastock.getTxtstock().setEnabled(false);
         vistastock.getTxtnom_producto().setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
 
-        vistastock.getLabelcod_producto().setEnabled(false);
-        vistastock.getTxtstock1().setEnabled(false);
+        vistastock.getLabelcodigoproducto().setEnabled(false);
+        vistastock.getTxtstock().setEnabled(false);
         vistastock.getTxtnom_producto().setEnabled(false);
         }
 
     }
     public void modificar() {
-        bstock.setCodigo(vistastock.getLabelcodigo1().getText());
-        bstock.setCodigo_producto(vistastock.getLabelcod_producto().getText());
-        bstock.setStock(Integer.parseInt(vistastock.getTxtstock1().getText()));
+        bstock.setCodigo(vistastock.getLabelcodigo().getText());
+        bstock.setCodigo_producto(vistastock.getLabelcodigoproducto().getText());
+        bstock.setStock(Integer.parseInt(vistastock.getTxtstock().getText()));
         bstock.setNombre_producto(vistastock.getTxtnom_producto().getText());
         
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
         if (resp == 0) {
-            if (bstock.modificar(vistastock.getLabelcodigo1().getText())) ;
+            if (bstock.modificar(vistastock.getLabelcodigo().getText())) ;
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
 
         
-        vistastock.getLabelcod_producto().setEnabled(false);
-        vistastock.getTxtstock1().setEnabled(false);
+        vistastock.getLabelcodigoproducto().setEnabled(false);
+        vistastock.getTxtstock().setEnabled(false);
         vistastock.getTxtnom_producto().setEnabled(false);
         }
     }
@@ -131,47 +131,47 @@ public class Cstock {
         String codigo = (String) modelo.getValueAt(vistastock.getTablastock().getSelectedRow(), 0);
         List<StockMD> lista = bstock.obtenerdatos(codigo);
         bstock.setCodigo(lista.get(0).getCodigo());
-        vistastock.getLabelcodigo1().setText(bstock.getCodigo());
+        vistastock.getLabelcodigo().setText(bstock.getCodigo());
         bstock.setCodigo_producto(lista.get(0).getCodigo_producto());
-        vistastock.getLabelcod_producto().setText(bstock.getCodigo_producto());
+        vistastock.getLabelcodigoproducto().setText(bstock.getCodigo_producto());
         bstock.setStock(lista.get(0).getStock());
-        vistastock.getTxtstock1().setText(String.valueOf(bstock.getStock()));
+        vistastock.getTxtstock().setText(String.valueOf(bstock.getStock()));
         bstock.setNombre_producto(lista.get(0).getNombre_producto());
         vistastock.getTxtnom_producto().setText(bstock.getNombre_producto());
         
  
-        vistastock.getLabelcod_producto().setEnabled(true);
-        vistastock.getTxtstock1().setEnabled(true);
+        vistastock.getLabelcodigoproducto().setEnabled(true);
+        vistastock.getTxtstock().setEnabled(true);
         vistastock.getTxtnom_producto().setEnabled(true);
 
     }
 
     public void eliminar() {
-        bstock.setCodigo(vistastock.getLabelcodigo1().getText());
-        int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el item tal " + vistastock.getLabelcodigo1().getText());
+        bstock.setCodigo(vistastock.getLabelcodigo().getText());
+        int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el item tal " + vistastock.getLabelcodigo().getText());
         if (resp == 0) {
-            if (bstock.eliminar(vistastock.getLabelcodigo1().getText())) ;
+            if (bstock.eliminar(vistastock.getLabelcodigo().getText())) ;
             JOptionPane.showMessageDialog(null, "Datos Actualizados");
             lista();
 
-        vistastock.getLabelcod_producto().setEnabled(false);
-        vistastock.getTxtstock1().setEnabled(false);
+        vistastock.getLabelcodigoproducto().setEnabled(false);
+        vistastock.getTxtstock().setEnabled(false);
         vistastock.getTxtnom_producto().setEnabled(false);
         }
 
     }
     public void nuevo() {
-        vistastock.getLabelcodigo1().setText("");
-        vistastock.getLabelcod_producto().setText("");
-        vistastock.getTxtstock1().setText("");
+        vistastock.getLabelcodigo().setText("");
+        vistastock.getLabelcodigoproducto().setText("");
+        vistastock.getTxtstock().setText("");
         vistastock.getTxtnom_producto().setText("");
         vistastock.getButtonguardar().setEnabled(true);
         vistastock.getButtonmodificar().setEnabled(false);
         GenerarCodStock();
         
  
-        vistastock.getLabelcod_producto().setEnabled(true);
-        vistastock.getTxtstock1().setEnabled(true);
+        vistastock.getLabelcodigoproducto().setEnabled(true);
+        vistastock.getTxtstock().setEnabled(true);
         vistastock.getTxtnom_producto().setEnabled(true);
     }
 
@@ -183,7 +183,7 @@ public class Cstock {
             java.util.List<ProductosMD> lista = bstock.buscardatos(vistastock.getTxtnom_producto().getText());
             for (int i = 0; i < lista.size(); i++) {
                 if (lista.get(i).getNombre().equals(vistastock.getTxtnom_producto().getText())) {
-                    vistastock.getLabelcod_producto().setText(lista.get(i).getCodigo());
+                    vistastock.getLabelcodigoproducto().setText(lista.get(i).getCodigo());
                 } else {
                     JOptionPane.showMessageDialog(null, "Producto no registrado", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
@@ -206,6 +206,6 @@ public class Cstock {
             buffer.append(chars[random.nextInt(charsLength)]);
         }
 
-        vistastock.getLabelcodigo1().setText("Prov" + buffer.toString());
+        vistastock.getLabelcodigo().setText("Prov" + buffer.toString());
     }   
 }

@@ -105,7 +105,7 @@ public class Cusuario {
         if (busuario.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
             lista();
-            vistau.getTxtcedula().setEnabled(false);
+        vistau.getTxtcedula().setEnabled(false);
         vistau.getTxtusuario().setEnabled(false);
         vistau.getPassword().setEnabled(false);
         vistau.getComborol().setEnabled(false);
