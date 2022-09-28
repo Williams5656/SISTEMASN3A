@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="672e9e1e-3270-4b11-85fc-3c885aa19992">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#8FBC8F">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="productoreport" uuid="cab9e744-605a-4e23-a341-3b790ce75898">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     producto."codigo" AS producto_codigo,
+     producto."nombres" AS producto_nombres,
+     producto."presentacion" AS producto_presentacion,
+     producto."laboratorio" AS producto_laboratorio,
+     producto."cantidad" AS producto_cantidad,
+     producto."precio_venta" AS producto_precio_venta,
+     producto."fecha_inicio" AS producto_fecha_inicio,
+     producto."fecha_vencimiento" AS producto_fecha_vencimiento,
+     producto."descripcion" AS producto_descripcion,
+     producto."foto" AS producto_foto
+FROM
+     "public"."producto" producto]]>
+		</queryString>
+		<field name="producto_codigo" class="java.lang.String"/>
+		<field name="producto_nombres" class="java.lang.String"/>
+		<field name="producto_presentacion" class="java.lang.String"/>
+		<field name="producto_laboratorio" class="java.lang.String"/>
+		<field name="producto_cantidad" class="java.lang.String"/>
+		<field name="producto_precio_venta" class="java.lang.String"/>
+		<field name="producto_fecha_inicio" class="java.lang.String"/>
+		<field name="producto_fecha_vencimiento" class="java.lang.String"/>
+		<field name="producto_descripcion" class="java.lang.String"/>
+		<field name="producto_foto" class="java.lang.Object"/>
+	</subDataset>
+	<subDataset name="Table Dataset 1" uuid="2391d2b5-d985-4bda-b0ef-e0d06ae89fe3"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     producto."codigo" AS producto_codigo,
+     producto."nombres" AS producto_nombres,
+     producto."presentacion" AS producto_presentacion,
+     producto."laboratorio" AS producto_laboratorio,
+     producto."cantidad" AS producto_cantidad,
+     producto."precio_venta" AS producto_precio_venta,
+     producto."fecha_inicio" AS producto_fecha_inicio,
+     producto."fecha_vencimiento" AS producto_fecha_vencimiento,
+     producto."descripcion" AS producto_descripcion,
+     producto."foto" AS producto_foto
+FROM
+     "public"."producto" producto]]>
+	</queryString>
+	<field name="producto_codigo" class="java.lang.String"/>
+	<field name="producto_nombres" class="java.lang.String"/>
+	<field name="producto_presentacion" class="java.lang.String"/>
+	<field name="producto_laboratorio" class="java.lang.String"/>
+	<field name="producto_cantidad" class="java.lang.String"/>
+	<field name="producto_precio_venta" class="java.lang.String"/>
+	<field name="producto_fecha_inicio" class="java.lang.String"/>
+	<field name="producto_fecha_vencimiento" class="java.lang.String"/>
+	<field name="producto_descripcion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="48" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="147" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="0" y="0" width="425" height="140" uuid="e6711847-7bd7-4c51-a067-433a8a1b364c"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="productoreport" uuid="0e16635f-88fc-49c0-b274-8801ee8b778c">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="47" uuid="1c5c7b61-1c94-46b8-abda-e9cd4f63d910">
+						<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="45" height="30" uuid="15bc8356-d068-47fc-83ad-af7dde271aa0"/>
+								<text><![CDATA[CODIGO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="45" height="20" uuid="7206a3e8-b1e9-43b4-a07b-ef383d292964"/>
+								<textFieldExpression><![CDATA[$F{producto_codigo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="13a86798-d752-4601-a5b7-db600f5efef2">
+						<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="6bcf8135-ea9f-479f-84bb-9f84a2532af2"/>
+								<text><![CDATA[NOMBRES]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="c5916cae-5f59-4aa8-bdf4-0bcf39312d7b"/>
+								<textFieldExpression><![CDATA[$F{producto_nombres}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="116c493e-9094-477c-813d-51e5e4556010">
+						<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="49dd1ec8-5de9-49af-9243-a44c9175baaa"/>
+								<text><![CDATA[PRESENTACION]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="3f0e4a28-3c4a-4522-b0bf-3fa3d5a301a4"/>
+								<textFieldExpression><![CDATA[$F{producto_presentacion}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="49" uuid="9173a2c0-a7c1-40a5-897e-7fe2990839a2">
+						<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="46" height="30" uuid="57182382-7518-4857-9922-0497199fba72"/>
+								<text><![CDATA[LAB]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="46" height="20" uuid="b7c8c43c-c51c-4c0d-8846-6171936efec7"/>
+								<textFieldExpression><![CDATA[$F{producto_laboratorio}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="56" uuid="d9ca9a9b-0bac-47b6-87c7-b9af9e5d86d2">
+						<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="5afda615-d417-48d0-bd98-2b366a740e19"/>
+								<text><![CDATA[CANTIDAD]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="20" uuid="7e175153-ffd1-49fb-bad4-0e4a02e8b456"/>
+								<textFieldExpression><![CDATA[$F{producto_cantidad}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="0e1923bc-cf7b-4b84-b0c2-4268902a5456">
+						<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="49" height="30" uuid="ae085164-246b-4c19-8397-5f1f8047ff7c"/>
+								<text><![CDATA[PRECIO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="49" height="20" uuid="94867490-b88b-423e-991a-c4d12d4be9e3"/>
+								<textFieldExpression><![CDATA[$F{producto_precio_venta}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="70f1c85a-7bfa-463f-bd8d-796a9c61aacf">
+						<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="36aeef59-ae3c-445b-a7a8-b0538b19387f"/>
+								<text><![CDATA[FECHAI]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="b9465642-efde-4362-8f45-00fd642ba743"/>
+								<textFieldExpression><![CDATA[$F{producto_fecha_inicio}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="77e73adf-8bad-4568-ae8d-d527d84a2801">
+						<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="0177fe5d-4930-43e7-8ce2-02cc38577d91"/>
+								<text><![CDATA[FECHA FINAL]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="8ab69379-9d04-4e7f-9510-681e8b444ed2"/>
+								<textFieldExpression><![CDATA[$F{producto_fecha_vencimiento}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="f5e5c4c9-3bb8-4769-ab7e-992f5603505e">
+						<jr:tableFooter style="table 1_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="01452d89-5ab6-436a-800b-2b21d4590b84"/>
+								<text><![CDATA[DESCRIPCION]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="f267fc66-3713-4223-80d5-3dd51ffca362"/>
+								<textFieldExpression><![CDATA[$F{producto_descripcion}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

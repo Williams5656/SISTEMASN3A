@@ -252,6 +252,15 @@ public class vproducto extends javax.swing.JInternalFrame {
     public void setCombo_cantidad(JComboBox<String> combo_cantidad) {
         this.combo_cantidad = combo_cantidad;
     }
+
+    public JButton getBtnimprimir() {
+        return Btnimprimir;
+    }
+
+    public void setBtnimprimir(JButton Btnimprimir) {
+        this.Btnimprimir = Btnimprimir;
+    }
+    
     
 
     
@@ -294,6 +303,7 @@ public class vproducto extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tex_descripcion = new javax.swing.JTextArea();
         combo_lab = new javax.swing.JComboBox<>();
+        Btnimprimir = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -399,6 +409,9 @@ public class vproducto extends javax.swing.JInternalFrame {
         combo_lab.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
         getContentPane().add(combo_lab, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 160, -1));
 
+        Btnimprimir.setText("Imprimir");
+        getContentPane().add(Btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 10, -1, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -412,6 +425,7 @@ public class vproducto extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btnimprimir;
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_foto;
     private javax.swing.JButton btn_guardar;

@@ -55,11 +55,12 @@ public class ccliente {
         vista.getBtn_guardar().addActionListener(e -> guardar());
         vista.getBtn_modificar().addActionListener(e -> modificar());
         vista.getBtn_eliminar().addActionListener(e -> eliminar());
-        vista.getBtnimprimir().addActionListener(e -> imprimir());
+//        vista.getBtnimprimir().addActionListener(e -> imprimir());
 
         vista.getTxt_buscar().addKeyListener(new KeyAdapter() {
             public void keyReleased(KeyEvent evt) {
                 buscar();
+                 
             }
         });
 
@@ -67,15 +68,11 @@ public class ccliente {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionar();
+//                imprimir();
             }
         });
 
-        vista.getTabla_cliente().addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                seleccionar();
-            }
-        });
+    
 
         vista.getCombo_cedula().addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent evt) {
@@ -178,6 +175,7 @@ public class ccliente {
         }
 
         for (int i = 0; i < lista.size(); i++) {
+             try {
             modelo.addRow(new Object[columnas]);
             vista.getTabla_cliente().setValueAt(lista.get(i).getCodigo(), i, 0);
             vista.getTabla_cliente().setValueAt(lista.get(i).getCedula(), i, 1);
@@ -186,6 +184,9 @@ public class ccliente {
             vista.getTabla_cliente().setValueAt(lista.get(i).getAlergias(), i, 4);
             vista.getTabla_cliente().setValueAt(lista.get(i).getEnfermedades(), i, 5);
             vista.getTabla_cliente().setValueAt(lista.get(i).getDireccion(), i, 6);
+             } catch (Exception e) {
+                 
+             }
             
         }
     }
@@ -260,7 +261,7 @@ public class ccliente {
     }
 
     public void seleccionar() {
-//        vista.getTxt_codigo().setEnabled(true);
+        vista.getTxt_codigo().setEnabled(true);
         vista.getCombo_cedula().setEnabled(true);
         vista.getTxt_nombre_persona().setEnabled(true);
         vista.getTxt_telefono().setEnabled(true);
@@ -341,18 +342,18 @@ public class ccliente {
 
     }
     
-     public void imprimir() {
-        Conect con = new Conect();
-        try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/cliente.jasper"));
-            JasperPrint jp = (JasperPrint)JasperFillManager.fillReport(jas, null, con.getCon());
-            JasperViewer jv = new JasperViewer(jp, false);
-            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            jv.setVisible(true);
-        } catch (JRException e) {
-            System.out.println("no se pudo encontrar registros" + e.getMessage());
-            Logger.getLogger(cpersona.class.getName()).log(Level.SEVERE, null, e);
-        }
-
-    }
+//     public void imprimir() {
+//        Conect con = new Conect();
+//        try {
+//            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/cliente.jasper"));
+//            JasperPrint jp = (JasperPrint)JasperFillManager.fillReport(jas, null, con.getCon());
+//            JasperViewer jv = new JasperViewer(jp, false);
+//            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+//            jv.setVisible(true);
+//        } catch (JRException e) {
+//            System.out.println("no se pudo encontrar registros" + e.getMessage());
+//            Logger.getLogger(cpersona.class.getName()).log(Level.SEVERE, null, e);
+//        }
+//
+//    }
 }

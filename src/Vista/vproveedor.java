@@ -218,6 +218,14 @@ public class vproveedor extends javax.swing.JInternalFrame {
     public void setTxt_telefono(JTextField txt_telefono) {
         this.txt_telefono = txt_telefono;
     }
+
+    public JButton getBtnimprimir() {
+        return Btnimprimir;
+    }
+
+    public void setBtnimprimir(JButton Btnimprimir) {
+        this.Btnimprimir = Btnimprimir;
+    }
     
 
     /**
@@ -253,6 +261,7 @@ public class vproveedor extends javax.swing.JInternalFrame {
         txt_pagina = new javax.swing.JTextField();
         txt_direccion = new javax.swing.JTextField();
         txt_codfigo = new javax.swing.JTextField();
+        Btnimprimir = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -385,6 +394,9 @@ public class vproveedor extends javax.swing.JInternalFrame {
         });
         getContentPane().add(txt_codfigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 40, -1));
 
+        Btnimprimir.setText("Imprimir");
+        getContentPane().add(Btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -426,6 +438,7 @@ public class vproveedor extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btnimprimir;
     private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_guardar;

@@ -29,6 +29,15 @@ public class vrol extends javax.swing.JInternalFrame {
         return btn_buscar;
     }
 
+    public JButton getBtnimprimir() {
+        return Btnimprimir;
+    }
+
+    public void setBtnimprimir(JButton Btnimprimir) {
+        this.Btnimprimir = Btnimprimir;
+    }
+    
+
     public void setBtn_buscar(JButton btn_buscar) {
         this.btn_buscar = btn_buscar;
     }
@@ -181,6 +190,7 @@ public class vrol extends javax.swing.JInternalFrame {
         btn_modificar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
         txt_nombre = new javax.swing.JTextField();
+        Btnimprimir = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -240,6 +250,9 @@ public class vrol extends javax.swing.JInternalFrame {
         getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, 30));
         getContentPane().add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 280, -1));
 
+        Btnimprimir.setText("Imprimir");
+        getContentPane().add(Btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -249,6 +262,7 @@ public class vrol extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btnimprimir;
     private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_guardar;

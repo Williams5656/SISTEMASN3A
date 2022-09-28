@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Conect;
 import Modelo.proveedorBD;
 import Modelo.proveedorMD;
 import Vista.vproveedor;
@@ -13,8 +14,17 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -35,6 +45,7 @@ public class cproveedor {
         vista.getBtn_guardar().addActionListener(e -> guardar());
         vista.getBtn_modificar().addActionListener(e -> modificar());
         vista.getBtn_eliminar().addActionListener(e -> eliminar());
+        vista.getBtnimprimir().addActionListener(e -> imprimir());
 
         vista.getTxt_buscar().addKeyListener(new KeyAdapter() {
             public void keyReleased(KeyEvent evt) {
@@ -46,6 +57,7 @@ public class cproveedor {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionar();
+                imprimir();
             }
         });
 
@@ -79,6 +91,7 @@ public class cproveedor {
         vista.getBtn_guardar().setEnabled(true);
         vista.getBtn_modificar().setEnabled(true);
         vista.getBtn_eliminar().setEnabled(true);
+//        vista.getBtnimprimir().setEnabled(true);
         vista.getTxt_codfigo().setText(obtenerCodigoActual() + "");
     }
 
@@ -109,8 +122,10 @@ public class cproveedor {
         for (int j = vista.getTabla_pro().getRowCount() - 1; j >= 0; j--) {
             modelo.removeRow(j);
         }
-
+        
+        
         for (int i = 0; i < lista.size(); i++) {
+//             try {
             modelo.addRow(new Object[columnas]);
             vista.getTabla_pro().setValueAt(lista.get(i).getCodigo(), i, 0);
             vista.getTabla_pro().setValueAt(lista.get(i).getLaboratorio(), i, 1);
@@ -120,12 +135,18 @@ public class cproveedor {
             vista.getTabla_pro().setValueAt(lista.get(i).getPaginaweb(), i, 5);
             vista.getTabla_pro().setValueAt(lista.get(i).getDireccion(), i, 6);
             vista.getTabla_pro().setValueAt(lista.get(i).getCorreo(), i, 7);
+//            } catch (Exception e) {
+//                
+//            }
+                
+//            }
         }
     }
 
     public void guardar() {
 
-        bdpv.setCodigo(Integer.parseInt(vista.getTxt_codfigo().getText()));
+//        bdpv.setCodigo(Integer.parseInt(vista.getTxt_codfigo().getText()));
+        bdpv.setCodigo(vista.getTxt_codfigo().getText());
         bdpv.setLaboratorio(vista.getTxt_laboratorio().getText());
         bdpv.setRuc(vista.getTxt_ruc().getText());
         bdpv.setTelefono(vista.getTxt_telefono().getText());
@@ -174,7 +195,7 @@ public class cproveedor {
 
     public void modificar() {
 
-         bdpv.setCodigo(Integer.parseInt(vista.getTxt_codfigo().getText()));
+        bdpv.setCodigo(vista.getTxt_codfigo().getText());
         bdpv.setLaboratorio(vista.getTxt_laboratorio().getText());
         bdpv.setRuc(vista.getTxt_ruc().getText());
         bdpv.setTelefono(vista.getTxt_telefono().getText());
@@ -213,12 +234,12 @@ public class cproveedor {
 
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTabla_pro().getModel();
-        int codigo = (int) modelo.getValueAt(vista.getTabla_pro().getSelectedRow(), 0);
+        int codigo = (Integer) modelo.getValueAt(vista.getTabla_pro().getSelectedRow(), 0);
 
-        List<proveedorMD> lista = bdpv.obtenerDatos(codigo);
+         List<proveedorMD> lista = bdpv.obtenerDatos(codigo);
 
         bdpv.setCodigo(lista.get(0).getCodigo());
-        vista.getTxt_codfigo().setText(String.valueOf(bdpv.getCodigo()));
+        vista.getTxt_codfigo().setText(bdpv.getCodigo());
 
         bdpv.setLaboratorio(lista.get(0).getLaboratorio());
         vista.getTxt_laboratorio().setText(bdpv.getLaboratorio());
@@ -243,7 +264,7 @@ public class cproveedor {
     }
 
     public void eliminar() {
-        bdpv.setCodigo(Integer.parseInt(vista.getTxt_codfigo().getText()));
+        bdpv.setCodigo(vista.getTxt_codfigo().getText());
         int respuesta = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar este rol " + vista.getTxt_codfigo().getText());
         if (respuesta == 0) {
             if (bdpv.eliminar(Integer.parseInt(vista.getTxt_codfigo().getText()))) {
@@ -253,5 +274,18 @@ public class cproveedor {
             }
         }
     }
+     public void imprimir() {
+        Conect con = new Conect();
+        try {
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/proveedor.jasper"));
+            JasperPrint jp = (JasperPrint)JasperFillManager.fillReport(jas, null, con.getCon());
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(cpersona.class.getName()).log(Level.SEVERE, null, e);
+        }
 
+    }
 }

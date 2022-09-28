@@ -21,9 +21,10 @@ public class proveedorBD extends proveedorMD {
 
     Conect conectar = new Conect();
 
-    public proveedorBD(int codigo, String laboratorio, String ruc, String telefono, String encargado, String paginaweb, String direccion, String correo) {
+    public proveedorBD(String codigo, String laboratorio, String ruc, String telefono, String encargado, String paginaweb, String direccion, String correo) {
         super(codigo, laboratorio, ruc, telefono, encargado, paginaweb, direccion, correo);
     }
+
 
     public proveedorBD() {
     }
@@ -35,9 +36,9 @@ public class proveedorBD extends proveedorMD {
             String sql = "select * from proveedor";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
+                
                 proveedorMD pv = new proveedorMD();
-
-                pv.setCodigo(rs.getInt("codigo"));
+                pv.setCodigo(rs.getString("codigo"));
                 pv.setLaboratorio(rs.getString("laboratorio"));
                 pv.setRuc(rs.getString("ruc"));
                 pv.setTelefono(rs.getString("telefono"));
@@ -108,7 +109,7 @@ public class proveedorBD extends proveedorMD {
             while (rs.next()) {
                 proveedorMD pv = new proveedorMD();
 
-                pv.setCodigo(rs.getInt("codigo"));
+                pv.setCodigo(rs.getString("codigo"));
                 pv.setLaboratorio(rs.getString("laboratorio"));
                 pv.setRuc(rs.getString("ruc"));
                 pv.setTelefono(rs.getString("telefono"));
@@ -168,7 +169,7 @@ public class proveedorBD extends proveedorMD {
             while (rs.next()) {
                 proveedorMD pv = new proveedorMD();
 
-                pv.setCodigo(rs.getInt("codigo"));
+                pv.setCodigo(rs.getString("codigo"));
                 pv.setLaboratorio(rs.getString("laboratorio"));
                 pv.setRuc(rs.getString("ruc"));
                 pv.setTelefono(rs.getString("telefono"));

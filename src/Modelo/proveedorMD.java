@@ -11,7 +11,7 @@ package Modelo;
  */
 public class proveedorMD {
     
-    int codigo;
+    String codigo;
     String laboratorio;
     String ruc;
     String telefono;
@@ -20,7 +20,7 @@ public class proveedorMD {
     String direccion;
     String correo;
 
-    public proveedorMD(int codigo, String laboratorio, String ruc, String telefono, String encargado, String paginaweb, String direccion, String correo) {
+    public proveedorMD(String codigo, String laboratorio, String ruc, String telefono, String encargado, String paginaweb, String direccion, String correo) {
         this.codigo = codigo;
         this.laboratorio = laboratorio;
         this.ruc = ruc;
@@ -34,11 +34,11 @@ public class proveedorMD {
     public proveedorMD() {
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -97,6 +97,8 @@ public class proveedorMD {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+
+   
     
           
 }

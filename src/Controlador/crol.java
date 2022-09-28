@@ -6,6 +6,7 @@
 package Controlador;
 
 import static Controlador.cpersona.vista;
+import Modelo.Conect;
 import Modelo.rol_BD;
 import Modelo.rol_MD;
 import Vista.vrol;
@@ -20,7 +21,14 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -41,6 +49,8 @@ public class crol {
         vista.getBtn_guardar().addActionListener(e -> guardar());
         vista.getBtn_modificar().addActionListener(e -> modificar());
         vista.getBtn_eliminar().addActionListener(e -> eliminar());
+        vista.getBtnimprimir().addActionListener(e -> imprimir());
+
 
         vista.getTxt_buscar().addKeyListener(new KeyAdapter() {
             public void keyReleased(KeyEvent evt) {
@@ -52,6 +62,7 @@ public class crol {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionar();
+                imprimir();
             }
         });
 
@@ -207,5 +218,20 @@ public class crol {
                 limpiar();
             }
         }
+    }
+//    
+      public void imprimir() {
+        Conect con = new Conect();
+        try {
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/rol.jasper"));
+            JasperPrint jp = (JasperPrint)JasperFillManager.fillReport(jas, null, con.getCon());
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(cpersona.class.getName()).log(Level.SEVERE, null, e);
+        }
+
     }
 }

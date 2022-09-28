@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="628be178-a674-401b-9be6-906ff8cc529b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#EE82EE">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFBFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#FF7F50">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#FFD0BF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#FF69B4">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#FFBFDF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="proveedor" uuid="302daf1d-7d89-4983-8e73-97c46fdaf4ec">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     proveedor."codigo" AS proveedor_codigo,
+     proveedor."laboratorio" AS proveedor_laboratorio,
+     proveedor."ruc" AS proveedor_ruc,
+     proveedor."telefono" AS proveedor_telefono,
+     proveedor."encargado" AS proveedor_encargado,
+     proveedor."pagina_web" AS proveedor_pagina_web,
+     proveedor."direccion" AS proveedor_direccion,
+     proveedor."correo" AS proveedor_correo
+FROM
+     "public"."proveedor" proveedor]]>
+		</queryString>
+		<field name="proveedor_codigo" class="java.lang.String"/>
+		<field name="proveedor_laboratorio" class="java.lang.String"/>
+		<field name="proveedor_ruc" class="java.lang.String"/>
+		<field name="proveedor_telefono" class="java.lang.String"/>
+		<field name="proveedor_encargado" class="java.lang.String"/>
+		<field name="proveedor_pagina_web" class="java.lang.String"/>
+		<field name="proveedor_direccion" class="java.lang.String"/>
+		<field name="proveedor_correo" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="Table Dataset 1" uuid="71121011-46d3-4492-88ca-b26af6088337"/>
+	<subDataset name="Table Dataset 2" uuid="3fe2c795-0efa-4d1c-80e4-7203794d4f37"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     proveedor."codigo" AS proveedor_codigo,
+     proveedor."laboratorio" AS proveedor_laboratorio,
+     proveedor."ruc" AS proveedor_ruc,
+     proveedor."telefono" AS proveedor_telefono,
+     proveedor."encargado" AS proveedor_encargado,
+     proveedor."pagina_web" AS proveedor_pagina_web,
+     proveedor."direccion" AS proveedor_direccion,
+     proveedor."correo" AS proveedor_correo
+FROM
+     "public"."proveedor" proveedor]]>
+	</queryString>
+	<field name="proveedor_codigo" class="java.lang.String"/>
+	<field name="proveedor_laboratorio" class="java.lang.String"/>
+	<field name="proveedor_ruc" class="java.lang.String"/>
+	<field name="proveedor_telefono" class="java.lang.String"/>
+	<field name="proveedor_encargado" class="java.lang.String"/>
+	<field name="proveedor_pagina_web" class="java.lang.String"/>
+	<field name="proveedor_direccion" class="java.lang.String"/>
+	<field name="proveedor_correo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="41" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement x="165" y="0" width="245" height="35" backcolor="#CC99FF" uuid="a33e1466-e37d-4832-8637-535c9e6ed7a8"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="204" y="1" width="137" height="34" uuid="2883c4e6-c674-489e-ac7b-0e63590221e7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[**Reportes de Proveedor**]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="151" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 2" style="table 2" x="0" y="0" width="555" height="151" uuid="f3999d4d-f7b3-472e-b9b6-3f0620b95152"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="proveedor" uuid="c7df74c0-9138-4b67-9946-6625f796d68c">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="45" uuid="508bd349-8860-45a3-97d7-80c7680b0d5a">
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="45" height="30" uuid="5c677cdc-79e0-4126-972f-9ed9094e905f"/>
+								<text><![CDATA[CODIGO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="21" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="45" height="20" uuid="3695d0a8-20fd-4d08-b7a2-8536e454db3e"/>
+								<textFieldExpression><![CDATA[$F{proveedor_codigo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="2118c965-c126-44ec-a3e5-da5a977acced">
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="48" height="30" uuid="8b0ca422-25cc-41f5-bd29-ffdddfddae29"/>
+								<text><![CDATA[LAB]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="21" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="48" height="20" uuid="f18b6e4d-a12b-40ca-9ee0-be5b97cd9b78"/>
+								<textFieldExpression><![CDATA[$F{proveedor_laboratorio}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="1c61c2ac-21b0-47e6-a444-d0a0b8f8c2dd">
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="48" height="30" uuid="29bde38a-82ab-4483-b20e-f08344464ebf"/>
+								<text><![CDATA[RUC]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="21" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="48" height="20" uuid="ff4e312e-9fc6-4b1c-bca2-aca18283d5d8"/>
+								<textFieldExpression><![CDATA[$F{proveedor_ruc}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="64" uuid="58435806-c672-463e-b26a-69ea900edefa">
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="64" height="30" uuid="f8bd3307-5790-4e5a-9271-2f06820ea337"/>
+								<text><![CDATA[TELEFONO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="21" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="64" height="20" uuid="014088bd-5e2a-4767-8e13-67fdb826b5dd"/>
+								<textFieldExpression><![CDATA[$F{proveedor_telefono}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="69" uuid="7d9777d0-ca44-4e97-84eb-f770f1999b87">
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="67" height="30" uuid="7e35f739-8823-4e34-8745-92238c8645e9"/>
+								<text><![CDATA[ENCARGADO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="21" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="67" height="20" uuid="5238bc82-1bd7-4c04-807a-c010e4b0559a"/>
+								<textFieldExpression><![CDATA[$F{proveedor_encargado}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="78bdb335-ac92-4fbf-8163-6dc7ef751b9e">
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="20d0b7c4-8d61-4d8b-87c0-066f71240bb1"/>
+								<text><![CDATA[PAGINA WEB]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="21" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="d877fbd6-f50f-4e8b-a97e-08ed70b15167"/>
+								<textFieldExpression><![CDATA[$F{proveedor_pagina_web}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="9e89ed00-6a26-45b7-b166-3af54d4e1daa">
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="6ce1970c-95ef-4d23-985d-2dd07c69c771"/>
+								<text><![CDATA[DIRECCION]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="21" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="407b9218-a418-4a59-9900-ff12b413dfb6"/>
+								<textFieldExpression><![CDATA[$F{proveedor_direccion}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="ab8b4d7d-24f2-4ea4-a7dd-e3cd93b16c27">
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="db5490ae-a05e-4b47-b862-7884553b7a6b"/>
+								<text><![CDATA[CORREO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="21" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="eacef3c0-1185-46d3-b121-ad110d902703"/>
+								<textFieldExpression><![CDATA[$F{proveedor_correo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
