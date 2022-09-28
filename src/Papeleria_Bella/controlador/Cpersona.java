@@ -7,6 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,8 +31,7 @@ public class Cpersona {
     public static Vpersona1 vista;
 
     private PersonaBD bpersona = new PersonaBD();
-
-  
+    SimpleDateFormat fe = new SimpleDateFormat("dd-MM-yyyy");
 
     public Cpersona(Vpersona1 vista) {
         this.vista = vista;
@@ -92,8 +92,7 @@ public class Cpersona {
     }
 
     public void guardar() {
-        SimpleDateFormat fe = new SimpleDateFormat("dd-MM-yyyy");
-        
+
         bpersona.setCedula(vista.getTxtcedula().getText());
         bpersona.setNombres(vista.getTxtnombres().getText());
         bpersona.setApellidos(vista.getTxtapellidos().getText());
@@ -135,7 +134,7 @@ public class Cpersona {
         bpersona.setTelefono(vista.getTxttelefono().getText());
         bpersona.setDireccion(vista.getTxtdireccion().getText());
         bpersona.setEmail(vista.getTxtemail().getText());
-        bpersona.setFecha_nacimiento(vista.getTxtFecha().getDateFormatString());
+        bpersona.setFecha_nacimiento(fe.format(vista.getTxtFecha().getDate()));
 
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
         if (resp == 0) {
@@ -173,8 +172,18 @@ public class Cpersona {
         vista.getTxtdireccion().setText(bpersona.getDireccion());
         bpersona.setEmail(lista.get(0).getEmail());
         vista.getTxtemail().setText(bpersona.getEmail());
-        bpersona.setFecha_nacimiento(bpersona.getFecha_nacimiento());
-        vista.getTxtFecha().setDateFormatString(bpersona.getFecha_nacimiento());
+        bpersona.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
+
+        System.out.println(bpersona.getFecha_nacimiento());
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        Date fecha = null;
+        try {
+            fecha = format.parse(bpersona.getFecha_nacimiento());
+            vista.getTxtFecha().setDate(fecha);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No existe fecha de nacimiento en esta persona","AVISO",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, e);
+        }
 
         Image img = lista.get(0).getFoto();
         if (img != null) {
@@ -233,7 +242,6 @@ public class Cpersona {
         vista.getTxttelefono().setText("");
         vista.getTxtdireccion().setText("");
         vista.getTxtemail().setText("");
-        vista.getTxtFecha().setDateFormatString("YYY-MM-DD");
         vista.getButtonguardar().setEnabled(true);
         vista.getButtonmodificar().setEnabled(false);
         vista.getTxtcedula().setEnabled(true);

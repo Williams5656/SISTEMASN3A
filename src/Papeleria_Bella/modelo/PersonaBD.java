@@ -71,7 +71,7 @@ public class PersonaBD extends PersonaMD {
                 u.setTelefono(rs.getString("telefono"));
                 u.setDireccion(rs.getString("direccion"));
                 u.setEmail(rs.getString("email"));
-                u.setFecha_nacimiento("fecha_nacimiento");
+                u.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
                 
                 byte[] is;
                 is = rs.getBytes("foto");
@@ -152,7 +152,7 @@ public class PersonaBD extends PersonaMD {
                 u.setTelefono(rs.getString("telefono"));
                 u.setDireccion(rs.getString("direccion"));
                 u.setEmail(rs.getString("email"));
-                u.setFecha_nacimiento("fecha_nacimiento");
+                u.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
                 
                 byte[] is;
                 is = rs.getBytes("foto");
@@ -203,7 +203,7 @@ public class PersonaBD extends PersonaMD {
                 u.setTelefono(rs.getString("telefono"));
                 u.setDireccion(rs.getString("direccion"));
                 u.setEmail(rs.getString("email"));
-                u.setFecha_nacimiento("fecha_nacimiento");
+                u.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
                 byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {

@@ -25,6 +25,7 @@ public class Vpersona1 extends javax.swing.JFrame {
         this.TxtFecha = TxtFecha;
     }
 
+   
     public JButton getButtonbuscar() {
         return buttonbuscar;
     }
@@ -405,8 +406,7 @@ public class Vpersona1 extends javax.swing.JFrame {
         jLabel10.setText("E-mail:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
 
-        TxtFecha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        TxtFecha.setDateFormatString("YYYY/MM/DD");
+        TxtFecha.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(TxtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 140, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
