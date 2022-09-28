@@ -1,6 +1,7 @@
 
 package Papeleria_Bella.vista;
 
+import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -14,6 +15,14 @@ public class Vpersona1 extends javax.swing.JFrame {
      
     public Vpersona1() {
         initComponents();
+    }
+
+    public JDateChooser getTxtFecha() {
+        return TxtFecha;
+    }
+
+    public void setTxtFecha(JDateChooser TxtFecha) {
+        this.TxtFecha = TxtFecha;
     }
 
     public JButton getButtonbuscar() {
@@ -273,6 +282,8 @@ public class Vpersona1 extends javax.swing.JFrame {
         txtbuscar = new javax.swing.JTextField();
         buttonimprimir = new javax.swing.JButton();
         buttonbuscar1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        TxtFecha = new com.toedter.calendar.JDateChooser();
         fondo = new javax.swing.JLabel();
 
         buttonbuscar.setBackground(new java.awt.Color(232, 255, 255));
@@ -303,16 +314,16 @@ public class Vpersona1 extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel5.setText("Teléfono:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel6.setText("Dirección:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel7.setText("E-mail:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, -1, -1));
-        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 134, -1));
+        jLabel7.setText("Fecha de nacimiento:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, -1, -1));
+        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 140, -1));
 
         tablapersona.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -333,11 +344,11 @@ public class Vpersona1 extends javax.swing.JFrame {
         jLabel9.setText("Foto:");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
         getContentPane().add(labelfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 134, 113));
-        getContentPane().add(txtnombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 134, -1));
-        getContentPane().add(txtapellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 134, -1));
-        getContentPane().add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 134, -1));
-        getContentPane().add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, 134, -1));
-        getContentPane().add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 134, -1));
+        getContentPane().add(txtnombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 140, 20));
+        getContentPane().add(txtapellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 140, 20));
+        getContentPane().add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 140, 20));
+        getContentPane().add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 140, 20));
+        getContentPane().add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 540, 140, 20));
 
         buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
         buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
@@ -390,6 +401,14 @@ public class Vpersona1 extends javax.swing.JFrame {
         buttonbuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
         getContentPane().add(buttonbuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 30, 40, 20));
 
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel10.setText("E-mail:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
+
+        TxtFecha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        TxtFecha.setDateFormatString("YYYY/MM/DD");
+        getContentPane().add(TxtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 140, -1));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 610));
@@ -403,6 +422,7 @@ public class Vpersona1 extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser TxtFecha;
     private javax.swing.JButton buttonbuscar;
     private javax.swing.JButton buttonbuscar1;
     private javax.swing.JButton buttoncargar;
@@ -413,6 +433,7 @@ public class Vpersona1 extends javax.swing.JFrame {
     private javax.swing.JButton buttonnuevo;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

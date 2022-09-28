@@ -1,22 +1,29 @@
-
-
 package Papeleria_Bella.modelo;
 
 public class ClientesMD {
+
     String codigo;
     String cedula;
     String nombres;
-    String apellidos;
     String celular;
-    String direccion;
-    String email;
-    String fechanac;
-            
+    String estado;
+    String discapacidad;
+    String porcentaje_discapacidad;
 
     public ClientesMD() {
     }
 
-    
+    public ClientesMD(String codigo, String cedula, String nombres, String celular, String estado, String discapacidad, String porcentaje_discapacidad) {
+        this.codigo = codigo;
+        this.cedula = cedula;
+        this.nombres = nombres;
+        this.celular = celular;
+        this.estado = estado;
+        this.discapacidad = discapacidad;
+        this.porcentaje_discapacidad = porcentaje_discapacidad;
+    }
+
+ 
 
     public String getCodigo() {
         return codigo;
@@ -42,12 +49,12 @@ public class ClientesMD {
         this.nombres = nombres;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getPorcentaje_discapacidad() {
+        return porcentaje_discapacidad;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setPorcentaje_discapacidad(String porcentaje_discapacidad) {
+        this.porcentaje_discapacidad = porcentaje_discapacidad;
     }
 
     public String getCelular() {
@@ -58,21 +65,20 @@ public class ClientesMD {
         this.celular = celular;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDiscapacidad() {
+        return discapacidad;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDiscapacidad(String discapacidad) {
+        this.discapacidad = discapacidad;
     }
 
-    
 }

@@ -73,8 +73,8 @@ public class Cprincipal {
         Cstock cper=new Cstock(p);
     }
     private void ventas() {
-        Vventas p= new Vventas();
-        Cventas cper=new Cventas(p);
+//        Vventas p= new Vventas();
+//        Cventas cper=new Cventas(p);
     }
     private void cotizacion() {
         Vcotizacion p= new Vcotizacion();

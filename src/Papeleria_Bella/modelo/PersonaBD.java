@@ -18,44 +18,37 @@ import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import org.postgresql.util.Base64;
-     
+
 public class PersonaBD extends PersonaMD {
-  
+    
     Conexion conectar = new Conexion();
-
-    public PersonaBD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, Image foto) {
-        super(cedula, nombres, apellidos, telefono, direccion, email, foto);
+    
+    public PersonaBD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, Image foto, String fecha_nacimiento) {
+        super(cedula, nombres, apellidos, telefono, direccion, email, foto, fecha_nacimiento);
     }
-
-   
-
+    
     public PersonaBD() {
     }
-
     
-
-     public static BufferedImage toBufferedImage(Image img) {
+    public static BufferedImage toBufferedImage(Image img) {
         if (img instanceof BufferedImage) {
             return (BufferedImage) img;
         }
-
         
         BufferedImage bimage = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
-
         
         Graphics2D bGr = bimage.createGraphics();
         bGr.drawImage(img, 0, 0, null);
         bGr.dispose();
-
         
         return bimage;
-    }   
-
+    }
+    
     private Image getImage(byte[] bytes, boolean isThumbnail) throws IOException {
         ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
         Iterator readers = ImageIO.getImageReadersByFormatName("png");
         ImageReader reader = (ImageReader) readers.next();
-        Object source = bis; 
+        Object source = bis;
         ImageInputStream iis = ImageIO.createImageInputStream(source);
         reader.setInput(iis, true);
         ImageReadParam param = reader.getDefaultReadParam();
@@ -65,7 +58,6 @@ public class PersonaBD extends PersonaMD {
         return reader.read(0, param);
     }
     
-
     public List<PersonaMD> mostrardatos() {
         try {
             List<PersonaMD> listau = new ArrayList<PersonaMD>();
@@ -79,13 +71,14 @@ public class PersonaBD extends PersonaMD {
                 u.setTelefono(rs.getString("telefono"));
                 u.setDireccion(rs.getString("direccion"));
                 u.setEmail(rs.getString("email"));
+                u.setFecha_nacimiento("fecha_nacimiento");
                 
-            byte[] is;
+                byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {
                     try {
                         is = Base64.decode(is, 0, rs.getBytes("foto").length);
-
+                        
                         u.setFoto(getImage(is, false));
                     } catch (Exception ex) {
                         u.setFoto(null);
@@ -94,7 +87,7 @@ public class PersonaBD extends PersonaMD {
                 } else {
                     u.setFoto(null);
                 }
-
+                
                 listau.add(u);
             }
             rs.close();
@@ -104,7 +97,7 @@ public class PersonaBD extends PersonaMD {
             return null;
         }
     }
-  
+    
     public boolean insertar() {
         
         String ef = null;
@@ -117,35 +110,34 @@ public class PersonaBD extends PersonaMD {
         } catch (IOException ex) {
             Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        String sql = "INSERT INTO persona(cedula, nombres, apellidos, telefono, direccion, email, foto) VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getTelefono() + "','" + getDireccion() + "','" + getEmail() + "','" + ef + "')";
-
-         if (conectar.noQuery(sql) == null) {
+        
+        String sql = "INSERT INTO persona(cedula, nombres, apellidos, telefono, direccion, email, foto,fecha_nacimiento) VALUES ('" + getCedula() + "','" + getNombres() + "','" + getApellidos() + "','" + getTelefono() + "','" + getDireccion() + "','" + getEmail() + "','" + ef + "','" + getFecha_nacimiento() + "')";
+        
+        if (conectar.noQuery(sql) == null) {
             return true;
         } else {
-
+            
             System.out.println("Error");
             return false;
         }
-
+        
     }
-
+    
     public boolean modificar(String cedula) {
         
-
-        String sql = "update persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"telefono\"='" + getTelefono() + "',\"direccion\"='" + getDireccion() + "',\"email\"='" + getEmail() + "'"
+        String sql = "update persona set \"nombres\"='" + getNombres() + "',\"apellidos\"='" + getApellidos() + "',\"telefono\"='" + getTelefono() + "',\"direccion\"='" + getDireccion() + "',\"email\"='" + getEmail() + "',\"fecha_nacimiento\"='" + getFecha_nacimiento() + "'"
                 + " where \"cedula\"='" + cedula + "'";
-
+        
         if (conectar.noQuery(sql) == null) {
             return true;
         } else {
             System.out.println("error al editar");
-
+            
             return false;
         }
-
+        
     }
-
+    
     public List<PersonaMD> obtenerdatos(String cedula) {
         
         try {
@@ -157,12 +149,12 @@ public class PersonaBD extends PersonaMD {
                 u.setCedula(rs.getString("cedula"));
                 u.setNombres(rs.getString("nombres"));
                 u.setApellidos(rs.getString("apellidos"));
-                 u.setTelefono(rs.getString("telefono"));
+                u.setTelefono(rs.getString("telefono"));
                 u.setDireccion(rs.getString("direccion"));
                 u.setEmail(rs.getString("email"));
+                u.setFecha_nacimiento("fecha_nacimiento");
                 
-               
-                   byte[] is;
+                byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {
                     try {
@@ -175,7 +167,7 @@ public class PersonaBD extends PersonaMD {
                 } else {
                     u.setFoto(null);
                 }
-  
+                
                 lista.add(u);
             }
             rs.close();
@@ -185,12 +177,13 @@ public class PersonaBD extends PersonaMD {
             return null;
         }
     }
-    public boolean eliminar (String cedula){
+    
+    public boolean eliminar(String cedula) {
         String sql = "delete from persona where \"cedula\"='" + cedula + "'";
-        if (conectar.noQuery(sql)==null) {
+        if (conectar.noQuery(sql) == null) {
             return true;
             
-        }else{
+        } else {
             System.out.println("Error al eliminar");
             return false;
         }
@@ -210,6 +203,7 @@ public class PersonaBD extends PersonaMD {
                 u.setTelefono(rs.getString("telefono"));
                 u.setDireccion(rs.getString("direccion"));
                 u.setEmail(rs.getString("email"));
+                u.setFecha_nacimiento("fecha_nacimiento");
                 byte[] is;
                 is = rs.getBytes("foto");
                 if (is != null) {

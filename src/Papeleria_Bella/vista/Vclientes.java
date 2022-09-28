@@ -1,28 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Papeleria_Bella.vista;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-/**
- *
- * @author JimmGM
- */
 public class Vclientes extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Vclientes
-     */
     public Vclientes() {
         initComponents();
+    }
+
+    public JSpinner getTxtPorcentajeDiscapacidad() {
+        return TxtPorcentajeDiscapacidad;
+    }
+
+    public void setTxtPorcentajeDiscapacidad(JSpinner TxtPorcentajeDiscapacidad) {
+        this.TxtPorcentajeDiscapacidad = TxtPorcentajeDiscapacidad;
     }
 
     public JButton getButtonbuscar() {
@@ -39,6 +36,54 @@ public class Vclientes extends javax.swing.JFrame {
 
     public void setButtoneliminar(JButton buttoneliminar) {
         this.buttoneliminar = buttoneliminar;
+    }
+
+    public JLabel getLabelCelular() {
+        return LabelCelular;
+    }
+
+    public void setLabelCelular(JLabel LabelCelular) {
+        this.LabelCelular = LabelCelular;
+    }
+
+    public JLabel getLabelPorcentajeDiscapacidad() {
+        return LabelPorcentajeDiscapacidad;
+    }
+
+    public void setLabelPorcentajeDiscapacidad(JLabel LabelPorcentajeDiscapacidad) {
+        this.LabelPorcentajeDiscapacidad = LabelPorcentajeDiscapacidad;
+    }
+
+    public JLabel getLabelTINombres() {
+        return LabelTINombres;
+    }
+
+    public void setLabelTINombres(JLabel LabelTINombres) {
+        this.LabelTINombres = LabelTINombres;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getTablacliente() {
+        return tablacliente;
+    }
+
+    public void setTablacliente(JTable tablacliente) {
+        this.tablacliente = tablacliente;
+    }
+
+    public JLabel getLabelcelular() {
+        return labelcelular;
+    }
+
+    public void setLabelcelular(JLabel labelcelular) {
+        this.labelcelular = labelcelular;
     }
 
     public JButton getButtonguardar() {
@@ -73,94 +118,20 @@ public class Vclientes extends javax.swing.JFrame {
         this.buttonnuevo = buttonnuevo;
     }
 
-    
-
-    public JLabel getjLabel17() {
-        return jLabel17;
+    public JComboBox<String> getCmbDiscapacidad() {
+        return cmbDiscapacidad;
     }
 
-    public void setjLabel17(JLabel jLabel17) {
-        this.jLabel17 = jLabel17;
+    public void setCmbDiscapacidad(JComboBox<String> cmbDiscapacidad) {
+        this.cmbDiscapacidad = cmbDiscapacidad;
     }
 
-    public JLabel getjLabel18() {
-        return jLabel18;
+    public JComboBox<String> getCmbEstado() {
+        return cmbEstado;
     }
 
-    public void setjLabel18(JLabel jLabel18) {
-        this.jLabel18 = jLabel18;
-    }
-
-    public JLabel getjLabel19() {
-        return jLabel19;
-    }
-
-    public void setjLabel19(JLabel jLabel19) {
-        this.jLabel19 = jLabel19;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public void setjLabel2(JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
-    }
-
-    public JLabel getjLabel20() {
-        return jLabel20;
-    }
-
-    public void setjLabel20(JLabel jLabel20) {
-        this.jLabel20 = jLabel20;
-    }
-
-    public JLabel getjLabel21() {
-        return jLabel21;
-    }
-
-    public void setjLabel21(JLabel jLabel21) {
-        this.jLabel21 = jLabel21;
-    }
-
-    public JLabel getjLabel22() {
-        return jLabel22;
-    }
-
-    public void setjLabel22(JLabel jLabel22) {
-        this.jLabel22 = jLabel22;
-    }
-
-    public JLabel getjLabel23() {
-        return jLabel23;
-    }
-
-    public void setjLabel23(JLabel jLabel23) {
-        this.jLabel23 = jLabel23;
-    }
-
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
-    }
-
-    public JLabel getLabelapellidos() {
-        return labelapellidos;
-    }
-
-    public void setLabelapellidos(JLabel labelapellidos) {
-        this.labelapellidos = labelapellidos;
-    }
-
-    public JLabel getLabelcelular() {
-        return labelcelular;
-    }
-
-    public void setLabelcelular(JLabel labelcelular) {
-        this.labelcelular = labelcelular;
+    public void setCmbEstado(JComboBox<String> cmbEstado) {
+        this.cmbEstado = cmbEstado;
     }
 
     public JLabel getLabelcodigo2() {
@@ -171,36 +142,12 @@ public class Vclientes extends javax.swing.JFrame {
         this.labelcodigo2 = labelcodigo2;
     }
 
-    public JLabel getLabeldireccion() {
-        return labeldireccion;
-    }
-
-    public void setLabeldireccion(JLabel labeldireccion) {
-        this.labeldireccion = labeldireccion;
-    }
-
-    public JLabel getLabelemail() {
-        return labelemail;
-    }
-
-    public void setLabelemail(JLabel labelemail) {
-        this.labelemail = labelemail;
-    }
-
     public JLabel getLabelnombres() {
         return labelnombres;
     }
 
     public void setLabelnombres(JLabel labelnombres) {
         this.labelnombres = labelnombres;
-    }
-
-    public JTable getTablaproveedores() {
-        return tablaproveedores;
-    }
-
-    public void setTablaproveedores(JTable tablaproveedores) {
-        this.tablaproveedores = tablaproveedores;
     }
 
     public JTextField getTxtcedula() {
@@ -210,40 +157,34 @@ public class Vclientes extends javax.swing.JFrame {
     public void setTxtcedula(JTextField txtcedula) {
         this.txtcedula = txtcedula;
     }
-    
 
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        LabelTINombres = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        labelemail = new javax.swing.JLabel();
         txtcedula = new javax.swing.JTextField();
         buttonnuevo = new javax.swing.JButton();
         buttonguardar = new javax.swing.JButton();
         buttonmodificar = new javax.swing.JButton();
         buttoneliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaproveedores = new javax.swing.JTable();
+        tablacliente = new javax.swing.JTable();
         buttonimprimir = new javax.swing.JButton();
         buttonbuscar = new javax.swing.JButton();
         labelcodigo2 = new javax.swing.JLabel();
         labelnombres = new javax.swing.JLabel();
-        labelapellidos = new javax.swing.JLabel();
         labelcelular = new javax.swing.JLabel();
-        labeldireccion = new javax.swing.JLabel();
+        LabelPorcentajeDiscapacidad = new javax.swing.JLabel();
+        LabelCelular = new javax.swing.JLabel();
+        cmbEstado = new javax.swing.JComboBox<>();
+        cmbDiscapacidad = new javax.swing.JComboBox<>();
+        jLabel26 = new javax.swing.JLabel();
+        TxtPorcentajeDiscapacidad = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -256,30 +197,17 @@ public class Vclientes extends javax.swing.JFrame {
         jLabel17.setText("Cédula:");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 70, 40));
 
-        jLabel18.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel18.setText("Apellidos:");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
-
-        jLabel19.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel19.setText("Nombres:");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
-
-        jLabel20.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel20.setText("Dirección:");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, -1, -1));
-
-        jLabel21.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel21.setText("Email:");
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, -1, -1));
+        LabelTINombres.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        LabelTINombres.setText("Nombres:");
+        getContentPane().add(LabelTINombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel22.setText("Celular:");
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
+        jLabel22.setText("Estado:");
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel23.setText("Código:");
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
-        getContentPane().add(labelemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, 130, 30));
 
         txtcedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,7 +236,7 @@ public class Vclientes extends javax.swing.JFrame {
         buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
         getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, 40, 40));
 
-        tablaproveedores.setModel(new javax.swing.table.DefaultTableModel(
+        tablacliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -316,27 +244,44 @@ public class Vclientes extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Codigo", "Cedula", "Nombres", "Apellidos", "Celular", "Direccion", "Email"
+                "Codigo", "Cedula", "Nombres", "Celular", "Estado", "Discapacidad", "Porcentaje"
             }
         ));
-        jScrollPane1.setViewportView(tablaproveedores);
+        jScrollPane1.setViewportView(tablacliente);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 660, 140));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 660, 100));
 
         buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
         buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5).png"))); // NOI18N
-        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 540, 50, -1));
+        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 410, 50, -1));
 
         buttonbuscar.setBackground(new java.awt.Color(232, 255, 255));
         buttonbuscar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
         getContentPane().add(buttonbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 50, 30));
         getContentPane().add(labelcodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 130, 30));
-        getContentPane().add(labelnombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 130, 30));
-        getContentPane().add(labelapellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 130, 30));
-        getContentPane().add(labelcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 130, 30));
-        getContentPane().add(labeldireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 130, 30));
+        getContentPane().add(labelnombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 200, 30));
+        getContentPane().add(labelcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 130, 30));
+
+        LabelPorcentajeDiscapacidad.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        LabelPorcentajeDiscapacidad.setText("Porcentaje de Discapacidad: ");
+        getContentPane().add(LabelPorcentajeDiscapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, -1));
+
+        LabelCelular.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        LabelCelular.setText("Celular:");
+        getContentPane().add(LabelCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
+
+        cmbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        getContentPane().add(cmbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
+
+        cmbDiscapacidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
+        getContentPane().add(cmbDiscapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 80, -1));
+
+        jLabel26.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel26.setText("Discapacidad: ");
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
+        getContentPane().add(TxtPorcentajeDiscapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 80, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -345,31 +290,30 @@ public class Vclientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcedulaActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LabelCelular;
+    private javax.swing.JLabel LabelPorcentajeDiscapacidad;
+    private javax.swing.JLabel LabelTINombres;
+    private javax.swing.JSpinner TxtPorcentajeDiscapacidad;
     private javax.swing.JButton buttonbuscar;
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
     private javax.swing.JButton buttonimprimir;
     private javax.swing.JButton buttonmodificar;
     private javax.swing.JButton buttonnuevo;
+    private javax.swing.JComboBox<String> cmbDiscapacidad;
+    private javax.swing.JComboBox<String> cmbEstado;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelapellidos;
     private javax.swing.JLabel labelcelular;
     private javax.swing.JLabel labelcodigo2;
-    private javax.swing.JLabel labeldireccion;
-    private javax.swing.JLabel labelemail;
     private javax.swing.JLabel labelnombres;
-    private javax.swing.JTable tablaproveedores;
+    private javax.swing.JTable tablacliente;
     private javax.swing.JTextField txtcedula;
     // End of variables declaration//GEN-END:variables
 }

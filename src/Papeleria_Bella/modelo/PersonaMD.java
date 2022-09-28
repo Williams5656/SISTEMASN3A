@@ -14,11 +14,12 @@ public class PersonaMD {
     String email;
     
     private Image foto;
+    String fecha_nacimiento;
 
     public PersonaMD() {
     }
-            
-    public PersonaMD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, Image foto) {
+
+    public PersonaMD(String cedula, String nombres, String apellidos, String telefono, String direccion, String email, Image foto, String fecha_nacimiento) {
         this.cedula = cedula;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -26,7 +27,17 @@ public class PersonaMD {
         this.direccion = direccion;
         this.email = email;
         this.foto = foto;
+        this.fecha_nacimiento = fecha_nacimiento;
     }
+
+    public String getFecha_nacimiento() {
+        return fecha_nacimiento;
+    }
+
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
+    }
+            
 
     public Image getFoto() {
         return foto;

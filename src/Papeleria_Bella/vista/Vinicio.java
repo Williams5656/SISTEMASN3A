@@ -6,7 +6,7 @@
 package Papeleria_Bella.vista;
 
 import static Papeleria_Bella.controlador.Cinicio.vista;
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;

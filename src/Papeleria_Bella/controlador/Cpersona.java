@@ -6,6 +6,7 @@ import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +31,8 @@ public class Cpersona {
 
     private PersonaBD bpersona = new PersonaBD();
 
+  
+
     public Cpersona(Vpersona1 vista) {
         this.vista = vista;
         vista.setVisible(true);
@@ -43,9 +46,9 @@ public class Cpersona {
             vista.getButtonbuscar().addActionListener(e -> Buscar());
             vista.getButtonimprimir().addActionListener(e -> imprimir());
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-       
+
         vista.getTablapersona().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -58,7 +61,7 @@ public class Cpersona {
         vista.getButtoneliminar().addActionListener(e -> eliminar());
         vista.getButtonguardar().setEnabled(false);
         vista.getButtonmodificar().setEnabled(false);
-        
+
         vista.getTxtcedula().setEnabled(false);
         vista.getTxtnombres().setEnabled(false);
         vista.getTxtapellidos().setEnabled(false);
@@ -89,12 +92,15 @@ public class Cpersona {
     }
 
     public void guardar() {
+        SimpleDateFormat fe = new SimpleDateFormat("dd-MM-yyyy");
+        
         bpersona.setCedula(vista.getTxtcedula().getText());
         bpersona.setNombres(vista.getTxtnombres().getText());
         bpersona.setApellidos(vista.getTxtapellidos().getText());
         bpersona.setTelefono(vista.getTxttelefono().getText());
         bpersona.setDireccion(vista.getTxtdireccion().getText());
         bpersona.setEmail(vista.getTxtemail().getText());
+        bpersona.setFecha_nacimiento(fe.format(vista.getTxtFecha().getDate()));
 
         ImageIcon ic = (ImageIcon) vista.getLabelfoto().getIcon();
         bpersona.setFoto(ic.getImage());
@@ -111,7 +117,7 @@ public class Cpersona {
         } else {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
-            
+
             vista.getTxtcedula().setEnabled(false);
             vista.getTxtnombres().setEnabled(false);
             vista.getTxtapellidos().setEnabled(false);
@@ -129,6 +135,7 @@ public class Cpersona {
         bpersona.setTelefono(vista.getTxttelefono().getText());
         bpersona.setDireccion(vista.getTxtdireccion().getText());
         bpersona.setEmail(vista.getTxtemail().getText());
+        bpersona.setFecha_nacimiento(vista.getTxtFecha().getDateFormatString());
 
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");
         if (resp == 0) {
@@ -149,7 +156,7 @@ public class Cpersona {
     public void seleccionar() {
         vista.getButtonguardar().setEnabled(false);
         vista.getButtonmodificar().setEnabled(true);
-        
+
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTablapersona().getModel();
         String cedula = (String) modelo.getValueAt(vista.getTablapersona().getSelectedRow(), 0);
@@ -166,6 +173,8 @@ public class Cpersona {
         vista.getTxtdireccion().setText(bpersona.getDireccion());
         bpersona.setEmail(lista.get(0).getEmail());
         vista.getTxtemail().setText(bpersona.getEmail());
+        bpersona.setFecha_nacimiento(bpersona.getFecha_nacimiento());
+        vista.getTxtFecha().setDateFormatString(bpersona.getFecha_nacimiento());
 
         Image img = lista.get(0).getFoto();
         if (img != null) {
@@ -224,6 +233,7 @@ public class Cpersona {
         vista.getTxttelefono().setText("");
         vista.getTxtdireccion().setText("");
         vista.getTxtemail().setText("");
+        vista.getTxtFecha().setDateFormatString("YYY-MM-DD");
         vista.getButtonguardar().setEnabled(true);
         vista.getButtonmodificar().setEnabled(false);
         vista.getTxtcedula().setEnabled(true);
@@ -257,7 +267,7 @@ public class Cpersona {
             }
         }
     }
-    
+
     private void imprimir_sinparametro() {
         Conexion conectar = new Conexion();
         try {
@@ -267,7 +277,7 @@ public class Cpersona {
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
-            
+
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {
@@ -275,19 +285,19 @@ public class Cpersona {
             Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-    
+
     private void imprimir_unparametro() {
         Conexion conectar = new Conexion();
         try {
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona1.jasper"));
             Map<String, Object> map = new HashMap<String, Object>();
-            String nombre =JOptionPane.showInputDialog("Imprimir el parametro elegido");
+            String nombre = JOptionPane.showInputDialog("Imprimir el parametro elegido");
             map.put("logo", "imagen/persona1.png");
             map.put("valor", nombre);
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
-            
+
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {
@@ -295,26 +305,28 @@ public class Cpersona {
             Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
         }
     }
+
     private void imprimir_dosparametro() {
         Conexion conectar = new Conexion();
         try {
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona2.jasper"));
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("logo", "imagen/persona2.png");
-            String nombre =JOptionPane.showInputDialog("Imprimir el primer parámetro");
-            String placa =JOptionPane.showInputDialog("Imprimir el segundo parámetro");
+            String nombre = JOptionPane.showInputDialog("Imprimir el primer parámetro");
+            String placa = JOptionPane.showInputDialog("Imprimir el segundo parámetro");
             map.put("valor", nombre);
             map.put("placa", placa);
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
-        jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {
             System.out.println("no se pudo encontrar registros" + e.getMessage());
             Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
         }
     }
+
     private void imprimir_todo() {
         Conexion conectar = new Conexion();
         try {
@@ -331,31 +343,30 @@ public class Cpersona {
             Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-    
-    
+
     public void imprimir() {
-        int opcion=Integer.parseInt(JOptionPane.showInputDialog("Escoja una opción: \n1. Imprimir un parametro \n2. Imprimir dos parametros \n 3. Imprimir todo "));
-    
-    switch(opcion){
-    
-        case 1: 
-            imprimir_unparametro();
-             break;
-            
-        case 2: 
-            imprimir_dosparametro();
-            break;
-            
-        case 3: 
-            imprimir_todo();
-            break;
-            
-        default:
-            JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
+        int opcion = Integer.parseInt(JOptionPane.showInputDialog("Escoja una opción: \n1. Imprimir un parametro \n2. Imprimir dos parametros \n 3. Imprimir todo "));
+
+        switch (opcion) {
+
+            case 1:
+                imprimir_unparametro();
+                break;
+
+            case 2:
+                imprimir_dosparametro();
+                break;
+
+            case 3:
+                imprimir_todo();
+                break;
+
+            default:
+                JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
         }
     }
-    
-    public void validar(){
+
+    public void validar() {
         Validadores.Letras.solo_letras(vista.getTxtnombres());
     }
 
