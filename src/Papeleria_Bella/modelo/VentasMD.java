@@ -3,32 +3,32 @@ package Papeleria_Bella.modelo;
 
 
 public class VentasMD {
+    int IdVentas;
     String numfactura;
-    String cedula;
-    String codigo;
-    String nombreproducto;
-    int cantidad;
-    String valoru;
-    String iva;
-    String total;
+    String cedulacliente;
+    String FechaVenta;
+    Double Monto;
+    String Estado;
 
     public VentasMD() {
     }
 
-    public VentasMD(String numfactura, String cedula, String codigo, String nombreproducto, int cantidad, String valoru, String iva, String total) {
+    public VentasMD(int IdVentas, String numfactura, String cedulacliente, String FechaVenta, Double Monto, String Estado) {
+        this.IdVentas = IdVentas;
         this.numfactura = numfactura;
-        this.cedula = cedula;
-        this.codigo = codigo;
-        this.nombreproducto = nombreproducto;
-        this.cantidad = cantidad;
-        this.valoru = valoru;
-        this.iva = iva;
-        this.total = total;
+        this.cedulacliente = cedulacliente;
+        this.FechaVenta = FechaVenta;
+        this.Monto = Monto;
+        this.Estado = Estado;
     }
 
-    
+    public int getIdVentas() {
+        return IdVentas;
+    }
 
-    
+    public void setIdVentas(int IdVentas) {
+        this.IdVentas = IdVentas;
+    }
 
     public String getNumfactura() {
         return numfactura;
@@ -38,65 +38,44 @@ public class VentasMD {
         this.numfactura = numfactura;
     }
 
-    public String getCedula() {
-        return cedula;
+    public String getCedulacliente() {
+        return cedulacliente;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setCedulacliente(String cedulacliente) {
+        this.cedulacliente = cedulacliente;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getFechaVenta() {
+        return FechaVenta;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setFechaVenta(String FechaVenta) {
+        this.FechaVenta = FechaVenta;
     }
 
-    public String getNombreproducto() {
-        return nombreproducto;
+    public Double getMonto() {
+        return Monto;
     }
 
-    public void setNombreproducto(String nombreproducto) {
-        this.nombreproducto = nombreproducto;
+    public void setMonto(Double Monto) {
+        this.Monto = Monto;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public String getEstado() {
+        return Estado;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
     }
 
-    public String getValoru() {
-        return valoru;
-    }
-
-    public void setValoru(String valoru) {
-        this.valoru = valoru;
-    }
 
     
 
     
 
-    public String getIva() {
-        return iva;
-    }
-
-    public void setIva(String iva) {
-        this.iva = iva;
-    }
-
-    public String getTotal() {
-        return total;
-    }
-
-    public void setTotal(String total) {
-        this.total = total;
-    }
+    
     
     
 }
