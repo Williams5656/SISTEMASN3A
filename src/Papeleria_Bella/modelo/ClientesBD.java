@@ -40,7 +40,7 @@ public class ClientesBD extends ClientesMD {
                 u.setCedula(rs.getString("cedula"));
                 u.setNombres(rs.getString("nombres"));
                 u.setCelular(rs.getString("celular"));
-                u.setEstado(rs.getString("direccion"));
+                u.setEstado(rs.getString("estado"));
                 u.setDiscapacidad(rs.getString("discapacidad"));
                 u.setPorcentaje_discapacidad(rs.getString("porcentaje_discapacidad"));
 
@@ -70,7 +70,7 @@ public class ClientesBD extends ClientesMD {
 
     public boolean modificar(String codigo) {
 
-        String sql = "update clientes set \"cedula\"='" + getCedula() + "',\"nombres\"='" + getNombres() + "',\"celular\"='" + getCelular() + "',\"direccion\"='" + getEstado() + "',\"discapacidad\"='" + getDiscapacidad() + "',\"porcentaje_discapacidad\"='" + getPorcentaje_discapacidad() + "'"
+        String sql = "update clientes set \"cedula\"='" + getCedula() + "',\"nombres\"='" + getNombres() + "',\"celular\"='" + getCelular() + "',\"estado\"='" + getEstado() + "',\"discapacidad\"='" + getDiscapacidad() + "',\"porcentaje_discapacidad\"='" + getPorcentaje_discapacidad() + "'"
                 + " where \"codigo\"='" + codigo + "'";
 
         if (conectar.noQuery(sql) == null) {
@@ -95,7 +95,7 @@ public class ClientesBD extends ClientesMD {
                 u.setCedula(rs.getString("cedula"));
                 u.setNombres(rs.getString("nombres"));
                 u.setCelular(rs.getString("celular"));
-                u.setEstado(rs.getString("direccion"));
+                u.setEstado(rs.getString("estado"));
                 u.setDiscapacidad(rs.getString("discapacidad"));
                 u.setPorcentaje_discapacidad(rs.getString("porcentaje_discapacidad"));
 
@@ -149,41 +149,26 @@ public class ClientesBD extends ClientesMD {
         return reader.read(0, param);
     }
 
-    public List<PersonaMD> buscardatos(String cedula) {
-        PersonaMD u = new PersonaMD();
+    public List<ClientesMD> buscardatos(String cedula) {
         try {
-            List<PersonaMD> lista = new ArrayList<PersonaMD>();
-            String sql = "select * from persona where \"cedula\"='" + cedula + "'";
+            List<ClientesMD> lista = new ArrayList<ClientesMD>();
+            String sql = "select * from clientes where \"cedula\" ILIKE '%" + cedula + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
-
+                ClientesMD u = new ClientesMD();
+                u.setCodigo(rs.getString("codigo"));
                 u.setCedula(rs.getString("cedula"));
                 u.setNombres(rs.getString("nombres"));
-                u.setApellidos(rs.getString("apellidos"));
-                u.setTelefono(rs.getString("telefono"));
-                u.setDireccion(rs.getString("direccion"));
-                u.setEmail(rs.getString("email"));
-
-                u.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
-                byte[] is;
-                is = rs.getBytes("foto");
-                if (is != null) {
-                    try {
-                        is = Base64.decode(is, 0, rs.getBytes("foto").length);
-                        u.setFoto(getImage(is, false));
-                    } catch (Exception ex) {
-                        u.setFoto(null);
-                        Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } else {
-                    u.setFoto(null);
-                }
+                u.setCelular(rs.getString("celular"));
+                u.setEstado(rs.getString("estado"));
+                u.setDiscapacidad(rs.getString("discapacidad"));
+                u.setPorcentaje_discapacidad(rs.getString("porcentaje_discapacidad"));
                 lista.add(u);
             }
             rs.close();
             return lista;
         } catch (SQLException e) {
-            Logger.getLogger(PersonaBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(RolBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }

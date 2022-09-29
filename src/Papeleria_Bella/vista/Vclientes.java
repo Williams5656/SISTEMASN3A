@@ -38,12 +38,12 @@ public class Vclientes extends javax.swing.JFrame {
         this.buttoneliminar = buttoneliminar;
     }
 
-    public JLabel getLabelCelular() {
-        return LabelCelular;
+    public JLabel getLabeltiCelular() {
+        return LabeltiCelular;
     }
 
-    public void setLabelCelular(JLabel LabelCelular) {
-        this.LabelCelular = LabelCelular;
+    public void setLabeltiCelular(JLabel LabeltiCelular) {
+        this.LabeltiCelular = LabeltiCelular;
     }
 
     public JLabel getLabelPorcentajeDiscapacidad() {
@@ -108,6 +108,22 @@ public class Vclientes extends javax.swing.JFrame {
 
     public void setButtonmodificar(JButton buttonmodificar) {
         this.buttonmodificar = buttonmodificar;
+    }
+
+    public JLabel getLabelTINombres1() {
+        return LabelTINombres1;
+    }
+
+    public void setLabelTINombres1(JLabel LabelTINombres1) {
+        this.LabelTINombres1 = LabelTINombres1;
+    }
+
+    public JTextField getTxtBuscar() {
+        return TxtBuscar;
+    }
+
+    public void setTxtBuscar(JTextField TxtBuscar) {
+        this.TxtBuscar = TxtBuscar;
     }
 
     public JButton getButtonnuevo() {
@@ -180,11 +196,13 @@ public class Vclientes extends javax.swing.JFrame {
         labelnombres = new javax.swing.JLabel();
         labelcelular = new javax.swing.JLabel();
         LabelPorcentajeDiscapacidad = new javax.swing.JLabel();
-        LabelCelular = new javax.swing.JLabel();
+        LabeltiCelular = new javax.swing.JLabel();
         cmbEstado = new javax.swing.JComboBox<>();
         cmbDiscapacidad = new javax.swing.JComboBox<>();
         jLabel26 = new javax.swing.JLabel();
         TxtPorcentajeDiscapacidad = new javax.swing.JSpinner();
+        LabelTINombres1 = new javax.swing.JLabel();
+        TxtBuscar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -198,8 +216,8 @@ public class Vclientes extends javax.swing.JFrame {
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 70, 40));
 
         LabelTINombres.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        LabelTINombres.setText("Nombres:");
-        getContentPane().add(LabelTINombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        LabelTINombres.setText("Buscar:");
+        getContentPane().add(LabelTINombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 70, -1));
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel22.setText("Estado:");
@@ -249,7 +267,7 @@ public class Vclientes extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablacliente);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 660, 100));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 670, 130));
 
         buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
         buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
@@ -268,20 +286,32 @@ public class Vclientes extends javax.swing.JFrame {
         LabelPorcentajeDiscapacidad.setText("Porcentaje de Discapacidad: ");
         getContentPane().add(LabelPorcentajeDiscapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, -1));
 
-        LabelCelular.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        LabelCelular.setText("Celular:");
-        getContentPane().add(LabelCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
+        LabeltiCelular.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        LabeltiCelular.setText("Celular:");
+        getContentPane().add(LabeltiCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
 
         cmbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
         getContentPane().add(cmbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
 
         cmbDiscapacidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
+        cmbDiscapacidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbDiscapacidadActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbDiscapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 80, -1));
 
         jLabel26.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel26.setText("Discapacidad: ");
         getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
+
+        TxtPorcentajeDiscapacidad.setModel(new javax.swing.SpinnerNumberModel(Long.valueOf(0L), Long.valueOf(0L), Long.valueOf(100L), Long.valueOf(1L)));
         getContentPane().add(TxtPorcentajeDiscapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 80, 30));
+
+        LabelTINombres1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        LabelTINombres1.setText("Nombres:");
+        getContentPane().add(LabelTINombres1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        getContentPane().add(TxtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 160, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -290,11 +320,17 @@ public class Vclientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcedulaActionPerformed
 
+    private void cmbDiscapacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDiscapacidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbDiscapacidadActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LabelCelular;
     private javax.swing.JLabel LabelPorcentajeDiscapacidad;
     private javax.swing.JLabel LabelTINombres;
+    private javax.swing.JLabel LabelTINombres1;
+    private javax.swing.JLabel LabeltiCelular;
+    private javax.swing.JTextField TxtBuscar;
     private javax.swing.JSpinner TxtPorcentajeDiscapacidad;
     private javax.swing.JButton buttonbuscar;
     private javax.swing.JButton buttoneliminar;
