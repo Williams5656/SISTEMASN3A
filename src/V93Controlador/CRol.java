@@ -24,6 +24,9 @@ public class CRol {
         lista();
         VistaR.getBtnGuardarRol().addActionListener(x -> guardar());
         VistaR.getBtnModificarRol().addActionListener(e -> modificar());
+        VistaR.getBtnNuevoRol().addActionListener(e -> nuevo());
+        VistaR.getBtnEliminarRol().addActionListener(e -> eliminar());
+        
         VistaR.getBtnbuscarr().addActionListener(e -> buscar());
         VistaR.getTableRol().addMouseListener(new MouseAdapter() {
             @Override
@@ -33,13 +36,15 @@ public class CRol {
             }
 
         });
-
-        VistaR.getBtnNuevoRol().addActionListener(e -> nuevo());
-        VistaR.getBtnEliminarRol().addActionListener(e -> eliminar());
         VistaR.getBtnGuardarRol().setEnabled(false);
         VistaR.getBtnModificarRol().setEnabled(false);
+        VistaR.getBtnEliminarRol().setEnabled(false);
+        
+        VistaR.getTxtCodigoRol().setEnabled(false);
+        VistaR.getTxtNombreRol().setEnabled(false);
+        VistaR.getTxtDesceipcionRol().setEnabled(false);
+        VistaR.getjComboBoxRol().setEnabled(false);
     }
-
     public void lista() {
 
         DefaultTableModel modelo;
@@ -53,6 +58,7 @@ public class CRol {
         }
         for (int i = 0; i < lista.size(); i++) {
             modelo.addRow(new Object[columnas]);
+            
             VistaR.getTableRol().setValueAt(lista.get(i).getCodigo(), i, 0);
             VistaR.getTableRol().setValueAt(lista.get(i).getNombre(), i, 1);
             VistaR.getTableRol().setValueAt(lista.get(i).getDescripcion(), i, 2);
@@ -67,10 +73,15 @@ public class CRol {
         VistaR.getTxtDesceipcionRol().setText("");
         VistaR.getjComboBoxRol().setSelectedItem("");
         VistaR.getTxtbuscarr().setText("");
-
+        
         VistaR.getBtnGuardarRol().setEnabled(true);
         VistaR.getBtnModificarRol().setEnabled(false);
-
+        VistaR.getBtnEliminarRol().setEnabled(true);
+        
+        VistaR.getTxtCodigoRol().setEnabled(true);
+        VistaR.getTxtNombreRol().setEnabled(true);
+        VistaR.getTxtDesceipcionRol().setEnabled(true);
+        VistaR.getjComboBoxRol().setEnabled(true);
     }  
  
     public void guardar() {
@@ -133,8 +144,8 @@ public class CRol {
         VistaR.getBtnModificarRol().setEnabled(true);
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) VistaR.getTableRol().getModel();
-        String cedula = (String) modelo.getValueAt(VistaR.getTableRol().getSelectedRow(), 0);
-        List<RolMb> lista = bdrol.obtenerdatos(cedula);
+        String cargo = (String) modelo.getValueAt(VistaR.getTableRol().getSelectedRow(), 1);
+        List<RolMb> lista = bdrol.obtenerdatos(cargo);
         bdrol.setCodigo(lista.get(0).getCodigo());
         VistaR.getTxtCodigoRol().setText(bdrol.getCodigo());
         bdrol.setNombre(lista.get(0).getNombre());

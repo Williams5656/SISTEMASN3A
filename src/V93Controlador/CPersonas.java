@@ -1,13 +1,13 @@
 package V93Controlador;
-
 import V93Vista.*;
 import javax.swing.table.DefaultTableModel;
 import V93Modelo.*;
 import java.awt.Image;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +15,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-    
 public class CPersonas {
 
     public static VistaPersona VistaP;
@@ -28,12 +27,14 @@ public class CPersonas {
         VistaP.setVisible(true);
         VistaP.setLocationRelativeTo(null);
         lista();
+//        encontrar();
         VistaP.getBtnGuardarPersona().addActionListener(x -> guardar());
         VistaP.getBtnModificarPersona().addActionListener(e -> modificar());
-        VistaP.getBtnFoto().addActionListener(e -> obtieneImagen());
+        VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
+        VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
+        
+       VistaP.getBtnFoto().addActionListener(e -> obtieneImagen());
         VistaP.getBtnbuscarp().addActionListener(e -> buscar());
-        // VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
-        // VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getTablePersona().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -54,10 +55,18 @@ public class CPersonas {
             }
             
         });
-        VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
-        VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
-        VistaP.getBtnGuardarPersona().setEnabled(false);
+         VistaP.getBtnGuardarPersona().setEnabled(false);
         VistaP.getBtnModificarPersona().setEnabled(false);
+        VistaP.getBtnEliminarPersona().setEnabled(false);
+        
+        VistaP.getTxtCedulaPersona().setEnabled(false);
+        VistaP.getTxtNombrePersona().setEnabled(false);
+        VistaP.getTxtDireccionPersona().setEnabled(false);
+        VistaP.getTxtCelularPersona().setEnabled(false);
+        VistaP.getTxtFechaNacimientoPersona().setEnabled(false);
+        VistaP.getTxtCiudadPersona().setEnabled(false);
+        VistaP.getBtnFoto().setEnabled(false);
+        
     }
     
      private void txtCedulaPersonaKeyTyped(java.awt.event.KeyEvent evt) {                                          
@@ -91,10 +100,11 @@ public class CPersonas {
     }
 
     public void guardar() {
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
         bdpersona.setDireccion(VistaP.getTxtDireccionPersona().getText());
-        bdpersona.setFecha_nacimiento(VistaP.getTxtFechaNacimientoPersona().getText());
+        bdpersona.setFecha_nacimiento( f.format(VistaP.getTxtFechaNacimientoPersona().getDate()));
         bdpersona.setCiudad(VistaP.getTxtCiudadPersona().getText());
         bdpersona.setCelular(VistaP.getTxtCelularPersona().getText());
 
@@ -108,6 +118,13 @@ public class CPersonas {
             JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
             lista();
         }
+        VistaP.getTxtCedulaPersona().setText("");
+        VistaP.getTxtNombrePersona().setText("");
+        VistaP.getTxtDireccionPersona().setText("");
+        VistaP.getTxtFechaNacimientoPersona().setCalendar(null);
+        VistaP.getTxtCiudadPersona().setText("");
+        VistaP.getTxtCelularPersona().setText("");
+        VistaP.getTxtbuscarp().setText("");
 
     }
 
@@ -153,10 +170,11 @@ public class CPersonas {
     }
 
     public void modificar() {
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
         bdpersona.setDireccion(VistaP.getTxtDireccionPersona().getText());
-        bdpersona.setFecha_nacimiento(VistaP.getTxtFechaNacimientoPersona().getText());
+        bdpersona.setFecha_nacimiento( f.format(VistaP.getTxtFechaNacimientoPersona().getDate()));
         bdpersona.setCiudad(VistaP.getTxtCiudadPersona().getText());
         bdpersona.setCelular(VistaP.getTxtCelularPersona().getText());
         ImageIcon ic = (ImageIcon) VistaP.getLbFoto().getIcon();
@@ -184,13 +202,19 @@ public class CPersonas {
         VistaP.getTxtNombrePersona().setText(bdpersona.getNombre());
         bdpersona.setDireccion(lista.get(0).getDireccion());
         VistaP.getTxtDireccionPersona().setText(bdpersona.getDireccion());
-        bdpersona.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
-        VistaP.getTxtFechaNacimientoPersona().setText(bdpersona.getFecha_nacimiento());
         bdpersona.setCiudad(lista.get(0).getCiudad());
         VistaP.getTxtCiudadPersona().setText(bdpersona.getCiudad());
         bdpersona.setCelular(lista.get(0).getCelular());
         VistaP.getTxtCelularPersona().setText(bdpersona.getCelular());
-   
+   bdpersona.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date fecha = null;
+        try {
+            fecha = format.parse(bdpersona.getFecha_nacimiento());
+            VistaP.getTxtFechaNacimientoPersona().setDate(fecha);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
         Image img = lista.get(0).getFoto();
         if (img != null) {
             Image newimg = img.getScaledInstance(VistaP.getLbFoto().getWidth(), VistaP.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
@@ -218,11 +242,119 @@ public class CPersonas {
         VistaP.getTxtCedulaPersona().setText("");
         VistaP.getTxtNombrePersona().setText("");
         VistaP.getTxtDireccionPersona().setText("");
-        VistaP.getTxtFechaNacimientoPersona().setText("");
+        VistaP.getTxtFechaNacimientoPersona().setCalendar(null);
         VistaP.getTxtCiudadPersona().setText("");
         VistaP.getTxtCelularPersona().setText("");
         VistaP.getTxtbuscarp().setText("");
+        
         VistaP.getBtnGuardarPersona().setEnabled(true);
         VistaP.getBtnModificarPersona().setEnabled(false);
+        VistaP.getBtnEliminarPersona().setEnabled(true);
+        
+        VistaP.getTxtCedulaPersona().setEnabled(true);
+        VistaP.getTxtNombrePersona().setEnabled(true);
+        VistaP.getTxtDireccionPersona().setEnabled(true);
+        VistaP.getTxtCelularPersona().setEnabled(true);
+        VistaP.getTxtFechaNacimientoPersona().setEnabled(true);
+        VistaP.getTxtCiudadPersona().setEnabled(true);
+        VistaP.getBtnFoto().setEnabled(true);
     }
+//    public void encontrar(){
+//        
+//        if(VistaP.getTxtCedulaPersona().getText().equals("")){
+//            //limpiar();
+//            lista();
+//        }
+//        else {
+//
+//            List<PersonaMb> lista = bdpersona.obtenerdatos(VistaP.getTxtCedulaPersona().getText()); 
+//            for (int i = 0; i < lista.size(); i++)
+//            {    
+//                if(VistaP.getTxtCedulaPersona().getText().equals(lista.get(i).getCedula()))
+//                { 
+//                    JOptionPane.showMessageDialog(null, "EMPEADO REGISTRADO");
+//
+////                    bdEmpleado.setNombre(lista.get(0).getNombre());
+////                    vista.getTxtNombre().setText(bdEmpleado.getNombre());
+////
+////                    bdEmpleado.setDireccion(lista.get(0).getDireccion());
+////                    vista.getTxtDireccion().setText(bdEmpleado.getDireccion());
+////
+////                    bdEmpleado.setCelular(lista.get(0).getCelular());
+////                    vista.getTxtCelular().setText(bdEmpleado.getCelular());
+////
+////                    bdEmpleado.setEmail(lista.get(0).getEmail());
+////                    vista.getTxtEmail().setText(bdEmpleado.getEmail());
+////
+////                    bdEmpleado.setFechaNac(lista.get(0).getFechaNac());
+////                    SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+////                    Date fecha = null;
+////                    try {
+////                        fecha = format.parse(bdEmpleado.getFechaNac());
+////                        vista.getTxtCalendario().setDate(fecha);
+////                    } catch (Exception e) {
+////                        JOptionPane.showMessageDialog(null, e);
+////                    }
+////
+////                    Image img = lista.get(0).getFoto();
+////                    if (img != null) {
+////                        Image newimg = img.getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
+////                        ImageIcon icon = new ImageIcon(newimg);
+////                        vista.getLbFoto().setIcon(icon);
+////                    } else {
+////                        vista.getLbFoto().setIcon(null);
+////                    }
+////
+////                    bdEmpleado.setEstado(lista.get(0).getEstado());
+////                    vista.getCbEstado().setSelectedItem(bdEmpleado.getEstado());
+////
+////                    bdEmpleado.setPerfil(lista.get(0).getPerfil());
+////                    vista.getCbPerfil().setSelectedItem(bdEmpleado.getPerfil());
+////
+////                    bdEmpleado.setCargo(lista.get(0).getCargo());
+////                    vista.getCbCargo().setSelectedItem(bdEmpleado.getCargo());
+//                }//Fin del if
+//            }//Fin del for
+//            
+////            List<PersonaMD> listapersona = bdPersona.obtenerDatos(vista.getTxtCedula().getText()); 
+////            for (int i = 0; i < listapersona.size(); i++)
+////            {    
+////                if(vista.getTxtCedula().getText().equals(listapersona.get(i).getCedula()))
+////                { 
+////                    bdPersona.setNombre(listapersona.get(0).getNombre());
+////                    vista.getTxtNombre().setText(bdPersona.getNombre());
+////
+////                    bdPersona.setDireccion(listapersona.get(0).getDireccion());
+////                    vista.getTxtDireccion().setText(bdPersona.getDireccion());
+////
+////                    bdPersona.setCelular(listapersona.get(0).getCelular());
+////                    vista.getTxtCelular().setText(bdPersona.getCelular());
+////
+////                    bdPersona.setEmail(listapersona.get(0).getEmail());
+////                    vista.getTxtEmail().setText(bdPersona.getEmail());
+////
+////                    bdPersona.setFechaNac(listapersona.get(0).getFechaNac());
+////                    SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+////                    Date fecha = null;
+////                    try {
+////                        fecha = format.parse(bdPersona.getFechaNac());
+////                        vista.getTxtCalendario().setDate(fecha);
+////                    } catch (Exception e) {
+////                        JOptionPane.showMessageDialog(null, e);
+////                    }
+////
+////                    Image img = listapersona.get(0).getFoto();
+////                    if (img != null) {
+////                        Image newimg = img.getScaledInstance(vista.getLbFoto().getWidth(), vista.getLbFoto().getHeight(), java.awt.Image.SCALE_SMOOTH);
+////                        ImageIcon icon = new ImageIcon(newimg);
+////                        vista.getLbFoto().setIcon(icon);
+////                    } else {
+////                        vista.getLbFoto().setIcon(null);
+////                    }
+////                }
+////            }
+////        }//Fin del else
+//   }//Fin del metodo encontrar
+//
+//    }
 }  

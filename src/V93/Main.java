@@ -8,5 +8,7 @@ public class Main {
     public static void main(String[] args) {
        VistaLogin Vista = new VistaLogin();
           CLogin Inicio = new CLogin(Vista);
+// VistaPrincipal Vista = new VistaPrincipal();
+//          Cprincipal Inicio = new Cprincipal(Vista);
     }
 }                            

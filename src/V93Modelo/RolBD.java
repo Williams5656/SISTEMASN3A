@@ -67,10 +67,10 @@ public class RolBD extends RolMb {
 
     }
      
-    public List<RolMb> obtenerdatos(String codigo) {
+    public List<RolMb> obtenerdatos(String nombre) {
         try {
             List<RolMb> lista = new ArrayList<RolMb>();
-            String sql = "select * from rol " + " where \"codigo\" ILIKE '%" + codigo + "%'";
+            String sql = "select * from rol " + " where \"cargo\" ILIKE '%" + nombre + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 RolMb rol = new RolMb();
@@ -84,7 +84,7 @@ public class RolBD extends RolMb {
             rs.close();
             return lista;
         } catch (SQLException e) {
-            Logger.getLogger(UsuarioBD.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(RolBD.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
     }

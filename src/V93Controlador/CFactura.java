@@ -10,7 +10,7 @@ import V93Modelo.FacturaMb;
 import V93Modelo.ProductoBD;
 import V93Modelo.ProductoMb;
 import V93Vista.VistaFactura;
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
