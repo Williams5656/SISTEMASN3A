@@ -4,6 +4,7 @@ import V93Vista.*;
 import javax.swing.table.DefaultTableModel;
 import V93Modelo.*;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -20,6 +21,7 @@ public class CPersonas {
     public static VistaPersona VistaP;
            
     private PersonaBD bdpersona = new PersonaBD();
+    Eventos evts=new Eventos();
 
     public CPersonas(VistaPersona VistaP) {
         this.VistaP = VistaP;
@@ -37,13 +39,32 @@ public class CPersonas {
             public void mouseClicked(MouseEvent e) {
                 seleccionar();
             }
+            
 
         });
-  
+  VistaP.getTxtCedulaPersona().addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedulaPersonaKeyTyped(evt);
+            }
+            
+        });
+   VistaP.getTxtNombrePersona().addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombrePersonaKeyTyped(evt);
+            }
+            
+        });
         VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
         VistaP.getBtnGuardarPersona().setEnabled(false);
         VistaP.getBtnModificarPersona().setEnabled(false);
+    }
+    
+     private void txtCedulaPersonaKeyTyped(java.awt.event.KeyEvent evt) {                                          
+        evts.numberKeyPress(evt);
+    }
+     private void txtNombrePersonaKeyTyped(java.awt.event.KeyEvent evt) {                                          
+        evts.textKeyPress(evt);
     }
      
     public void lista() {

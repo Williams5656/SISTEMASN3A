@@ -226,6 +226,18 @@ public class VistaPersona extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TablePersona);
 
+        txtCedulaPersona.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedulaPersonaKeyTyped(evt);
+            }
+        });
+
+        txtNombrePersona.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombrePersonaKeyTyped(evt);
+            }
+        });
+
         btnGuardarPersona.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnGuardarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/GuardarTodo.png"))); // NOI18N
         btnGuardarPersona.setText("GUARDAR");
@@ -374,6 +386,14 @@ public class VistaPersona extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtCedulaPersonaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaPersonaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCedulaPersonaKeyTyped
+
+    private void txtNombrePersonaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombrePersonaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombrePersonaKeyTyped
 
     /**
      * @param args the command line arguments
