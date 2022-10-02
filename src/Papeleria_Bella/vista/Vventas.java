@@ -2,6 +2,9 @@ package Papeleria_Bella.vista;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 public class Vventas extends javax.swing.JFrame {
@@ -66,6 +69,110 @@ public class Vventas extends javax.swing.JFrame {
         this.Btn_BuscarCedula = buttonbuscarcedula;
     }
 
+    public JTable getTablaventas() {
+        return tablaventas;
+    }
+
+    public void setTablaventas(JTable tablaventas) {
+        this.tablaventas = tablaventas;
+    }
+
+    public JButton getBtn_AgregarProducto() {
+        return Btn_AgregarProducto;
+    }
+
+    public void setBtn_AgregarProducto(JButton Btn_AgregarProducto) {
+        this.Btn_AgregarProducto = Btn_AgregarProducto;
+    }
+
+    public JLabel getLabelTotal() {
+        return LabelTotal;
+    }
+
+    public void setLabelTotal(JLabel LabelTotal) {
+        this.LabelTotal = LabelTotal;
+    }
+
+    public JSpinner getTxtCantidad() {
+        return TxtCantidad;
+    }
+
+    public void setTxtCantidad(JSpinner TxtCantidad) {
+        this.TxtCantidad = TxtCantidad;
+    }
+
+    public JButton getButtonbuscarnombreproducto() {
+        return buttonbuscarnombreproducto;
+    }
+
+    public void setButtonbuscarnombreproducto(JButton buttonbuscarnombreproducto) {
+        this.buttonbuscarnombreproducto = buttonbuscarnombreproducto;
+    }
+
+    public JButton getButtoneliminar() {
+        return buttoneliminar;
+    }
+
+    public void setButtoneliminar(JButton buttoneliminar) {
+        this.buttoneliminar = buttoneliminar;
+    }
+
+    public JButton getButtonguardar() {
+        return buttonguardar;
+    }
+
+    public void setButtonguardar(JButton buttonguardar) {
+        this.buttonguardar = buttonguardar;
+    }
+
+    public JButton getButtonimprimir() {
+        return buttonimprimir;
+    }
+
+    public void setButtonimprimir(JButton buttonimprimir) {
+        this.buttonimprimir = buttonimprimir;
+    }
+
+    public JButton getButtonmodificar() {
+        return buttonmodificar;
+    }
+
+    public void setButtonmodificar(JButton buttonmodificar) {
+        this.buttonmodificar = buttonmodificar;
+    }
+
+    public JButton getButtonnuevo() {
+        return buttonnuevo;
+    }
+
+    public void setButtonnuevo(JButton buttonnuevo) {
+        this.buttonnuevo = buttonnuevo;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JLabel getLabeliva() {
+        return labeliva;
+    }
+
+    public void setLabeliva(JLabel labeliva) {
+        this.labeliva = labeliva;
+    }
+
+    public JLabel getLabelValorUnitario() {
+        return LabelValorUnitario;
+    }
+
+    public void setLabelValorUnitario(JLabel LabelValorUnitario) {
+        this.LabelValorUnitario = LabelValorUnitario;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -81,7 +188,6 @@ public class Vventas extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         labeliva = new javax.swing.JLabel();
         TxtBuscarProducto = new javax.swing.JTextField();
-        txttotal = new javax.swing.JTextField();
         txtbuscarcedula = new javax.swing.JTextField();
         LabelSerieFactura = new javax.swing.JLabel();
         labelnombres = new javax.swing.JLabel();
@@ -95,10 +201,11 @@ public class Vventas extends javax.swing.JFrame {
         buttonimprimir = new javax.swing.JButton();
         Btn_BuscarCedula = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jLabel12 = new javax.swing.JLabel();
+        TxtCantidad = new javax.swing.JSpinner();
+        LabelValorUnitario = new javax.swing.JLabel();
         LabelFecha = new javax.swing.JLabel();
         Btn_AgregarProducto = new javax.swing.JButton();
+        LabelTotal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,7 +220,7 @@ public class Vventas extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel3.setText("IVA:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel4.setText("Fecha:");
@@ -140,20 +247,19 @@ public class Vventas extends javax.swing.JFrame {
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
         getContentPane().add(labeliva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 110, 22));
         getContentPane().add(TxtBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 110, -1));
-        getContentPane().add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 110, -1));
         getContentPane().add(txtbuscarcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 130, -1));
         getContentPane().add(LabelSerieFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 110, 30));
-        getContentPane().add(labelnombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 150, 22));
+        getContentPane().add(labelnombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 130, 22));
 
         tablaventas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "numero", "codigo", "articulo", "cantidad", "precio unitario", "total"
+                "IdProducto", "Producto", "Cantidad", "Precio", "Total"
             }
         ));
         jScrollPane1.setViewportView(tablaventas);
@@ -208,12 +314,13 @@ public class Vventas extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel11.setText("Total:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
-        getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 130, -1));
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 130, 30));
+        getContentPane().add(TxtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 130, -1));
+        getContentPane().add(LabelValorUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 130, 30));
         getContentPane().add(LabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 140, 30));
 
         Btn_AgregarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoAgregar.png"))); // NOI18N
         getContentPane().add(Btn_AgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 70, 40));
+        getContentPane().add(LabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 170, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -224,7 +331,10 @@ public class Vventas extends javax.swing.JFrame {
     private javax.swing.JButton Btn_BuscarCedula;
     private javax.swing.JLabel LabelFecha;
     private javax.swing.JLabel LabelSerieFactura;
+    private javax.swing.JLabel LabelTotal;
+    private javax.swing.JLabel LabelValorUnitario;
     private javax.swing.JTextField TxtBuscarProducto;
+    private javax.swing.JSpinner TxtCantidad;
     private javax.swing.JButton buttonbuscarnombreproducto;
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
@@ -234,7 +344,6 @@ public class Vventas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -243,11 +352,9 @@ public class Vventas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel labeliva;
     private javax.swing.JLabel labelnombres;
     private javax.swing.JTable tablaventas;
     private javax.swing.JTextField txtbuscarcedula;
-    private javax.swing.JTextField txttotal;
     // End of variables declaration//GEN-END:variables
 }
