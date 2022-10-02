@@ -1,24 +1,10 @@
 package Papeleria_Bella.modelo;
 
 import Papeleria_Bella.vista.*;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReadParam;
-import javax.imageio.ImageReader;
-import javax.imageio.stream.ImageInputStream;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JOptionPane;
-import org.postgresql.util.Base64;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class VentasBD extends VentasMD {
 
@@ -34,7 +20,6 @@ public class VentasBD extends VentasMD {
 
     public String NroSerieVentas() {
         PreparedStatement st;
-        Statement stm;
         ResultSet rs;
         Connection con;
 
@@ -56,125 +41,37 @@ public class VentasBD extends VentasMD {
 
     }
 
-    
-//    public List<VentasMD> mostrardatos() {
-//        try {
-//            List<VentasMD> listau = new ArrayList<VentasMD>();
-//            String sql = "select * from ventas";
-//            ResultSet rs = conectar.query(sql);
-//            while (rs.next()) {
-//                VentasMD u = new VentasMD();
-//                u.setNumfactura(rs.getString("numero"));
-//                u.setCedula(rs.getString("cedula"));
-//                u.setCodigo(rs.getString("codigoproductos"));
-//                u.setNombreproducto(rs.getString("nombreproducto"));
-//                u.setCantidad(rs.getInt("cantidad"));
-//                u.setValoru(rs.getString("valorunitario"));
-//                u.setIva(rs.getString("iva"));
-//                u.setTotal(rs.getString("total"));
-//
-//                listau.add(u);
-//            }
-//            rs.close();
-//            return listau;
-//        } catch (SQLException e) {
-//            Logger.getLogger(VentasBD.class.getName()).log(Level.SEVERE, null, e);
-//            return null;
-//        }
-//    }
-//
-//    public boolean insertar() {
-//
-//        String sql = "INSERT INTO ventas(numero, cedula, codigoproductos, nombreproducto, cantidad, valorunitario, iva, total) VALUES ('" + getNumfactura() + "','" + getCedula() + "','" + getCodigo() + "','" + getNombreproducto() + "','" + getCantidad() + "','" + getValoru() + "','" + getIva() + "','" + getTotal() + "')";
-//
-//        if (conectar.noQuery(sql) == null) {
-//            return true;
-//        } else {
-//
-//            System.out.println("Error");
-//            return false;
-//        }
-//
-//    }
-//
-//    public boolean modificar(String numero) {
-//
-//        String sql = "update ventas set \"cedula\"='" + getCedula() + "',\"codigoproductos\"='" + getCodigo() + "',\"nombreproducto\"='" + getNombreproducto() + "',\"cantidad\"='" + getCantidad() + "',\"valorunitario\"='" + getValoru() + "'" + "',\"iva\"='" + getIva() + "'" + "',\"total\"='" + getTotal() + "'"
-//                + " where \"numero\"='" + numero + "'";
-//
-//        if (conectar.noQuery(sql) == null) {
-//            return true;
-//        } else {
-//            System.out.println("error al editar");
-//
-//            return false;
-//        }
-//
-//    }
-//
-//    public List<VentasMD> obtenerdatos(String numero) {
-//
-//        try {
-//            List<VentasMD> lista = new ArrayList<VentasMD>();
-//            String sql = "select * from ventas " + " where \"numero\"='" + numero + "'";
-//            ResultSet rs = conectar.query(sql);
-//            while (rs.next()) {
-//                VentasMD u = new VentasMD();
-//                u.setNumfactura(rs.getString("numero"));
-//                u.setCedula(rs.getString("cedula"));
-//                u.setCodigo(rs.getString("codigoproductos"));
-//                u.setNombreproducto(rs.getString("nombreproducto"));
-//                u.setCantidad(rs.getInt("cantidad"));
-//                u.setValoru(rs.getString("valorunitario"));
-//                u.setIva(rs.getString("iva"));
-//                u.setTotal(rs.getString("total"));
-//
-//                lista.add(u);
-//
-//            }
-//            rs.close();
-//            return lista;
-//        } catch (SQLException e) {
-//            Logger.getLogger(VentasBD.class.getName()).log(Level.SEVERE, null, e);
-//            return null;
-//        }
-//    }
-//
-//    public boolean eliminar(String numero) {
-//        String sql = "delete from ventas where \"numero\"='" + numero + "'";
-//        if (conectar.noQuery(sql) == null) {
-//            return true;
-//
-//        } else {
-//            System.out.println("Error al eliminar");
-//            return false;
-//        }
-//    }
-//
-//    public List<VentasMD> buscardatos(String numero) {
-//        try {
-//            List<VentasMD> lista = new ArrayList<VentasMD>();
-//            String sql = "select * from ventas where \"numero\" ILIKE '%" + numero + "%'";
-//            ResultSet rs = conectar.query(sql);
-//            while (rs.next()) {
-//
-//                VentasMD u = new VentasMD();
-//                u.setNumfactura(rs.getString("numero"));
-//                u.setCedula(rs.getString("cedula"));
-//                u.setCodigo(rs.getString("codigoproductos"));
-//                u.setNombreproducto(rs.getString("nombreproducto"));
-//                u.setCantidad(rs.getInt("cantidad"));
-//                u.setValoru(rs.getString("valorunitario"));
-//                u.setIva(rs.getString("iva"));
-//                u.setTotal(rs.getString("total"));
-//
-//                lista.add(u);
-//            }
-//            rs.close();
-//            return lista;
-//        } catch (SQLException e) {
-//            Logger.getLogger(VentasBD.class.getName()).log(Level.SEVERE, null, e);
-//            return null;
-//        }
-//    }
+    public int IdVenta() {
+        PreparedStatement ps;
+        ResultSet rs;
+        Connection con;
+        int id = 0;
+        String sql = "SELECT MAX(id) FROM ventas";
+        try {
+            con = conectar.getCon();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                id = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+        }
+        return id;
+    }
+
+    public boolean insertarventas() {
+
+        String sql = "INSERT INTO ventas(numfactura, cedula_cliente, fecha_venta, monto, idventa, estado) VALUES ('" + getNumfactura() + "','" + getCedulacliente() + "','" + getFechaVenta() + "','" + getMonto() + "','" + getIdVentas() + "','" + getEstado() + "')";
+
+        if (conectar.noQuery(sql) == null) {
+            return true;
+        } else {
+
+            System.out.println("Error");
+            return false;
+        }
+
+    }
+
 }
