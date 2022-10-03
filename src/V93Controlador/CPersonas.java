@@ -55,6 +55,18 @@ public class CPersonas {
             }
             
         });
+    VistaP.getTxtCiudadPersona().addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+               txtCiudadPersonaKeyTyped(evt); 
+            }
+            
+        });
+    VistaP.getTxtCelularPersona().addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+               txtCelularPersonaKeyTyped(evt); 
+            }
+            
+        });
          VistaP.getBtnGuardarPersona().setEnabled(false);
         VistaP.getBtnModificarPersona().setEnabled(false);
         VistaP.getBtnEliminarPersona().setEnabled(false);
@@ -75,6 +87,13 @@ public class CPersonas {
      private void txtNombrePersonaKeyTyped(java.awt.event.KeyEvent evt) {                                          
         evts.textKeyPress(evt);
     }
+     private void txtCiudadPersonaKeyTyped(java.awt.event.KeyEvent evt) {                                          
+        evts.textKeyPress(evt);
+    }
+     private void txtCelularPersonaKeyTyped(java.awt.event.KeyEvent evt) {                                          
+        evts.numberKeyPress(evt);
+    }
+     
      
     public void lista() {
 
