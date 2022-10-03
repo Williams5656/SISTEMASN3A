@@ -4,10 +4,11 @@ import Papeleria_Bella.vista.*;
 import Papeleria_Bella.modelo.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +30,6 @@ public class Cventas {
     int cantidad = 0;
     int stock;
     double iva;
-    int item = 0;
 
     public double getIva() {
         return iva;
@@ -59,12 +59,18 @@ public class Cventas {
         this.vistav = vistav;
         vistav.setVisible(true);
         vistav.setLocationRelativeTo(null);
+        SimpleDateFormat dtf = new SimpleDateFormat("yyyy/MM/dd");
+        Calendar calendar = Calendar.getInstance();
+
+        Date dateObj = calendar.getTime();
+        String formattedDate = dtf.format(dateObj);
         GenerarSerie();
-        vistav.getLabelFecha().setText("" + LocalDate.now());
+        vistav.getLabelFecha().setText(formattedDate);
         vistav.getBtn_BuscarCedula().addActionListener(x -> BuscarCliente(vistav.getTxtbuscarcedula().getText()));
         vistav.getBtn_AgregarProducto().addActionListener(x -> AgregarProducto());
         vistav.getButtonbuscarnombreproducto().addActionListener(x -> BuscarProducto(vistav.getTxtBuscarProducto().getText()));
-
+        vistav.getButtonguardar().addActionListener(x -> Guardar());
+        vistav.getButtoneliminar().addActionListener(x -> EliminarProducto());
     }
 
     public void EliminarProducto() {
@@ -153,6 +159,7 @@ public class Cventas {
     public void AgregarProducto() {
         DefaultTableModel modelo;
         double total;
+        int item = 0;
         modelo = (DefaultTableModel) vistav.getTablaventas().getModel();
         item = item + 1;
         String Articulo = vistav.getTxtBuscarProducto().getText();
@@ -187,13 +194,10 @@ public class Cventas {
 
     public void nuevo() {
         GenerarSerie();
-        vistav.getTxtbuscarcedula().setText("");
-        vistav.getLabelnombres().setText("");
         vistav.getTxtBuscarProducto().setText("");
         vistav.getTxtCantidad().setValue(0);
         vistav.getLabelValorUnitario().setText("");
         vistav.getLabeliva().setText("");
-        vistav.getLabelTotal().setText("");
 
     }
 
@@ -223,9 +227,8 @@ public class Cventas {
         double monto = Totalpagar;
         bdventas.setNumfactura(numfactura);
         bdventas.setCedulacliente(cliente);
-        bdventas.setFechaVenta(fe.format(vistav.getLabelFecha().getText()));
+        bdventas.setFechaVenta(vistav.getLabelFecha().getText());
         bdventas.setMonto(monto);
-        bdventas.setIdVentas(item);
         bdventas.setEstado(vistav.getCmbEstado().getSelectedItem().toString());
         if (bdventas.insertarventas()) {
             JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
@@ -234,6 +237,18 @@ public class Cventas {
             JOptionPane.showMessageDialog(null, "Error al guardar");
 
         }
+
+    }
+
+    public static Date ParseFecha(String fecha) {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fechaDate = null;
+        try {
+            fechaDate = formato.parse(fecha);
+        } catch (ParseException ex) {
+            System.out.println(ex);
+        }
+        return fechaDate;
     }
 
     private void RegistrarDetalle() {
@@ -242,9 +257,9 @@ public class Cventas {
         int cantidadp = 0;
         double preciou = 0;
         for (int i = 0; i < vistav.getTablaventas().getRowCount(); i++) {
-            codigoproductop = vistav.getTablaventas().getValueAt(i, 0).toString();
-            cantidadp = Integer.parseInt(vistav.getTablaventas().getValueAt(i, 2).toString());
-            preciou = Double.parseDouble(vistav.getTablaventas().getValueAt(i, 3).toString());
+            codigoproductop = vistav.getTablaventas().getValueAt(i, 1).toString();
+            cantidadp = Integer.parseInt(vistav.getTablaventas().getValueAt(i, 3).toString());
+            preciou = Double.parseDouble(vistav.getTablaventas().getValueAt(i, 4).toString());
         }
         bddetalle.setIdVentas(id);
         bddetalle.setIdProducto(codigoproductop);
@@ -262,7 +277,7 @@ public class Cventas {
     private void ActualizarStock() {
         for (int i = 0; i < vistav.getTablaventas().getRowCount(); i++) {
             String id = vistav.getTablaventas().getValueAt(i, 0).toString();
-            int cant = Integer.parseInt(vistav.getTablaventas().getValueAt(i, 2).toString());
+            int cant = Integer.parseInt(vistav.getTablaventas().getValueAt(i, 3).toString());
             List<ProductosMD> producto = bdproducto.buscardatos(id);
             int StockActual = 0;
             for (int j = 0; j < producto.size(); j++) {

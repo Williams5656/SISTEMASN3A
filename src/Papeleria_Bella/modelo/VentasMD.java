@@ -1,8 +1,9 @@
-
 package Papeleria_Bella.modelo;
 
+import java.util.Date;
 
 public class VentasMD {
+
     int IdVentas;
     String numfactura;
     String cedulacliente;
@@ -20,6 +21,14 @@ public class VentasMD {
         this.FechaVenta = FechaVenta;
         this.Monto = Monto;
         this.Estado = Estado;
+    }
+
+    public String getFechaVenta() {
+        return FechaVenta;
+    }
+
+    public void setFechaVenta(String FechaVenta) {
+        this.FechaVenta = FechaVenta;
     }
 
     public int getIdVentas() {
@@ -46,14 +55,6 @@ public class VentasMD {
         this.cedulacliente = cedulacliente;
     }
 
-    public String getFechaVenta() {
-        return FechaVenta;
-    }
-
-    public void setFechaVenta(String FechaVenta) {
-        this.FechaVenta = FechaVenta;
-    }
-
     public Double getMonto() {
         return Monto;
     }
@@ -70,12 +71,4 @@ public class VentasMD {
         this.Estado = Estado;
     }
 
-
-    
-
-    
-
-    
-    
-    
 }

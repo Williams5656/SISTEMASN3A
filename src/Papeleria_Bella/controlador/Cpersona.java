@@ -174,7 +174,6 @@ public class Cpersona {
         vista.getTxtemail().setText(bpersona.getEmail());
         bpersona.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
 
-        System.out.println(bpersona.getFecha_nacimiento());
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
         Date fecha = null;
         try {

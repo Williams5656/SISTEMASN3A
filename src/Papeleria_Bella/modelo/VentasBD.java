@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 public class VentasBD extends VentasMD {
 
@@ -46,7 +47,7 @@ public class VentasBD extends VentasMD {
         ResultSet rs;
         Connection con;
         int id = 0;
-        String sql = "SELECT MAX(id) FROM ventas";
+        String sql = "SELECT MAX(idventa) FROM ventas";
         try {
             con = conectar.getCon();
             ps = con.prepareStatement(sql);
@@ -62,7 +63,7 @@ public class VentasBD extends VentasMD {
 
     public boolean insertarventas() {
 
-        String sql = "INSERT INTO ventas(numfactura, cedula_cliente, fecha_venta, monto, idventa, estado) VALUES ('" + getNumfactura() + "','" + getCedulacliente() + "','" + getFechaVenta() + "','" + getMonto() + "','" + getIdVentas() + "','" + getEstado() + "')";
+        String sql = "INSERT INTO ventas(numfactura, cedula_cliente, fecha_venta, monto,estado) VALUES ('" + getNumfactura() + "','" + getCedulacliente() + "','" + getFechaVenta() + "','" + getMonto() + "','" + getEstado() + "')";
 
         if (conectar.noQuery(sql) == null) {
             return true;
