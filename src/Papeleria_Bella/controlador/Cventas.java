@@ -186,7 +186,10 @@ public class Cventas {
             modelo.addRow(Item);
             vistav.getTablaventas().setModel(modelo);
             Totalpagar();
-            nuevo();
+            vistav.getTxtBuscarProducto().setText("");
+            vistav.getTxtCantidad().setValue(0);
+            vistav.getLabelValorUnitario().setText("");
+            vistav.getLabeliva().setText("");
         } else {
             JOptionPane.showMessageDialog(null, "Producto Agotado", null, JOptionPane.ERROR_MESSAGE);
         }
@@ -194,10 +197,13 @@ public class Cventas {
 
     public void nuevo() {
         GenerarSerie();
+        vistav.getTxtbuscarcedula().setText("");
         vistav.getTxtBuscarProducto().setText("");
         vistav.getTxtCantidad().setValue(0);
         vistav.getLabelValorUnitario().setText("");
         vistav.getLabeliva().setText("");
+        vistav.getLabelTotal().setText("");
+        vistav.getLabelnombres().setText("");
 
     }
 
@@ -240,19 +246,9 @@ public class Cventas {
 
     }
 
-    public static Date ParseFecha(String fecha) {
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        Date fechaDate = null;
-        try {
-            fechaDate = formato.parse(fecha);
-        } catch (ParseException ex) {
-            System.out.println(ex);
-        }
-        return fechaDate;
-    }
-
     private void RegistrarDetalle() {
-        int id = bdventas.IdVenta();
+        String id = bdventas.IdVentas();
+        int idve = Integer.parseInt(id);
         String codigoproductop = "";
         int cantidadp = 0;
         double preciou = 0;
@@ -260,11 +256,12 @@ public class Cventas {
             codigoproductop = vistav.getTablaventas().getValueAt(i, 1).toString();
             cantidadp = Integer.parseInt(vistav.getTablaventas().getValueAt(i, 3).toString());
             preciou = Double.parseDouble(vistav.getTablaventas().getValueAt(i, 4).toString());
+
+            bddetalle.setIdVentas(idve);
+            bddetalle.setIdProducto(codigoproductop);
+            bddetalle.setCantidad(cantidadp);
+            bddetalle.setPrecioVenta(preciou);
         }
-        bddetalle.setIdVentas(id);
-        bddetalle.setIdProducto(codigoproductop);
-        bddetalle.setCantidad(cantidadp);
-        bddetalle.setPrecioVenta(preciou);
         if (bddetalle.insertardetalle()) {
             JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
 
@@ -276,7 +273,7 @@ public class Cventas {
 
     private void ActualizarStock() {
         for (int i = 0; i < vistav.getTablaventas().getRowCount(); i++) {
-            String id = vistav.getTablaventas().getValueAt(i, 0).toString();
+            String id = vistav.getTablaventas().getValueAt(i, 1).toString();
             int cant = Integer.parseInt(vistav.getTablaventas().getValueAt(i, 3).toString());
             List<ProductosMD> producto = bdproducto.buscardatos(id);
             int StockActual = 0;

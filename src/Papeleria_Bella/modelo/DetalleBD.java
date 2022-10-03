@@ -26,7 +26,7 @@ public class DetalleBD extends DetalleMD {
     public boolean ActualizarStock(int cant, String id) {
         PreparedStatement ps;
         Connection con;
-        String sql = "UPDATE productos SET stock = ? WHERE id = ?";
+        String sql = "UPDATE producto SET stock = ? WHERE codigo = ?";
         try {
             con = conectar.getCon();
             ps = con.prepareStatement(sql);

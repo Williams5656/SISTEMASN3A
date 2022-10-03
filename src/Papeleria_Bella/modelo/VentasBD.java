@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 public class VentasBD extends VentasMD {
 
@@ -42,21 +43,21 @@ public class VentasBD extends VentasMD {
 
     }
 
-    public int IdVenta() {
-        PreparedStatement ps;
+    public String IdVentas() {
+        PreparedStatement st;
         ResultSet rs;
         Connection con;
-        int id = 0;
-        String sql = "SELECT MAX(idventa) FROM ventas";
+        String id = "";
+        String sql = "Select max(idventa) from ventas";
         try {
             con = conectar.getCon();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            if (rs.next()) {
-                id = rs.getInt(1);
+            st = con.prepareStatement(sql);
+            rs = st.executeQuery();
+            while (rs.next()) {
+                id = rs.getString(1);
             }
         } catch (SQLException e) {
-            System.out.println(e.toString());
+            JOptionPane.showMessageDialog(null, "Error:" + e);
         }
         return id;
     }
