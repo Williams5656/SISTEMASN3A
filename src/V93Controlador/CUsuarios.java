@@ -15,6 +15,7 @@ public class CUsuarios {
     public static VistaUsuario VistaU;
 
     private UsuarioBD bdusuario = new UsuarioBD();
+    Eventos evts=new Eventos();
     private RolBD bdrol = new RolBD();
     private PersonaBD bdpersona = new PersonaBD();
 
@@ -87,6 +88,8 @@ public class CUsuarios {
 
         VistaU.getBtnGuardarUsuario().setEnabled(true);
         VistaU.getBtnModificarUsuario().setEnabled(false);
+        
+        
 
     }
 

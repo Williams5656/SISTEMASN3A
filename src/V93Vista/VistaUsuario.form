@@ -395,6 +395,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtcodigou">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtcodigouKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="combocedulau">
       <Properties>

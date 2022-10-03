@@ -3,6 +3,7 @@ package V93Controlador;
 import V93Modelo.ClienteBD;
 import V93Modelo.ClienteMb;
 import V93Modelo.Conectar;
+import V93Modelo.CotizacionBD;
 import V93Modelo.DetalleMb;
 import V93Modelo.Eventos;
 import V93Modelo.FacturaBD;
@@ -45,6 +46,7 @@ public class CCotizacion {
     Eventos event = new Eventos();
     DefaultTableModel modelo = new DefaultTableModel();
     List<Object> listadetalle = new ArrayList();
+    CotizacionBD bdcotizacion = new CotizacionBD();
 
     public CCotizacion(VistaCotizacion Vista) {
         this.VistaCotizacion = Vista;
@@ -256,27 +258,30 @@ public class CCotizacion {
                 Conectar con = new Conectar();
                 try {
                     String vendedor = VistaCotizacion.getLabelVendedorFactura().getText();
-                    Object codigo = "";
-                    Object descripcion = "";
-                    Object cantidad = "";
-                    Object precio = "";
-                    Object total = "";
+                    String codigo = "";
+                    String cantidad = "";
+                    String precio = "";
+                    String total = "";
                     for (int i = 0; i < VistaCotizacion.getTableFactura().getRowCount(); i++) {
                         codigo = VistaCotizacion.getTableFactura().getValueAt(i, 0).toString();
-                        descripcion = VistaCotizacion.getTableFactura().getValueAt(i, 1).toString();
                         cantidad = VistaCotizacion.getTableFactura().getValueAt(i, 2).toString();
                         precio = VistaCotizacion.getTableFactura().getValueAt(i, 3).toString();
                         total = VistaCotizacion.getTableFactura().getValueAt(i, 4).toString();
                     }
+                    bdcotizacion.setCliente(VistaCotizacion.getTxtNombreClienteFactura().getText());
+                    bdcotizacion.setProducto(codigo);
+                    bdcotizacion.setCantidad(Integer.parseInt(cantidad));
+                    bdcotizacion.setPrecio(Double.parseDouble(precio));
+                    bdcotizacion.setTotal(Double.parseDouble(total));
+                    if (bdcotizacion.RegistrarCotizacion()) {
+                        JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+                    }
 
                     JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/Cotizacion.jasper"));
-                          System.out.println(codigo);
+                    System.out.println(codigo);
                     Map<String, Object> map = new HashMap<String, Object>();
-                    map.put("Codigo", codigo);
-                    map.put("descripcion", listadetalle.get(2));
-                    map.put("cantidad", listadetalle.get(3));
-                    map.put("precio", listadetalle.get(4));
-                    map.put("total", listadetalle.get(5));
                     map.put("vendedor", vendedor);
                     JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
                     JasperViewer jv = new JasperViewer(ja, false);

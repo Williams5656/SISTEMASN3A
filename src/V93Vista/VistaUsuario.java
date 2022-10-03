@@ -335,6 +335,12 @@ public class VistaUsuario extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("CORREO:");
 
+        txtcodigou.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcodigouKeyTyped(evt);
+            }
+        });
+
         btnImprimirUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnImprimirUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/print.png"))); // NOI18N
         btnImprimirUsuario.setText("IMPRIMIR");
@@ -480,6 +486,10 @@ public class VistaUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtcodigouKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcodigouKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcodigouKeyTyped
 
     /**
      * @param args the command line arguments
