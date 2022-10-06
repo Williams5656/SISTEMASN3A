@@ -24,6 +24,7 @@ public class Cprincipal {
          Vista.getNuevaVenta().addActionListener(e -> venta());
          Vista.getBtn_Cotizacion().addActionListener(e->cotizacion());
           Vista.getNuevaEmpresa().addActionListener(e -> empresa());
+          Vista.getLabeldatos().setText(CLogin.listauser.get(0)+"--"+CLogin.listauser.get(1));
     }
 
     private void personas() {

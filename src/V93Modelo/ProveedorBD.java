@@ -57,7 +57,7 @@ public class ProveedorBD extends ProveedorMb {
             ResultSet rs = conecta.query(sql);
             while (rs.next()) {
                 ProveedorMb u = new ProveedorMb();
-                u.setRuc(rs.getString("ruc"));
+                u.setRuc(rs.getString("ruc1"));
                 u.setNombre(rs.getString("nombre"));
                 u.setCelular(rs.getString("celular"));
                 u.setDireccion(rs.getString("direccion"));
@@ -79,7 +79,7 @@ public class ProveedorBD extends ProveedorMb {
     public boolean insertar() {
         
         
-        String sql = "INSERT INTO proveedor (ruc, nombre,celular, direccion, razon)  VALUES ('" + getRuc() + "','" + getNombre() + "','" + getCelular() + "','" + getDireccion() + "','" + getRazon() + "')";
+        String sql = "INSERT INTO proveedor (ruc1, nombre,celular, direccion, razon)  VALUES ('" + getRuc() + "','" + getNombre() + "','" + getCelular() + "','" + getDireccion() + "','" + getRazon() + "')";
   
         if (conecta.noQuery(sql) == null) {
             return true;
@@ -94,11 +94,11 @@ public class ProveedorBD extends ProveedorMb {
     public List<ProveedorMb> obtenerdatos(String ruc) {
         try {
             List<ProveedorMb> lista = new ArrayList<ProveedorMb>();
-            String sql = "select from proveedor where\"ruc\"='" + ruc + "'";
+            String sql = "select * from proveedor where\"ruc1\"='" + ruc + "'";
             ResultSet rs = conecta.query(sql);
             while (rs.next()) {
                 ProveedorMb m = new ProveedorMb();
-                m.setRuc(rs.getString("ruc"));
+                m.setRuc(rs.getString("ruc1"));
                 m.setNombre(rs.getString("nombre"));
                 m.setCelular(rs.getString("celular"));
                 m.setDireccion(rs.getString("direccion"));
@@ -120,7 +120,7 @@ public class ProveedorBD extends ProveedorMb {
         
         
         String sql = "update proveedor set \"nombre\"='" + getNombre() +"',\"celular\"='" + getCelular()+ "',\"direccion\"='" + getDireccion() + "',\"razon\"='" + getRazon() +  "'"
-                + " where \"ruc\"='" + ruc + "'";
+                + " where \"ruc1\"='" + ruc + "'";
 
         if (conecta.noQuery(sql) == null) {
             return true;
@@ -133,7 +133,7 @@ public class ProveedorBD extends ProveedorMb {
     }
  
     public boolean eliminar(String ruc) {   
-        String sql = "delete FROM proveedor where\"ruc\"='" + ruc + "'";
+        String sql = "delete  FROM proveedor where\"ruc1\"='" + ruc + "'";
         if (conecta.noQuery(sql) == null) {
             return true;
 

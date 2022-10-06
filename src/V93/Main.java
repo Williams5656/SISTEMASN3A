@@ -3,7 +3,7 @@ package V93;
 import V93Controlador.CLogin;
 import V93Vista.VistaLogin;
 
-public class Inicio {
+public class Main {
 
     public static void main(String[] args) {
         VistaLogin vlogin = new VistaLogin();

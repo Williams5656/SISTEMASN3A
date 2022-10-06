@@ -37,7 +37,6 @@ public class CCotizacion {
     ProductoBD proDao = new ProductoBD();
     ClienteMb cl = new ClienteMb();
     ClienteBD cliente = new ClienteBD();
-    int item;
     double Totalpagar;
     FacturaMb v = new FacturaMb();
     FacturaBD Vdao = new FacturaBD();
@@ -176,6 +175,7 @@ public class CCotizacion {
 
     private void txtCantidadFacturaKeyPressed(java.awt.event.KeyEvent evt) {
         double iva = 1.12;
+        int item = 0;
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!"".equals(VistaCotizacion.getTxtCantidadFactura().getText())) {
                 String cod = VistaCotizacion.getTxtCodigoProFactura().getText();
@@ -194,18 +194,19 @@ public class CCotizacion {
                         }
                     }
 
-                    listadetalle.add(item);
-                    listadetalle.add(cod);
-                    listadetalle.add(descripcion);
-                    listadetalle.add(cant);
-                    listadetalle.add(precio);
-                    listadetalle.add(total);
+                    ArrayList lista = new ArrayList();
+                    lista.add(item);
+                    lista.add(cod);
+                    lista.add(descripcion);
+                    lista.add(cant);
+                    lista.add(precio);
+                    lista.add(total);
                     Object[] o = new Object[5];
-                    o[0] = listadetalle.get(1);
-                    o[1] = listadetalle.get(2);
-                    o[2] = listadetalle.get(3);
-                    o[3] = listadetalle.get(4);
-                    o[4] = listadetalle.get(5);
+                    o[0] = lista.get(1);
+                    o[1] = lista.get(2);
+                    o[2] = lista.get(3);
+                    o[3] = lista.get(4);
+                    o[4] = lista.get(5);
                     tmp.addRow(o);
                     VistaCotizacion.getTableFactura().setModel(tmp);
                     Totalpagar();
@@ -312,20 +313,19 @@ public class CCotizacion {
     }
 
 //     
-    private void ActualizarStock() {
-        for (int i = 0; i < VistaCotizacion.getTableFactura().getRowCount(); i++) {
-            String cod = VistaCotizacion.getTableFactura().getValueAt(i, 0).toString();
-            int cant = Integer.parseInt(VistaCotizacion.getTableFactura().getValueAt(i, 2).toString());
-            List<ProductoMb> pro = proDao.BuscarPro(cod);
-            for (int j = 0; j < pro.size(); j++) {
-                int StockActual = pro.get(i).getStock() - cant;
-                Vdao.ActualizarStock(StockActual, cod);
-            }
-
-        }
-    }
+//    private void ActualizarStock() {
+//        for (int i = 0; i < VistaCotizacion.getTableFactura().getRowCount(); i++) {
+//            String cod = VistaCotizacion.getTableFactura().getValueAt(i, 0).toString();
+//            int cant = Integer.parseInt(VistaCotizacion.getTableFactura().getValueAt(i, 2).toString());
+//            List<ProductoMb> pro = proDao.BuscarPro(cod);
+//            for (int j = 0; j < pro.size(); j++) {
+//                int StockActual = pro.get(i).getStock() - cant;
+//                Vdao.ActualizarStock(StockActual, cod);
+//            }
+//
+//        }
+//    }
 //     
-
     private void LimpiarTableVenta() {
         tmp = (DefaultTableModel) VistaCotizacion.getTableFactura().getModel();
         int fila = VistaCotizacion.getTableFactura().getRowCount();

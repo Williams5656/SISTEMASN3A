@@ -17,12 +17,13 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-    
+
 public class CProveedor {
 
     public static VistaProveedor VistaProv;
-          
+
     private ProveedorBD bdproveedor = new ProveedorBD();
+    Eventos evts = new Eventos();
 
     public CProveedor(VistaProveedor VistaProv) {
         this.VistaProv = VistaProv;
@@ -32,8 +33,8 @@ public class CProveedor {
         VistaProv.getBtnGuardarProveedor().addActionListener(x -> guardar());
         VistaProv.getBtnModificarProveedor().addActionListener(e -> modificar());
         VistaProv.getBtnBuscarProveedor().addActionListener(e -> buscar());
-         VistaProv.getBtnEliminarProveedor().addActionListener(e -> eliminar());
-         VistaProv.getBtnNuevoProveedor().addActionListener(e -> nuevo());
+        VistaProv.getBtnEliminarProveedor().addActionListener(e -> eliminar());
+        VistaProv.getBtnNuevoProveedor().addActionListener(e -> nuevo());
         VistaProv.getTableProveedor().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -41,13 +42,57 @@ public class CProveedor {
             }
 
         });
-  
+
+        VistaProv.getTxtRucProveedor().addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRucProveedorKeyTyped(evt);
+            }
+
+        });
+
+        VistaProv.getTxtNombreProveedor().addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreProveedorKeyTyped(evt);
+            }
+
+        });
+
+        VistaProv.getTxtCelularProveedor().addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCelularProveedorKeyTyped(evt);
+            }
+
+        });
+
+        VistaProv.getTxtDireccionProveedor().addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDireccionProveedorKeyTyped(evt);
+            }
+
+        });
+
         VistaProv.getBtnNuevoProveedor().addActionListener(e -> nuevo());
         VistaProv.getBtnEliminarProveedor().addActionListener(e -> eliminar());
         VistaProv.getBtnGuardarProveedor().setEnabled(false);
         VistaProv.getBtnModificarProveedor().setEnabled(false);
     }
-     
+
+    private void txtRucProveedorKeyTyped(java.awt.event.KeyEvent evt) {
+        evts.numberKeyPress(evt);
+    }
+
+    private void txtNombreProveedorKeyTyped(java.awt.event.KeyEvent evt) {
+        evts.textKeyPress(evt);
+    }
+
+    private void txtCelularProveedorKeyTyped(java.awt.event.KeyEvent evt) {
+        evts.numberKeyPress(evt);
+    }
+
+    private void txtDireccionProveedorKeyTyped(java.awt.event.KeyEvent evt) {
+        evts.textKeyPress(evt);
+    }
+
     public void lista() {
 
         DefaultTableModel modelo;
@@ -66,8 +111,6 @@ public class CProveedor {
             VistaProv.getTableProveedor().setValueAt(lista.get(i).getCelular(), i, 2);
             VistaProv.getTableProveedor().setValueAt(lista.get(i).getDireccion(), i, 3);
             VistaProv.getTableProveedor().setValueAt(lista.get(i).getRazon(), i, 4);
-            
-            
 
         }
     }
@@ -78,10 +121,6 @@ public class CProveedor {
         bdproveedor.setCelular(VistaProv.getTxtCelularProveedor().getText());
         bdproveedor.setDireccion(VistaProv.getTxtDireccionProveedor().getText());
         bdproveedor.setRazon(VistaProv.getTxtRazonSocialProveedor().getText());
-        
-        
-
-        
 
         if (bdproveedor.insertar()) {
             JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
@@ -108,7 +147,7 @@ public class CProveedor {
             }
         }
     }
-*/
+     */
     public void buscar() {
         if (VistaProv.getTxtBuscarProveedor().getText().equals("")) {
             lista();
@@ -125,11 +164,10 @@ public class CProveedor {
                 modelo.addRow(new Object[columnas]);
                 VistaProv.getTableProveedor().setValueAt(lista.get(i).getRuc(), i, 0);
                 VistaProv.getTableProveedor().setValueAt(lista.get(i).getNombre(), i, 1);
-                 VistaProv.getTableProveedor().setValueAt(lista.get(i).getCelular(), i, 2);
+                VistaProv.getTableProveedor().setValueAt(lista.get(i).getCelular(), i, 2);
                 VistaProv.getTableProveedor().setValueAt(lista.get(i).getDireccion(), i, 3);
                 VistaProv.getTableProveedor().setValueAt(lista.get(i).getRazon(), i, 4);
-                
-               
+
             }
         }
 
@@ -138,13 +176,10 @@ public class CProveedor {
     public void modificar() {
         bdproveedor.setRuc(VistaProv.getTxtRucProveedor().getText());
         bdproveedor.setNombre(VistaProv.getTxtNombreProveedor().getText());
-         bdproveedor.setCelular(VistaProv.getTxtCelularProveedor().getText());
+        bdproveedor.setCelular(VistaProv.getTxtCelularProveedor().getText());
         bdproveedor.setDireccion(VistaProv.getTxtDireccionProveedor().getText());
         bdproveedor.setRazon(VistaProv.getTxtRazonSocialProveedor().getText());
-       
-       
-        //ImageIcon ic = (ImageIcon) VistaP.getLbFoto().getIcon();
-        //bdpersona.setFoto(ic.getImage());
+
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Modificar");
         if (rest == 0) {
             if (bdproveedor.modificar(VistaProv.getTxtRucProveedor().getText())) ;
@@ -172,10 +207,6 @@ public class CProveedor {
         VistaProv.getTxtDireccionProveedor().setText(bdproveedor.getDireccion());
         bdproveedor.setRazon(lista.get(0).getRazon());
         VistaProv.getTxtRazonSocialProveedor().setText(bdproveedor.getRazon());
-       
-        
-   
-      
 
     }
 
@@ -184,7 +215,7 @@ public class CProveedor {
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Eliminar");
         if (rest == 0) {
             if (bdproveedor.eliminar(VistaProv.getTxtRucProveedor().getText()));
-            JOptionPane.showMessageDialog(null, "Usuario Eliminado");
+            JOptionPane.showMessageDialog(null, "Proveedor Eliminado");
             lista();
             nuevo();
         }
@@ -201,4 +232,4 @@ public class CProveedor {
         VistaProv.getBtnGuardarProveedor().setEnabled(true);
         VistaProv.getBtnModificarProveedor().setEnabled(false);
     }
-}  
+}

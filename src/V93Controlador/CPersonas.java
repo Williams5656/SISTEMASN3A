@@ -1,4 +1,5 @@
 package V93Controlador;
+
 import V93Vista.*;
 import javax.swing.table.DefaultTableModel;
 import V93Modelo.*;
@@ -15,12 +16,13 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+
 public class CPersonas {
 
     public static VistaPersona VistaP;
-           
+
     private PersonaBD bdpersona = new PersonaBD();
-    Eventos evts=new Eventos();
+    Eventos evts = new Eventos();
 
     public CPersonas(VistaPersona VistaP) {
         this.VistaP = VistaP;
@@ -32,45 +34,44 @@ public class CPersonas {
         VistaP.getBtnModificarPersona().addActionListener(e -> modificar());
         VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
-        
-       VistaP.getBtnFoto().addActionListener(e -> obtieneImagen());
+
+        VistaP.getBtnFoto().addActionListener(e -> obtieneImagen());
         VistaP.getBtnbuscarp().addActionListener(e -> buscar());
         VistaP.getTablePersona().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionar();
             }
-            
 
         });
-  VistaP.getTxtCedulaPersona().addKeyListener(new java.awt.event.KeyAdapter() {
+        VistaP.getTxtCedulaPersona().addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCedulaPersonaKeyTyped(evt);
             }
-            
+
         });
-   VistaP.getTxtNombrePersona().addKeyListener(new java.awt.event.KeyAdapter() {
+        VistaP.getTxtNombrePersona().addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNombrePersonaKeyTyped(evt);
             }
-            
+
         });
-    VistaP.getTxtCiudadPersona().addKeyListener(new java.awt.event.KeyAdapter() {
+        VistaP.getTxtCiudadPersona().addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-               txtCiudadPersonaKeyTyped(evt); 
+                txtCiudadPersonaKeyTyped(evt);
             }
-            
+
         });
-    VistaP.getTxtCelularPersona().addKeyListener(new java.awt.event.KeyAdapter() {
+        VistaP.getTxtCelularPersona().addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-               txtCelularPersonaKeyTyped(evt); 
+                txtCelularPersonaKeyTyped(evt);
             }
-            
+
         });
-         VistaP.getBtnGuardarPersona().setEnabled(false);
+        VistaP.getBtnGuardarPersona().setEnabled(false);
         VistaP.getBtnModificarPersona().setEnabled(false);
         VistaP.getBtnEliminarPersona().setEnabled(false);
-        
+
         VistaP.getTxtCedulaPersona().setEnabled(false);
         VistaP.getTxtNombrePersona().setEnabled(false);
         VistaP.getTxtDireccionPersona().setEnabled(false);
@@ -78,23 +79,25 @@ public class CPersonas {
         VistaP.getTxtFechaNacimientoPersona().setEnabled(false);
         VistaP.getTxtCiudadPersona().setEnabled(false);
         VistaP.getBtnFoto().setEnabled(false);
-        
+
     }
-    
-     private void txtCedulaPersonaKeyTyped(java.awt.event.KeyEvent evt) {                                          
+
+    private void txtCedulaPersonaKeyTyped(java.awt.event.KeyEvent evt) {
         evts.numberKeyPress(evt);
     }
-     private void txtNombrePersonaKeyTyped(java.awt.event.KeyEvent evt) {                                          
+
+    private void txtNombrePersonaKeyTyped(java.awt.event.KeyEvent evt) {
         evts.textKeyPress(evt);
     }
-     private void txtCiudadPersonaKeyTyped(java.awt.event.KeyEvent evt) {                                          
+
+    private void txtCiudadPersonaKeyTyped(java.awt.event.KeyEvent evt) {
         evts.textKeyPress(evt);
     }
-     private void txtCelularPersonaKeyTyped(java.awt.event.KeyEvent evt) {                                          
+
+    private void txtCelularPersonaKeyTyped(java.awt.event.KeyEvent evt) {
         evts.numberKeyPress(evt);
     }
-     
-     
+
     public void lista() {
 
         DefaultTableModel modelo;
@@ -123,7 +126,7 @@ public class CPersonas {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
         bdpersona.setDireccion(VistaP.getTxtDireccionPersona().getText());
-        bdpersona.setFecha_nacimiento( f.format(VistaP.getTxtFechaNacimientoPersona().getDate()));
+        bdpersona.setFecha_nacimiento(f.format(VistaP.getTxtFechaNacimientoPersona().getDate()));
         bdpersona.setCiudad(VistaP.getTxtCiudadPersona().getText());
         bdpersona.setCelular(VistaP.getTxtCelularPersona().getText());
 
@@ -193,7 +196,7 @@ public class CPersonas {
         bdpersona.setCedula(VistaP.getTxtCedulaPersona().getText());
         bdpersona.setNombre(VistaP.getTxtNombrePersona().getText());
         bdpersona.setDireccion(VistaP.getTxtDireccionPersona().getText());
-        bdpersona.setFecha_nacimiento( f.format(VistaP.getTxtFechaNacimientoPersona().getDate()));
+        bdpersona.setFecha_nacimiento(f.format(VistaP.getTxtFechaNacimientoPersona().getDate()));
         bdpersona.setCiudad(VistaP.getTxtCiudadPersona().getText());
         bdpersona.setCelular(VistaP.getTxtCelularPersona().getText());
         ImageIcon ic = (ImageIcon) VistaP.getLbFoto().getIcon();
@@ -225,7 +228,7 @@ public class CPersonas {
         VistaP.getTxtCiudadPersona().setText(bdpersona.getCiudad());
         bdpersona.setCelular(lista.get(0).getCelular());
         VistaP.getTxtCelularPersona().setText(bdpersona.getCelular());
-   bdpersona.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
+        bdpersona.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = null;
         try {
@@ -265,11 +268,11 @@ public class CPersonas {
         VistaP.getTxtCiudadPersona().setText("");
         VistaP.getTxtCelularPersona().setText("");
         VistaP.getTxtbuscarp().setText("");
-        
+
         VistaP.getBtnGuardarPersona().setEnabled(true);
         VistaP.getBtnModificarPersona().setEnabled(false);
         VistaP.getBtnEliminarPersona().setEnabled(true);
-        
+
         VistaP.getTxtCedulaPersona().setEnabled(true);
         VistaP.getTxtNombrePersona().setEnabled(true);
         VistaP.getTxtDireccionPersona().setEnabled(true);
@@ -376,4 +379,4 @@ public class CPersonas {
 //   }//Fin del metodo encontrar
 //
 //    }
-}  
+}
