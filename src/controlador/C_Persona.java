@@ -38,7 +38,7 @@ public class C_Persona {
         vistapersona.setVisible(true);
         vistapersona.getBtnguardarp().setEnabled(false);
         vistapersona.getBtnmodificar().setEnabled(false);
-         lista();
+        lista();
         vistapersona.getBtn_CargarFoto().addActionListener(x -> obtieneImagen());
         vistapersona.getBtn_QuitarFoto().addActionListener(x -> QuitarImagen());
         vistapersona.getBtnguardarp().addActionListener(x -> {
@@ -96,25 +96,19 @@ public class C_Persona {
     }
 
     public void guardar() throws SQLException {
-        try {
         bdpersona.setCedula(vistapersona.getTxtcedula().getText());
         bdpersona.setNombres(vistapersona.getTxtnombre().getText());
         bdpersona.setApellidos(vistapersona.getTxtapellido().getText());
         bdpersona.setTelefono(vistapersona.getTxttelefono().getText());
         bdpersona.setCorreo(vistapersona.getTxtcorreo().getText());
-
         ImageIcon ic = (ImageIcon) vistapersona.getLabelFoto().getIcon();
         bdpersona.setFoto_perfil(ic.getImage());
-        
-            if (bdpersona.insertar()) {
-                JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
-                lista();
-            } else {
-                JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
-                lista();
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "!ERROR¡", JOptionPane.ERROR_MESSAGE);
+        if (bdpersona.insertar()) {
+            JOptionPane.showMessageDialog(null, "EXITO AL GUARDAR");
+            lista();
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR AL GUARDAR");
+            lista();
         }
 
     }

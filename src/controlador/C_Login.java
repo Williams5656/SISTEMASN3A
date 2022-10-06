@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,6 +14,7 @@ import vista.*;
 
 public class C_Login {
 
+    public static ArrayList<String> lista2;
     public static V_Login vista;
     String tUsuario = "USUARIO:";
     String pClave = "CONTRASEÑA:";
@@ -232,47 +234,53 @@ public class C_Login {
         RolBD bdrol = new RolBD();
         String estado = "";
         String id_rol = "";
-        List<RolMD> listarol = bdrol.mostrardatos();
-        for (int i = 0; i < listarol.size(); i++) {
-            estado = listarol.get(i).getEstado();
-            id_rol = listarol.get(i).getCodigo();
-        }
+        String Nombre_rol = "";
         String usuario = vista.getTxtUsuario().getText();
         String clave = vista.getjPassClave().getText();
+        List<RolMD> listarol = bdrol.mostrardatos();
+
         if (vista.getTxtUsuario().getText().equals("") || String.valueOf(vista.getjPassClave().getPassword()).equals("")) {
             JOptionPane.showMessageDialog(null, "LLene todos los campos", null, JOptionPane.ERROR_MESSAGE);
         } else {
             us = lg.validar(usuario, clave);
+            for (int i = 0; i < listarol.size(); i++) {
+                id_rol = listarol.get(i).getCodigo();
+                if (us.getRol().equals(id_rol)) {
+                    estado = listarol.get(i).getEstado();
+                    Nombre_rol = listarol.get(i).getNombre();
+                }
+            }
+            lista2 = new ArrayList();
+            lista2.add(usuario);
+            lista2.add(Nombre_rol);
             if (us.getEstado().equals("Inactivo")) {
                 JOptionPane.showMessageDialog(null, "Usted es un usuario Inactivo \n Contactese con su administrador", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else {
-                if (us.getRol().equals(id_rol)) {
-                    if (estado.equals("Inactivo")) {
-                        JOptionPane.showMessageDialog(null, "Ha intentado entrar con un rol inactivo \n Contactese con su administrador", "ERROR", JOptionPane.ERROR_MESSAGE);
-                    }
+                if (estado.equals("Inactivo")) {
+                    JOptionPane.showMessageDialog(null, "Ha intentado entrar con un rol inactivo \n Contactese con su administrador", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+                } else {
+
+                    if (!vista.getTxtUsuario().equals(us.getUsuario()) && !vista.getjPassClave().equals(us.getClave())) {
+                        V_Principal vistap = new V_Principal();
+                        C_Principal Iniciop = new C_Principal(vistap);
+                        vista.setVisible(false);
                     } else {
+                        JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos", null, JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Intentos Permitidos: " + bloqueo, null, JOptionPane.WARNING_MESSAGE);
+                        vista.getTxtUsuario().requestFocus();
+                        vista.getTxtUsuario().setText("");
+                        vista.getjPassClave().setText("");
+                        bloqueo = bloqueo - 1;
 
-                        if (us.getUsuario() != null && us.getClave() != null) {
-                            V_Principal vistap = new V_Principal();
-                            C_Principal Iniciop = new C_Principal(vistap);
-                            vista.setVisible(false);
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrectos", null, JOptionPane.ERROR_MESSAGE);
-                            JOptionPane.showMessageDialog(null, "Intentos Permitidos: " + bloqueo, null, JOptionPane.WARNING_MESSAGE);
-                            vista.getTxtUsuario().requestFocus();
-                            vista.getTxtUsuario().setText("");
-                            vista.getjPassClave().setText("");
-                            bloqueo = bloqueo - 1;
-
-                        }
                     }
                 }
             }
-            if (bloqueo == -1) {
-                JOptionPane.showMessageDialog(null, "Usted a agotado sus intentos", "Seguridad del Sistema", JOptionPane.OK_OPTION);
-                System.exit(0);
-            }
-
         }
-    }
+        if (bloqueo == -1) {
+            JOptionPane.showMessageDialog(null, "Usted a agotado sus intentos", "Seguridad del Sistema", JOptionPane.OK_OPTION);
+            System.exit(0);
+        }
 
+    }
+}

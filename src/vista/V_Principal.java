@@ -1,6 +1,7 @@
 package vista;
 
 import javax.swing.JDesktopPane;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -9,6 +10,14 @@ public class V_Principal extends javax.swing.JFrame {
 
     public V_Principal() {
         initComponents();
+    }
+
+    public JLabel getLabelUser() {
+        return LabelUser;
+    }
+
+    public void setLabelUser(JLabel LabelUser) {
+        this.LabelUser = LabelUser;
     }
 
     public JMenuItem getBtn_nuevopersona() {
@@ -88,6 +97,7 @@ public class V_Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         Escritorio = new javax.swing.JDesktopPane();
+        LabelUser = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Persona = new javax.swing.JMenu();
         Btn_nuevopersona = new javax.swing.JMenuItem();
@@ -100,17 +110,28 @@ public class V_Principal extends javax.swing.JFrame {
         Btn_NuevoConsultorio = new javax.swing.JMenuItem();
         Btn_NuevoJuicio = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAlwaysOnTop(true);
+
+        LabelUser.setFont(new java.awt.Font("Segoe UI Variable", 3, 18)); // NOI18N
+
+        Escritorio.setLayer(LabelUser, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(EscritorioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioLayout.createSequentialGroup()
+                .addContainerGap(218, Short.MAX_VALUE)
+                .addComponent(LabelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
 
         Persona.setText("Persona");
@@ -172,6 +193,7 @@ public class V_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem Btn_nuevopersona;
     private javax.swing.JMenu Consultorio;
     private javax.swing.JDesktopPane Escritorio;
+    private javax.swing.JLabel LabelUser;
     private javax.swing.JMenu Persona;
     private javax.swing.JMenu Rol;
     private javax.swing.JMenu Usuario;
