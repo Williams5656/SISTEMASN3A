@@ -37,6 +37,7 @@ public class Cprincipal {
         vista.getItemventas().addActionListener(e -> ventas());
         vista.getItemcotizacion().addActionListener(e -> cotizacion());
         vista.getItemreportes().addActionListener(e -> reportes());
+        vista.getLabelNombres().setText(Cinicio.listalogin.get(0)+" "+"("+Cinicio.listalogin.get(1)+")");
 
     }
 

@@ -6,6 +6,7 @@
 package Papeleria_Bella.vista;
 
 import javax.swing.JDesktopPane;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -17,6 +18,14 @@ import javax.swing.JMenuItem;
 public class Vprincipal extends javax.swing.JFrame {
  public Vprincipal() {
         initComponents();
+    }
+
+    public JLabel getLabelNombres() {
+        return labelNombres;
+    }
+
+    public void setLabelNombres(JLabel labelNombres) {
+        this.labelNombres = labelNombres;
     }
 
     public JMenuItem getItemclientes() {
@@ -170,6 +179,7 @@ public class Vprincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        labelNombres = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
@@ -191,16 +201,24 @@ public class Vprincipal extends javax.swing.JFrame {
 
         jDesktopPane1.setBackground(new java.awt.Color(231, 244, 244));
 
+        labelNombres.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 714, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(481, Short.MAX_VALUE)
+                .addComponent(labelNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addComponent(labelNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 478, Short.MAX_VALUE))
         );
+        jDesktopPane1.setLayer(labelNombres, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenuBar1.setBackground(new java.awt.Color(162, 205, 205));
         jMenuBar1.add(jMenu2);
@@ -382,5 +400,6 @@ public class Vprincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel labelNombres;
     // End of variables declaration//GEN-END:variables
 }

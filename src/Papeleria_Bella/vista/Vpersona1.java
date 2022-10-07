@@ -405,6 +405,8 @@ public class Vpersona1 extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel10.setText("E-mail:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
+
+        TxtFecha.setDateFormatString("yyyy/MM/dd");
         getContentPane().add(TxtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 140, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N

@@ -31,7 +31,7 @@ public class Cpersona {
     public static Vpersona1 vista;
 
     private PersonaBD bpersona = new PersonaBD();
-    SimpleDateFormat fe = new SimpleDateFormat("dd-MM-yyyy");
+    SimpleDateFormat fe = new SimpleDateFormat("yyyy-MM-dd");
 
     public Cpersona(Vpersona1 vista) {
         this.vista = vista;
@@ -174,13 +174,13 @@ public class Cpersona {
         vista.getTxtemail().setText(bpersona.getEmail());
         bpersona.setFecha_nacimiento(lista.get(0).getFecha_nacimiento());
 
-        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha = null;
         try {
             fecha = format.parse(bpersona.getFecha_nacimiento());
             vista.getTxtFecha().setDate(fecha);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No existe fecha de nacimiento en esta persona","AVISO",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No existe fecha de nacimiento en esta persona", "AVISO", JOptionPane.INFORMATION_MESSAGE);
             JOptionPane.showMessageDialog(null, e);
         }
 

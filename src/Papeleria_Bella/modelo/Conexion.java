@@ -13,7 +13,7 @@ public class Conexion {
     Connection con;
     Statement st;
     ResultSet rs;
-    String cadConexion = "jdbc:postgresql://ec2-34-235-198-25.compute-1.amazonaws.com:5432/d45ligre8e7fsc";
+    String cadConexion = "jdbc:postgresql://ec2-52-202-236-238.compute-1.amazonaws.com:5432/dfhoo9469dpump";
     String pgUser = "dquqngtvulsesk";
     String pgContra = "380ac9f289b0370be936d6863c3111281408119549daf93ff6b4268f7e423f74";
        
