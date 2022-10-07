@@ -109,6 +109,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu11 = new javax.swing.JMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         labeldatos = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -132,9 +133,16 @@ public class VistaPrincipal extends javax.swing.JFrame {
         Btn_Cotizacion = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
         NuevaEmpresa = new javax.swing.JMenuItem();
+        jMenu12 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+
+        jMenu11.setText("jMenu11");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        labeldatos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labeldatos.setText("jLabel1");
 
         jDesktopPane1.setLayer(labeldatos, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -146,7 +154,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(labeldatos, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(472, Short.MAX_VALUE))
+                .addContainerGap(529, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,6 +234,17 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu10);
 
+        jMenu12.setText("REPORTES");
+
+        jMenuItem1.setText("VENTAS");
+        jMenu12.add(jMenuItem1);
+
+        jMenuItem2.setText("STOCK PRODUCTOS");
+        jMenu12.add(jMenuItem2);
+        jMenu12.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu12);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -289,6 +308,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -298,6 +319,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JLabel labeldatos;
     private javax.swing.JMenuItem nuevoPersona;
     private javax.swing.JMenuItem nuevoUsuario;

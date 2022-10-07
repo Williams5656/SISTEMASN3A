@@ -160,7 +160,7 @@ public class CCliente {
         int rest = JOptionPane.showConfirmDialog(null, "Esta Seguro de Eliminar");
         if (rest == 0) {
             if (bdcliente.eliminar(VistaC.getTxtCedulaCliente().getText()));
-            JOptionPane.showMessageDialog(null, "Usuario Eliminado");
+            JOptionPane.showMessageDialog(null, "Cliente Eliminado");
             lista();
             nuevo();
         }
