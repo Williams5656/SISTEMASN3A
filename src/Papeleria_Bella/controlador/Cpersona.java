@@ -374,7 +374,7 @@ public class Cpersona {
     }
 
     public void validar() {
-        Validadores.Letras.solo_letras(vista.getTxtnombres());
+        Validacion.Letras.solo_letras(vista.getTxtnombres());
     }
 
 }
