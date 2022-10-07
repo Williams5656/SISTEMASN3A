@@ -128,7 +128,7 @@ public class Vinicio extends javax.swing.JFrame {
         getContentPane().add(fieldcontraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 107, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondologin.jpg"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 320));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
