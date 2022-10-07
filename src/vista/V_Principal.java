@@ -1,10 +1,8 @@
 package vista;
 
-import javax.swing.JDesktopPane;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import javax.swing.*;
+import java.awt.*;
+import java.util.*;
 
 public class V_Principal extends javax.swing.JFrame {
 
@@ -92,11 +90,49 @@ public class V_Principal extends javax.swing.JFrame {
         this.Rol = rol;
     }
 
+    public JMenuItem getBtn_ImprimirCliente() {
+        return Btn_ImprimirCliente;
+    }
+
+    public void setBtn_ImprimirCliente(JMenuItem Btn_ImprimirCliente) {
+        this.Btn_ImprimirCliente = Btn_ImprimirCliente;
+    }
+
+    public JMenuItem getBtn_ImprimirClienteConsultorio() {
+        return Btn_ImprimirClienteConsultorio;
+    }
+
+    public void setBtn_ImprimirClienteConsultorio(JMenuItem Btn_ImprimirClienteConsultorio) {
+        this.Btn_ImprimirClienteConsultorio = Btn_ImprimirClienteConsultorio;
+    }
+
+    public JMenuItem getBtn_ImprimirUsuarioRol() {
+        return Btn_ImprimirUsuarioRol;
+    }
+
+    public void setBtn_ImprimirUsuarioRol(JMenuItem Btn_ImprimirUsuarioRol) {
+        this.Btn_ImprimirUsuarioRol = Btn_ImprimirUsuarioRol;
+    }
+
+    public JMenuItem getBtn_NuevoServicio() {
+        return Btn_NuevoServicio;
+    }
+
+    public void setBtn_NuevoServicio(JMenuItem Btn_NuevoServicio) {
+        this.Btn_NuevoServicio = Btn_NuevoServicio;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Escritorio = new javax.swing.JDesktopPane();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/FondoEscritorio1.jpg"));
+        Image image = icon.getImage();
+        Escritorio = new javax.swing.JDesktopPane(){
+            public void paintComponent(Graphics g){
+                g.drawImage(image,0,0,getWidth(),getHeight(),this);
+            }
+        };
         LabelUser = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Persona = new javax.swing.JMenu();
@@ -109,11 +145,19 @@ public class V_Principal extends javax.swing.JFrame {
         Btn_NuevoCliente = new javax.swing.JMenuItem();
         Btn_NuevoConsultorio = new javax.swing.JMenuItem();
         Btn_NuevoJuicio = new javax.swing.JMenuItem();
+        Btn_NuevoServicio = new javax.swing.JMenuItem();
+        Reportes = new javax.swing.JMenu();
+        Btn_ImprimirCliente = new javax.swing.JMenuItem();
+        Btn_ImprimirClienteConsultorio = new javax.swing.JMenuItem();
+        Btn_ImprimirUsuarioRol = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
 
-        LabelUser.setFont(new java.awt.Font("Segoe UI Variable", 3, 18)); // NOI18N
+        Escritorio.setBackground(new java.awt.Color(211, 236, 233));
+
+        LabelUser.setFont(new java.awt.Font("Segoe UI Variable", 3, 24)); // NOI18N
+        LabelUser.setForeground(new java.awt.Color(143, 228, 246));
 
         Escritorio.setLayer(LabelUser, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -123,15 +167,15 @@ public class V_Principal extends javax.swing.JFrame {
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EscritorioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addComponent(LabelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioLayout.createSequentialGroup()
                 .addContainerGap(218, Short.MAX_VALUE)
-                .addComponent(LabelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addComponent(LabelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
 
         Persona.setText("Persona");
@@ -163,10 +207,26 @@ public class V_Principal extends javax.swing.JFrame {
         Btn_NuevoConsultorio.setText("Nuevo Consultorio");
         Consultorio.add(Btn_NuevoConsultorio);
 
-        Btn_NuevoJuicio.setText("Registro de Juicios");
+        Btn_NuevoJuicio.setText("Registro de Tipo de Juicio");
         Consultorio.add(Btn_NuevoJuicio);
 
+        Btn_NuevoServicio.setText("Servicios");
+        Consultorio.add(Btn_NuevoServicio);
+
         jMenuBar1.add(Consultorio);
+
+        Reportes.setText("Reporte");
+
+        Btn_ImprimirCliente.setText("Por Cliente");
+        Reportes.add(Btn_ImprimirCliente);
+
+        Btn_ImprimirClienteConsultorio.setText("Por Cliente y Consultorio");
+        Reportes.add(Btn_ImprimirClienteConsultorio);
+
+        Btn_ImprimirUsuarioRol.setText("Por Usuario y Rol");
+        Reportes.add(Btn_ImprimirUsuarioRol);
+
+        jMenuBar1.add(Reportes);
 
         setJMenuBar(jMenuBar1);
 
@@ -186,15 +246,20 @@ public class V_Principal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Btn_ImprimirCliente;
+    private javax.swing.JMenuItem Btn_ImprimirClienteConsultorio;
+    private javax.swing.JMenuItem Btn_ImprimirUsuarioRol;
     private javax.swing.JMenuItem Btn_NuevoCliente;
     private javax.swing.JMenuItem Btn_NuevoConsultorio;
     private javax.swing.JMenuItem Btn_NuevoJuicio;
+    private javax.swing.JMenuItem Btn_NuevoServicio;
     private javax.swing.JMenuItem Btn_NuevoUsuario;
     private javax.swing.JMenuItem Btn_nuevopersona;
     private javax.swing.JMenu Consultorio;
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JLabel LabelUser;
     private javax.swing.JMenu Persona;
+    private javax.swing.JMenu Reportes;
     private javax.swing.JMenu Rol;
     private javax.swing.JMenu Usuario;
     private javax.swing.JMenuItem btn_nuevorol;

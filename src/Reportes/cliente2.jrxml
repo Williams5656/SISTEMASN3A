@@ -1,132 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2022-10-07T17:34:10 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="usuario" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a8dce255-47db-4006-9740-f22875776fdc">
+<!-- 2022-10-07T18:01:47 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cliente2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a63fa7e-088b-44e4-bb23-b8ec5f0b2881">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Proyecto_Final"/>
-	<parameter name="codus" class="java.lang.String"/>
+	<parameter name="cedulac" class="java.lang.String"/>
+	<parameter name="estadoc" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[Select * from usuario
-where cosusr =  $P{codus} ]]>
+		<![CDATA[Select * from cliente
+where cedula =  $P{cedulac} AND estado =  $P{estadoc} ]]>
 	</queryString>
-	<field name="codusr" class="java.lang.String"/>
+	<field name="codigo" class="java.lang.String"/>
 	<field name="cedula" class="java.lang.String"/>
-	<field name="usuario" class="java.lang.String"/>
-	<field name="clave" class="java.lang.String"/>
-	<field name="codrol" class="java.lang.String"/>
 	<field name="estado" class="java.lang.String"/>
-	<group name="codusr">
-		<groupExpression><![CDATA[$F{codusr}]]></groupExpression>
+	<field name="trabajo" class="java.lang.String"/>
+	<field name="profesion" class="java.lang.String"/>
+	<group name="codigo">
+		<groupExpression><![CDATA[$F{codigo}]]></groupExpression>
 	</group>
 	<group name="cedula">
 		<groupExpression><![CDATA[$F{cedula}]]></groupExpression>
 	</group>
-	<group name="usuario">
-		<groupExpression><![CDATA[$F{usuario}]]></groupExpression>
-	</group>
-	<group name="clave">
-		<groupExpression><![CDATA[$F{clave}]]></groupExpression>
-	</group>
-	<group name="codrol">
-		<groupExpression><![CDATA[$F{codrol}]]></groupExpression>
-	</group>
 	<group name="estado">
 		<groupExpression><![CDATA[$F{estado}]]></groupExpression>
+	</group>
+	<group name="trabajo">
+		<groupExpression><![CDATA[$F{trabajo}]]></groupExpression>
+	</group>
+	<group name="profesion">
+		<groupExpression><![CDATA[$F{profesion}]]></groupExpression>
 	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
 		<band height="191" splitType="Stretch">
+			<line direction="BottomUp">
+				<reportElement x="-20" y="140" width="595" height="1" forecolor="#0066FF" uuid="edd71667-8088-4496-8008-eca67f936682"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="-20" y="190" width="595" height="1" forecolor="#0066FF" uuid="5f68dce6-5cfa-46ff-8b64-50fd189647ff"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
 			<staticText>
-				<reportElement x="100" y="0" width="90" height="27" uuid="b2dd04fc-a7cc-4cd1-8092-19a57b373813"/>
+				<reportElement x="100" y="0" width="90" height="27" uuid="abb771fd-3408-458f-966a-e5820ce50181"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Black" size="12" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[Consultorio:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="216" y="2" width="184" height="22" uuid="3e8a6d22-cde0-41dc-9267-c3293aa53f8f"/>
+				<reportElement x="216" y="2" width="184" height="22" uuid="0be06cd8-ac8c-4490-962b-33003602a2b0"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Deni e Hijos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="100" y="30" width="80" height="25" uuid="f8de853d-e491-4dc7-bfe8-3e6eac9841e8"/>
+				<reportElement x="100" y="30" width="80" height="25" uuid="d3c3f678-8236-4081-97df-ff127abb6f32"/>
 				<textElement>
 					<font fontName="Arial Black" size="12" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[Dirección:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="216" y="27" width="137" height="30" uuid="7fd3373d-974f-4f6c-917f-b77705fc8abc"/>
+				<reportElement x="216" y="27" width="137" height="30" uuid="16b75a97-34f4-4039-abcd-8250fb4b6be6"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Avenida 12 de Octubre]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="100" y="60" width="70" height="30" uuid="bba30890-8d08-4630-bbba-40d06ef01e76"/>
+				<reportElement x="100" y="60" width="70" height="30" uuid="7fb96d97-691e-47bf-a7f7-8f2a0255f7ef"/>
 				<textElement>
 					<font fontName="Arial Black" size="12" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[Teléfono:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="215" y="60" width="100" height="30" uuid="32bbc411-3572-482e-ad73-91ca5282d7f1"/>
+				<reportElement x="215" y="60" width="100" height="30" uuid="c6d5ee4d-2855-4981-b31c-aa454ad2e29e"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[968751968]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="100" y="100" width="160" height="40" uuid="31c1e19c-417c-480b-bd25-a32fbd7085ba"/>
+				<reportElement x="100" y="100" width="160" height="40" uuid="5bd94f2a-673d-4088-97f3-e2c632b78810"/>
 				<textElement>
 					<font fontName="Arial Black" size="12" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[Fecha y Hora de impresión:]]></text>
 			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="260" y="100" width="100" height="30" uuid="311bad80-2de8-4d35-97a7-ebf8522d3b28"/>
+				<reportElement x="260" y="100" width="100" height="30" uuid="669d45b7-737e-4593-9532-14b043c99d3a"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="HH:mm">
-				<reportElement x="360" y="100" width="100" height="30" uuid="710dc7f5-e952-4e55-9bdf-3b93d0132cd1"/>
+				<reportElement x="360" y="100" width="100" height="30" uuid="cd995d86-5278-4986-800f-c2b66c805478"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="0" y="10" width="80" height="90" uuid="6a7f1968-03fb-4bc1-9449-6657bdb3553b"/>
-				<imageExpression><![CDATA["C:/Users/USUARIO/Downloads/reporte.png"]]></imageExpression>
-			</image>
-			<line direction="BottomUp">
-				<reportElement x="-20" y="140" width="595" height="1" forecolor="#0066FF" uuid="a767eca0-1b87-4f10-9ed9-3dd33fbfc8a5"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Solid"/>
-				</graphicElement>
-			</line>
-			<line direction="BottomUp">
-				<reportElement x="-20" y="190" width="595" height="1" forecolor="#0066FF" uuid="12632b93-70ad-4a7a-9b9a-490ecf6327f2"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Solid"/>
-				</graphicElement>
-			</line>
 			<staticText>
-				<reportElement x="150" y="150" width="260" height="30" uuid="b48b3486-d02a-4663-879d-4562d0dfc83a"/>
+				<reportElement x="150" y="150" width="260" height="30" uuid="d3129c96-eea4-4ee8-90fc-eca7de8542e8"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Black" size="16" isUnderline="true"/>
 				</textElement>
-				<text><![CDATA[REPORTE DE USUARIOS]]></text>
+				<text><![CDATA[REPORTE DE CLIENTES]]></text>
 			</staticText>
+			<image>
+				<reportElement x="0" y="5" width="80" height="75" uuid="7d5c9e08-119e-42b2-a2b2-584b7f26a783"/>
+				<imageExpression><![CDATA["C:/Users/USUARIO/Downloads/reporte.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="31" splitType="Stretch">
+		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="80" height="30" uuid="bd43a637-2a9b-4605-958d-977087d571f1"/>
+				<reportElement x="20" y="30" width="100" height="30" uuid="d2caa39a-d0ec-427a-8c6f-e4fa469af662"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
@@ -139,7 +136,7 @@ where cosusr =  $P{codus} ]]>
 				<text><![CDATA[CODIGO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="80" y="0" width="100" height="30" uuid="1ee30e10-0492-40e4-b2e8-0fc9ad70a423"/>
+				<reportElement x="120" y="30" width="100" height="30" uuid="c10a6edd-0845-4f22-ac20-b601bfb8f57b"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
@@ -152,46 +149,7 @@ where cosusr =  $P{codus} ]]>
 				<text><![CDATA[CEDULA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="180" y="0" width="100" height="30" uuid="24ad56b3-563c-4fe4-aff3-2f36cfd6dd8c"/>
-				<box>
-					<topPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" isBold="true"/>
-				</textElement>
-				<text><![CDATA[USUARIO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="280" y="0" width="100" height="30" uuid="2e5b809a-1d43-4b13-ac3b-75772016dbfc"/>
-				<box>
-					<topPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" isBold="true"/>
-				</textElement>
-				<text><![CDATA[CLAVE]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="380" y="0" width="70" height="30" uuid="d83826d6-2780-474e-b345-7f3152e77883"/>
-				<box>
-					<topPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" isBold="true"/>
-				</textElement>
-				<text><![CDATA[CODIGO_ROL]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="450" y="0" width="100" height="30" uuid="7a340b9e-eb1a-4d81-9e54-cac7bdc72783"/>
+				<reportElement x="220" y="30" width="100" height="30" uuid="5e929f4d-3015-49b1-8074-ab345c77e6d3"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
@@ -203,22 +161,48 @@ where cosusr =  $P{codus} ]]>
 				</textElement>
 				<text><![CDATA[ESTADO]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="320" y="30" width="100" height="30" uuid="218a9193-230e-48cc-b6a9-3f655c680518"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRABAJO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="30" width="100" height="30" uuid="04eee1dc-335f-44a3-8279-a79ac98d2f52"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROFESION]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="31" splitType="Stretch">
+		<band height="32" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="80" height="30" uuid="db90f46f-1a77-4fcc-8055-90d63fe097e3"/>
+				<reportElement x="20" y="0" width="100" height="30" uuid="b9ceddcd-715b-4e8f-8a8d-1d66e707ba09"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{codusr}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="80" y="0" width="100" height="30" uuid="839610e8-534e-479f-a0c2-55d8c8f72482"/>
+				<reportElement x="120" y="0" width="100" height="30" uuid="2ea3d22d-ecaa-42d1-8f01-95b736e7836a"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -228,37 +212,7 @@ where cosusr =  $P{codus} ]]>
 				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="180" y="0" width="100" height="30" uuid="5fd7238c-4b84-48f6-87fc-0e2ea03521cc"/>
-				<box>
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textFieldExpression><![CDATA[$F{usuario}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="280" y="0" width="100" height="30" uuid="f2fec86b-75f7-4828-9177-8e292f24e6f6"/>
-				<box>
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textFieldExpression><![CDATA[$F{clave}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="380" y="0" width="70" height="30" uuid="e713c107-6645-49ad-9701-662c9a2d4ca0"/>
-				<box>
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textFieldExpression><![CDATA[$F{codrol}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="450" y="0" width="100" height="30" uuid="9b0eaaaf-32fb-4e32-bb6d-dba3220c7c10"/>
+				<reportElement x="220" y="0" width="100" height="30" uuid="48edf11a-c2d9-4cb6-9944-fd2cb5580575"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -266,6 +220,26 @@ where cosusr =  $P{codus} ]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="100" height="30" uuid="996f69e2-811b-4f23-bbae-dc999a91d9e1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{trabajo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="100" height="30" uuid="79691608-2314-436b-8776-3127ecf2d50f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{profesion}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -275,7 +249,7 @@ where cosusr =  $P{codus} ]]>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
 			<textField>
-				<reportElement x="460" y="12" width="100" height="30" uuid="169dccaa-ec32-4d77-9ce8-145c266b3906"/>
+				<reportElement x="450" y="12" width="100" height="30" uuid="66cfdc1e-c207-4009-bd0b-78b7a42a7c0e"/>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>

@@ -32,14 +32,6 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         this.LabelTituloUsuario = LabelTituloUsuario;
     }
 
-    public JPanel getPanel_Efecto_Usuario() {
-        return Panel_Efecto_Usuario;
-    }
-
-    public void setPanel_Efecto_Usuario(JPanel Panel_Efecto_Usuario) {
-        this.Panel_Efecto_Usuario = Panel_Efecto_Usuario;
-    }
-
     public JLabel getLabelEstado() {
         return labelEstado;
     }
@@ -201,16 +193,14 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         CheckBoxEstado = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableUsuario = new javax.swing.JTable();
-        Panel_Efecto_Usuario = new javax.swing.JPanel();
-        LabelTituloUsuario = new javax.swing.JLabel();
         cmbRol = new javax.swing.JComboBox<>();
         labelEstado = new javax.swing.JLabel();
         btnimprimir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         TxtBuscarUsuario = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        CmbConsultorio = new javax.swing.JComboBox<>();
+        LabelTituloUsuario = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(211, 236, 233));
         setClosable(true);
         setIconifiable(true);
         setResizable(true);
@@ -262,49 +252,44 @@ public class V_Usuario extends javax.swing.JInternalFrame {
         getContentPane().add(BtnBuscarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 90, 40));
 
         jLabel10.setText("ESTADO:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 80, 30));
-        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 30, 30));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 80, 30));
+
+        CheckBoxEstado.setBackground(new java.awt.Color(211, 236, 233));
+        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 30, 30));
 
         TableUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "CEDULA", "USUARIO", "ROL", "ESTADO", "CONSULTORIO"
+                "CODIGO", "CEDULA", "USUARIO", "ROL", "ESTADO"
             }
         ));
         jScrollPane1.setViewportView(TableUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 910, 110));
-
-        Panel_Efecto_Usuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        LabelTituloUsuario.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        LabelTituloUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grupo.png"))); // NOI18N
-        LabelTituloUsuario.setText("USUARIO");
-        Panel_Efecto_Usuario.add(LabelTituloUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 60));
-
-        getContentPane().add(Panel_Efecto_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 200, 60));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 910, 110));
 
         getContentPane().add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 220, 30));
 
         labelEstado.setText("Activo");
-        getContentPane().add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 110, 30));
+        getContentPane().add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 110, 30));
 
+        btnimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/impresora.png"))); // NOI18N
         btnimprimir.setText("IMPRIMIR");
-        getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 380, 90, 40));
+        getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 360, 140, 40));
 
         jLabel3.setText("BUSCAR:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 90, 30));
         getContentPane().add(TxtBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 200, 40));
 
-        jLabel1.setText("CONDULTORIO:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 90, 30));
-
-        getContentPane().add(CmbConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 220, 30));
+        LabelTituloUsuario.setBackground(new java.awt.Color(211, 236, 233));
+        LabelTituloUsuario.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        LabelTituloUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grupo.png"))); // NOI18N
+        LabelTituloUsuario.setText("USUARIO");
+        getContentPane().add(LabelTituloUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 200, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -313,11 +298,9 @@ public class V_Usuario extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarPersona;
     private javax.swing.JCheckBox CheckBoxEstado;
-    private javax.swing.JComboBox<String> CmbConsultorio;
     private javax.swing.JPasswordField JPassClave;
     private javax.swing.JLabel LabelNombresPersona;
     private javax.swing.JLabel LabelTituloUsuario;
-    private javax.swing.JPanel Panel_Efecto_Usuario;
     private javax.swing.JTable TableUsuario;
     private javax.swing.JTextField TxtBuscarUsuario;
     private javax.swing.JTextField TxtUsuario;
@@ -327,7 +310,6 @@ public class V_Usuario extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JComboBox<String> cmbRol;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -186,39 +186,42 @@ public class V_GesClient extends javax.swing.JInternalFrame {
         TxtProfesion = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         CmbTrabajo = new javax.swing.JComboBox<>();
+        btnimprimir = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
         setResizable(true);
 
+        jPanel1.setBackground(new java.awt.Color(211, 236, 233));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/personas.png"))); // NOI18N
         jLabel1.setText("CLIENTES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 140, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 220, 50));
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
-        jPanel1.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 140, 40));
+        jPanel1.add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 130, 30));
 
         btnguardarp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar-archivo.png"))); // NOI18N
         btnguardarp.setText("GUARDAR");
-        jPanel1.add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 140, 40));
+        jPanel1.add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 150, 30));
 
         btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lapiz.png"))); // NOI18N
         btnmodificar.setText("MODIFICAR");
-        jPanel1.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 140, 40));
+        jPanel1.add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 160, 30));
 
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarusuario.png"))); // NOI18N
         btneliminar.setText("ELIMINAR");
-        jPanel1.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 130, 40));
+        jPanel1.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 150, 30));
 
         LabelCedula.setText("CEDULA:");
         jPanel1.add(LabelCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 70, 30));
         jPanel1.add(TxtBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 160, 30));
 
         BtnBuscarCedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
-        jPanel1.add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 50, 50));
+        jPanel1.add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 50, 30));
 
         LabelTINombres.setText("NOMBRES:");
         jPanel1.add(LabelTINombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 70, 30));
@@ -245,7 +248,7 @@ public class V_GesClient extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(TableCliente);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 640, 100));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 640, 100));
 
         jLabel2.setText("ESTADO:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 70, 30));
@@ -254,8 +257,8 @@ public class V_GesClient extends javax.swing.JInternalFrame {
         jPanel1.add(cmbEstadoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 150, 30));
 
         jLabel3.setText("BUSCAR:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 70, 30));
-        jPanel1.add(TxtBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 150, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, 90, 30));
+        jPanel1.add(TxtBuscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, 160, 30));
 
         jLabel4.setText("PROFESION:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 80, 30));
@@ -267,18 +270,22 @@ public class V_GesClient extends javax.swing.JInternalFrame {
         CmbTrabajo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tiempo Completo", "Medio Tiempo", "2 Hora al dia" }));
         jPanel1.add(CmbTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 160, 30));
 
+        btnimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/impresora.png"))); // NOI18N
+        btnimprimir.setText("IMPRIMIR");
+        jPanel1.add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 140, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -301,6 +308,7 @@ public class V_GesClient extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TxtProfesion;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardarp;
+    private javax.swing.JButton btnimprimir;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JComboBox<String> cmbEstadoCliente;

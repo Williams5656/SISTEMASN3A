@@ -154,7 +154,7 @@ public class V_Rol extends javax.swing.JInternalFrame {
         BtnBuscarRol = new javax.swing.JButton();
         btnimprimir = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(79, 213, 223));
+        setBackground(new java.awt.Color(211, 236, 233));
         setClosable(true);
         setIconifiable(true);
         setResizable(true);
@@ -204,8 +204,8 @@ public class V_Rol extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 840, 110));
 
-        CheckBoxEstado.setBackground(new java.awt.Color(79, 213, 223));
-        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 30, 30));
+        CheckBoxEstado.setBackground(new java.awt.Color(211, 236, 233));
+        getContentPane().add(CheckBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 30, 30));
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
@@ -241,8 +241,9 @@ public class V_Rol extends javax.swing.JInternalFrame {
         BtnBuscarRol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
         getContentPane().add(BtnBuscarRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 70, 50));
 
+        btnimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/impresora.png"))); // NOI18N
         btnimprimir.setText("IMPRIMIR");
-        getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 100, 30));
+        getContentPane().add(btnimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, 170, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

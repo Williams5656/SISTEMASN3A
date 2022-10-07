@@ -69,8 +69,6 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
         this.LabelCodigoConsultorio = LabelCodigoConsultorio;
     }
 
- 
-
     public JTable getTableConsultorio() {
         return TableConsultorio;
     }
@@ -171,66 +169,61 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
         Btn_QuitarFondo = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         TxtBuscarConsultorio = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        BtnBuscarCedula = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(211, 236, 233));
         setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("CODIGO:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 80, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 80, 20));
 
         jLabel3.setText("NOMBRE:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 80, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 80, 20));
 
         jLabel4.setText("DIRECCION:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 100, 30));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 100, 20));
 
         jLabel5.setText("TELEFONO:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 80, 30));
-        getContentPane().add(TxtNombreConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 160, 30));
-        getContentPane().add(TxtDireccionConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 160, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 80, -1));
+        getContentPane().add(TxtNombreConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 160, 20));
+        getContentPane().add(TxtDireccionConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 160, 20));
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevapersona.png"))); // NOI18N
         btnnuevo.setText("NUEVO");
-        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 170, 40));
+        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 140, 30));
 
         btnguardarp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar-archivo.png"))); // NOI18N
         btnguardarp.setText("GUARDAR");
-        getContentPane().add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 180, 40));
+        getContentPane().add(btnguardarp, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 160, 30));
 
         btnmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lapiz.png"))); // NOI18N
         btnmodificar.setText("MODIFICAR");
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 190, 40));
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 160, 30));
 
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarusuario.png"))); // NOI18N
         btneliminar.setText("ELIMINAR");
-        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 180, 40));
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 150, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tribunal-de-justicia.png"))); // NOI18N
         jLabel1.setText("CONSULTORIOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 210, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 290, 80));
 
         TableConsultorio.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "NOMBRE", "DIRECCION", "TELEFONO", "LEMA", "USUARIO"
+                "CODIGO", "NOMBRE", "DIRECCION", "TELEFONO", "LEMA"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -239,51 +232,43 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(TableConsultorio);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 630, 110));
-        getContentPane().add(LabelCodigoConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 160, 30));
-        getContentPane().add(TxttelefonoConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 160, 30));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 650, 110));
+        getContentPane().add(LabelCodigoConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 160, 20));
+        getContentPane().add(TxttelefonoConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 160, 20));
 
         jLabel7.setText("FONDO DE ESCRITORIO:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 150, 30));
-        getContentPane().add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 220, 100));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 150, 20));
+        getContentPane().add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 220, 90));
 
         jLabel6.setText("LEMA:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 70, 30));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 70, 30));
 
         TxtLema.setColumns(20);
         TxtLema.setLineWrap(true);
         TxtLema.setRows(5);
         jScrollPane2.setViewportView(TxtLema);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 250, 80));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 280, 100));
 
         Btn_CargarFondo.setText("Cargar Fondo");
-        getContentPane().add(Btn_CargarFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 130, 30));
+        getContentPane().add(Btn_CargarFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 130, 30));
 
         Btn_QuitarFondo.setText("Quitar Fondo");
-        getContentPane().add(Btn_QuitarFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 130, 30));
+        getContentPane().add(Btn_QuitarFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 130, 30));
 
         jLabel8.setText("BUSCAR:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 60, 30));
-        getContentPane().add(TxtBuscarConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 160, 30));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 60, 20));
+        getContentPane().add(TxtBuscarConsultorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 160, 20));
 
-        jLabel9.setText("USUARIO: ");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 70, 30));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 190, 30));
-
-        BtnBuscarCedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscar.png"))); // NOI18N
-        getContentPane().add(BtnBuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, 50, 40));
-
-        jLabel10.setText("NOMBRES:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 80, 30));
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 190, 30));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/impresora.png"))); // NOI18N
+        jButton1.setText("Imprimir");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 140, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnBuscarCedula;
     private javax.swing.JButton Btn_CargarFondo;
     private javax.swing.JButton Btn_QuitarFondo;
     private javax.swing.JLabel LabelCodigoConsultorio;
@@ -297,9 +282,8 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnguardarp;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -307,10 +291,8 @@ public class V_Consultorio extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelFondo;
     // End of variables declaration//GEN-END:variables
 }

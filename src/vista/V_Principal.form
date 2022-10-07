@@ -57,7 +57,34 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="Btn_NuevoJuicio">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Registro de Juicios"/>
+                <Property name="text" type="java.lang.String" value="Registro de Tipo de Juicio"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Btn_NuevoServicio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Servicios"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="Reportes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Reporte"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="Btn_ImprimirCliente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Por Cliente"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Btn_ImprimirClienteConsultorio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Por Cliente y Consultorio"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Btn_ImprimirUsuarioRol">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Por Usuario y Rol"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -100,14 +127,23 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="Escritorio">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="e9" green="ec" red="d3" type="rgb"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane(){&#xa; public void paintComponent(Graphics g){&#xa;        g.drawImage(image,0,0,getWidth(),getHeight(),this);&#xa;    }&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(getClass().getResource(&quot;/images/FondoEscritorio1.jpg&quot;));&#xa;Image image = icon.getImage();"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="LabelUser" min="-2" pref="230" max="-2" attributes="0"/>
-                  <EmptySpace pref="155" max="32767" attributes="0"/>
+                  <Component id="LabelUser" min="-2" pref="249" max="-2" attributes="0"/>
+                  <EmptySpace pref="136" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -115,8 +151,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="218" max="32767" attributes="0"/>
-                  <Component id="LabelUser" min="-2" pref="26" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="LabelUser" min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -125,7 +161,10 @@
         <Component class="javax.swing.JLabel" name="LabelUser">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Variable" size="18" style="3"/>
+              <Font name="Segoe UI Variable" size="24" style="3"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f6" green="e4" red="8f" type="rgb"/>
             </Property>
           </Properties>
         </Component>
