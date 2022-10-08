@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2022-10-07T20:45:15 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cliente" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6bf553f7-f535-4886-a6b8-ba944d49e102">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="proyecto"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from datos_papeleria, clientes
+where datos_papeleria.estado='Activo']]>
+	</queryString>
+	<field name="codigo" class="java.lang.String"/>
+	<field name="ruc" class="java.lang.String"/>
+	<field name="nombrecomercial" class="java.lang.String"/>
+	<field name="razon" class="java.lang.String"/>
+	<field name="matriz" class="java.lang.String"/>
+	<field name="celular" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="foto" class="java.lang.Object"/>
+	<field name="COLUMN_10" class="java.lang.String"/>
+	<field name="cedula" class="java.lang.String"/>
+	<field name="nombres" class="java.lang.String"/>
+	<field name="COLUMN_13" class="java.lang.String"/>
+	<field name="COLUMN_14" class="java.lang.String"/>
+	<field name="discapacidad" class="java.lang.String"/>
+	<field name="porcentaje_discapacidad" class="java.lang.String"/>
+	<group name="codigo">
+		<groupExpression><![CDATA[$F{codigo}]]></groupExpression>
+	</group>
+	<group name="ruc">
+		<groupExpression><![CDATA[$F{ruc}]]></groupExpression>
+	</group>
+	<group name="nombrecomercial">
+		<groupExpression><![CDATA[$F{nombrecomercial}]]></groupExpression>
+	</group>
+	<group name="razon">
+		<groupExpression><![CDATA[$F{razon}]]></groupExpression>
+	</group>
+	<group name="matriz">
+		<groupExpression><![CDATA[$F{matriz}]]></groupExpression>
+	</group>
+	<group name="celular">
+		<groupExpression><![CDATA[$F{celular}]]></groupExpression>
+	</group>
+	<group name="estado">
+		<groupExpression><![CDATA[$F{estado}]]></groupExpression>
+	</group>
+	<group name="email">
+		<groupExpression><![CDATA[$F{email}]]></groupExpression>
+	</group>
+	<group name="foto">
+		<groupExpression><![CDATA[$F{foto}]]></groupExpression>
+	</group>
+	<group name="COLUMN_10">
+		<groupExpression><![CDATA[$F{COLUMN_10}]]></groupExpression>
+	</group>
+	<group name="cedula">
+		<groupExpression><![CDATA[$F{cedula}]]></groupExpression>
+	</group>
+	<group name="nombres">
+		<groupExpression><![CDATA[$F{nombres}]]></groupExpression>
+	</group>
+	<group name="COLUMN_13">
+		<groupExpression><![CDATA[$F{COLUMN_13}]]></groupExpression>
+	</group>
+	<group name="COLUMN_14">
+		<groupExpression><![CDATA[$F{COLUMN_14}]]></groupExpression>
+	</group>
+	<group name="discapacidad">
+		<groupExpression><![CDATA[$F{discapacidad}]]></groupExpression>
+	</group>
+	<group name="porcentaje_discapacidad">
+		<groupExpression><![CDATA[$F{porcentaje_discapacidad}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="191" splitType="Stretch">
+			<textField>
+				<reportElement x="230" y="0" width="100" height="30" uuid="7b3b57e1-b877-4f36-8c9e-7006aaa04e51"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombrecomercial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="30" width="100" height="20" uuid="46c1e51b-e99b-40a5-ae07-77f9d6345872"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{razon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="50" width="100" height="20" uuid="654667e8-af6c-4e91-ae81-3a30b68d7be4"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ruc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="70" width="100" height="20" uuid="baaddc3c-05e5-417a-986a-189c0546c0bf"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{celular}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="150" width="70" height="30" uuid="5a61dfb5-b7f3-4a57-9203-e3791464f6b2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="120" y="150" width="100" height="30" uuid="4416b42b-59c1-4e30-b78f-e019ffdcde83"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="340" y="150" width="70" height="30" uuid="9b1dfa6f-f7d2-474c-8a87-f40480ab3949"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<textField pattern="HH:mm">
+				<reportElement x="410" y="150" width="100" height="30" uuid="f982d6c6-7d62-44ff-b957-6d08fdcd2814"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="400" y="0" width="110" height="90" uuid="f83c8d59-af14-4e34-90dc-a1403aa6d933"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="141" height="30" uuid="925820fb-4a98-4940-898d-1425c6648f71"/>
+				<text><![CDATA[cedula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="138" height="30" uuid="181254d0-da92-42c4-8d1a-09079adea964"/>
+				<text><![CDATA[nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="138" height="30" uuid="37e2c419-2e12-481a-8071-1e4903f44e2d"/>
+				<text><![CDATA[discapacidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="138" height="30" uuid="bea111ae-8980-4373-bd5d-5f87cfd8bd6b"/>
+				<text><![CDATA[porcentaje_discapacidad]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="031b66ef-5518-4de5-8701-c20df531bc2a"/>
+			</line>
+			<line>
+				<reportElement x="0" y="30" width="555" height="1" uuid="de647ace-9d75-4820-a4bb-a5802f82e66c"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="141" height="30" uuid="d63e5ee6-db85-476a-90bd-7b5118b496f4"/>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="0" width="138" height="30" uuid="a55ac9f6-4690-4455-8b5b-585426241c23"/>
+				<textFieldExpression><![CDATA[$F{nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="138" height="30" uuid="e9c1de7f-27e0-46a4-9e3a-9c23df5dab95"/>
+				<textFieldExpression><![CDATA[$F{discapacidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="0" width="138" height="30" uuid="f39fdd2c-94e7-48cc-80cf-47a49645dbf0"/>
+				<textFieldExpression><![CDATA[$F{porcentaje_discapacidad}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="30" width="555" height="1" uuid="ec7cd98c-742d-485e-bbb7-c4ebd92acda6"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="-40" width="1" height="71" uuid="4eb651cd-123c-42f4-b60e-c47bd9944aa9"/>
+			</line>
+			<line>
+				<reportElement x="555" y="-40" width="1" height="71" uuid="56587caa-bf14-43a1-b629-97503a408ef5"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="390" y="24" width="163" height="30" uuid="cbe066aa-4e4e-4779-937a-8e5e7430562b"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="24" width="121" height="30" uuid="a6c5858a-fdfd-4fca-ac07-ca672c7d5bea"/>
+				<textFieldExpression><![CDATA[$F{matriz}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
