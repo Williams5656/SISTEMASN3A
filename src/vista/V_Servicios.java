@@ -1,11 +1,7 @@
 package vista;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
+import com.toedter.calendar.JDateChooser;
+import javax.swing.*;
 
 public class V_Servicios extends javax.swing.JInternalFrame {
 
@@ -13,6 +9,125 @@ public class V_Servicios extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnBuscarCedula() {
+        return BtnBuscarCedula;
+    }
+
+    public void setBtnBuscarCedula(JButton BtnBuscarCedula) {
+        this.BtnBuscarCedula = BtnBuscarCedula;
+    }
+
+    public JButton getBtn_Imprimir() {
+        return Btn_Imprimir;
+    }
+
+    public void setBtn_Imprimir(JButton Btn_Imprimir) {
+        this.Btn_Imprimir = Btn_Imprimir;
+    }
+
+    public JComboBox<String> getCmbEstadoJuicio() {
+        return CmbEstadoJuicio;
+    }
+
+    public void setCmbEstadoJuicio(JComboBox<String> CmbEstadoJuicio) {
+        this.CmbEstadoJuicio = CmbEstadoJuicio;
+    }
+
+    public JLabel getLabelCodServicio() {
+        return LabelCodServicio;
+    }
+
+    public void setLabelCodServicio(JLabel LabelCodServicio) {
+        this.LabelCodServicio = LabelCodServicio;
+    }
+
+    public JTable getTableServicio() {
+        return TableServicio;
+    }
+
+    public void setTableServicio(JTable TableServicio) {
+        this.TableServicio = TableServicio;
+    }
+
+    public JTextField getTxtBuscarJuicio() {
+        return TxtBuscarJuicio;
+    }
+
+    public void setTxtBuscarJuicio(JTextField TxtBuscarJuicio) {
+        this.TxtBuscarJuicio = TxtBuscarJuicio;
+    }
+
+    public JDateChooser getTxtFecha() {
+        return TxtFecha;
+    }
+
+    public void setTxtFecha(JDateChooser TxtFecha) {
+        this.TxtFecha = TxtFecha;
+    }
+
+    public JButton getBtneliminar() {
+        return btneliminar;
+    }
+
+    public void setBtneliminar(JButton btneliminar) {
+        this.btneliminar = btneliminar;
+    }
+
+    public JButton getBtnguardarp() {
+        return btnguardarp;
+    }
+
+    public void setBtnguardarp(JButton btnguardarp) {
+        this.btnguardarp = btnguardarp;
+    }
+
+    public JButton getBtnmodificar() {
+        return btnmodificar;
+    }
+
+    public void setBtnmodificar(JButton btnmodificar) {
+        this.btnmodificar = btnmodificar;
+    }
+
+    public JButton getBtnnuevo() {
+        return btnnuevo;
+    }
+
+    public void setBtnnuevo(JButton btnnuevo) {
+        this.btnnuevo = btnnuevo;
+    }
+
+    public JComboBox<String> getCbtipojuicio() {
+        return cbtipojuicio;
+    }
+
+    public void setCbtipojuicio(JComboBox<String> cbtipojuicio) {
+        this.cbtipojuicio = cbtipojuicio;
+    }
+
+    public JComboBox<String> getCmbConsultorio() {
+        return cmbConsultorio;
+    }
+
+    public void setCmbConsultorio(JComboBox<String> cmbConsultorio) {
+        this.cmbConsultorio = cmbConsultorio;
+    }
+
+    public JLabel getLabelnombrescliente() {
+        return labelnombrescliente;
+    }
+
+    public void setLabelnombrescliente(JLabel labelnombrescliente) {
+        this.labelnombrescliente = labelnombrescliente;
+    }
+
+    public JTextField getTxtBuscarcliente() {
+        return txtBuscarcliente;
+    }
+
+    public void setTxtBuscarcliente(JTextField txtBuscarcliente) {
+        this.txtBuscarcliente = txtBuscarcliente;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -136,6 +251,8 @@ public class V_Servicios extends javax.swing.JInternalFrame {
         Btn_Imprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/impresora.png"))); // NOI18N
         Btn_Imprimir.setText("Imprimir");
         getContentPane().add(Btn_Imprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 150, 40));
+
+        TxtFecha.setDateFormatString("yyyy/MM/dd");
         getContentPane().add(TxtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 190, 30));
 
         pack();
