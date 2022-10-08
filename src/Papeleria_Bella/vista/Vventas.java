@@ -198,7 +198,8 @@ public class Vventas extends javax.swing.JFrame {
         Btn_AgregarProducto = new javax.swing.JButton();
         LabelTotal = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        CmbEstado = new javax.swing.JComboBox<>();
+        CmbEstado = new javax.swing.JComboBox<String>();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -238,8 +239,8 @@ public class Vventas extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel10.setText("Nro. Factura:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
-        getContentPane().add(labeliva, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 110, 22));
-        getContentPane().add(TxtBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 130, -1));
+        getContentPane().add(labeliva, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 110, 20));
+        getContentPane().add(TxtBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 140, -1));
         getContentPane().add(txtbuscarcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 140, -1));
         getContentPane().add(LabelSerieFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 110, 30));
         getContentPane().add(labelnombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 170, 22));
@@ -262,56 +263,64 @@ public class Vventas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaventas);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 570, 260));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 540, 260));
 
         buttonbuscarnombreproducto.setBackground(new java.awt.Color(232, 255, 255));
         buttonbuscarnombreproducto.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonbuscarnombreproducto.setForeground(new java.awt.Color(55, 107, 160));
         buttonbuscarnombreproducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
-        getContentPane().add(buttonbuscarnombreproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 50, 30));
+        getContentPane().add(buttonbuscarnombreproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 50, 20));
 
         buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
         buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonguardar.setForeground(new java.awt.Color(55, 107, 160));
         buttonguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
         buttonguardar.setText("Guardar");
-        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 130, 40));
+        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 130, 40));
 
         buttoneliminar.setBackground(new java.awt.Color(232, 255, 255));
         buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttoneliminar.setForeground(new java.awt.Color(55, 107, 160));
         buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
         buttoneliminar.setText("Eliminar");
-        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 130, 130, 40));
+        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, 130, 40));
 
         buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
         buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5)_1.png"))); // NOI18N
-        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 420, 50, 40));
+        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 130, 50, 40));
 
         Btn_BuscarCedula.setBackground(new java.awt.Color(232, 255, 255));
         Btn_BuscarCedula.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         Btn_BuscarCedula.setForeground(new java.awt.Color(55, 107, 160));
         Btn_BuscarCedula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
-        getContentPane().add(Btn_BuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 50, 30));
+        getContentPane().add(Btn_BuscarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 50, 20));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel11.setText("Estado:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 90, 40));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 90, 40));
+
+        TxtCantidad.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         getContentPane().add(TxtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 130, -1));
-        getContentPane().add(LabelValorUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 130, 30));
+        getContentPane().add(LabelValorUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 130, 20));
         getContentPane().add(LabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 140, 30));
 
         Btn_AgregarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoAgregar.png"))); // NOI18N
-        getContentPane().add(Btn_AgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 70, 40));
-        getContentPane().add(LabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 150, 30));
+        getContentPane().add(Btn_AgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 70, 40));
+        getContentPane().add(LabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 150, 20));
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel12.setText("Total:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 50, 30));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 50, 30));
 
-        CmbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
-        getContentPane().add(CmbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 150, 40));
+        CmbEstado.setBackground(new java.awt.Color(232, 255, 255));
+        CmbEstado.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        CmbEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Activo", "Inactivo" }));
+        getContentPane().add(CmbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 140, 30));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
+        fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -331,6 +340,7 @@ public class Vventas extends javax.swing.JFrame {
     private javax.swing.JButton buttoneliminar;
     private javax.swing.JButton buttonguardar;
     private javax.swing.JButton buttonimprimir;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

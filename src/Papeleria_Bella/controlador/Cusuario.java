@@ -41,7 +41,7 @@ public class Cusuario {
         vistau.getButtonguardar().addActionListener(x -> guardar());
         vistau.getButtonbuscar().addActionListener(e -> buscar());
         vistau.getButtonmodificar().addActionListener(e -> modificar());
-        vistau.getButtonimprimir().addActionListener(e -> imprimir());
+        vistau.getButtonimprimir().addActionListener(e -> imprimir_todo());
         vistau.getComborol().setModel(busuario.ROL());
         vistau.getButtonmodificar().setEnabled(false);
         vistau.getButtonguardar().setEnabled(false);
@@ -215,7 +215,6 @@ public class Cusuario {
                 }
             }
         }
-
     }
 
     public void GenerarCodUsuario() {
@@ -234,101 +233,25 @@ public class Cusuario {
 
         vistau.getLabelcodigo().setText("U" + buffer.toString());
     }
-    private void imprimir_sinparametro() {
+ 
+    private void imprimir_todo(){
         Conexion conectar = new Conexion();
         try {
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/usuario.jasper"));
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/usuario.png");
-            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
-
-            JasperViewer jv = new JasperViewer(jp, false);
-            
-            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            jv.setVisible(true);
-        } catch (JRException e) {
-            System.out.println("no se pudo encontrar registros" + e.getMessage());
-            Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-    
-    private void imprimir_unparametro() {
-        Conexion conectar = new Conexion();
-        try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona1.jasper"));
-            Map<String, Object> map = new HashMap<String, Object>();
-            String nombre =JOptionPane.showInputDialog("Imprimir el parametro elegido");
-            map.put("logo", "imagen/persona1.png");
-            map.put("valor", nombre);
-            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
-
-            JasperViewer jv = new JasperViewer(jp, false);
-            
-            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            jv.setVisible(true);
-        } catch (JRException e) {
-            System.out.println("no se pudo encontrar registros" + e.getMessage());
-            Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-    private void imprimir_dosparametro() {
-        Conexion conectar = new Conexion();
-        try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona2.jasper"));
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/persona2.png");
-            String nombre =JOptionPane.showInputDialog("Imprimir el primer parámetro");
-            String placa =JOptionPane.showInputDialog("Imprimir el segundo parámetro");
-            map.put("valor", nombre);
-            map.put("placa", placa);
-            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
-
-            JasperViewer jv = new JasperViewer(jp, false);
-        jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            jv.setVisible(true);
-        } catch (JRException e) {
-            System.out.println("no se pudo encontrar registros" + e.getMessage());
-            Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-    private void imprimir_todo() {
-        Conexion conectar = new Conexion();
-        try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/usuario.jasper"));
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/usuario.png");
+            map.put("logo", "images/pap.png");
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {
-            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            System.out.println("No hay registros en la tabla." + e.getMessage());
             Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
         }
     }
     
     
-    public void imprimir() {
-        int opcion=Integer.parseInt(JOptionPane.showInputDialog("Escoja una opción: \n1. Imprimir un parametro \n2. Imprimir dos parametros \n 3. Imprimir todo "));
     
-    switch(opcion){
-    
-        case 1: 
-            imprimir_unparametro();
-             break;
-            
-        case 2: 
-            imprimir_dosparametro();
-            break;
-            
-        case 3: 
-            imprimir_todo();
-            break;
-            
-        default:
-            JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
-    }
-    }
 
 }

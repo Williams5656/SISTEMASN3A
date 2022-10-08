@@ -400,7 +400,7 @@ public class Vpersona1 extends javax.swing.JFrame {
         buttonbuscar1.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         buttonbuscar1.setForeground(new java.awt.Color(55, 107, 160));
         buttonbuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search_1.png"))); // NOI18N
-        getContentPane().add(buttonbuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 30, 40, 20));
+        getContentPane().add(buttonbuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 30, 40, 20));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel10.setText("E-mail:");

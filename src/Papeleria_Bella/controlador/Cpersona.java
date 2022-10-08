@@ -44,7 +44,7 @@ public class Cpersona {
             vista.getButtonmodificar().addActionListener(e -> modificar());
             vista.getButtoncargar().addActionListener(e -> obtieneImagen());
             vista.getButtonbuscar().addActionListener(e -> Buscar());
-            vista.getButtonimprimir().addActionListener(e -> imprimir());
+            vista.getButtonimprimir().addActionListener(e -> imprimir_todo());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -124,7 +124,6 @@ public class Cpersona {
             vista.getTxtdireccion().setEnabled(false);
             vista.getTxtemail().setEnabled(false);
         }
-
     }
 
     public void modificar() {
@@ -148,14 +147,12 @@ public class Cpersona {
             vista.getTxttelefono().setEnabled(false);
             vista.getTxtdireccion().setEnabled(false);
             vista.getTxtemail().setEnabled(false);
-
         }
     }
 
     public void seleccionar() {
         vista.getButtonguardar().setEnabled(false);
         vista.getButtonmodificar().setEnabled(true);
-
         DefaultTableModel modelo;
         modelo = (DefaultTableModel) vista.getTablapersona().getModel();
         String cedula = (String) modelo.getValueAt(vista.getTablapersona().getSelectedRow(), 0);
@@ -275,106 +272,28 @@ public class Cpersona {
         }
     }
 
-    private void imprimir_sinparametro() {
-        Conexion conectar = new Conexion();
-        try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona.jasper"));
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/persona.png");
-            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
-
-            JasperViewer jv = new JasperViewer(jp, false);
-
-            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            jv.setVisible(true);
-        } catch (JRException e) {
-            System.out.println("no se pudo encontrar registros" + e.getMessage());
-            Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-
-    private void imprimir_unparametro() {
-        Conexion conectar = new Conexion();
-        try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona1.jasper"));
-            Map<String, Object> map = new HashMap<String, Object>();
-            String nombre = JOptionPane.showInputDialog("Imprimir el parametro elegido");
-            map.put("logo", "imagen/persona1.png");
-            map.put("valor", nombre);
-            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
-
-            JasperViewer jv = new JasperViewer(jp, false);
-
-            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            jv.setVisible(true);
-        } catch (JRException e) {
-            System.out.println("no se pudo encontrar registros" + e.getMessage());
-            Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-
-    private void imprimir_dosparametro() {
-        Conexion conectar = new Conexion();
-        try {
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona2.jasper"));
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/persona2.png");
-            String nombre = JOptionPane.showInputDialog("Imprimir el primer parámetro");
-            String placa = JOptionPane.showInputDialog("Imprimir el segundo parámetro");
-            map.put("valor", nombre);
-            map.put("placa", placa);
-            JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
-
-            JasperViewer jv = new JasperViewer(jp, false);
-            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            jv.setVisible(true);
-        } catch (JRException e) {
-            System.out.println("no se pudo encontrar registros" + e.getMessage());
-            Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-
     private void imprimir_todo() {
         Conexion conectar = new Conexion();
         try {
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona.jasper"));
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("logo", "imagen/persona.png");
+            map.put("logo", "images/pap.png");
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jas, map, conectar.getCon());
 
             JasperViewer jv = new JasperViewer(jp, false);
             jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             jv.setVisible(true);
         } catch (JRException e) {
-            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            System.out.println("No hay registros en la tabla." + e.getMessage());
             Logger.getLogger(Cpersona.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-
-    public void imprimir() {
-        int opcion = Integer.parseInt(JOptionPane.showInputDialog("Escoja una opción: \n1. Imprimir un parametro \n2. Imprimir dos parametros \n 3. Imprimir todo "));
-
-        switch (opcion) {
-
-            case 1:
-                imprimir_unparametro();
-                break;
-
-            case 2:
-                imprimir_dosparametro();
-                break;
-
-            case 3:
-                imprimir_todo();
-                break;
-
-            default:
-                JOptionPane.showConfirmDialog(null, "No Escogio una opción correcta");
         }
     }
 
     public void validar() {
         Validacion.Letras.solo_letras(vista.getTxtnombres());
+        Validacion.Numeros.solo_numeros(vista.getTxtcedula());
+        Validacion.Numeros.solo_numeros(vista.getTxttelefono());
+        Validacion.Letras.solo_letras(vista.getTxtapellidos());
     }
 
 }
