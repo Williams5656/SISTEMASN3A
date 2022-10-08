@@ -155,7 +155,7 @@ public class StockBD extends StockMD{
                 u.setMarca(rs.getString("marca"));
                 u.setModelo(rs.getString("modelo"));
                 u.setStock(rs.getInt("stock"));
-                u.setValorunitario(rs.getInt("valorunitario"));
+                u.setValorunitario(rs.getDouble("valorunitario"));
                 u.setIva(rs.getString("iva"));
                 byte[] is;
                 is = rs.getBytes("foto");

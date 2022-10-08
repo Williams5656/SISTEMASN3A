@@ -1,4 +1,4 @@
- package Papeleria_Bella.modelo;
+package Papeleria_Bella.modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//ggggg
+
 public class Conexion {
   
     Connection con;

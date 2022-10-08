@@ -12,14 +12,14 @@ public class ProductosMD {
     String marca;
     String modelo;
     int stock;
-    int valorunitario;
+    Double valorunitario;
     String iva;
     private Image foto;
 
     public ProductosMD() {
     }
 
-    public ProductosMD(String codigo, String nombre, String descripcion, String proveedor, String marca, String modelo, int stock, int valorunitario, String iva, Image foto) {
+    public ProductosMD(String codigo, String nombre, String descripcion, String proveedor, String marca, String modelo, int stock, Double valorunitario, String iva, Image foto) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -98,13 +98,15 @@ public class ProductosMD {
         this.stock = stock;
     }
 
-    public int getValorunitario() {
+    public Double getValorunitario() {
         return valorunitario;
     }
 
-    public void setValorunitario(int valorunitario) {
+    public void setValorunitario(Double valorunitario) {
         this.valorunitario = valorunitario;
     }
+
+    
 
   
 

@@ -27,9 +27,11 @@ public class ProductosBD extends ProductosMD{
     public ProductosBD() {
     }
 
-    public ProductosBD(String codigo, String nombre, String descripcion, String proveedor, String marca, String modelo, int stock, int valorunitario, String iva, Image foto) {
+    public ProductosBD(String codigo, String nombre, String descripcion, String proveedor, String marca, String modelo, int stock, Double valorunitario, String iva, Image foto) {
         super(codigo, nombre, descripcion, proveedor, marca, modelo, stock, valorunitario, iva, foto);
     }
+
+    
     
     public static BufferedImage toBufferedImage(Image img) {
         if (img instanceof BufferedImage) {
@@ -76,7 +78,7 @@ public class ProductosBD extends ProductosMD{
                 u.setMarca(rs.getString("marca"));
                 u.setModelo(rs.getString("modelo"));
                 u.setStock(rs.getInt("stock"));
-                u.setValorunitario(rs.getInt("valorunitario"));
+                u.setValorunitario(rs.getDouble("valorunitario"));
                 u.setIva(rs.getString("iva"));
                 byte[] is;
                 is = rs.getBytes("foto");
@@ -155,7 +157,7 @@ public class ProductosBD extends ProductosMD{
                 u.setMarca(rs.getString("marca"));
                 u.setModelo(rs.getString("modelo"));
                 u.setStock(rs.getInt("stock"));
-                u.setValorunitario(rs.getInt("valorunitario"));
+                u.setValorunitario(rs.getDouble("valorunitario"));
                 u.setIva(rs.getString("iva"));
                 byte[] is;
                 is = rs.getBytes("foto");
@@ -206,7 +208,7 @@ public class ProductosBD extends ProductosMD{
                 u.setMarca(rs.getString("marca"));
                 u.setModelo(rs.getString("modelo"));
                 u.setStock(rs.getInt("stock"));
-                u.setValorunitario(rs.getInt("valorunitario"));
+                u.setValorunitario(rs.getDouble("valorunitario"));
                 u.setIva(rs.getString("iva"));
                 byte[] is;
                 is = rs.getBytes("foto");

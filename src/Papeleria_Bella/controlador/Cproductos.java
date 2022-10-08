@@ -97,7 +97,7 @@ public class Cproductos {
         bproductos.setMarca(vistapr.getTxtmarca().getText());
         bproductos.setModelo(vistapr.getTxtmarca().getText());
         bproductos.setStock(Integer.parseInt(vistapr.getTxtstock().getText()));
-        bproductos.setValorunitario(Integer.parseInt(vistapr.getTxtvaloru().getText()));
+        bproductos.setValorunitario(Double.parseDouble(vistapr.getTxtvaloru().getText()));
         bproductos.setIva(vistapr.getComboiva().getSelectedItem().toString());
 
         ImageIcon ic = (ImageIcon) vistapr.getLabelfoto().getIcon();
@@ -139,7 +139,7 @@ public class Cproductos {
         bproductos.setMarca(vistapr.getTxtmarca().getText());
         bproductos.setModelo(vistapr.getTxtmarca().getText());
         bproductos.setStock(Integer.parseInt(vistapr.getTxtstock().getText()));
-        bproductos.setValorunitario(Integer.parseInt(vistapr.getTxtvaloru().getText()));
+        bproductos.setValorunitario(Double.parseDouble(vistapr.getTxtvaloru().getText()));
         bproductos.setIva(vistapr.getComboiva().getSelectedItem().toString());
 
         int resp = JOptionPane.showConfirmDialog(null, "Esta seguro de modificar");

@@ -305,6 +305,7 @@ public class Vventas extends javax.swing.JFrame {
         getContentPane().add(LabelValorUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 130, 20));
         getContentPane().add(LabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 140, 30));
 
+        Btn_AgregarProducto.setBackground(new java.awt.Color(232, 255, 255));
         Btn_AgregarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoAgregar.png"))); // NOI18N
         getContentPane().add(Btn_AgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 70, 40));
         getContentPane().add(LabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 150, 20));

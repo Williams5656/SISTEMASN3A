@@ -26,60 +26,20 @@ public class Vreportes extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JButton getButtoneliminar() {
-        return buttoneliminar;
+    public JButton getButtonimprimirpersona() {
+        return buttonimprimirpersona;
     }
 
-    public void setButtoneliminar(JButton buttoneliminar) {
-        this.buttoneliminar = buttoneliminar;
+    public void setButtonimprimirpersona(JButton buttonimprimirpersona) {
+        this.buttonimprimirpersona = buttonimprimirpersona;
     }
 
-    public JButton getButtonguardar() {
-        return buttonguardar;
+    public JButton getButtonimprimirusuario() {
+        return buttonimprimirusuario;
     }
 
-    public void setButtonguardar(JButton buttonguardar) {
-        this.buttonguardar = buttonguardar;
-    }
-
-    public JButton getButtonimprimir() {
-        return buttonimprimir;
-    }
-
-    public void setButtonimprimir(JButton buttonimprimir) {
-        this.buttonimprimir = buttonimprimir;
-    }
-
-    public JButton getButtonmodificar() {
-        return buttonmodificar;
-    }
-
-    public void setButtonmodificar(JButton buttonmodificar) {
-        this.buttonmodificar = buttonmodificar;
-    }
-
-    public JButton getButtonnuevo() {
-        return buttonnuevo;
-    }
-
-    public void setButtonnuevo(JButton buttonnuevo) {
-        this.buttonnuevo = buttonnuevo;
-    }
-
-    public JComboBox<String> getCombonombreproducto() {
-        return combonombreproducto;
-    }
-
-    public void setCombonombreproducto(JComboBox<String> combonombreproducto) {
-        this.combonombreproducto = combonombreproducto;
-    }
-
-    public JLabel getFondo() {
-        return fondo;
-    }
-
-    public void setFondo(JLabel fondo) {
-        this.fondo = fondo;
+    public void setButtonimprimirusuario(JButton buttonimprimirusuario) {
+        this.buttonimprimirusuario = buttonimprimirusuario;
     }
 
     public JLabel getjLabel17() {
@@ -98,36 +58,12 @@ public class Vreportes extends javax.swing.JFrame {
         this.jLabel18 = jLabel18;
     }
 
-    public JLabel getjLabel19() {
-        return jLabel19;
-    }
-
-    public void setjLabel19(JLabel jLabel19) {
-        this.jLabel19 = jLabel19;
-    }
-
     public JLabel getjLabel2() {
         return jLabel2;
     }
 
     public void setjLabel2(JLabel jLabel2) {
         this.jLabel2 = jLabel2;
-    }
-
-    public JLabel getjLabel20() {
-        return jLabel20;
-    }
-
-    public void setjLabel20(JLabel jLabel20) {
-        this.jLabel20 = jLabel20;
-    }
-
-    public JLabel getjLabel21() {
-        return jLabel21;
-    }
-
-    public void setjLabel21(JLabel jLabel21) {
-        this.jLabel21 = jLabel21;
     }
 
     public JLabel getjLabel22() {
@@ -138,14 +74,6 @@ public class Vreportes extends javax.swing.JFrame {
         this.jLabel22 = jLabel22;
     }
 
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
-    }
-
     public JLabel getLabelcodigo() {
         return labelcodigo;
     }
@@ -154,37 +82,7 @@ public class Vreportes extends javax.swing.JFrame {
         this.labelcodigo = labelcodigo;
     }
 
-    public JTable getTablareportes() {
-        return tablareportes;
-    }
-
-    public void setTablareportes(JTable tablareportes) {
-        this.tablareportes = tablareportes;
-    }
-
-    public JTextField getTxtcantidadproducto() {
-        return txtcantidadproducto;
-    }
-
-    public void setTxtcantidadproducto(JTextField txtcantidadproducto) {
-        this.txtcantidadproducto = txtcantidadproducto;
-    }
-
-    public JTextField getTxtegreso() {
-        return txtegreso;
-    }
-
-    public void setTxtegreso(JTextField txtegreso) {
-        this.txtegreso = txtegreso;
-    }
-
-    public JTextField getTxtingreso() {
-        return txtingreso;
-    }
-
-    public void setTxtingreso(JTextField txtingreso) {
-        this.txtingreso = txtingreso;
-    }
+    
     
 
     /**
@@ -199,23 +97,10 @@ public class Vreportes extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         labelcodigo = new javax.swing.JLabel();
-        txtcantidadproducto = new javax.swing.JTextField();
-        txtingreso = new javax.swing.JTextField();
-        txtegreso = new javax.swing.JTextField();
-        combonombreproducto = new javax.swing.JComboBox<String>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablareportes = new javax.swing.JTable();
-        buttonnuevo = new javax.swing.JButton();
-        buttonguardar = new javax.swing.JButton();
-        buttonmodificar = new javax.swing.JButton();
-        buttoneliminar = new javax.swing.JButton();
-        buttonimprimir = new javax.swing.JButton();
-        fondo = new javax.swing.JLabel();
+        buttonimprimirpersona = new javax.swing.JButton();
+        buttonimprimirusuario = new javax.swing.JButton();
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel17.setText("Código:");
@@ -228,117 +113,28 @@ public class Vreportes extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 120, -1));
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel18.setText("Código:");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
-
-        jLabel19.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel19.setText("Nombre del Producto:");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-
-        jLabel20.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel20.setText("Cantidad de Productos:");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
-
-        jLabel21.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel21.setText("Ingreso:");
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
+        jLabel18.setText("Imprimir Persona con dos Parámetros:");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel22.setText("Egreso:");
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, -1, -1));
+        jLabel22.setText("Imprimir Usuario con dos Parámetros:");
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
         getContentPane().add(labelcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 130, 30));
 
-        txtcantidadproducto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcantidadproductoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtcantidadproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 130, 20));
+        buttonimprimirpersona.setBackground(new java.awt.Color(232, 255, 255));
+        buttonimprimirpersona.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonimprimirpersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5)_1.png"))); // NOI18N
+        buttonimprimirpersona.setText("Imprimir");
+        getContentPane().add(buttonimprimirpersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 120, 40));
 
-        txtingreso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtingresoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 130, 20));
-
-        txtegreso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtegresoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtegreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 130, 20));
-
-        combonombreproducto.setBackground(new java.awt.Color(232, 255, 255));
-        combonombreproducto.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        getContentPane().add(combonombreproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 127, -1));
-
-        tablareportes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Codigo", "Nombre Producto", "Cantidad Producto", "Ingreso", "Egreso"
-            }
-        ));
-        jScrollPane1.setViewportView(tablareportes);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 570, 220));
-
-        buttonnuevo.setBackground(new java.awt.Color(232, 255, 255));
-        buttonnuevo.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonnuevo.setForeground(new java.awt.Color(55, 107, 160));
-        buttonnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add(3).png"))); // NOI18N
-        buttonnuevo.setText("Nuevo");
-        getContentPane().add(buttonnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 130, 40));
-
-        buttonguardar.setBackground(new java.awt.Color(232, 255, 255));
-        buttonguardar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonguardar.setForeground(new java.awt.Color(55, 107, 160));
-        buttonguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
-        buttonguardar.setText("Guardar");
-        getContentPane().add(buttonguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 130, 40));
-
-        buttonmodificar.setBackground(new java.awt.Color(232, 255, 255));
-        buttonmodificar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonmodificar.setForeground(new java.awt.Color(55, 107, 160));
-        buttonmodificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
-        buttonmodificar.setText("Modificar");
-        getContentPane().add(buttonmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 130, 40));
-
-        buttoneliminar.setBackground(new java.awt.Color(232, 255, 255));
-        buttoneliminar.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttoneliminar.setForeground(new java.awt.Color(55, 107, 160));
-        buttoneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/garbage-bin(1).png"))); // NOI18N
-        buttoneliminar.setText("Eliminar");
-        getContentPane().add(buttoneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 130, 40));
-
-        buttonimprimir.setBackground(new java.awt.Color(232, 255, 255));
-        buttonimprimir.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        buttonimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5)_1.png"))); // NOI18N
-        getContentPane().add(buttonimprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 460, 50, 40));
-
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo-color-verde-menta-morado-fondo-degradado-borroso-abstracto-plantilla-banner-telon-fondo-malla-colores-dulces_335640-3361.png"))); // NOI18N
-        fondo.setPreferredSize(new java.awt.Dimension(1210, 620));
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 540));
+        buttonimprimirusuario.setBackground(new java.awt.Color(232, 255, 255));
+        buttonimprimirusuario.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        buttonimprimirusuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer (5)_1.png"))); // NOI18N
+        buttonimprimirusuario.setText("Imprimir");
+        getContentPane().add(buttonimprimirusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 120, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtcantidadproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcantidadproductoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcantidadproductoActionPerformed
-
-    private void txtingresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtingresoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtingresoActionPerformed
-
-    private void txtegresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtegresoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtegresoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,25 +142,12 @@ public class Vreportes extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttoneliminar;
-    private javax.swing.JButton buttonguardar;
-    private javax.swing.JButton buttonimprimir;
-    private javax.swing.JButton buttonmodificar;
-    private javax.swing.JButton buttonnuevo;
-    private javax.swing.JComboBox<String> combonombreproducto;
-    private javax.swing.JLabel fondo;
+    private javax.swing.JButton buttonimprimirpersona;
+    private javax.swing.JButton buttonimprimirusuario;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelcodigo;
-    private javax.swing.JTable tablareportes;
-    private javax.swing.JTextField txtcantidadproducto;
-    private javax.swing.JTextField txtegreso;
-    private javax.swing.JTextField txtingreso;
     // End of variables declaration//GEN-END:variables
 }

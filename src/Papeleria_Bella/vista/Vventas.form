@@ -387,6 +387,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="Btn_AgregarProducto">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="e8" type="rgb"/>
+        </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/images/IconoAgregar.png"/>
         </Property>
