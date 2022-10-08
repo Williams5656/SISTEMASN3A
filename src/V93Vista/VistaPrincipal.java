@@ -12,6 +12,30 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     }
 
+    public JMenuItem getClientes() {
+        return Clientes;
+    }
+
+    public void setClientes(JMenuItem Clientes) {
+        this.Clientes = Clientes;
+    }
+
+    public JMenuItem getStock() {
+        return Stock;
+    }
+
+    public void setStock(JMenuItem Stock) {
+        this.Stock = Stock;
+    }
+
+    public JMenuItem getVentas() {
+        return Ventas;
+    }
+
+    public void setVentas(JMenuItem Ventas) {
+        this.Ventas = Ventas;
+    }
+
     public JLabel getLabeldatos() {
         return labeldatos;
     }
@@ -134,9 +158,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu10 = new javax.swing.JMenu();
         NuevaEmpresa = new javax.swing.JMenuItem();
         jMenu12 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        Ventas = new javax.swing.JMenuItem();
+        Stock = new javax.swing.JMenuItem();
+        Clientes = new javax.swing.JMenuItem();
 
         jMenu11.setText("jMenu11");
 
@@ -236,12 +260,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenu12.setText("REPORTES");
 
-        jMenuItem1.setText("VENTAS");
-        jMenu12.add(jMenuItem1);
+        Ventas.setText("VENTAS");
+        jMenu12.add(Ventas);
 
-        jMenuItem2.setText("STOCK PRODUCTOS");
-        jMenu12.add(jMenuItem2);
-        jMenu12.add(jMenuItem3);
+        Stock.setText("STOCK PRODUCTOS");
+        jMenu12.add(Stock);
+
+        Clientes.setText("CLIENTES");
+        jMenu12.add(Clientes);
 
         jMenuBar1.add(jMenu12);
 
@@ -298,6 +324,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Btn_Cotizacion;
+    private javax.swing.JMenuItem Clientes;
     private javax.swing.JMenuItem NuevaEmpresa;
     private javax.swing.JMenuItem NuevaFactura;
     private javax.swing.JMenuItem NuevaVenta;
@@ -305,6 +332,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem NuevoProducto;
     private javax.swing.JMenuItem NuevoProveedor;
     private javax.swing.JMenuItem NuevoRol;
+    private javax.swing.JMenuItem Stock;
+    private javax.swing.JMenuItem Ventas;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
@@ -319,9 +348,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JLabel labeldatos;
     private javax.swing.JMenuItem nuevoPersona;
     private javax.swing.JMenuItem nuevoUsuario;
