@@ -204,7 +204,7 @@ public class V_Servicios extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "CODIGO", "CLIENTE", "TIPO", "FECHA", "CONSULTORIO", "ESTADO"
+                "CODIGO", "CLIENTE", "CONSULTORIO", "FECHA", "TIPO", "ESTADO"
             }
         ));
         jScrollPane1.setViewportView(TableServicio);

@@ -81,7 +81,7 @@ public class TipoJuicioBD extends TipoJuicioMD {
     public List<TipoJuicioMD> buscardatosporcodigo(String nombre) {
         try {
             List<TipoJuicioMD> lista = new ArrayList<TipoJuicioMD>();
-            String sql = "select * from registrojuicio where \"nombre\" ILIKE '%" + nombre + "%'";
+            String sql = "select * from registrojuicio where \"codigo\" ILIKE '%" + nombre + "%'";
             ResultSet rs = conectar.query(sql);
             while (rs.next()) {
                 TipoJuicioMD r = new TipoJuicioMD();

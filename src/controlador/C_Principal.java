@@ -3,6 +3,19 @@ package controlador;
 import java.awt.Dimension;
 
 import static java.awt.Frame.MAXIMIZED_BOTH;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import modelo.Conectar;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import vista.*;
 
 public class C_Principal {
@@ -21,6 +34,8 @@ public class C_Principal {
         vista.getBtn_NuevoConsultorio().addActionListener(x -> consultorio());
         vista.getBtn_NuevoJuicio().addActionListener(x -> Tipo_Juicio());
         vista.getBtn_NuevoServicio().addActionListener(x -> Servicio());
+        vista.getBtn_ImprimirCliente().addActionListener(x->ImprimirCliente());
+        vista.getBtn_ImprimirUsuarioRol().addActionListener(x->Imprimirporusuarioyrol());
         vista.getLabelUser().setText(C_Login.lista2.get(0) + "--" + C_Login.lista2.get(1));
     }
     
@@ -96,5 +111,44 @@ public class C_Principal {
         con.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
         
     }
-    
+        private void ImprimirCliente() {
+        Conectar con = new Conectar();
+        try {
+            String cedula = JOptionPane.showInputDialog("Escriba la cedula de la persona");
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/por_cliente.jasper"));
+
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            map.put("cedula", cedula);
+
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(C_Persona.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    private void Imprimirporusuarioyrol() {
+        Conectar con = new Conectar();
+        try {
+            String usuario = JOptionPane.showInputDialog("Escriba el nombre de usuario");
+            String rol = JOptionPane.showInputDialog("Escriba el nombre del rol");
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/por_usuario_y_rol.jasper"));
+
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            map.put("usuario", usuario);
+            map.put("rol", rol);
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(C_Persona.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
 }

@@ -44,6 +44,7 @@ public class C_Servicio {
         vistaservicios.getBtnmodificar().addActionListener(x -> modificar());
         vistaservicios.getBtneliminar().addActionListener(x -> eliminar());
         vistaservicios.getBtnnuevo().addActionListener(x -> nuevo());
+        vistaservicios.getBtnBuscarCedula().addActionListener(x->Buscarcliente(vistaservicios.getTxtBuscarcliente().getText()));
         vistaservicios.getTxtBuscarJuicio().addKeyListener(new java.awt.event.KeyAdapter() {
             @Override
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -132,7 +133,7 @@ public class C_Servicio {
         } else {
             Conectar conectar = new Conectar();
             String sql = "Select nombres,apellidos from persona\n"
-                    + "Where cedula=(Select cedula from clientes Where \"cedula\"='" + cedula + "')";
+                    + "Where cedula=(Select cedula from cliente Where \"cedula\"='" + cedula + "')";
             ResultSet rs = conectar.query(sql);
             try {
                 while (rs.next()) {
