@@ -8,13 +8,22 @@ import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
     
 public class CEmpresa {
 
@@ -31,7 +40,7 @@ public class CEmpresa {
         VistaEmp.getBtnModificarEmpresa().addActionListener(e -> modificar());
         VistaEmp.getBtnAgregarFotoEmpresa().addActionListener(e -> obtieneImagen());
         VistaEmp.getBtnBuscarEmpresa().addActionListener(e -> buscar());
-        // VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
+        VistaEmp.getBtnImprimirEmpresa().addActionListener(e -> ImprimirEmpresa());
         // VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaEmp.getTableEmpresa().addMouseListener(new MouseAdapter() {
             @Override
@@ -69,6 +78,24 @@ public class CEmpresa {
             VistaEmp.getTableEmpresa().setValueAt(lista.get(i).getCorreo(), i, 6);
             VistaEmp.getTableEmpresa().setValueAt(lista.get(i).getEstado(), i, 7);
             
+        }
+    }
+    
+    private void ImprimirEmpresa() {
+        Conectar con = new Conectar();
+        try {
+
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/Empresa.jasper"));
+
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(Cprincipal.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 

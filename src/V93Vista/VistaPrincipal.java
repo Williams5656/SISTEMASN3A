@@ -260,13 +260,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jMenu12.setText("REPORTES");
 
-        Ventas.setText("VENTAS");
+        Ventas.setText("Ventas");
         jMenu12.add(Ventas);
 
-        Stock.setText("STOCK PRODUCTOS");
+        Stock.setText("Stock Productos");
         jMenu12.add(Stock);
 
-        Clientes.setText("CLIENTES");
+        Clientes.setText("UsuariosActivos");
         jMenu12.add(Clientes);
 
         jMenuBar1.add(jMenu12);

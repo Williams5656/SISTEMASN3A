@@ -7,13 +7,22 @@ import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class CProducto {
     
@@ -30,7 +39,7 @@ public class CProducto {
         VistaP.getBtnModificarProducto().addActionListener(e -> modificar());
         VistaP.getBtnFotoProducto().addActionListener(e -> obtieneImagen());
         VistaP.getBtnBuscarProducto().addActionListener(e -> buscar());
-        // VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
+        VistaP.getBtnImprimirProducto().addActionListener(e -> ImprimirProducto());
         // VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getTableProducto().addMouseListener(new MouseAdapter() {
             @Override
@@ -45,6 +54,23 @@ public class CProducto {
         VistaP.getBtnGuardarProducto().setEnabled(false);
         VistaP.getBtnModificarProducto().setEnabled(false);
         VistaP.getjComboBoxProveedorProducto().setModel(bdproducto.NombreProveedor());
+    }
+     private void ImprimirProducto() {
+        Conectar con = new Conectar();
+        try {
+
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/ReporProducto.jasper"));
+
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(Cprincipal.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
 
     private void obtieneImagen() {

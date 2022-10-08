@@ -9,13 +9,22 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class CPersonas {
 
@@ -34,6 +43,7 @@ public class CPersonas {
         VistaP.getBtnModificarPersona().addActionListener(e -> modificar());
         VistaP.getBtnNuevoPersona().addActionListener(e -> nuevo());
         VistaP.getBtnEliminarPersona().addActionListener(e -> eliminar());
+        VistaP.getBtnImprimirPersona().addActionListener(e -> ImprimirPersona());
 
         VistaP.getBtnFoto().addActionListener(e -> obtieneImagen());
         VistaP.getBtnbuscarp().addActionListener(e -> buscar());
@@ -118,6 +128,24 @@ public class CPersonas {
             VistaP.getTablePersona().setValueAt(lista.get(i).getCiudad(), i, 4);
             VistaP.getTablePersona().setValueAt(lista.get(i).getCelular(), i, 5);
 
+        }
+    }
+
+    private void ImprimirPersona() {
+        Conectar con = new Conectar();
+        try {
+
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/persona.jasper"));
+
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(Cprincipal.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 

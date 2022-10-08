@@ -140,17 +140,17 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="Ventas">
               <Properties>
-                <Property name="text" type="java.lang.String" value="VENTAS"/>
+                <Property name="text" type="java.lang.String" value="Ventas"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="Stock">
               <Properties>
-                <Property name="text" type="java.lang.String" value="STOCK PRODUCTOS"/>
+                <Property name="text" type="java.lang.String" value="Stock Productos"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="Clientes">
               <Properties>
-                <Property name="text" type="java.lang.String" value="CLIENTES"/>
+                <Property name="text" type="java.lang.String" value="UsuariosActivos"/>
               </Properties>
             </MenuItem>
           </SubComponents>

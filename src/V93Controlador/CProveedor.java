@@ -10,13 +10,22 @@ import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class CProveedor {
 
@@ -35,6 +44,8 @@ public class CProveedor {
         VistaProv.getBtnBuscarProveedor().addActionListener(e -> buscar());
         VistaProv.getBtnEliminarProveedor().addActionListener(e -> eliminar());
         VistaProv.getBtnNuevoProveedor().addActionListener(e -> nuevo());
+        VistaProv.getBtnImprimirProveedor().addActionListener(e -> ImprimirProveedor());
+        
         VistaProv.getTableProveedor().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -75,6 +86,7 @@ public class CProveedor {
         VistaProv.getBtnEliminarProveedor().addActionListener(e -> eliminar());
         VistaProv.getBtnGuardarProveedor().setEnabled(false);
         VistaProv.getBtnModificarProveedor().setEnabled(false);
+        
     }
 
     private void txtRucProveedorKeyTyped(java.awt.event.KeyEvent evt) {
@@ -112,6 +124,24 @@ public class CProveedor {
             VistaProv.getTableProveedor().setValueAt(lista.get(i).getDireccion(), i, 3);
             VistaProv.getTableProveedor().setValueAt(lista.get(i).getRazon(), i, 4);
 
+        }
+    }
+    
+    private void ImprimirProveedor() {
+        Conectar con = new Conectar();
+        try {
+
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/proveedor.jasper"));
+
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
+            JasperViewer jv = new JasperViewer(ja, false);
+            jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            jv.setVisible(true);
+        } catch (JRException e) {
+            System.out.println("no se pudo encontrar registros" + e.getMessage());
+            Logger.getLogger(Cprincipal.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 

@@ -125,14 +125,15 @@ public class Cprincipal {
     private void ImprimirClientes() {
         Conectar con = new Conectar();
         try {
-            String codigo = JOptionPane.showInputDialog("Escriba el estado de usuario");
-            String nombre = JOptionPane.showInputDialog("Escriba el nombre del rol");
+            String nombrerol = JOptionPane.showInputDialog("Escriba el nombre del rol");
+            String estado = JOptionPane.showInputDialog("Escriba el estado del usuario ");
+            
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/ConsultaUsuario.jasper"));
 
             Map<String, Object> map = new HashMap<String, Object>();
 
-            map.put("codigor", codigo);
-            map.put("nombrer", nombre);
+            map.put("nombrerol", nombrerol);
+            map.put("estado", estado.toUpperCase());
 
             JasperPrint ja = (JasperPrint) JasperFillManager.fillReport(jas, map, con.getCon());
             JasperViewer jv = new JasperViewer(ja, false);
